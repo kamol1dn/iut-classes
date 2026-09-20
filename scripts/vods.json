@@ -1,0 +1,46 @@
+{
+  "_comment": "eClass VOD manifest. The stream URLs are extracted from /mod/vod/viewer.php?id=<mod> (which needs a logged-in session); the vod.inha.ac.kr:8443 HLS endpoints themselves are unauthenticated, so downloading needs no credentials. Ask Claude to 'refresh the VOD manifest' when new lectures appear.",
+  "_extracted": "2026-09-20",
+  "vods": [
+    {
+      "mod": 70109,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 1,
+      "title": "Class intro",
+      "duration": "18:09",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/08/6e3febaa-7c09-4cf7-8afd-e095e278840d/2bdd5af2-3b33-4f3a-aabc-dd8da1f9b42d.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 70112,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 1,
+      "title": "Lecture 1",
+      "duration": "44:35",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/08/fad4d288-0104-4d9b-b4d7-05a5ca6de192/cbc3748e-bb8d-4c86-bf5a-78898768e715.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 70704,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 2,
+      "title": "Lecture 2",
+      "duration": "1:00:34",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/12/1318ca21-72a0-4d4b-8ba5-225b7b6348be/6c6ba9f2-8135-4601-bc48-c8a15c73216c.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71123,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 3,
+      "title": "Lecture 2-1",
+      "duration": "38:22",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/18/6c7becc7-d976-4e08-a587-6ba2cee91b05/23a9cf18-3743-4677-89dc-145e30ef3191.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71124,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 3,
+      "title": "Lecture 3-2",
+      "duration": "25:35",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/18/0a09603b-5670-4c42-b01b-710ccdff42d1/c268128a-bb9d-435c-b7de-0f4b5dda6cb2.mp4/playlist.m3u8"
+    }
+  ]
+}

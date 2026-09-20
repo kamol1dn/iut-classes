@@ -1,0 +1,1047 @@
+1
+00:00:02,633 --> 00:00:05,314
+Hi, dear students. I hope you're all doing well.
+
+2
+00:00:06,234 --> 00:00:08,835
+Welcome to our first class and also welcome
+
+3
+00:00:09,636 --> 00:00:11,096
+to INHA University back.
+
+4
+00:00:11,676 --> 00:00:14,838
+And hopefully, this will be your final year here, right?
+
+5
+00:00:15,458 --> 00:00:21,940
+And let's start our class today, which is a distinguished lecture in social science and arts.
+
+6
+00:00:23,141 --> 00:00:23,941
+Okay, just a minute.
+
+7
+00:00:39,730 --> 00:00:42,511
+Okay, hopefully my screen is visible to you guys.
+
+8
+00:00:43,332 --> 00:00:49,154
+So as mentioned, our subject this semester is a distinguished lecture in social science and
+
+9
+00:00:49,274 --> 00:00:55,497
+arts. And today we'll have some basic information, some general information about our
+
+10
+00:00:55,577 --> 00:00:58,558
+subject. So that since this
+
+11
+00:00:59,819 --> 00:01:01,480
+is not a required subject, right?
+
+12
+00:01:01,500 --> 00:01:02,520
+This is an elective subject.
+
+13
+00:01:03,060 --> 00:01:04,861
+So that those of you who are
+
+14
+00:01:05,581 --> 00:01:09,203
+thinking still about it, whether to continue or to drop it,
+
+15
+00:01:10,389 --> 00:01:12,070
+you'll have a much better idea
+
+16
+00:01:13,691 --> 00:01:14,732
+after this lecture.
+
+17
+00:01:15,493 --> 00:01:18,535
+Today, we'll talk about mainly two points.
+
+18
+00:01:18,555 --> 00:01:20,757
+First of all, we'll talk about the syllabus
+
+19
+00:01:21,557 --> 00:01:23,619
+or general information about our
+
+20
+00:01:24,399 --> 00:01:31,224
+subject. Secondly, in the second part of our today's lecture, we'll talk about the topic, Chapter
+
+21
+00:01:31,325 --> 00:01:34,507
+1. I'll let you know more information later.
+
+22
+00:01:36,977 --> 00:01:41,539
+Also, I mean, to begin with, we guys are already familiar, right?
+
+23
+00:01:41,899 --> 00:01:45,541
+So, therefore, I didn't put details about myself.
+
+24
+00:01:45,561 --> 00:01:52,385
+So, as you can see, my name is Bobby Mbratov, and I have been working at IoT since 2015,
+
+25
+00:01:52,445 --> 00:01:55,686
+right? I think I told you about this information
+
+26
+00:01:56,427 --> 00:01:58,528
+on our last year's subject, right?
+
+27
+00:01:59,148 --> 00:01:59,308
+And
+
+28
+00:02:01,049 --> 00:02:04,591
+also, later on, I went to my PhD, and since 2015,
+
+29
+00:02:06,301 --> 00:02:10,944
+I came back and have been working here at Inha University in Tashkent.
+
+30
+00:02:11,544 --> 00:02:14,866
+Since last year, I transferred to a faculty position.
+
+31
+00:02:15,586 --> 00:02:17,967
+Okay, then let's continue.
+
+32
+00:02:17,987 --> 00:02:19,408
+Let's talk about our subject.
+
+33
+00:02:19,988 --> 00:02:23,430
+So to begin with, I like the name of our subject.
+
+34
+00:02:23,810 --> 00:02:25,111
+So what do you guys think?
+
+35
+00:02:25,171 --> 00:02:29,353
+What are social sciences, humanities and arts?
+
+36
+00:02:29,453 --> 00:02:36,161
+Because usually when we talk about these subjects, whether it's in Uzbek, or some other
+
+37
+00:02:36,261 --> 00:02:38,323
+languages, right? We usually mix them, right?
+
+38
+00:02:38,643 --> 00:02:40,364
+Social science and humanities.
+
+39
+00:02:40,544 --> 00:02:41,705
+Or we can say that
+
+40
+00:02:44,328 --> 00:02:47,330
+like in the Russian or in Uzbek, right?
+
+41
+00:02:47,810 --> 00:02:50,533
+Like for example, right?
+
+42
+00:02:50,553 --> 00:02:51,734
+We kind of usually mix them.
+
+43
+00:02:52,314 --> 00:02:54,916
+But can you guys differentiate them?
+
+44
+00:02:55,597 --> 00:02:57,498
+So you can pause this video and think about it.
+
+45
+00:02:58,299 --> 00:02:58,939
+I'll continue.
+
+46
+00:02:59,920 --> 00:03:00,221
+So
+
+47
+00:03:01,081 --> 00:03:04,344
+let's begin from with the social science, okay?
+
+48
+00:03:04,690 --> 00:03:09,231
+So the main difference between the social science and humanities, like you guys see,
+
+49
+00:03:10,131 --> 00:03:14,732
+social science is a subject that studies the interactions
+
+50
+00:03:15,492 --> 00:03:19,013
+or kind of communications between humans, okay?
+
+51
+00:03:19,313 --> 00:03:22,133
+It's kind of, it studies the
+
+52
+00:03:22,933 --> 00:03:29,334
+individuals, communities, societies and how they behave or how they interact
+
+53
+00:03:29,795 --> 00:03:32,255
+within these communities, within this society, right?
+
+54
+00:03:32,702 --> 00:03:35,264
+and how they impact environment, for example, right?
+
+55
+00:03:35,704 --> 00:03:40,088
+And therefore, the subjects, as you can see, such as sociology, right?
+
+56
+00:03:40,428 --> 00:03:41,388
+Economics or
+
+57
+00:03:42,129 --> 00:03:44,471
+anthropology or politics, right?
+
+58
+00:03:44,531 --> 00:03:49,895
+Or psychology. These are the subjects that study the human behavior, right?
+
+59
+00:03:50,115 --> 00:03:52,537
+So how humans interact with each other, right?
+
+60
+00:03:53,157 --> 00:04:00,122
+And whereas the humanities is also about humans, however, they do not study the kind
+
+61
+00:04:00,182 --> 00:04:05,587
+of interaction between humans, but they study the activities of humans, okay,
+
+62
+00:04:06,588 --> 00:04:13,312
+of their kind of history, culture, language, right, like you can see the subjects like literature,
+
+63
+00:04:13,352 --> 00:04:15,233
+for example, right, on how
+
+64
+00:04:16,153 --> 00:04:22,817
+humans perform, right, on what kind of activities humans do, and also the arts and the language,
+
+65
+00:04:22,877 --> 00:04:27,040
+right, these are the kind of activities of people, right, and the
+
+66
+00:04:28,666 --> 00:04:32,288
+Arts is also part of humanities, as you guys can see.
+
+67
+00:04:32,808 --> 00:04:35,630
+It's a kind of a mode of expression, right?
+
+68
+00:04:35,670 --> 00:04:39,272
+That use kind of a skill or imagination, right?
+
+69
+00:04:39,292 --> 00:04:42,193
+In the creation of a certain kind of products, right?
+
+70
+00:04:44,595 --> 00:04:48,757
+And the next logical question is, why do we need these subjects?
+
+71
+00:04:49,417 --> 00:04:55,300
+Or more importantly, I mean, you guys may be asking yourselves and me, why do you guys need
+
+72
+00:04:55,340 --> 00:05:00,008
+this subject? So you can pause this video and kind of reflect about it.
+
+73
+00:05:04,449 --> 00:05:09,831
+Okay, so this will be the question for you guys to ponder and to think about it, okay?
+
+74
+00:05:10,351 --> 00:05:14,332
+And just let me give my brief ideas about it.
+
+75
+00:05:14,392 --> 00:05:17,373
+So we can start from course description, right?
+
+76
+00:05:17,713 --> 00:05:23,535
+So the main of this course is kind of to introduce you guys because you guys are studying in
+
+77
+00:05:23,615 --> 00:05:23,895
+kind of
+
+78
+00:05:25,145 --> 00:05:26,325
+technology field, right?
+
+79
+00:05:26,645 --> 00:05:29,846
+In computer science or information and communication engineering, right?
+
+80
+00:05:30,586 --> 00:05:34,007
+Where you mainly study some kind of hard subjects, right?
+
+81
+00:05:34,467 --> 00:05:36,567
+Maybe some sciences, right?
+
+82
+00:05:36,627 --> 00:05:39,368
+Like kind of pure sciences, maybe, right?
+
+83
+00:05:39,388 --> 00:05:44,028
+Maybe I'm making a mistake, but like you're studying physics and math, right?
+
+84
+00:05:44,349 --> 00:05:47,689
+And some applied subjects or engineering subjects, right?
+
+85
+00:05:48,129 --> 00:05:55,012
+And whereas you have a very kind of few opportunities to study the social science
+
+86
+00:05:55,072 --> 00:06:00,536
+and humanities, right? So therefore, the aim of this subject is to introduce you guys to some
+
+87
+00:06:00,596 --> 00:06:00,977
+of the
+
+88
+00:06:01,737 --> 00:06:07,722
+important or some of the interesting topics in this field, and also to help you guys to develop
+
+89
+00:06:08,222 --> 00:06:11,125
+some of the critical thinking skills and abilities, okay?
+
+90
+00:06:11,685 --> 00:06:12,786
+And we can also
+
+91
+00:06:13,627 --> 00:06:18,350
+engage in these kind of discussions, and hopefully we'll have also debates, okay?
+
+92
+00:06:18,711 --> 00:06:20,432
+So later on, I'll give you information.
+
+93
+00:06:20,922 --> 00:06:22,543
+And hopefully,
+
+94
+00:06:23,824 --> 00:06:29,188
+these skills will help you guys to broaden your horizons beyond
+
+95
+00:06:29,969 --> 00:06:30,729
+your
+
+96
+00:06:31,970 --> 00:06:36,694
+technical field. Because we know, I think last year in
+
+97
+00:06:37,674 --> 00:06:42,498
+engineering communications or business communications class, I mentioned about this, today
+
+98
+00:06:43,038 --> 00:06:46,910
+we're living in a very kind of strange period, right?
+
+99
+00:06:47,270 --> 00:06:51,011
+Like, especially in the last three, four years, right?
+
+100
+00:06:51,611 --> 00:06:54,812
+With the introduction of these large language models, right?
+
+101
+00:06:55,132 --> 00:06:57,392
+Now they kind of became very common, right?
+
+102
+00:06:57,692 --> 00:07:00,613
+We're kind of living in a very strange period, right?
+
+103
+00:07:01,133 --> 00:07:07,694
+Where kind of things are blurred, everything is messy, and especially the guys like you guys,
+
+104
+00:07:07,714 --> 00:07:11,275
+the young people, you may be worried about your future, right?
+
+105
+00:07:11,535 --> 00:07:12,315
+Because of this
+
+106
+00:07:13,606 --> 00:07:19,231
+strange tools, right? And now, I mean, even the universities, even the kind of leaders,
+
+107
+00:07:20,132 --> 00:07:21,272
+and even the parents, right?
+
+108
+00:07:21,292 --> 00:07:22,353
+They may be worried, right?
+
+109
+00:07:22,674 --> 00:07:25,836
+I mean, what's going on? What's waiting us in the future?
+
+110
+00:07:26,276 --> 00:07:31,941
+And therefore, I mean, taking into consideration this kind of macro environment, right?
+
+111
+00:07:32,241 --> 00:07:38,707
+So I believe that this course is a kind of right on time for you guys, so that in the time
+
+112
+00:07:38,787 --> 00:07:44,147
+of this JNI, where kind of most of the kind of
+
+113
+00:07:45,208 --> 00:07:47,549
+some skills, right? Some hard skills even
+
+114
+00:07:48,590 --> 00:07:53,953
+they can be kind of received through the means of this internet or through the means of these
+
+115
+00:07:54,033 --> 00:07:55,233
+generative tools, right?
+
+116
+00:07:55,554 --> 00:08:02,517
+So the logical question many of us may be asking ourselves, so what is the role of human, right?
+
+117
+00:08:02,918 --> 00:08:09,381
+What is our role, right? And what we'll be doing kind of to fulfill kind of our
+
+118
+00:08:10,141 --> 00:08:13,692
+dreams or to kind of to have just life
+
+119
+00:08:14,653 --> 00:08:18,174
+satisfaction, right? Because usually the humans were kind of
+
+120
+00:08:18,875 --> 00:08:23,197
+going to job or working on some tasks for a long period of time, right?
+
+121
+00:08:23,597 --> 00:08:26,198
+And this would bring them some kind of satisfaction, right?
+
+122
+00:08:26,578 --> 00:08:32,181
+And now, because of these tools, I mean, now we still, I think we're in a period of some kind
+
+123
+00:08:32,221 --> 00:08:32,281
+of
+
+124
+00:08:33,662 --> 00:08:38,866
+transition, right? So maybe within three, four years or five years, I think you will, we may
+
+125
+00:08:38,886 --> 00:08:40,367
+have much more clearance.
+
+126
+00:08:40,767 --> 00:08:46,311
+So to make it short, I mean, I think in this age and with these tools, I think
+
+127
+00:08:47,632 --> 00:08:50,835
+similar subjects, right, would help you guys, especially to
+
+128
+00:08:51,635 --> 00:08:57,660
+kind of develop some of the soft skills, some of the critical skills and some of the kind of
+
+129
+00:08:58,200 --> 00:09:00,522
+people skills and social skills, right?
+
+130
+00:09:01,161 --> 00:09:07,924
+that may not be kind of imitated or that may not be assisted with the use of AI
+
+131
+00:09:08,124 --> 00:09:14,426
+tools. And this can hopefully differentiate you guys from many other young people in
+
+132
+00:09:15,407 --> 00:09:18,368
+the field or in the market, okay?
+
+133
+00:09:20,678 --> 00:09:24,000
+Okay, here are some of the topics, which is our schedule
+
+134
+00:09:24,700 --> 00:09:27,401
+for this semester. So as you can see,
+
+135
+00:09:28,141 --> 00:09:30,743
+it's divided mainly into two themes, right?
+
+136
+00:09:31,003 --> 00:09:35,905
+So until midterm, we'll be studying the topics related to critical thinking.
+
+137
+00:09:36,305 --> 00:09:39,286
+So I found a book later on, I will introduce you.
+
+138
+00:09:41,340 --> 00:09:47,264
+Secondly, I mean, right after the midterm, the second part of our semester will be devoted
+
+139
+00:09:47,344 --> 00:09:49,265
+more on this social science aspect.
+
+140
+00:09:49,625 --> 00:09:55,008
+So hopefully we'll have three or four lectures, kind of seminars or
+
+141
+00:09:56,449 --> 00:09:57,070
+kind of
+
+142
+00:09:58,170 --> 00:09:59,671
+distinguished lectures, let's say.
+
+143
+00:09:59,771 --> 00:10:06,265
+Okay, so I didn't decide on exact topics yet, but I'm still thinking and hopefully I'll find
+
+144
+00:10:06,886 --> 00:10:08,707
+some topics which can be interesting
+
+145
+00:10:09,428 --> 00:10:15,453
+to have some broader understanding or broader kind of interest on this area, okay?
+
+146
+00:10:15,833 --> 00:10:19,796
+And also which would help also to develop physical thinking skills and also
+
+147
+00:10:20,977 --> 00:10:25,061
+prepare you guys for the last part of our semester, which is about debates, right?
+
+148
+00:10:25,401 --> 00:10:27,203
+So here I highlighted, right, in bold.
+
+149
+00:10:27,563 --> 00:10:28,243
+So since
+
+150
+00:10:29,208 --> 00:10:35,471
+I mean, even though this subject is online, but because of what I have just talked here, right,
+
+151
+00:10:35,491 --> 00:10:39,773
+because of these AI tools and other things, so we don't want to rely on them, right?
+
+152
+00:10:40,113 --> 00:10:42,694
+So I really want to warn you guys, right?
+
+153
+00:10:43,014 --> 00:10:43,294
+So
+
+154
+00:10:44,215 --> 00:10:44,955
+use this course,
+
+155
+00:10:46,416 --> 00:10:47,857
+kind of an opportunity to
+
+156
+00:10:48,877 --> 00:10:53,159
+use your own brain, to develop your own thinking skills, okay?
+
+157
+00:10:53,448 --> 00:10:58,437
+Because probably this your final year and maybe kind of one of the
+
+158
+00:10:59,198 --> 00:11:04,441
+last periods of your lifetime where you will have such opportunity right because later on when
+
+159
+00:11:04,461 --> 00:11:10,306
+you go to work when you go to kind of a real life right maybe at home you'll be busy with your
+
+160
+00:11:10,326 --> 00:11:16,571
+family at work maybe you just have to follow the orders you just have to be busy with this
+
+161
+00:11:16,671 --> 00:11:22,176
+coding and or white coding how are they they're telling now right or some other kind of maybe
+
+162
+00:11:22,256 --> 00:11:26,219
+management or work right i mean depending on profession you're choosing but you may
+
+163
+00:11:26,940 --> 00:11:33,683
+have a very few time kind of to just sit and reflect or think critically or write
+
+164
+00:11:33,723 --> 00:11:40,047
+something that's kind of of your own interest or have some reading of the topics which is kind
+
+165
+00:11:40,087 --> 00:11:42,488
+of in your own interest area, right?
+
+166
+00:11:43,428 --> 00:11:49,852
+So therefore, in order to kind of prepare your mind for this career and for this future kind
+
+167
+00:11:49,912 --> 00:11:53,099
+of hopefully these kind of opportunities, right?
+
+168
+00:11:53,419 --> 00:12:00,221
+And let's use this semester, this year, and this class specifically to exercise our own
+
+169
+00:12:00,461 --> 00:12:03,342
+judgment, our own brain, and our own
+
+170
+00:12:05,142 --> 00:12:10,923
+skills, okay? Because this will be the thing that will differentiate you guys from
+
+171
+00:12:11,783 --> 00:12:15,404
+thousands or from millions of other young people, okay?
+
+172
+00:12:16,044 --> 00:12:22,138
+So therefore, as you can see, so we have an offline midterm exam but they will not have a final
+
+173
+00:12:22,178 --> 00:12:29,082
+exam instead. So as you can see in the last month, we will be having debates and these
+
+174
+00:12:29,162 --> 00:12:31,904
+debates will be group work.
+
+175
+00:12:32,224 --> 00:12:33,645
+So also, I mean,
+
+176
+00:12:35,105 --> 00:12:36,826
+I didn't decide on the
+
+177
+00:12:37,607 --> 00:12:42,790
+topics of the debates, but as you can see, it will be offline and since
+
+178
+00:12:44,407 --> 00:12:48,548
+I mean, during the week, I mean, you'll be all already having your own other classes and maybe
+
+179
+00:12:48,588 --> 00:12:52,229
+work commitments. So I'm planning to make it on Saturdays, okay?
+
+180
+00:12:52,529 --> 00:12:54,849
+So only the groups which will be having
+
+181
+00:12:55,650 --> 00:12:56,270
+kind of
+
+182
+00:12:56,990 --> 00:13:01,891
+presentations or debates on that day, on that week, will have to come, okay?
+
+183
+00:13:01,931 --> 00:13:02,191
+So,
+
+184
+00:13:02,991 --> 00:13:05,372
+and the rest will be coming on the next week, okay?
+
+185
+00:13:05,852 --> 00:13:05,992
+And
+
+186
+00:13:06,712 --> 00:13:10,033
+we'll know, I mean, about more details maybe right after,
+
+187
+00:13:10,759 --> 00:13:12,701
+the retake and drop period, okay?
+
+188
+00:13:12,941 --> 00:13:18,105
+Maybe right after I know how many students are staying or how many students are taking this
+
+189
+00:13:18,145 --> 00:13:23,930
+class. And then I can kind of write you guys or inform you guys about more details of these
+
+190
+00:13:23,990 --> 00:13:28,794
+debates, okay? About the topics, about the group format, and about the timing, okay?
+
+191
+00:13:29,054 --> 00:13:31,396
+But the schedule, as you see, it will be on Saturdays.
+
+192
+00:13:31,696 --> 00:13:33,478
+So you can start planning from now, okay?
+
+193
+00:13:35,399 --> 00:13:37,581
+And this is some information about grading.
+
+194
+00:13:37,941 --> 00:13:40,752
+So as you can see, It's very simple, right?
+
+195
+00:13:40,992 --> 00:13:46,956
+Just four items. So attendance, just watching these lectures, online lectures and videos.
+
+196
+00:13:47,476 --> 00:13:49,918
+And we'll be having some quizzes, okay?
+
+197
+00:13:50,438 --> 00:13:51,859
+Related to lecture materials.
+
+198
+00:13:52,280 --> 00:13:54,721
+And then midterm exam, as I said, 30%.
+
+199
+00:13:55,101 --> 00:13:58,484
+And then lastly, a group project, which is a debate, okay?
+
+200
+00:13:59,304 --> 00:13:59,444
+And
+
+201
+00:14:00,305 --> 00:14:04,307
+for those, I mean, who are kind of hoping to barely
+
+202
+00:14:05,088 --> 00:14:11,805
+pass this subject, so you can see, The pass mark will be 40%, okay, of a total grade.
+
+203
+00:14:12,525 --> 00:14:12,665
+And
+
+204
+00:14:13,786 --> 00:14:15,687
+also we have university policy, right?
+
+205
+00:14:16,507 --> 00:14:23,471
+You will have an automatic fail for missing 25% of classes, which means
+
+206
+00:14:23,511 --> 00:14:24,852
+that the fourth
+
+207
+00:14:25,672 --> 00:14:27,673
+miss will already be F, okay?
+
+208
+00:14:27,693 --> 00:14:29,894
+So you can maximum miss three
+
+209
+00:14:30,615 --> 00:14:31,275
+video lectures.
+
+210
+00:14:32,240 --> 00:14:32,380
+And
+
+211
+00:14:33,081 --> 00:14:39,105
+also since this is an online class and this attendance will be counted based on watching all
+
+212
+00:14:39,125 --> 00:14:42,288
+these online lectures. So there is no excuse
+
+213
+00:14:43,108 --> 00:14:50,014
+for missing, okay? Maybe you may, God forbid, you may become sick or maybe
+
+214
+00:14:50,114 --> 00:14:52,276
+hopefully some of you guys may have some kind of
+
+215
+00:14:53,376 --> 00:15:00,182
+conferences or some competitions in Shanghai, in Dubai, in Europe, for example, right?
+
+216
+00:15:00,242 --> 00:15:02,742
+Like last year, some of the guys had But still,
+
+217
+00:15:03,683 --> 00:15:06,585
+thanks God, we have internet everywhere now, right?
+
+218
+00:15:06,905 --> 00:15:08,225
+And you can still access them.
+
+219
+00:15:08,686 --> 00:15:14,229
+And this E-Class kind of is a South Korean system, which means it works in many parts of the
+
+220
+00:15:14,269 --> 00:15:19,172
+world, hopefully. So therefore, there is no excuse for missing these online classes.
+
+221
+00:15:19,672 --> 00:15:24,815
+And I think this pass mark of 40% is a kind of a fair deal, right?
+
+222
+00:15:25,736 --> 00:15:32,636
+If you look to the great items, I think this is a, Um, this is not difficult to achieve.
+
+223
+00:15:35,196 --> 00:15:37,357
+And this is information about communication.
+
+224
+00:15:37,877 --> 00:15:44,739
+Uh, so, uh, my office, uh, has moved, uh, just, uh, this summer I moved to be, uh,
+
+225
+00:15:44,799 --> 00:15:45,659
+for, uh,
+
+226
+00:15:46,380 --> 00:15:48,700
+was you, uh, be, uh, for 10.
+
+227
+00:15:48,800 --> 00:15:55,382
+It's just on the building on the left side, uh, just, uh, uh, next to, uh, the professor I
+
+228
+00:15:55,402 --> 00:15:56,622
+was seeing this room. Okay.
+
+229
+00:15:57,063 --> 00:15:58,663
+Right after his room is in my office.
+
+230
+00:15:59,274 --> 00:16:05,238
+And the office hours will be announced soon to you guys because the academic affairs in the
+
+231
+00:16:05,278 --> 00:16:09,601
+first week, they may be changing or doing some updates on timetable, right?
+
+232
+00:16:10,321 --> 00:16:13,303
+And, but still, I mean, since this is online class in the meantime,
+
+233
+00:16:14,063 --> 00:16:18,686
+you can use the following means such as you can use eClass message.
+
+234
+00:16:18,706 --> 00:16:20,207
+I think you guys already know, right?
+
+235
+00:16:20,227 --> 00:16:23,749
+From last year or my email or through your
+
+236
+00:16:24,490 --> 00:16:29,576
+printer, right? And also this semester I'm having teaching assistant, hopefully.
+
+237
+00:16:29,877 --> 00:16:31,258
+His name is Ferda Sabirov.
+
+238
+00:16:31,718 --> 00:16:33,060
+And as you can see, his email.
+
+239
+00:16:33,360 --> 00:16:35,162
+So he will be also helping me sometimes.
+
+240
+00:16:35,562 --> 00:16:42,208
+So in case if you cannot reach me through these three means, you can also use his email also.
+
+241
+00:16:43,750 --> 00:16:45,511
+And what about Telegram and LinkedIn?
+
+242
+00:16:46,692 --> 00:16:48,954
+Do you guys think you can use it to reach me?
+
+243
+00:16:50,956 --> 00:16:52,257
+Well, you guys may think
+
+244
+00:16:53,018 --> 00:16:53,959
+that you can use it.
+
+245
+00:16:54,686 --> 00:16:58,809
+But I don't accept. I think some of you may already know about it, right?
+
+246
+00:16:59,129 --> 00:17:01,231
+Because this is something personal, right?
+
+247
+00:17:01,811 --> 00:17:06,894
+And since there are many students, and even in Telegram, I have many other, my own contacts
+
+248
+00:17:06,975 --> 00:17:11,558
+from universities, from three universities, from families and other contacts, right?
+
+249
+00:17:11,618 --> 00:17:16,781
+I don't want to mix. And, you know, also for you guys, sometimes, let's say you message me
+
+250
+00:17:16,821 --> 00:17:17,542
+from Telegram
+
+251
+00:17:18,742 --> 00:17:22,245
+in the evening, and I'm at that time at home, and I just meet...
+
+252
+00:17:22,989 --> 00:17:29,473
+miss your message right on the weekend right so therefore and let's be professional and don't
+
+253
+00:17:29,533 --> 00:17:36,097
+message me from these accounts okay just use the official channels okay and however
+
+254
+00:17:36,598 --> 00:17:38,259
+right after we finish
+
+255
+00:17:40,320 --> 00:17:46,044
+the course and hopefully maybe the next semester we may have another course maybe right after
+
+256
+00:17:46,084 --> 00:17:51,381
+when you graduate hopefully we will become friends right And then you can use any means to
+
+257
+00:17:51,441 --> 00:17:53,524
+reach me if you need any help for anything.
+
+258
+00:17:53,944 --> 00:17:56,427
+I mean, I'm always, I will be glad to help you guys.
+
+259
+00:17:56,447 --> 00:17:57,088
+Okay.
+
+260
+00:17:57,869 --> 00:18:01,974
+So I think this was all for the first part of our lecture.
+
+261
+00:18:02,555 --> 00:18:03,336
+Let's have a
+
+262
+00:18:04,297 --> 00:18:08,482
+break here and I'll see you guys in the second part of our lecture.

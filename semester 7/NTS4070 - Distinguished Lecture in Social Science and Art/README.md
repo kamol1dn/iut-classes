@@ -55,6 +55,44 @@ midterm. Supplementary readings are listed in [syllabus/syllabus.md](syllabus/sy
 | 2 | Ch.2 Reason & Emotion | [week02 - DLSSA 2](lectures/week02%20-%20DLSSA%202.pptx) |
 | 3 | Ch.4 Knowledge, Evidence & Errors in Thinking | [week03 - DLSSA 3](lectures/week03%20-%20DLSSA%203.pptx) |
 
+## Lecture videos, transcripts & summaries
+
+All five VODs are mirrored to `lectures/vod/`. The **videos are git-ignored**;
+the transcripts and summaries are tracked, so they survive a fresh clone and can
+be searched or asked about without the media.
+
+| Week | Lecture | Length | Chapter | Summary |
+|---|---|---|---|---|
+| 1 | Class intro | 18:09 | — (admin only) | [md](lectures/vod/week01%20-%20Class%20intro.md) |
+| 1 | Lecture 1 | 44:35 | Ch.1 Critical Thinking | [md](lectures/vod/week01%20-%20Lecture%201.md) |
+| 2 | Lecture 2 | 1:00:34 | Ch.2 Reason & Emotion | [md](lectures/vod/week02%20-%20Lecture%202.md) |
+| 3 | Lecture 2-1 | 38:22 | Ch.4 Knowledge & Evidence (pt 1) | [md](lectures/vod/week03%20-%20Lecture%202-1.md) |
+| 3 | Lecture 3-2 | 25:35 | Ch.4 Knowledge & Evidence (pt 2) | [md](lectures/vod/week03%20-%20Lecture%203-2.md) |
+
+Each summary carries a timestamp index, so you can jump from a claim back to the
+exact passage in the `.txt`. Re-fetch or extend with:
+
+```bash
+python scripts/pull_vods.py && python scripts/transcribe_vods.py
+```
+
+> **Chapter 3 (language and communication) is skipped.** The sequence is
+> 1 -> 2 -> 4. He kept one point from it as self-study: how language is used to
+> manipulate.
+
+## 🔴 Things stated only in the videos
+
+None of these appear in the syllabus PDF or anywhere on eClass:
+
+- **The 4th missed lecture is an automatic F.** You may miss at most **3** all semester. No excuses accepted — not illness, not travel.
+- **Pass mark is 40%.**
+- **Quizzes are effectively free marks.** Not multiple-choice, not findable online; they ask for your own opinions and experience. No right or wrong answers — he checks only that it is in your own words. ~5-10 minutes each, for 20% of the grade.
+- **One quiz question was never posted to eClass at all** — he read it aloud at the end of Lecture 3-2 specifically so it could not be pasted into an AI. See that summary.
+- **Do not contact him on Telegram or LinkedIn.** He refuses both. eClass message, email, or the TA.
+- Debates are **on Saturdays**; topics and group format announced after the drop period.
+
+**Check the last few minutes of every VOD** — that is where he puts the tasks.
+
 ## Quizzes and VODs (eClass only)
 
 | Item | Week | Window | Link |

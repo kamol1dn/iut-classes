@@ -13,3 +13,15 @@ desktop.ini
 
 # Extracted archives (keep the .rar/.zip, not the unpacked copy)
 **/resources/*/
+
+# Lecture videos and extracted audio — downloaded from eClass for offline
+# study, never committed. Re-fetch with: python scripts/pull_vods.py
+# NOTE: only the media is ignored. The .srt transcripts and .md summaries
+# that sit beside them in lectures/vod/ ARE tracked — they are the study value.
+*.mp4
+*.m4a
+*.mkv
+*.webm
+*.wav
+*.part.mp4
+*.words.json

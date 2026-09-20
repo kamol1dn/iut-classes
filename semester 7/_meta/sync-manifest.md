@@ -145,6 +145,37 @@ EduPage says **`13~15` (14:00–15:30) in B202**. All 7 other slots agree.
 
 Regenerate with `python scripts/pull_timetable.py`.
 
+## Lecture VODs
+
+The video player at `/mod/vod/viewer.php?id=<MOD>` embeds a Wowza HLS stream on
+`vod.inha.ac.kr:8443`. The stream URL is present in that page's HTML — no need
+to press play. The **stream endpoints need no credentials**; only discovering
+the URL requires a logged-in eClass session.
+
+Cached in `scripts/vods.json`; download with `scripts/pull_vods.py` (ffmpeg
+`-c copy`, so no re-encode), transcribe with `scripts/transcribe_vods.py`.
+
+| Mod | Week | Title | Length | Size |
+|---|---|---|---|---|
+| 70109 | 1 | Class intro | 18:09 | 60 MB |
+| 70112 | 1 | Lecture 1 | 44:35 | 152 MB |
+| 70704 | 2 | Lecture 2 | 1:00:34 | 140 MB |
+| 71123 | 3 | Lecture 2-1 | 38:22 | 94 MB |
+| 71124 | 3 | Lecture 3-2 | 25:35 | 80 MB |
+
+To refresh when new lectures appear: open each VOD's `viewer.php` on a logged-in
+session, regex the HTML for `playlist.m3u8`, and add an entry to `vods.json`.
+
+Gotchas:
+- `.mp4`/`.wav`/`.words.json` are git-ignored; `.srt`/`.txt`/`.md` are tracked.
+- Transcription runs Captioneer (`D:\coding\captioneer-english`) via its own
+  venv — it is an MCP server but is **not connected to this session**.
+- Its CLI prints non-ASCII and dies on the cp1252 console; set
+  `PYTHONIOENCODING=utf-8`.
+- large-v3 + WhisperX nearly fills 8 GB VRAM. Back-to-back runs can OOM before
+  the previous process releases memory; the script waits and retries. **Never
+  run two transcriptions at once.**
+
 ## Sync log
 
 | When | Result |
@@ -152,3 +183,4 @@ Regenerate with `python scripts/pull_timetable.py`.
 | 2026-09-20 11:10 | Initial full mirror — 20 files. NTS4070 at 1 attendance / 2 absences. |
 | 2026-09-20 11:33 | Attendance + deadlines re-check. NTS4070 now 3 / 0. No new material in any course. |
 | 2026-09-20 13:42 | Added EduPage timetable puller. Resolved the period numbering, found the SOC3050 Friday discrepancy, excluded dropped BDA. |
+| 2026-09-20 19:05 | Downloaded all 5 NTS4070 VODs (526 MB), transcribed with whisper large-v3, wrote summaries. Surfaced the 3-absence limit, the quiz policy, and an unposted quiz question. |
