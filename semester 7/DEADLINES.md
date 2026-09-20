@@ -57,6 +57,8 @@ Week 1 began **2026-09-05**, so week *n* starts on the Saturday `09-05 + 7(n−1
 
 | Week | Dates | Milestone |
 |---|---|---|
+| **5** | **3–9 Oct** | **SOC4040 — choose term project topic** (teams of 4–6; must be unique across teams) |
+| **6** | **10–16 Oct** | **SOC4040 — term project proposal due** |
 | 7 | 17–23 Oct | SOC3050 **Midterm** (covers weeks 1–6, theory + lab) |
 | 7 | 17–23 Oct | SOC4180 **Midterm** |
 | 8 | 24–30 Oct | NTS4070 **Midterm — offline** (Critical Thinking chapters, weeks 1–7) |
@@ -85,3 +87,5 @@ above are from the syllabus weekly plans and will firm up as the term goes on.
 - **NTS4070** — attendance is earned by watching VODs inside their window.
   Currently **3 attendance, 0 absences**. Windows close silently after ~9 days.
 - **SOC4040** — set your Discord per-server nickname to *Full name, Student ID*.
+- **SOC4040** — **medical certificates are not accepted** for absences; 8+ absences is an automatic F. He also **checks your written notes before each exam** (from the week-1 deck, not the syllabus).
+- **NTS4070** — **the 4th missed VOD is an automatic F.** At most 3 missed all semester, no excuses (from the class-intro video, not the syllabus).
