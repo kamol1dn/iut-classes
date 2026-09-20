@@ -1,0 +1,15 @@
+# OS cruft
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Office / PDF lock and autosave files
+~$*
+*.tmp
+
+# Cloned course repos — these have their own remotes, don't vendor them here.
+# See each course README for the clone command.
+**/labs/*/
+
+# Extracted archives (keep the .rar/.zip, not the unpacked copy)
+**/resources/*/
