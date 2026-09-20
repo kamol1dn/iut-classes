@@ -5,30 +5,24 @@
 
 ---
 
-## 🔴 Attendance warning — read this today
+## ✅ Attendance — fully caught up
 
-As of 2026-09-20 eClass shows your progress for this course as:
+As of **2026-09-20 11:33**, eClass shows:
 
 | Week 1 | Week 2 | Week 3 |
 |---|---|---|
-| ✅ Attendance | ❌ **Absence** | ❌ **Absence** |
+| ✅ Attendance | ✅ Attendance | ✅ Attendance |
 
-**Totals: 1 attendance · 2 absences · 0 late.**
+**Totals: 3 attendance · 0 absence · 0 late.** Weeks 2 and 3 were both marked
+absent earlier today and have since cleared — the week-2 window was caught
+before it closed tonight at 23:59.
 
-Attendance in this course is **20% of the grade** and is earned *only* by
-watching the weekly VODs inside their open window. Two of the three weeks so far
-are unattended.
+Attendance here is **20% of the grade** and is earned *only* by watching the
+weekly VODs inside their open window. Videos cannot be mirrored into this
+folder — they must be watched on eClass so the platform records the view.
 
-**The week 2 window closes today, 2026-09-20 at 23:59.** Watching
-[Lecture 2 VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=70704) (1h 00m 34s)
-before then is the only chance to convert that absence.
-
-The week 3 VODs are open until **Sunday 2026-09-27 23:59**:
-- [Lecture 2-1 VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=71123) — 38m 22s
-- [Lecture 3-2 VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=71124) — 25m 35s
-
-Videos cannot be mirrored into this folder — they must be watched on eClass so
-the platform records the view.
+**Next window to watch:** week 4 VODs, expected after the week starts
+**Sat 2026-09-26**. Nothing is currently at risk.
 
 ---
 
@@ -63,15 +57,18 @@ midterm. Supplementary readings are listed in [syllabus/syllabus.md](syllabus/sy
 
 ## Quizzes and VODs (eClass only)
 
-| Item | Week | Link |
-|---|---|---|
-| Class intro VOD — 18m 09s | 1 | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=70109) |
-| Lecture 1 VOD — 44m 35s | 1 | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=70112) |
-| Quiz 1 | 1 | [open](https://eclass.inha.ac.kr/mod/quiz/view.php?id=70117) |
-| Lecture 2 VOD — 1h 00m 34s | 2 | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=70704) ⏰ closes today |
-| Lecture 2-1 VOD — 38m 22s | 3 | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=71123) |
-| Lecture 3-2 VOD — 25m 35s | 3 | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=71124) |
-| **Quiz 2** — opened 2026-09-20 18:27 | 3 | [open](https://eclass.inha.ac.kr/mod/quiz/view.php?id=71122) |
+| Item | Week | Window | Link |
+|---|---|---|---|
+| Class intro VOD — 18m 09s | 1 | 09-05 → 09-13, closed | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=70109) |
+| Lecture 1 VOD — 44m 35s | 1 | 09-05 → 09-13, closed | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=70112) |
+| Quiz 1 | 1 | — | [open](https://eclass.inha.ac.kr/mod/quiz/view.php?id=70117) |
+| Lecture 2 VOD — 1h 00m 34s | 2 | 09-12 → **today 23:59** ✅ watched | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=70704) |
+| Lecture 2-1 VOD — 38m 22s | 3 | 09-19 → 09-27 23:59 ✅ watched | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=71123) |
+| Lecture 3-2 VOD — 25m 35s | 3 | 09-19 → 09-27 23:59 ✅ watched | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=71124) |
+| **Quiz 2** | 3 | ⏰ **opens today 18:27** | [open](https://eclass.inha.ac.kr/mod/quiz/view.php?id=71122) |
+
+> Quiz 2 has **not opened yet** — the calendar lists 18:27 today as its *open*
+> time, and no close time is published. Quizzes are 20% of this course.
 
 ## Links
 

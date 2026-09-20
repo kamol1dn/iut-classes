@@ -104,7 +104,25 @@ Nothing published. Only the two auto-created boards exist.
 
 ## State captured at last sync
 
-- NTS4070 attendance: week 1 ✅ · week 2 ❌ · week 3 ❌ (1 attendance, 2 absences, 0 late)
+- NTS4070 attendance: week 1 ✅ · week 2 ✅ · week 3 ✅ (3 attendance, 0 absences, 0 late)
 - Announcement posts across all six courses: **1** (the SOC4040 Discord link)
 - Assignments (`mod/assign`) configured anywhere: **0** — every course sets
   homework in class or off-platform, not through the eClass assignment module
+
+### Activity counts — the cheap way to detect new material
+
+Fetch `/course/view.php?id=N` and count `li.activity`. If the number is
+unchanged, nothing was posted and there is no need to crawl the sections.
+
+| Course | 2592 | 2615 | 2622 | 2626 | 2634 | 2635 |
+|---|---|---|---|---|---|---|
+| Activities @ 2026-09-20 11:33 | 17 | 7 | 7 | 8 | 7 | 2 |
+
+(2592 counts 17 because the course page renders the current week twice.)
+
+## Sync log
+
+| When | Result |
+|---|---|
+| 2026-09-20 11:10 | Initial full mirror — 20 files. NTS4070 at 1 attendance / 2 absences. |
+| 2026-09-20 11:33 | Attendance + deadlines re-check. NTS4070 now 3 / 0. No new material in any course. |

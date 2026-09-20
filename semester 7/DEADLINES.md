@@ -1,23 +1,33 @@
 # Deadlines & upcoming events
 
-Pulled from the eClass calendar on **2026-09-20**.
+Pulled from the eClass calendar on **2026-09-20 at 11:33**.
 Ask me to *"check for updates"* to refresh this.
 
 ---
 
-## ⏰ Closing now
+## ✅ Attendance status
+
+**NTS4070: 3 attendance · 0 absence · 0 late.** Weeks 1–3 all cleared. Weeks 2
+and 3 were marked absent at the 11:10 sync this morning and have since flipped
+to attendance — the week-2 window was caught before it closes tonight.
+
+No other course tracks attendance through eClass; SOC3050 and SOC4180 count it
+offline, where 8 absences fails the course.
+
+## ⏰ Open now
 
 | Deadline | Course | Item |
 |---|---|---|
-| **Today, Sun 2026-09-20 23:59** | NTS4070 | [Lecture 2 VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=70704) — 1h 00m 34s. Window opened 09-12. **You are currently marked absent for week 2; this closes the window.** |
-| **Opened today 18:27** | NTS4070 | [Quiz 2](https://eclass.inha.ac.kr/mod/quiz/view.php?id=71122) — close time not published on the calendar; treat it as urgent |
+| **Opens today 18:27** | NTS4070 | [Quiz 2](https://eclass.inha.ac.kr/mod/quiz/view.php?id=71122) — has **not** opened yet; the calendar publishes an open time but no close time. Quizzes are 20% of the course. |
+| Today 23:59 | NTS4070 | [Lecture 2 VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=70704) window closes — ✅ already watched, nothing to do |
+| Sun 2026-09-27 23:59 | NTS4070 | [Lecture 2-1](https://eclass.inha.ac.kr/mod/vod/view.php?id=71123) + [Lecture 3-2](https://eclass.inha.ac.kr/mod/vod/view.php?id=71124) VOD windows close — ✅ both already watched |
 
-## 📅 This coming week
+## 📅 Next
 
-| Deadline | Course | Item |
-|---|---|---|
-| **Sun 2026-09-27 23:59** | NTS4070 | [Lecture 2-1 VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=71123) — 38m 22s (opened 09-19) |
-| **Sun 2026-09-27 23:59** | NTS4070 | [Lecture 3-2 VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=71124) — 25m 35s (opened 09-19) |
+| When | What |
+|---|---|
+| **Sat 2026-09-26** | Week 4 begins — expect new NTS4070 VODs with a window that closes 2026-10-04 |
+| Nothing else | No assignment, quiz or exam deadlines are published on eClass beyond the above |
 
 ## 🗓 Classes this week
 
@@ -69,5 +79,5 @@ above are from the syllabus weekly plans and will firm up as the term goes on.
 - **SOC3050 / SOC4180** — 8 absences fails the course; absence must be cleared
   with Prof. Jeong Hong *beforehand*, not through AA.
 - **NTS4070** — attendance is earned by watching VODs inside their window.
-  Currently **1 attendance, 2 absences**.
+  Currently **3 attendance, 0 absences**. Windows close silently after ~9 days.
 - **SOC4040** — set your Discord per-server nickname to *Full name, Student ID*.

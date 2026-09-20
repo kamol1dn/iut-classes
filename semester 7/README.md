@@ -5,13 +5,17 @@ Mirrored from [eClass](https://eclass.inha.ac.kr/) on **2026-09-20** (week 3).
 
 ---
 
-## 🔴 Act today
+## Status — 2026-09-20 11:33
 
-| What | Deadline | Why it matters |
-|---|---|---|
-| **Watch NTS4070 Lecture 2 VOD** (1h 00m) | **Today, 2026-09-20 23:59** | You are marked **absent** for week 2. This is the last chance to convert it. Attendance is 20% of the course. → [open VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=70704) |
-| **NTS4070 Quiz 2** | opened today 18:27 | Quizzes are 20% of that course → [open quiz](https://eclass.inha.ac.kr/mod/quiz/view.php?id=71122) |
-| **NTS4070 week-3 VODs** (38m + 26m) | Sun 2026-09-27 23:59 | Week 3 is also currently marked **absent** |
+**Attendance is clean.** NTS4070 now reads **3 attendance · 0 absence · 0 late**
+— weeks 2 and 3 were both marked absent earlier today and have since cleared.
+Nothing is currently at risk.
+
+| Next up | When |
+|---|---|
+| **NTS4070 Quiz 2** — *opens* today at 18:27, no close time published | ⏰ tonight → [open quiz](https://eclass.inha.ac.kr/mod/quiz/view.php?id=71122) |
+| Classes resume | Tomorrow, Mon 2026-09-21 — SOC4040, then SOC4180 |
+| Week 4 begins | Sat 2026-09-26 |
 
 Full list in [DEADLINES.md](DEADLINES.md).
 
@@ -111,4 +115,4 @@ Just ask, in plain words:
 - *"update SOC4020"* — one course only
 - *"pull the GitHub repos"* — refresh Prof. Jeong Hong's material
 
-Last full sync: **2026-09-20**.
+Last full sync: **2026-09-20 11:33**.
