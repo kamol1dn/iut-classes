@@ -9,7 +9,7 @@
 | **Semester** | 2026 Fall (202602) |
 | **Instructor** | Eraliev Oybek |
 | **Room** | B-101 |
-| **Schedule** | Mon `11~13` · Thu `13~15` (as registered — see note below) |
+| **Schedule** | Mon **13:00–14:30** · Thu **14:00–15:30** (B101) |
 | **Credits** | 3.0 |
 | **Grading** | Relative evaluation |
 | **Mode** | Offline |
@@ -84,9 +84,11 @@ PPT lecture presentations · Assignments · Term project
 
 ## Note on the schedule numbers
 
-The `Schedule` row reproduces the eClass syllabus field verbatim. eClass is
-ambiguous about whether those numbers are clock hours or period (교시) indices:
-the upcoming-events calendar labels the same classes with different period
-numbers (e.g. a Monday DLCV class appears as `4교시` while the syllabus says
-`14~16`). Treat the numbers as the registered values, and confirm actual
-start times against the timetable image in `resources/` or with the instructor.
+**Resolved.** The eClass syllabus numbers are **period indices**, and periods are
+30-minute slots starting at 08:00 — so period *n* begins at `07:30 + 0:30n`, and
+a `a~b` range runs from the start of period *a* to the end of period *b*.
+
+Verified against the official EduPage timetable for ICE23-1, which agrees with
+eClass on 7 of the 8 registered slots. The clock times in the table above are
+the authoritative ones, taken from [../../timetable.md](../../timetable.md) —
+regenerate it with `python scripts/pull_timetable.py`.

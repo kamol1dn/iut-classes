@@ -1,7 +1,7 @@
 # SOC4020 — Multimedia Computing
 
 **Instructor:** Minhaz Uddin Ahmed · **Room:** B-101 · **Mode:** Offline
-**Schedule (as registered):** Tue `4~6` · Wed `11~13`
+**Schedule:** Tue **09:30–11:00** · Wed **13:00–14:30**
 **eClass course id:** `2622`
 
 ---

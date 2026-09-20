@@ -1,7 +1,7 @@
 # SOC4040 — Artificial Intelligence
 
 **Instructor:** Eraliev Oybek · **Room:** B-101 · **Mode:** Offline
-**Schedule (as registered):** Mon `11~13` · Thu `13~15`
+**Schedule:** Mon **13:00–14:30** · Thu **14:00–15:30**
 **eClass course id:** `2626`
 
 ---

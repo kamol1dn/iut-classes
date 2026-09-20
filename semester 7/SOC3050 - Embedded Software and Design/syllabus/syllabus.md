@@ -9,11 +9,22 @@
 | **Course No.** | SOC3050 — Class 001 |
 | **Semester** | 2026 Fall (202602) |
 | **Instructor** | Jeong Hong |
-| **Room** | B-101 |
-| **Schedule** | Wed `15~17` · Fri `18~20` (as registered — see note below) |
+| **Room** | B-101 (Wed) · **B202 (Fri)** |
+| **Schedule** | Wed **15:00–16:30** (B101) · Fri **14:00–15:30** (**B202**) — see warning below |
 | **Credits** | 3.0 |
 | **Grading** | Relative evaluation |
 | **Mode** | Offline |
+
+## ⚠️ eClass has the Friday slot wrong
+
+The eClass syllabus registers Friday as periods `18~20` (17:30–19:00) in B-101.
+The official EduPage timetable puts it at periods **13~15, i.e. 14:00–15:30, in
+B202** — a different time *and* a different room. Every other slot across all
+four offline courses matches; this is the only discrepancy.
+
+**Trust the timetable, not the syllabus, for Friday.** Given that this course
+closes the door 5 minutes after the start and 8 absences fails you, it is worth
+confirming with Prof. Jeong Hong directly.
 
 ## Grading breakdown
 
@@ -104,9 +115,11 @@ semester; evaluation criteria may vary depending on circumstances.
 
 ## Note on the schedule numbers
 
-The `Schedule` row reproduces the eClass syllabus field verbatim. eClass is
-ambiguous about whether those numbers are clock hours or period (교시) indices:
-the upcoming-events calendar labels the same classes with different period
-numbers (e.g. a Monday DLCV class appears as `4교시` while the syllabus says
-`14~16`). Treat the numbers as the registered values, and confirm actual
-start times against the timetable image in `resources/` or with the instructor.
+**Resolved.** The eClass syllabus numbers are **period indices**, and periods are
+30-minute slots starting at 08:00 — so period *n* begins at `07:30 + 0:30n`, and
+a `a~b` range runs from the start of period *a* to the end of period *b*.
+
+Verified against the official EduPage timetable for ICE23-1, which agrees with
+eClass on 7 of the 8 registered slots. The clock times in the table above are
+the authoritative ones, taken from [../../timetable.md](../../timetable.md) —
+regenerate it with `python scripts/pull_timetable.py`.

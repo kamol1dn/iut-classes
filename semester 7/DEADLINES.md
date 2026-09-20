@@ -26,23 +26,27 @@ offline, where 8 absences fails the course.
 
 | When | What |
 |---|---|
+| **Mon 2026-09-21** | 13:00 SOC4040 AI (B101) · 14:30 SOC4180 DLCV (B101) |
+| Tue 2026-09-22 | 09:30 SOC4020 MC (B101) |
+| Wed 2026-09-23 | 13:00 SOC4020 MC (B101) · 15:00 SOC3050 ES&D (B101) |
+| Thu 2026-09-24 | 11:00 Mental Education (B304) · 12:00 SOC4180 DLCV · 14:00 SOC4040 AI |
+| Fri 2026-09-25 | 14:00 SOC3050 ES&D — **B202**, not B101 |
 | **Sat 2026-09-26** | Week 4 begins — expect new NTS4070 VODs with a window that closes 2026-10-04 |
 | Nothing else | No assignment, quiz or exam deadlines are published on eClass beyond the above |
 
-## 🗓 Classes this week
+Times are from the official timetable ([timetable.md](timetable.md)), which
+overrides the eClass syllabus where they disagree.
 
-| When | Course |
-|---|---|
-| Mon 2026-09-21 | SOC4040 Artificial Intelligence |
-| Mon 2026-09-21 | SOC4180 Deep Learning for Computer Vision |
-| Wed 2026-09-23 | SOC4040 Artificial Intelligence |
-| Wed 2026-09-23 | SOC3050 Embedded Software & Design |
-| Thu 2026-09-24 | SOC4180 Deep Learning for Computer Vision |
-| Fri 2026-09-25 | SOC3050 Embedded Software & Design |
+## 🗓 The eClass calendar disagrees with the timetable
 
-> The calendar lists an **SOC4040 class on Wednesday 09-23**, but the syllabus
-> registers that course as **Mon + Thu**. One of the two is wrong — worth
-> checking before you skip a Wednesday.
+The eClass upcoming-events feed lists an **SOC4040 (AI) session on Wednesday
+09-23**. Neither the syllabus nor the official EduPage timetable has AI on a
+Wednesday — both put it on **Mon + Thu**. Wednesday afternoon is SOC4020 then
+SOC3050.
+
+Most likely an eClass data quirk rather than a real class, but if AI announces a
+makeup session that is where it would show up. The timetable is the reliable
+source for where to be; eClass is the reliable source for VOD and quiz windows.
 
 ---
 

@@ -120,9 +120,35 @@ unchanged, nothing was posted and there is no need to crawl the sections.
 
 (2592 counts 17 because the course page renders the current week twice.)
 
+## EduPage timetable
+
+Separate system from eClass, public, no login:
+
+| | |
+|---|---|
+| Page | `https://iut.edupage.org/timetable/` |
+| List timetables | POST `/timetable/server/ttviewer.js?__func=getTTViewerData` |
+| Full dataset | POST `/timetable/server/regulartt.js?__func=regularttGetData` |
+| Class | `ICE23-1` (EduPage id `*77`) |
+| Timetable in use | `145` — Fall_2026 (7/9 – 27/12/2026) |
+
+Both endpoints need a `PHPSESSID` from a prior GET on `/timetable/`, take
+exactly two positional `__args`, and accept `__gsh: "00000000"`. The second
+argument to `getTTViewerData` is the **school year**; pass the wrong thing and
+it still returns the list but leaves `default_num` blank.
+
+Periods are 30-minute slots from 08:00 — period *n* starts at `07:30 + 0:30n`.
+This is the same numbering the eClass syllabi use.
+
+Known discrepancy: eClass registers **SOC3050 Friday as `18~20` in B-101**;
+EduPage says **`13~15` (14:00–15:30) in B202**. All 7 other slots agree.
+
+Regenerate with `python scripts/pull_timetable.py`.
+
 ## Sync log
 
 | When | Result |
 |---|---|
 | 2026-09-20 11:10 | Initial full mirror — 20 files. NTS4070 at 1 attendance / 2 absences. |
 | 2026-09-20 11:33 | Attendance + deadlines re-check. NTS4070 now 3 / 0. No new material in any course. |
+| 2026-09-20 13:42 | Added EduPage timetable puller. Resolved the period numbering, found the SOC3050 Friday discrepancy, excluded dropped BDA. |

@@ -1,7 +1,8 @@
 # SOC3050 — Embedded Software & Design
 
-**Instructor:** Jeong Hong · **Room:** B-101 · **Mode:** Offline
-**Schedule (as registered):** Wed `15~17` · Fri `18~20`
+**Instructor:** Jeong Hong · **Rooms:** B101 (Wed), B202 (Fri) · **Mode:** Offline
+**Schedule:** Wed **15:00–16:30** (B101) · Fri **14:00–15:30** (**B202**)
+⚠️ eClass registers Friday as `18~20` in B-101 — that is wrong; see [timetable.md](../timetable.md).
 **eClass course id:** `2615`
 
 ---

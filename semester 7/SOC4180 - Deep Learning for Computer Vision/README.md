@@ -1,7 +1,7 @@
 # SOC4180 — Deep Learning for Computer Vision
 
 **Instructor:** Jeong Hong · **Room:** B-101 · **Mode:** Offline
-**Schedule (as registered):** Mon `14~16` · Thu `9~11`
+**Schedule:** Mon **14:30–16:00** · Thu **12:00–13:30**
 **eClass course id:** `2634`
 
 ---

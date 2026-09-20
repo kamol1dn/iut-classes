@@ -13,9 +13,13 @@ across eClass, GitHub, Telegram and Discord.
 ## Layout
 
 ```
+scripts/
+└── pull_timetable.py      regenerates semester N/timetable.md from EduPage
+
 semester N/
 ├── README.md              dashboard: courses, timetable, grading weights
 ├── DEADLINES.md           what is closing now + dated milestones
+├── timetable.md           generated — real clock times, rooms, teachers
 ├── _meta/                 sync manifest — eClass IDs behind every file
 └── <CODE> - <Name>/
     ├── README.md          how this professor posts material, what is on hand
@@ -26,6 +30,16 @@ semester N/
     ├── resources/         notebooks, practice code, timetable images
     └── my-notes/
 ```
+
+## Refreshing the timetable
+
+```bash
+python scripts/pull_timetable.py
+```
+
+Pulls the ICE23-1 timetable from <https://iut.edupage.org/timetable/> (public,
+no login) and rewrites `semester 7/timetable.md`. Use `--check` to report drift
+without writing, or `--all` to include subjects that were dropped.
 
 ## Notes
 
