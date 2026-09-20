@@ -68,6 +68,43 @@ Periods are 30-minute slots from 08:00, so period *n* starts at `07:30 + 0:30n`.
 
 ---
 
+---
+
+## After work — where to start
+
+Every lecture deck now has a `.md` summary sitting beside it. Read the summary;
+open the slides only for diagrams. Each one ends with a **"revising this in 10
+minutes"** list — the examinable skeleton.
+
+| Course | Summaries | Where they are |
+|---|---|---|
+| **SOC4040** AI | 4 | `lectures/*.md` — the maths ones (1.2, 2.1, 2.2) carry formulas you'll be asked to reproduce |
+| **SOC4020** Multimedia | 4 | `lectures/*.md` — **L2 and L4 are the exam-dense ones**; L1 is a survey |
+| **SOC3050** Embedded | 1 | `lectures/*.md` — Chapter 0 groundwork |
+| **NTS4070** Distinguished Lecture | 5 | `lectures/vod/*.md` — with full transcripts beside them |
+| **SOC4180** DLCV | — | Nothing on eClass; material is on GitHub + the slides site |
+| **SOC4190** Blockchain | — | Nothing published yet |
+
+### Things that are cheap marks
+
+- **NTS4070 quizzes (20%)** — no right answers; graded on being in your own words. ~10 min each.
+- **SOC4040 notes** — he inspects your written notebook before each exam.
+- **SOC4020 class activity (10%)** — speaking up in class is graded here.
+- **NTS4070 attendance (20%)** — just watch the weekly VOD inside its window.
+
+### Things that will bite you
+
+- **NTS4070** — the **4th missed VOD is an automatic F**. Max 3 all semester.
+- **SOC4040** — **medical certificates are not accepted**; 8 absences is an F.
+- **SOC4020** — **late homework is never accepted**.
+- **SOC3050** — the door closes **5 minutes** after class starts.
+
+### Coming up
+
+**SOC4040 term project**: pick a topic in **week 5 (3–9 Oct)**, proposal in
+**week 6**. Teams of 4–6, and topics must be unique across teams — so forming a
+team early matters.
+
 ## Grading weights at a glance
 
 | Course | Mid | Final | Attend. | Assign. | Quiz | Other |

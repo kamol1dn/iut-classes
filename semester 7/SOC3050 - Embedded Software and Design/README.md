@@ -49,9 +49,17 @@ No class changes allowed.
 |---|---|---|
 | Syllabus (PDF) | — | [syllabus/soc3050.pdf](syllabus/soc3050.pdf) |
 | Timetable image, posted 09-18 | — | [resources/timetable - Class0918.png](resources/timetable%20-%20Class0918.png) |
-| Introduction to Computing | 1 | [lectures/week01 - 0_IntroductionToComputing.pps](lectures/week01%20-%200_IntroductionToComputing.pps) |
+| Introduction to Computing | 1 | 📄 [summary](lectures/week01%20-%200_IntroductionToComputing.md) · [.pps](lectures/week01%20-%200_IntroductionToComputing.pps) |
 
 Weeks 2–3 have nothing on eClass — check GitHub and Telegram for those.
+
+The week-1 deck is **Chapter 0** of the Naimi AVR textbook: memory types, the
+three buses, address decoding, fetch–decode–execute, and **Von Neumann vs
+Harvard** (the AVR is Harvard). Full summary linked above.
+
+> The `.pps` is the **legacy binary PowerPoint format**. To open or re-extract:
+> `soffice --headless --convert-to pptx "<file>"`, then
+> `python scripts/extract_slides.py "<converted>.pptx"`.
 
 ## Tooling you will need
 
