@@ -5,6 +5,8 @@ Mirrored from [eClass](https://eclass.inha.ac.kr/) on **2026-09-20** (week 3).
 
 ---
 
+> 📅 **What's due, quiz windows and the midterm schedule: [UPCOMING.md](UPCOMING.md).**
+>
 > **Shared with classmates.** My personal tracking (`DEADLINES.md`, `STUDY-PLAN.md`,
 > `_meta/`, every `PRIVATE.md`) is git-ignored and stays on my machine. Everything else here is course
 > material and my notes: use it freely, but check deadlines on eClass yourself.
@@ -146,7 +148,7 @@ every file here, so re-checking for updates is a lookup rather than a re-crawl.
 Just ask, in plain words:
 
 - *"check eClass for updates"* — re-crawl all six courses, download anything new, update the READMEs
-- *"what is due this week?"* — re-read the calendar and refresh `DEADLINES.md` (local only)
+- *"what is due this week?"* — re-read the calendar and refresh [UPCOMING.md](UPCOMING.md) (shared) and `DEADLINES.md` (local only, my status)
 - *"update Multimedia Computing"* — one course only
 - *"pull the GitHub repos"* — refresh Prof. Jeong Hong's material
 - *"refresh the timetable"* — or run it yourself:

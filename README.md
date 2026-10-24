@@ -18,7 +18,8 @@ scripts/
 
 semester N/
 ├── README.md              dashboard: courses, timetable, grading weights
-├── DEADLINES.md           (local only) what is closing now + dated milestones
+├── UPCOMING.md            deadlines, quiz windows, exams: the same for everyone
+├── DEADLINES.md           (local only) my own status against those deadlines
 ├── timetable.md           generated — real clock times, rooms, teachers
 ├── _meta/                 (local only) sync manifest — eClass IDs behind every file
 └── <CODE> - <Name>/
