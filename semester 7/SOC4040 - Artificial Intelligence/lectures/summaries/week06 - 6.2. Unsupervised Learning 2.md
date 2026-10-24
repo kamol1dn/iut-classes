@@ -12,6 +12,16 @@ In scope for the midterm (Tue 10-27, weeks 1–6). The deck is short. The **hand
 is the obvious exam question, and its full working (which the slide skips) is below. The formulas on
 slides 14–16 are images, so **open the PDF for those**.
 
+## 🎥 Watch: 3Blue1Brown
+
+The professor recommended 3Blue1Brown in class. These are the videos that match this lecture ([full list](../../README.md#-3blue1brown-recommended-in-class)).
+
+| Video | Length | Why it helps here |
+|---|---|---|
+| [Eigenvectors and eigenvalues (Essence of linear algebra ch.14)](https://youtu.be/PFDu9oVAE-g) | 17:16 | PCA's principal components are eigenvectors of the covariance matrix |
+| [A quick trick for computing eigenvalues (Essence of linear algebra ch.15)](https://youtu.be/e50Bj7jn9IQ) | 13:13 | the fast way to get λ for a 2×2 matrix, exactly the slide-17 exam case |
+| [Change of basis (Essence of linear algebra ch.13)](https://youtu.be/P2LTAUO1TdA) | 12:51 | projecting onto the principal components is a change of basis |
+
 ## Outline
 
 | Slides | Topic |

@@ -6,6 +6,14 @@ Source: [week04 - 4.2. Machine Learning Support Vector Machine.pdf](../slides/we
 Posted in the week-4 section, and it appeared after 10-05. Several derivation steps (slides 25,
 33–35) and the kernel formulas (46–48) are images, so **open the PDF for those**.
 
+## 🎥 Watch: 3Blue1Brown
+
+The professor recommended 3Blue1Brown in class. These are the videos that match this lecture ([full list](../../README.md#-3blue1brown-recommended-in-class)).
+
+| Video | Length | Why it helps here |
+|---|---|---|
+| [Dot products and duality (Essence of linear algebra ch.9)](https://youtu.be/LyGKycYT2v0) | 14:12 | w·x as a projection, which is what the margin and the decision function are built on |
+
 ## Outline
 
 | Slides | Topic |

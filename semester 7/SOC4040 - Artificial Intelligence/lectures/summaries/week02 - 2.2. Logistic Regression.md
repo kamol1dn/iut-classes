@@ -9,6 +9,14 @@ implementation.
 
 ---
 
+## 🎥 Watch: 3Blue1Brown
+
+The professor recommended 3Blue1Brown in class. These are the videos that match this lecture ([full list](../../README.md#-3blue1brown-recommended-in-class)).
+
+| Video | Length | Why it helps here |
+|---|---|---|
+| [But what is cross-entropy? (Compression is Intelligence pt 2)](https://youtu.be/GlYgs6v2YfU) | 33:51 | where the log-loss cost function comes from |
+
 ## 1. Classification
 
 **Examples he uses throughout:** email spam / not spam · online transaction

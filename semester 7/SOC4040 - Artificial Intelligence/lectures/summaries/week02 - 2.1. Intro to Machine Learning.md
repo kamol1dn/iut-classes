@@ -12,6 +12,15 @@ setting up environments · implementation.
 
 ---
 
+## 🎥 Watch: 3Blue1Brown
+
+The professor recommended 3Blue1Brown in class. These are the videos that match this lecture ([full list](../../README.md#-3blue1brown-recommended-in-class)).
+
+| Video | Length | Why it helps here |
+|---|---|---|
+| [Linear transformations and matrices (Essence of linear algebra ch.3)](https://youtu.be/kYB8IZa5AuE) | 10:59 | multi-variable regression as one matrix–vector product, Xθ |
+| [Inverse matrices, column space and null space (Essence of linear algebra ch.7)](https://youtu.be/uQhTuRlWMxw) | 12:09 | why the normal equation needs XᵀX to be invertible |
+
 ## The big idea of this lecture
 
 There are **two ways to solve a linear regression problem**, and knowing when

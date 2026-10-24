@@ -7,6 +7,14 @@ Posted to the **week 4** section, but it appeared on eClass after 10-05, so it i
 being taught in week 5. The tables and trees are images: **open the PDF for slides 26–27 and 32–34
 (the Play-Tennis worked example) and 41–46 (the forest example)**.
 
+## 🎥 Watch: 3Blue1Brown
+
+The professor recommended 3Blue1Brown in class. These are the videos that match this lecture ([full list](../../README.md#-3blue1brown-recommended-in-class)).
+
+| Video | Length | Why it helps here |
+|---|---|---|
+| [Reinventing Entropy (Compression is Intelligence pt 1)](https://youtu.be/l6DKRf-fAAM) | 32:20 | what entropy measures, so information gain stops being a formula to memorise |
+
 ## Outline
 
 | Slides | Topic |

@@ -13,6 +13,15 @@ and no matching notebook was posted this week.
 
 # Part A — Naïve Bayes
 
+## 🎥 Watch: 3Blue1Brown
+
+The professor recommended 3Blue1Brown in class. These are the videos that match this lecture ([full list](../../README.md#-3blue1brown-recommended-in-class)).
+
+| Video | Length | Why it helps here |
+|---|---|---|
+| [Bayes theorem, the geometry of changing beliefs](https://youtu.be/HZGCoVF3YvM) | 15:11 | Bayes' theorem as areas, the picture behind section 1 |
+| [The medical test paradox, and redesigning Bayes' rule](https://youtu.be/lG4VkPoG3ko) | 21:14 | priors and base rates, the trap in every Bayes question |
+
 ## 1. Bayes' theorem
 
 ```

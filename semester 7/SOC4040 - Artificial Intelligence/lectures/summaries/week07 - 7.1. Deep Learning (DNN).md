@@ -17,6 +17,19 @@ The deck is titled "Part – 1", so expect a 7.2 / Part 2. Much of the maths is 
 PDF's text layer is garbled. **Open the PDF for pages 3–9 and 16–23.** Pages 10 and 25–27 are pictures
 only (the DNN diagram and the activation-function plots).
 
+## 🎥 Watch: 3Blue1Brown
+
+The professor recommended 3Blue1Brown in class. These are the videos that match this lecture ([full list](../../README.md#-3blue1brown-recommended-in-class)).
+
+| Video | Length | Why it helps here |
+|---|---|---|
+| [But what is a neural network? (Deep Learning ch.1)](https://youtu.be/aircAruvnKk) | 18:40 | neurons, layers, weights and biases: this deck's network, animated |
+| [Gradient descent, how neural networks learn (ch.2)](https://youtu.be/IHZwWFHWa-w) | 20:33 | the loss surface and gradient descent |
+| [Backpropagation, intuitively (ch.3)](https://youtu.be/Ilg3gGewQ5U) | 12:47 | backprop, the idea |
+| [Backpropagation calculus (ch.4)](https://youtu.be/tIeHLnjs5U8) | 10:18 | backprop, the chain-rule maths: the deck's hand-worked 2-2-1 network |
+| [But what is cross-entropy? (Compression is Intelligence pt 2)](https://youtu.be/GlYgs6v2YfU) | 33:51 | the binary cross-entropy loss used here |
+| [Visualizing the chain rule and product rule (Essence of calculus ch.4)](https://youtu.be/YG15m2VwSjA) | 15:56 | the chain rule that backprop repeats layer by layer |
+
 ## Outline
 
 | Pages | Topic |

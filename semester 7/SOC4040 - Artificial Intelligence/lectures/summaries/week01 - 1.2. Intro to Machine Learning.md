@@ -10,6 +10,15 @@ Notebook: [linear_regression.ipynb](../../resources/linear_regression.ipynb)
 
 ---
 
+## 🎥 Watch: 3Blue1Brown
+
+The professor recommended 3Blue1Brown in class. These are the videos that match this lecture ([full list](../../README.md#-3blue1brown-recommended-in-class)).
+
+| Video | Length | Why it helps here |
+|---|---|---|
+| [Gradient descent, how neural networks learn (ch.2)](https://youtu.be/IHZwWFHWa-w) | 20:33 | the same cost-surface picture as this deck's gradient descent, just with more parameters |
+| [The paradox of the derivative (Essence of calculus ch.2)](https://youtu.be/9vKqVkMQHKk) | 16:50 | what the slope in the update rule actually is |
+
 ## Definitions
 
 **Machine learning**, two definitions he gives:

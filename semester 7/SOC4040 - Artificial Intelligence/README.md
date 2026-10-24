@@ -132,6 +132,37 @@ To run the notebooks:
 pip install numpy pandas matplotlib scikit-learn jupyter
 ```
 
+## 🎥 3Blue1Brown (recommended in class)
+
+The professor recommended **3Blue1Brown** out loud in class; it isn't written in any deck or on eClass, so
+the exact videos weren't named. The series below are the ones that line up with this course, and each lecture
+summary has its own **Watch** section with the matching videos.
+
+| Series | Videos | Best for |
+|---|---|---|
+| [**Neural networks**](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) | 10 | **The main one.** Ch.1–4 are 7.1 almost scene for scene (network → gradient descent → backprop → backprop calculus) |
+| [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | 16 | Matrices for 2.1, dot products for 4.2, **eigenvectors for PCA (6.2)** |
+| [Essence of calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) | 12 | Derivatives for gradient descent (1.2), the chain rule behind backprop (7.1) |
+
+| Lecture | Watch |
+|---|---|
+| 1.2 Linear regression, gradient descent | [Gradient descent, how neural networks learn](https://youtu.be/IHZwWFHWa-w) · [The paradox of the derivative](https://youtu.be/9vKqVkMQHKk) |
+| 2.1 Multi-variable regression, normal equation | [Linear transformations and matrices](https://youtu.be/kYB8IZa5AuE) · [Inverse matrices](https://youtu.be/uQhTuRlWMxw) |
+| 2.2 Logistic regression | [But what is cross-entropy?](https://youtu.be/GlYgs6v2YfU) (the log-loss) |
+| 3.2 Naïve Bayes | [Bayes theorem, the geometry of changing beliefs](https://youtu.be/HZGCoVF3YvM) · [The medical test paradox](https://youtu.be/lG4VkPoG3ko) |
+| 4.1 Decision tree | [Reinventing Entropy](https://youtu.be/l6DKRf-fAAM) (entropy and information gain) |
+| 4.2 SVM | [Dot products and duality](https://youtu.be/LyGKycYT2v0) |
+| **6.2 PCA** (midterm) | [Eigenvectors and eigenvalues](https://youtu.be/PFDu9oVAE-g) · [A quick trick for computing eigenvalues](https://youtu.be/e50Bj7jn9IQ) (2×2, like slide 17) · [Change of basis](https://youtu.be/P2LTAUO1TdA) |
+| **7.1 Deep learning (DNN)** (final) | Neural networks ch.1–4: [1](https://youtu.be/aircAruvnKk) · [2](https://youtu.be/IHZwWFHWa-w) · [3](https://youtu.be/Ilg3gGewQ5U) · [4](https://youtu.be/tIeHLnjs5U8) · [cross-entropy](https://youtu.be/GlYgs6v2YfU) · [chain rule](https://youtu.be/YG15m2VwSjA) |
+
+3.1, 5.2 and 6.1 (K-Means) have no matching 3Blue1Brown video.
+
+For the later weeks of his plan (NLP, Transformers, generative models), the same playlist continues:
+[Large Language Models explained briefly](https://youtu.be/LPZh9BOjkQs) ·
+[Transformers (ch.5)](https://youtu.be/wjZofJX0v4M) · [Attention (ch.6)](https://youtu.be/eMlx5fFNoYc) ·
+[How might LLMs store facts (ch.7)](https://youtu.be/9-Jl0dxWQs8) ·
+[How AI images and videos work](https://youtu.be/iv-5mZ_9CPY) (guest video by Welch Labs).
+
 ## Textbooks
 
 - Russell & Norvig, *Artificial Intelligence: A Modern Approach* (Pearson, 2017)
