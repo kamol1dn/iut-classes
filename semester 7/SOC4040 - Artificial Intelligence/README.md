@@ -41,8 +41,8 @@ The professor said in class on **Thu 2026-10-22** (week 7): the midterm covers m
 and **this week's (week 7) topics go to the final**. So study lectures 1.1 through the week-6 lecture, and
 skip anything from the 10-19 and 10-22 classes.
 
-**The week-6 decks are now up (posted 10-23/24):** [6.1](lectures/week06%20-%206.1.%20Unsupervised%20Learning%201.md)
-and [6.2](lectures/week06%20-%206.2.%20Unsupervised%20Learning%202.md) *Unsupervised Learning*, with
+**The week-6 decks are now up (posted 10-23/24):** [6.1](lectures/summaries/week06%20-%206.1.%20Unsupervised%20Learning%201.md)
+and [6.2](lectures/summaries/week06%20-%206.2.%20Unsupervised%20Learning%202.md) *Unsupervised Learning*, with
 `PCA.ipynb` and `K-Means.ipynb`. They're on the midterm, so the PCA rumour (10-15) was right.
 Classmates also say there are **open questions worth ~6 points**, e.g. *"the difference between k-means and
 k-means++"*, and that decision trees will come up. The week-7 deck (7.1 DNN) is for the final.
@@ -64,7 +64,7 @@ This is the first of the two 10% homeworks.
 - Classmates say the **TA may ask you to explain your code**, so understand every line you submit.
 - Questions go to the EA on Discord.
 - **Full brief, rules, grading and step plan: [homework/hw1-kaggle](homework/hw1-kaggle/README.md)** ([competition](https://www.kaggle.com/competitions/soc-4040-hw-1)). Task: 5-class cancer type from 18 features, scored by **macro-F1**. Grading: **80% leaderboard band**, 10% notebook, 10% report. AI help is allowed (Option A), so list the tools in the report.
-- Relevant material: [5.2 Data preparation](lectures/week05%20-%205.2.%20Data%20preparation%20for%20ML%20models.md)
+- Relevant material: [5.2 Data preparation](lectures/summaries/week05%20-%205.2.%20Data%20preparation%20for%20ML%20models.md)
   and [titanic_data_preparation.ipynb](resources/titanic_data_preparation.ipynb).
 
 ## 🔴 Term project — dates that are not on eClass
@@ -83,7 +83,7 @@ Topic uniqueness is first-come, so forming a team early matters more than it loo
 > onward — he goes Clustering → Deep Learning → CNNs → Advanced CV, then NLP,
 > Transformers, Generative Models, RL and Deep RL. SVM and object detection are
 > not in his version. Full comparison in
-> [the 1.1 summary](lectures/week01%20-%201.1.%20Intro%20to%20AI.md).
+> [the 1.1 summary](lectures/summaries/week01%20-%201.1.%20Intro%20to%20AI.md).
 
 ## Materials on hand
 
@@ -92,18 +92,18 @@ for the diagrams.
 
 | Week | Lecture | Topic | Summary | Slides |
 |---|---|---|---|---|
-| 1 | 1.1 | Intro to AI - foundations, paradigms, LLMs, ethics | [md](lectures/week01%20-%201.1.%20Intro%20to%20AI.md) | [pdf](lectures/week01%20-%201.1.%20Intro%20to%20AI.pdf) |
-| 1 | 1.2 | Linear regression, cost function, gradient descent | [md](lectures/week01%20-%201.2.%20Intro%20to%20Machine%20Learning.md) | [pdf](lectures/week01%20-%201.2.%20Intro%20to%20Machine%20Learning.pdf) |
-| 2 | 2.1 | Multi-variable + polynomial regression, normal equation | [md](lectures/week02%20-%202.1.%20Intro%20to%20Machine%20Learning.md) | [pdf](lectures/week02%20-%202.1.%20Intro%20to%20Machine%20Learning.pdf) |
-| 2 | 2.2 | Logistic regression, multi-class, regularization | [md](lectures/week02%20-%202.2.%20Logistic%20Regression.md) | [pdf](lectures/week02%20-%202.2.%20Logistic%20Regression.pdf) |
-| 3 | 3.1 | Evaluation: MSE/RMSE/MAE/R², confusion matrix, precision/recall/F1 | [md](lectures/week03%20-%203.1.%20Evaluating%20Learning%20Algorithms.md) | [pdf](lectures/week03%20-%203.1.%20Evaluating%20Learning%20Algorithms.pdf) |
-| 3 | 3.2 | Naïve Bayes (Bayes' theorem, shopping example) + KNN | [md](lectures/week03%20-%203.2.%20Naive%20Bayes%20and%20KNN.md) | [pdf](lectures/week03%20-%203.2.%20Naive%20Bayes%20and%20KNN.pdf) |
-| 4 | 4.1 | **Decision tree** (entropy, information gain, Play-Tennis example) + **random forest** | [md](lectures/week04%20-%204.1.%20Machine%20Learning%20Decision%20Tree.md) | [pdf](lectures/week04%20-%204.1.%20Machine%20Learning%20Decision%20Tree.pdf) |
-| 4 | 4.2 | **SVM**: max margin, hard/soft margin + hinge loss, C, kernels | [md](lectures/week04%20-%204.2.%20Machine%20Learning%20Support%20Vector%20Machine.md) | [pdf](lectures/week04%20-%204.2.%20Machine%20Learning%20Support%20Vector%20Machine.pdf) |
-| 5 | 5.2 | **Data preparation**: MCAR/MAR/MNAR + imputation, IQR/Z-score outliers, scaling, encoding, SMOTE, feature selection, leakage. Makeup video for week 4 L2 = YouTube link in week 5 | [md](lectures/week05%20-%205.2.%20Data%20preparation%20for%20ML%20models.md) | [pdf](lectures/week05%20-%205.2.%20Data%20preparation%20for%20ML%20models.pdf) |
-| 6 | 6.1 | **K-Means**: steps, sum-of-squared-distances objective, **K-Means++** (5-point worked example), elbow method, pitfalls | [md](lectures/week06%20-%206.1.%20Unsupervised%20Learning%201.md) | [pdf](lectures/week06%20-%206.1.%20Unsupervised%20Learning%201.pdf) |
-| 6 | 6.2 | **PCA**: definitions, the 5 steps, covariance → eigenvectors → projection, slide-17 example worked in full | [md](lectures/week06%20-%206.2.%20Unsupervised%20Learning%202.md) | [pdf](lectures/week06%20-%206.2.%20Unsupervised%20Learning%202.pdf) |
-| 7 | 7.1 | **Deep learning (DNN)**: perceptron, losses, gradient descent, backprop by hand on a 2-2-1 net, activations. **Final, not midterm** | [md](lectures/week07%20-%207.1.%20Deep%20Learning%20(DNN).md) | [pdf](lectures/week07%20-%207.1.%20Deep%20Learning%20(DNN).pdf) |
+| 1 | 1.1 | Intro to AI - foundations, paradigms, LLMs, ethics | [md](lectures/summaries/week01%20-%201.1.%20Intro%20to%20AI.md) | [pdf](lectures/slides/week01%20-%201.1.%20Intro%20to%20AI.pdf) |
+| 1 | 1.2 | Linear regression, cost function, gradient descent | [md](lectures/summaries/week01%20-%201.2.%20Intro%20to%20Machine%20Learning.md) | [pdf](lectures/slides/week01%20-%201.2.%20Intro%20to%20Machine%20Learning.pdf) |
+| 2 | 2.1 | Multi-variable + polynomial regression, normal equation | [md](lectures/summaries/week02%20-%202.1.%20Intro%20to%20Machine%20Learning.md) | [pdf](lectures/slides/week02%20-%202.1.%20Intro%20to%20Machine%20Learning.pdf) |
+| 2 | 2.2 | Logistic regression, multi-class, regularization | [md](lectures/summaries/week02%20-%202.2.%20Logistic%20Regression.md) | [pdf](lectures/slides/week02%20-%202.2.%20Logistic%20Regression.pdf) |
+| 3 | 3.1 | Evaluation: MSE/RMSE/MAE/R², confusion matrix, precision/recall/F1 | [md](lectures/summaries/week03%20-%203.1.%20Evaluating%20Learning%20Algorithms.md) | [pdf](lectures/slides/week03%20-%203.1.%20Evaluating%20Learning%20Algorithms.pdf) |
+| 3 | 3.2 | Naïve Bayes (Bayes' theorem, shopping example) + KNN | [md](lectures/summaries/week03%20-%203.2.%20Naive%20Bayes%20and%20KNN.md) | [pdf](lectures/slides/week03%20-%203.2.%20Naive%20Bayes%20and%20KNN.pdf) |
+| 4 | 4.1 | **Decision tree** (entropy, information gain, Play-Tennis example) + **random forest** | [md](lectures/summaries/week04%20-%204.1.%20Machine%20Learning%20Decision%20Tree.md) | [pdf](lectures/slides/week04%20-%204.1.%20Machine%20Learning%20Decision%20Tree.pdf) |
+| 4 | 4.2 | **SVM**: max margin, hard/soft margin + hinge loss, C, kernels | [md](lectures/summaries/week04%20-%204.2.%20Machine%20Learning%20Support%20Vector%20Machine.md) | [pdf](lectures/slides/week04%20-%204.2.%20Machine%20Learning%20Support%20Vector%20Machine.pdf) |
+| 5 | 5.2 | **Data preparation**: MCAR/MAR/MNAR + imputation, IQR/Z-score outliers, scaling, encoding, SMOTE, feature selection, leakage. Makeup video for week 4 L2 = YouTube link in week 5 | [md](lectures/summaries/week05%20-%205.2.%20Data%20preparation%20for%20ML%20models.md) | [pdf](lectures/slides/week05%20-%205.2.%20Data%20preparation%20for%20ML%20models.pdf) |
+| 6 | 6.1 | **K-Means**: steps, sum-of-squared-distances objective, **K-Means++** (5-point worked example), elbow method, pitfalls | [md](lectures/summaries/week06%20-%206.1.%20Unsupervised%20Learning%201.md) | [pdf](lectures/slides/week06%20-%206.1.%20Unsupervised%20Learning%201.pdf) |
+| 6 | 6.2 | **PCA**: definitions, the 5 steps, covariance → eigenvectors → projection, slide-17 example worked in full | [md](lectures/summaries/week06%20-%206.2.%20Unsupervised%20Learning%202.md) | [pdf](lectures/slides/week06%20-%206.2.%20Unsupervised%20Learning%202.pdf) |
+| 7 | 7.1 | **Deep learning (DNN)**: perceptron, losses, gradient descent, backprop by hand on a 2-2-1 net, activations. **Final, not midterm** | [md](lectures/summaries/week07%20-%207.1.%20Deep%20Learning%20(DNN).md) | [pdf](lectures/slides/week07%20-%207.1.%20Deep%20Learning%20(DNN).pdf) |
 
 > ⚠️ **6.1 slide 23 has two wrong distances** in the K-Means++ example: B→E is 98 (not 85) and C→E is 32
 > (not 25). The conclusion (C or D next) still holds.
@@ -112,7 +112,7 @@ for the diagrams.
 > `Σ(y − ȳ)²`, not `Σ(h(x) − ȳ)²`. The notebook uses the correct one.
 
 The 1.2 deck was also re-posted as an editable
-[pptx](lectures/week01%20-%201.2.%20Intro%20to%20Machine%20Learning.pptx). Same content as the PDF.
+[pptx](lectures/slides/week01%20-%201.2.%20Intro%20to%20Machine%20Learning.pptx). Same content as the PDF.
 
 Notebooks:
 
@@ -149,7 +149,7 @@ pip install numpy pandas matplotlib scikit-learn jupyter
 
 ```
 syllabus/    syllabus.md
-lectures/    PDF decks, prefixed by week
+lectures/    slides/ = PDF (and a few PPTX) decks, prefixed by week · summaries/ = .md notes
 homework/    assignments as they are set
 resources/   practice notebooks
 my-notes/    your own notes

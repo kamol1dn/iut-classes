@@ -34,7 +34,7 @@ Mirrored from [eClass](https://eclass.inha.ac.kr/) on **2026-09-20** (week 3).
    ([gnoejh/soc3050code](https://github.com/gnoejh/soc3050code), [gnoejh/soc4180](https://github.com/gnoejh/soc4180))
    into each course's `labs/` and `git pull`.
 3. **Recorded VODs** (Blockchain) — online lectures; slides are often view-only, so the VODs are
-   transcribed and summarised in `lectures/vod/`. Started two weeks late, on 09-24.
+   transcribed in `lectures/vod/` and summarised in `lectures/summaries/vod/`. Started two weeks late, on 09-24.
 
 ---
 
@@ -128,7 +128,7 @@ Every course follows the same shape:
 <COURSE CODE> - <Name>/
 ├── README.md      course dashboard: how material is posted, what is on hand, links
 ├── syllabus/      syllabus.md (readable) + the original PDF where one exists
-├── lectures/      slide decks and notes, prefixed "weekNN - "
+├── lectures/      slides/ = original decks · vod/ = videos + transcripts · summaries/ = our .md notes
 ├── labs/          (Jeong Hong's courses) clone the GitHub repo here
 ├── homework/      assignments as they are set
 ├── resources/     notebooks, practice code, timetable images

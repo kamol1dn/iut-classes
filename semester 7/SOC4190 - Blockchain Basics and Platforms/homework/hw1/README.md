@@ -73,8 +73,8 @@ That's about a dozen handwritten exercises, so budget an evening for Part 4 alon
 The handout's "Lecture 3" and "Lecture 4" are the two week-4 videos, both now summarised.
 Each summary marks which homework question each section feeds:
 
-- [Bitcoin: Where It Came From, and What a Block Is](../../lectures/vod/week04%20-%20Bitcoin%20-%20Where%20It%20Came%20From,%20and%20What%20a%20Block%20Is.md): Part 2
+- [Bitcoin: Where It Came From, and What a Block Is](../../lectures/summaries/vod/week04%20-%20Bitcoin%20-%20Where%20It%20Came%20From,%20and%20What%20a%20Block%20Is.md): Part 2
   (header fields, Unix time by hand, drawing the chain, block rhythm)
-- [Cryptography for Blockchains](../../lectures/vod/week04%20-%20Cryptography%20for%20Blockchains.md): Parts 3–5
+- [Cryptography for Blockchains](../../lectures/summaries/vod/week04%20-%20Cryptography%20for%20Blockchains.md): Parts 3–5
   (the hash-function promises by name, double SHA-256, Merkle trees and proofs, Caesar, keys)
 - Part 1 comes from the two week-3 intro lectures in the same folder.

@@ -20,7 +20,7 @@ The quiz text gives only the lecture each question comes from. The actual instru
 - **Local means something you actually saw**: a billboard, the metro, a shop, TV, a local website or Telegram channel.
   Not something from ChatGPT or a random internet search [28:28].
 - Name the fallacy and say why the ad commits it. The list to choose from (details in the
-  [6-1 summary](../../lectures/vod/week06%20-%20Lecture%206-1.md#3-evaluating-ads-the-fallacies-1614)):
+  [6-1 summary](../../lectures/summaries/vod/week06%20-%20Lecture%206-1.md#3-evaluating-ads-the-fallacies-1614)):
   scare tactics · questionable cause · popular appeal / group pressure · snob appeal · appeal to inappropriate authority ·
   hasty generalization (stereotypes) · amphiboly · naturalistic fallacy ("natural" = good) · euphemism · hyperbole ("best", "No.1",
   "miracle") · false analogy · misleading statistics.
@@ -48,7 +48,7 @@ So answer **at least 6 of these 11**:
 11. What are its possible effects on individuals and society?
 
 Context he gave: funding and ownership (*Manufacturing Consent*'s five filters), sensationalism, bias, echo chambers. See the
-[6-2 summary](../../lectures/vod/week06%20-%20Lecture%206-2.md). Question 2 is worth more (3 pts), so it's the one to write carefully.
+[6-2 summary](../../lectures/summaries/vod/week06%20-%20Lecture%206-2.md). Question 2 is worth more (3 pts), so it's the one to write carefully.
 
 ## Before you submit
 

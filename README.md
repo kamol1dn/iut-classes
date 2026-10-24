@@ -26,7 +26,10 @@ semester N/
 └── <CODE> - <Name>/
     ├── README.md          how this professor posts material, what is on hand
     ├── syllabus/          syllabus.md (readable) + original PDF
-    ├── lectures/          decks and notes, prefixed "weekNN - "
+    ├── lectures/
+    │   ├── slides/        original decks (pptx/pdf/html), prefixed "weekNN - "
+    │   ├── vod/           lecture videos (local only) + transcripts
+    │   └── summaries/     our .md summary of every deck; summaries/vod/ for the videos
     ├── labs/              cloned course repos live here (git-ignored)
     ├── homework/
     ├── resources/         notebooks, practice code, timetable images

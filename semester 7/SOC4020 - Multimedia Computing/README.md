@@ -41,7 +41,7 @@ deck. Assignment 1's doc softens that to a sliding penalty for up to 24 h; see i
 > **final in week 15**, and a **review class in week 16**. eClass puts the final
 > in week 16. His plan also swaps most of the post-midterm compression material
 > for **computer graphics and ray tracing** in weeks 9-10. Full comparison in
-> [the L1 summary](lectures/week01%20-%20Multimedia%20Computing%20L1.md).
+> [the L1 summary](lectures/summaries/week01%20-%20Multimedia%20Computing%20L1.md).
 
 Per the syllabus, homework falls in **weeks 2, 9, 10 and 12**. In practice the
 first one arrived on eClass in week 5:
@@ -59,19 +59,19 @@ for the diagrams.
 
 | Week | Deck | Topic | Summary | Slides |
 |---|---|---|---|---|
-| 1 | L1 | Intro to multimedia, image processing, CV survey | [md](lectures/week01%20-%20Multimedia%20Computing%20L1.md) | [pptx](lectures/week01%20-%20Multimedia%20Computing%20L1.pptx) *(25 MB)* |
-| 1 | L2 | Sound, A/D conversion, sampling, **Nyquist & aliasing** | [md](lectures/week01%20-%20Multimedia%20Computing%20L2.md) | [pptx](lectures/week01%20-%20Multimedia%20Computing%20L2.pptx) |
-| 2 | L3 | SNR, SQNR, audio filtering, **MIDI**, PCM | [md](lectures/week02%20-%20Multimedia%20Computing%20L3.md) | [pptx](lectures/week02%20-%20Multimedia%20Computing%20L3.pptx) |
-| 2 | L4 | **Entropy, RLC, Shannon-Fano, Huffman, LZW** | [md](lectures/week02%20-%20Multimedia%20Computing%20L4%20(update).md) | [pptx](lectures/week02%20-%20Multimedia%20Computing%20L4%20(update).pptx) |
-| 3 | L5 | **Arithmetic coding**, lossy compression, psychoacoustics, **MP3 / AAC** | [md](lectures/week03%20-%20Multimedia%20Computing%20L5.md) | [pptx](lectures/week03%20-%20Multimedia%20Computing%20L5.pptx) |
-| 3 | L6 | Image fundamentals, **intensity transforms, gamma, histogram equalization** | [md](lectures/week03%20-%20Multimedia%20Computing%20L6.md) | [pptx](lectures/week03%20-%20Multimedia%20Computing%20L6.pptx) *(10 MB, diagram-heavy)* |
-| 4 | L7 | **Pixel neighbours, connectivity, distance metrics**, radiometry vs photometry, **CIE XYZ & chromaticity** | [md](lectures/week04%20-%20Multimedia%20Computing%20L7.md) | [pptx](lectures/week04%20-%20Multimedia%20Computing%20L7.pptx) |
-| 4 | L8 | MATLAB / Octave / Colab for image processing (tooling) | [md](lectures/week04%20-%20Multimedia%20Computing%20L8%20(Matlab-Octave).md) | [pptx](lectures/week04%20-%20Multimedia%20Computing%20L8%20(Matlab-Octave).pptx) *(code screenshots)* |
-| 5 | L9 | Point processing: **LUTs, histogram equalization & specification**, arithmetic/logic ops (deepens L6) | [md](lectures/week05%20-%20Multimedia%20Computing%20L9.md) | [pptx](lectures/week05%20-%20Multimedia%20Computing%20L9.pptx) |
-| 5 | L10 | **Morphology**: structuring elements, dilation/erosion, opening/closing, hit-or-miss, boundary, skeletons, top-hat | [md](lectures/week05%20-%20Multimedia%20Computing%20L10.md) | [pptx](lectures/week05%20-%20Multimedia%20Computing%20L10.pptx) |
-| 6 | L11 | **Spatial filtering & edges**: convolution, borders, blur/Gaussian, sharpen/unsharp/high-boost, Roberts/Prewitt/Sobel, compass, Laplacian + zero crossings, LoG/DoG, colour edges, median/min/max | [md](lectures/week06%20-%20Multimedia%20Computing%20L11.md) | [pptx](lectures/week06%20-%20Multimedia%20Computing%20L11.pptx) |
-| 7 | L12 | **Pattern classification**: features and pattern classes, sea bass vs salmon, decision boundaries and cost, generalization, PR design cycle, nearest class mean (σ-scaled), nearest neighbour / k-NN, **Bayes rule** | [md](lectures/week07%20-%20Multimedia%20Computing%20L12.md) | [pptx](lectures/week07%20-%20Multimedia%20Computing%20L12.pptx) |
-| 7 | L13 | **Image compression** (Gonzalez ch. 8): compression ratio and redundancy, the three redundancies, run-length coding, DCT and the JPEG steps, quality measures. New topic, not a continuation of L12. ⚠️ The run-length demo computes the ratio upside down | [md](lectures/week07%20-%20Multimedia%20Computing%20L13.md) | [pptx](lectures/week07%20-%20Multimedia%20Computing%20L13.pptx) |
+| 1 | L1 | Intro to multimedia, image processing, CV survey | [md](lectures/summaries/week01%20-%20Multimedia%20Computing%20L1.md) | [pptx](lectures/slides/week01%20-%20Multimedia%20Computing%20L1.pptx) *(25 MB)* |
+| 1 | L2 | Sound, A/D conversion, sampling, **Nyquist & aliasing** | [md](lectures/summaries/week01%20-%20Multimedia%20Computing%20L2.md) | [pptx](lectures/slides/week01%20-%20Multimedia%20Computing%20L2.pptx) |
+| 2 | L3 | SNR, SQNR, audio filtering, **MIDI**, PCM | [md](lectures/summaries/week02%20-%20Multimedia%20Computing%20L3.md) | [pptx](lectures/slides/week02%20-%20Multimedia%20Computing%20L3.pptx) |
+| 2 | L4 | **Entropy, RLC, Shannon-Fano, Huffman, LZW** | [md](lectures/summaries/week02%20-%20Multimedia%20Computing%20L4%20(update).md) | [pptx](lectures/slides/week02%20-%20Multimedia%20Computing%20L4%20(update).pptx) |
+| 3 | L5 | **Arithmetic coding**, lossy compression, psychoacoustics, **MP3 / AAC** | [md](lectures/summaries/week03%20-%20Multimedia%20Computing%20L5.md) | [pptx](lectures/slides/week03%20-%20Multimedia%20Computing%20L5.pptx) |
+| 3 | L6 | Image fundamentals, **intensity transforms, gamma, histogram equalization** | [md](lectures/summaries/week03%20-%20Multimedia%20Computing%20L6.md) | [pptx](lectures/slides/week03%20-%20Multimedia%20Computing%20L6.pptx) *(10 MB, diagram-heavy)* |
+| 4 | L7 | **Pixel neighbours, connectivity, distance metrics**, radiometry vs photometry, **CIE XYZ & chromaticity** | [md](lectures/summaries/week04%20-%20Multimedia%20Computing%20L7.md) | [pptx](lectures/slides/week04%20-%20Multimedia%20Computing%20L7.pptx) |
+| 4 | L8 | MATLAB / Octave / Colab for image processing (tooling) | [md](lectures/summaries/week04%20-%20Multimedia%20Computing%20L8%20(Matlab-Octave).md) | [pptx](lectures/slides/week04%20-%20Multimedia%20Computing%20L8%20(Matlab-Octave).pptx) *(code screenshots)* |
+| 5 | L9 | Point processing: **LUTs, histogram equalization & specification**, arithmetic/logic ops (deepens L6) | [md](lectures/summaries/week05%20-%20Multimedia%20Computing%20L9.md) | [pptx](lectures/slides/week05%20-%20Multimedia%20Computing%20L9.pptx) |
+| 5 | L10 | **Morphology**: structuring elements, dilation/erosion, opening/closing, hit-or-miss, boundary, skeletons, top-hat | [md](lectures/summaries/week05%20-%20Multimedia%20Computing%20L10.md) | [pptx](lectures/slides/week05%20-%20Multimedia%20Computing%20L10.pptx) |
+| 6 | L11 | **Spatial filtering & edges**: convolution, borders, blur/Gaussian, sharpen/unsharp/high-boost, Roberts/Prewitt/Sobel, compass, Laplacian + zero crossings, LoG/DoG, colour edges, median/min/max | [md](lectures/summaries/week06%20-%20Multimedia%20Computing%20L11.md) | [pptx](lectures/slides/week06%20-%20Multimedia%20Computing%20L11.pptx) |
+| 7 | L12 | **Pattern classification**: features and pattern classes, sea bass vs salmon, decision boundaries and cost, generalization, PR design cycle, nearest class mean (σ-scaled), nearest neighbour / k-NN, **Bayes rule** | [md](lectures/summaries/week07%20-%20Multimedia%20Computing%20L12.md) | [pptx](lectures/slides/week07%20-%20Multimedia%20Computing%20L12.pptx) |
+| 7 | L13 | **Image compression** (Gonzalez ch. 8): compression ratio and redundancy, the three redundancies, run-length coding, DCT and the JPEG steps, quality measures. New topic, not a continuation of L12. ⚠️ The run-length demo computes the ratio upside down | [md](lectures/summaries/week07%20-%20Multimedia%20Computing%20L13.md) | [pptx](lectures/slides/week07%20-%20Multimedia%20Computing%20L13.pptx) |
 
 Plus [practice code L3.rar](resources/practice%20code%20L3.rar) — extract before use.
 Week 4 practice: [Lecture7.ipynb](resources/Lecture7.ipynb) (sRGB → XYZ),
@@ -109,7 +109,7 @@ formulas and algorithms you will be asked to reproduce.
 
 ```
 syllabus/    syllabus.md
-lectures/    PPTX decks, prefixed by the week they were posted
+lectures/    slides/ = PPTX decks, prefixed by the week posted · summaries/ = .md notes
 homework/    assignments as they are set (assignment1/ = Assignment 1)
 resources/   practice code archives
 my-notes/    your own notes

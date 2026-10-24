@@ -2,9 +2,9 @@
 
 **About 45 min · ends with your Quiz 4 attempt (Quiz 4 closed Mon 2026-10-19 23:59)**
 
-Sources: [Lecture 6-1 summary](../lectures/vod/week06%20-%20Lecture%206-1.md) (ads) ·
-[Lecture 6-2 summary](../lectures/vod/week06%20-%20Lecture%206-2.md) (media) ·
-[Lecture 4 summary](../lectures/vod/week04%20-%20Lecture%204.md) (the fallacy list) ·
+Sources: [Lecture 6-1 summary](../lectures/summaries/vod/week06%20-%20Lecture%206-1.md) (ads) ·
+[Lecture 6-2 summary](../lectures/summaries/vod/week06%20-%20Lecture%206-2.md) (media) ·
+[Lecture 4 summary](../lectures/summaries/vod/week04%20-%20Lecture%204.md) (the fallacy list) ·
 [Quiz 4 prep](../homework/quiz4/README.md)
 
 | Block | Time | What |
@@ -112,13 +112,13 @@ Tip: answer 7–8 questions instead of 6 for a safety margin, and number them so
 ## If you have energy left (midterm warm-up, 10 min)
 
 Quick oral self-check. The answers are in the linked summaries.
-- What's the difference between **equivocation** and **amphiboly**? ([L4](../lectures/vod/week04%20-%20Lecture%204.md))
+- What's the difference between **equivocation** and **amphiboly**? ([L4](../lectures/summaries/vod/week04%20-%20Lecture%204.md))
 - Straw man vs red herring: which one distorts, and which one changes the subject?
 - Why is appeal to ignorance **not** a fallacy in court?
-- Name the 5 criteria for evaluating an argument (clarity, …). ([L5](../lectures/vod/week05%20-%20Lecture%205.md))
+- Name the 5 criteria for evaluating an argument (clarity, …). ([L5](../lectures/summaries/vod/week05%20-%20Lecture%205.md))
 - Descriptive vs prescriptive premise: give one example of each.
 - Herman & Chomsky's five filters. Name them all.
-- Why is **falsifiability** the test of a hypothesis, not confirmation? (Black swan.) ([Video 7](../lectures/vod/week07%20-%20Video%207.md))
+- Why is **falsifiability** the test of a hypothesis, not confirmation? (Black swan.) ([Video 7](../lectures/summaries/vod/week07%20-%20Video%207.md))
 - Kuhn: what triggers a paradigm shift?
 
 Then make sure **Video 7** is fully watched inside the eClass player (window closes Sun 10-25 23:59).

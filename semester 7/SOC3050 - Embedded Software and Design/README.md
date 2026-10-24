@@ -80,7 +80,7 @@ No class changes allowed.
 |---|---|---|
 | Syllabus (PDF) | — | [syllabus/soc3050.pdf](syllabus/soc3050.pdf) |
 | Timetable image, posted 09-18 | — | [resources/timetable - Class0918.png](resources/timetable%20-%20Class0918.png) |
-| Introduction to Computing | 1 | 📄 [summary](lectures/week01%20-%200_IntroductionToComputing.md) · [.pps](lectures/week01%20-%200_IntroductionToComputing.pps) |
+| Introduction to Computing | 1 | 📄 [summary](lectures/summaries/week01%20-%200_IntroductionToComputing.md) · [.pps](lectures/slides/week01%20-%200_IntroductionToComputing.pps) |
 
 Weeks 2–3 have nothing on eClass — check GitHub and Telegram for those.
 
@@ -101,7 +101,7 @@ C/C++ toolchain. The syllabus also promises TinyML deployment later in the term.
 
 ```
 syllabus/    syllabus.md (readable) + soc3050.pdf (original)
-lectures/    decks posted on eClass, prefixed by week; slides/ = every deck from the slides site
+lectures/    slides/ = the eClass intro deck + every deck from the slides site · summaries/ = .md notes
 course-repo/ snapshot of github.com/gnoejh/soc3050code without tools/ (read-only, refreshed each sync)
 labs/        clone the GitHub repo here to build and simulate (git-ignored)
 homework/    assignments as they are set

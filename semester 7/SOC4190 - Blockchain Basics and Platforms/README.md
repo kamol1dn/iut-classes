@@ -15,7 +15,7 @@ activities**, so VOD windows don't affect attendance. The **weekly quiz** does.
 
 | Item | Length | Notes |
 |---|---|---|
-| [SLIDE] Mining: Who Writes the Block (ubfile 72902) | 28 pp | **Downloadable**: [pdf](lectures/week07%20-%20Mining%20-%20Who%20Writes%20the%20Block%20(slides).pdf) · [summary](lectures/week07%20-%20Mining%20-%20Who%20Writes%20the%20Block%20(slides).md). Proof of work, target and bits, nonce, difficulty, hashrate, coinbase, subsidy and halving, difficulty adjustment, pools, orphans, confirmations, 51% attack |
+| [SLIDE] Mining: Who Writes the Block (ubfile 72902) | 28 pp | **Downloadable**: [pdf](lectures/slides/week07%20-%20Mining%20-%20Who%20Writes%20the%20Block%20(slides).pdf) · [summary](lectures/summaries/week07%20-%20Mining%20-%20Who%20Writes%20the%20Block%20(slides).md). Proof of work, target and bits, nonce, difficulty, hashrate, coinbase, subsidy and halving, difficulty adjustment, pools, orphans, confirmations, 51% attack |
 | [VIDEO] Mining: Who Writes the Block, Parts 1 and 2 (VOD 72903, 72908) | — | Not mirrored or transcribed yet |
 
 The **HTML practice games** he promised in the week-6 Part 2 video. Each is an eClass page with the game embedded
@@ -33,9 +33,9 @@ graded**, and good quiz prep. All use the real payment `d9f91d3f…6dd6` from Sl
 
 | Item | Length | Notes |
 |---|---|---|
-| [VIDEO] Bitcoin Transactions, Part 1 | 50:06 | UTXO, change, fee (not written anywhere), the 225-byte layout, little-endian, txid · [summary](lectures/vod/week06%20-%20Bitcoin%20Transactions%20(Part%201).md) |
-| [VIDEO] Bitcoin Transactions, Part 2 (VOD 72467) | 57:22 | Locks: Script, P2PKH, P2SH, malleability/Mt. Gox, SegWit, vbytes and fee rate · [summary](lectures/vod/week06%20-%20Bitcoin%20Transactions%20(Part%202).md) |
-| [SLIDE] Bitcoin Transactions | — | **Downloadable**: [pdf](lectures/week06%20-%20Bitcoin%20Transactions%20(slides).pdf) · [summary](lectures/week06%20-%20Bitcoin%20Transactions%20(slides).md) |
+| [VIDEO] Bitcoin Transactions, Part 1 | 50:06 | UTXO, change, fee (not written anywhere), the 225-byte layout, little-endian, txid · [summary](lectures/summaries/vod/week06%20-%20Bitcoin%20Transactions%20(Part%201).md) |
+| [VIDEO] Bitcoin Transactions, Part 2 (VOD 72467) | 57:22 | Locks: Script, P2PKH, P2SH, malleability/Mt. Gox, SegWit, vbytes and fee rate · [summary](lectures/summaries/vod/week06%20-%20Bitcoin%20Transactions%20(Part%202).md) |
+| [SLIDE] Bitcoin Transactions | — | **Downloadable**: [pdf](lectures/slides/week06%20-%20Bitcoin%20Transactions%20(slides).pdf) · [summary](lectures/summaries/week06%20-%20Bitcoin%20Transactions%20(slides).md) |
 | [SOURCE FILES] Bitcoin Transactions (ubfile 72468) | 1 KB | [`resources/week06 - Bitcoin Transactions source/`](resources/week06%20-%20Bitcoin%20Transactions%20source/README.md): two raw tx hex files + `txid.py`, which shows that one changed byte gives an unrelated txid |
 | [QUIZ] 2 Week 6 | 1 h | [Quiz 72454](https://eclass.inha.ac.kr/mod/quiz/view.php?id=72454), open 10-18 → **10-25 23:59**, 1 attempt, timer starts when you begin. **Have a calculator ready.** It's week 6's attendance |
 
@@ -50,8 +50,8 @@ graded**, and good quiz prep. All use the real payment `d9f91d3f…6dd6` from Sl
 
 | Lecture | Length | Summary | HW 1 parts |
 |---|---|---|---|
-| Bitcoin: Where It Came From, and What a Block Is | 1:04:15 | [md](lectures/vod/week04%20-%20Bitcoin%20-%20Where%20It%20Came%20From,%20and%20What%20a%20Block%20Is.md) | Part 2 |
-| Cryptography for Blockchains | 59:32 | [md](lectures/vod/week04%20-%20Cryptography%20for%20Blockchains.md) | Parts 3, 4, 5 |
+| Bitcoin: Where It Came From, and What a Block Is | 1:04:15 | [md](lectures/summaries/vod/week04%20-%20Bitcoin%20-%20Where%20It%20Came%20From,%20and%20What%20a%20Block%20Is.md) | Part 2 |
+| Cryptography for Blockchains | 59:32 | [md](lectures/summaries/vod/week04%20-%20Cryptography%20for%20Blockchains.md) | Parts 3, 4, 5 |
 
 [Homework 1](homework/hw1/README.md) (5%) was due 2026-10-18 23:55: five parts, mostly handwritten, plus
 screenshots of your own Bitcoin block and a small Python script.
@@ -70,8 +70,8 @@ so the videos were mirrored and transcribed instead.
 
 | Lecture | Length | Summary | Transcript |
 |---|---|---|---|
-| Intro to Blockchain Technology, Part 1: ledgers, trust, intermediaries, Lehman 2008, double spending | 44:14 | [md](lectures/vod/week03%20-%20Introduction%20to%20Blockchain%20Technology%20(Part%201).md) | [txt](lectures/vod/week03%20-%20Introduction%20to%20Blockchain%20Technology%20(Part%201).txt) |
-| Intro to Blockchain Technology, Part 2: shared ledger, consensus, blocks, seals and chains, (de)centralized vs distributed, P2P, gossip, DLT, Bitcoin vs Ethereum, block explorers | 51:05 | [md](lectures/vod/week03%20-%20Introduction%20to%20Blockchain%20Technology%20(Part%202).md) | [txt](lectures/vod/week03%20-%20Introduction%20to%20Blockchain%20Technology%20(Part%202).txt) |
+| Intro to Blockchain Technology, Part 1: ledgers, trust, intermediaries, Lehman 2008, double spending | 44:14 | [md](lectures/summaries/vod/week03%20-%20Introduction%20to%20Blockchain%20Technology%20(Part%201).md) | [txt](lectures/vod/week03%20-%20Introduction%20to%20Blockchain%20Technology%20(Part%201).txt) |
+| Intro to Blockchain Technology, Part 2: shared ledger, consensus, blocks, seals and chains, (de)centralized vs distributed, P2P, gossip, DLT, Bitcoin vs Ethereum, block explorers | 51:05 | [md](lectures/summaries/vod/week03%20-%20Introduction%20to%20Blockchain%20Technology%20(Part%202).md) | [txt](lectures/vod/week03%20-%20Introduction%20to%20Blockchain%20Technology%20(Part%202).txt) |
 
 - He said he **may make watching compulsory** if view counts stay low.
 - Per Part 1, quizzes **open on Sunday and close the following Sunday**.
@@ -111,7 +111,7 @@ so the videos were mirrored and transcribed instead.
 
 ```
 syllabus/    syllabus.md (transcribed v1)
-lectures/    vod/: lecture recordings (.mp4 local only), transcripts and summaries
+lectures/    slides/ = downloadable decks · vod/ = recordings (.mp4 local only) + transcripts · summaries/ = .md notes
 homework/    home assignments; keep tx hashes and screenshots here
 resources/   textbooks and tools
 my-notes/    your own notes; keep a record of your course wallet address here (never the seed)

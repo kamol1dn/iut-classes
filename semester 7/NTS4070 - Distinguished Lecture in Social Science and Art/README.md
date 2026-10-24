@@ -26,7 +26,7 @@ A weekly rhythm on eClass: one **slide deck** (`.pptx`), one or two **VODs**
 
 - **Midterm (week 8, offline)** covers the *Critical Thinking* chapters, weeks 1–7. **30 MCQ, 1% each, 1 hour**;
   ~30% fallacies (ch.5), ~60% ch.1/6/10/12, ~10% ch.2/4/11. Date not announced yet. See the
-  [Midterm info summary](lectures/vod/week07%20-%20Midterm%20info.md).
+  [Midterm info summary](lectures/summaries/vod/week07%20-%20Midterm%20info.md).
   **Drill it with the flashcard game:** `python my-notes/midterm-quiz/quiz.py` (696 cards, all chapters,
   saves progress). See its [README](my-notes/midterm-quiz/README.md).
 - **Debate (weeks 12–14, offline, on Saturdays)** is a group project worth 30%. Details to follow.
@@ -42,37 +42,37 @@ midterm. Supplementary readings are listed in [syllabus/syllabus.md](syllabus/sy
 
 | Week | Topic | File |
 |---|---|---|
-| 1 | Introduction + Ch.1 Critical Thinking | [week01 - DLSSA 1](lectures/week01%20-%20DLSSA%201%20(class%20intro%20+%20lecture%201).pptx) |
-| 2 | Ch.2 Reason & Emotion | [week02 - DLSSA 2](lectures/week02%20-%20DLSSA%202.pptx) |
-| 3 | Ch.4 Knowledge, Evidence & Errors in Thinking | [week03 - DLSSA 3](lectures/week03%20-%20DLSSA%203.pptx) |
-| 4 | Ch.5 Informal Fallacies | [week04 - DLSSA 4](lectures/week04%20-%20DLSSA%204.pptx) |
-| 5 | Ch.6 Recognizing, Analyzing & Constructing Arguments | [week05 - DLSSA 5](lectures/week05%20-%20DLSSA%205.pptx) |
-| 6 | Ch.10 Marketing & Advertising | [week06 - DLSSA 6.1](lectures/week06%20-%20DLSSA%206.1.pptx) |
-| 6 | Ch.11 Mass Media | [week06 - DLSSA 6.2](lectures/week06%20-%20DLSSA%206.2.pptx) |
-| 7 | Ch.12 Science | [week07 - DLSSA 7](lectures/week07%20-%20DLSSA%207.pptx) |
+| 1 | Introduction + Ch.1 Critical Thinking | [week01 - DLSSA 1](lectures/slides/week01%20-%20DLSSA%201%20(class%20intro%20+%20lecture%201).pptx) |
+| 2 | Ch.2 Reason & Emotion | [week02 - DLSSA 2](lectures/slides/week02%20-%20DLSSA%202.pptx) |
+| 3 | Ch.4 Knowledge, Evidence & Errors in Thinking | [week03 - DLSSA 3](lectures/slides/week03%20-%20DLSSA%203.pptx) |
+| 4 | Ch.5 Informal Fallacies | [week04 - DLSSA 4](lectures/slides/week04%20-%20DLSSA%204.pptx) |
+| 5 | Ch.6 Recognizing, Analyzing & Constructing Arguments | [week05 - DLSSA 5](lectures/slides/week05%20-%20DLSSA%205.pptx) |
+| 6 | Ch.10 Marketing & Advertising | [week06 - DLSSA 6.1](lectures/slides/week06%20-%20DLSSA%206.1.pptx) |
+| 6 | Ch.11 Mass Media | [week06 - DLSSA 6.2](lectures/slides/week06%20-%20DLSSA%206.2.pptx) |
+| 7 | Ch.12 Science | [week07 - DLSSA 7](lectures/slides/week07%20-%20DLSSA%207.pptx) |
 
-Slide-text summary of weeks 6–7 (and the debate-survey admin): [week06-07 slides md](lectures/week06-07%20-%20DLSSA%206.1,%206.2,%207%20(slides).md).
+Slide-text summary of weeks 6–7 (and the debate-survey admin): [week06-07 slides md](lectures/summaries/week06-07%20-%20DLSSA%206.1,%206.2,%207%20(slides).md).
 
 ## Lecture videos, transcripts & summaries
 
-All twelve VODs are mirrored to `lectures/vod/`. The **videos are git-ignored**;
-the transcripts and summaries are tracked, so they survive a fresh clone and can
+All twelve VODs are mirrored to `lectures/vod/`, with their summaries in `lectures/summaries/vod/`. The
+**videos are git-ignored**; the transcripts and summaries are tracked, so they survive a fresh clone and can
 be searched or asked about without the media.
 
 | Week | Lecture | Length | Chapter | Summary |
 |---|---|---|---|---|
-| 1 | Class intro | 18:09 | — (admin only) | [md](lectures/vod/week01%20-%20Class%20intro.md) |
-| 1 | Lecture 1 | 44:35 | Ch.1 Critical Thinking | [md](lectures/vod/week01%20-%20Lecture%201.md) |
-| 2 | Lecture 2 | 1:00:34 | Ch.2 Reason & Emotion | [md](lectures/vod/week02%20-%20Lecture%202.md) |
-| 3 | Lecture 2-1 | 38:22 | Ch.4 Knowledge & Evidence (pt 1) | [md](lectures/vod/week03%20-%20Lecture%202-1.md) |
-| 3 | Lecture 3-2 | 25:35 | Ch.4 Knowledge & Evidence (pt 2) | [md](lectures/vod/week03%20-%20Lecture%203-2.md) |
-| 4 | Lecture 4 | 52:26 | Ch.5 Informal Fallacies | [md](lectures/vod/week04%20-%20Lecture%204.md) |
-| 5 | Lecture 5 | 47:34 | Ch.6 Arguments: recognise, analyse, construct | [md](lectures/vod/week05%20-%20Lecture%205.md) |
-| 6 | Debate survey | 8:11 | — (debate admin: survey due 10-23 12:00, prepare both sides) | [md](lectures/vod/week06%20-%20Debate%20survey.md) |
-| 6 | Lecture 6-1 | 29:06 | Ch.10 Marketing & Advertising (**task: find a local ad with a fallacy**) | [md](lectures/vod/week06%20-%20Lecture%206-1.md) |
-| 6 | Lecture 6-2 | 26:43 | Ch.11 Mass Media (**task: media-analyse a piece of local news**) | [md](lectures/vod/week06%20-%20Lecture%206-2.md) |
-| 7 | Video 7 | 55:33 | Ch.12 Science (last lecture before the midterm) | [md](lectures/vod/week07%20-%20Video%207.md) |
-| 7 | Midterm info | 3:19 | — (**midterm format and question split**; attendance-tracked, closes 10-25) | [md](lectures/vod/week07%20-%20Midterm%20info.md) |
+| 1 | Class intro | 18:09 | — (admin only) | [md](lectures/summaries/vod/week01%20-%20Class%20intro.md) |
+| 1 | Lecture 1 | 44:35 | Ch.1 Critical Thinking | [md](lectures/summaries/vod/week01%20-%20Lecture%201.md) |
+| 2 | Lecture 2 | 1:00:34 | Ch.2 Reason & Emotion | [md](lectures/summaries/vod/week02%20-%20Lecture%202.md) |
+| 3 | Lecture 2-1 | 38:22 | Ch.4 Knowledge & Evidence (pt 1) | [md](lectures/summaries/vod/week03%20-%20Lecture%202-1.md) |
+| 3 | Lecture 3-2 | 25:35 | Ch.4 Knowledge & Evidence (pt 2) | [md](lectures/summaries/vod/week03%20-%20Lecture%203-2.md) |
+| 4 | Lecture 4 | 52:26 | Ch.5 Informal Fallacies | [md](lectures/summaries/vod/week04%20-%20Lecture%204.md) |
+| 5 | Lecture 5 | 47:34 | Ch.6 Arguments: recognise, analyse, construct | [md](lectures/summaries/vod/week05%20-%20Lecture%205.md) |
+| 6 | Debate survey | 8:11 | — (debate admin: survey due 10-23 12:00, prepare both sides) | [md](lectures/summaries/vod/week06%20-%20Debate%20survey.md) |
+| 6 | Lecture 6-1 | 29:06 | Ch.10 Marketing & Advertising (**task: find a local ad with a fallacy**) | [md](lectures/summaries/vod/week06%20-%20Lecture%206-1.md) |
+| 6 | Lecture 6-2 | 26:43 | Ch.11 Mass Media (**task: media-analyse a piece of local news**) | [md](lectures/summaries/vod/week06%20-%20Lecture%206-2.md) |
+| 7 | Video 7 | 55:33 | Ch.12 Science (last lecture before the midterm) | [md](lectures/summaries/vod/week07%20-%20Video%207.md) |
+| 7 | Midterm info | 3:19 | — (**midterm format and question split**; attendance-tracked, closes 10-25) | [md](lectures/summaries/vod/week07%20-%20Midterm%20info.md) |
 
 Each summary carries a timestamp index, so you can jump from a claim back to the
 exact passage in the `.txt`. Re-fetch or extend with:
@@ -127,7 +127,7 @@ Quizzes are 20% of this course, with one attempt each.
 
 ```
 syllabus/    syllabus.md (transcribed) + the original PDF
-lectures/    PPTX decks, prefixed by week
+lectures/    slides/ = PPTX decks · vod/ = videos (local only) + transcripts · summaries/ = .md notes
 homework/    (no written homework in this course — debates and quizzes instead)
 resources/   misc
 my-notes/    your own notes
