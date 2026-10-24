@@ -28,6 +28,8 @@ desktop.ini
 *.wav
 *.part.mp4
 *.words.json
+# ...but professors' repo snapshots stay complete (a small demo video).
+!**/course-repo/**/*.mp4
 
 # ...except homework input files handed out on eClass (small, and needed to
 # re-run the assignment). Generated outputs next to them stay ignored.

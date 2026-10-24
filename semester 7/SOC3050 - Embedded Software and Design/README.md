@@ -19,7 +19,15 @@ image and one intro deck. **The working material is on GitHub and Telegram.**
 | **Telegram** | Announcements, day-to-day comms | https://t.me/+EcqPs3qT0oZjYTI6 |
 | eClass | Syllabus, timetable, week-1 deck | [course page](https://eclass.inha.ac.kr/course/view.php?id=2615) |
 
-Cloned at `labs/soc3050code` (2026-10-02). Refresh with `git -C labs/soc3050code pull`.
+### 📦 Already in this repo (no clone needed)
+
+| What | Where | Notes |
+|---|---|---|
+| **All lecture decks**, lessons 00–19 + board pin map | [`lectures/slides/`](lectures/slides/) | Downloaded from the live slides site (rendered from the lesson sources on every push, so newer than the repo's committed `_slides/`). Download a file and open it in a browser |
+| **The course repo** (ARM + AVR projects, docs, shared libs, midterm guide) | [`course-repo/`](course-repo/) | A read-only snapshot of `gnoejh/soc3050code` at commit `7906b2f` (2026-10-24), refreshed every sync. **`tools/` is left out**: it's ~1 GB of bundled compilers and simulators. Clone the real repo to build and simulate |
+
+To build, flash or simulate, clone it: `git clone https://github.com/gnoejh/soc3050code labs/soc3050code`,
+then `git -C labs/soc3050code pull` to refresh.
 The course has moved to an **ARM edition** (`projects2026_arm/`). On 09-30, VS Code
 build, simulate and F5 debugging switched to it. **Week 4 is GPIO, polling and
 interrupts**, which is ARM lesson 05: debouncing and EXTI, with notes on reaching
@@ -28,7 +36,7 @@ those code paths under GDB (updated 10-02).
 ## 📝 Midterm (30%, week 8, 26–30 Oct)
 
 Study guide added to the repo on 2026-10-18:
-[`projects2026_arm/exam_midterm/overview.md`](labs/soc3050code/projects2026_arm/exam_midterm/overview.md).
+[`projects2026_arm/exam_midterm/overview.md`](course-repo/projects2026_arm/exam_midterm/overview.md).
 
 - **60 min, 33 multiple-choice questions** (A–D, 1 mark each), with no penalty for wrong answers, so answer every question.
 - **Closed book.** No notes, no calculator, no devices. Use a blue or black non-erasable pen.
@@ -93,8 +101,9 @@ C/C++ toolchain. The syllabus also promises TinyML deployment later in the term.
 
 ```
 syllabus/    syllabus.md (readable) + soc3050.pdf (original)
-lectures/    decks posted on eClass, prefixed by week
-labs/        clone the GitHub repo here
+lectures/    decks posted on eClass, prefixed by week; slides/ = every deck from the slides site
+course-repo/ snapshot of github.com/gnoejh/soc3050code without tools/ (read-only, refreshed each sync)
+labs/        clone the GitHub repo here to build and simulate (git-ignored)
 homework/    assignments as they are set
 resources/   timetable image, misc
 my-notes/    your own notes

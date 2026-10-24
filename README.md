@@ -14,7 +14,8 @@ across eClass, GitHub, Telegram and Discord.
 
 ```
 scripts/
-└── pull_timetable.py      regenerates semester N/timetable.md from EduPage
+├── pull_timetable.py      regenerates semester N/timetable.md from EduPage
+└── pull_prof_material.py  snapshots Prof. Jeong Hong's GitHub repos + slides sites into course-repo/ and lectures/slides/
 
 semester N/
 ├── README.md              dashboard: courses, timetable, grading weights
@@ -44,8 +45,9 @@ without writing, or `--all` to include subjects that were dropped.
 
 ## Notes
 
-- `labs/` contents are **git-ignored** — those are separate upstream repos. Each
-  course README has its clone command.
+- `labs/` contents are **git-ignored**: they're working clones of upstream repos, where your own lab answers
+  live. A read-only copy of each professor repo is in that course's `course-repo/` instead, refreshed with
+  `python scripts/pull_prof_material.py`.
 - `.vscode/settings.json` opens `.md` files in rendered preview by default.
   To edit one: right-click → *Open With…* → *Text Editor*.
 - Lecture slides and PDFs here are the instructors' material, shared for classmates' study.

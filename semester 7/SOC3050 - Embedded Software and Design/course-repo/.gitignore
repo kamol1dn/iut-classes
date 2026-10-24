@@ -1,0 +1,87 @@
+# MINIMAL .gitignore - Include everything for complete portable system
+# Students get exact working copy with zero setup required
+
+# Build artifacts and temporary files in project directories only
+# (Preserve all toolchain and library files for portable system)
+projects/**/*.elf
+projects/**/*.hex
+projects/**/*.map
+projects/**/*.o
+projects/**/*.obj
+projects/**/*.lst
+projects/**/*.lss
+projects/**/*.sym
+projects/**/*.eep
+projects/**/*.bin
+
+# Debugging and disassembly files
+disasm.txt
+*.dump
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# Temporary test files
+*_Test.c
+*_ELPM_Test.*
+
+# IDE temporary files
+.vs/
+*.tmp
+
+# NO EXCLUSIONS for portable system components:
+# Everything else is INCLUDED for complete portable system:
+# - Python virtual environments (.venv/, venv/, __pycache__/)
+# - All executable files (*.exe, *.dll)
+# - All toolchain binaries and libraries
+# - Complete SimulIDE installations
+# - All Python packages and dependencies
+# - Complete AVR toolchain with all components
+
+# Wokwi licence keys are per-user credentials tied to an account and an expiry
+# date. They must never reach a public repository. Keep them outside the tree,
+# or here where git will not pick them up.
+wokwi*licence*
+wokwi*license*
+*.wokwi-license
+
+# Build artefacts in the 2026 trees. The AVR edition tracks none of these and
+# neither should the ARM edition: they are derived from the sources beside
+# them, and _slides/ is the one generated thing kept on purpose (for offline
+# use - see CLAUDE.md section 9c).
+projects2026_arm/**/Main.elf
+projects2026_arm/**/Main.hex
+projects2026_arm/**/Main.bin
+projects2026_arm/**/Main.map
+projects2026_arm/**/*.o
+
+# Host-side test programs (lessons 10-19 build host/*.c with a PC compiler to
+# check the firmware's pure-C logic). Derived, per machine - never committed.
+projects2026_arm/**/host/**/*.exe
+projects2026_arm/**/host/**/*.out
+projects2026_arm/**/host/__pycache__/
+projects2026_arm/_build/__pycache__/
+projects2026_arm/11_Faults_Watchdog_Power/host/objdump.txt
+
+# The board manual is committed once, in projects2026_arm/_docs/. The renderer
+# copies it into _slides/ so the decks' relative link works; that copy is
+# derived, like the HTML around it, and is not committed a second time.
+projects2026_arm/_slides/*.pdf
+
+# ...except the Phase 0 spike's own artefacts.  They are evidence, not build
+# output: the Part 0 decks quote encodings and section sizes decoded straight
+# out of them, projects2026_arm/README.md makes reproducing those a rule, and
+# _build/disasm.py documents reading Main.elf directly.  Ignoring them made
+# every one of those uncheckable on a fresh clone.  ~2 MB, committed once.
+!projects2026_arm/_spike/**/Main.elf
+!projects2026_arm/_spike/**/Main.bin
+!projects2026_arm/_spike/**/Main.hex
+!projects2026_arm/_spike/**/Main.map
+
+# exams
+exam.md
+exam.docx
+exam_*.docx
+~$*.docx

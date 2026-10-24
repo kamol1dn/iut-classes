@@ -19,7 +19,16 @@ runs both the same way: eClass holds only the syllabus and a timetable image.
 | **Telegram** | Announcements, day-to-day comms | https://t.me/+UHxHay2_c3kyMGQy |
 | eClass | Syllabus PDF + timetable only | [course page](https://eclass.inha.ac.kr/course/view.php?id=2634) |
 
-**Suggested:** clone the repo into `labs/` so lectures, labs and your work sit
+### 📦 Already in this repo (no clone needed)
+
+| What | Where | Notes |
+|---|---|---|
+| **All lecture slides**, weeks 00–16 | [`lectures/slides/`](lectures/slides/) | Downloaded from the slides site. Each deck is **one self-contained HTML file**: download it and open it in a browser, offline. GitHub only shows the source |
+| **The whole course repo** (code, labs, notebooks, midterm guide) | [`course-repo/`](course-repo/) | A read-only snapshot of `gnoejh/soc4180` at commit `2cfc22f` (2026-10-24), refreshed every sync. The encrypted instructor archive is left out. Labs ship with their **blanks unfilled**, as the professor published them |
+
+To run the labs or do your own graded work, clone the real repo instead (below) so `git pull` keeps it current.
+
+**To work on labs:** clone the repo into `labs/` so lectures, labs and your work sit
 together:
 
 ```bash
@@ -40,7 +49,7 @@ or check Telegram before assuming they're ungraded.
 ## 📝 Midterm (30%, week 8, 26–30 Oct): study guide posted 10-19
 
 The professor pushed a **student study guide** at 00:03 on 10-19:
-[`labs/soc4180/weeks/exam_midterm/overview.md`](labs/soc4180/weeks/exam_midterm/overview.md) (1,148 lines).
+[`course-repo/weeks/exam_midterm/overview.md`](course-repo/weeks/exam_midterm/overview.md) (1,148 lines).
 
 - **33 MCQ, 60 min.** No notes, **no calculator**, no laptop. Every calculation is meant to be done by hand in under a minute.
 - **Scope: weeks 0–6**: the five-layer stack, MuJoCo/MJCF, transforms and forward kinematics, the robot as code (2b),
@@ -88,8 +97,9 @@ No lecture files, no assignments, no announcements posted on eClass as of
 
 ```
 syllabus/    syllabus.md (readable) + soc4180.pdf (original)
-lectures/    (empty — slides live at gnoejh.github.io/soc4180)
-labs/        clone the GitHub repo here
+lectures/    slides/ = every deck from gnoejh.github.io/soc4180, one HTML file each
+course-repo/ snapshot of github.com/gnoejh/soc4180 (read-only, refreshed each sync)
+labs/        clone the GitHub repo here to work on labs (git-ignored)
 homework/    assignments as they are set
 resources/   timetable image, misc
 my-notes/    your own notes

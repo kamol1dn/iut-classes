@@ -1,0 +1,61 @@
+[project]
+name = "soc4180"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+# Kept deliberately small and permissive. Installing this package on Colab must
+# not upgrade torch or numpy: doing so breaks the preinstalled torchvision and
+# numba, and forces a kernel restart. The package itself imports only mujoco,
+# mujoco_menagerie, mediapy and numpy. Exact versions for local development are
+# pinned in uv.lock, not here.
+dependencies = [
+    "imageio-ffmpeg>=0.4",
+    "mediapy>=1.1",
+    "mujoco>=3.2",
+    "mujoco-menagerie>=2026.9.0",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+# Environment design (week 7). Deliberately lighter than `rl`: no torch, no SB3.
+env = [
+    "gymnasium[mujoco]>=0.29",
+]
+# Learning weeks (7+). torch is optional: only seeding.py touches it, and then
+# only if it is already installed.
+rl = [
+    "gymnasium[mujoco]>=0.29",
+    "stable-baselines3>=2.0",
+    "torch>=2.4",
+]
+# GPU-parallel training. Linux/Colab only: JAX has no Windows CUDA wheels.
+gpu = [
+    "playground>=0.2.0",
+]
+
+[tool.uv.sources]
+# PyPI ships CPU-only torch wheels for Windows, so Windows pulls the CUDA 13.0
+# build from PyTorch's own index. On Linux (Colab) the PyPI wheel is already
+# CUDA-enabled (it depends on nvidia-cudnn-cu13 / nccl), so we use PyPI there.
+torch = [{ index = "pytorch-cu130", marker = "sys_platform == 'win32'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "jupyterlab>=4.6.3",
+    "nbclient>=0.11.0",
+    "nbformat>=5.11.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/soc4180"]

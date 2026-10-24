@@ -1,0 +1,82 @@
+"""Shared helpers for the Robot and AI course.
+
+Importing this package selects a working MuJoCo GL backend for the current
+machine, so labs behave the same locally and in Colab.
+"""
+
+# MUST be first: selects MUJOCO_GL before any submodule imports mujoco.
+from .actuators import gains, scale_gains, set_torque_limit, torque_limit
+from .bodies import CHAINS, chain_bodies, chain_of, group_indices, joint_index, mirror, set_pose
+from .estimation import ComplementaryFilter, gravity_body, read_imu, tilt_from_accel
+from . import jax_compat
+from ._gl import GL_BACKEND, gl_report, is_colab
+from .keys import terminal_keys
+from .kinematics import fk_foot, ik_legs, leg_chain, leg_qpos_indices
+from .models import (
+    MENAGERIE_COMMIT,
+    MENAGERIE_VERSION,
+    by_category,
+    humanoids,
+    license_of,
+    load_g1,
+    load_robot,
+    robot_path,
+)
+from .render import render_poses, render_rollout, save_video, show_video
+from .seeding import set_seed
+from .walking import CPG, GaitParams, LIPM, WalkingController, footstep_plan
+from .sim import (actuation_disabled, hold, keyframe_data, keyframe_names,
+                  launch_viewer)
+
+__version__ = "0.1.0"
+
+__all__ = [
+    "CHAINS",
+    "ComplementaryFilter",
+    "chain_bodies",
+    "chain_of",
+    "group_indices",
+    "joint_index",
+    "mirror",
+    "set_pose",
+    "GL_BACKEND",
+    "jax_compat",
+    "gravity_body",
+    "read_imu",
+    "tilt_from_accel",
+    "gains",
+    "scale_gains",
+    "set_torque_limit",
+    "torque_limit",
+    "gl_report",
+    "MENAGERIE_COMMIT",
+    "actuation_disabled",
+    "MENAGERIE_VERSION",
+    "__version__",
+    "by_category",
+    "fk_foot",
+    "ik_legs",
+    "leg_chain",
+    "leg_qpos_indices",
+    "humanoids",
+    "license_of",
+    "load_g1",
+    "load_robot",
+    "robot_path",
+    "is_colab",
+    "render_poses",
+    "render_rollout",
+    "save_video",
+    "hold",
+    "keyframe_data",
+    "keyframe_names",
+    "launch_viewer",
+    "terminal_keys",
+    "set_seed",
+    "CPG",
+    "GaitParams",
+    "LIPM",
+    "WalkingController",
+    "footstep_plan",
+    "show_video",
+]
