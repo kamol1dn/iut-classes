@@ -1,0 +1,2711 @@
+1
+00:00:03,288 --> 00:00:04,049
+Hi, dear students.
+
+2
+00:00:04,829 --> 00:00:08,411
+I hope everybody's doing well and welcome to our next class.
+
+3
+00:00:08,992 --> 00:00:11,694
+And today we'll be talking about informal fallacies.
+
+4
+00:00:14,596 --> 00:00:20,459
+And let's begin with the following real life case of a lady named Shannon Townsend
+
+5
+00:00:21,260 --> 00:00:28,004
+from USA, obviously. So Shannon was a high performing student at your high school, and then
+
+6
+00:00:28,064 --> 00:00:30,386
+she was accepted to the University of Colorado.
+
+7
+00:00:31,008 --> 00:00:36,333
+And she finished her first year, freshman year, with a very high GPA.
+
+8
+00:00:36,753 --> 00:00:39,916
+So she got 3.9 out of 4 in the US system.
+
+9
+00:00:40,637 --> 00:00:42,779
+And she wanted to become a physician.
+
+10
+00:00:43,300 --> 00:00:49,225
+And her parents also, based on how she's performing, had also high
+
+11
+00:00:50,126 --> 00:00:52,728
+expectations and high kind of vision for her.
+
+12
+00:00:53,389 --> 00:00:59,929
+However, when she was passing to the second grade, she has announced to her parents that
+
+13
+00:01:00,189 --> 00:01:07,133
+she's quitting or dropping her college, university, and then she's joining a nomadic cult known
+
+14
+00:01:07,293 --> 00:01:10,775
+as the Jim Roberts Group or simply the Brezren.
+
+15
+00:01:11,476 --> 00:01:14,318
+And this cult believed in disowning
+
+16
+00:01:15,298 --> 00:01:22,243
+family and possessions and also isolating themselves from the society and
+
+17
+00:01:22,423 --> 00:01:26,205
+roaming the land as they believed Jesus did.
+
+18
+00:01:26,690 --> 00:01:29,791
+Okay, so she kind of wanted to follow the Jesus.
+
+19
+00:01:31,191 --> 00:01:36,773
+And even though several years have passed, her family didn't see her
+
+20
+00:01:38,493 --> 00:01:39,774
+afterwards. And
+
+21
+00:01:40,794 --> 00:01:41,794
+based on this case,
+
+22
+00:01:42,734 --> 00:01:49,256
+the book talks about such a similar religious cults, which usually kind of try to
+
+23
+00:01:50,056 --> 00:01:53,277
+get the interest of especially young people,
+
+24
+00:01:53,977 --> 00:01:55,158
+because they're in the
+
+25
+00:01:56,337 --> 00:01:58,879
+different and strange periods, right?
+
+26
+00:01:58,919 --> 00:02:04,082
+Because they're kind of getting isolated from their parents and they're kind of getting
+
+27
+00:02:05,023 --> 00:02:07,925
+adopted to the university and independent life.
+
+28
+00:02:08,425 --> 00:02:10,286
+And they will be kind of very
+
+29
+00:02:11,167 --> 00:02:14,609
+overwhelming and they may have kind of different
+
+30
+00:02:15,670 --> 00:02:19,752
+issues, right? Because of this new and grown up life.
+
+31
+00:02:20,613 --> 00:02:27,355
+And when kind of recruiting such youth, such cults, or religious sects, they may be
+
+32
+00:02:27,476 --> 00:02:29,536
+using kind of a different
+
+33
+00:02:30,356 --> 00:02:33,157
+fallacies and the fallacious reasoning, right?
+
+34
+00:02:33,717 --> 00:02:37,858
+And they may be kind of masking the true objectives
+
+35
+00:02:40,439 --> 00:02:45,020
+from such people who are about to join these groups, okay?
+
+36
+00:02:50,641 --> 00:02:53,302
+And the best way to avoid
+
+37
+00:02:54,082 --> 00:02:55,963
+being targeted by such
+
+38
+00:02:56,683 --> 00:03:03,526
+religious cults and sects, according to the researchers, is to be well informed and also to
+
+39
+00:03:03,667 --> 00:03:03,847
+ask
+
+40
+00:03:04,627 --> 00:03:11,310
+different questions, because such groups may not like the people who are reasoning, who are
+
+41
+00:03:11,410 --> 00:03:16,112
+using their critical thinking skills and who are asking difficult questions.
+
+42
+00:03:16,973 --> 00:03:17,453
+And
+
+43
+00:03:18,313 --> 00:03:18,613
+since
+
+44
+00:03:19,354 --> 00:03:21,615
+we may also have such sects,
+
+45
+00:03:22,417 --> 00:03:29,198
+such accounts even in our country and we may have heard about such cases right maybe from tv
+
+46
+00:03:29,598 --> 00:03:35,979
+or from our friends or parents right so therefore the value of a critical thinking skills is
+
+47
+00:03:36,159 --> 00:03:39,900
+a kind of a very high right and based on this
+
+48
+00:03:40,620 --> 00:03:47,561
+let's see what we are going to discuss today first of all we'll talk about the
+
+49
+00:03:47,701 --> 00:03:54,358
+definitions of a fallacy and the types and also fallacies of ambiguity, fallacies of
+
+50
+00:03:54,438 --> 00:03:58,141
+relevance, and fallacies involving unwarranted assumptions.
+
+51
+00:03:58,641 --> 00:04:01,243
+And lastly, strategies for avoiding fallacies.
+
+52
+00:04:01,884 --> 00:04:07,848
+And for you guys to think more about it and also to have your own judgment.
+
+53
+00:04:07,888 --> 00:04:13,792
+Lastly, I will give you some tasks, which will not be official tasks, but at least some of
+
+54
+00:04:13,812 --> 00:04:15,433
+you, if you want to kind of
+
+55
+00:04:16,494 --> 00:04:22,728
+develop more of these skills and use more kind of your reasoning, And you can kind of do this
+
+56
+00:04:22,828 --> 00:04:24,890
+exercise, okay? Do this reading in the end.
+
+57
+00:04:28,033 --> 00:04:30,835
+So let's begin. So what is a fallacy?
+
+58
+00:04:31,375 --> 00:04:34,418
+I think you guys may have heard about this term, right?
+
+59
+00:04:34,558 --> 00:04:35,078
+Fallacy.
+
+60
+00:04:35,799 --> 00:04:35,919
+And
+
+61
+00:04:36,640 --> 00:04:43,205
+an argument is the process of supporting a claim or conclusion by providing reasons or
+
+62
+00:04:43,305 --> 00:04:46,888
+evidence, right? In the form of premises for that claim.
+
+63
+00:04:47,549 --> 00:04:51,107
+And argument can be weak or invalid in several ways.
+
+64
+00:04:52,148 --> 00:04:57,889
+And the premises or the reasons or evidence given in support of a particular conclusion or
+
+65
+00:04:57,949 --> 00:05:03,090
+position may be mistaken or the evidence may not support the conclusion.
+
+66
+00:05:04,150 --> 00:05:06,871
+Therefore, an argument contains a fallacy
+
+67
+00:05:07,631 --> 00:05:08,491
+when it appears
+
+68
+00:05:09,211 --> 00:05:09,911
+to be correct,
+
+69
+00:05:10,951 --> 00:05:14,612
+when we are kind of just hearing in the first kind of a place, right?
+
+70
+00:05:15,012 --> 00:05:20,771
+But on further examination, we found out it to be incorrect, okay?
+
+71
+00:05:21,191 --> 00:05:26,074
+So in short, a faulty argument that at first appears to be correct
+
+72
+00:05:27,354 --> 00:05:29,556
+can be called as fallacy, right?
+
+73
+00:05:31,176 --> 00:05:36,880
+And there may be two types of fallacies, such as formal fallacies or informal fallacies.
+
+74
+00:05:37,660 --> 00:05:43,823
+And by formal fallacy, we mean a type of mistaken reasoning in which the form of an argument
+
+75
+00:05:44,344 --> 00:05:46,325
+itself is invalid, okay?
+
+76
+00:05:46,585 --> 00:05:53,086
+So here, like I gave an example, Like some high school dropouts are men, no doctors are high
+
+77
+00:05:53,126 --> 00:05:56,407
+school dropouts. Therefore, no doctors are men.
+
+78
+00:05:57,267 --> 00:06:00,608
+So this is a kind of a type of formal fallacy.
+
+79
+00:06:05,009 --> 00:06:10,910
+And what about informal fallacies, which is a kind of our main topic of today's discussion?
+
+80
+00:06:12,451 --> 00:06:17,632
+So informal fallacy is a type of mistaken reasoning that occurs
+
+81
+00:06:18,358 --> 00:06:25,141
+when an argument is psychologically or emotionally persuasive, however, logically
+
+82
+00:06:25,661 --> 00:06:27,001
+not correct, okay?
+
+83
+00:06:28,402 --> 00:06:34,464
+Because fallacies can lead us to accept unsupported conclusions, and being taken in by them
+
+84
+00:06:34,804 --> 00:06:41,187
+can cause us to make poor life choices, like it happened with this lady, Shannon,
+
+85
+00:06:41,487 --> 00:06:45,348
+okay? And that she was taken by this destructive cult.
+
+86
+00:06:46,109 --> 00:06:47,149
+And being able
+
+87
+00:06:47,987 --> 00:06:49,947
+to identify informal fallacies
+
+88
+00:06:50,688 --> 00:06:55,408
+makes it less likely that you will fall for these fallacies or use them
+
+89
+00:06:56,209 --> 00:07:00,909
+in your own claims and arguments.
+
+90
+00:07:01,009 --> 00:07:06,190
+In the following sections, we'll be talking about some of the types of informal fallacies,
+
+91
+00:07:07,471 --> 00:07:13,812
+such as fallacies of ambiguity, fallacies of relevance, and fallacies involving unwarranted
+
+92
+00:07:13,952 --> 00:07:14,412
+assumptions.
+
+93
+00:07:16,867 --> 00:07:19,688
+Okay, let's begin with the fallacies of ambiguity.
+
+94
+00:07:22,108 --> 00:07:25,849
+So arguments that have ambiguous words or phrases
+
+95
+00:07:26,729 --> 00:07:31,230
+or sloppy grammatical structure, for example, or confusion between
+
+96
+00:07:32,390 --> 00:07:36,711
+two closely related concepts can lead to fallacies of ambiguity.
+
+97
+00:07:37,571 --> 00:07:44,393
+And people usually with poor language and communication skills are more likely to use or fall
+
+98
+00:07:44,633 --> 00:07:45,613
+for these fallacies.
+
+99
+00:07:46,653 --> 00:07:52,055
+And, uh, even this fallacy of ambiguity, uh, has kind of, uh, several types.
+
+100
+00:07:52,195 --> 00:07:53,416
+Okay. Uh, such as
+
+101
+00:07:54,376 --> 00:07:56,117
+equivocation, uh,
+
+102
+00:07:58,078 --> 00:08:01,499
+and feebly fallacies of accent and fallacies of division.
+
+103
+00:08:02,960 --> 00:08:03,600
+And, uh, let's
+
+104
+00:08:05,121 --> 00:08:06,522
+talk about them one by one.
+
+105
+00:08:06,802 --> 00:08:07,162
+Okay.
+
+106
+00:08:08,963 --> 00:08:14,405
+So when a key term in an argument is ambiguous, that is when it has more than one meaning.
+
+107
+00:08:15,692 --> 00:08:19,234
+and the meaning of the term changes during the course of the argument,
+
+108
+00:08:20,514 --> 00:08:22,616
+equivocation occurs. Okay.
+
+109
+00:08:22,996 --> 00:08:28,218
+So in short, it's a key term in an argument, change meaning during the course of the argument.
+
+110
+00:08:28,739 --> 00:08:30,119
+And here I give you an example.
+
+111
+00:08:31,040 --> 00:08:34,061
+The sign on the door says no animals allowed.
+
+112
+00:08:34,982 --> 00:08:36,803
+We'll find another place for lunch
+
+113
+00:08:37,563 --> 00:08:39,124
+since humans are also animals.
+
+114
+00:08:39,984 --> 00:08:40,464
+So here the
+
+115
+00:08:43,533 --> 00:08:44,473
+A reader, right?
+
+116
+00:08:45,514 --> 00:08:46,674
+He or she is making
+
+117
+00:08:48,074 --> 00:08:50,855
+the mistake because
+
+118
+00:08:51,816 --> 00:08:55,697
+maybe the original reason or original kind of meaning
+
+119
+00:08:56,437 --> 00:09:01,578
+by the owner of that place, maybe of that restaurant, maybe they meant
+
+120
+00:09:02,339 --> 00:09:03,179
+in the more
+
+121
+00:09:04,819 --> 00:09:06,180
+common sense term, right?
+
+122
+00:09:06,500 --> 00:09:09,281
+Like the non-humans, right?
+
+123
+00:09:10,562 --> 00:09:16,924
+However, that person who is reading this note, they're taking it maybe more in
+
+124
+00:09:16,984 --> 00:09:18,824
+biological terms, right?
+
+125
+00:09:19,004 --> 00:09:22,625
+Therefore, they're thinking that biologically, humans can also be animals.
+
+126
+00:09:23,126 --> 00:09:25,906
+And therefore, they're making this decision.
+
+127
+00:09:34,389 --> 00:09:35,949
+And the fallacy of
+
+128
+00:09:36,869 --> 00:09:38,670
+equivocation also occurs
+
+129
+00:09:39,437 --> 00:09:45,663
+When we misuse relative terms, such as tall, small, strong, big, or
+
+130
+00:09:45,683 --> 00:09:47,865
+good. I can give you an example.
+
+131
+00:09:48,886 --> 00:09:51,468
+Two-year-old Katie is very tall.
+
+132
+00:09:52,069 --> 00:09:57,033
+Her father, on the other hand, is not tall, but about average in height.
+
+133
+00:09:57,453 --> 00:10:01,397
+Therefore, Katie is taller than her father.
+
+134
+00:10:02,418 --> 00:10:03,319
+So we see where
+
+135
+00:10:04,019 --> 00:10:05,000
+the problem is, right?
+
+136
+00:10:06,533 --> 00:10:13,255
+And to avoid the fallacy of equivocation, we should clearly define any ambiguous words
+
+137
+00:10:13,715 --> 00:10:18,477
+or phrases or maybe terms before proceeding with the argument or discussion.
+
+138
+00:10:19,037 --> 00:10:25,439
+And in addition, we need to avoid using relative terms in different contexts with the same
+
+139
+00:10:25,659 --> 00:10:25,999
+argument.
+
+140
+00:10:27,099 --> 00:10:30,240
+And let's think about the next type of
+
+141
+00:10:31,421 --> 00:10:33,241
+fallacy of ambiguity, which is
+
+142
+00:10:34,442 --> 00:10:34,902
+amphiboly.
+
+143
+00:10:35,926 --> 00:10:40,487
+And this fallacy occurs when there is a grammatical mistake in an argument,
+
+144
+00:10:41,528 --> 00:10:45,509
+which allows more than one conclusion to be drawn.
+
+145
+00:10:46,429 --> 00:10:52,351
+Like for example, you can read Mary's mother and her husband have opposing views.
+
+146
+00:10:53,892 --> 00:10:58,773
+So here about whom we're talking about, are we talking about the
+
+147
+00:10:59,533 --> 00:11:01,874
+mother's husband or Mary's husband?
+
+148
+00:11:02,854 --> 00:11:04,475
+Yes, so here we have this kind of
+
+149
+00:11:05,583 --> 00:11:11,768
+strange situation right because of the grammar and then we have this kind of we may have
+
+150
+00:11:13,049 --> 00:11:13,929
+different conclusions
+
+151
+00:11:15,991 --> 00:11:22,775
+and also the businesses or advertisers marketers may intentionally use this fallacy hoping
+
+152
+00:11:23,176 --> 00:11:27,359
+that you read more into the statement than they
+
+153
+00:11:28,279 --> 00:11:28,800
+mean
+
+154
+00:11:29,880 --> 00:11:33,423
+actually okay so for example they may say that the
+
+155
+00:11:34,127 --> 00:11:36,789
+some slogans in advertisement may say that wear
+
+156
+00:11:37,889 --> 00:11:39,110
+it and be happy.
+
+157
+00:11:40,171 --> 00:11:43,393
+So the word and here is ambiguous, okay?
+
+158
+00:11:43,653 --> 00:11:49,757
+Because here and can be used to mean either that the two separate ideas have nothing to do
+
+159
+00:11:49,837 --> 00:11:51,598
+with each other or that the
+
+160
+00:11:52,358 --> 00:11:55,180
+causal connection exists between two ideas.
+
+161
+00:11:55,580 --> 00:11:57,842
+Like if you wear this,
+
+162
+00:11:59,202 --> 00:12:03,385
+maybe this brand or this kind of fragrance, right?
+
+163
+00:12:03,935 --> 00:12:05,036
+then you'll be happy.
+
+164
+00:12:05,736 --> 00:12:11,820
+Of course, the advertiser is hoping we'll fall for the fallacy and make the second interpretation.
+
+165
+00:12:14,342 --> 00:12:21,247
+However, if we use this particular fragrance and aren't happy as a result and we may try
+
+166
+00:12:21,307 --> 00:12:25,169
+to kind of sue this company, they
+
+167
+00:12:26,931 --> 00:12:33,335
+can kind of say that they were claiming that they were using this word and
+
+168
+00:12:35,064 --> 00:12:37,867
+as a conjunction between two unrelated ideas.
+
+169
+00:12:38,567 --> 00:12:42,911
+So you can wear it and also be happy like without kind of
+
+170
+00:12:43,632 --> 00:12:45,834
+them being connected. Okay.
+
+171
+00:12:48,857 --> 00:12:51,099
+In order to avoid this fallacy of
+
+172
+00:12:52,311 --> 00:12:56,673
+And finally, we should use a language and the grammar properly.
+
+173
+00:12:57,013 --> 00:12:59,914
+So the meaning of our argument is clear.
+
+174
+00:13:00,554 --> 00:13:06,077
+And when we are unsure of how to interpret a particular statement, we should ask the person
+
+175
+00:13:06,657 --> 00:13:08,097
+to rephrase it more clearly.
+
+176
+00:13:11,099 --> 00:13:15,560
+Okay, the next type of fallacy of ambiguity is called fallacies of
+
+177
+00:13:16,561 --> 00:13:22,677
+accent. So it occurs when the meaning of an argument changes according to which word of phrase,
+
+178
+00:13:23,278 --> 00:13:24,038
+we're putting
+
+179
+00:13:25,099 --> 00:13:25,539
+emphasis,
+
+180
+00:13:26,420 --> 00:13:33,264
+okay? And here we have example, the university is going to crack down on off-campus
+
+181
+00:13:33,664 --> 00:13:38,227
+drinking. So glad to hear that they're okay with on-campus drinking.
+
+182
+00:13:38,787 --> 00:13:41,209
+So here we see
+
+183
+00:13:41,929 --> 00:13:43,110
+where the mistake is, right?
+
+184
+00:13:43,530 --> 00:13:44,531
+Or another example,
+
+185
+00:13:46,172 --> 00:13:48,773
+mother is talking to her daughter.
+
+186
+00:13:49,294 --> 00:13:51,535
+Didn't I say don't play with match?
+
+187
+00:13:52,305 --> 00:13:55,587
+And daughter is replying, but I wasn't playing with the mess.
+
+188
+00:13:56,007 --> 00:13:59,630
+I was just using them to burn down Mr.
+
+189
+00:13:59,690 --> 00:14:00,631
+Murphy's shed.
+
+190
+00:14:13,819 --> 00:14:18,062
+So when we are unsure about which term is being emphasized
+
+191
+00:14:19,133 --> 00:14:21,234
+in the point, in the topic, right?
+
+192
+00:14:21,454 --> 00:14:25,975
+We should ask who made the argument to repeat or explain what they meant.
+
+193
+00:14:27,195 --> 00:14:30,256
+And let's talk about the next type of fallacy.
+
+194
+00:14:30,416 --> 00:14:32,676
+It's called the fallacies of division, okay?
+
+195
+00:14:33,176 --> 00:14:33,516
+So
+
+196
+00:14:34,797 --> 00:14:41,538
+here it's like by fallacies of division, we mean a characteristic of an entire group is a
+
+197
+00:14:41,638 --> 00:14:45,599
+falsely assumed to be a characteristic of each member of that group.
+
+198
+00:14:45,879 --> 00:14:48,400
+We're kind of trying to generalize, right?
+
+199
+00:14:48,967 --> 00:14:50,828
+For example, like here,
+
+200
+00:14:51,528 --> 00:14:53,508
+Canadians are really nice people.
+
+201
+00:14:53,989 --> 00:14:58,230
+Therefore, Derek, who is from Vancouver, must be really nice.
+
+202
+00:14:58,850 --> 00:15:01,671
+Or sometimes we may have some kind of
+
+203
+00:15:03,391 --> 00:15:04,652
+ideas that
+
+204
+00:15:06,052 --> 00:15:07,432
+certain nationalities, right?
+
+205
+00:15:07,512 --> 00:15:12,114
+Let's say there are many criminals from Russia.
+
+206
+00:15:16,463 --> 00:15:22,465
+Therefore, we can kind of conclude that most of the Russians can be a bad people, right?
+
+207
+00:15:22,705 --> 00:15:28,246
+So here, if we're talking about this, we're kind of committing the fallacies of division.
+
+208
+00:15:34,208 --> 00:15:34,528
+Okay,
+
+209
+00:15:35,368 --> 00:15:37,929
+the next type of, or the next group of
+
+210
+00:15:38,629 --> 00:15:41,310
+fallacies, they're called the fallacies of relevance.
+
+211
+00:15:42,190 --> 00:15:42,650
+And here,
+
+212
+00:15:43,703 --> 00:15:48,847
+one or more of the premises is logically irrelevant or unrelated to the conclusion.
+
+213
+00:15:49,388 --> 00:15:55,233
+However, we may fall for these fallacies because psychologically, the premises and conclusion
+
+214
+00:15:55,773 --> 00:15:57,034
+seem to be relevant.
+
+215
+00:15:58,095 --> 00:16:01,918
+And these fallacies of relevance, they include
+
+216
+00:16:02,719 --> 00:16:08,884
+the following kind of types of fallacies, such as personal attacks, appeals to force, appeals
+
+217
+00:16:08,924 --> 00:16:15,673
+to pity, popular appeals, or appeals to ignorance, or custody generalizations, or
+
+218
+00:16:15,693 --> 00:16:17,775
+strawman fallacies, or red herrings.
+
+219
+00:16:18,435 --> 00:16:21,718
+And let's discuss about them one by one.
+
+220
+00:16:22,959 --> 00:16:27,102
+So first of all, personal attacks, or they can also be called as
+
+221
+00:16:28,003 --> 00:16:34,729
+ad hominem fallacies. And they occur when we disagree with someone's conclusion,
+
+222
+00:16:35,509 --> 00:16:42,075
+but instead of presenting a counter argument, we attack the person who made that claim or
+
+223
+00:16:42,195 --> 00:16:42,555
+argument.
+
+224
+00:16:44,056 --> 00:16:50,278
+And in doing so, we try to create disapproval toward our opponent and his or her argument.
+
+225
+00:16:52,719 --> 00:16:52,859
+And
+
+226
+00:16:53,660 --> 00:16:55,741
+we may have seen such fallacies, right?
+
+227
+00:16:55,801 --> 00:16:58,082
+Especially in the politics, right?
+
+228
+00:16:58,222 --> 00:17:02,584
+Usually when politicians, they're kind of making debates, right?
+
+229
+00:17:02,884 --> 00:17:04,925
+Or maybe just
+
+230
+00:17:06,445 --> 00:17:09,487
+in social media, right? Maybe some bloggers, right?
+
+231
+00:17:09,527 --> 00:17:10,367
+When they're kind of...
+
+232
+00:17:11,274 --> 00:17:12,534
+doing some debate, right?
+
+233
+00:17:12,594 --> 00:17:13,435
+Maybe in the
+
+234
+00:17:14,355 --> 00:17:15,795
+comment boards, for example, right?
+
+235
+00:17:16,035 --> 00:17:18,376
+Or maybe in some video words, for example, right?
+
+236
+00:17:18,876 --> 00:17:22,497
+They may be kind of committing such a fallacy, right?
+
+237
+00:17:32,960 --> 00:17:33,100
+And
+
+238
+00:17:43,368 --> 00:17:49,592
+Okay, let's talk about the next type of analysis of relevance, which is appeals to force or
+
+239
+00:17:49,632 --> 00:17:50,472
+scare tactics.
+
+240
+00:17:51,553 --> 00:17:52,053
+And here,
+
+241
+00:17:52,834 --> 00:17:59,358
+this type of fallacies occur when we use or threaten to use force, whether it be physical,
+
+242
+00:17:59,738 --> 00:18:06,222
+psychological, or legal in an attempt to get another person to back down in their particular
+
+243
+00:18:06,262 --> 00:18:10,725
+position, right? Or to accept our conclusion as valid or correct.
+
+244
+00:18:11,205 --> 00:18:11,565
+Okay.
+
+245
+00:18:12,566 --> 00:18:12,986
+And here,
+
+246
+00:18:14,607 --> 00:18:18,030
+These tactics are also kind of quite popular, right?
+
+247
+00:18:18,050 --> 00:18:24,095
+They may be used both by maybe politicians or maybe even by our employers, right?
+
+248
+00:18:24,395 --> 00:18:30,500
+Sometimes, or maybe by some of our kind of social cycle, maybe by our parents, right?
+
+249
+00:18:30,780 --> 00:18:37,747
+Especially maybe parents, they may like this tactic, like they may say that while you are disagreeing
+
+250
+00:18:37,787 --> 00:18:44,549
+with me, while I'm kind of providing you with the housing and I'm paying your kind of university
+
+251
+00:18:44,569 --> 00:18:45,810
+tuition, for example, right?
+
+252
+00:18:48,171 --> 00:18:50,812
+Or also, let's talk about the scare tactics.
+
+253
+00:18:51,272 --> 00:18:52,232
+Like if you look
+
+254
+00:18:52,992 --> 00:18:59,035
+to the to the current hype of AI, right, by especially gen AI, right?
+
+255
+00:18:59,655 --> 00:18:59,895
+The
+
+256
+00:19:01,225 --> 00:19:04,648
+CEOs, all the guys, all the kind of
+
+257
+00:19:05,449 --> 00:19:09,393
+top guys behind this gen AI tools, right?
+
+258
+00:19:09,733 --> 00:19:12,876
+Such as Sam Altman, or maybe Dario
+
+259
+00:19:13,737 --> 00:19:14,597
+Amadeo, right?
+
+260
+00:19:16,920 --> 00:19:19,241
+kind of using such a scare tactics, right?
+
+261
+00:19:19,722 --> 00:19:25,905
+They're kind of claiming that maybe within five years or maybe within a decade or maybe even
+
+262
+00:19:25,985 --> 00:19:29,328
+in a shorter period of time that we are doomed, right?
+
+263
+00:19:29,588 --> 00:19:35,591
+That AI may take over and our kind of entire being may be over, right?
+
+264
+00:19:35,871 --> 00:19:37,572
+So they're using these tactics, right?
+
+265
+00:19:37,953 --> 00:19:39,894
+So then here comes a question for you guys.
+
+266
+00:19:41,755 --> 00:19:42,455
+Do you believe
+
+267
+00:19:43,676 --> 00:19:46,538
+to these scare tactics, to their kind of claims?
+
+268
+00:19:48,447 --> 00:19:53,412
+And did you guys also post and think about of their tactics?
+
+269
+00:19:54,032 --> 00:19:57,555
+Why do you guys think they're kind of using such claims?
+
+270
+00:20:04,161 --> 00:20:09,125
+Okay, guys, I hope you all had some time to reflect on such claims.
+
+271
+00:20:09,426 --> 00:20:09,766
+Okay.
+
+272
+00:20:14,550 --> 00:20:21,008
+And the next type of fallacy within the group of fallacies of relevance is called appeal to
+
+273
+00:20:21,068 --> 00:20:27,669
+pity. And here we try to evoke a feeling of pity in the other person when
+
+274
+00:20:27,749 --> 00:20:30,930
+pity is irrelevant to the conclusion, okay?
+
+275
+00:20:31,690 --> 00:20:33,530
+And for example, let's say,
+
+276
+00:20:34,330 --> 00:20:34,810
+let me read.
+
+277
+00:20:35,630 --> 00:20:38,571
+So let's say when you're kind of
+
+278
+00:20:39,751 --> 00:20:45,012
+driving your car in high speed and you're stopped by the police officer, right?
+
+279
+00:20:45,492 --> 00:20:49,835
+And in such a case, you may try to come up with some
+
+280
+00:20:50,555 --> 00:20:52,676
+ideas saying that
+
+281
+00:20:53,957 --> 00:21:00,842
+the reason you are speeding happened because maybe something bad just happened at home, and
+
+282
+00:21:00,882 --> 00:21:05,624
+maybe you are not in a good psychological condition.
+
+283
+00:21:05,905 --> 00:21:11,088
+You may try to evoke the bitterness of this
+
+284
+00:21:11,788 --> 00:21:13,389
+police officer, for example.
+
+285
+00:21:15,565 --> 00:21:20,429
+but even though it may not be relevant to the current situation, okay?
+
+286
+00:21:25,112 --> 00:21:26,173
+And the next
+
+287
+00:21:27,134 --> 00:21:28,635
+type of fallacy is called
+
+288
+00:21:29,916 --> 00:21:36,681
+popular appeal, okay? And it occurs when we appeal to popular opinion to gain support
+
+289
+00:21:37,221 --> 00:21:38,182
+for our conclusion.
+
+290
+00:21:39,803 --> 00:21:46,732
+And the most common form is the bandwagon approach in which a conclusion is assumed to be
+
+291
+00:21:46,792 --> 00:21:51,154
+true simply because everyone believes it or everyone is doing it.
+
+292
+00:21:51,874 --> 00:21:52,235
+Okay?
+
+293
+00:21:57,277 --> 00:21:58,078
+So for example,
+
+294
+00:21:58,838 --> 00:22:02,920
+God must exist. After all, most people believe in God.
+
+295
+00:22:03,821 --> 00:22:04,261
+So here,
+
+296
+00:22:04,961 --> 00:22:08,203
+if we kind of truly think about this point, right?
+
+297
+00:22:08,563 --> 00:22:13,942
+So the existence of God may not depend on the belief of people, right?
+
+298
+00:22:14,262 --> 00:22:17,985
+On the number of the people who believe or not believe in God, okay?
+
+299
+00:22:18,585 --> 00:22:25,269
+Or we may also see such a palaces in the media, or maybe in marketing, right?
+
+300
+00:22:25,349 --> 00:22:25,630
+In
+
+301
+00:22:26,510 --> 00:22:31,133
+advertisements. Sometimes this is also called as a snob appeal,
+
+302
+00:22:31,774 --> 00:22:37,838
+okay? That if a certain type of people like,
+
+303
+00:22:39,777 --> 00:22:42,559
+football players, right, or some kind of
+
+304
+00:22:43,459 --> 00:22:49,283
+popular celebrities, and they're advertising certain products, that kind of we should believe
+
+305
+00:22:49,663 --> 00:22:52,065
+that these products are kind of useful for us.
+
+306
+00:22:54,846 --> 00:23:00,030
+We can also kind of pause this video and think about some of the real life
+
+307
+00:23:01,110 --> 00:23:03,812
+examples for this kind of fallacy.
+
+308
+00:23:14,810 --> 00:23:16,311
+Okay guys, let's move on.
+
+309
+00:23:17,092 --> 00:23:21,955
+And the next type of fallacy in the group of fallacies of relevance is called
+
+310
+00:23:22,995 --> 00:23:23,596
+appeal to
+
+311
+00:23:24,977 --> 00:23:31,581
+ignorance. And here, the fallacy of appeal to ignorance does not imply that we are
+
+312
+00:23:31,641 --> 00:23:38,065
+stupid. Instead, it means that we are ignorant of the means of proving or disproving
+
+313
+00:23:38,345 --> 00:23:44,638
+something. We fall into the fallacy whenever we argue that something is true simply because
+
+314
+00:23:44,718 --> 00:23:50,519
+no one has proven it false or that something is false because no one has proven it true.
+
+315
+00:23:50,999 --> 00:23:57,861
+So as you can read in the example, UFOs don't exist as no one has been able to prove
+
+316
+00:23:58,181 --> 00:23:58,801
+that they do,
+
+317
+00:23:59,701 --> 00:24:00,101
+okay?
+
+318
+00:24:05,683 --> 00:24:07,683
+But here, the point is that
+
+319
+00:24:08,637 --> 00:24:15,540
+Even though we may not have that proof for the existence of UFOs, what if it may
+
+320
+00:24:15,560 --> 00:24:18,141
+be true? It's simply we do not know
+
+321
+00:24:18,961 --> 00:24:20,482
+whether it's true or not true.
+
+322
+00:24:28,826 --> 00:24:33,228
+And also, we should point out that there is an important exception
+
+323
+00:24:34,008 --> 00:24:40,699
+to this fallacy of appeal to ignorance, Because in the law, in the courts, a defendant is a
+
+324
+00:24:40,759 --> 00:24:43,481
+presumed innocent until proven guilty.
+
+325
+00:24:44,062 --> 00:24:45,803
+And the burden of proof is on the
+
+326
+00:24:47,024 --> 00:24:49,045
+prosecution, not on the defendant.
+
+327
+00:24:50,026 --> 00:24:52,768
+So we should think about such cases also.
+
+328
+00:24:53,909 --> 00:24:57,272
+And the next one is a testy generalization.
+
+329
+00:24:58,873 --> 00:24:59,874
+When used properly,
+
+330
+00:25:00,714 --> 00:25:05,578
+generalization is a valuable tool in both the physical and social sciences.
+
+331
+00:25:06,337 --> 00:25:12,782
+but we may commit this fallacy when we generalize from a sample that is
+
+332
+00:25:12,942 --> 00:25:13,483
+too
+
+333
+00:25:14,524 --> 00:25:16,825
+small or biased, okay?
+
+334
+00:25:17,606 --> 00:25:19,528
+So for example, we may have some kind of
+
+335
+00:25:20,288 --> 00:25:23,070
+stereotypes, right?
+
+336
+00:25:24,131 --> 00:25:26,113
+Like sometimes, let's say,
+
+337
+00:25:27,454 --> 00:25:31,317
+if certain people didn't have a kind of,
+
+338
+00:25:32,023 --> 00:25:35,944
+a good experience with a certain group of people, right?
+
+339
+00:25:36,404 --> 00:25:38,004
+Let's say if a
+
+340
+00:25:39,025 --> 00:25:41,045
+woman or women,
+
+341
+00:25:42,045 --> 00:25:48,047
+let's say some girl or some lady, they didn't have some good experience with some men in their
+
+342
+00:25:48,107 --> 00:25:53,288
+life, right? Maybe their fathers were abusers and maybe their brothers were abusers.
+
+343
+00:25:53,608 --> 00:25:59,449
+And then they may make this fallacy as a kind of a generalizing that all the men,
+
+344
+00:26:00,150 --> 00:26:01,770
+they are abusers, for example, right?
+
+345
+00:26:02,300 --> 00:26:04,701
+or vice versa, if some men,
+
+346
+00:26:05,781 --> 00:26:07,041
+they didn't have kind of a
+
+347
+00:26:08,242 --> 00:26:10,142
+good experience with the
+
+348
+00:26:11,342 --> 00:26:16,744
+opposite gender, they may come up with the following fallacy, okay?
+
+349
+00:26:22,745 --> 00:26:24,826
+Or like it may happen, especially,
+
+350
+00:26:26,583 --> 00:26:29,325
+after the 9-11 attacks in the USA, right?
+
+351
+00:26:29,685 --> 00:26:32,407
+They were kind of a scapegoating Muslims, right?
+
+352
+00:26:32,527 --> 00:26:38,411
+All Muslims, like they were kind of generalizing as a terrorist, a potential terrorist, for
+
+353
+00:26:38,451 --> 00:26:39,271
+example, right?
+
+354
+00:26:43,494 --> 00:26:47,837
+And the next type of fallacy is called the straw man fallacy, okay?
+
+355
+00:26:48,598 --> 00:26:53,321
+And the straw man fallacy is committed when a person distorts
+
+356
+00:26:54,161 --> 00:27:00,797
+or misrepresents the openness argument, thus making it easier to knock it down or refute
+
+357
+00:27:00,817 --> 00:27:06,960
+it. So this type of fallacy is also quite popular in especially politics.
+
+358
+00:27:08,320 --> 00:27:09,301
+And here I
+
+359
+00:27:10,321 --> 00:27:11,622
+made a real-life example.
+
+360
+00:27:12,342 --> 00:27:16,224
+Mamdani wants free public transport and takes the rich.
+
+361
+00:27:16,804 --> 00:27:23,627
+He supports socialism, but socialism was already tried and failed in the Soviet Union.
+
+362
+00:27:24,121 --> 00:27:26,442
+Therefore, his argument is invalid.
+
+363
+00:27:28,504 --> 00:27:35,047
+So some of you guys may have been following how this new mayor of New York City was
+
+364
+00:27:35,188 --> 00:27:36,688
+coming to office, right?
+
+365
+00:27:37,149 --> 00:27:37,289
+And
+
+366
+00:27:38,109 --> 00:27:39,550
+therefore, like some people
+
+367
+00:27:40,431 --> 00:27:41,311
+maybe were
+
+368
+00:27:42,392 --> 00:27:49,156
+accusing him, right? Just because he was bringing, he was kind of, he wanted to
+
+369
+00:27:49,196 --> 00:27:50,998
+bring some goodness, right?
+
+370
+00:27:51,418 --> 00:27:55,900
+Some social benefits to the citizens of this city, New York City, right?
+
+371
+00:27:56,180 --> 00:28:02,224
+So they were claiming that his dragon or his end goal kind of is to bring
+
+372
+00:28:02,744 --> 00:28:09,708
+socialism and since socialism was kind of evil in the Soviet Union, then we should be afraid
+
+373
+00:28:09,768 --> 00:28:10,928
+of this guy, right?
+
+374
+00:28:12,829 --> 00:28:19,513
+And by this they were kind of distorting or misrepresenting the whole kind of the whole point.
+
+375
+00:28:19,907 --> 00:28:20,187
+Right?
+
+376
+00:28:24,770 --> 00:28:27,231
+And to avoid using or being taken
+
+377
+00:28:27,932 --> 00:28:33,735
+by this fallacy, we should go back and look at the argument in question as it was originally
+
+378
+00:28:34,015 --> 00:28:37,818
+presented. And we should ask ourselves, has the argument
+
+379
+00:28:40,059 --> 00:28:44,682
+been rewarded or oversimplified to the point of misrepresentation?
+
+380
+00:28:45,256 --> 00:28:50,937
+have key parts of the original argument been omitted or keywords been changed or misused.
+
+381
+00:28:52,338 --> 00:28:58,019
+And another similar fallacy is called the red herrings, okay, or red herring.
+
+382
+00:29:00,100 --> 00:29:06,741
+So in the red herring fallacy, it's committed when a person tries to sidetrack an
+
+383
+00:29:06,881 --> 00:29:08,622
+argument by going off
+
+384
+00:29:09,542 --> 00:29:13,243
+on a tangent and bringing up a different issue.
+
+385
+00:29:15,172 --> 00:29:21,277
+So here, when people are kind of using this type of fallacy, they kind of, I think this is
+
+386
+00:29:21,338 --> 00:29:23,620
+also quite popular in politics,
+
+387
+00:29:24,660 --> 00:29:31,406
+right? Whenever they are asked some hard questions about hard issues, they may try to kind
+
+388
+00:29:31,467 --> 00:29:31,587
+of,
+
+389
+00:29:32,632 --> 00:29:34,313
+take some sidetrack, right?
+
+390
+00:29:34,734 --> 00:29:41,559
+They may try answering to a different question, or maybe they may try to bring up
+
+391
+00:29:41,639 --> 00:29:47,663
+some other different issue, even though it may be related, but they may kind of try to avoid
+
+392
+00:29:48,324 --> 00:29:51,867
+the kind of the direct point, right?
+
+393
+00:29:56,430 --> 00:29:58,031
+And here I give one example.
+
+394
+00:29:59,235 --> 00:30:02,618
+Why are you upset about my driving after a few drinks.
+
+395
+00:30:03,158 --> 00:30:08,983
+It's not a big deal. Look at the accidents that caused by people talking on their phones.
+
+396
+00:30:09,903 --> 00:30:16,248
+So here, rather than kind of talking about the point, we're kind of dragging the argument to
+
+397
+00:30:16,268 --> 00:30:17,189
+a different direction.
+
+398
+00:30:23,180 --> 00:30:28,602
+And let me tell you why this fallacy, I mean, if it's interesting, it's called the red herring
+
+399
+00:30:28,743 --> 00:30:31,004
+because it's taken from the
+
+400
+00:30:31,964 --> 00:30:35,465
+UK, okay? Because they
+
+401
+00:30:36,846 --> 00:30:37,366
+had
+
+402
+00:30:38,207 --> 00:30:39,007
+a kind of
+
+403
+00:30:39,927 --> 00:30:44,870
+tradition with the fox hounds, like the dogs which are trained
+
+404
+00:30:45,630 --> 00:30:50,072
+to hunt foxes, okay? And sometimes
+
+405
+00:30:51,152 --> 00:30:54,267
+when they had such a competition, or such games, right?
+
+406
+00:30:54,747 --> 00:31:01,311
+Some people would use this fish, red herring, in order to kind of drag the
+
+407
+00:31:01,411 --> 00:31:05,913
+attention of the dogs from the kind of real purpose, okay?
+
+408
+00:31:05,933 --> 00:31:08,895
+So therefore, this fallacy is called the red herrings.
+
+409
+00:31:14,177 --> 00:31:15,538
+Okay, guys, so
+
+410
+00:31:16,519 --> 00:31:16,979
+the
+
+411
+00:31:19,841 --> 00:31:20,141
+last
+
+412
+00:31:21,161 --> 00:31:22,402
+group of fallacies
+
+413
+00:31:23,262 --> 00:31:25,084
+in this informal fallacies.
+
+414
+00:31:25,724 --> 00:31:29,007
+They're called fallacies involving unwarranted
+
+415
+00:31:30,048 --> 00:31:30,548
+assumptions.
+
+416
+00:31:31,489 --> 00:31:37,955
+And our reasoning can be faulty when our argument contains an unwarranted assumption.
+
+417
+00:31:38,795 --> 00:31:45,181
+And a fallacy involving an unwarranted assumption occurs when an argument includes an assumption
+
+418
+00:31:45,681 --> 00:31:47,923
+that's not supported by evidence.
+
+419
+00:31:50,034 --> 00:31:56,295
+Because an unwarranted assumption is unjustified, it weakens the whole argument, okay?
+
+420
+00:31:56,795 --> 00:31:59,036
+And here we have several types of
+
+421
+00:31:59,776 --> 00:32:05,577
+fallacies in these regards, such as begging the question, inappropriate appeal to authority,
+
+422
+00:32:06,017 --> 00:32:12,579
+loaded question, false dilemma, questionable cause, slippery slope, and the naturalistic
+
+423
+00:32:12,659 --> 00:32:13,119
+fallacy.
+
+424
+00:32:13,979 --> 00:32:16,560
+And let's discuss them one by one, okay?
+
+425
+00:32:17,740 --> 00:32:18,340
+Excuse me, guys.
+
+426
+00:32:26,325 --> 00:32:32,787
+So to begin with, in begging the question, the conclusion is simply a rewarding of a
+
+427
+00:32:34,228 --> 00:32:41,071
+premise, okay? By making our conclusion the same as the premise, we are assuming that the conclusion
+
+428
+00:32:41,231 --> 00:32:44,012
+is true rather than offering proof for it.
+
+429
+00:32:44,532 --> 00:32:48,533
+So the fallacy is also known as circular reasoning
+
+430
+00:32:49,334 --> 00:32:55,156
+because we are kind of using the same point of the conclusion, okay?
+
+431
+00:32:57,508 --> 00:33:04,072
+And begging the question may take the form of the conclusion being a definition of the key
+
+432
+00:33:04,112 --> 00:33:05,413
+term in the premises.
+
+433
+00:33:07,174 --> 00:33:10,676
+Like as you see in this example,
+
+434
+00:33:12,377 --> 00:33:19,100
+the conclusion is simply a definition of the key term capital punishment than being an inference
+
+435
+00:33:19,200 --> 00:33:25,884
+from the premise. Like capital punishment is wrong because it's immoral to inflict death as
+
+436
+00:33:25,944 --> 00:33:27,225
+a punishment for a crime.
+
+437
+00:33:30,157 --> 00:33:33,518
+So this type of fallacy is sometimes hard to spot.
+
+438
+00:33:34,338 --> 00:33:39,860
+At first glance, it may appear that the person has a logical argument.
+
+439
+00:33:40,361 --> 00:33:45,382
+On closer evaluation, however, it becomes apparent that it only seems this way.
+
+440
+00:33:45,762 --> 00:33:46,423
+The conclusion
+
+441
+00:33:49,504 --> 00:33:54,105
+and the premise say essentially the same thing.
+
+442
+00:33:55,806 --> 00:33:58,887
+And the next one is an inappropriate appeal to authority.
+
+443
+00:33:59,435 --> 00:34:02,756
+So it's generally appropriate in an argument to use the
+
+444
+00:34:03,637 --> 00:34:08,398
+testimony of a person who is authority or an expert in the field.
+
+445
+00:34:08,939 --> 00:34:15,001
+However, sometimes we commit this inappropriate appeal to authority when we kind of
+
+446
+00:34:15,761 --> 00:34:21,643
+give the microphone to an authority, but in a different field, okay?
+
+447
+00:34:21,963 --> 00:34:27,385
+So it may happen, right? In the TV, in the mass media, or maybe in some arguments, right?
+
+448
+00:34:27,726 --> 00:34:30,899
+So we may kind of bring some authority or some kind of
+
+449
+00:34:31,899 --> 00:34:34,680
+expert, but who is in different field, right?
+
+450
+00:34:35,020 --> 00:34:39,502
+But we are talking about maybe in a completely different field or different topic or within
+
+451
+00:34:39,542 --> 00:34:46,024
+this information technology industry, we know that there are kind of various sub fields, right?
+
+452
+00:34:46,564 --> 00:34:53,147
+And we may kind of use the authority in one field to the conclusion or to the kind of
+
+453
+00:34:53,327 --> 00:34:54,587
+argument in different field.
+
+454
+00:34:55,768 --> 00:34:56,048
+Okay.
+
+455
+00:35:01,088 --> 00:35:04,070
+And here also we can talk about the celebrities, right?
+
+456
+00:35:04,370 --> 00:35:11,013
+Sometimes the celebrities or popular bloggers, they may be given the stage or the
+
+457
+00:35:11,073 --> 00:35:15,196
+microphone or they may be used in the podcast, right?
+
+458
+00:35:15,956 --> 00:35:16,676
+To talk about
+
+459
+00:35:17,497 --> 00:35:19,358
+various kinds of issues, right?
+
+460
+00:35:19,378 --> 00:35:23,080
+To talk about politics, to talk about how to make a
+
+461
+00:35:24,160 --> 00:35:26,281
+good family, happy family, right?
+
+462
+00:35:26,682 --> 00:35:28,503
+Or how to make money, for example, right?
+
+463
+00:35:28,863 --> 00:35:30,805
+Even though they may be kind of
+
+464
+00:35:31,865 --> 00:35:36,387
+authority or kind of expert in a completely different field.
+
+465
+00:35:42,148 --> 00:35:46,549
+And the next type of fallacies, they're called the loaded question, okay?
+
+466
+00:35:47,309 --> 00:35:53,010
+And the fallacy of a loaded question assumes a particular answer to another unasked question.
+
+467
+00:35:53,651 --> 00:35:59,472
+So this fallacy is sometimes used in a court of law when a lawyer demands a yes or no answer
+
+468
+00:35:59,919 --> 00:36:01,640
+to equations such as
+
+469
+00:36:02,501 --> 00:36:03,802
+have you stopped beating
+
+470
+00:36:04,723 --> 00:36:11,248
+your child or your wife for example right or your employee right and here it
+
+471
+00:36:11,408 --> 00:36:18,053
+assumes kind of that you are beating that person right whereas maybe you are not
+
+472
+00:36:18,113 --> 00:36:22,416
+beating at all right but the question itself already assumes right
+
+473
+00:36:23,197 --> 00:36:25,759
+that you are committing this activity
+
+474
+00:36:28,828 --> 00:36:31,070
+And the next one is called the false dilemma.
+
+475
+00:36:31,690 --> 00:36:38,275
+And the fallacy of false dilemma reduces responses to complex issues to an either
+
+476
+00:36:38,735 --> 00:36:39,316
+or choice.
+
+477
+00:36:40,376 --> 00:36:47,021
+And by doing so, this fallacy polarizes, stands on issues, and ignores common
+
+478
+00:36:47,061 --> 00:36:48,962
+ground or other solutions.
+
+479
+00:36:51,144 --> 00:36:52,365
+So here, one example.
+
+480
+00:36:53,405 --> 00:36:55,427
+Why do you complain about our politics?
+
+481
+00:36:56,021 --> 00:37:02,745
+If you don't like our policies or our politicians or our countries, why don't you just
+
+482
+00:37:02,825 --> 00:37:03,906
+leave our country?
+
+483
+00:37:04,606 --> 00:37:06,728
+So did we hear such arguments?
+
+484
+00:37:07,768 --> 00:37:08,889
+I think it happens, right?
+
+485
+00:37:09,389 --> 00:37:13,012
+In the social media, for example, or in some videos, right?
+
+486
+00:37:13,352 --> 00:37:15,793
+Or maybe in the politics, right?
+
+487
+00:37:16,134 --> 00:37:16,974
+Sometimes
+
+488
+00:37:17,815 --> 00:37:24,559
+they try to demoralize the people who complain about maybe valid arguments
+
+489
+00:37:25,350 --> 00:37:30,192
+issues, right, they may kind of drag them into the either or choices.
+
+490
+00:37:38,816 --> 00:37:45,280
+And the next type of fallacy in this kind of regards is called a questionable cause
+
+491
+00:37:45,820 --> 00:37:46,880
+or also a post hoc.
+
+492
+00:37:47,601 --> 00:37:54,527
+So because our brains tend to impose order on how we see the world, we may see order and
+
+493
+00:37:54,567 --> 00:37:57,368
+the casual relationships where they don't exist.
+
+494
+00:37:58,108 --> 00:38:04,030
+So when a person assumes without sufficient evidence that one thing is the cause of another,
+
+495
+00:38:04,630 --> 00:38:09,012
+that person is committing the fallacy of a questionable cause.
+
+496
+00:38:10,213 --> 00:38:12,834
+And this cause, and this can occur
+
+497
+00:38:14,094 --> 00:38:20,717
+when we assume that because one event preceded a second event, it was the cause of the
+
+498
+00:38:20,797 --> 00:38:21,617
+second event.
+
+499
+00:38:22,977 --> 00:38:25,878
+And this is also called the post hoc fallacy.
+
+500
+00:38:26,718 --> 00:38:30,319
+Okay. And here I pointed about superstitions.
+
+501
+00:38:30,779 --> 00:38:33,620
+So sometimes we may say that because
+
+502
+00:38:34,720 --> 00:38:41,542
+I put on my maybe favorite jacket, or maybe favorite cap, or I use kind
+
+503
+00:38:41,582 --> 00:38:47,863
+of maybe a certain route to go to the school or to the exam, therefore,
+
+504
+00:38:48,423 --> 00:38:54,642
+my results was okay, or I had kind of a good result or I had kind of a good negotiation in
+
+505
+00:38:54,662 --> 00:38:57,805
+this business right however like
+
+506
+00:38:59,046 --> 00:39:02,468
+correlation may not always mean causation right
+
+507
+00:39:04,830 --> 00:39:11,655
+or sometimes that it may happen that when some people they have a certain medical or
+
+508
+00:39:11,695 --> 00:39:16,659
+health conditions right and then this condition they may not be
+
+509
+00:39:17,660 --> 00:39:23,500
+infectious right however since the issue is very
+
+510
+00:39:26,162 --> 00:39:30,926
+unfamiliar to people, so they may try to
+
+511
+00:39:31,927 --> 00:39:35,710
+avoid that particular person because of that medical condition.
+
+512
+00:39:36,090 --> 00:39:41,734
+However, they may not have much information about this condition, for example.
+
+513
+00:39:42,115 --> 00:39:48,540
+They may think that if they come close to that person, they may also catch that
+
+514
+00:39:48,600 --> 00:39:50,321
+particular medical condition.
+
+515
+00:39:52,276 --> 00:39:54,799
+And the next one is called the slippery slope.
+
+516
+00:39:56,240 --> 00:40:03,207
+And according to this fallacy, if we permit a certain action, then all actions of this
+
+517
+00:40:03,288 --> 00:40:03,568
+type,
+
+518
+00:40:04,269 --> 00:40:07,752
+even the most extreme ones, will soon be permissible.
+
+519
+00:40:09,154 --> 00:40:15,380
+So can you guys pause this video and think about the examples for this fallacy?
+
+520
+00:40:24,674 --> 00:40:27,896
+So for example, it can happen in a parenting, right?
+
+521
+00:40:28,257 --> 00:40:28,797
+Sometimes
+
+522
+00:40:30,078 --> 00:40:36,883
+the people outside, by looking to our parenting strategies, they may say that,
+
+523
+00:40:37,483 --> 00:40:38,584
+why are you allowing
+
+524
+00:40:39,425 --> 00:40:41,747
+your child to do certain activity?
+
+525
+00:40:42,167 --> 00:40:43,808
+So if you keep allowing them,
+
+526
+00:40:45,389 --> 00:40:49,172
+one day that your child will become spoiled, right?
+
+527
+00:40:49,572 --> 00:40:49,913
+Or that...
+
+528
+00:40:51,555 --> 00:40:56,779
+your child kind of may start committing some kind of criminal activities, right?
+
+529
+00:40:57,099 --> 00:41:03,843
+By just kind of looking into maybe one tiny action, a tiny kind of detail, they may try
+
+530
+00:41:04,003 --> 00:41:06,264
+to kind of generalize and
+
+531
+00:41:06,965 --> 00:41:09,666
+go to this slippery slope, okay?
+
+532
+00:41:12,268 --> 00:41:18,612
+Or like people may say, if you give a voice, if you hear to young people,
+
+533
+00:41:19,192 --> 00:41:20,513
+to their worries,
+
+534
+00:41:21,290 --> 00:41:27,132
+Just once, just today, then maybe tomorrow they may take over the whole stage, right?
+
+535
+00:41:27,392 --> 00:41:31,454
+They may kind of go out and make strikes, for example, right?
+
+536
+00:41:32,254 --> 00:41:35,655
+We may have such a kind of strange arguments also.
+
+537
+00:41:37,696 --> 00:41:41,157
+And the last one is called the naturalistic fallacy.
+
+538
+00:41:43,036 --> 00:41:49,821
+And it's based on the unwarranted assumption that what is natural is good or morally acceptable,
+
+539
+00:41:50,381 --> 00:41:53,683
+and that what is unnatural is bad or morally unacceptable.
+
+540
+00:41:54,604 --> 00:41:57,646
+I think this type of fallacy is also common, right?
+
+541
+00:41:58,006 --> 00:41:59,687
+So on the one hand,
+
+542
+00:42:00,487 --> 00:42:06,051
+we believe that generally, or in most of the situations, that
+
+543
+00:42:07,512 --> 00:42:09,753
+whatever natural can be good, right?
+
+544
+00:42:10,094 --> 00:42:12,015
+Rather than eating some...
+
+545
+00:42:13,105 --> 00:42:18,069
+superficial food or junk food, it's better to eat natural food, right?
+
+546
+00:42:18,469 --> 00:42:19,130
+Or rather than
+
+547
+00:42:19,910 --> 00:42:21,271
+eating some kind of,
+
+548
+00:42:25,355 --> 00:42:32,240
+or kind of having some type of medicine, which are kind of artificial, it's better to
+
+549
+00:42:32,280 --> 00:42:37,104
+have some natural vitamins such as fruits or vegetables, right?
+
+550
+00:42:37,484 --> 00:42:38,164
+So however,
+
+551
+00:42:39,145 --> 00:42:45,789
+according to this fallacy, sometimes there may be situations that not always what's naturalistic
+
+552
+00:42:46,030 --> 00:42:47,291
+is good, right?
+
+553
+00:42:54,597 --> 00:42:57,920
+Just one example that cigarettes or
+
+554
+00:42:58,861 --> 00:43:01,683
+tobacco, right? So even though tobacco
+
+555
+00:43:03,004 --> 00:43:04,626
+can be something in nature, right?
+
+556
+00:43:04,706 --> 00:43:06,667
+It's a natural good, right?
+
+557
+00:43:06,948 --> 00:43:07,108
+But
+
+558
+00:43:07,928 --> 00:43:10,511
+it's not kind of healthy, right?
+
+559
+00:43:10,591 --> 00:43:10,871
+It's not
+
+560
+00:43:11,945 --> 00:43:13,386
+good for our health, right?
+
+561
+00:43:13,986 --> 00:43:17,069
+Or there may be some natural events, right?
+
+562
+00:43:17,650 --> 00:43:18,510
+Some kind of
+
+563
+00:43:19,471 --> 00:43:21,012
+hurricane or maybe
+
+564
+00:43:22,073 --> 00:43:26,757
+earthquake, right? So there are natural conditions, natural events, but we know that they're
+
+565
+00:43:26,797 --> 00:43:27,098
+also
+
+566
+00:43:28,619 --> 00:43:31,982
+dangerous for humanity, for example, okay?
+
+567
+00:43:40,733 --> 00:43:41,234
+And
+
+568
+00:43:42,074 --> 00:43:44,856
+sometimes that some people may
+
+569
+00:43:45,617 --> 00:43:47,579
+bring the point about hunting, right?
+
+570
+00:43:47,859 --> 00:43:50,241
+About hunting of rare animals.
+
+571
+00:43:50,601 --> 00:43:52,843
+So they may say that the
+
+572
+00:43:53,603 --> 00:43:55,645
+hunting is a kind of
+
+573
+00:43:57,186 --> 00:43:59,068
+natural order in the environment.
+
+574
+00:43:59,548 --> 00:44:01,790
+And since predators hunt
+
+575
+00:44:02,931 --> 00:44:08,135
+the other animals, then they may say that we humans are also predators.
+
+576
+00:44:08,475 --> 00:44:15,457
+Then it's... justifiable if we also hunt the other predators or the other animals,
+
+577
+00:44:15,757 --> 00:44:22,421
+right? However, in some occasions where the animals are rare, right, there are
+
+578
+00:44:22,481 --> 00:44:23,782
+few, then
+
+579
+00:44:24,503 --> 00:44:26,524
+the situation may become problematic.
+
+580
+00:44:33,829 --> 00:44:38,372
+Okay, guys, let's kind of wrap up our today's discussion.
+
+581
+00:44:39,002 --> 00:44:44,704
+And here, the authors of the book of this chapter, they give some of the strategies
+
+582
+00:44:45,465 --> 00:44:48,126
+to avoid such fallacies.
+
+583
+00:44:48,546 --> 00:44:50,867
+So first of all, you should know yourself.
+
+584
+00:44:51,547 --> 00:44:53,007
+And self-knowledge is an
+
+585
+00:44:53,708 --> 00:44:56,229
+important rule for good critical thinking.
+
+586
+00:44:56,669 --> 00:45:02,091
+So knowing which fallacies you are most likely to fall for and which you are most likely to
+
+587
+00:45:02,131 --> 00:45:07,433
+commit will make you less vulnerable to lapses in critical thinking.
+
+588
+00:45:08,143 --> 00:45:12,625
+And second one, we should build our self-confidence and self-esteem.
+
+589
+00:45:14,286 --> 00:45:19,829
+Because by working on our self-confidence and self-esteem,
+
+590
+00:45:20,830 --> 00:45:25,512
+we may have less pressure to fall for these fallacies, right?
+
+591
+00:45:25,992 --> 00:45:32,315
+Because people who are self-confident, they are less likely to back down when others use a
+
+592
+00:45:32,355 --> 00:45:37,218
+fallacy on them or to become defensive and use fallacies on others.
+
+593
+00:45:38,207 --> 00:45:41,549
+And the next one, we should cultivate a good listening skills.
+
+594
+00:45:42,110 --> 00:45:43,230
+We should be a respectful
+
+595
+00:45:43,991 --> 00:45:46,172
+listener to the views of others.
+
+596
+00:45:46,612 --> 00:45:49,014
+And even if we disagree with them, okay.
+
+597
+00:45:51,175 --> 00:45:56,079
+And the next one, we should avoid ambiguous and vague terms and faulty grammar.
+
+598
+00:45:56,759 --> 00:46:02,603
+And we should, in order for this to happen, we should cultivate a good communication and writing
+
+599
+00:46:02,643 --> 00:46:07,626
+skills. And we should clearly define our key terms in presenting an argument.
+
+600
+00:46:09,127 --> 00:46:15,893
+And we should also be not afraid to ask questions when we are not sure if the matter
+
+601
+00:46:16,093 --> 00:46:18,035
+or the argument seems unclear for us.
+
+602
+00:46:20,077 --> 00:46:26,382
+And the next one, we shouldn't confuse the soundness of an argument with the character or
+
+603
+00:46:26,442 --> 00:46:29,625
+circumstances of the person making the argument.
+
+604
+00:46:30,366 --> 00:46:33,720
+And we should kind of focus on the argument itself, right?
+
+605
+00:46:33,780 --> 00:46:37,461
+Rather than kind of thinking about the characteristics of people.
+
+606
+00:46:37,941 --> 00:46:43,802
+Of course, here, some may argue that sometimes there may be some kind of connection, right?
+
+607
+00:46:44,142 --> 00:46:47,023
+Especially in the criminal cases, right?
+
+608
+00:46:47,523 --> 00:46:53,744
+Let's say that when the investigators, police investigators, they're kind of investigating
+
+609
+00:46:53,804 --> 00:47:00,545
+the situation, that if a certain person, right, who is kind of in charge, that they committed
+
+610
+00:47:01,025 --> 00:47:05,780
+that certain criminal activity, they may look to the history
+
+611
+00:47:07,481 --> 00:47:08,742
+of their criminal activity.
+
+612
+00:47:09,702 --> 00:47:14,885
+However, in more general arguments, we should kind of stick for this rule.
+
+613
+00:47:16,106 --> 00:47:18,947
+And the next one is we should know our topic
+
+614
+00:47:19,708 --> 00:47:26,051
+and we shouldn't jump to a conclusion without doing research and investigation
+
+615
+00:47:26,171 --> 00:47:28,893
+first. We should know our subject.
+
+616
+00:47:29,621 --> 00:47:36,423
+that because by knowing our subject kind of we can come up with more real evidence
+
+617
+00:47:36,763 --> 00:47:39,523
+with kind of better examples for example right
+
+618
+00:47:41,644 --> 00:47:45,485
+and the next one we should adopt a position of skepticism okay
+
+619
+00:47:46,225 --> 00:47:53,087
+and we should be skeptical but not close our minds to claims we disagree with unless there
+
+620
+00:47:53,127 --> 00:47:56,167
+is a clear evidence that contradicts to that claim
+
+621
+00:47:58,468 --> 00:47:59,008
+and we shouldn't
+
+622
+00:47:59,752 --> 00:48:06,095
+and just take people's word for it, especially if they are not authorities in the field under
+
+623
+00:48:06,115 --> 00:48:06,655
+discussion.
+
+624
+00:48:07,915 --> 00:48:10,116
+And we should also remain skeptical
+
+625
+00:48:11,357 --> 00:48:14,218
+also to our own views and
+
+626
+00:48:15,198 --> 00:48:22,001
+arguments, okay? We should kind of do more research and find out some kind of evidence or
+
+627
+00:48:22,021 --> 00:48:23,041
+some proof for this.
+
+628
+00:48:24,322 --> 00:48:26,903
+And the next one, we should watch our body language.
+
+629
+00:48:28,111 --> 00:48:30,652
+Fallacies need not be written or spoken.
+
+630
+00:48:30,832 --> 00:48:36,655
+For example, the fallacy of personal attack and appeal to force can be conveyed through body
+
+631
+00:48:36,675 --> 00:48:43,339
+language, such as rolling the eyes, glaring, looking away, and even walking away when
+
+632
+00:48:43,439 --> 00:48:44,379
+someone is speaking.
+
+633
+00:48:45,360 --> 00:48:48,741
+And last but not least, don't be sad on winning.
+
+634
+00:48:50,222 --> 00:48:53,896
+If our purpose is to win the argument, rather than get
+
+635
+00:48:54,636 --> 00:49:01,538
+to the truth about the issue, we are more likely to use fallacies and rhetoric when
+
+636
+00:49:01,578 --> 00:49:04,079
+we can't rationally defend
+
+637
+00:49:05,379 --> 00:49:06,459
+the point or
+
+638
+00:49:08,140 --> 00:49:08,800
+our position.
+
+639
+00:49:13,021 --> 00:49:17,242
+Okay, guys, basically, this was all for today's lecture.
+
+640
+00:49:17,842 --> 00:49:17,942
+And
+
+641
+00:49:19,358 --> 00:49:25,379
+In order for you guys to work on this perspective more and to kind of
+
+642
+00:49:26,399 --> 00:49:32,640
+exercise these perspectives, here I brought two kind of worldviews or two kind of points
+
+643
+00:49:33,401 --> 00:49:37,281
+opposing to each other regarding the war in
+
+644
+00:49:38,241 --> 00:49:42,142
+Iraq, which was conducted by the US military, right?
+
+645
+00:49:42,842 --> 00:49:47,023
+And here, the first one is the point from
+
+646
+00:49:47,925 --> 00:49:52,748
+former President Bush. Okay, so I think you can also find out
+
+647
+00:49:53,468 --> 00:49:54,149
+this
+
+648
+00:49:56,170 --> 00:50:01,193
+speech from YouTube or maybe better you guys can read from this link.
+
+649
+00:50:01,333 --> 00:50:07,896
+Okay, how this the president was justifying the invasion of this
+
+650
+00:50:09,609 --> 00:50:12,730
+different country, right, by the US military.
+
+651
+00:50:13,350 --> 00:50:15,571
+And secondly, there is an opposing view
+
+652
+00:50:16,571 --> 00:50:19,492
+by the Professor David Cochler, okay?
+
+653
+00:50:20,052 --> 00:50:20,972
+He was kind of
+
+654
+00:50:22,133 --> 00:50:28,915
+critically pointing out on some of the fallacies in the President Bush speech,
+
+655
+00:50:29,255 --> 00:50:35,477
+okay? And after reading both points, you can think about the following questions,
+
+656
+00:50:36,197 --> 00:50:36,597
+such as,
+
+657
+00:50:37,554 --> 00:50:40,395
+compare and contrast former President Bush's claim
+
+658
+00:50:41,176 --> 00:50:47,979
+that Iraq was a threat to world peace with Derek Coffler's position on the issue, and which
+
+659
+00:50:48,039 --> 00:50:54,062
+claims are valid, which are based on the fallacious reasoning, and who has the stronger argument
+
+660
+00:50:54,202 --> 00:50:54,583
+and why.
+
+661
+00:50:55,403 --> 00:51:01,606
+So even though we may think that these arguments or this historical case is a bit
+
+662
+00:51:01,866 --> 00:51:03,647
+outdated, right? It happened about
+
+663
+00:51:04,347 --> 00:51:05,908
+more than 20 years ago, right?
+
+664
+00:51:06,369 --> 00:51:07,129
+So however,
+
+665
+00:51:07,878 --> 00:51:14,480
+by reading these cases and by analyzing and thinking about this, I think we can also
+
+666
+00:51:14,980 --> 00:51:20,122
+think about the current geopolitical global events, right?
+
+667
+00:51:20,422 --> 00:51:27,264
+So how the Russian president, for example, Putin, justified his invasion of Ukraine,
+
+668
+00:51:27,905 --> 00:51:29,545
+or how the
+
+669
+00:51:30,886 --> 00:51:34,247
+Israel, right, this Netanyahu, right, their leader,
+
+670
+00:51:35,934 --> 00:51:42,560
+justified and has been justifying ever since for this for the following two three years uh
+
+671
+00:51:42,620 --> 00:51:49,566
+their kind of uh genocide uh kind of genocide in the genocide of uh the gaza and
+
+672
+00:51:49,646 --> 00:51:56,492
+the general palestinian people for example right or how uh the current u.s president
+
+673
+00:51:56,512 --> 00:52:00,755
+uh donald trump has justified his kind of uh
+
+674
+00:52:01,916 --> 00:52:08,745
+invasion of venezuela or how kind of he's justifying the situation in the Middle East,
+
+675
+00:52:08,805 --> 00:52:10,126
+right, with
+
+676
+00:52:10,987 --> 00:52:15,872
+Iran, right? I think we can be critical of such justifications.
+
+677
+00:52:18,295 --> 00:52:19,977
+So thank you very much, guys.
+
+678
+00:52:20,017 --> 00:52:23,280
+This was all for today, and see you next week.

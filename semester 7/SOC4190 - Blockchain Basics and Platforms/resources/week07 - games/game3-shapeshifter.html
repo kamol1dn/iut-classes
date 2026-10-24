@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Shapeshifter — transaction malleability, Mt. Gox, and SegWit</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#FFC907; --gold-d:#a9800a; --gold-bg:#FFFAE6;
+  --red:#c0392b; --red-bg:#fdecea; --red-d:#7b241c;
+  --grn:#1e8449; --grn-bg:#eafaf1;
+  --blu:#1f6fb2; --blu-bg:#eaf3fb;
+  --ink:#333; --dim:#777; --dim2:#999; --line:#ddd; --line2:#ccc;
+  --panel:#fafafa; --head-bg:#f3f3f3; --navy:#1B3A6B; --lab:#666;
+  --mono:'JetBrains Mono','SFMono-Regular',Consolas,Menlo,monospace;
+  --sans:'Source Sans 3','Helvetica Neue',Arial,system-ui,sans-serif;
+  --head:'Oswald','Arial Narrow',Impact,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+body{padding:0 14px 50px}
+.wrap{max-width:980px;margin:0 auto}
+button{font-family:var(--sans)}
+button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+code{font-family:var(--mono);font-size:.86em;background:#edf1f7;color:var(--navy);padding:0 4px;border-radius:4px;white-space:nowrap}
+kbd{font-family:var(--mono);font-size:11px;font-weight:700;border:1px solid var(--line2);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:#fff;color:var(--ink);margin-left:6px;vertical-align:1px}
+.masthead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:20px 0 12px;border-bottom:4px solid var(--gold)}
+.masthead h1{font-family:var(--head);font-weight:600;font-size:30px;margin:0;color:var(--navy)}
+.masthead .sub{color:var(--dim);font-size:14px}
+.masthead .course{margin-left:auto;font-size:11px;letter-spacing:1.2px;color:var(--gold-d);border:1px solid var(--gold);background:var(--gold-bg);padding:3px 10px;border-radius:20px;font-weight:700}
+.lede{background:var(--gold-bg);border-left:4px solid var(--gold);padding:11px 15px;margin:16px 0;border-radius:0 6px 6px 0}
+.lede b{color:var(--gold-d)}
+.ctl{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0;padding:12px;background:var(--panel);border:1px solid var(--line2);border-radius:9px}
+.ctl button,.btn{background:#fff;border:1px solid var(--line2);border-radius:7px;padding:7px 15px;font-family:var(--sans);font-size:14px;cursor:pointer;color:var(--ink);font-weight:600;min-height:38px}
+.ctl button:hover,.btn:hover{background:var(--gold-bg);border-color:var(--gold)}
+.ctl button.key,.btn.key{background:var(--gold);border-color:var(--gold);color:#4a3800;min-width:92px}
+.ctl button:disabled,.btn:disabled{opacity:.45;cursor:default;background:#fff;border-color:var(--line2)}
+.log{border:1px solid var(--line2);border-radius:9px;background:#1E222A;color:#E6E9EE;font-family:var(--mono);font-size:12.5px;line-height:1.75;padding:11px 13px;white-space:pre-wrap;word-break:break-all}
+.log .t{color:#6ec1ff} .log .hi{color:#ffd45e} .log .bad{color:#ff8b7d} .log .ok{color:#8fe3a8} .log .dm{color:#8a8a8a}
+.banner{margin-top:14px;padding:12px 16px;border-radius:8px;font-size:15px;display:none}
+.banner.show{display:block}
+.banner.warn{background:var(--red);color:#fff}
+.banner.win{background:#b8ecc8;color:#153d22}
+.banner .hd{font-family:var(--head);letter-spacing:1px;text-transform:uppercase;display:block;font-size:16px;margin-bottom:3px}
+.banner code{background:rgba(255,255,255,.6);color:inherit}
+.banner .joke{display:block;margin-top:6px;font-style:italic}
+.note{border-left:4px solid var(--blu);background:var(--blu-bg);padding:10px 14px;margin:18px 0 0;border-radius:0 6px 6px 0;font-size:14px}
+.note b{color:var(--blu)}
+footer{color:var(--dim);font-size:13px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
+footer p{margin:0 0 7px}
+footer code{font-family:var(--mono);color:var(--blu);font-size:12.5px;background:none;padding:0}
+footer .reset{background:#fff;border:1px solid var(--line2);border-radius:7px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;min-height:36px;margin-right:10px}
+footer .reset:hover{border-color:var(--red);color:var(--red)}
+.lab{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--lab);font-weight:700;margin:0 0 7px}
+.panel{border:1px solid var(--line2);border-radius:9px;background:#fff;padding:11px 13px}
+.small{font-size:13px;color:var(--lab);margin:8px 0 0;line-height:1.4}
+.gloss{border:1px solid var(--gold);background:var(--gold-bg);border-radius:8px;padding:8px 12px;font-size:13.5px;margin:10px 0}
+.gloss b{color:var(--gold-d)}
+.mbar{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 18px}
+.mchip{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-height:58px;border:1px solid var(--line2);background:#fff;border-radius:9px;padding:7px 10px 8px;cursor:pointer;color:var(--ink)}
+.mchip:hover{border-color:var(--gold);background:var(--gold-bg)}
+.mchip .no{display:flex;align-items:center;gap:6px;font-family:var(--head);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--lab)}
+.mchip .tt{font-weight:700;font-size:13.5px;line-height:1.25}
+.mchip .ck{width:17px;height:17px;border-radius:50%;background:var(--grn);color:#fff;font-family:var(--sans);font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.mchip .ck.hp{background:var(--gold);color:#4a3800}
+.mchip.cur{border-color:var(--gold);box-shadow:inset 0 0 0 2px var(--gold);background:var(--gold-bg)}
+.mchip.cur .no{color:var(--navy)}
+.mhead{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 12px}
+.mhead .kind{flex-basis:100%;font-family:var(--head);font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--lab)}
+.mhead h2{font-family:var(--head);font-weight:600;font-size:25px;line-height:1.15;margin:0;color:var(--navy)}
+.mhead .goal{border:2px solid var(--navy);border-radius:20px;padding:1px 12px;font-size:14px;font-weight:700;color:var(--navy)}
+.mhead .goal i{font-style:normal;color:var(--lab);margin-right:7px;font-size:11px;text-transform:uppercase;letter-spacing:1.1px}
+.mhead .clr{background:var(--grn);color:#fff;border-radius:20px;padding:2px 12px;font-size:13px;font-weight:700}
+.mhead .clr.hp{background:var(--gold);color:#4a3800}
+.mhead .desc{flex-basis:100%;margin:2px 0 0;font-size:15.5px}
+.hintbox{margin-top:10px;font-size:14px}
+.hintbox p{margin:4px 0;padding:6px 10px;background:var(--blu-bg);border-radius:6px;border-left:3px solid var(--blu)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.two>*{min-width:0}
+.tag{display:inline-block;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:1px 8px;border-radius:12px;background:var(--blu-bg);color:var(--blu);margin-left:6px;vertical-align:middle}
+.tag.ok{background:var(--grn-bg);color:var(--grn)}.tag.bad{background:var(--red-bg);color:var(--red)}.tag.gold{background:var(--gold-bg);color:var(--gold-d)}
+/* M1 field cards */
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.fc{border:1px solid var(--line2);border-radius:9px;padding:9px 11px;background:#fff}
+.fc .fn{font-weight:700;font-size:14.5px}
+.fc .fv{font-family:var(--mono);font-size:12px;color:var(--navy);margin:3px 0 6px;word-break:break-all}
+.fc .ch{display:flex;gap:6px}
+.fc .ch button{flex:1;border:1px solid var(--line2);border-radius:7px;background:#fff;padding:6px 4px;font-size:12.5px;font-weight:700;cursor:pointer;min-height:36px;font-family:var(--sans)}
+.fc .ch button:hover{border-color:var(--gold);background:var(--gold-bg)}
+.fc .ch button.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+.fc .ch button.right{background:var(--grn);color:#fff;border-color:var(--grn)}
+.fc .ch button.wrong{background:var(--red);color:#fff;border-color:var(--red)}
+.fc .fw{font-size:12.5px;color:var(--lab);margin:6px 0 0;display:none}
+.fc .fw.show{display:block}
+/* M2 diff */
+.hexd{font-family:var(--mono);font-size:12.5px;line-height:1.9;word-break:break-all;background:#f6f8fb;border:1px solid var(--line2);border-radius:9px;padding:9px 11px}
+.hexd .d{background:#fde2a4;color:#5a3d00;border-radius:3px}
+.hexd .sig{text-decoration:underline dotted #7a5ea8}
+.idl{font-family:var(--mono);font-size:12.5px;word-break:break-all;margin:5px 0}
+.idl b{font-family:var(--sans);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--lab);margin-right:6px}
+.claims{display:flex;flex-direction:column;gap:7px}
+.claim{text-align:left;border:1px solid var(--line2);border-radius:7px;padding:8px 12px;background:#fff;cursor:pointer;font-size:14.5px;min-height:38px;font-family:var(--sans);display:flex;gap:10px;align-items:center}
+.claim:hover{border-color:var(--gold);background:var(--gold-bg)}
+.claim .bx{width:18px;height:18px;border:2px solid var(--line2);border-radius:4px;flex:none;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.claim.on .bx{background:var(--navy);border-color:var(--navy);color:#fff}
+.claim.right{border-color:var(--grn);background:var(--grn-bg)}.claim.wrong{border-color:var(--red);background:var(--red-bg)}
+/* M3 desk */
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.rule{border:1px solid var(--line2);border-radius:9px;padding:10px 12px;background:#fff;cursor:pointer;text-align:left;font-family:var(--sans);font-size:14px;min-height:38px}
+.rule:hover{border-color:var(--gold);background:var(--gold-bg)}
+.rule.sel{border-color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
+.rule .rn{font-family:var(--head);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:3px}
+.ledger{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+.ledger th,.ledger td{border-bottom:1px solid var(--line);padding:4px 6px;text-align:left;vertical-align:top}
+.ledger th{font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--lab)}
+.ledger td.m{font-family:var(--mono);font-size:11.5px}
+.ledger tr.loss td{background:var(--red-bg)}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.kpi>div{border:1px solid var(--line2);border-radius:8px;padding:6px 12px;min-width:120px}
+.kpi .k{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--lab)}
+.kpi .v{font-family:var(--head);font-size:22px;color:var(--navy)}
+.kpi .v.bad{color:var(--red)}.kpi .v.ok{color:var(--grn)}
+/* M4 segwit */
+.secs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.sec{flex:1;min-width:160px;border:2px solid var(--line2);border-radius:9px;padding:8px 10px;cursor:pointer;background:#fff;text-align:left;font-family:var(--sans)}
+.sec:hover{border-color:var(--gold)}
+.sec.on{border-color:var(--navy);background:var(--blu-bg)}
+.sec .sn{font-weight:700}
+.sec .sb{font-family:var(--mono);font-size:11px;color:var(--navy);word-break:break-all;margin-top:4px;max-height:64px;overflow:hidden}
+.sec .sz{font-size:12px;color:var(--lab)}
+.q{border:1px solid var(--line2);border-radius:9px;padding:11px 13px;margin:10px 0;background:#fff}
+.q .qt{font-weight:700;margin:0 0 8px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{text-align:left;border:1px solid var(--line2);border-radius:7px;padding:8px 12px;background:#fff;cursor:pointer;font-size:14.5px;min-height:38px;font-family:var(--sans)}
+.opt:hover{border-color:var(--gold);background:var(--gold-bg)}
+.opt.right{border-color:var(--grn);background:var(--grn-bg)}.opt.wrong{border-color:var(--red);background:var(--red-bg)}
+.why{font-size:13.5px;color:var(--lab);margin:7px 0 0;display:none}.why.show{display:block}
+.tl{border-left:3px solid var(--gold);margin:8px 0 0 6px;padding-left:12px;font-size:14px}
+.tl p{margin:0 0 6px}.tl b{color:var(--navy)}
+@media (max-width:720px){.mbar,.fields,.rules{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.masthead .course{margin-left:0}}
+@media (max-width:480px){.fields,.rules{grid-template-columns:1fr}}
+#selftest-report{white-space:pre-wrap;font-family:var(--mono);font-size:12px;background:#f6f8fb;border:1px solid var(--line2);padding:8px;display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<pre id="selftest-report"></pre>
+<div class="masthead">
+  <h1>THE SHAPESHIFTER</h1>
+  <span class="sub">same payment, two names · malleability, Mt. Gox and the fix</span>
+  <span class="course">SOC4190 · LECTURE 6</span>
+</div>
+<div class="lede">
+  The transaction ID is the hash of the bytes — and the <b>signature sits inside those bytes</b>. The signature cannot sign itself, so a
+  stranger can rewrite it (without breaking it) and give the same payment a <b>new ID</b> before it reaches a block.
+  You will do that to our real payment, run a withdrawal desk that trusts IDs, and then move the signature where it can do no harm: the <b>witness</b>.
+</div>
+
+<div class="mbar" id="mbar"></div>
+<div id="stage"></div>
+
+<div class="note"><b>The lesson.</b> Before a payment is in a block, its ID is a name that someone else can change. Track what a payment
+<i>does</i> (which coin it spends), not what it is called. SegWit moves signatures out of the hashed bytes into a witness section, so the ID
+can no longer be changed this way — and the Mt. Gox story reminds us that a real flaw is not automatically the cause of a real loss.</div>
+
+<footer>
+  <p>Everything in this game comes from Slide 6 (Bitcoin Transactions). Payment <code>d9f91d3f…6dd6</code> (block 968,391); its malleated twin
+  <code>e6f51ad1…54df</code> is our own experiment of 12 Oct 2026 (s → n − s; never broadcast; since Bitcoin Core 0.11.1 (2015) the low-s form is required by its standard relay and mining policy — a policy rule, not a consensus rule — ⚠️ verify). SegWit payment <code>0db3220c…d854</code> (block 968,392), witness ID <code>20179324…9e7e</code>.
+  Mt. Gox dates and the "at most about 386 bitcoins" figure: Decker &amp; Wattenhofer, arXiv:1403.6676 (2014). All IDs are computed live in your browser.</p>
+  <p>Keys: <kbd>1</kbd>…<kbd>5</kbd> open a mission · <kbd>H</kbd> hint · <kbd>R</kbd> restart · <kbd>N</kbd> next</p>
+  <p><button class="reset" id="resetAll">Reset progress</button> <span id="progtxt"></span></p>
+</footer>
+</div>
+
+<script>
+/* ---------- SHA-256 ---------- */
+function sha256(bytes){
+  const K=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  let H=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+  const l=bytes.length, bl=l*8, padLen=((l+9+63)>>6)<<6, m=new Uint8Array(padLen);
+  m.set(bytes); m[l]=0x80; for(let i=0;i<8;i++) m[padLen-1-i]=(bl/Math.pow(2,8*i))&0xff;
+  const w=new Uint32Array(64), rotr=(x,n)=>(x>>>n)|(x<<(32-n));
+  for(let off=0;off<padLen;off+=64){
+    for(let i=0;i<16;i++) w[i]=(m[off+i*4]<<24)|(m[off+i*4+1]<<16)|(m[off+i*4+2]<<8)|m[off+i*4+3];
+    for(let i=16;i<64;i++){const s0=rotr(w[i-15],7)^rotr(w[i-15],18)^(w[i-15]>>>3), s1=rotr(w[i-2],17)^rotr(w[i-2],19)^(w[i-2]>>>10); w[i]=(w[i-16]+s0+w[i-7]+s1)|0;}
+    let [a,b,c,d,e,f,g,h]=H;
+    for(let i=0;i<64;i++){const S1=rotr(e,6)^rotr(e,11)^rotr(e,25), ch=(e&f)^(~e&g), t1=(h+S1+ch+K[i]+w[i])|0, S0=rotr(a,2)^rotr(a,13)^rotr(a,22), mj=(a&b)^(a&c)^(b&c), t2=(S0+mj)|0; h=g;g=f;f=e;e=(d+t1)|0;d=c;c=b;b=a;a=(t1+t2)|0;}
+    H=[(H[0]+a)|0,(H[1]+b)|0,(H[2]+c)|0,(H[3]+d)|0,(H[4]+e)|0,(H[5]+f)|0,(H[6]+g)|0,(H[7]+h)|0];
+  }
+  const out=new Uint8Array(32); H.forEach((v,i)=>{out[i*4]=v>>>24;out[i*4+1]=(v>>>16)&255;out[i*4+2]=(v>>>8)&255;out[i*4+3]=v&255;}); return out;
+}
+const hex2b=h=>Uint8Array.from(h.match(/../g)||[],x=>parseInt(x,16));
+const b2hex=b=>Array.from(b,x=>x.toString(16).padStart(2,'0')).join('');
+function txid(hex){ if(!/^([0-9a-f]{2})+$/.test(hex)) return null; return b2hex(Array.from(sha256(sha256(hex2b(hex)))).reverse()); }
+const short=id=>id.slice(0,8)+'…'+id.slice(-4);
+
+/* ---------- real data ---------- */
+const RAW ='0200000001b29b2f64d67b4a0da277ca2ef50e3847c28cd4023ca8933d8fc0ae25b184ddc9010000006a47304402207c58a73023515ce7e760843e4eba95f305bd3a3209a119e5f08dfca55514b3dd022038c29f020e6330195f788c58ec1975350338fe75b04e4f737e242e2adb79cb9a0121026c22163f202760a7189cac51704b6f21149c208a7a258b752ff24b28b0a8f405ffffffff0240420f00000000001976a914b2c670c276afb59fd446710cb6f6c98202249e5c88ac2c2c0c00000000001976a914c471c2ac102c39809c341a1a71b1c7b0dd6681d788ac00000000';
+const MALL='0200000001b29b2f64d67b4a0da277ca2ef50e3847c28cd4023ca8933d8fc0ae25b184ddc9010000006b48304502207c58a73023515ce7e760843e4eba95f305bd3a3209a119e5f08dfca55514b3dd022100c73d60fdf19ccfe6a08773a713e68ac9b775de70fefa50c841ae3061f4bc75a70121026c22163f202760a7189cac51704b6f21149c208a7a258b752ff24b28b0a8f405ffffffff0240420f00000000001976a914b2c670c276afb59fd446710cb6f6c98202249e5c88ac2c2c0c00000000001976a914c471c2ac102c39809c341a1a71b1c7b0dd6681d788ac00000000';
+const TXID='d9f91d3f4d39a09f91c47070631382df3c3c9808380be5aff4b8dc6211706dd6', TXID_M='e6f51ad13ecbe1a2bfad25ff8e36cf5dc8bd676c86cbbe1f5246d91fb9f254df';
+const SEG ='010000000001018d4ac81d4e48b91c06988c9bff6d83c6a3292b02ddba1440854a77d94a2acd440100000000ffffffff0207f5010000000000160014dd26b220a99d15afce67bf2e38def1a0300b210f1ab30d00000000001600144ad6d25d4a81813e0defafe60070e30510cd12c702483045022100bd56cacffbcffe93bf41216933b0a62c30d08ef552bba38680270137dc5bd74f02200bde5fbed73f52ce5d4a1941b048d5d7bdd5452e9ddbb91b10c432f45e198b74012103f30bbccca4b2a45a628a735ce51e0fbb7afad4642525c54bd45610c44e95fc5600000000';
+const SEG_ID='0db3220c46029b7239033c02dd89a81eb599ce085d59465004ea160088a0d854', SEG_WID='201793241741aa25570f23542ed1db5a093972458e82e917cc03e6be833c9e7e';
+// SegWit sections (byte offsets): version 0-4 | marker+flag 4-6 | input+outputs 6-111 | witness 111-219 | locktime 219-223
+const SEGSEC=[
+  {id:'a',n:'version',b:[0,4],hashed:true},
+  {id:'m',n:'marker + flag (00 01)',b:[4,6],hashed:false,d:'"this payment has a witness section"'},
+  {id:'io',n:'input (unlocking script empty) + outputs',b:[6,111],hashed:true,d:'who pays whom'},
+  {id:'w',n:'the witness: signature + public key',b:[111,219],hashed:false,d:'still sent, still checked by every node'},
+  {id:'l',n:'last 4 bytes',b:[219,223],hashed:true},
+];
+const segHex=ids=>SEGSEC.filter(s=>ids.includes(s.id)).map(s=>SEG.slice(s.b[0]*2,s.b[1]*2)).join('');
+
+/* ---------- progress / shell ---------- */
+const KEY='soc4190-shapeshifter-v1'; let mem={};
+function loadP(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return mem; } }
+function saveP(p){ mem=p; try{ localStorage.setItem(KEY,JSON.stringify(p)); }catch(e){} }
+let prog=loadP();
+const $=s=>document.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
+const fmt=n=>n.toLocaleString('en-US');
+let cur=1, hintIx=0, hintsUsed=0;
+const MISSIONS=[
+ {n:1,title:'What can a stranger touch?',kind:'the signature cannot sign itself',goal:'all 8 fields sorted',desc:'A stranger catches our payment on the network before any block holds it. For each field: could the stranger change it and still have the payment <b>accepted by every node</b> — the same coins moving, only the ID different? Decide for all eight.'},
+ {n:2,title:'The twin',kind:'same payment, two names',goal:'the true statements, and only those',desc:'Below: our payment, and the twin we made on 12 Oct 2026 by rewriting the signature\'s second number as n − s. Your browser hashes both. Tick every statement that is true.'},
+ {n:3,title:'The withdrawal desk',kind:'an exchange, 2014',goal:'a rule that loses nothing — after seeing one that does',desc:'You run the desk that pays customers out. Some withdrawals get malleated on the way to a block. Choose the rule your software follows, run ten customers, count the losses. Then try another rule.'},
+ {n:4,title:'Move the witness',kind:'SegWit',goal:'find the explorer\'s ID, then change the witness',desc:'A real SegWit payment from block 968,392. Choose which sections are hashed for the ID; find the choice that gives the explorer\'s ID. Then change a witness byte and see what happens to that ID.'},
+ {n:5,title:'Who was right?',kind:'war story · Mt. Gox',goal:'3 answers right',desc:'February 2014: the largest exchange closed and blamed malleability. Researchers watched the network. Three questions on what the evidence said.'},
+];
+const HINTS={
+ 1:['The signature is made <i>from</i> the payment — every field except the signature itself is covered.','The public key is covered indirectly: a different public key hashes to a different 20 bytes, so OP_EQUALVERIFY stops first. Only one card is "still valid".','<b>Show me:</b> the answers are filled in.'],
+ 2:['Compare the yellow bytes: only the signature region differs (and its two length bytes).','The amounts, the locks, the spent coin: byte-for-byte identical. The ID: completely different.','<b>Show me:</b> the true statements are ticked.'],
+ 3:['Rule A trusts the name. A malleated withdrawal reaches a block under another name, so the desk thinks it never arrived — and pays again.','What cannot be faked is <i>which coin was spent</i>: once the input\'s output is gone from the UTXO set, the customer was paid, whatever the ID.','<b>Show me:</b> rule B is selected — run it.'],
+ 4:['The explorer\'s ID is the hash of the bytes <i>without</i> the marker, flag and witness: 113 bytes.','Select version, input+outputs and the last 4 bytes only.','<b>Show me:</b> the right sections are selected.'],
+ 5:['The researchers measured, they did not guess: a year of network traffic.','386 is much smaller than 850,000.','The three lessons are on the slide: track by what is spent, check the evidence, an intermediary is only as safe as itself.'],
+};
+function drawBar(){ const bar=$('#mbar'); bar.innerHTML=''; MISSIONS.forEach(m=>{ const b=el('button','mchip'+(m.n===cur?' cur':'')); const st=prog[m.n]; b.innerHTML=`<span class="no">${st?`<span class="ck${st==='help'?' hp':''}">✓</span>`:''}Mission ${m.n}</span><span class="tt">${m.title}</span>`; b.onclick=()=>open(m.n); bar.appendChild(b); });
+  const done=MISSIONS.filter(m=>prog[m.n]).length; $('#progtxt').textContent=`${done} of ${MISSIONS.length} missions cleared`+(done===MISSIONS.length?' — you would have kept your coins in 2014.':''); }
+function head(m){ const st=prog[m.n]; return `<div class="mhead"><span class="kind">Mission ${m.n} · ${m.kind}</span><h2>${m.title}</h2><span class="goal"><i>goal</i>${m.goal}</span>${st?`<span class="clr${st==='help'?' hp':''}">cleared${st==='help'?' with help':''}</span>`:''}<p class="desc">${m.desc}</p></div>`; }
+function ctl(){ return `<div class="ctl"><button id="hintB"> Hint</button><button id="restartB">↺ Restart</button><button id="nextB" class="key" ${prog[cur]?'':'disabled'}>Next mission ▶</button></div><div class="hintbox" id="hintbox"></div><div class="banner" id="banner"></div>`; }
+function wire(){ $('#hintB').onclick=hint; $('#restartB').onclick=()=>open(cur); $('#nextB').onclick=()=>{ if(cur<5) open(cur+1); }; }
+const SHOW={};
+function hint(){ const hs=HINTS[cur]; if(hintIx>=hs.length) return; $('#hintbox').appendChild(el('p',null,hs[hintIx])); hintIx++; hintsUsed++; if(hintIx===hs.length&&SHOW[cur]) SHOW[cur](); }
+function banner(kind,hd,txt,joke){ const b=$('#banner'); b.className='banner show '+kind; b.innerHTML=`<span class="hd">${hd}</span>${txt}${joke?`<span class="joke">${joke}</span>`:''}`; }
+function won(txt,joke){ prog[cur]=hintsUsed>0?(prog[cur]||'help'):'ok'; saveP(prog); banner('win','Mission cleared',txt,joke); $('#nextB').disabled=cur>=5; drawBar(); }
+function open(n){ cur=n; hintIx=0; hintsUsed=0; drawBar(); window.scrollTo({top:0}); ({1:m1,2:m2,3:m3,4:m4,5:m5})[n](); }
+
+/* ================= M1 ================= */
+const FIELDS=[
+  {n:'version',v:'02000000',ok:false,w:'Signed. Any change and the signature no longer fits the bytes.'},
+  {n:"previous payment's ID",v:'b29b2f64…84ddc9',ok:false,w:'Signed: which coin is spent is part of what the owner agreed to.'},
+  {n:'output index',v:'01000000',ok:false,w:'Signed, with the ID: it names the exact coin.'},
+  {n:'the signature, rewritten as s → n − s',v:'3044 0220 7c58… 0220 38c2…',ok:true,w:'Not signed — it cannot sign itself. This one rewriting (s → n − s) passes the same check, and the ID changes. Any other change to the signature bytes breaks it.'},
+  {n:'the public key',v:'026c2216…f405',ok:false,w:'Not inside the signed bytes either — but a different public key hashes to different 20 bytes, so OP_EQUALVERIFY stops the lock before OP_CHECKSIG.'},
+  {n:'amount of output #0',v:'40420f00…',ok:false,w:'Signed. One satoshi more and OP_CHECKSIG returns FALSE (measured 12 Oct 2026).'},
+  {n:'lock of output #0',v:'76a914 b2c670c2… 88ac',ok:false,w:'Signed: the receiver\'s 20 bytes are part of the agreement. A stranger cannot redirect the coins.'},
+  {n:'amount of output #1 (change)',v:'2c2c0c00…',ok:false,w:'Signed, like every amount.'},
+];
+let m1s;
+function m1(){
+  m1s={ans:{}};
+  $('#stage').innerHTML=head(MISSIONS[0])+`<div class="gloss"><b>Transaction malleability</b> — someone other than the payer can change how a signature is <i>written</i>, without breaking it, and so change the transaction ID before the payment is in a block. The signature is made <i>from</i> the payment, so it is left out of what is signed — but put back into the bytes that are hashed for the ID.</div>
+  <div class="fields" id="fields"></div><div style="margin-top:10px"><button class="btn key" id="m1check">Check all 8</button> <span class="small" id="m1fb" style="margin:0"></span></div>${ctl()}`;
+  wire(); $('#m1check').onclick=m1check; m1draw();
+}
+function m1draw(){
+  const box=$('#fields'); if(cur!==1||!box) return; box.innerHTML='';
+  FIELDS.forEach((f,i)=>{ const d=el('div','fc',`<div class="fn">${f.n}</div><div class="fv">${f.v}</div><div class="ch"><button data-v="0">⛔ rejected</button><button data-v="1">✓ still accepted</button></div><p class="fw">${f.w}</p>`);
+    d.querySelectorAll('.ch button').forEach(b=>{ if(m1s.ans[i]!=null&&+b.dataset.v===m1s.ans[i]) b.classList.add('sel'); b.onclick=()=>{ m1s.ans[i]=+b.dataset.v; m1draw(); }; }); box.appendChild(d); });
+}
+function m1check(){
+  if(Object.keys(m1s.ans).length<FIELDS.length){ $('#m1fb').textContent='Decide every field first.'; return; }
+  let wrong=0; document.querySelectorAll('#fields .fc').forEach((d,i)=>{ const f=FIELDS[i]; const ok=(m1s.ans[i]===1)===f.ok; d.querySelectorAll('.ch button').forEach(b=>{ b.classList.remove('sel'); if(+b.dataset.v===(f.ok?1:0)) b.classList.add('right'); else if(+b.dataset.v===m1s.ans[i]&&!ok) b.classList.add('wrong'); }); d.querySelector('.fw').className='fw show'; if(!ok) wrong++; });
+  if(wrong){ $('#m1fb').innerHTML=`<span style="color:var(--red)">${wrong} of 8 wrong — read the explanations, change your answers, check again.</span>`; }
+  else { $('#m1fb').innerHTML='<span style="color:var(--grn)">✓ all 8</span>'; won('Seven fields are nailed down by the signature. One is not: the signature itself. That one field is enough to rename the whole payment.','<i>A signature can vouch for everything in the world except its own handwriting.</i>'); }
+}
+SHOW[1]=()=>{ FIELDS.forEach((f,i)=>m1s.ans[i]=f.ok?1:0); m1draw(); };
+
+/* ================= M2 ================= */
+const CLAIMS=[
+  {t:'Both spend the same coin (output #1 of c9dd84b1…9bb2).',ok:true},
+  {t:'The amounts and the locks of both outputs are byte-for-byte identical.',ok:true},
+  {t:'The transaction IDs are completely different.',ok:true},
+  {t:'The twin is one byte longer: the signature grew from 71 to 72 bytes.',ok:true},
+  {t:'The twin pays the coins to a different address.',ok:false},
+  {t:'The twin needs the owner\'s private key to make.',ok:false},
+  {t:'The owner can tell which twin a block will contain.',ok:false},
+  {t:'If the twin is confirmed, the same coin is spent: the original can no longer confirm with that coin.',ok:true},
+];
+let m2s;
+function m2(){
+  m2s={on:new Set()};
+  const a=RAW.match(/../g), b=MALL.match(/../g);
+  const render=(me,other,keyEnd)=>me.map((x,i)=>{ const inKey=i>=41&&i<keyEnd; const j=i<keyEnd?i:i+(other.length-me.length); const d=other[j]!==x; return `<span class="${inKey?'sig':''}${d?' d':''}">${x}</span>`; }).join('');
+  $('#stage').innerHTML=head(MISSIONS[1])+`<div class="two">
+   <div class="panel"><p class="lab">our payment · 225 bytes</p><div class="hexd">${render(a,b,148)}</div><div class="idl"><b>ID</b><span id="idA"></span></div></div>
+   <div class="panel"><p class="lab">the twin · 226 bytes <span class="tag gold">s → n − s</span></p><div class="hexd">${render(b,a,149)}</div><div class="idl"><b>ID</b><span id="idB"></span></div></div></div>
+  <p class="small">Underlined dotted: the key (signature + public key). Yellow: bytes that differ from the other version. Everything else is identical. Both IDs are computed live.</p>
+  <div class="panel" style="margin-top:12px"><p class="lab">tick every true statement</p><div class="claims" id="claims"></div><div style="margin-top:10px"><button class="btn key" id="m2check">Check</button> <span class="small" id="m2fb" style="margin:0"></span></div></div>${ctl()}`;
+  wire(); $('#idA').textContent=txid(RAW); $('#idB').textContent=txid(MALL); $('#m2check').onclick=m2check; m2draw();
+}
+function m2draw(){ const box=$('#claims'); if(cur!==2||!box) return; box.innerHTML=''; CLAIMS.forEach((c,i)=>{ const b=el('button','claim'+(m2s.on.has(i)?' on':''),`<span class="bx">${m2s.on.has(i)?'✓':''}</span><span>${c.t}</span>`); b.onclick=()=>{ if(m2s.on.has(i)) m2s.on.delete(i); else m2s.on.add(i); m2draw(); }; box.appendChild(b); }); }
+function m2check(){
+  let wrong=0; document.querySelectorAll('#claims .claim').forEach((b,i)=>{ const ok=m2s.on.has(i)===CLAIMS[i].ok; b.classList.remove('right','wrong'); b.classList.add(ok?'right':'wrong'); if(!ok) wrong++; });
+  if(wrong){ $('#m2fb').innerHTML=`<span style="color:var(--red)">${wrong} statement${wrong>1?'s':''} wrong. Red = your tick (or missing tick) is wrong.</span>`; return; }
+  $('#m2fb').innerHTML='<span style="color:var(--grn)">✓</span>';
+  won(`Same coin in, same coins out, same amounts — and a different name. ${short(TXID)} and ${short(TXID_M)} are one payment. Anyone tracking it by ID would think it vanished.`,'<i>The twin is not a forgery. It is the same letter in a different envelope — and the post office only reads envelopes.</i>');
+}
+SHOW[2]=()=>{ m2s.on=new Set(CLAIMS.map((c,i)=>c.ok?i:-1).filter(i=>i>=0)); m2draw(); };
+
+/* ================= M3: the desk ================= */
+const RULES=[
+  {id:'A',n:'Rule A · trust the name',t:'Remember the ID we broadcast. After 2 blocks, if that ID is not in any block, the payment "never happened": send it again from another coin.'},
+  {id:'B',n:'Rule B · watch the coin',t:'Remember which coin (output) we spent. After 2 blocks, if that coin is gone from the UTXO set, the customer is paid — whatever the ID in the block says.'},
+  {id:'C',n:'Rule C · trust the name, pay once',t:'Remember the ID we broadcast. If it is not in a block after 2 blocks, do nothing and open a support ticket. Never resend automatically.'},
+];
+const CUST=[['Aziza',0.5,true],['Bekzod',1.2,false],['Dilnoza',0.25,true],['Eldor',3.0,false],['Farrukh',0.8,true],['Gulnora',2.0,false],['Jasur',0.1,true],['Kamola',1.5,false],['Laziz',0.6,true],['Madina',0.9,true]];
+let m3s;
+function m3(){
+  m3s={rule:null,i:0,rows:[],seen:{},lost:0,tickets:0};
+  $('#stage').innerHTML=head(MISSIONS[2])+`<div class="gloss"><b>Exchange</b> — a company where people buy and sell coins; it holds their coins and pays out ("withdrawal") on request. In 2014 some withdrawals were malleated on the way: they reached a block under a different ID.</div>
+  <div class="rules" id="rules"></div>
+  <div class="ctl" style="margin-top:10px"><button class="btn key" id="m3next" disabled>Next customer ▶</button><button class="btn" id="m3all" disabled>Run all ten</button><span class="small" style="margin:0 0 0 auto">attacker malleates about half of the withdrawals — the same ones every run, so rules compare fairly</span></div>
+  <div class="kpi"><div><div class="k">paid out</div><div class="v" id="k1">0 BTC</div></div><div><div class="k">owed</div><div class="v" id="k2">0 BTC</div></div><div><div class="k">lost (paid twice)</div><div class="v bad" id="k3">0 BTC</div></div><div><div class="k">customers waiting on tickets</div><div class="v" id="k4">0</div></div></div>
+  <table class="ledger" id="ledger"></table>
+  <div class="small" id="m3log"></div>${ctl()}`;
+  wire(); m3drawRules(); $('#m3next').onclick=()=>m3step(); $('#m3all').onclick=()=>{ while(m3s.i<CUST.length) m3step(); };
+}
+function m3drawRules(){ const r=$('#rules'); r.innerHTML=''; RULES.forEach(x=>{ const b=el('button','rule'+(m3s.rule===x.id?' sel':''),`<span class="rn">${x.n}</span>${x.t}`); b.onclick=()=>{ if(m3s.i>0&&m3s.i<CUST.length) return; m3s.rule=x.id; m3s.i=0; m3s.rows=[]; m3s.lost=0; m3s.tickets=0; m3drawRules(); m3draw(); $('#m3next').disabled=false; $('#m3all').disabled=false; }; r.appendChild(b); }); }
+function m3step(){
+  if(!m3s.rule||m3s.i>=CUST.length) return;
+  const [name,amt,mal]=CUST[m3s.i]; const idSent='tx'+(1000+m3s.i*37)%997+'…'; const idBlock=mal?'tx'+(2000+m3s.i*53)%991+'…':idSent;
+  const row={name,amt,mal,idSent,idBlock,note:'',loss:0};
+  if(m3s.rule==='A'){ if(mal){ row.note=`ID ${idSent} not found after 2 blocks → sent again (new coin). Both are in blocks now.`; row.loss=amt; } else row.note=`ID ${idSent} found in a block → paid.`; }
+  else if(m3s.rule==='B'){ row.note=mal?`coin spent (block shows ${idBlock}) → paid, name ignored.`:'coin spent → paid.'; }
+  else { if(mal){ row.note=`ID ${idSent} not found → ticket opened; customer actually received the coins under ${idBlock}.`; m3s.tickets++; } else row.note='ID found → paid.'; }
+  m3s.lost+=row.loss; m3s.rows.push(row); m3s.i++; m3draw();
+  if(m3s.i>=CUST.length) m3finish();
+}
+function m3draw(){
+  const paid=m3s.rows.reduce((a,r)=>a+r.amt+r.loss,0), owed=m3s.rows.reduce((a,r)=>a+r.amt,0);
+  $('#k1').textContent=paid.toFixed(2)+' BTC'; $('#k2').textContent=owed.toFixed(2)+' BTC'; $('#k3').textContent=m3s.lost.toFixed(2)+' BTC'; $('#k3').className='v '+(m3s.lost?'bad':'ok'); $('#k4').textContent=m3s.tickets;
+  const t=$('#ledger'); t.innerHTML=m3s.rows.length?`<tr><th>#</th><th>customer</th><th>owed</th><th>ID we sent</th><th>ID in the block</th><th>what the desk did (rule ${m3s.rule})</th></tr>`+m3s.rows.map((r,i)=>`<tr class="${r.loss?'loss':''}"><td>${i+1}</td><td>${r.name}</td><td>${r.amt} BTC</td><td class="m">${r.idSent}</td><td class="m">${r.idBlock}${r.mal?' <span class="tag bad">malleated</span>':''}</td><td>${r.note}</td></tr>`).join(''):'';
+  $('#m3next').disabled=!m3s.rule||m3s.i>=CUST.length; $('#m3all').disabled=!m3s.rule||m3s.i>=CUST.length;
+}
+function m3finish(){
+  m3s.seen[m3s.rule]=m3s.lost;
+  const seenA=m3s.seen.A!=null;
+  if(m3s.rule==='A') banner('warn',`Rule A: ${m3s.lost.toFixed(2)} BTC paid twice`,'Six withdrawals were malleated; the desk saw six "missing" payments and paid each one again. The coins had arrived every time — under another name. <b>Now choose rule B and run again.</b>','<i>The software did exactly what it was told. That is the problem with software.</i>');
+  else if(m3s.rule==='C') banner('warn',`Rule C: nothing lost, ${m3s.tickets} customers angry`,'No double payment — but six customers who were paid are now in a support queue, and the desk cannot tell them apart from customers who were not. <b>Run rule A to see the loss, then rule B.</b>');
+  else { if(seenA) won('Rule B loses nothing: a coin can be spent only once, so "is our coin gone from the UTXO set?" is the question whose answer nobody can fake. The name of the payment was never the point.','<i>Never track a payment only by its ID before it is in a block. Track the coin: it cannot be renamed.</i>'); else banner('win','Rule B: nothing lost','Good — but to feel the lesson, <b>now run rule A</b> and watch the same ten customers.'); if(!seenA) m3s.needA=true; }
+  if(m3s.rule!=='B'&&m3s.seen.B===0) won('You have seen both: a desk that trusts names pays twice; a desk that watches coins never does.','<i>Track the coin. It cannot be renamed.</i>');
+}
+SHOW[3]=()=>{ m3s.rule='B'; m3s.i=0; m3s.rows=[]; m3s.lost=0; m3s.tickets=0; m3drawRules(); m3draw(); };
+
+/* ================= M4: SegWit ================= */
+let m4s;
+function m4(){
+  m4s={on:new Set(['a','m','io','w','l']),foundId:false,changedW:false,wmut:false};
+  $('#stage').innerHTML=head(MISSIONS[3])+`<div class="gloss"><b>SegWit — segregated witness</b> — an upgrade (switched on at block 481,824, 24 Aug 2017) that moves signatures and public keys out of the bytes hashed for the transaction ID, into a separate section called the <b>witness</b>. The witness is still sent and still checked by every node.</div>
+  <div class="panel"><p class="lab">payment 0db3220c…d854 · 223 bytes = 113 + 2 + 108 witness · click a section to include it in the hash</p><div class="secs" id="secs"></div>
+  <div class="idl"><b>hash of the selected bytes</b><span id="m4id"></span> <span id="m4tag"></span></div>
+  <div class="idl"><b>explorer's ID</b>${SEG_ID}</div>
+  <div class="idl"><b>witness ID (all 223 bytes)</b>${SEG_WID}</div>
+  <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="m4mut">Change one witness byte</button><button class="btn" id="m4orig">Original witness</button></div>
+  <p class="small" id="m4fb">Measured 12 Oct 2026: the explorer's ID equals the hash of the 113 bytes without the witness; with the witness the hash is the witness ID above.</p></div>${ctl()}`;
+  wire(); $('#m4mut').onclick=()=>{ m4s.wmut=true; m4upd(); }; $('#m4orig').onclick=()=>{ m4s.wmut=false; m4upd(); }; m4draw();
+}
+function segNow(ids){ let h=segHex(ids); if(m4s.wmut&&ids.includes('w')){ const p=SEGSEC.findIndex(s=>s.id==='w'); const before=segHex(ids.filter(x=>SEGSEC.findIndex(s=>s.id===x)<p)); const off=before.length+40; h=h.slice(0,off)+(h.slice(off,off+2)==='00'?'ff':'00')+h.slice(off+2); } return h; }
+function m4draw(){
+  const box=$('#secs'); if(cur!==4||!box) return; box.innerHTML='';
+  SEGSEC.forEach(s=>{ const on=m4s.on.has(s.id); const hex=SEG.slice(s.b[0]*2,s.b[1]*2); const b=el('button','sec'+(on?' on':''),`<div class="sn">${s.n}</div><div class="sz">${s.b[1]-s.b[0]} bytes${s.d?' · '+s.d:''}</div><div class="sb">${s.id==='w'&&m4s.wmut?hex.slice(0,40)+'<span style="background:#fde2a4">'+(hex.slice(40,42)==='00'?'ff':'00')+'</span>'+hex.slice(42):hex}</div>`); b.onclick=()=>{ if(on) m4s.on.delete(s.id); else m4s.on.add(s.id); m4draw(); }; box.appendChild(b); });
+  m4upd();
+}
+function m4upd(){
+  const ids=SEGSEC.map(s=>s.id).filter(i=>m4s.on.has(i)); const hex=segNow(ids); const id=hex?txid(hex):null; m4draw0();
+  $('#m4id').textContent=id||'(nothing selected)';
+  const tag=$('#m4tag'); const isId=id===SEG_ID, isW=id===SEG_WID;
+  tag.innerHTML=isId?'<span class="tag ok">= explorer\'s ID</span>':isW?'<span class="tag">= witness ID</span>':'<span class="tag bad">matches nothing</span>';
+  const base=ids.join()==='a,io,l';
+  if(base&&!m4s.foundId){ m4s.foundId=true; $('#m4fb').innerHTML='<span style="color:var(--grn)">✓ That is the ID: version + input/outputs + last 4 bytes, 113 bytes. Now <b>change one witness byte</b> and look at the ID again.</span>'; }
+  if(base&&m4s.wmut&&m4s.foundId&&!prog[4]) won('You changed a witness byte and the ID did not move: the witness is not in the hashed bytes. (This shows the hashing only — a signature with a random byte changed would be rejected by every node; the point is that a valid rewriting like s → n − s would now leave the name alone.) That is the whole fix.','<i>SegWit did not make signatures honest. It made them irrelevant to the name.</i>');
+  else if(base&&m4s.wmut&&m4s.foundId) banner('win','Mission cleared','The ID is unchanged by the witness.');
+  else if(!base&&m4s.wmut&&m4s.on.has('w')) $('#m4fb').innerHTML='With the witness included, the hash changes when the witness changes — that is why it was a problem before 2017. Select only the three hashed sections.';
+}
+function m4draw0(){ document.querySelectorAll('#secs .sec').forEach((b,i)=>{ const s=SEGSEC[i]; if(s.id==='w'){ const hex=SEG.slice(s.b[0]*2,s.b[1]*2); b.querySelector('.sb').innerHTML=m4s.wmut?hex.slice(0,40)+'<span style="background:#fde2a4">'+(hex.slice(40,42)==='00'?'ff':'00')+'</span>'+hex.slice(42):hex; } }); }
+SHOW[4]=()=>{ m4s.on=new Set(['a','io','l']); m4draw(); };
+
+/* ================= M5 ================= */
+const M5Q=[
+  {q:'On 10 Feb 2014 Mt. Gox said its system had been tricked into paying twice by transaction malleability. What did Decker and Wattenhofer (ETH Zürich) do about that claim?',
+   opts:['They analysed Bitcoin network traces collected over more than a year, to estimate how many malleability attacks happened and how much they could have taken.','They asked the exchange for its internal records.','They proved mathematically that malleability cannot cause losses.'],ans:0,
+   why:'Measured, not reasoned: more than a year of network traces, counting the doubled payments they could find. "Bitcoin Transaction Malleability and MtGox", arXiv:1403.6676.'},
+  {q:'About 850,000 bitcoins were reported missing. How much could malleability explain, according to the measurement?',
+   opts:['At most about 386 bitcoins before the closure.','About half of it.','All of it — the flaw was real.'],ans:0,
+   why:'The flaw was real, and the researchers found almost no use of it before the closure: at most about 386 bitcoins. The flaw and the loss were two different stories.'},
+  {q:'Which of these is NOT one of the three engineering lessons on the slide?',
+   opts:['Never use a signature inside a payment — wait for a bank to confirm it.','Never track a payment only by its ID before it is in a block.','A real flaw is not automatically the cause of a loss — check the evidence.'],ans:0,
+   why:'The three lessons: track by what is spent, not by name; check the evidence before blaming a flaw; coins held by an intermediary are only as safe as that intermediary.'},
+];
+let m5s;
+function m5(){
+  m5s={i:0};
+  $('#stage').innerHTML=head(MISSIONS[4])+`<div class="two"><div class="panel"><p class="lab">timeline · respectful version</p><div class="tl">
+  <p><b>Who</b> — Mt. Gox, Tokyo: then the largest exchange.</p><p><b>7 Feb 2014</b> — stopped all bitcoin withdrawals.</p><p><b>10 Feb 2014</b> — blamed transaction malleability: its system had been tricked into paying twice.</p><p><b>End of Feb 2014</b> — closed; about 850,000 bitcoins reported missing (⚠️ verify).</p>
+  <p><b>Respect</b> — many ordinary people lost savings they had trusted to one company. It took years of court cases before any money was returned.</p></div></div><div id="m5q"></div></div>${ctl()}`;
+  wire(); m5draw();
+}
+function m5draw(){
+  const box=$('#m5q'); if(cur!==5||!box) return; box.innerHTML='';
+  M5Q.forEach((q,i)=>{ if(i>m5s.i) return; const d=el('div','q',`<p class="qt">${i+1}. ${q.q}</p><div class="opts"></div><p class="why"></p>`); const o=d.querySelector('.opts');
+    q.opts.forEach((t,k)=>{ const b=el('button','opt',t); b.onclick=()=>m5ans(i,k,d); if(i<m5s.i){ b.disabled=true; if(k===q.ans) b.classList.add('right'); } o.appendChild(b); });
+    if(i<m5s.i){ d.querySelector('.why').className='why show'; d.querySelector('.why').innerHTML=q.why; } box.appendChild(d); });
+}
+function m5ans(i,k,d){
+  const q=M5Q[i]; const btns=d.querySelectorAll('.opt');
+  if(k===q.ans){ btns.forEach((b,j)=>{ b.disabled=true; if(j===k) b.classList.add('right'); }); d.querySelector('.why').className='why show'; d.querySelector('.why').innerHTML='✓ '+q.why; m5s.i++;
+    if(m5s.i>=M5Q.length) won('The flaw was real; the evidence said it was not the main cause. Both halves of that sentence matter — and the people who lost their savings deserve the second half as much as the first.','<i>[Insert Meme: Scooby-Doo unmasking — "transaction malleability" → mask off → "bad bookkeeping"]</i>'); else m5draw(); }
+  else { btns[k].classList.add('wrong'); btns[k].disabled=true; }
+}
+
+/* ---------- keys, boot ---------- */
+document.addEventListener('keydown',e=>{ if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return; const k=e.key.toLowerCase(); if(e.key>='1'&&e.key<='5') open(+e.key); else if(k==='h') hint(); else if(k==='r') open(cur); else if(k==='n'&&prog[cur]&&cur<5) open(cur+1); });
+$('#resetAll').onclick=()=>{ prog={}; saveP(prog); open(1); };
+function qp(k){ try{ return new URLSearchParams(location.search).get(k); }catch(e){ return null; } }
+open(+(qp('mission')||1)||1);
+
+/* ---------- selftest ---------- */
+function selftest(){
+  const out=[]; const ok=(n,c,d)=>out.push((c?'PASS ':'FAIL ')+n+(c?'':' — '+(d||'')));
+  const real=prog; prog={};
+  try{
+    ok('RAW id', txid(RAW)===TXID); ok('MALL id', txid(MALL)===TXID_M); ok('MALL is 226 bytes', MALL.length/2===226);
+    ok('SegWit base 113 bytes → explorer id', segHex(['a','io','l']).length/2===113 && txid(segHex(['a','io','l']))===SEG_ID);
+    ok('SegWit all 223 → witness id', txid(SEG)===SEG_WID);
+    ok('RAW and MALL agree outside the key', RAW.slice(0,82)===MALL.slice(0,82) && RAW.slice(-154)===MALL.slice(-154));
+    ok('exactly one field still valid', FIELDS.filter(f=>f.ok).length===1);
+    open(1); SHOW[1](); m1check(); ok('M1 clears', !!prog[1]);
+    open(2); SHOW[2](); m2check(); ok('M2 clears', !!prog[2]);
+    open(3); m3s.rule='A'; m3draw(); while(m3s.i<CUST.length) m3step(); ok('rule A loses coins', m3s.lost>0, m3s.lost); ok('M3 not cleared by A alone', !prog[3]);
+    m3s.rule='B'; m3s.i=0; m3s.rows=[]; m3s.lost=0; m3s.tickets=0; m3draw(); while(m3s.i<CUST.length) m3step(); ok('rule B loses nothing', m3s.lost===0); ok('M3 clears', !!prog[3]);
+    open(4); SHOW[4](); ok('M4 found id', m4s.foundId); $('#m4mut').click(); ok('M4 clears', !!prog[4]);
+    open(5); M5Q.forEach((q,i)=>{ m5draw(); const d=document.querySelectorAll('#m5q .q')[i]; m5ans(i,q.ans,d); }); ok('M5 clears', !!prog[5]);
+  }catch(e){ out.push('FAIL exception — '+e.message+' '+(e.stack||'').split('\n')[1]); }
+  prog=real; saveP(prog); open(1);
+  const fails=out.filter(l=>l.startsWith('FAIL')).length; out.push(fails?`SELFTEST: ${fails} FAILED`:'SELFTEST: ALL PASS');
+  const r=$('#selftest-report'); r.style.display='block'; r.textContent=out.join('\n');
+}
+if(qp('selftest')==='1'){ window.onerror=(m)=>{ const r=$('#selftest-report'); r.style.display='block'; r.textContent+='\nFAIL script error — '+m; }; setTimeout(selftest,50); }
+</script>
+</body>
+</html>

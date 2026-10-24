@@ -1,0 +1,3007 @@
+1
+00:00:00,921 --> 00:00:01,862
+okay hello everyone
+
+2
+00:00:02,823 --> 00:00:07,409
+now we will be speaking about bitcoin transactions
+
+3
+00:00:09,391 --> 00:00:11,073
+and last time
+
+4
+00:00:12,454 --> 00:00:12,835
+we
+
+5
+00:00:14,156 --> 00:00:16,699
+started from the block some kind of block
+
+6
+00:00:17,632 --> 00:00:23,453
+we checked its signature we changed the amount by small unit inside and we saw that it was
+
+7
+00:00:23,513 --> 00:00:24,093
+rejected
+
+8
+00:00:25,074 --> 00:00:31,275
+we know who agreed we never looked what was agreed inside this payment so
+
+9
+00:00:32,515 --> 00:00:37,916
+we don't know what is being spent but we know what is the payment what is the signature
+
+10
+00:00:39,057 --> 00:00:43,578
+but what is inside so we are going to today look at the various
+
+11
+00:00:44,358 --> 00:00:44,798
+topics
+
+12
+00:00:45,578 --> 00:00:46,679
+So we'll study
+
+13
+00:00:47,620 --> 00:00:48,941
+the coins,
+
+14
+00:00:49,882 --> 00:00:55,608
+where are the coins, before and after the payment, where they come from, who pays
+
+15
+00:00:56,308 --> 00:01:00,953
+to spend some money and where it's written, what is the transaction fee.
+
+16
+00:01:01,973 --> 00:01:08,960
+We'll see what is the size of the transaction, what the bytes of that specific transaction
+
+17
+00:01:09,060 --> 00:01:09,400
+mean.
+
+18
+00:01:10,901 --> 00:01:12,763
+We'll see who stops
+
+19
+00:01:13,664 --> 00:01:16,166
+anyone else spending your money on the internet.
+
+20
+00:01:17,601 --> 00:01:21,543
+and what's the address that is starting with one for the Bitcoin
+
+21
+00:01:22,263 --> 00:01:22,383
+and
+
+22
+00:01:23,724 --> 00:01:24,024
+what was
+
+23
+00:01:25,124 --> 00:01:30,267
+wrong in 2014. There was a big, big problem introduced by the Bitcoin and then
+
+24
+00:01:31,107 --> 00:01:35,509
+they tried to change and they did change the system a bit.
+
+25
+00:01:35,529 --> 00:01:38,010
+So we'll study all of this
+
+26
+00:01:39,771 --> 00:01:42,872
+together today. So I want to start with a very simple
+
+27
+00:01:43,853 --> 00:01:45,614
+idea with the banknotes, okay?
+
+28
+00:01:46,755 --> 00:01:49,136
+Let's assume that Noza or someone else
+
+29
+00:01:50,237 --> 00:01:54,279
+has two banknotes in her pocket, like 50,000 and 20,000 ZUM,
+
+30
+00:01:54,999 --> 00:01:59,402
+and the launch costs 60,000, which is a very, very
+
+31
+00:02:01,043 --> 00:02:02,483
+normal case in Uzbekistan.
+
+32
+00:02:02,503 --> 00:02:02,684
+So
+
+33
+00:02:03,484 --> 00:02:05,505
+she cannot tear the note in half,
+
+34
+00:02:06,666 --> 00:02:08,467
+so she hands over both notes.
+
+35
+00:02:09,067 --> 00:02:14,038
+just to give the both notes in 17 and then the the cashier will
+
+36
+00:02:14,799 --> 00:02:18,668
+give the change okay so let's remember this word change 10 000 so
+
+37
+00:02:22,034 --> 00:02:26,456
+New notes, 10,000 will be generated as you can see in this image.
+
+38
+00:02:26,476 --> 00:02:27,917
+Let me draw on the screen.
+
+39
+00:02:28,577 --> 00:02:31,699
+So 60 will go to the cashier in general,
+
+40
+00:02:32,439 --> 00:02:33,039
+and they will
+
+41
+00:02:33,880 --> 00:02:37,441
+give the 10,000 back to the Dinoza, okay?
+
+42
+00:02:37,821 --> 00:02:40,142
+So it's the normal bank notes that we use
+
+43
+00:02:41,383 --> 00:02:45,545
+in Uzbekistan. Sorry for my dark humor, but that's the bank notes.
+
+44
+00:02:46,525 --> 00:02:52,011
+and these banknotes will be speaking about them a lot so it's just like in normal life where
+
+45
+00:02:52,031 --> 00:02:57,057
+we spend money just like in bitcoin we have the same problem in bitcoin you will see that we
+
+46
+00:02:57,077 --> 00:02:59,760
+have some kind of banknotes we don't have whole
+
+47
+00:03:00,741 --> 00:03:05,706
+coins all the time and then when you spend there will be some changes okay we're going to study
+
+48
+00:03:05,766 --> 00:03:05,927
+this
+
+49
+00:03:07,368 --> 00:03:09,669
+banknotes are spent as a whole and
+
+50
+00:03:10,769 --> 00:03:11,389
+we'll see
+
+51
+00:03:12,670 --> 00:03:15,551
+many more details okay but before to start this
+
+52
+00:03:16,332 --> 00:03:16,772
+speaking
+
+53
+00:03:17,692 --> 00:03:22,134
+in bitcoins in a whole bitcoins is quite difficult because today
+
+54
+00:03:23,035 --> 00:03:27,277
+we don't spend one bitcoin we spend a fraction of a bitcoin and
+
+55
+00:03:28,677 --> 00:03:31,839
+speaking with a fraction of a bitcoin like 0.000010
+
+56
+00:03:34,720 --> 00:03:39,765
+is quite difficult. So today I will introduce you to the new idea of a Satoshi.
+
+57
+00:03:40,646 --> 00:03:41,347
+Satoshi
+
+58
+00:03:42,208 --> 00:03:44,870
+is Bitcoin's smallest unit.
+
+59
+00:03:45,371 --> 00:03:49,775
+So one Bitcoin is equal to 100 million Satoshis.
+
+60
+00:03:50,096 --> 00:03:51,617
+So we write them as Sats.
+
+61
+00:03:53,337 --> 00:03:56,200
+Of course he named it after the Satoshi Nakamoto.
+
+62
+00:03:56,220 --> 00:04:01,326
+So the ledger stores every amount as the whole number of Satoshis.
+
+63
+00:04:01,366 --> 00:04:02,287
+Never a fraction.
+
+64
+00:04:03,148 --> 00:04:04,409
+Because the ledger
+
+65
+00:04:07,192 --> 00:04:08,914
+wants to make it human readable.
+
+66
+00:04:10,535 --> 00:04:14,057
+So moving that small point eight places bitcoins
+
+67
+00:04:14,898 --> 00:04:17,579
+goes to Satoshi. So you can use this table.
+
+68
+00:04:17,639 --> 00:04:23,082
+We will be using it for the future where you can see that one Satoshi is the fraction of a
+
+69
+00:04:23,122 --> 00:04:27,744
+bitcoin and these are the eight zeros after the one.
+
+70
+00:04:28,224 --> 00:04:31,626
+So sometimes I give you this kind of exercise quite easy.
+
+71
+00:04:32,326 --> 00:04:36,669
+0.01 bitcoins is equal to the 1 million satoshis
+
+72
+00:04:38,710 --> 00:04:44,933
+or 797 000 satoshi is equal to this much of bitcoin so
+
+73
+00:04:45,914 --> 00:04:47,855
+1 satoshi of course is equal to
+
+74
+00:04:49,663 --> 00:04:54,548
+some number. We'll be using this to define a
+
+75
+00:04:56,730 --> 00:05:01,736
+smaller amount of bitcoins because again fractions are not human readable so we'll be using
+
+76
+00:05:02,396 --> 00:05:03,858
+this a lot throughout the course.
+
+77
+00:05:05,592 --> 00:05:12,278
+any questions if you have in the future you can drop in the question and answer
+
+78
+00:05:12,338 --> 00:05:14,740
+section in the next lectures I can
+
+79
+00:05:16,622 --> 00:05:21,967
+answer to your questions on the video or directly in the in the frequent ask questions but
+
+80
+00:05:22,387 --> 00:05:25,951
+so far I guess you are doing okay I see some of you already
+
+81
+00:05:26,872 --> 00:05:30,515
+delivered the homework let me check let me show you
+
+82
+00:05:34,767 --> 00:05:41,652
+course homeworks will be quite hard you will have to work you have to upload stuff
+
+83
+00:05:41,712 --> 00:05:42,833
+for instance here
+
+84
+00:05:43,754 --> 00:05:45,275
+eight of you already submitted
+
+85
+00:05:46,616 --> 00:05:47,397
+ah ah 21
+
+86
+00:05:49,358 --> 00:05:49,638
+very
+
+87
+00:05:50,419 --> 00:05:56,924
+recently I saw that it was eight so you are trying but still there should be 280 that I have
+
+88
+00:05:56,944 --> 00:05:58,105
+to check at some point so
+
+89
+00:05:59,126 --> 00:05:59,446
+please
+
+90
+00:06:01,507 --> 00:06:02,308
+speed up okay
+
+91
+00:06:03,947 --> 00:06:04,327
+and then
+
+92
+00:06:06,468 --> 00:06:10,769
+Satoshi's. Now, we'll go back to the idea of
+
+93
+00:06:13,149 --> 00:06:19,651
+spending money and I will keep explaining, introducing new words to explain you the
+
+94
+00:06:19,711 --> 00:06:22,171
+whole transaction. We'll start with the output, okay?
+
+95
+00:06:22,611 --> 00:06:27,513
+So the output is, as we saw earlier, when we spend some money with the payment
+
+96
+00:06:29,273 --> 00:06:32,414
+in the previous lecture we had created,
+
+97
+00:06:34,434 --> 00:06:36,255
+1 million satoshis
+
+98
+00:06:37,156 --> 00:06:40,078
+with this transaction id and then some more
+
+99
+00:06:40,778 --> 00:06:46,942
+with this transaction id but what are these okay these are called outputs okay output is the
+
+100
+00:06:47,022 --> 00:06:52,365
+new banknote created by the transaction with an amount of in satoshis and they
+
+101
+00:06:53,457 --> 00:06:57,340
+lock that says who may spend it in practice the address okay so
+
+102
+00:06:58,120 --> 00:06:59,101
+when you spend again uh
+
+103
+00:07:00,381 --> 00:07:04,884
+seventy thousand for a coffee okay seventy thousand for a coffee
+
+104
+00:07:05,825 --> 00:07:05,925
+uh
+
+105
+00:07:06,725 --> 00:07:09,807
+sixty thousand will be given to the
+
+106
+00:07:11,228 --> 00:07:12,489
+uh cafe shop because
+
+107
+00:07:13,490 --> 00:07:17,792
+that much you have to pay for instance you might you have to pay this much but you don't have
+
+108
+00:07:17,872 --> 00:07:21,315
+always one million of satoshi's in your pocket okay you have
+
+109
+00:07:22,415 --> 00:07:27,999
+one million plus this much in your pocket when you give this one million of course will be
+
+110
+00:07:28,760 --> 00:07:29,720
+will go to the
+
+111
+00:07:31,101 --> 00:07:36,785
+cafe as a new banknote because you are paying it so this called output we call it output so
+
+112
+00:07:36,805 --> 00:07:37,646
+your transaction
+
+113
+00:07:38,366 --> 00:07:44,030
+is now is divided into two outputs and we number them with zero and one and two etc
+
+114
+00:07:45,253 --> 00:07:46,054
+And zero means
+
+115
+00:07:48,556 --> 00:07:50,958
+this is the transaction that goes to the
+
+116
+00:07:51,979 --> 00:07:58,966
+cafe shop and this much is the change, is the rest of the money that goes back to your account,
+
+117
+00:07:59,026 --> 00:08:00,367
+okay? We'll be looking at this.
+
+118
+00:08:00,387 --> 00:08:02,589
+So transaction creates outputs
+
+119
+00:08:03,512 --> 00:08:08,874
+with some locks because there should be some lock otherwise anyone can spend this money okay
+
+120
+00:08:09,234 --> 00:08:14,657
+this one has a lock inside so that only you can spend it not anyone in the internet because
+
+121
+00:08:14,697 --> 00:08:16,097
+on the internet they see this data
+
+122
+00:08:16,858 --> 00:08:18,939
+and on a blockchain and then uh
+
+123
+00:08:19,979 --> 00:08:21,880
+to prove that you are the
+
+124
+00:08:23,201 --> 00:08:28,383
+guy who holds this change there is some lock inside we'll study in the
+
+125
+00:08:29,243 --> 00:08:34,684
+coming slides so just to complete this idea this is the output what about the input so what
+
+126
+00:08:34,764 --> 00:08:36,285
+is input input is
+
+127
+00:08:37,285 --> 00:08:43,847
+the payment that has only one input remember it has only one input and this is the money that
+
+128
+00:08:43,967 --> 00:08:46,168
+i hold in my pocket okay
+
+129
+00:08:47,114 --> 00:08:48,955
+So if we take this block
+
+130
+00:08:49,876 --> 00:08:56,761
+here, we can see that this block has this much in the in the pocket
+
+131
+00:08:57,522 --> 00:09:02,225
+and the input doesn't say take 1 million from my account.
+
+132
+00:09:02,345 --> 00:09:05,107
+It says I spent whole banknote.
+
+133
+00:09:05,127 --> 00:09:07,229
+So I have only this banknote in my pocket.
+
+134
+00:09:07,649 --> 00:09:10,091
+I can spend it all. I'm spending it all.
+
+135
+00:09:10,251 --> 00:09:13,634
+Okay, so you give all your money 70,000 you give to the coffee shop.
+
+136
+00:09:14,174 --> 00:09:20,503
+and then they will give back some change the output okay so the input means the pointer to
+
+137
+00:09:20,543 --> 00:09:23,107
+the output of an earlier transaction
+
+138
+00:09:24,181 --> 00:09:25,821
+output of an earlier transaction
+
+139
+00:09:27,362 --> 00:09:32,963
+if if you if the nozzle spends 70 000 she got this money from somewhere else okay there must
+
+140
+00:09:33,023 --> 00:09:38,545
+be some source of that money so this is the input which is the output of the earlier transaction
+
+141
+00:09:38,885 --> 00:09:44,106
+which is transaction spends the whole okay like a banknote handed over earlier in my in our
+
+142
+00:09:44,186 --> 00:09:48,507
+example so input is spends the early output okay at the hole
+
+143
+00:09:49,840 --> 00:09:50,080
+And this
+
+144
+00:09:51,061 --> 00:09:55,925
+money that we are seeing, we were referring earlier, it's called the change.
+
+145
+00:09:56,005 --> 00:09:58,427
+So it's a change the input
+
+146
+00:09:59,227 --> 00:10:01,129
+when you spend this much input.
+
+147
+00:10:01,369 --> 00:10:04,111
+So you gave the 1 million to the cafe shop,
+
+148
+00:10:04,912 --> 00:10:11,574
+the output one, is went back to the this address which is the very
+
+149
+00:10:11,674 --> 00:10:16,775
+address where the input came from because we are spending we have to get the money back and
+
+150
+00:10:16,815 --> 00:10:22,897
+this is called change the change is the output that sends the rest of the spent banknote back
+
+151
+00:10:22,937 --> 00:10:28,078
+to the payer okay usually to the others of the pair's own wallet usually
+
+152
+00:10:28,898 --> 00:10:34,840
+we'll see some peculiar cases but this is the this is the idea and then you might ask who decides
+
+153
+00:10:34,920 --> 00:10:35,340
+this so
+
+154
+00:10:36,930 --> 00:10:38,672
+Nobody marks the output as change.
+
+155
+00:10:38,872 --> 00:10:45,698
+There is no text or the bytes associated with the
+
+156
+00:10:45,738 --> 00:10:47,580
+name change. Nobody writes change.
+
+157
+00:10:48,140 --> 00:10:50,642
+The wall builds it automatically, okay?
+
+158
+00:10:51,243 --> 00:10:57,088
+On the chain is just another output, for the blockchain is just some output, but we recognize
+
+159
+00:10:57,128 --> 00:10:59,690
+it because it returns to the sender.
+
+160
+00:10:59,750 --> 00:11:02,613
+Since we know the address, it means it was a change, okay?
+
+161
+00:11:03,093 --> 00:11:04,555
+We don't keep this information
+
+162
+00:11:05,396 --> 00:11:09,862
+in the blockchain transaction data, in the raw data, because it
+
+163
+00:11:10,804 --> 00:11:16,652
+waits space. If something is already implicit, the meaning that we already know
+
+164
+00:11:17,373 --> 00:11:18,434
+that it is going to the
+
+165
+00:11:21,969 --> 00:11:26,932
+user back because we know the address we know that it's a change okay we don't have to write
+
+166
+00:11:26,992 --> 00:11:31,615
+this in the in the blockchain otherwise we are we will waste space everything about space in
+
+167
+00:11:31,635 --> 00:11:37,679
+bitcoin remember because the blockchain size should kept should be kept as little as possible
+
+168
+00:11:37,740 --> 00:11:38,060
+because
+
+169
+00:11:38,800 --> 00:11:41,422
+the the chain grows otherwise okay
+
+170
+00:11:42,323 --> 00:11:46,786
+so what is not paid comes back as a change as an output okay
+
+171
+00:11:48,300 --> 00:11:53,643
+So that's the idea. Now, now there is very strange problem here.
+
+172
+00:11:53,703 --> 00:11:53,944
+Look,
+
+173
+00:11:55,965 --> 00:11:56,705
+if you already
+
+174
+00:11:58,386 --> 00:12:00,968
+saw here, I'm spending this much, right?
+
+175
+00:12:01,528 --> 00:12:05,230
+And then this guy is getting the 1 million and then I'm getting back this.
+
+176
+00:12:05,270 --> 00:12:06,831
+But look at the difference.
+
+177
+00:12:07,032 --> 00:12:08,993
+Is it the same amount of the difference?
+
+178
+00:12:09,253 --> 00:12:10,414
+Not. Okay. You see?
+
+179
+00:12:11,594 --> 00:12:14,035
+You can pause the video and maybe you can guess
+
+180
+00:12:15,055 --> 00:12:18,517
+where is the rest of the money.
+
+181
+00:12:18,537 --> 00:12:20,177
+So I'm not losing the money for no reason.
+
+182
+00:12:20,197 --> 00:12:21,418
+There
+
+183
+00:12:22,338 --> 00:12:23,298
+is a clear reason.
+
+184
+00:12:28,120 --> 00:12:33,662
+we'll look at the idea because the coins is just like banknotes okay and this thing is called
+
+185
+00:12:33,702 --> 00:12:37,463
+transaction fee okay when you spend this much money this
+
+186
+00:12:39,564 --> 00:12:44,365
+kind of amount 1356 amount is gone and if you subtract is is not
+
+187
+00:12:48,266 --> 00:12:54,627
+going back to you and is getting somewhere else and this is called transaction fee transaction
+
+188
+00:12:54,707 --> 00:12:58,908
+fee what the transaction leaves to the miner will study the miners
+
+189
+00:13:00,489 --> 00:13:01,049
+very soon
+
+190
+00:13:03,369 --> 00:13:08,930
+who writes it back into the block so everything it's input bring that it's output do not claim
+
+191
+00:13:08,990 --> 00:13:11,991
+so no field in the transaction hold this data again
+
+192
+00:13:12,858 --> 00:13:16,000
+This is very important. I will ask in the exam.
+
+193
+00:13:16,040 --> 00:13:17,802
+Sorry, not in the exam, maybe in the...
+
+194
+00:13:18,602 --> 00:13:22,985
+When I meet you, okay? When I meet you, I will definitely ask this question, meaning that
+
+195
+00:13:24,306 --> 00:13:26,868
+this transaction fee is not written in the blockchain.
+
+196
+00:13:27,028 --> 00:13:29,510
+We calculate it, okay? We calculate based on what?
+
+197
+00:13:29,950 --> 00:13:35,094
+Based on how much the output one was there, zero was there, and what was the output one was
+
+198
+00:13:35,134 --> 00:13:37,516
+there, and the input. So we just subtract.
+
+199
+00:13:38,076 --> 00:13:42,960
+from that and we can easily find the transaction fee again we don't write it in the blockchain
+
+200
+00:13:43,000 --> 00:13:48,184
+again this is the extra data everyone can calculate it why to put it in the in the blockchain
+
+201
+00:13:48,204 --> 00:13:51,627
+to increase the size because we'll speak about size today
+
+202
+00:13:52,728 --> 00:13:55,009
+and we want to keep there only
+
+203
+00:13:55,870 --> 00:14:01,514
+the the most important data there okay so change transaction fee in a very simple words
+
+204
+00:14:02,495 --> 00:14:04,697
+Let me explain what's a transaction fee.
+
+205
+00:14:04,858 --> 00:14:08,841
+When you spend the money to your friend in Uzbekistan, in Qlik,
+
+206
+00:14:09,722 --> 00:14:10,583
+when you spend money,
+
+207
+00:14:11,404 --> 00:14:14,407
+you know that for every transaction you have to pay fee.
+
+208
+00:14:15,273 --> 00:14:17,154
+It's a very stupid idea because
+
+209
+00:14:18,975 --> 00:14:22,138
+for your money, just to give it to someone else, you have to spend money,
+
+210
+00:14:23,218 --> 00:14:25,540
+give money back to the bank.
+
+211
+00:14:25,600 --> 00:14:26,060
+Bank
+
+212
+00:14:27,181 --> 00:14:27,501
+is not
+
+213
+00:14:29,362 --> 00:14:30,883
+spending money actually for this.
+
+214
+00:14:31,043 --> 00:14:35,907
+It's just using some compute power, some electricity, of course, just putting one money from
+
+215
+00:14:36,007 --> 00:14:37,107
+one account to another one.
+
+216
+00:14:37,127 --> 00:14:40,370
+They don't even do it because it's just numbers on a database.
+
+217
+00:14:41,250 --> 00:14:42,411
+For that they get the fee.
+
+218
+00:14:43,312 --> 00:14:46,656
+You will see throughout the classes that I am a very...
+
+219
+00:14:51,833 --> 00:14:57,594
+I have a very different idea towards the current banking system, not because I teach the blockchain.
+
+220
+00:14:58,315 --> 00:15:00,155
+I teach the blockchain because I have this
+
+221
+00:15:01,115 --> 00:15:02,576
+relationship with banks.
+
+222
+00:15:03,016 --> 00:15:03,476
+Banks,
+
+223
+00:15:06,256 --> 00:15:07,977
+there are a lot of unfairness in the banks
+
+224
+00:15:09,517 --> 00:15:11,358
+in terms of transaction fee, for instance,
+
+225
+00:15:12,298 --> 00:15:16,819
+because when I lived in Italy, I used to spend money, my parents used to spend money, and we
+
+226
+00:15:16,839 --> 00:15:21,320
+had to spend a lot of money for the transaction fee, which was quite, quite high.
+
+227
+00:15:22,460 --> 00:15:27,162
+And thanks to the blockchain, the Bitcoin, Bitcoin has still the transaction fee.
+
+228
+00:15:27,202 --> 00:15:33,925
+You will understand why the transaction fee on a Bitcoin has a clear incentive.
+
+229
+00:15:33,945 --> 00:15:36,066
+There is a reason behind the transaction fee.
+
+230
+00:15:36,226 --> 00:15:40,968
+Banks also has it, but banks have quite a lot of transaction fees, hidden costs.
+
+231
+00:15:41,008 --> 00:15:46,310
+But here he has an idea and this transaction fee has a reason to exist.
+
+232
+00:15:46,950 --> 00:15:48,510
+And we'll study when we study the
+
+233
+00:15:50,151 --> 00:15:52,011
+mining phase of the Bitcoin.
+
+234
+00:15:52,031 --> 00:15:55,852
+So when you spend money, you have to pay, but you pay a very
+
+235
+00:15:56,552 --> 00:16:03,513
+small amount of money. If you are doing a transaction for $10,000 to the United States, you
+
+236
+00:16:03,593 --> 00:16:04,813
+pay so little
+
+237
+00:16:05,774 --> 00:16:10,955
+compared to the original banking system transaction fees, which is quite strange.
+
+238
+00:16:13,295 --> 00:16:19,539
+we'll study all of this but for now understand there is a still transaction fee in a blockchain
+
+239
+00:16:19,899 --> 00:16:26,663
+without this system doesn't work because someone has to get paid for helping you to move your
+
+240
+00:16:26,703 --> 00:16:26,943
+money
+
+241
+00:16:28,004 --> 00:16:31,526
+of course it should be reasonable amount okay not something uh
+
+242
+00:16:32,667 --> 00:16:38,030
+hidden not something quite large okay so we'll we'll study about this very soon
+
+243
+00:16:38,811 --> 00:16:41,853
+so the fee is what the output leaves unclaimed
+
+244
+00:16:42,800 --> 00:16:43,320
+meaning that
+
+245
+00:16:44,481 --> 00:16:45,681
+it's not written anywhere,
+
+246
+00:16:46,502 --> 00:16:47,782
+but you have to pay, okay?
+
+247
+00:16:47,802 --> 00:16:48,402
+You have to pay.
+
+248
+00:16:49,123 --> 00:16:49,583
+What else
+
+249
+00:16:50,543 --> 00:16:52,004
+the miner earns for a block?
+
+250
+00:16:52,064 --> 00:16:54,945
+The mining lecture will describe this, okay?
+
+251
+00:16:54,965 --> 00:16:56,326
+So this is a transaction fee.
+
+252
+00:16:56,666 --> 00:16:58,927
+Now we know a very important idea,
+
+253
+00:16:59,727 --> 00:17:01,748
+the input, output, and transaction fee.
+
+254
+00:17:02,349 --> 00:17:05,090
+And this helps me to explain the UTXIO now.
+
+255
+00:17:05,610 --> 00:17:06,831
+UTXIO
+
+256
+00:17:08,251 --> 00:17:10,672
+is called unspent transaction output.
+
+257
+00:17:10,692 --> 00:17:11,253
+So whenever...
+
+258
+00:17:13,535 --> 00:17:17,161
+the output has no input has spent yet is called UTXIO
+
+259
+00:17:17,942 --> 00:17:24,012
+and every Bitcoin that exists right now sits in the same some kind of UTXIO so list of all
+
+260
+00:17:24,053 --> 00:17:26,837
+of them which every node keeps is called UTXIO set
+
+261
+00:17:27,758 --> 00:17:29,561
+And this is the idea
+
+262
+00:17:30,462 --> 00:17:34,026
+coming from the lecture one where we said the balance is not stored anywhere.
+
+263
+00:17:34,086 --> 00:17:37,070
+It's just calculated from the record that you have.
+
+264
+00:17:37,731 --> 00:17:40,574
+All the retoxials that you have that you didn't spend,
+
+265
+00:17:41,295 --> 00:17:42,456
+it becomes your
+
+266
+00:17:43,358 --> 00:17:44,859
+pocket money, your money.
+
+267
+00:17:45,764 --> 00:17:49,306
+And Bitcoin takes this literally because there is no line
+
+268
+00:17:50,966 --> 00:17:54,428
+says that address X has 0.5
+
+269
+00:17:55,528 --> 00:17:57,749
+Bitcoins, okay? There is no
+
+270
+00:17:59,110 --> 00:18:04,432
+line in your wallet written like this because your wallet finds every text you lock to your
+
+271
+00:18:04,512 --> 00:18:07,353
+address and then it adds them up, okay?
+
+272
+00:18:08,214 --> 00:18:08,474
+So...
+
+273
+00:18:09,674 --> 00:18:10,215
+For instance,
+
+274
+00:18:10,915 --> 00:18:17,141
+you have 50,000 SAT that's coming from the payment A, you have this much coming from payment
+
+275
+00:18:17,201 --> 00:18:23,326
+B, and this much coming from the payment C, and your wallet just sums them up and tells you
+
+276
+00:18:23,366 --> 00:18:24,727
+that in your balance,
+
+277
+00:18:25,628 --> 00:18:30,972
+in your wallet, the balance will show this much money you have, but all comes from the UTXOs,
+
+278
+00:18:31,172 --> 00:18:31,432
+okay?
+
+279
+00:18:32,333 --> 00:18:36,918
+in the ethereum class in the previous video in the previous lecture you saw that i had some
+
+280
+00:18:36,978 --> 00:18:42,924
+amount in my account but this amount actually is the the collection of UTXOs that i have in
+
+281
+00:18:43,004 --> 00:18:49,711
+my in my document so UTXO is just unspent transaction output so some
+
+282
+00:18:50,800 --> 00:18:54,723
+left amount I have, all these are called my balance.
+
+283
+00:18:55,224 --> 00:19:01,929
+Eventually I collect them and spend somewhere and then this becomes the UTXO of some other
+
+284
+00:19:01,969 --> 00:19:05,392
+guy. So no balance on the Bitcoin
+
+285
+00:19:07,053 --> 00:19:13,219
+will be written. So only unspent out outputs which the wallet adds up is called your balance.
+
+286
+00:19:13,779 --> 00:19:18,541
+This is very... core idea is quite complex but
+
+287
+00:19:19,401 --> 00:19:21,222
+we'll be referring to this a lot okay so
+
+288
+00:19:22,422 --> 00:19:28,825
+try to analyze try to stop the video and if you have questions we can also discuss but this
+
+289
+00:19:28,845 --> 00:19:29,325
+should be
+
+290
+00:19:30,105 --> 00:19:32,606
+quite quite informative because last year i just
+
+291
+00:19:33,846 --> 00:19:38,008
+spent one slide for this now i explained you first what is the input what is the output what
+
+292
+00:19:38,068 --> 00:19:41,109
+is transaction fee now you should get the idea okay so
+
+293
+00:19:42,083 --> 00:19:48,207
+That's it. So this brings up the very important idea because every coin that you
+
+294
+00:19:48,867 --> 00:19:52,750
+have on the internet have their own history, just like this.
+
+295
+00:19:53,350 --> 00:19:55,532
+When you start from something, okay,
+
+296
+00:19:56,292 --> 00:19:57,913
+and this something will
+
+297
+00:19:58,734 --> 00:20:03,817
+bring to the next transaction, next one, and the UTEC CEO will become another output you will
+
+298
+00:20:03,857 --> 00:20:07,740
+spend in the future. And if you trace back, you will see the history.
+
+299
+00:20:08,080 --> 00:20:12,923
+so every coin has a history so if someone spent this much money
+
+300
+00:20:14,003 --> 00:20:16,204
+it becomes some output
+
+301
+00:20:17,065 --> 00:20:21,927
+like this and the other output like this and eventually someone else will spend this money
+
+302
+00:20:22,327 --> 00:20:28,070
+so this money if you trace back you can actually see the the flow where the money coming from
+
+303
+00:20:28,511 --> 00:20:33,233
+just like with the banknotes i do i have a banknote with me i guess yes so when you have a
+
+304
+00:20:33,313 --> 00:20:33,993
+banknote
+
+305
+00:20:34,914 --> 00:20:36,515
+5000 zoom okay
+
+306
+00:20:38,085 --> 00:20:41,186
+5,000 sum comes from somewhere, okay?
+
+307
+00:20:41,706 --> 00:20:42,746
+Where did I get this money?
+
+308
+00:20:42,766 --> 00:20:47,168
+Did I print it at home? You don't know that, but did I print it at home?
+
+309
+00:20:47,648 --> 00:20:49,669
+No. Of course, I got it from some
+
+310
+00:20:51,109 --> 00:20:54,310
+shop as a change. And that shop, did they print the money?
+
+311
+00:20:54,390 --> 00:20:56,291
+No, they got it from the market.
+
+312
+00:20:56,431 --> 00:20:58,391
+The market got it from the person.
+
+313
+00:20:58,711 --> 00:21:00,192
+Person got it as a salary.
+
+314
+00:21:00,232 --> 00:21:02,533
+Salary comes from the bank.
+
+315
+00:21:02,633 --> 00:21:06,334
+Bank got this money from the Federal Reserve.
+
+316
+00:21:06,434 --> 00:21:11,095
+I don't know. eventually someone printed of course in the real banknote someone will print
+
+317
+00:21:11,415 --> 00:21:18,157
+you can trace the same idea with the coins okay because it comes from the same
+
+318
+00:21:18,217 --> 00:21:19,597
+source this clearly
+
+319
+00:21:20,837 --> 00:21:21,838
+easily explains
+
+320
+00:21:23,378 --> 00:21:25,279
+the idea of a blockchain because
+
+321
+00:21:25,999 --> 00:21:31,640
+that's how it works and it was made on purpose just like this because it's easier to understand
+
+322
+00:21:31,680 --> 00:21:34,681
+the system Satoshi Nakamoto had this in mind okay
+
+323
+00:21:35,764 --> 00:21:39,888
+So when you spend our payment, if you see here,
+
+324
+00:21:40,748 --> 00:21:41,149
+it was
+
+325
+00:21:41,889 --> 00:21:45,152
+just an old bank note and it made the two ones after that.
+
+326
+00:21:45,673 --> 00:21:50,517
+And then the same day the boss new outputs had been spent again.
+
+327
+00:21:50,697 --> 00:21:53,599
+So there are no longer UTXOs because they are already
+
+328
+00:21:54,780 --> 00:21:56,542
+spent as a money.
+
+329
+00:22:02,359 --> 00:22:03,559
+So every
+
+330
+00:22:04,500 --> 00:22:09,962
+input name, the output expense, that output was created by the earlier payment.
+
+331
+00:22:09,982 --> 00:22:11,903
+So you can always trace back
+
+332
+00:22:12,803 --> 00:22:13,343
+backwards
+
+333
+00:22:14,283 --> 00:22:15,704
+to understand the history.
+
+334
+00:22:16,564 --> 00:22:21,826
+And when you go back in the history, you will find that it was coming from some kind of source.
+
+335
+00:22:22,327 --> 00:22:25,168
+In the case of the banknote, someone will be printing it.
+
+336
+00:22:26,748 --> 00:22:31,511
+but when you are in the blockchain you will see some money some coin being created we will
+
+337
+00:22:31,531 --> 00:22:37,034
+study this when we study the mining again okay we will keep it for the for the future so every
+
+338
+00:22:37,234 --> 00:22:41,196
+output is born in one payment and dies in another okay
+
+339
+00:22:42,357 --> 00:22:43,058
+But this
+
+340
+00:22:43,858 --> 00:22:49,983
+is also a very nice idea for the problem that we have seen with the blockchain, where you can
+
+341
+00:22:50,043 --> 00:22:51,525
+have the double spending problem.
+
+342
+00:22:52,045 --> 00:22:57,309
+Because in lecture one, we said that digital money can be copied and spent twice,
+
+343
+00:22:58,010 --> 00:23:00,011
+but Bitcoin's answer is very simple
+
+344
+00:23:01,433 --> 00:23:05,696
+for this problem. So it says that output can be spent once, okay?
+
+345
+00:23:06,397 --> 00:23:09,879
+If you have the output, the UTXO after the transaction,
+
+346
+00:23:11,704 --> 00:23:13,566
+Every node keeps the UTXIO set.
+
+347
+00:23:13,947 --> 00:23:17,732
+The payment whose input points to an output that is not
+
+348
+00:23:18,452 --> 00:23:23,999
+set in the set already means it's spent or never existed.
+
+349
+00:23:24,039 --> 00:23:25,061
+This is also possible.
+
+350
+00:23:26,282 --> 00:23:31,868
+The node that is looking in that ledger and then if they see it's already spent, they will
+
+351
+00:23:32,028 --> 00:23:32,829
+simply reject it.
+
+352
+00:23:33,690 --> 00:23:38,836
+If two payments try to spend the same amount, one will be accepted.
+
+353
+00:23:38,996 --> 00:23:40,557
+One of them will be accepted.
+
+354
+00:23:40,618 --> 00:23:41,078
+For instance,
+
+355
+00:23:41,779 --> 00:23:47,145
+if you have this 0.5 bitcoins, if you spend to Aziz, Aziz can get this payment.
+
+356
+00:23:47,980 --> 00:23:53,125
+But whenever next time you want to spend the same money to the Timur, now you have it in the
+
+357
+00:23:53,205 --> 00:23:56,288
+history. Next time you cannot send it because it's already spent.
+
+358
+00:23:56,569 --> 00:23:57,149
+Okay, that's
+
+359
+00:23:58,070 --> 00:24:03,015
+the solution. Thanks to the UTXO and the Bitcoin, the double spend is not possible.
+
+360
+00:24:04,016 --> 00:24:04,677
+who decides
+
+361
+00:24:05,517 --> 00:24:10,441
+uh which one is written which one is accepted again in the mining lecture i want to keep it
+
+362
+00:24:11,522 --> 00:24:16,286
+for that for now you just need to understand the output is spent once every node checks the
+
+363
+00:24:16,326 --> 00:24:16,986
+text you said
+
+364
+00:24:17,727 --> 00:24:17,867
+and
+
+365
+00:24:18,808 --> 00:24:20,929
+if it's not spent they will accept it okay
+
+366
+00:24:22,070 --> 00:24:23,351
+and that's it now
+
+367
+00:24:24,252 --> 00:24:25,533
+uh and then uh
+
+368
+00:24:26,815 --> 00:24:29,196
+you have your textiles in your pocket a lot of
+
+369
+00:24:30,336 --> 00:24:36,019
+changes from many many many transactions in your pocket and sometimes it's quite big and what
+
+370
+00:24:36,099 --> 00:24:37,119
+you do when you have a lot of
+
+371
+00:24:38,760 --> 00:24:43,781
+small amounts what you do you go to the car's income maybe you say you tell to the seller cashier
+
+372
+00:24:43,801 --> 00:24:45,822
+you say can you can you
+
+373
+00:24:49,075 --> 00:24:55,819
+we call it consolidate we call it in bitcoin can you uh give me a bigger banknote for all these
+
+374
+00:24:55,879 --> 00:25:00,362
+changes i don't want to hold this much money in my pocket and then they give you bigger uh
+
+375
+00:25:01,603 --> 00:25:02,223
+equivalent
+
+376
+00:25:03,044 --> 00:25:05,845
+banknote for your hundred thousand sum for instance
+
+377
+00:25:06,946 --> 00:25:10,128
+and this same thing is possible in
+
+378
+00:25:11,529 --> 00:25:14,311
+bitcoin so in bitcoin if you have this payment
+
+379
+00:25:15,131 --> 00:25:16,932
+you can have a look in that block
+
+380
+00:25:18,517 --> 00:25:24,441
+he has this ID, it has already 30 UTEC SEOs inside, okay?
+
+381
+00:25:25,022 --> 00:25:28,984
+From this match to this match satoshis that are locked in 30 addresses.
+
+382
+00:25:29,765 --> 00:25:33,748
+And if you look at the output, output as...
+
+383
+00:25:34,797 --> 00:25:35,057
+new
+
+384
+00:25:35,958 --> 00:25:42,443
+satoshi which is the new address it's spent okay and then he has some uh transaction fee for
+
+385
+00:25:42,503 --> 00:25:47,207
+that amount and what they did in that block is actually the same idea that we are speaking
+
+386
+00:25:47,247 --> 00:25:50,530
+so if you have a lot of small money in your pocket
+
+387
+00:25:51,450 --> 00:25:53,230
+You can actually do consolidation.
+
+388
+00:25:53,270 --> 00:25:53,911
+This is a
+
+389
+00:25:55,531 --> 00:25:57,011
+new word you can remember.
+
+390
+00:25:57,031 --> 00:25:57,931
+It's just
+
+391
+00:25:58,672 --> 00:26:02,012
+pressing all your money into big amount.
+
+392
+00:26:02,052 --> 00:26:06,393
+You can take all your money as an input and you can generate yourself.
+
+393
+00:26:06,433 --> 00:26:08,554
+You can generate new UTXO output.
+
+394
+00:26:09,174 --> 00:26:09,474
+It will
+
+395
+00:26:10,734 --> 00:26:12,655
+spend it and send yourself.
+
+396
+00:26:12,715 --> 00:26:14,495
+You send it yourself for Bitcoin.
+
+397
+00:26:14,515 --> 00:26:17,136
+But for that, you need to pay something.
+
+398
+00:26:17,676 --> 00:26:18,216
+Just like...
+
+399
+00:26:19,476 --> 00:26:22,939
+just like in the banks today, just to transfer your money from
+
+400
+00:26:23,659 --> 00:26:24,100
+one of your
+
+401
+00:26:25,641 --> 00:26:28,243
+cards to another card, you still have to pay money, right?
+
+402
+00:26:28,263 --> 00:26:30,264
+Which is very strange, but you have to pay money.
+
+403
+00:26:30,324 --> 00:26:33,667
+It's the same idea here, but you pay a very small, small amount.
+
+404
+00:26:34,507 --> 00:26:37,009
+So now in your pocket, you have the same amount.
+
+405
+00:26:37,189 --> 00:26:39,431
+No, not the same amount because you paid the
+
+406
+00:26:40,992 --> 00:26:43,774
+transaction fee, but eventually you have a...
+
+407
+00:26:44,755 --> 00:26:49,499
+uh bigger uh bigger you text you and this is called uh uh consolidation
+
+408
+00:26:50,220 --> 00:26:55,844
+and the fee doesn't follow the amount this payment is moved and paid this much uh satoshi's
+
+409
+00:26:55,864 --> 00:26:56,605
+because for the
+
+410
+00:26:57,386 --> 00:27:03,251
+uh transaction fees so fees follow the size guys not the value okay we'll i will show you a
+
+411
+00:27:03,291 --> 00:27:03,791
+bit later
+
+412
+00:27:04,492 --> 00:27:10,437
+they follow the size it depends on how much uh operations are you doing not like again in the
+
+413
+00:27:10,477 --> 00:27:10,757
+banks
+
+414
+00:27:12,184 --> 00:27:13,425
+Why would anyone do this?
+
+415
+00:27:13,806 --> 00:27:17,730
+Why would you need it? It's just electronic stuff.
+
+416
+00:27:17,750 --> 00:27:19,712
+Why don't you keep it there?
+
+417
+00:27:20,132 --> 00:27:24,036
+So 30 small banknotes in 30 pockets are very heavy, guys.
+
+418
+00:27:24,377 --> 00:27:31,324
+Also for your wallet. Because spending them later on means that 30 inputs in some
+
+419
+00:27:31,384 --> 00:27:33,206
+future payment. So you have to...
+
+420
+00:27:34,333 --> 00:27:40,838
+do 30 transactions in the future to spend somewhere else by collecting them together,
+
+421
+00:27:41,378 --> 00:27:42,679
+merging them together and
+
+422
+00:27:45,341 --> 00:27:50,685
+you spend money. And sometimes the users on the blockchain, they do it
+
+423
+00:27:51,708 --> 00:27:56,432
+before spending the money because maybe, maybe the fees are low.
+
+424
+00:27:56,512 --> 00:28:02,318
+We'll study in this course, you will see that transactions fees are not static, they change.
+
+425
+00:28:03,039 --> 00:28:06,462
+And they change, the transaction fees change when
+
+426
+00:28:07,342 --> 00:28:09,464
+a lot of activity in the network
+
+427
+00:28:10,225 --> 00:28:14,707
+in the network of blockchain if everyone spending money and there are a lot of transactions
+
+428
+00:28:15,067 --> 00:28:21,689
+of course transaction fees fees go up because people are working and there are not enough maybe
+
+429
+00:28:21,989 --> 00:28:26,871
+notes that verify your transaction okay in that case the price can go up
+
+430
+00:28:27,712 --> 00:28:27,952
+but
+
+431
+00:28:29,928 --> 00:28:35,411
+when the the network is very calm where there are no transactions at in the evenings in the
+
+432
+00:28:35,431 --> 00:28:41,135
+Saturdays and there's no one people are spending too much and all the all the miners will study
+
+433
+00:28:41,195 --> 00:28:43,396
+the miners miners are available
+
+434
+00:28:44,777 --> 00:28:46,839
+when the fees is quite low you can
+
+435
+00:28:47,559 --> 00:28:53,163
+do this option which where you will spend less fee okay instead of spending
+
+436
+00:28:54,853 --> 00:28:59,976
+more fee in the future maybe you don't know maybe you do it earlier when the fees are quite
+
+437
+00:29:00,036 --> 00:29:04,199
+low and that's why sometimes the the users they do it
+
+438
+00:29:05,019 --> 00:29:11,483
+i never did it but i should have a look at this now but that's that's the idea so many inputs
+
+439
+00:29:11,803 --> 00:29:16,626
+one output change works in both directions okay so that's the that's the idea but
+
+440
+00:29:17,407 --> 00:29:23,430
+you have to be very careful because uh there was a very big problem in the past one guy You
+
+441
+00:29:23,450 --> 00:29:25,351
+can even see his transaction ID.
+
+442
+00:29:25,391 --> 00:29:27,291
+I never checked this one, but you can have a look.
+
+443
+00:29:27,711 --> 00:29:30,312
+This guy actually wanted to do this.
+
+444
+00:29:30,372 --> 00:29:31,092
+So the owner
+
+445
+00:29:32,353 --> 00:29:36,254
+had some faulty wallet. He says it, but we don't know.
+
+446
+00:29:36,294 --> 00:29:38,554
+Maybe he was hacking the system.
+
+447
+00:29:38,594 --> 00:29:39,074
+We don't know.
+
+448
+00:29:39,895 --> 00:29:42,315
+He said that he had a faulty wallet problem.
+
+449
+00:29:43,375 --> 00:29:44,816
+Maybe he was doing it manually.
+
+450
+00:29:44,836 --> 00:29:46,016
+We don't know. And he
+
+451
+00:29:46,836 --> 00:29:48,897
+built the payment. He did the payment.
+
+452
+00:29:57,078 --> 00:29:59,280
+okay he said he did the payment
+
+453
+00:30:00,081 --> 00:30:05,187
+uh on uh november of 30 you can search on the internet it's a very famous problem and he was
+
+454
+00:30:05,227 --> 00:30:06,408
+working in the ant pool
+
+455
+00:30:07,289 --> 00:30:07,369
+uh
+
+456
+00:30:09,905 --> 00:30:10,726
+blockchain exchange
+
+457
+00:30:11,566 --> 00:30:18,250
+whose computers wrote that block and offered to return the fee to the owner because owner did
+
+458
+00:30:18,290 --> 00:30:20,671
+what so he was doing manually maybe
+
+459
+00:30:21,391 --> 00:30:27,535
+the transaction and by mistake by mistake he did not claim one of the
+
+460
+00:30:27,735 --> 00:30:32,778
+UTXOs to himself so instead he since he didn't claim the fee
+
+461
+00:30:34,458 --> 00:30:37,480
+the output that he forgot to claim went
+
+462
+00:30:38,240 --> 00:30:45,164
+to the fee okay it become like a fee and it was never built payment by hand
+
+463
+00:30:45,184 --> 00:30:49,727
+with real coins so never switch off the wallet's large warning
+
+464
+00:30:51,047 --> 00:30:52,988
+notification so you have to
+
+465
+00:30:54,489 --> 00:30:57,711
+be careful with this i will explain look first i will explain
+
+466
+00:30:58,671 --> 00:31:00,732
+about the transaction fee look
+
+467
+00:31:02,655 --> 00:31:09,100
+In our earlier example, when we did this transaction of 225 bytes, we only paid 1000
+
+468
+00:31:09,320 --> 00:31:10,601
+Satoshis.
+
+469
+00:31:11,661 --> 00:31:12,982
+Let's calculate this. How much?
+
+470
+00:31:16,224 --> 00:31:17,846
+In today's amount.
+
+471
+00:31:18,546 --> 00:31:20,247
+1,356
+
+472
+00:31:22,589 --> 00:31:23,710
+Satoshis
+
+473
+00:31:24,870 --> 00:31:29,294
+in Ulysses.
+
+474
+00:31:30,995 --> 00:31:31,255
+It is
+
+475
+00:31:34,492 --> 00:31:36,733
+Why is quite a lot? Ah, it's the one Bitcoin.
+
+476
+00:31:37,193 --> 00:31:38,013
+It is 13
+
+477
+00:31:38,894 --> 00:31:42,435
+sooms, 13 sooms, okay? Uzbekistan sooms, 13 sooms.
+
+478
+00:31:43,315 --> 00:31:44,916
+10 sooms for this transaction, guys.
+
+479
+00:31:45,616 --> 00:31:46,697
+But this poor guy,
+
+480
+00:31:47,597 --> 00:31:49,938
+he had a problem in his wallet, okay?
+
+481
+00:31:49,978 --> 00:31:52,719
+It never happens. Maybe he was trying to hack the system.
+
+482
+00:31:53,139 --> 00:31:57,200
+And he forgot to claim some of the UTEC CEO.
+
+483
+00:31:57,821 --> 00:31:58,241
+He was
+
+484
+00:31:59,241 --> 00:32:00,362
+joining maybe together
+
+485
+00:32:01,462 --> 00:32:03,563
+as a whole, so he forgot to do this.
+
+486
+00:32:04,504 --> 00:32:04,685
+and
+
+487
+00:32:05,690 --> 00:32:06,916
+the system automatically
+
+488
+00:32:09,778 --> 00:32:15,941
+takes it as a transaction fee and he had to pay this transaction fee and the fee was three
+
+489
+00:32:16,001 --> 00:32:18,582
+million dollars at that time look
+
+490
+00:32:19,303 --> 00:32:20,003
+he forgot
+
+491
+00:32:20,723 --> 00:32:21,404
+to claim it
+
+492
+00:32:22,104 --> 00:32:23,605
+and then the blockchain
+
+493
+00:32:25,325 --> 00:32:30,708
+used it as a transaction fee transaction fee cannot be this much okay this is the fee that
+
+494
+00:32:31,048 --> 00:32:35,730
+you can see in that transaction this exists on the internet okay you can check in the main
+
+495
+00:32:35,750 --> 00:32:41,495
+pool and this was the cost it was amazing it was really big and this much money was there and
+
+496
+00:32:41,515 --> 00:32:47,479
+then the ad pull what he said he will return the money if someone comes and proves with the
+
+497
+00:32:47,519 --> 00:32:52,143
+private key he is the actual guy he did the mistake and then the ad pull is the
+
+498
+00:32:54,945 --> 00:32:57,226
+exchange which which holds this
+
+499
+00:32:58,606 --> 00:33:00,547
+fees because he he got the fee
+
+500
+00:33:01,267 --> 00:33:06,188
+to the system he said that he will pay it back if they can prove then he is not a hacker
+
+501
+00:33:07,028 --> 00:33:09,129
+trying to infiltrate the system and then
+
+502
+00:33:09,969 --> 00:33:14,390
+I read the internet actually the hand pool gave the money back someone come in and claim this
+
+503
+00:33:14,450 --> 00:33:19,892
+money but this is the this is the problem okay so you have to be very careful so use
+
+504
+00:33:22,656 --> 00:33:27,721
+the wallets that are automatic wallets and well-reputed wallets don't create try to create
+
+505
+00:33:27,741 --> 00:33:34,627
+your own because you you have a problem so if you have a bug is no way to return this so
+
+506
+00:33:34,707 --> 00:33:39,672
+you there is no way to undo this kind of operations in the blockchain once it's written no
+
+507
+00:33:39,712 --> 00:33:44,076
+one can undo it you can say oh i i made a mistake you cannot do it okay
+
+508
+00:33:44,957 --> 00:33:50,122
+uh you have to be you have to be careful if in the back so also some wallets they have this
+
+509
+00:33:50,263 --> 00:33:56,209
+option it's called what is it called a large fee warning so when you are trying to spend some
+
+510
+00:33:56,269 --> 00:33:56,689
+money uh
+
+511
+00:33:57,530 --> 00:34:03,536
+if the fee is quite a lot or there is again some bug which really really happens with the normal
+
+512
+00:34:03,576 --> 00:34:07,900
+wallets it can tell you oh there is a big fee are you going to wait
+
+513
+00:34:08,681 --> 00:34:14,903
+or review the process etc so you have to enable this when we study the actual wallets we'll
+
+514
+00:34:14,983 --> 00:34:15,764
+look at it okay
+
+515
+00:34:16,784 --> 00:34:22,086
+so whatever the output forget to claim becomes fee just remember okay the fee cannot be undone
+
+516
+00:34:22,486 --> 00:34:24,527
+once it's written it can be undone okay
+
+517
+00:34:26,198 --> 00:34:28,339
+And that's it. So, so far we answered
+
+518
+00:34:29,379 --> 00:34:30,920
+these questions. So,
+
+519
+00:34:31,700 --> 00:34:32,441
+where are the coins
+
+520
+00:34:34,021 --> 00:34:35,682
+before and after the payment?
+
+521
+00:34:36,863 --> 00:34:39,484
+And we saw that input is the,
+
+522
+00:34:40,604 --> 00:34:42,145
+the output is the new banknote,
+
+523
+00:34:43,065 --> 00:34:45,547
+each locked to an address, locked.
+
+524
+00:34:45,947 --> 00:34:46,867
+Okay, we'll study
+
+525
+00:34:48,088 --> 00:34:50,609
+how it can be unlocked and
+
+526
+00:34:51,542 --> 00:34:54,824
+they can be spent as a whole as the UTXOs, okay?
+
+527
+00:34:55,364 --> 00:34:59,086
+And then we understood what is the cost, who pays to send it, okay?
+
+528
+00:34:59,926 --> 00:35:03,168
+And where it's written. So it is the fee.
+
+529
+00:35:03,488 --> 00:35:09,151
+Fee is the difference from the input and the output and is written nowhere.
+
+530
+00:35:09,391 --> 00:35:12,892
+We just calculate it and we see the output, okay?
+
+531
+00:35:12,912 --> 00:35:14,093
+So this is the overall
+
+532
+00:35:15,654 --> 00:35:17,575
+structure that we are familiar now.
+
+533
+00:35:18,528 --> 00:35:20,909
+And if you have questions, please drop in the
+
+534
+00:35:22,170 --> 00:35:23,590
+questions and answers section.
+
+535
+00:35:26,551 --> 00:35:26,791
+Okay.
+
+536
+00:35:27,772 --> 00:35:34,455
+And when you do this transaction, guys, the size of the transaction size approximately is 225
+
+537
+00:35:34,515 --> 00:35:36,095
+bytes. And what are the...
+
+538
+00:35:42,332 --> 00:35:49,119
+fields what are these numbers inside these 225 bytes mean so
+
+539
+00:35:49,159 --> 00:35:54,645
+we'll study this okay the coins are the outputs spent as a whole now the payment itself what
+
+540
+00:35:54,725 --> 00:35:57,788
+is actually written inside these bytes okay we'll look inside this so
+
+541
+00:35:58,749 --> 00:36:05,453
+uh we call this 225 bytes as the raw transaction data so when you look
+
+542
+00:36:05,493 --> 00:36:06,874
+inside the bitcoin block
+
+543
+00:36:07,574 --> 00:36:12,857
+it just as a reminder it consists of the block header you remember this is the fixed size
+
+544
+00:36:13,678 --> 00:36:19,461
+and transaction it depends on how many transactions you have uh in your block and one transaction
+
+545
+00:36:19,581 --> 00:36:19,862
+here
+
+546
+00:36:21,540 --> 00:36:23,542
+If you look, it's just row
+
+547
+00:36:25,204 --> 00:36:27,966
+values. It's just hexadecimal values there.
+
+548
+00:36:28,507 --> 00:36:29,968
+And we call it row transaction.
+
+549
+00:36:30,048 --> 00:36:34,953
+It's the transaction that exactly as nodes send it to each other at the block, stores it.
+
+550
+00:36:34,973 --> 00:36:37,235
+So some row data you can open up and read it.
+
+551
+00:36:37,695 --> 00:36:39,076
+It's a row of bytes.
+
+552
+00:36:40,283 --> 00:36:45,651
+ours in that example is 220 bytes shown here as 450
+
+553
+00:36:45,731 --> 00:36:47,534
+hexadecimal
+
+554
+00:36:48,575 --> 00:36:49,637
+characters okay so
+
+555
+00:36:50,638 --> 00:36:52,902
+because it's hexadecimal it will be 450
+
+556
+00:36:56,366 --> 00:37:02,771
+and all these are raw but you can easily read them because there are some tools to read it
+
+557
+00:37:02,851 --> 00:37:02,991
+but
+
+558
+00:37:04,032 --> 00:37:10,657
+I will briefly tell you what are these fields are of a transaction of course it depends version
+
+559
+00:37:10,677 --> 00:37:14,240
+to version but the current version that we're studying is this
+
+560
+00:37:15,421 --> 00:37:20,845
+notation okay so when you open up the raw file what you see is a payment
+
+561
+00:37:21,666 --> 00:37:22,366
+which is 225 bytes
+
+562
+00:37:25,046 --> 00:37:27,168
+Everything what we told about
+
+563
+00:37:28,068 --> 00:37:30,230
+today's class, everything is written here.
+
+564
+00:37:30,290 --> 00:37:31,971
+So the version of the
+
+565
+00:37:32,952 --> 00:37:36,214
+transaction, how many inputs, how many inputs were
+
+566
+00:37:37,835 --> 00:37:38,296
+passing
+
+567
+00:37:39,056 --> 00:37:42,919
+to this transaction? What is the previous payments ID?
+
+568
+00:37:43,339 --> 00:37:44,380
+You remember the
+
+569
+00:37:45,280 --> 00:37:47,842
+hash we studied earlier where
+
+570
+00:37:49,123 --> 00:37:51,605
+we keep the previous transaction?
+
+571
+00:37:51,865 --> 00:37:56,967
+transaction id we also keep it here we'll study this in a moment the output index
+
+572
+00:37:57,687 --> 00:38:03,289
+the length byte the key the four extra bytes how many outputs the outputs that we have seen
+
+573
+00:38:03,649 --> 00:38:07,150
+the amount and the lock okay lock again we will
+
+574
+00:38:07,870 --> 00:38:12,192
+see them today and the last four bytes so let's open up the the
+
+575
+00:38:13,221 --> 00:38:18,543
+the box now and try to understand what the what each field is okay the map of the transaction
+
+576
+00:38:18,563 --> 00:38:20,224
+so as i said the four
+
+577
+00:38:22,324 --> 00:38:22,625
+bytes
+
+578
+00:38:23,545 --> 00:38:28,607
+that goes to the version then there is the inputs the input is just the number that
+
+579
+00:38:30,427 --> 00:38:31,208
+tells the
+
+580
+00:38:32,708 --> 00:38:33,189
+how many
+
+581
+00:38:34,089 --> 00:38:36,271
+inputs this transaction has.
+
+582
+00:38:36,631 --> 00:38:39,373
+And then we have the payments ID, 32 bytes,
+
+583
+00:38:40,373 --> 00:38:42,075
+inside the output index,
+
+584
+00:38:43,436 --> 00:38:46,478
+et cetera. So we'll look at this in detail now.
+
+585
+00:38:46,518 --> 00:38:48,619
+So two kinds of counting byte.
+
+586
+00:38:48,859 --> 00:38:54,143
+Before the inputs, one byte says how many inputs follow.
+
+587
+00:38:54,163 --> 00:38:58,025
+So in this byte we say, in this transaction, how many inputs are included?
+
+588
+00:38:58,206 --> 00:39:01,188
+One, 10, 20, 100, just a number, okay?
+
+589
+00:39:02,451 --> 00:39:07,972
+And then one byte before the outputs again tells us how many bytes for the output,
+
+590
+00:39:08,972 --> 00:39:09,392
+how many
+
+591
+00:39:10,293 --> 00:39:12,013
+outputs has this transaction, okay?
+
+592
+00:39:12,453 --> 00:39:16,654
+So the bigger the count would be simply use more bytes for
+
+593
+00:39:17,974 --> 00:39:18,894
+the transaction. So,
+
+594
+00:39:19,594 --> 00:39:24,715
+and the first four byte is just for the version, version is here is two.
+
+595
+00:39:25,316 --> 00:39:26,676
+Let me show you the row byte.
+
+596
+00:39:27,436 --> 00:39:32,147
+this is two okay how to read this number i will show you in a moment
+
+597
+00:39:33,009 --> 00:39:33,129
+and
+
+598
+00:39:34,387 --> 00:39:38,729
+the rules of the payment follows like a blocks version okay some rules we
+
+599
+00:39:39,649 --> 00:39:46,332
+write inside the version the last four is the earliest block this payment may enter zero
+
+600
+00:39:46,672 --> 00:39:48,913
+means any sometimes guys
+
+601
+00:39:49,634 --> 00:39:56,096
+we put some priority for the transaction to be put in the block okay if you put here uh zero
+
+602
+00:39:56,156 --> 00:40:00,278
+it means any time is fine okay but if if you want to have your
+
+603
+00:40:01,158 --> 00:40:01,879
+payment to be
+
+604
+00:40:03,203 --> 00:40:03,723
+passed
+
+605
+00:40:04,443 --> 00:40:06,104
+urgently to put in the blockchain.
+
+606
+00:40:06,204 --> 00:40:08,884
+Again, I will show you this in the next lectures.
+
+607
+00:40:09,504 --> 00:40:14,306
+You can pay some fee and this field tells us the priority.
+
+608
+00:40:14,466 --> 00:40:17,406
+Okay, zero means anytime it can be put, it's fine.
+
+609
+00:40:17,886 --> 00:40:18,527
+The payments
+
+610
+00:40:19,387 --> 00:40:23,448
+that wait for the future block in the wallets lecture we'll study.
+
+611
+00:40:23,468 --> 00:40:29,089
+So here we have version input output, last four bytes, every transaction has this shape, all
+
+612
+00:40:29,109 --> 00:40:35,512
+of them, okay? But as I said, the version was four bytes and it was written zero two
+
+613
+00:40:36,053 --> 00:40:42,178
+zero zero zero zero but if you read it as a hexadecimal value it's not actually two it's a
+
+614
+00:40:42,218 --> 00:40:43,179
+different number and then
+
+615
+00:40:44,721 --> 00:40:45,681
+we have to understand
+
+616
+00:40:46,702 --> 00:40:50,926
+how the network actually reads this data network reads it
+
+617
+00:40:51,827 --> 00:40:53,549
+as a little endian format
+
+618
+00:40:54,830 --> 00:40:57,792
+Maybe you've studied it because you're studying the computer
+
+619
+00:40:59,533 --> 00:41:03,075
+architectures, you're studying the computer science, you are a software engineer, you have
+
+620
+00:41:03,095 --> 00:41:07,177
+to know what is little-ending, but if you don't know, I will repeat this one more time.
+
+621
+00:41:07,197 --> 00:41:12,561
+It's a simple idea. So when you have a hexadecimal number or the hexadecimal just like this,
+
+622
+00:41:13,181 --> 00:41:14,882
+your computer has two ways to read it.
+
+623
+00:41:15,042 --> 00:41:17,403
+The normal human way, which is the
+
+624
+00:41:18,424 --> 00:41:19,305
+big-ending way,
+
+625
+00:41:20,285 --> 00:41:20,605
+where
+
+626
+00:41:21,406 --> 00:41:28,109
+you read the 1a and then 2b and the 3c and then the 4d and then your computer will store them
+
+627
+00:41:28,249 --> 00:41:30,110
+in the memory in just in this flow
+
+628
+00:41:30,850 --> 00:41:32,051
+but sometimes
+
+629
+00:41:32,891 --> 00:41:36,453
+we also have this option which is actually the the real
+
+630
+00:41:37,354 --> 00:41:42,776
+usage of your computers computers like to store it in this way because for many many reasons
+
+631
+00:41:42,836 --> 00:41:49,280
+we'll see now so it's called little endian okay little endian means written smallest byte first
+
+632
+00:41:49,960 --> 00:41:55,623
+So you write smallest byte first in your memory, and then you follow the rest.
+
+633
+00:41:55,643 --> 00:41:59,286
+So to read the number, read the bytes backwards.
+
+634
+00:41:59,306 --> 00:42:00,526
+You have to read it backwards.
+
+635
+00:42:00,546 --> 00:42:02,427
+So if something is stored like this
+
+636
+00:42:03,148 --> 00:42:06,310
+in the row transaction data,
+
+637
+00:42:07,030 --> 00:42:12,093
+you have to convert it into backwards and then you got your transaction
+
+638
+00:42:13,614 --> 00:42:18,336
+hexadecimal value and this value actually translates to the decimal number which is 1 million
+
+639
+00:42:18,376 --> 00:42:25,040
+satoshis okay so when you see the raw data that i show you you have to read it backwards why
+
+640
+00:42:25,100 --> 00:42:31,423
+because most computers keep these numbers in the memory just like in this format okay bitcoin
+
+641
+00:42:31,443 --> 00:42:34,145
+simply writes the bytes as the computer holds them
+
+642
+00:42:35,135 --> 00:42:37,276
+just into the blockchain because it's faster guys.
+
+643
+00:42:37,556 --> 00:42:41,077
+It's faster because when you put this data in the RAM
+
+644
+00:42:42,277 --> 00:42:43,397
+in opposite order,
+
+645
+00:42:44,258 --> 00:42:48,999
+I hope you studied the system programming course that I teach now, but in the past, when you
+
+646
+00:42:49,159 --> 00:42:50,219
+add the numbers in
+
+647
+00:42:51,640 --> 00:42:52,800
+little ending format,
+
+648
+00:42:54,375 --> 00:43:00,139
+it will be easier for your computer to, for instance, do operations on them, like summing up,
+
+649
+00:43:00,720 --> 00:43:02,641
+adding the numbers. What your computer does?
+
+650
+00:43:03,041 --> 00:43:04,482
+Starts from the end, right?
+
+651
+00:43:06,791 --> 00:43:09,233
+do this computation if you write it in the
+
+652
+00:43:10,695 --> 00:43:17,261
+beginning you would have to transform your data your cpu had to do this otherwise if you keep
+
+653
+00:43:17,321 --> 00:43:22,726
+it in the little end your computer does almost nothing it takes the data from the memory and
+
+654
+00:43:22,766 --> 00:43:27,491
+all the operations on the on the data would be much much easier okay your computer actually
+
+655
+00:43:27,591 --> 00:43:28,052
+does this
+
+656
+00:43:28,792 --> 00:43:30,673
+And you can expect this kind of questions.
+
+657
+00:43:30,733 --> 00:43:36,715
+I give you some amount for the output number one, for instance, you have it in
+
+658
+00:43:38,236 --> 00:43:42,557
+the raw data I showed you in the previous slide, and then you can convert it into
+
+659
+00:43:43,417 --> 00:43:45,078
+the output. Okay, which number is it?
+
+660
+00:43:45,118 --> 00:43:46,218
+You can compute.
+
+661
+00:43:47,599 --> 00:43:49,139
+So read the Bitcoin numbers
+
+662
+00:43:50,080 --> 00:43:51,460
+backwards, byte, byte, byte.
+
+663
+00:43:51,840 --> 00:43:52,581
+That's the idea.
+
+664
+00:43:55,620 --> 00:43:59,743
+And we can use this approach to decode the input that we have seen.
+
+665
+00:43:59,783 --> 00:44:03,505
+This is very big data. We can use it to decode it.
+
+666
+00:44:04,646 --> 00:44:04,806
+So
+
+667
+00:44:05,666 --> 00:44:06,327
+as you saw,
+
+668
+00:44:07,307 --> 00:44:11,870
+the first one is the two and then there comes the previous payments ID.
+
+669
+00:44:12,450 --> 00:44:18,395
+So we keep the previous payments ID, which is 32 bytes is stored in this format and you read
+
+670
+00:44:18,435 --> 00:44:23,019
+it backwards. Should read it backwards and that will be the payments ID.
+
+671
+00:44:23,099 --> 00:44:26,341
+We'll study what is the payments transaction ID a bit later.
+
+672
+00:44:27,222 --> 00:44:32,887
+And the output index is four bytes is written in this format, but you convert it and you get
+
+673
+00:44:32,927 --> 00:44:33,467
+what value?
+
+674
+00:44:34,928 --> 00:44:36,069
+Just one. Okay.
+
+675
+00:44:37,210 --> 00:44:40,713
+It means that you have only one output, one output in that message.
+
+676
+00:44:42,038 --> 00:44:44,441
+And the length of the byte, it is one.
+
+677
+00:44:47,825 --> 00:44:48,966
+One byte is used for that.
+
+678
+00:44:49,046 --> 00:44:52,230
+And you use 6A. 6A, if you convert,
+
+679
+00:44:53,030 --> 00:44:55,974
+it means that 106 bytes will follow this.
+
+680
+00:44:56,955 --> 00:44:58,837
+Because 6A, where is it written?
+
+681
+00:44:58,877 --> 00:44:59,237
+6A.
+
+682
+00:44:59,938 --> 00:45:03,242
+Here, here, here, here. Can I show you here maybe?
+
+683
+00:45:05,232 --> 00:45:06,673
+Here is the 6A, okay?
+
+684
+00:45:07,474 --> 00:45:08,635
+After that,
+
+685
+00:45:09,436 --> 00:45:10,677
+we have some strange
+
+686
+00:45:12,558 --> 00:45:14,020
+data, which is 106
+
+687
+00:45:14,800 --> 00:45:16,021
+bytes, which is
+
+688
+00:45:16,942 --> 00:45:22,007
+one plus the 71 bytes signature and your public key.
+
+689
+00:45:22,227 --> 00:45:25,330
+So this data will open this transaction.
+
+690
+00:45:25,370 --> 00:45:29,173
+So if you have it, this is the proof that you made this transaction, okay?
+
+691
+00:45:29,273 --> 00:45:30,814
+Everything is put inside there.
+
+692
+00:45:31,595 --> 00:45:34,517
+raw data because we want to understand who made this
+
+693
+00:45:35,598 --> 00:45:37,179
+data and then the last one is the
+
+694
+00:45:38,621 --> 00:45:41,303
+usual value is the default is fff meaning that
+
+695
+00:45:42,123 --> 00:45:43,665
+nothing special about that so
+
+696
+00:45:44,445 --> 00:45:47,608
+when you want to have more priority you can you can change this
+
+697
+00:45:49,069 --> 00:45:53,232
+uh change this number so now uh
+
+698
+00:45:57,584 --> 00:46:03,985
+and that's it okay next about the output so when you have the output output also follows this
+
+699
+00:46:04,005 --> 00:46:04,906
+so if you see
+
+700
+00:46:06,726 --> 00:46:13,627
+four zero zero zero zero where is it okay it's here okay that's how many outputs you have and
+
+701
+00:46:13,667 --> 00:46:17,508
+this zero two is telling you that there are two outputs for this
+
+702
+00:46:18,268 --> 00:46:19,229
+and the first one
+
+703
+00:46:20,849 --> 00:46:22,370
+output is this is the one
+
+704
+00:46:23,071 --> 00:46:28,795
+million satoshis that you spent it is it contains the 20 bytes of the receiver's address it's
+
+705
+00:46:28,875 --> 00:46:34,179
+just an address and second one is another one which contains 20 bytes of the sender's address
+
+706
+00:46:34,599 --> 00:46:39,803
+if you see the sender's address here you can easily understand that was the change okay that
+
+707
+00:46:39,863 --> 00:46:45,667
+was the change and we don't keep the address inside because the payment never writes this it
+
+708
+00:46:45,727 --> 00:46:48,289
+writes just 20 bytes of the lock
+
+709
+00:46:49,429 --> 00:46:53,711
+The Explorer turns these 20 bytes in the middle into an address for us.
+
+710
+00:46:54,311 --> 00:46:59,833
+So just to keep the size again smaller enough, we have this kind of optimization and then the
+
+711
+00:47:00,033 --> 00:47:03,674
+wallets can easily retrieve this data.
+
+712
+00:47:04,235 --> 00:47:08,396
+And where is the fee? Can you see the fee in this transaction written in any part?
+
+713
+00:47:08,556 --> 00:47:12,257
+Because we already covered all of the part here and the fee is not written.
+
+714
+00:47:12,718 --> 00:47:14,258
+And the fee that is this 1,356,
+
+715
+00:47:16,959 --> 00:47:18,320
+satoshi is actually
+
+716
+00:47:20,182 --> 00:47:21,163
+not written because
+
+717
+00:47:23,084 --> 00:47:29,249
+we can actually compute it okay we don't have to spend with this valuable amount of money i
+
+718
+00:47:29,409 --> 00:47:34,893
+mean sorry the space for in the blockchain which can be easily calculated okay programs can
+
+719
+00:47:34,914 --> 00:47:35,114
+do it
+
+720
+00:47:36,238 --> 00:47:38,759
+And the output is 8 bytes a month
+
+721
+00:47:39,460 --> 00:47:45,683
+and plus the lock. Now we slowly go to the idea of
+
+722
+00:47:46,284 --> 00:47:47,124
+the locks now.
+
+723
+00:47:48,892 --> 00:47:51,614
+the ID you say you saw this transaction ID.
+
+724
+00:47:51,654 --> 00:47:52,895
+What's the transaction ID?
+
+725
+00:47:52,935 --> 00:47:55,978
+Transaction ID is just the name of the transaction.
+
+726
+00:47:56,758 --> 00:47:59,220
+Name of the transaction SHA-256
+
+727
+00:48:01,382 --> 00:48:02,984
+hash of its row bytes.
+
+728
+00:48:03,884 --> 00:48:08,528
+Then you apply the SHA-256 again, and you write it backwards
+
+729
+00:48:09,469 --> 00:48:13,392
+and 64x the decimal character is the exactly the machine
+
+730
+00:48:14,172 --> 00:48:17,175
+block hash we have seen in the previous lecture so
+
+731
+00:48:18,255 --> 00:48:24,120
+you can apply this python file i will provide it to you you can apply the
+
+732
+00:48:27,921 --> 00:48:31,602
+this program into the same 250 bytes that you have
+
+733
+00:48:32,782 --> 00:48:35,103
+in the screen, the raw data.
+
+734
+00:48:35,143 --> 00:48:37,584
+If you apply it, you will see this transaction ID.
+
+735
+00:48:38,284 --> 00:48:43,025
+And here, on purpose, I put one more hexadecimal value.
+
+736
+00:48:43,085 --> 00:48:48,067
+I tried to change small amount in that raw data.
+
+737
+00:48:48,847 --> 00:48:54,529
+and then you will see completely different transaction id because the first id is
+
+738
+00:48:56,030 --> 00:49:02,952
+one every explorer shows nobody assigns it and every node can compute it thanks to this uh
+
+739
+00:49:03,132 --> 00:49:07,834
+the python they don't have python program but they have some programs they can easily compute
+
+740
+00:49:08,434 --> 00:49:10,295
+the the hash and if you change
+
+741
+00:49:11,665 --> 00:49:14,567
+one satoshi more i just change it by one value
+
+742
+00:49:15,268 --> 00:49:20,611
+and you have a totally different hash that we studied in the in the previous lecture so you
+
+743
+00:49:20,631 --> 00:49:23,213
+cannot change it because the hash changes everything
+
+744
+00:49:23,973 --> 00:49:26,335
+and this is very important because the input
+
+745
+00:49:28,677 --> 00:49:35,582
+names the output it spends by this id and the output number okay so if you change anything
+
+746
+00:49:35,602 --> 00:49:35,642
+uh
+
+747
+00:49:36,663 --> 00:49:42,168
+later that it will change uh whole transaction id that's the very important
+
+748
+00:49:42,948 --> 00:49:47,393
+idea in the next lecture in the next video this one quite long now 50 minutes
+
+749
+00:49:48,274 --> 00:49:49,976
+i will be speaking about the
+
+750
+00:49:50,777 --> 00:49:53,580
+logs so how to create logs what are the logs so
+
+751
+00:49:54,561 --> 00:50:01,529
+take your time pause the video and then we'll continue with the next one okay what i wanted
+
+752
+00:50:01,569 --> 00:50:04,272
+to tell you here no nothing okay i will stop

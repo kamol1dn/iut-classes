@@ -1,0 +1,3407 @@
+1
+00:00:01,404 --> 00:00:02,445
+Okay, good day everyone.
+
+2
+00:00:02,525 --> 00:00:03,746
+Today we will be
+
+3
+00:00:04,506 --> 00:00:05,407
+speaking about
+
+4
+00:00:06,508 --> 00:00:06,928
+wallets,
+
+5
+00:00:07,849 --> 00:00:11,091
+addresses, and we will try to do your first transaction, hopefully.
+
+6
+00:00:13,192 --> 00:00:16,335
+We will come back to this topic on wallets a bit later.
+
+7
+00:00:16,355 --> 00:00:21,818
+I will introduce you to something more, but today in order to actually work on some topics,
+
+8
+00:00:21,899 --> 00:00:24,981
+we need a brief idea about wallets.
+
+9
+00:00:25,021 --> 00:00:25,461
+Okay, so
+
+10
+00:00:27,122 --> 00:00:27,643
+last time,
+
+11
+00:00:28,925 --> 00:00:33,229
+we end up with the private key as an idea we saw what is a private key
+
+12
+00:00:36,912 --> 00:00:37,552
+and also
+
+13
+00:00:39,173 --> 00:00:39,634
+we saw
+
+14
+00:00:41,175 --> 00:00:41,595
+and also
+
+15
+00:00:44,405 --> 00:00:47,428
+We saw what is the public key, private key idea.
+
+16
+00:00:47,488 --> 00:00:48,008
+So today
+
+17
+00:00:49,149 --> 00:00:52,632
+you make one and protect it and use it, the private key.
+
+18
+00:00:53,513 --> 00:00:56,615
+What exactly do you hold when you hold the private key?
+
+19
+00:00:56,675 --> 00:00:59,658
+What is the wallet? Where your money is located?
+
+20
+00:00:59,698 --> 00:01:01,999
+So everything will be discussed here.
+
+21
+00:01:02,019 --> 00:01:05,002
+So from the private key, I will explain you the paycheck.
+
+22
+00:01:05,942 --> 00:01:11,705
+the elliptic curves the how to create a wallet we'll see what's the seed phrase the public
+
+23
+00:01:11,725 --> 00:01:12,585
+test not works
+
+24
+00:01:13,925 --> 00:01:14,126
+and
+
+25
+00:01:15,266 --> 00:01:20,688
+from the previous lecture if you still haven't watched it please read what is private key what's
+
+26
+00:01:20,748 --> 00:01:22,129
+public i'm not going to repeat
+
+27
+00:01:23,009 --> 00:01:28,671
+you need to know what is sha256 what's a hash function what is a transaction what is the block
+
+28
+00:01:28,691 --> 00:01:32,333
+explorer and the nodes okay for this lecture we will we will need it so
+
+29
+00:01:33,542 --> 00:01:33,942
+today
+
+30
+00:01:36,345 --> 00:01:39,407
+you need the paper and pen you have to pause the video in
+
+31
+00:01:40,648 --> 00:01:47,314
+some moments to prepare to carry out the demo on your machine okay so you will have to stop
+
+32
+00:01:47,354 --> 00:01:53,400
+the camera the video and then try it by yourself so last time what we have seen we have seen
+
+33
+00:01:53,420 --> 00:01:53,480
+the
+
+34
+00:01:55,972 --> 00:01:57,974
+private key and the public keys.
+
+35
+00:01:58,915 --> 00:02:03,578
+And we understood that after the public key, we get the
+
+36
+00:02:05,820 --> 00:02:07,041
+address. So
+
+37
+00:02:09,163 --> 00:02:09,724
+we saw
+
+38
+00:02:11,345 --> 00:02:13,947
+how big is the huge number is.
+
+39
+00:02:16,589 --> 00:02:18,811
+The private key was a quite huge number.
+
+40
+00:02:19,171 --> 00:02:22,034
+Today we'll see how big is actually this huge is.
+
+41
+00:02:22,974 --> 00:02:23,475
+And then
+
+42
+00:02:26,943 --> 00:02:30,164
+then what we have seen how to compute the private key
+
+43
+00:02:31,925 --> 00:02:32,245
+and today
+
+44
+00:02:33,045 --> 00:02:37,307
+we'll see how actually to calculate it from the private key
+
+45
+00:02:38,567 --> 00:02:41,949
+we saw that the fingerprint of the public key stays in the
+
+46
+00:02:43,029 --> 00:02:46,951
+as an address but how we'll study again today okay so
+
+47
+00:02:48,131 --> 00:02:50,152
+we'll see today where
+
+48
+00:02:50,932 --> 00:02:51,452
+it lives
+
+49
+00:02:54,293 --> 00:02:58,154
+your keys in the internet, who stores them,
+
+50
+00:02:58,915 --> 00:03:05,017
+where do you back it up and how can we use actually these
+
+51
+00:03:05,117 --> 00:03:05,957
+addresses.
+
+52
+00:03:06,737 --> 00:03:07,857
+Each of them has a name so
+
+53
+00:03:08,798 --> 00:03:10,898
+we'll be answering each step by step.
+
+54
+00:03:13,099 --> 00:03:17,904
+uh let's start with the first question what do you hold when you hold the key or the private
+
+55
+00:03:17,924 --> 00:03:22,369
+key or the public key so let's start from the beginning so when you have a private key
+
+56
+00:03:24,111 --> 00:03:26,974
+is just some kind of random number okay
+
+57
+00:03:27,834 --> 00:03:28,615
+is a number
+
+58
+00:03:30,017 --> 00:03:33,240
+your computer picks randomly randomly pay attention
+
+59
+00:03:34,281 --> 00:03:35,062
+it is always 50
+
+60
+00:03:36,383 --> 00:03:39,867
+256 size
+
+61
+00:03:40,768 --> 00:03:42,190
+so it
+
+62
+00:03:43,292 --> 00:03:44,353
+tosses the coin
+
+63
+00:03:46,175 --> 00:03:47,156
+256 times
+
+64
+00:03:47,897 --> 00:03:53,123
+and if it is heads he writes one if it is tail it writes zero so as you can see it's quite
+
+65
+00:03:53,163 --> 00:03:55,686
+quite random and quite big enough okay
+
+66
+00:03:56,547 --> 00:03:59,008
+and we don't like these numbers
+
+67
+00:03:59,889 --> 00:04:06,712
+256 is quite long to write so the human readable format for this is the hexadecimal hexadecimal
+
+68
+00:04:07,012 --> 00:04:08,733
+is just like your decimal number
+
+69
+00:04:09,493 --> 00:04:09,854
+but
+
+70
+00:04:10,594 --> 00:04:12,535
+it contains also other other
+
+71
+00:04:14,036 --> 00:04:18,218
+characters for instance your decimal number goes from zero to nine
+
+72
+00:04:19,258 --> 00:04:23,720
+for the hexadecimal we start from zero nine after the nine we don't have
+
+73
+00:04:24,601 --> 00:04:24,761
+ten
+
+74
+00:04:25,541 --> 00:04:27,883
+we have an actual number which is a
+
+75
+00:04:29,384 --> 00:04:31,586
+and then b c d
+
+76
+00:04:32,847 --> 00:04:35,649
+here it goes we have 16 numbers okay
+
+77
+00:04:36,570 --> 00:04:37,311
+why we have this
+
+78
+00:04:38,192 --> 00:04:38,612
+a was
+
+79
+00:04:40,033 --> 00:04:46,938
+better to to represent this 256 okay there are so many other reasons but just agree
+
+80
+00:04:47,419 --> 00:04:54,241
+let's agree on this we will be using hexadecimal format and in hexadecimal your 256 coin flips
+
+81
+00:04:54,321 --> 00:05:01,103
+there are only zero and ones will be only 64 characters so it is much much less for us to to
+
+82
+00:05:01,183 --> 00:05:02,484
+read it okay so
+
+83
+00:05:03,384 --> 00:05:06,506
+where he gets this random number nobody will give it to him
+
+84
+00:05:07,627 --> 00:05:11,129
+nobody registers it so your computer just takes the
+
+85
+00:05:11,909 --> 00:05:12,730
+random number
+
+86
+00:05:13,670 --> 00:05:14,931
+and based
+
+87
+00:05:15,771 --> 00:05:17,633
+on this random number you have
+
+88
+00:05:20,054 --> 00:05:20,834
+this very long
+
+89
+00:05:21,835 --> 00:05:23,896
+format is called private key okay
+
+90
+00:05:24,936 --> 00:05:28,238
+in bits it's 256 and in
+
+91
+00:05:29,518 --> 00:05:34,941
+hexadecimal it is 64 and guys when you get this number from your computer
+
+92
+00:05:35,841 --> 00:05:41,464
+of course you have to save it somewhere okay nobody can memorize this key nobody usually does
+
+93
+00:05:41,504 --> 00:05:42,104
+okay so
+
+94
+00:05:42,985 --> 00:05:47,567
+so you have to you have to save this value somewhere and we usually do save it on our computers
+
+95
+00:05:48,167 --> 00:05:51,188
+or in other places we'll be discussing this a bit later so
+
+96
+00:05:53,069 --> 00:05:58,011
+and then you can ask me a question this number so it was generated randomly
+
+97
+00:05:58,772 --> 00:06:00,092
+can someone actually
+
+98
+00:06:01,133 --> 00:06:02,453
+guess this number like
+
+99
+00:06:03,214 --> 00:06:04,194
+can someone actually
+
+100
+00:06:05,155 --> 00:06:10,717
+copy my private number or not copy i mean can they guess this number which is really bad for
+
+101
+00:06:10,817 --> 00:06:11,037
+the
+
+102
+00:06:13,919 --> 00:06:14,899
+public key private key
+
+103
+00:06:17,220 --> 00:06:17,600
+pairs
+
+104
+00:06:18,361 --> 00:06:24,165
+but we'll study this a bit later okay but can someone actually guess this if they want to guess
+
+105
+00:06:24,265 --> 00:06:29,229
+guys if they want to start from the letters zero zero zero zero zero zero one
+
+106
+00:06:30,049 --> 00:06:36,774
+zero zero zero zero zero two zero zero zero zero three so if they keep counting in this way
+
+107
+00:06:38,162 --> 00:06:45,125
+at some point they can actually find your key by trying all these possibilities but possibilities
+
+108
+00:06:45,205 --> 00:06:51,788
+are quite quite drastic look how many possibilities you they have one 10 to the power of
+
+109
+00:06:51,928 --> 00:06:56,830
+77 possibilities it's a quite huge number i cannot even name it
+
+110
+00:06:57,630 --> 00:06:58,771
+I can actually show you
+
+111
+00:06:59,552 --> 00:07:02,195
+how long it will take. Look, if we are 8
+
+112
+00:07:02,956 --> 00:07:05,919
+billion people in the world, this is the current number,
+
+113
+00:07:07,060 --> 00:07:10,344
+last year I remember it was 7 or something, okay,
+
+114
+00:07:11,425 --> 00:07:12,686
+and assume that everyone,
+
+115
+00:07:13,507 --> 00:07:17,291
+every second, is guessing billion, is it billion?
+
+116
+00:07:19,154 --> 00:07:20,916
+billion keys per second.
+
+117
+00:07:21,276 --> 00:07:22,678
+It's quite already fast.
+
+118
+00:07:23,238 --> 00:07:26,141
+Some computers actually allows us to do this.
+
+119
+00:07:26,382 --> 00:07:29,865
+Assume a person on
+
+120
+00:07:30,626 --> 00:07:30,846
+Earth
+
+121
+00:07:31,547 --> 00:07:36,031
+out of this eight billion, they can guess one billion keys in a second.
+
+122
+00:07:36,852 --> 00:07:39,354
+If it was a second and if we consider
+
+123
+00:07:41,176 --> 00:07:42,477
+the Big Bang, like
+
+124
+00:07:43,397 --> 00:07:48,241
+the years for the humankind known until now is this much.
+
+125
+00:07:49,102 --> 00:07:52,064
+They claim we've been on Earth for this much
+
+126
+00:07:52,885 --> 00:07:53,085
+and
+
+127
+00:07:54,586 --> 00:07:58,770
+if it is these years, if we were here for these years,
+
+128
+00:08:00,791 --> 00:08:07,737
+every second if passed until now we would be only guessing this much number by now
+
+129
+00:08:07,977 --> 00:08:14,302
+okay it's not even the half so how many left for us to guess it would be this much okay this
+
+130
+00:08:14,342 --> 00:08:20,426
+means that every person every second since the we start counting the time if it is
+
+131
+00:08:21,287 --> 00:08:27,032
+not even the trillions of the trillions of the trillions of all the keys even guessed I just
+
+132
+00:08:27,072 --> 00:08:33,937
+want to explain you this number is quite huge and guessing is almost impossible so private
+
+133
+00:08:33,997 --> 00:08:38,681
+key is just a very big random number it's too big to guess so we have to all agree on this
+
+134
+00:08:39,162 --> 00:08:45,647
+it is very difficult to guess and then we'll study why someone has to guess it why is important
+
+135
+00:08:45,687 --> 00:08:52,395
+we'll study this but Just agree today in this slide that private key is quite long and guessing
+
+136
+00:08:52,475 --> 00:08:53,236
+it is almost
+
+137
+00:08:53,957 --> 00:08:57,562
+impossible. I'm not saying not possible, almost impossible.
+
+138
+00:08:58,343 --> 00:09:02,448
+That's why all the today's cryptography runs on this
+
+139
+00:09:03,650 --> 00:09:04,771
+kind of huge numbers.
+
+140
+00:09:06,436 --> 00:09:11,818
+And then we saw that there was a public key derived from this private key.
+
+141
+00:09:12,459 --> 00:09:15,620
+So we take the public key from this private key.
+
+142
+00:09:15,980 --> 00:09:20,402
+And I told you that deriving it from here, it's very easy, but coming back
+
+143
+00:09:21,342 --> 00:09:28,205
+is impossible, okay? To find your private key based on what you did for the public key is impossible.
+
+144
+00:09:29,006 --> 00:09:31,887
+And then you could ask me like, what if this is X?
+
+145
+00:09:32,267 --> 00:09:34,548
+And if we multiply the X by two,
+
+146
+00:09:36,133 --> 00:09:39,035
+by two, this number would be two X, right?
+
+147
+00:09:39,556 --> 00:09:42,838
+Can someone divide it by two and find my key?
+
+148
+00:09:43,479 --> 00:09:45,240
+Yes, if it was just a simple
+
+149
+00:09:45,941 --> 00:09:48,363
+mathematical multiplication, it would be this.
+
+150
+00:09:49,063 --> 00:09:50,064
+But in reality,
+
+151
+00:09:51,125 --> 00:09:55,448
+it is not like this. So it is based on something called elliptic curve.
+
+152
+00:09:55,968 --> 00:10:02,153
+So elliptic curve means the curve on which the two points can be added to give the third point,
+
+153
+00:10:02,533 --> 00:10:02,914
+okay?
+
+154
+00:10:04,293 --> 00:10:06,614
+and the public key is the private key k
+
+155
+00:10:08,195 --> 00:10:10,756
+times the fixed starting point at g
+
+156
+00:10:12,076 --> 00:10:19,019
+so g added to itself the key times with shortcut that makes it fast so nobody knows
+
+157
+00:10:19,399 --> 00:10:25,622
+the wave back from the result guys uh the point in this class uh we're not going to study what
+
+158
+00:10:25,722 --> 00:10:31,644
+is the elective curve if you really want to read you can have a look there is even one minute
+
+159
+00:10:31,664 --> 00:10:34,486
+video to explain this but in a very brief terms
+
+160
+00:10:35,746 --> 00:10:40,908
+what is the elliptic curve they gave us this kind of curve and they get some number in that
+
+161
+00:10:41,028 --> 00:10:43,509
+elliptic curve they multiply it by
+
+162
+00:10:44,289 --> 00:10:46,690
+k in this case for some number
+
+163
+00:10:47,770 --> 00:10:50,632
+and then this number will be our
+
+164
+00:10:51,512 --> 00:10:52,432
+public key it is
+
+165
+00:10:53,573 --> 00:10:55,753
+quite fast calculating this number and
+
+166
+00:10:57,473 --> 00:11:00,775
+what is impossible is to find the J after that, okay?
+
+167
+00:11:01,235 --> 00:11:06,278
+So of course the K is not also possible to find, and then coming back to the G is also not
+
+168
+00:11:06,318 --> 00:11:10,881
+possible. So they take this key and their final value is considered
+
+169
+00:11:11,641 --> 00:11:15,243
+the public key. So that's how we obtain.
+
+170
+00:11:15,343 --> 00:11:20,486
+The only thing you have to remember that you cannot derive the private key out of this.
+
+171
+00:11:20,526 --> 00:11:25,429
+So in our demos, we'll be using this number for the private key.
+
+172
+00:11:26,365 --> 00:11:29,166
+and if you run it through this electric curve
+
+173
+00:11:30,047 --> 00:11:31,727
+function you get another
+
+174
+00:11:34,128 --> 00:11:37,710
+data that is 32 bytes
+
+175
+00:11:39,130 --> 00:11:45,553
+for the for the demo so you get to get this file okay so sometimes guys bitcoin
+
+176
+00:11:45,753 --> 00:11:46,854
+writes it in
+
+177
+00:11:47,674 --> 00:11:49,297
+32 uh 33 bytes
+
+178
+00:11:50,178 --> 00:11:53,183
+uh plus because they add one more byte to say
+
+179
+00:11:54,846 --> 00:12:01,436
+that there exists how it's related to the why but this idea is changing every single year because
+
+180
+00:12:04,500 --> 00:12:11,042
+In the past, Bitcoin was representing the public keys in different bytes, but today
+
+181
+00:12:12,842 --> 00:12:15,483
+it is changing. So we'll come back to this point.
+
+182
+00:12:15,523 --> 00:12:18,684
+For now, consider it's 33 bytes.
+
+183
+00:12:19,104 --> 00:12:25,205
+So the idea from this slide is that the public key is derived by multiplying your private key
+
+184
+00:12:25,265 --> 00:12:31,107
+by G. So it's easily calculated to find the public key,
+
+185
+00:12:32,767 --> 00:12:35,930
+coming back from that number into your private key is impossible.
+
+186
+00:12:35,970 --> 00:12:40,874
+So that's the formula we'll be using to calculate the private key.
+
+187
+00:12:41,834 --> 00:12:48,785
+And then, I told you that the public key is not actually your address the address for the cryptocurrencies
+
+188
+00:12:49,025 --> 00:12:54,147
+for the blockchain is derived from your public key so how
+
+189
+00:12:54,908 --> 00:12:55,168
+so
+
+190
+00:12:56,168 --> 00:13:02,410
+the address will be our fingerprint of the public key so fingerprint is you know everyone has
+
+191
+00:13:02,511 --> 00:13:08,953
+a different fingerprint and this thing we call it address address is your public number on
+
+192
+00:13:09,013 --> 00:13:10,914
+the blockchain so it is your
+
+193
+00:13:11,834 --> 00:13:17,800
+address and is unique okay what where the people can send you some money okay
+
+194
+00:13:19,048 --> 00:13:23,090
+We will study the Ethereum blockchain also a bit later.
+
+195
+00:13:24,350 --> 00:13:30,433
+It starts with 0x and 40 hexadecimal characters.
+
+196
+00:13:30,833 --> 00:13:35,115
+For the Ethereum, it is 40 hexadecimal characters.
+
+197
+00:13:35,235 --> 00:13:37,956
+In total, it is 42 because of this.
+
+198
+00:13:38,316 --> 00:13:42,938
+But how do we get it? We take your 64 bytes
+
+199
+00:13:43,779 --> 00:13:46,200
+public key. We take it...
+
+200
+00:13:47,500 --> 00:13:54,064
+64 bytes x and y and then we run it through some kind of function okay it's sketchhack
+
+201
+00:13:54,404 --> 00:13:57,966
+256 it's just like sha-256 but it's much much
+
+202
+00:14:00,647 --> 00:14:05,549
+safer we'll study this when we study the ethereum so it's slightly different hash function
+
+203
+00:14:05,589 --> 00:14:06,530
+still the hash function
+
+204
+00:14:07,469 --> 00:14:11,070
+And then when we generate, we get the fingerprint.
+
+205
+00:14:11,230 --> 00:14:13,951
+The fingerprint is 32 bytes.
+
+206
+00:14:14,491 --> 00:14:17,071
+It is 64 hexadecimal characters.
+
+207
+00:14:17,872 --> 00:14:18,052
+And
+
+208
+00:14:19,632 --> 00:14:25,134
+what is strange is that we only keep the last 20 bytes,
+
+209
+00:14:25,974 --> 00:14:29,435
+the 40 characters.
+
+210
+00:14:31,397 --> 00:14:32,137
+and where
+
+211
+00:14:33,458 --> 00:14:39,440
+we keep them and in front we just write 0x so we take only this part and put 0x on top and
+
+212
+00:14:39,460 --> 00:14:41,440
+this will be the our address okay
+
+213
+00:14:42,161 --> 00:14:48,303
+don't ask me why exactly this so ethereum has this rule okay look bitcoin is a bit different
+
+214
+00:14:48,743 --> 00:14:53,484
+i'm not going to differentiate them for now just i'm explaining what is an address okay address
+
+215
+00:14:53,524 --> 00:14:57,606
+is derived from your public key in some way that's that's the idea
+
+216
+00:14:58,346 --> 00:14:58,567
+then
+
+217
+00:14:59,710 --> 00:15:02,377
+here if you remember our promises on the network
+
+218
+00:15:06,742 --> 00:15:10,843
+So if you remember our promise in the network, it is the same input.
+
+219
+00:15:10,983 --> 00:15:16,404
+So whenever you give the same input, you get the same address on every computer in the world,
+
+220
+00:15:16,544 --> 00:15:20,545
+okay? If you give this private key, you get your private key always the same.
+
+221
+00:15:20,965 --> 00:15:24,446
+That means your address is also the same because we're applying the same function.
+
+222
+00:15:24,566 --> 00:15:29,026
+It never changes, okay? If you change slightly something here, it changes public key, your
+
+223
+00:15:29,066 --> 00:15:35,448
+address again changes. So that's a very important core idea for today's lecture.
+
+224
+00:15:35,468 --> 00:15:36,508
+So you should remember this.
+
+225
+00:15:37,368 --> 00:15:42,731
+then uh as i said ketchup is the ethereum it's another blockchain like a bitcoin
+
+226
+00:15:43,631 --> 00:15:50,054
+it's its own hash function it's the cousin of sha 256 with the same five promises that we already
+
+227
+00:15:50,114 --> 00:15:56,417
+started okay uh it's just different inside so the input gives different fingerprints this is
+
+228
+00:15:56,457 --> 00:16:02,040
+the only uh change okay not not not a big difference so it uses it so
+
+229
+00:16:02,880 --> 00:16:07,602
+For us, what we have to remember, an address is just a hash of the public key that we already
+
+230
+00:16:07,642 --> 00:16:08,902
+said last lecture,
+
+231
+00:16:09,643 --> 00:16:11,683
+which is public. Everyone can see it.
+
+232
+00:16:11,984 --> 00:16:13,744
+It's not something you hide it, okay?
+
+233
+00:16:14,545 --> 00:16:14,745
+And
+
+234
+00:16:15,885 --> 00:16:18,966
+it is short. We cut some part of it because
+
+235
+00:16:19,747 --> 00:16:23,748
+we could get these bytes, but Ethereum says, no, no, it's enough.
+
+236
+00:16:23,808 --> 00:16:24,649
+Take the last one.
+
+237
+00:16:25,669 --> 00:16:26,109
+And
+
+238
+00:16:27,330 --> 00:16:30,751
+it's impossible to reverse in any case based on your address.
+
+239
+00:16:31,572 --> 00:16:31,773
+your
+
+240
+00:16:33,016 --> 00:16:36,423
+private key and public key, so it's not possible.
+
+241
+00:16:39,863 --> 00:16:42,064
+When you see this kind of address
+
+242
+00:16:42,924 --> 00:16:43,664
+on the Internet,
+
+243
+00:16:44,444 --> 00:16:45,164
+you should be careful.
+
+244
+00:16:45,865 --> 00:16:50,566
+Of course, it's not public, but when you install some applications that work with your
+
+245
+00:16:51,306 --> 00:16:52,926
+keys and your address
+
+246
+00:16:53,946 --> 00:16:56,887
+like this, they don't always show you all the
+
+247
+00:16:57,947 --> 00:16:59,888
+address itself. What they usually do,
+
+248
+00:17:00,608 --> 00:17:01,708
+they simply
+
+249
+00:17:02,448 --> 00:17:05,029
+give some portion of your address
+
+250
+00:17:05,829 --> 00:17:12,275
+uh key they hide the the intermediate values okay but when they hide it
+
+251
+00:17:13,096 --> 00:17:17,340
+you should not trust on that address you have to look at the whole address because even if
+
+252
+00:17:17,380 --> 00:17:22,184
+they hide these portions in the middle there can be totally different numbers okay
+
+253
+00:17:23,425 --> 00:17:28,970
+so the first six and the last eight characters are same when you look at these numbers so sometimes
+
+254
+00:17:28,990 --> 00:17:31,853
+uh some users on the internet
+
+255
+00:17:33,442 --> 00:17:35,963
+some users on the internet they just
+
+256
+00:17:36,684 --> 00:17:38,625
+read the last values of your address
+
+257
+00:17:39,325 --> 00:17:42,587
+and then they think is enough but don't
+
+258
+00:17:43,607 --> 00:17:44,808
+fool yourself because
+
+259
+00:17:46,089 --> 00:17:51,111
+even the beginning of some numbers and the last numbers are same someone can actually change
+
+260
+00:17:51,151 --> 00:17:54,893
+something in the middle and then it will be totally different address and is not your address
+
+261
+00:17:54,933 --> 00:17:57,955
+okay so you have to be you have to be careful so
+
+262
+00:17:59,068 --> 00:18:02,011
+42 characters and salon do not identify it.
+
+263
+00:18:02,031 --> 00:18:03,712
+So you have to have the whole address.
+
+264
+00:18:03,732 --> 00:18:05,194
+You have to read the whole address.
+
+265
+00:18:05,214 --> 00:18:05,434
+So
+
+266
+00:18:06,675 --> 00:18:08,496
+even with this 48
+
+267
+00:18:09,597 --> 00:18:10,138
+characters,
+
+268
+00:18:11,059 --> 00:18:11,319
+sorry,
+
+269
+00:18:12,060 --> 00:18:17,544
+48 decimal characters, apart from the zero X already odds someone
+
+270
+00:18:18,645 --> 00:18:21,407
+uh inventing is quite quite difficult because
+
+271
+00:18:22,428 --> 00:18:27,832
+and having to the same address with the other person is also very very difficult because
+
+272
+00:18:29,053 --> 00:18:32,435
+there is no registration office of these old addresses nobody
+
+273
+00:18:33,296 --> 00:18:39,640
+stores the addresses new address is simply computed and two people landing on the same Again,
+
+274
+00:18:39,680 --> 00:18:43,161
+we assume it's unlikely, okay, because it's quite, quite large number.
+
+275
+00:18:43,641 --> 00:18:45,842
+These many addresses in the world exist
+
+276
+00:18:46,762 --> 00:18:46,943
+and
+
+277
+00:18:47,723 --> 00:18:50,824
+running into the two different same address
+
+278
+00:18:51,664 --> 00:18:55,265
+by generating this is the odds are quite, quite low.
+
+279
+00:18:55,625 --> 00:18:56,686
+I'm not saying again is
+
+280
+00:18:57,506 --> 00:18:58,146
+possible, but
+
+281
+00:18:59,467 --> 00:19:00,587
+very, very low. Okay.
+
+282
+00:19:01,817 --> 00:19:05,723
+So Bitcoin actually writes the addresses in a different way.
+
+283
+00:19:05,863 --> 00:19:10,410
+When we study the Bitcoin, I will show you how the address is defined.
+
+284
+00:19:10,450 --> 00:19:14,275
+But for now, just remember Bitcoin uses this kind of
+
+285
+00:19:16,238 --> 00:19:21,423
+letters or this one. Because in the first one, if you look, it is the older version of the
+
+286
+00:19:21,463 --> 00:19:24,345
+Bitcoin. In the past, older version had
+
+287
+00:19:25,546 --> 00:19:32,291
+only base 56 used for the representation of the addresses because they removed the
+
+288
+00:19:32,911 --> 00:19:33,472
+0,
+
+289
+00:19:35,113 --> 00:19:35,153
+O,
+
+290
+00:19:36,634 --> 00:19:39,416
+I and L from the character list.
+
+291
+00:19:39,496 --> 00:19:40,437
+Because you know why?
+
+292
+00:19:41,577 --> 00:19:42,258
+course because
+
+293
+00:19:43,279 --> 00:19:47,342
+it would be quite confusing for the people and they can easily change
+
+294
+00:19:48,864 --> 00:19:50,505
+some letters here okay so
+
+295
+00:19:51,626 --> 00:19:55,170
+what I want to say that if you open up the word for instance
+
+296
+00:19:59,133 --> 00:19:59,894
+if you are here
+
+297
+00:20:00,595 --> 00:20:01,576
+so when you say
+
+298
+00:20:02,837 --> 00:20:03,878
+again okay
+
+299
+00:20:04,699 --> 00:20:05,519
+and if I say
+
+300
+00:20:06,721 --> 00:20:06,921
+this
+
+301
+00:20:12,122 --> 00:20:12,262
+a
+
+302
+00:20:14,203 --> 00:20:20,706
+again okay this again and this again are not the same you know why because i used your
+
+303
+00:20:20,726 --> 00:20:26,789
+acrylic a of course in the addresses we cannot we don't use acrylic but what i was saying that
+
+304
+00:20:27,049 --> 00:20:28,970
+all and all they are very similar
+
+305
+00:20:30,190 --> 00:20:30,411
+like
+
+306
+00:20:31,271 --> 00:20:33,992
+some address or some others and some others
+
+307
+00:20:35,173 --> 00:20:35,473
+zero
+
+308
+00:20:37,531 --> 00:20:39,252
+Of course, here you can differentiate, but
+
+309
+00:20:40,613 --> 00:20:47,499
+just to remove the confusion like this one here, as you can see, look at the L and I, they're
+
+310
+00:20:47,619 --> 00:20:54,025
+quite similar. So to remove this confusion, they just decided not to use 64 base,
+
+311
+00:20:55,466 --> 00:21:01,612
+but use the 56 and remove these characters from the
+
+312
+00:21:01,912 --> 00:21:02,473
+database.
+
+313
+00:21:03,840 --> 00:21:06,942
+And then Bitcoin later on introduced some more updates.
+
+314
+00:21:06,962 --> 00:21:09,284
+You remember the versioning, they had the different versions.
+
+315
+00:21:09,344 --> 00:21:13,147
+And today actually Bitcoin uses in different
+
+316
+00:21:14,008 --> 00:21:14,448
+versions,
+
+317
+00:21:15,269 --> 00:21:20,193
+all the lowercase letters, not including the uppercase letters, just to make the life easier.
+
+318
+00:21:20,313 --> 00:21:20,573
+Okay.
+
+319
+00:21:23,401 --> 00:21:29,025
+There are some programs, even if you use the capital letter or lowercase letter, some programs
+
+320
+00:21:29,105 --> 00:21:35,931
+on your mobile phone can actually understand if you made some mistake or if you deliberately
+
+321
+00:21:35,991 --> 00:21:37,952
+changed some letters in your address.
+
+322
+00:21:37,972 --> 00:21:43,737
+So today tools are smart, they can actually read your address and see if you changed something
+
+323
+00:21:43,977 --> 00:21:49,761
+in the address, confusing the user, and then the program simply don't accept this address.
+
+324
+00:21:50,962 --> 00:21:54,266
+changes in the address, this kind of altering is not
+
+325
+00:21:56,509 --> 00:21:57,250
+possible today.
+
+326
+00:22:02,249 --> 00:22:03,569
+what I want to say is that
+
+327
+00:22:04,310 --> 00:22:08,210
+these numbers are obtained from the some random number right
+
+328
+00:22:09,051 --> 00:22:11,131
+and there is a very big war
+
+329
+00:22:11,911 --> 00:22:12,772
+in the industry
+
+330
+00:22:13,632 --> 00:22:13,972
+where
+
+331
+00:22:14,752 --> 00:22:21,694
+someone just got the number one okay it's random it can be random any number so your
+
+332
+00:22:21,734 --> 00:22:25,695
+computer if it chooses to one if it chooses it doesn't choose actually
+
+333
+00:22:28,005 --> 00:22:29,426
+If they choose it one,
+
+334
+00:22:30,567 --> 00:22:32,368
+it is still a valid key, okay?
+
+335
+00:22:32,468 --> 00:22:33,388
+It is still valid
+
+336
+00:22:34,149 --> 00:22:35,970
+and its address also exists.
+
+337
+00:22:36,290 --> 00:22:42,553
+So if you run this one and through the cryptographic formula applied to the one,
+
+338
+00:22:43,294 --> 00:22:47,156
+deterministically, you can actually get this address.
+
+339
+00:22:47,856 --> 00:22:50,398
+In Bitcoin, you have this address, which is a...
+
+340
+00:22:51,909 --> 00:22:57,190
+you can check in the main pool space it is the actual address and on Ethereum again if you
+
+341
+00:22:57,230 --> 00:23:01,851
+apply the formulas you get this address from one okay we don't choose one actually for the
+
+342
+00:23:01,891 --> 00:23:07,213
+source for the private key but if you do you get this address and people actually did it okay
+
+343
+00:23:07,233 --> 00:23:14,194
+people actually did it did use it sometimes they send some money to that address and actually
+
+344
+00:23:14,234 --> 00:23:20,696
+you can see here 199 transactions on this address alone who
+
+345
+00:23:21,896 --> 00:23:28,319
+try to open this address and get some money, but the balance in all of them is equal to zero.
+
+346
+00:23:28,619 --> 00:23:30,039
+Can you tell me why?
+
+347
+00:23:31,940 --> 00:23:35,982
+I will tell you why in any case, but you can pause the video and think about this because
+
+348
+00:23:36,742 --> 00:23:39,003
+why is it still zero if somebody
+
+349
+00:23:39,983 --> 00:23:42,184
+used to send some money there?
+
+350
+00:23:43,324 --> 00:23:44,625
+Why is this? Because
+
+351
+00:23:45,665 --> 00:23:47,386
+everyone who can count
+
+352
+00:23:48,847 --> 00:23:49,347
+to one,
+
+353
+00:23:50,473 --> 00:23:54,874
+everyone knows the from one to obtain this address they can
+
+354
+00:23:56,235 --> 00:23:59,816
+apply it and then they have the private key meaning that programs
+
+355
+00:24:00,856 --> 00:24:05,257
+automatic programs on the internet they watch this address day and night and if someone puts
+
+356
+00:24:05,277 --> 00:24:09,658
+some money on that address we'll study how to put the money in the address
+
+357
+00:24:10,659 --> 00:24:15,360
+the intruders the hackers immediately get this money from your account because your account
+
+358
+00:24:15,940 --> 00:24:20,761
+also his account now because he knows your key which is one that's why one is really really
+
+359
+00:24:20,821 --> 00:24:25,982
+bad and the key must come from randomness not some kind of number or uh
+
+360
+00:24:27,083 --> 00:24:33,764
+from yourself or from some clever keys like your birthday or from a book or some quote that
+
+361
+00:24:33,784 --> 00:24:38,906
+you found on a on the internet so it should not come from you okay it should come from the
+
+362
+00:24:39,006 --> 00:24:45,829
+internet because the key that anyone can guess is key everyone owns So if they can guess your
+
+363
+00:24:46,169 --> 00:24:50,895
+number one, it means that they can also hold that address on their sales, okay?
+
+364
+00:24:51,355 --> 00:24:55,040
+So two address can actually reside on the internet,
+
+365
+00:24:55,821 --> 00:24:59,305
+but the problem is that the owner of that address
+
+366
+00:25:00,146 --> 00:25:01,007
+has an access to
+
+367
+00:25:02,033 --> 00:25:03,834
+the items in that address.
+
+368
+00:25:04,014 --> 00:25:04,634
+We'll study
+
+369
+00:25:05,474 --> 00:25:06,754
+the items in JetAddress.
+
+370
+00:25:06,774 --> 00:25:07,715
+So just
+
+371
+00:25:09,615 --> 00:25:11,476
+briefly again, revision.
+
+372
+00:25:11,496 --> 00:25:16,657
+So you got your number, random number, you get your private key from this number, and then
+
+373
+00:25:16,697 --> 00:25:19,078
+you get your public key and you get your address.
+
+374
+00:25:19,358 --> 00:25:21,098
+Okay. Applying some hash function.
+
+375
+00:25:21,479 --> 00:25:24,399
+And then if you use as your random number one
+
+376
+00:25:25,180 --> 00:25:26,600
+or two or three,
+
+377
+00:25:28,153 --> 00:25:32,075
+The outcome, everyone can apply because your random number,
+
+378
+00:25:33,056 --> 00:25:37,038
+someone else can try and they will get hold this address.
+
+379
+00:25:37,218 --> 00:25:39,159
+They can install it on their mobile phones.
+
+380
+00:25:39,219 --> 00:25:42,981
+They know this address and they can look inside the content of that address.
+
+381
+00:25:43,001 --> 00:25:46,403
+So in that address, if someone put some money on that address,
+
+382
+00:25:47,143 --> 00:25:51,767
+they can immediately take it from there okay because they know this random number that's why
+
+383
+00:25:52,207 --> 00:25:53,028
+never ever
+
+384
+00:25:53,929 --> 00:26:00,734
+run this random number one two three let your computer decide the random number where no
+
+385
+00:26:00,814 --> 00:26:01,855
+one actually
+
+386
+00:26:03,336 --> 00:26:06,639
+can guess that number as we saw before and then no one can take your
+
+387
+00:26:07,380 --> 00:26:08,080
+money because
+
+388
+00:26:08,801 --> 00:26:15,226
+we'll study today money is not in your wallet okay money is in the blockchain we'll
+
+389
+00:26:15,526 --> 00:26:16,027
+study this
+
+390
+00:26:17,537 --> 00:26:20,499
+And the new thing is the wallet for today.
+
+391
+00:26:20,559 --> 00:26:26,102
+So what is wallet? I was telling you about the wallet where you store these two things, the
+
+392
+00:26:26,142 --> 00:26:27,562
+private key and public key.
+
+393
+00:26:28,083 --> 00:26:30,644
+The wallet is some kind of application.
+
+394
+00:26:30,744 --> 00:26:32,045
+Sometimes it's a hardware.
+
+395
+00:26:32,445 --> 00:26:34,086
+I have one somewhere here.
+
+396
+00:26:34,706 --> 00:26:35,286
+So I
+
+397
+00:26:36,927 --> 00:26:38,768
+use the hardware wallet.
+
+398
+00:26:38,788 --> 00:26:40,189
+This is called hardware wallet.
+
+399
+00:26:40,229 --> 00:26:41,650
+It's from the Trezor app.
+
+400
+00:26:42,470 --> 00:26:42,891
+brand
+
+401
+00:26:43,812 --> 00:26:47,036
+we'll study different types of wallets very soon
+
+402
+00:26:47,817 --> 00:26:49,960
+but assume for now it's an application today we'll
+
+403
+00:26:51,001 --> 00:26:54,205
+build a wallet from the application
+
+404
+00:26:55,847 --> 00:26:59,732
+and this makes your private key so it can generate the private key
+
+405
+00:27:00,613 --> 00:27:06,198
+and it can keep it you can save it okay this tool or the application mobile application can
+
+406
+00:27:06,679 --> 00:27:07,800
+generate or save it
+
+407
+00:27:08,500 --> 00:27:15,406
+and sign with it when you press click okay when you say done it will sign
+
+408
+00:27:15,466 --> 00:27:16,527
+your transaction
+
+409
+00:27:17,468 --> 00:27:17,828
+and then
+
+410
+00:27:18,689 --> 00:27:24,571
+we know that this transaction is made by you because you hold the key the private key and if
+
+411
+00:27:24,611 --> 00:27:29,072
+someone else holds your private key they can do the same okay you this
+
+412
+00:27:29,913 --> 00:27:31,613
+sentence should be very very important
+
+413
+00:27:32,314 --> 00:27:37,916
+so it shows your address and your balance and this app or this hardware can show
+
+414
+00:27:39,356 --> 00:27:41,217
+your address and your balance
+
+415
+00:27:42,663 --> 00:27:49,345
+wallet guys actually holds the keys not the coins okay because you should know by now
+
+416
+00:27:49,925 --> 00:27:51,925
+where your money is located
+
+417
+00:27:52,685 --> 00:27:54,926
+is only in the ledger okay
+
+418
+00:27:55,726 --> 00:28:02,248
+ledger the blockchain contains your money everyone in the node of the blockchain sees how much
+
+419
+00:28:02,308 --> 00:28:06,509
+you have money okay this money doesn't exist on anything it's just
+
+420
+00:28:07,409 --> 00:28:12,370
+uh the the row in the ledger's document in his notebook okay you said
+
+421
+00:28:14,131 --> 00:28:14,992
+Aziz sent
+
+422
+00:28:16,233 --> 00:28:19,336
+100 bitcoins to Botr.
+
+423
+00:28:20,097 --> 00:28:22,098
+Now Botr has 100 coins.
+
+424
+00:28:23,099 --> 00:28:25,642
+Does he have these coins somewhere in his pocket?
+
+425
+00:28:25,722 --> 00:28:25,922
+No.
+
+426
+00:28:26,883 --> 00:28:27,203
+This
+
+427
+00:28:27,944 --> 00:28:28,304
+100
+
+428
+00:28:29,005 --> 00:28:33,509
+only is written in the blockchain and then we know that he holds it.
+
+429
+00:28:34,309 --> 00:28:36,731
+But how he can get the money?
+
+430
+00:28:37,592 --> 00:28:38,833
+he can get the money
+
+431
+00:28:39,653 --> 00:28:43,356
+only with his private keys, which is stored in his wallet.
+
+432
+00:28:43,736 --> 00:28:46,938
+So wallet does not store the key.
+
+433
+00:28:47,078 --> 00:28:47,698
+I will come back
+
+434
+00:28:48,599 --> 00:28:49,840
+to this point in a moment.
+
+435
+00:28:50,420 --> 00:28:51,761
+Today in the world, there are
+
+436
+00:28:52,881 --> 00:28:55,363
+a lot of types of wallets.
+
+437
+00:28:55,383 --> 00:28:56,864
+There is a Telegram wallet.
+
+438
+00:28:57,424 --> 00:28:59,325
+I use it. I don't suggest
+
+439
+00:29:00,826 --> 00:29:02,067
+you to use it because
+
+440
+00:29:03,868 --> 00:29:05,849
+there are some conspiracies behind it, but...
+
+441
+00:29:07,086 --> 00:29:08,207
+For the small amount,
+
+442
+00:29:09,328 --> 00:29:10,829
+you can use the
+
+443
+00:29:11,770 --> 00:29:13,111
+Telegram wallet. It's called
+
+444
+00:29:13,872 --> 00:29:17,055
+Today's Vault now. They rebranded it like one month ago.
+
+445
+00:29:17,455 --> 00:29:18,096
+So here
+
+446
+00:29:18,797 --> 00:29:21,199
+you can actually have your wallet and then
+
+447
+00:29:21,980 --> 00:29:24,061
+you can do transactions.
+
+448
+00:29:24,182 --> 00:29:24,942
+Here I have some
+
+449
+00:29:26,163 --> 00:29:28,465
+stuff. Okay, let's see.
+
+450
+00:29:30,027 --> 00:29:31,108
+I'm not showing you something.
+
+451
+00:29:33,282 --> 00:29:39,906
+Okay, so here you can see you can buy Bitcoin, you can buy Ethereum, but we'll discuss this
+
+452
+00:29:40,206 --> 00:29:42,667
+in a moment. Then there are other
+
+453
+00:29:43,368 --> 00:29:47,270
+websites for the wallets that Metamask will be using for today.
+
+454
+00:29:47,830 --> 00:29:50,552
+And then there are these hardware wallets.
+
+455
+00:29:50,572 --> 00:29:54,074
+The hardware is always the safest, but we will study this
+
+456
+00:29:54,954 --> 00:29:55,755
+in the next lectures.
+
+457
+00:29:56,654 --> 00:30:00,976
+So for today, we just need to agree on this idea where
+
+458
+00:30:02,377 --> 00:30:07,859
+the most common misunderstanding the people have in the world who don't know what is the blockchain,
+
+459
+00:30:08,059 --> 00:30:12,301
+the technicality of the blockchain, but you have to know now because you are attending this
+
+460
+00:30:12,341 --> 00:30:15,002
+class and this is the very important thing you have to remember.
+
+461
+00:30:15,042 --> 00:30:17,743
+So the wallet holds no coins.
+
+462
+00:30:18,244 --> 00:30:19,104
+Coins are not here
+
+463
+00:30:19,924 --> 00:30:21,425
+in my cart. It's very strange.
+
+464
+00:30:21,585 --> 00:30:22,386
+I don't have it here.
+
+465
+00:30:23,506 --> 00:30:24,386
+What I have here,
+
+466
+00:30:25,167 --> 00:30:25,527
+okay,
+
+467
+00:30:27,217 --> 00:30:28,318
+is the my private key
+
+468
+00:30:29,298 --> 00:30:33,120
+the coins are recorded on the blockchain
+
+469
+00:30:33,861 --> 00:30:37,663
+on thousands of nodes on everyone's computer okay
+
+470
+00:30:38,383 --> 00:30:41,825
+delete the app or burn this down okay
+
+471
+00:30:50,266 --> 00:30:51,827
+Sorry, there is something wrong.
+
+472
+00:30:52,347 --> 00:30:55,329
+So if you burn this device down, your money is not gone.
+
+473
+00:30:55,830 --> 00:30:59,092
+You will see why. Okay. And
+
+474
+00:30:59,992 --> 00:31:02,254
+as long as you have the key with yourself,
+
+475
+00:31:03,254 --> 00:31:04,435
+there is no problem. Okay.
+
+476
+00:31:04,455 --> 00:31:07,717
+If you write down your key on yourself,
+
+477
+00:31:09,078 --> 00:31:10,679
+you are safe. So you
+
+478
+00:31:12,700 --> 00:31:14,742
+with the laptop or with your mobile phone,
+
+479
+00:31:16,726 --> 00:31:19,529
+you can confirm the wallet belongs to you.
+
+480
+00:31:19,809 --> 00:31:22,612
+So wallet makes and keeps the private key.
+
+481
+00:31:23,032 --> 00:31:27,697
+It shows your address. It shows your address, how he got the address and signs
+
+482
+00:31:28,658 --> 00:31:30,780
+the transaction that you perform
+
+483
+00:31:32,585 --> 00:31:33,746
+thanks to your key, okay?
+
+484
+00:31:33,766 --> 00:31:39,109
+It uses your key and then signs the transaction and it holds no coins, okay?
+
+485
+00:31:39,589 --> 00:31:43,151
+If you delete it, the application, the coins are not touched, okay?
+
+486
+00:31:43,612 --> 00:31:45,873
+If you still have the key, if you still have the key.
+
+487
+00:31:46,473 --> 00:31:52,957
+And then when you sign that document with your key, if you apply some mathematical operations
+
+488
+00:31:53,357 --> 00:31:57,040
+on top of that message with the hash using your key,
+
+489
+00:31:57,820 --> 00:31:59,541
+The shared ledger, the blockchain,
+
+490
+00:32:00,362 --> 00:32:05,285
+thousands of nodes records which address holds
+
+491
+00:32:06,166 --> 00:32:09,268
+what records every transaction ever made.
+
+492
+00:32:09,849 --> 00:32:12,210
+So blockchain actually contains your money.
+
+493
+00:32:12,531 --> 00:32:13,291
+So when you say
+
+494
+00:32:14,232 --> 00:32:20,957
+from your wallet, someone to your wallet gave 50 Bitcoin, 50 number of Bitcoins,
+
+495
+00:32:22,913 --> 00:32:27,814
+If someone gave you 50 bitcoins, it is written to the blockchain using your
+
+496
+00:32:28,654 --> 00:32:30,455
+private key, because you only hold it.
+
+497
+00:32:31,275 --> 00:32:34,215
+And then blockchain knows that you have this much.
+
+498
+00:32:34,635 --> 00:32:40,196
+And tomorrow someone comes here and says, Aziz, maybe this is Aziz, if your name is here, I'm
+
+499
+00:32:40,236 --> 00:32:44,257
+sorry, I'm just using some random name, maybe my name, okay?
+
+500
+00:32:44,817 --> 00:32:47,438
+When you have Aziz and Aziz,
+
+501
+00:32:49,060 --> 00:32:52,062
+holds this money. How do I know which Aziz is this?
+
+502
+00:32:52,082 --> 00:32:53,644
+There are so many Aziz in the world.
+
+503
+00:32:54,304 --> 00:32:56,827
+We know it thanks to his private key.
+
+504
+00:32:57,387 --> 00:33:00,990
+He shows us, not private key, he shows us his public key.
+
+505
+00:33:01,551 --> 00:33:07,556
+We do some calculation that we saw from the last lecture and then we understand that this is
+
+506
+00:33:07,616 --> 00:33:10,979
+the real guy, Aziz. And then we know that he
+
+507
+00:33:11,920 --> 00:33:18,163
+is the guy and we allow him to use his money that is not in the in his
+
+508
+00:33:19,024 --> 00:33:25,707
+wallet it is in the blockchain so we allow him to use for instance
+
+509
+00:33:25,967 --> 00:33:31,530
+25 bitcoins out of the ledger and we will write down to the ledger saying as he's got the money
+
+510
+00:33:32,391 --> 00:33:38,954
+how with his private key because he only has it no one has it we assume otherwise if it's not
+
+511
+00:33:39,014 --> 00:33:40,735
+stolen of course you should not let it
+
+512
+00:33:41,456 --> 00:33:43,417
+be stolen that's why we have a lot of
+
+513
+00:33:44,218 --> 00:33:47,400
+passwords before accessing this element so
+
+514
+00:33:48,440 --> 00:33:49,841
+it's not easy to stall but
+
+515
+00:33:51,442 --> 00:33:52,203
+this is the idea
+
+516
+00:33:53,063 --> 00:33:55,085
+and then when you create your first
+
+517
+00:33:57,913 --> 00:34:02,394
+If we all agreed on this, then you can ask the next question.
+
+518
+00:34:03,634 --> 00:34:06,855
+How am I supposed to remember all of these
+
+519
+00:34:07,936 --> 00:34:08,776
+very big numbers?
+
+520
+00:34:09,516 --> 00:34:09,916
+Actually,
+
+521
+00:34:11,637 --> 00:34:16,298
+we are humans, we always like to remember something easier and instead
+
+522
+00:34:17,218 --> 00:34:17,758
+we have
+
+523
+00:34:18,838 --> 00:34:24,680
+some interesting seed phrases to remember these accounts and the keys.
+
+524
+00:34:25,800 --> 00:34:30,904
+And the seed phrase is just 12 ordinary English words.
+
+525
+00:34:31,705 --> 00:34:33,346
+I should have my seed phrase somewhere.
+
+526
+00:34:33,706 --> 00:34:34,907
+If I find, I will show you.
+
+527
+00:34:35,708 --> 00:34:37,349
+I will bring, okay, in a moment.
+
+528
+00:34:37,369 --> 00:34:37,569
+So
+
+529
+00:34:38,690 --> 00:34:42,473
+I will not show you my seed phrases, but I will show you the paper where I write it.
+
+530
+00:34:42,493 --> 00:34:42,653
+So
+
+531
+00:34:43,374 --> 00:34:46,396
+it's just some ordinary English words.
+
+532
+00:34:46,697 --> 00:34:48,638
+Okay, not Uzbek, nothing Russian.
+
+533
+00:34:50,880 --> 00:34:51,460
+I brought mine.
+
+534
+00:34:52,321 --> 00:34:54,583
+I will try not to show everything.
+
+535
+00:34:55,926 --> 00:35:02,410
+let's see the oh my god so this is the words okay written on in text and i have it written
+
+536
+00:35:02,610 --> 00:35:02,850
+here i
+
+537
+00:35:03,911 --> 00:35:05,792
+have to put it somewhere safer so
+
+538
+00:35:06,652 --> 00:35:12,616
+these are the words okay and what are these okay why you write these numbers down so
+
+539
+00:35:13,517 --> 00:35:20,080
+you have these words from fixed words 2048 words the
+
+540
+00:35:20,161 --> 00:35:22,182
+wallet turned them into
+
+541
+00:35:22,922 --> 00:35:29,906
+every private key it ever uses so it is sort of a randomness that you provide and 12
+
+542
+00:35:29,966 --> 00:35:35,289
+words into any wallet you can create again the whole wallet is rebuilt
+
+543
+00:35:35,990 --> 00:35:38,792
+thanks to this number we'll be today using the metamask
+
+544
+00:35:40,613 --> 00:35:47,118
+and it has this thing called secret recovery phrase and if you give this phrase
+
+545
+00:35:47,599 --> 00:35:52,242
+it can always generate regenerate your your values what i mean
+
+546
+00:35:53,043 --> 00:35:53,223
+so
+
+547
+00:35:53,944 --> 00:35:56,986
+in your laptop now you will give this 12
+
+548
+00:35:58,007 --> 00:36:03,011
+words actually the computer automatically generates the metamask automatically generates these
+
+549
+00:36:03,071 --> 00:36:09,122
+words you need to just save it somewhere it's like your password but quite long password, nobody
+
+550
+00:36:09,183 --> 00:36:10,809
+can crack it and then
+
+551
+00:36:12,700 --> 00:36:17,182
+your wallet for instance in metamask that we will use which will keep your keys shows your
+
+552
+00:36:17,262 --> 00:36:23,045
+address and signs when you do the transactions that don't hold your coins if you delete
+
+553
+00:36:24,486 --> 00:36:30,209
+the program nothing is lost if you still have these words okay so you have to write it down
+
+554
+00:36:30,269 --> 00:36:34,131
+when you set up any hardware wallet almost all of them
+
+555
+00:36:35,032 --> 00:36:39,374
+tells you to write it down in my case how many i have 24 some
+
+556
+00:36:44,351 --> 00:36:47,113
+Yes, I have 24 for Trezor is quite, quite
+
+557
+00:36:48,414 --> 00:36:52,777
+safe. It asks you to write down 24 words.
+
+558
+00:36:53,058 --> 00:36:55,159
+Here is, well, depends on the wallet.
+
+559
+00:36:55,239 --> 00:37:00,003
+Let's say like this. So, and then if you have it, it's very strange.
+
+560
+00:37:00,103 --> 00:37:01,124
+Even if you delete your
+
+561
+00:37:01,884 --> 00:37:06,888
+mobile phone, if you lost your hard disk, if you lost your computer, if you have this, you
+
+562
+00:37:06,928 --> 00:37:08,709
+can always regenerate it again.
+
+563
+00:37:08,969 --> 00:37:13,353
+Why? Because the coin not located in your phone.
+
+564
+00:37:14,465 --> 00:37:20,007
+It only contains your key and the key can be generated from your seed phrase.
+
+565
+00:37:20,627 --> 00:37:21,927
+That's the beauty, okay?
+
+566
+00:37:22,027 --> 00:37:23,447
+It's very difficult thing to
+
+567
+00:37:24,148 --> 00:37:27,369
+digest and maybe in the news you heard some people lost their
+
+568
+00:37:28,749 --> 00:37:29,029
+hard
+
+569
+00:37:31,150 --> 00:37:33,650
+disks. Actually, they didn't lost their
+
+570
+00:37:35,271 --> 00:37:37,471
+money in that hard disk, they lost their
+
+571
+00:37:39,112 --> 00:37:39,632
+seed words.
+
+572
+00:37:40,528 --> 00:37:45,909
+So if you have your seed word or your private key, if you lose your private key or your seed
+
+573
+00:37:45,949 --> 00:37:48,050
+words, it means that you cannot
+
+574
+00:37:49,370 --> 00:37:49,970
+recover them.
+
+575
+00:37:50,810 --> 00:37:53,811
+If these guys who lost their hard disk, if they had these
+
+576
+00:37:55,171 --> 00:37:57,732
+seeds written in somewhere else, like in the paper,
+
+577
+00:37:58,632 --> 00:37:59,412
+if you go to the
+
+578
+00:38:00,352 --> 00:38:06,954
+MetaMask secret recovery phrase tool, and if you write this down, it will give you
+
+579
+00:38:07,234 --> 00:38:07,874
+new wallet
+
+580
+00:38:08,743 --> 00:38:12,604
+with the same private key inside it, meaning that,
+
+581
+00:38:13,505 --> 00:38:17,706
+uh, you can always recall this very, very strange thing to, to comprehend.
+
+582
+00:38:17,766 --> 00:38:20,247
+But, uh, uh, this is, this is the idea.
+
+583
+00:38:20,307 --> 00:38:23,448
+So, and then you can say, okay, you are lost.
+
+584
+00:38:23,648 --> 00:38:28,270
+So it was 64 bytes. Now it's 12 words, but 12 words.
+
+585
+00:38:28,410 --> 00:38:31,912
+Isn't it easy to find those words out of 2048?
+
+586
+00:38:33,532 --> 00:38:39,515
+what are the odds someone can find my seed phrases the odds are quite low again because if
+
+587
+00:38:39,575 --> 00:38:43,897
+the thief wants to try every phrase on this list 2048
+
+588
+00:38:44,597 --> 00:38:46,278
+with combination of 12 times
+
+589
+00:38:47,798 --> 00:38:51,840
+it takes them okay how many words 2 to the power 11
+
+590
+00:38:52,941 --> 00:38:53,121
+and
+
+591
+00:38:54,021 --> 00:38:55,102
+these many phrases
+
+592
+00:38:56,142 --> 00:38:56,843
+and if they are
+
+593
+00:38:57,583 --> 00:38:59,044
+able to replicate
+
+594
+00:39:01,485 --> 00:39:08,209
+one billion words per second, if they try one billion per second, it will take them this much
+
+595
+00:39:08,269 --> 00:39:08,609
+years
+
+596
+00:39:09,650 --> 00:39:11,891
+to find your seed phrase, okay?
+
+597
+00:39:12,272 --> 00:39:17,875
+At most, at most. Maybe they will find it in one try, but at most they get this much time to
+
+598
+00:39:18,155 --> 00:39:19,796
+calculate, which is impossible, okay?
+
+599
+00:39:20,196 --> 00:39:20,997
+Actually, the...
+
+600
+00:39:22,075 --> 00:39:23,756
+Last word is partly is
+
+601
+00:39:25,318 --> 00:39:29,020
+a check on the other 11 words, but still even if it is
+
+602
+00:39:30,922 --> 00:39:31,282
+11
+
+603
+00:39:32,083 --> 00:39:33,304
+this would take this much years.
+
+604
+00:39:33,344 --> 00:39:35,165
+Okay is not is not possible.
+
+605
+00:39:35,185 --> 00:39:41,950
+So 12 words are the key your key written for humans and thieves who ask nicely if you
+
+606
+00:39:42,270 --> 00:39:44,612
+give it to the thieves. They have your money.
+
+607
+00:39:44,812 --> 00:39:48,295
+Okay, you have to be very careful if they have this paper.
+
+608
+00:39:49,028 --> 00:39:52,149
+that I have here and this hardware
+
+609
+00:39:52,869 --> 00:39:55,369
+almost means nothing, almost, but Trezor has some
+
+610
+00:39:57,350 --> 00:39:57,990
+workarounds
+
+611
+00:39:58,910 --> 00:40:01,430
+not to allow this, but we'll discuss about this.
+
+612
+00:40:01,470 --> 00:40:05,131
+For now, assume you have your application, you have an
+
+613
+00:40:06,071 --> 00:40:06,631
+app that
+
+614
+00:40:07,471 --> 00:40:10,432
+stores your keys. We'll do it today together.
+
+615
+00:40:10,572 --> 00:40:11,492
+I have a demo session.
+
+616
+00:40:12,852 --> 00:40:14,673
+So one seat, many accounts.
+
+617
+00:40:16,675 --> 00:40:18,136
+What is account now? So
+
+618
+00:40:19,016 --> 00:40:19,936
+account is
+
+619
+00:40:20,677 --> 00:40:23,218
+one address with its own private key
+
+620
+00:40:23,978 --> 00:40:30,941
+made from the seed phrase by counting the first, second, third MetaMask names them account
+
+621
+00:40:31,041 --> 00:40:32,221
+one, account two, account three.
+
+622
+00:40:32,261 --> 00:40:36,804
+So based on your seed phrase, we can create multiple private keys, right?
+
+623
+00:40:37,304 --> 00:40:40,966
+And then from your private key, we can generate multiple public keys.
+
+624
+00:40:41,026 --> 00:40:44,228
+And from these public keys, we can generate multiple addresses.
+
+625
+00:40:44,428 --> 00:40:49,051
+So these different addresses are used as accounts, okay?
+
+626
+00:40:49,151 --> 00:40:51,252
+In my tracer also, it's called account, I guess.
+
+627
+00:40:51,292 --> 00:40:54,634
+So it's called account. So account is just
+
+628
+00:40:55,355 --> 00:40:57,076
+based on the same seed phrase.
+
+629
+00:40:57,096 --> 00:41:00,518
+So if you lost your account,
+
+630
+00:41:01,880 --> 00:41:07,428
+private key for some of your accounts, always you can recover them from your seed phrase.
+
+631
+00:41:10,599 --> 00:41:16,001
+don't confuse the don't confuse about the private keys guys we studied this already okay so
+
+632
+00:41:16,061 --> 00:41:19,662
+it's a quite long number if you keep it in your computer is
+
+633
+00:41:20,362 --> 00:41:20,702
+still
+
+634
+00:41:21,722 --> 00:41:28,645
+it works okay same idea nothing is changed I just adding today something extra seed
+
+635
+00:41:28,705 --> 00:41:35,107
+phrase so we apply some mathematical operation again here to get your private key okay and
+
+636
+00:41:35,167 --> 00:41:41,149
+this seed phrase is only for humans to remember the keys in an easier way that's the idea
+
+637
+00:41:43,610 --> 00:41:47,092
+one backup covers all of them so if you backup your seed phrase
+
+638
+00:41:48,093 --> 00:41:50,014
+if you want to add an account tomorrow
+
+639
+00:41:50,814 --> 00:41:56,477
+no new backup is needed just start from the seed phrase okay so
+
+640
+00:41:58,218 --> 00:41:58,658
+these are
+
+641
+00:41:59,379 --> 00:42:06,041
+actually real values you can actually use in your seed phrase these words test
+
+642
+00:42:06,341 --> 00:42:07,802
+test test because it belongs
+
+643
+00:42:08,883 --> 00:42:15,465
+to 2048 possibility of English words so the test actually is the seed word and then if you
+
+644
+00:42:15,505 --> 00:42:21,228
+try test test test test test test test and last one is junk if you try this
+
+645
+00:42:23,451 --> 00:42:29,138
+published for programmers and gives you account just like this one and the second account will
+
+646
+00:42:29,178 --> 00:42:32,603
+you give this one and every wallet in the world can have it
+
+647
+00:42:33,444 --> 00:42:36,448
+and you have to be careful don't use it okay because
+
+648
+00:42:38,450 --> 00:42:44,776
+everyone having this seed phrase can recover your account if you send some money they have
+
+649
+00:42:44,816 --> 00:42:48,038
+an access to that account and then they can actually send this
+
+650
+00:42:48,819 --> 00:42:53,882
+money and in the past this actually happened okay so the rule is don't
+
+651
+00:42:56,103 --> 00:42:58,805
+show your seed phrase just like i did
+
+652
+00:42:59,786 --> 00:43:03,508
+earlier on the webcam i'm the teacher i know what to do but
+
+653
+00:43:04,369 --> 00:43:05,330
+you have to be careful so
+
+654
+00:43:06,652 --> 00:43:13,577
+uh rules about these 12 words so write down words on a paper in order don't
+
+655
+00:43:13,597 --> 00:43:19,020
+change the order because order is also very important numbered with one to twelve write numbers
+
+656
+00:43:19,060 --> 00:43:25,744
+there i have numbers here it's written like one two three etc like one okay there is no focus
+
+657
+00:43:25,804 --> 00:43:26,365
+you cannot see
+
+658
+00:43:27,625 --> 00:43:33,728
+with the numbers, you have to write them down, check them twice, keep the paper at home, okay?
+
+659
+00:43:33,848 --> 00:43:36,129
+Don't ever put it on a website.
+
+660
+00:43:36,249 --> 00:43:40,911
+Don't ever take a photo. Today, when you take a photo, it is synchronized with the cloud, in
+
+661
+00:43:40,951 --> 00:43:42,631
+the iCloud or in Google Photos,
+
+662
+00:43:43,392 --> 00:43:47,253
+and the chances your data is in a breach is very high.
+
+663
+00:43:47,313 --> 00:43:50,114
+So I never take a photo of the
+
+664
+00:43:51,035 --> 00:43:51,595
+seed phrase.
+
+665
+00:43:52,355 --> 00:43:52,555
+then
+
+666
+00:43:53,375 --> 00:43:58,236
+never photograph them never keep them in the cloud on the notes or even in the screenshot folder
+
+667
+00:43:58,396 --> 00:44:02,357
+okay because i teach another course in another
+
+668
+00:44:04,458 --> 00:44:05,998
+university where we discuss
+
+669
+00:44:07,579 --> 00:44:11,640
+the data on a disk and when your data on your mobile phone
+
+670
+00:44:12,360 --> 00:44:16,341
+after you clean it after you format your disk and sell it to someone else
+
+671
+00:44:17,101 --> 00:44:21,462
+and that someone else can recover whatever photo you have on your phone
+
+672
+00:44:22,412 --> 00:44:27,295
+not all of them, but the last ones, they can recover and then they can see your seed phrase.
+
+673
+00:44:27,335 --> 00:44:29,476
+So don't ever take a photo, okay?
+
+674
+00:44:30,997 --> 00:44:34,039
+And MetaMask, don't sell it to MetaMask.
+
+675
+00:44:34,259 --> 00:44:36,640
+Don't give it to the teacher assistant.
+
+676
+00:44:36,660 --> 00:44:38,582
+We don't have teacher assistant yet, but
+
+677
+00:44:41,023 --> 00:44:42,504
+I will also never ask for them, okay?
+
+678
+00:44:42,524 --> 00:44:43,785
+Don't tell me your seed phrase.
+
+679
+00:44:44,305 --> 00:44:47,667
+Whoever asks your seed phrase, remember it's a thief, okay?
+
+680
+00:44:49,845 --> 00:44:50,506
+you can
+
+681
+00:44:51,266 --> 00:44:56,690
+use it to send coins people need only your address nothing else they don't need your seed phrase
+
+682
+00:44:56,790 --> 00:44:58,731
+okay nothing else is needed
+
+683
+00:44:59,812 --> 00:45:01,093
+so in this course
+
+684
+00:45:02,313 --> 00:45:03,014
+we will be
+
+685
+00:45:04,675 --> 00:45:06,596
+using coins we'll study and
+
+686
+00:45:08,592 --> 00:45:11,373
+Remember the stolen phrase costs you nothing today.
+
+687
+00:45:11,773 --> 00:45:14,755
+In today's class you should tell your seed phrase to your friend
+
+688
+00:45:15,935 --> 00:45:17,816
+based on what I teach you.
+
+689
+00:45:18,457 --> 00:45:19,577
+You don't lose too much but
+
+690
+00:45:20,397 --> 00:45:24,959
+you have to practice these rules anyways because in the future you will use the real wallets,
+
+691
+00:45:25,039 --> 00:45:25,320
+real
+
+692
+00:45:26,640 --> 00:45:29,241
+networks where this habit should be
+
+693
+00:45:30,182 --> 00:45:32,343
+saved. Don't share anything.
+
+694
+00:45:33,122 --> 00:45:37,824
+even to your team, you will have teamwork very soon, you should not share your seed phrase
+
+695
+00:45:37,844 --> 00:45:40,345
+with your team. The only person who may ask,
+
+696
+00:45:41,565 --> 00:45:48,387
+see your words, you, not your classmate, not the agent, not your TA, not the metamask, no one,
+
+697
+00:45:48,527 --> 00:45:49,588
+okay, no one asks you.
+
+698
+00:45:50,588 --> 00:45:54,172
+and seed phrase is a very strange
+
+699
+00:45:56,775 --> 00:46:01,800
+data as you might think because you can be asking now why not use passwords okay
+
+700
+00:46:03,041 --> 00:46:06,344
+and the password and seed phrase are quite
+
+701
+00:46:09,347 --> 00:46:15,309
+Quite strange because I put this image because I'm thinking to put my seed phrase on a
+
+702
+00:46:16,709 --> 00:46:18,230
+plate like this because if
+
+703
+00:46:19,550 --> 00:46:23,811
+it's paper it can easily burn but this stuff can stay for a longer time but
+
+704
+00:46:24,751 --> 00:46:26,212
+it's just a joke for now.
+
+705
+00:46:27,892 --> 00:46:29,753
+Metamask that we are going to use today,
+
+706
+00:46:30,834 --> 00:46:32,935
+he has a password and he has a seed phrase.
+
+707
+00:46:32,995 --> 00:46:33,795
+Two things he has
+
+708
+00:46:34,496 --> 00:46:35,356
+and we will see today.
+
+709
+00:46:36,937 --> 00:46:40,859
+The password protects the app on your computer and from someone
+
+710
+00:46:41,820 --> 00:46:44,081
+who sits down at it. So
+
+711
+00:46:45,001 --> 00:46:46,062
+it will just protect
+
+712
+00:46:46,982 --> 00:46:48,223
+your computer so that
+
+713
+00:46:49,044 --> 00:46:51,125
+no one using your computer can access.
+
+714
+00:46:51,145 --> 00:46:51,805
+This is the first
+
+715
+00:46:54,226 --> 00:46:54,807
+security.
+
+716
+00:46:55,707 --> 00:47:00,989
+instead the seed phrase not for that computer is related is related to your wallet so every
+
+717
+00:47:01,069 --> 00:47:05,090
+key and address in it is say saved thanks to the seed phrase
+
+718
+00:47:06,010 --> 00:47:06,911
+if you forget it
+
+719
+00:47:07,691 --> 00:47:13,653
+you reinstall the metamask and you restore with the 12 words nothing is lost if you
+
+720
+00:47:15,693 --> 00:47:18,114
+forget your password everything is fine but when your
+
+721
+00:47:18,994 --> 00:47:24,256
+computer dies and your address and coins are gone forever if you forget your seed so you have
+
+722
+00:47:24,296 --> 00:47:24,416
+to
+
+723
+00:47:25,176 --> 00:47:30,781
+write it down somewhere so if thief gets your password it's useless with your computer without
+
+724
+00:47:30,821 --> 00:47:37,546
+your computer because you have the seed on your computer so if they own your seed phrase instead
+
+725
+00:47:37,806 --> 00:47:38,867
+from your computer they
+
+726
+00:47:39,708 --> 00:47:40,549
+own all your wallet
+
+727
+00:47:41,514 --> 00:47:42,895
+So seed phrase is important.
+
+728
+00:47:43,515 --> 00:47:44,976
+Can you change your password?
+
+729
+00:47:45,176 --> 00:47:49,418
+Yes. Whenever you want, you can change the password to access your MetaMask
+
+730
+00:47:50,219 --> 00:47:50,599
+wallet
+
+731
+00:47:51,880 --> 00:47:52,000
+is
+
+732
+00:47:53,201 --> 00:47:53,461
+free,
+
+733
+00:47:54,181 --> 00:47:56,202
+but the phrase is never changed, okay?
+
+734
+00:47:56,222 --> 00:47:59,044
+So when you change the phrase, what happens when you change the phrase?
+
+735
+00:47:59,124 --> 00:48:00,144
+At least one letter,
+
+736
+00:48:01,045 --> 00:48:04,547
+your address changes and the money is not there anymore, okay?
+
+737
+00:48:04,587 --> 00:48:06,368
+Money is in your address.
+
+738
+00:48:11,842 --> 00:48:12,022
+So
+
+739
+00:48:13,243 --> 00:48:19,487
+in one sentence, the password locks the door to your house, but this seed phrase is your house
+
+740
+00:48:19,547 --> 00:48:20,308
+itself, okay?
+
+741
+00:48:21,048 --> 00:48:21,229
+So
+
+742
+00:48:23,290 --> 00:48:23,910
+let's assume
+
+743
+00:48:25,131 --> 00:48:27,193
+your laptop is stolen, and
+
+744
+00:48:28,253 --> 00:48:28,814
+what the
+
+745
+00:48:29,695 --> 00:48:31,976
+thief gets, and what can you do?
+
+746
+00:48:32,577 --> 00:48:37,500
+The app is locked by your password, they cannot access your password, and you install the MetaMask
+
+747
+00:48:37,640 --> 00:48:44,403
+on a new laptop, and put your seed phrase on that laptop, you already have your wallet recovered,
+
+748
+00:48:44,683 --> 00:48:48,784
+okay? That's the idea, you should always have this in mind.
+
+749
+00:48:48,905 --> 00:48:51,485
+Forgetting the password, it's okay, nothing is lost.
+
+750
+00:48:52,066 --> 00:48:54,747
+Losing the words, everything is lost, okay?
+
+751
+00:48:56,227 --> 00:48:57,207
+And then you
+
+752
+00:48:58,108 --> 00:48:59,968
+can...
+
+753
+00:49:02,573 --> 00:49:09,479
+you can ask me so if someone has these seed phrases okay if they have this seed seed
+
+754
+00:49:09,499 --> 00:49:16,306
+phrases it means that they also can hold the hold the account right
+
+755
+00:49:16,446 --> 00:49:23,213
+yes it is true seed phrase anyone has seen is the wallet everyone owns so if they
+
+756
+00:49:23,273 --> 00:49:24,634
+see it they can just
+
+757
+00:49:25,996 --> 00:49:26,676
+run some
+
+758
+00:49:27,797 --> 00:49:33,002
+through some program and recover your key and then they can access to your to your money if
+
+759
+00:49:33,042 --> 00:49:36,045
+you have stored some money in your account so
+
+760
+00:49:37,006 --> 00:49:38,207
+the lesson is never use your
+
+761
+00:49:40,430 --> 00:49:46,932
+phrase you have ever seen in any document don't put words actually you don't put these words
+
+762
+00:49:47,032 --> 00:49:52,298
+but you can also implement your own program by putting the words and generating the data
+
+763
+00:49:53,079 --> 00:49:58,685
+and don't use some words from your slides from your document so your wallet actually
+
+764
+00:49:59,525 --> 00:50:01,367
+have the words for you nobody else
+
+765
+00:50:02,248 --> 00:50:07,273
+uh words are safe don't use them because in the past it happened that someone actually used
+
+766
+00:50:07,353 --> 00:50:12,298
+this for the default popular programming tools in ethereum and if you look at that account
+
+767
+00:50:12,338 --> 00:50:18,384
+because this account is generated out of this seed phrase and there are 11 000 transactions
+
+768
+00:50:19,045 --> 00:50:24,790
+and of course the balance is zero because you can also recover this ad account and then if
+
+769
+00:50:24,830 --> 00:50:27,853
+there is some At least 10 ETH you can get them.
+
+770
+00:50:28,313 --> 00:50:29,575
+It's a money. Today
+
+771
+00:50:30,475 --> 00:50:32,437
+the coins are costing some money.
+
+772
+00:50:33,478 --> 00:50:36,441
+Everyone can use it. So don't use this kind of word.
+
+773
+00:50:36,481 --> 00:50:39,824
+Some people even use it abandoned, abandoned, abandoned, about.
+
+774
+00:50:40,485 --> 00:50:43,628
+And actually you can get the account based on this seed phrase.
+
+775
+00:50:44,748 --> 00:50:47,290
+and this is the simplest possible phrase
+
+776
+00:50:48,131 --> 00:50:53,335
+because it starts with a and you can try this with easy easily
+
+777
+00:50:54,055 --> 00:50:56,777
+guessing the words is used in standards
+
+778
+00:50:57,818 --> 00:51:02,081
+own examples actually they use it but it's still there there are some transactions people try
+
+779
+00:51:02,101 --> 00:51:07,525
+to send money okay there of course they maybe immediately got their money back or someone stole
+
+780
+00:51:07,565 --> 00:51:10,107
+it maybe i don't know because they were using a
+
+781
+00:51:11,588 --> 00:51:12,469
+this kind of strange
+
+782
+00:51:13,830 --> 00:51:17,151
+uh not random random words okay so don't don't use it so over
+
+783
+00:51:17,892 --> 00:51:21,613
+11 000 payments were sent from this first account alone
+
+784
+00:51:22,333 --> 00:51:27,735
+by anyone who had typed these words on their computer uh they can't spend it that's why the
+
+785
+00:51:27,875 --> 00:51:30,116
+the balance is zero so whatever arrives
+
+786
+00:51:30,856 --> 00:51:35,058
+in that account you can try someone will take it immediately if it's a real money of course
+
+787
+00:51:39,539 --> 00:51:39,879
+because
+
+788
+00:51:40,700 --> 00:51:46,702
+how they knew it because they actually read it so if someone stole your receipt phrase you
+
+789
+00:51:46,722 --> 00:51:51,184
+have your account in two places okay which is possible in the in the blockchain
+
+790
+00:51:52,405 --> 00:51:52,505
+so
+
+791
+00:51:54,925 --> 00:51:57,466
+First, five questions are gone.
+
+792
+00:51:57,546 --> 00:52:00,847
+We studied what is a private key, what's a public key, what's an address.
+
+793
+00:52:01,748 --> 00:52:02,208
+Today,
+
+794
+00:52:03,208 --> 00:52:05,629
+we saw that private key is quite huge number.
+
+795
+00:52:05,969 --> 00:52:07,609
+There's many possibilities.
+
+796
+00:52:07,689 --> 00:52:09,330
+How it is computed from the key?
+
+797
+00:52:09,810 --> 00:52:13,611
+It's the private key multiplied by G on electric curve.
+
+798
+00:52:13,651 --> 00:52:15,592
+What is exactly the address?
+
+799
+00:52:15,672 --> 00:52:18,173
+Address is just the 20 bytes of the Kitschak hash.
+
+800
+00:52:19,914 --> 00:52:26,780
+on the public key and what that does the key leave day to day it's in the wallet and which
+
+801
+00:52:26,860 --> 00:52:33,265
+signs the when you press the send button and what if your laptop
+
+802
+00:52:33,525 --> 00:52:34,006
+dies
+
+803
+00:52:35,347 --> 00:52:40,371
+you have the seed phrase 12 words you keep and you can always recover them okay how do you
+
+804
+00:52:40,491 --> 00:52:40,851
+usually
+
+805
+00:52:41,652 --> 00:52:47,014
+how do you use the key now to prove that you send the money it will be the
+
+806
+00:52:48,254 --> 00:52:54,576
+next part of my lecture okay the key is yours and you know what it is how it becomes an address
+
+807
+00:52:55,136 --> 00:52:57,177
+where it leaves and how it is backed up
+
+808
+00:52:57,897 --> 00:53:00,918
+and one question is left for today for the next lecture is
+
+809
+00:53:03,219 --> 00:53:08,183
+requires your laptop so have your laptop for the next video you can try with me I will make
+
+810
+00:53:08,223 --> 00:53:09,023
+a demo session
+
+811
+00:53:09,864 --> 00:53:16,549
+and we will see for that okay I will stop the video here and then we can
+
+812
+00:53:16,589 --> 00:53:19,971
+discuss I just wanted to check the platform
+
+813
+00:53:29,658 --> 00:53:29,818
+so
+
+814
+00:53:33,938 --> 00:53:38,819
+Again, I can see a lot of data in this platform.
+
+815
+00:53:38,839 --> 00:53:41,860
+Maybe I've shown you, I don't know if I did or not.
+
+816
+00:53:41,980 --> 00:53:45,421
+I will show you again. So I can actually see
+
+817
+00:53:46,142 --> 00:53:48,122
+how many people are watching the videos.
+
+818
+00:53:48,722 --> 00:53:49,023
+Only
+
+819
+00:53:49,903 --> 00:53:52,484
+on cryptography now, 30 of you only watched.
+
+820
+00:53:54,718 --> 00:53:56,320
+The other videos are quite a lot.
+
+821
+00:53:56,360 --> 00:53:57,781
+People actually watch them.
+
+822
+00:53:57,821 --> 00:53:58,201
+Nice.
+
+823
+00:53:59,222 --> 00:54:01,424
+And the rest are not watching the videos.
+
+824
+00:54:01,525 --> 00:54:02,065
+Okay. So
+
+825
+00:54:03,006 --> 00:54:07,010
+you have to be careful. Of course, I'm not counting if you are watching or not, but
+
+826
+00:54:07,971 --> 00:54:11,434
+this is very important. If you want to actually pass this course, you have to understand the
+
+827
+00:54:11,494 --> 00:54:12,975
+ideas, the topics here, because
+
+828
+00:54:14,076 --> 00:54:17,219
+at the end, when you deliver your project, I can ask questions.
+
+829
+00:54:17,280 --> 00:54:19,261
+Okay. If you are not able to answer my questions,
+
+830
+00:54:19,962 --> 00:54:25,004
+means you didn't study and then very high chances that you fail this course so please
+
+831
+00:54:26,145 --> 00:54:30,666
+try to attend the class and watch the videos I will keep them shorter as possible but
+
+832
+00:54:31,507 --> 00:54:33,348
+you should be attending also here
+
+833
+00:54:34,368 --> 00:54:34,548
+so
+
+834
+00:54:35,368 --> 00:54:38,750
+people did the quiz this week we will have one more quiz
+
+835
+00:54:39,470 --> 00:54:41,971
+you are doing the homeworks I guess let's see
+
+836
+00:54:46,473 --> 00:54:48,654
+yes two students already delivered the task
+
+837
+00:54:49,480 --> 00:54:52,522
+Ah, someone asked the question about the quiz.
+
+838
+00:54:55,563 --> 00:54:56,303
+There was a bug.
+
+839
+00:54:58,785 --> 00:55:00,185
+There was a bug, yes.
+
+840
+00:55:06,789 --> 00:55:07,449
+No, not this one.
+
+841
+00:55:08,229 --> 00:55:11,271
+Someone sent me a message, there was a bug in the quiz.
+
+842
+00:55:12,630 --> 00:55:14,673
+There was an error, but
+
+843
+00:55:15,434 --> 00:55:18,798
+I will check it, okay? I will check, I will reply to you because
+
+844
+00:55:19,539 --> 00:55:22,082
+no one got, no, some guys got 100, but
+
+845
+00:55:23,083 --> 00:55:26,368
+there was a problem with my quiz, I think here.
+
+846
+00:55:27,693 --> 00:55:30,435
+and i will fix it if it is really not
+
+847
+00:55:31,336 --> 00:55:36,720
+true i will fix it so that your crate will be updated okay so don't worry on this i i didn't
+
+848
+00:55:36,780 --> 00:55:43,644
+quite uh arrive this point but as soon as i do i will change it and if it is actually really
+
+849
+00:55:43,785 --> 00:55:44,465
+my mistake
+
+850
+00:55:45,186 --> 00:55:49,969
+uh your crate will be updated automatically okay you don't have to do anything just wait for
+
+851
+00:55:50,009 --> 00:55:53,391
+my instructions in the in the next videos i will i will tell you
+
+852
+00:55:54,612 --> 00:55:55,573
+so i will stop here

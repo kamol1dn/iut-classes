@@ -1,0 +1,2415 @@
+1
+00:00:02,832 --> 00:00:05,213
+Hi dear students, welcome back to our class.
+
+2
+00:00:05,693 --> 00:00:12,637
+Now in this second part of our lecture let's move to the theoretical lecture itself which
+
+3
+00:00:12,897 --> 00:00:15,419
+I have been talking about you and
+
+4
+00:00:16,519 --> 00:00:18,500
+our lecture will be from this book
+
+5
+00:00:19,220 --> 00:00:20,441
+which is by
+
+6
+00:00:21,282 --> 00:00:27,885
+Judith Boss and I put the details in the syllabus and the book name is Think Critical Thinking
+
+7
+00:00:28,125 --> 00:00:29,726
+and Logical Skills for
+
+8
+00:00:31,086 --> 00:00:32,646
+for everyday life. Okay.
+
+9
+00:00:33,086 --> 00:00:34,047
+And there are
+
+10
+00:00:35,807 --> 00:00:40,908
+newer versions of this book, which you can find from internet, but the version that doesn't
+
+11
+00:00:40,948 --> 00:00:44,788
+matter. Okay. But myself, I couldn't find the PDF version.
+
+12
+00:00:45,309 --> 00:00:47,049
+Probably you guys may
+
+13
+00:00:47,829 --> 00:00:48,249
+think this
+
+14
+00:00:49,289 --> 00:00:56,130
+can do this. Okay. And let me share the PPT file with you guys.
+
+15
+00:00:57,211 --> 00:00:59,351
+And okay, just a minute.
+
+16
+00:01:03,679 --> 00:01:07,661
+Okay, so let's start from chapter one, which is about
+
+17
+00:01:08,582 --> 00:01:09,822
+thinking critically, okay?
+
+18
+00:01:09,842 --> 00:01:12,844
+Critical thinking, why it's important, okay?
+
+19
+00:01:13,504 --> 00:01:16,066
+And let's start with some cases.
+
+20
+00:01:20,128 --> 00:01:23,750
+Okay, I hope my screen is okay and it's visible to you guys.
+
+21
+00:01:24,570 --> 00:01:25,210
+And
+
+22
+00:01:27,352 --> 00:01:34,223
+in 1960, as you guys can see in your screen, The Nazi war criminal
+
+23
+00:01:34,663 --> 00:01:35,004
+called
+
+24
+00:01:36,105 --> 00:01:36,485
+Adolf
+
+25
+00:01:37,747 --> 00:01:38,127
+Eichmann
+
+26
+00:01:38,828 --> 00:01:42,573
+was brought to court for the
+
+27
+00:01:43,667 --> 00:01:45,808
+crimes against humanity, okay?
+
+28
+00:01:46,489 --> 00:01:48,150
+And despite his claim
+
+29
+00:01:49,030 --> 00:01:56,014
+that he was just following the orders of his superiors when he ordered the deaths
+
+30
+00:01:56,194 --> 00:02:01,658
+of millions of Jews, the court still found him guilty, okay?
+
+31
+00:02:02,078 --> 00:02:04,439
+And sentenced him to death, okay?
+
+32
+00:02:04,739 --> 00:02:05,680
+So the question is,
+
+33
+00:02:06,513 --> 00:02:13,416
+was this guy an inhumane monster or he was just following the orders of his superiors?
+
+34
+00:02:14,016 --> 00:02:20,960
+In order to find more clear answers to these questions,
+
+35
+00:02:21,620 --> 00:02:26,562
+in the following decades, some professors of well-known universities
+
+36
+00:02:27,362 --> 00:02:28,463
+conducted certain
+
+37
+00:02:29,323 --> 00:02:32,625
+experiments. One of them was conducted by
+
+38
+00:02:33,937 --> 00:02:38,798
+Professor Social Psychologist Stanley Milgram of Yale
+
+39
+00:02:38,858 --> 00:02:45,159
+University. Let's watch a short video about this experiment.
+
+40
+00:02:46,160 --> 00:02:49,880
+Because I believe that the video can explain much better than me.
+
+41
+00:02:50,401 --> 00:02:51,961
+So let's watch this together.
+
+42
+00:02:58,902 --> 00:03:01,343
+Are ordinary people able to do terrible things?
+
+43
+00:03:06,863 --> 00:03:08,065
+Okay,
+
+44
+00:03:11,128 --> 00:03:13,070
+let me share that screen with you guys.
+
+45
+00:03:19,999 --> 00:03:23,263
+And sound is on. I hope this is visible to you guys.
+
+46
+00:03:24,444 --> 00:03:25,165
+Okay, let's start.
+
+47
+00:03:27,178 --> 00:03:32,825
+And if so, how many would give a strong electric shock to an innocent other just because they
+
+48
+00:03:32,865 --> 00:03:37,770
+are following an order? To answer these questions, we can look at the controversial work of
+
+49
+00:03:37,830 --> 00:03:41,575
+a man who just wanted to find answers to his family's horrific past.
+
+50
+00:03:47,488 --> 00:03:54,072
+In 1961, Stanley Milgram, a young psychologist, wanted to find out how ordinary citizens
+
+51
+00:03:54,393 --> 00:03:57,855
+were able to commit acts of unspeakable evil in Nazi Germany.
+
+52
+00:03:58,315 --> 00:04:03,359
+His theory? Some people do horrific things because they obey even the most wicked leaders.
+
+53
+00:04:04,019 --> 00:04:08,582
+To test his theory, Milgram designed a clever experiment that changed our understanding of
+
+54
+00:04:08,642 --> 00:04:10,003
+human behavior forever.
+
+55
+00:04:12,342 --> 00:04:17,344
+The Milgram experiment involved three people, an authority, called the Experimenter, who was
+
+56
+00:04:17,404 --> 00:04:22,186
+dressed in a lab coat to appear powerful, a volunteer, who was assigned to be the teacher,
+
+57
+00:04:22,686 --> 00:04:25,147
+and a victim, the so-called student.
+
+58
+00:04:25,807 --> 00:04:30,929
+The teacher was the test subject, whereas the Experimenter and student were both actors.
+
+59
+00:04:33,210 --> 00:04:38,016
+Following orders, the teacher would test a student who was sitting in another room by asking
+
+60
+00:04:38,036 --> 00:04:43,042
+them questions. For every wrong answer, the experimenter would ask the teacher to inflict an
+
+61
+00:04:43,122 --> 00:04:46,026
+electric shock up to a life-threatening 450 volts.
+
+62
+00:04:49,393 --> 00:04:53,496
+Before he began, Milgram asked his colleagues what they expected the outcome to be.
+
+63
+00:04:53,856 --> 00:04:58,879
+Almost all of them agreed that only a few of the volunteers would obey and inflict electric
+
+64
+00:04:58,919 --> 00:05:00,240
+shocks on innocent others.
+
+65
+00:05:00,600 --> 00:05:04,682
+What do you think? Would anyone administer shocks higher than 300 volts?
+
+66
+00:05:07,024 --> 00:05:12,347
+Milgram then advertised his experiment as a study on memory and learning at the campus of Yale
+
+67
+00:05:12,387 --> 00:05:16,990
+University. People signed up without any idea of what they were really getting themselves into.
+
+68
+00:05:19,430 --> 00:05:22,311
+The experiment began with the volunteers meeting the other participants.
+
+69
+00:05:22,891 --> 00:05:25,272
+The volunteers then pulled a card to draw their role.
+
+70
+00:05:25,772 --> 00:05:28,573
+Little did they know that they could only draw the teacher.
+
+71
+00:05:29,074 --> 00:05:34,256
+Next, they would be given a sample of a light electric shock in order to experience firsthand
+
+72
+00:05:34,316 --> 00:05:35,736
+what the others would have to go through.
+
+73
+00:05:38,097 --> 00:05:42,939
+To start, the experimenter and the teacher were seated in one room, and the student was strapped
+
+74
+00:05:42,999 --> 00:05:44,519
+to a chair in an adjacent room.
+
+75
+00:05:45,080 --> 00:05:48,361
+The teacher and student were able to communicate, but not see each other.
+
+76
+00:05:50,646 --> 00:05:53,970
+The experimenter then gave the teacher a list of questions.
+
+77
+00:05:54,290 --> 00:05:58,255
+The teacher would then read out the questions and the student would press a button to indicate
+
+78
+00:05:58,275 --> 00:06:03,781
+a response. For every false answer, the teacher would administer a shock starting at 15 volts
+
+79
+00:06:03,881 --> 00:06:06,144
+and increasing in 15 volt increments up to 450.
+
+80
+00:06:09,107 --> 00:06:12,949
+What the teacher didn't know was that the student didn't actually receive any shocks.
+
+81
+00:06:13,269 --> 00:06:16,771
+Instead, a tape recorder was used to play various responses.
+
+82
+00:06:17,472 --> 00:06:21,154
+In the beginning, the teacher would hear a protest or bangs against the wall.
+
+83
+00:06:21,794 --> 00:06:24,716
+If shocks would increase, the reactions would become louder.
+
+84
+00:06:25,236 --> 00:06:28,718
+And in case someone would go all the way, the learner would fall silent.
+
+85
+00:06:31,007 --> 00:06:35,350
+In case the teacher became hesitant and asked to stop, the experimenter would resort to the
+
+86
+00:06:35,410 --> 00:06:36,490
+following four prompts.
+
+87
+00:06:37,271 --> 00:06:39,332
+First, he would say, please continue.
+
+88
+00:06:39,752 --> 00:06:44,435
+If that was unsuccessful, he would go on with, the experiment requires that you continue.
+
+89
+00:06:44,835 --> 00:06:47,937
+Then, it is absolutely essential that you continue.
+
+90
+00:06:48,418 --> 00:06:50,879
+And lastly, you have no other choice.
+
+91
+00:06:51,299 --> 00:06:52,380
+You must go on.
+
+92
+00:06:54,763 --> 00:07:00,346
+Along the way, the volunteers displayed signs of extreme tension such as sweating, trembling,
+
+93
+00:07:00,547 --> 00:07:02,708
+and even uncontrollable laughing fits.
+
+94
+00:07:03,048 --> 00:07:09,052
+The experiment would be stopped only after all four prompts had been used or the maximum voltage
+
+95
+00:07:09,112 --> 00:07:12,174
+of 450 volts had been given three times.
+
+96
+00:07:14,521 --> 00:07:20,344
+Milgram found that, of all participants, 100% gave at least 300 volts and
+
+97
+00:07:20,364 --> 00:07:24,126
+65% went all the way to 450 volts.
+
+98
+00:07:24,446 --> 00:07:29,248
+The experiment was later criticized for being unethical because it deceived innocent people
+
+99
+00:07:29,328 --> 00:07:32,349
+into performing what seemed to be terrible acts of violence.
+
+100
+00:07:32,910 --> 00:07:38,152
+However, his experiment was successfully replicated many times, involving different populations
+
+101
+00:07:38,292 --> 00:07:39,713
+and leading to similar findings.
+
+102
+00:07:42,078 --> 00:07:44,501
+Milgram himself left us with this to think about.
+
+103
+00:07:44,902 --> 00:07:49,729
+It may be that we are puppets, puppets controlled by the strings of society.
+
+104
+00:07:50,009 --> 00:07:55,136
+But at least we are puppets with perception, with awareness, and perhaps, our awareness is
+
+105
+00:07:55,176 --> 00:07:56,979
+the first step to our liberation.
+
+106
+00:07:59,453 --> 00:08:04,354
+What do you think? Would you follow or question the orders if you were one of Milgram's participants?
+
+107
+00:08:04,714 --> 00:08:10,016
+And what can we as a society teach future generations to help prevent horrific acts that can
+
+108
+00:08:10,056 --> 00:08:13,037
+happen when ordinary people blindly follow an authority?
+
+109
+00:08:13,317 --> 00:08:15,557
+Let us know your thoughts in the comments below.
+
+110
+00:08:15,577 --> 00:08:21,979
+Okay guys,
+
+111
+00:08:22,759 --> 00:08:24,600
+let me go back to the
+
+112
+00:08:28,973 --> 00:08:30,714
+screen to my screen one second
+
+113
+00:08:31,935 --> 00:08:38,861
+okay guys I hope you understood the case right
+
+114
+00:08:38,921 --> 00:08:40,422
+it's a very interesting
+
+115
+00:08:41,403 --> 00:08:42,103
+experiment
+
+116
+00:08:42,924 --> 00:08:49,709
+and in case if you want to explore more on this experiment there are much longer videos in
+
+117
+00:08:49,769 --> 00:08:53,733
+YouTube you can search with this kind of terms and Milgram
+
+118
+00:08:55,134 --> 00:08:56,735
+experiment and there are
+
+119
+00:08:57,758 --> 00:09:02,682
+actually videos of that science, okay, from that time, okay?
+
+120
+00:09:03,283 --> 00:09:08,467
+And the questions here, I mean, which we can ask ourselves is that how could this happen, right?
+
+121
+00:09:08,987 --> 00:09:13,431
+And were the results some sort of deviation from normality, right?
+
+122
+00:09:14,172 --> 00:09:14,652
+And
+
+123
+00:09:15,973 --> 00:09:17,675
+while you guys are thinking
+
+124
+00:09:19,536 --> 00:09:22,399
+about these questions, let's watch
+
+125
+00:09:23,540 --> 00:09:26,402
+some more similar case, similar
+
+126
+00:09:27,330 --> 00:09:31,454
+experiment, which was conducted at Stanford University.
+
+127
+00:09:31,494 --> 00:09:32,615
+OK,
+
+128
+00:09:33,436 --> 00:09:34,237
+let me share this.
+
+129
+00:09:35,899 --> 00:09:36,459
+One second.
+
+130
+00:09:41,624 --> 00:09:42,445
+Oops, what happened?
+
+131
+00:10:02,883 --> 00:10:04,444
+Okay. One second. Uh,
+
+132
+00:10:05,405 --> 00:10:06,166
+something happened.
+
+133
+00:10:07,667 --> 00:10:11,089
+Okay. Let me type this.
+
+134
+00:10:17,586 --> 00:10:21,769
+In 2015, the Stanford Prison Experiment was released in theaters.
+
+135
+00:10:22,309 --> 00:10:28,294
+The movie detailed the infamous 1971 experiment in which 24 college students were put in prison.
+
+136
+00:10:28,834 --> 00:10:33,138
+Now, while the experiment was supposed to last for two weeks, it was terminated after six days
+
+137
+00:10:33,338 --> 00:10:37,181
+due to psychological effects that it was having on both the guards and the prisoners.
+
+138
+00:10:37,701 --> 00:10:42,648
+so what actually happened during the stanford prison experiment why is it so infamous and does
+
+139
+00:10:42,688 --> 00:10:47,635
+the movie get everything right or is it just a dramatization this video will briefly explain
+
+140
+00:10:47,655 --> 00:10:52,761
+the experiment its impact on the world of psychology and the controversy that it's facing 45
+
+141
+00:10:52,822 --> 00:10:56,966
+years in the future So, first off, what is the Stanford Prison Experiment?
+
+142
+00:10:57,467 --> 00:11:01,931
+After Milgram's experiment rocked the world of psychology, many people were left with questions
+
+143
+00:11:01,971 --> 00:11:04,994
+about obedience, power dynamics, and the abuse of power.
+
+144
+00:11:05,455 --> 00:11:10,200
+Philip Zimbardo, a professor at Stanford, wanted to then explore these questions further.
+
+145
+00:11:10,500 --> 00:11:15,005
+And with a grant from the Navy, Zimbardo set up something called the Stanford Prison Experiment.
+
+146
+00:11:15,485 --> 00:11:18,686
+He wanted to see, could a person's role influence their behavior?
+
+147
+00:11:19,087 --> 00:11:23,248
+Zimbardo and his team interviewed 70 applicants at Stanford who were willing to participate
+
+148
+00:11:23,268 --> 00:11:26,550
+in the study for 14 days and receive $15 a day.
+
+149
+00:11:26,990 --> 00:11:30,832
+They wanted to make sure that they chose the brightest and the most mentally sound participants.
+
+150
+00:11:31,252 --> 00:11:35,434
+And after narrowing down their applicants to 24, the researchers flipped the coin and assigned
+
+151
+00:11:35,514 --> 00:11:40,196
+the roles. Half of the participants would be prisoners and the other half would be guards.
+
+152
+00:11:40,996 --> 00:11:45,538
+the researchers then set up a basement at stanford to make it look like a real prison they
+
+153
+00:11:45,578 --> 00:11:50,419
+were very serious about treating the experiment like a simulation prisoners were actually arrested
+
+154
+00:11:50,460 --> 00:11:55,781
+in public and taken into prison they were even booked fingerprinted and strip searched now
+
+155
+00:11:55,861 --> 00:12:00,223
+zimbardo's team also gave prisoners numbers that were meant to be used instead of their real
+
+156
+00:12:00,263 --> 00:12:05,165
+name they claimed that it would help give the prisoners a sense of anonymity and help the experiment
+
+157
+00:12:05,645 --> 00:12:09,246
+Guards had pretty much free reign over how they could treat the prisoners, although they had
+
+158
+00:12:09,326 --> 00:12:14,067
+two main rules. They could not hit the prisoners, and they could not put prisoners in solitary
+
+159
+00:12:14,107 --> 00:12:15,888
+confinement for more than an hour.
+
+160
+00:12:16,228 --> 00:12:19,208
+Philip Zimbardo played the role of the prison superintendent.
+
+161
+00:12:19,529 --> 00:12:23,810
+His graduate students and research partners also played roles as members of the parole board
+
+162
+00:12:23,930 --> 00:12:27,633
+and the prison warden. Prisoners were tasked with certain activities like writing a letter
+
+163
+00:12:27,693 --> 00:12:31,717
+home to their visitors and making a case to the parole board about why they should be let off.
+
+164
+00:12:31,938 --> 00:12:36,262
+Guards also subjected the prisoners to counts in which they forced the prisoners to do jumping
+
+165
+00:12:36,302 --> 00:12:38,605
+jacks, push-ups, and other degrading tasks.
+
+166
+00:12:39,125 --> 00:12:42,850
+Now, it did not take long for these guards to start to abuse their power.
+
+167
+00:12:43,130 --> 00:12:46,514
+Within one day, a guard actually hit one of the prisoners with his nightstick.
+
+168
+00:12:46,954 --> 00:12:50,639
+On the second day, the prisoners tried to rebel, and so their beds were taken away.
+
+169
+00:12:51,000 --> 00:12:54,605
+To punish these prisoners, the guards shot a fire extinguisher into the cell.
+
+170
+00:12:54,986 --> 00:13:00,073
+Guards used physical and psychological abuse, including things like sleep deprivation, to punish
+
+171
+00:13:00,113 --> 00:13:01,975
+and intimidate the prisoners throughout the study.
+
+172
+00:13:02,396 --> 00:13:05,799
+The prisoners were forced to wear dressings and stocking caps the whole time.
+
+173
+00:13:06,080 --> 00:13:09,143
+And at some point, the guards would put bags over the prisoners' heads.
+
+174
+00:13:09,303 --> 00:13:13,407
+And since the study has ended, it has since been compared to actions at the Abu Ghraib Detention
+
+175
+00:13:13,427 --> 00:13:17,912
+Center. Zimbardo has written about the case and its parallels to the prison experiment since.
+
+176
+00:13:18,372 --> 00:13:20,733
+So why did this experiment get shut down?
+
+177
+00:13:21,013 --> 00:13:23,655
+Well, very quickly the guards started to abuse their power.
+
+178
+00:13:23,975 --> 00:13:25,756
+The prisoners started to spiral.
+
+179
+00:13:26,096 --> 00:13:31,439
+On the third day, prisoner number 8612 started to cry and scream uncontrollably.
+
+180
+00:13:31,819 --> 00:13:33,960
+He threatened to harm himself and call a lawyer.
+
+181
+00:13:34,260 --> 00:13:38,022
+To avoid potential psychological damage or a lawsuit, he was let go.
+
+182
+00:13:38,383 --> 00:13:40,444
+Two other prisoners were let go in the next two days.
+
+183
+00:13:40,864 --> 00:13:42,405
+One actually refused to eat.
+
+184
+00:13:42,885 --> 00:13:46,889
+And on the fifth day, Zimbardo's girlfriend, which was actually his former student, came to
+
+185
+00:13:46,929 --> 00:13:51,073
+visit the experiment. Zimbardo and his team had been monitoring the experiment and playing
+
+186
+00:13:51,093 --> 00:13:56,178
+their roles in it 24-7. And when she saw the horrors that was going on in the prison, she asked
+
+187
+00:13:56,299 --> 00:13:58,421
+Zimbardo to end the experiment immediately.
+
+188
+00:13:58,561 --> 00:13:59,842
+She even threatened to break up with him.
+
+189
+00:13:59,942 --> 00:14:02,565
+Well, eventually, on the sixth day, he ended the experiment.
+
+190
+00:14:02,905 --> 00:14:07,129
+This experiment showed the world how quickly people can abuse power when it's given to them,
+
+191
+00:14:07,549 --> 00:14:11,372
+but it remains as one of the most controversial experiments in the world of psychology, and
+
+192
+00:14:11,392 --> 00:14:12,453
+there's a few reasons why.
+
+193
+00:14:12,933 --> 00:14:17,217
+The first one is obvious, and it's the case for psychological abuse that the prisoners endured
+
+194
+00:14:17,257 --> 00:14:22,041
+during the study. Is it ethical to put human subjects through that kind of distress and trauma,
+
+195
+00:14:22,341 --> 00:14:25,264
+so much so that many couldn't even endure the experiment?
+
+196
+00:14:25,664 --> 00:14:30,088
+Now, Zimbardo claims that none of the participants have suffered long-term psychological consequences,
+
+197
+00:14:30,348 --> 00:14:31,509
+but the point still stands.
+
+198
+00:14:31,849 --> 00:14:35,813
+And in more recent years, critics have come forward to say that the results were not as natural
+
+199
+00:14:35,913 --> 00:14:37,594
+as Zimbardo and their team may want you to think.
+
+200
+00:14:38,055 --> 00:14:42,299
+Transcripts and audio recordings from the Stamford Prison Experiment show that Zimbardo's team
+
+201
+00:14:42,539 --> 00:14:46,222
+coached these guards. They told them to be tough for the sake of the experiment.
+
+202
+00:14:46,823 --> 00:14:49,225
+Even the prisoners may have been faking their responses.
+
+203
+00:14:49,637 --> 00:14:55,260
+prisoner number 8612, who is most well-known for his blood-curdling quote, I'm burning up inside.
+
+204
+00:14:55,680 --> 00:14:59,743
+He has come forward to say that his time in the Stanford County Jail was more of an improv
+
+205
+00:14:59,823 --> 00:15:04,645
+exercise. Many critics have likened the experiment to a drama rather than a legitimate psychology
+
+206
+00:15:04,765 --> 00:15:09,308
+experiment. Carlo Prescott, the experiment's prison consultant, has also come forward to say
+
+207
+00:15:09,348 --> 00:15:13,390
+that the experiment's more cruel treatments were not naturally thought up and executed by the
+
+208
+00:15:13,430 --> 00:15:14,751
+guards alone. He wrote,
+
+209
+00:15:17,517 --> 00:15:20,139
+Okay, guys, I hope you all watched it.
+
+210
+00:15:21,139 --> 00:15:23,841
+And okay, I hope my screen is okay.
+
+211
+00:15:24,421 --> 00:15:25,262
+Let me double check.
+
+212
+00:15:26,362 --> 00:15:27,303
+Yes, it seems okay.
+
+213
+00:15:29,984 --> 00:15:33,206
+And if you guys want to know more about this
+
+214
+00:15:34,087 --> 00:15:36,448
+experiment, there are also longer videos.
+
+215
+00:15:36,668 --> 00:15:39,730
+And as this video claimed, there is also a kind of a movie.
+
+216
+00:15:40,151 --> 00:15:42,512
+I mean, the real Hollywood movie about this
+
+217
+00:15:43,491 --> 00:15:47,714
+experiment, okay? I mean, you can watch, I mean, if you are really interested and have time,
+
+218
+00:15:47,754 --> 00:15:48,134
+okay?
+
+219
+00:15:48,935 --> 00:15:55,880
+And the point is, like many people will uncritically follow the commands of those in power,
+
+220
+00:15:56,140 --> 00:15:57,721
+right? And
+
+221
+00:15:59,042 --> 00:16:01,284
+therefore, I mean,
+
+222
+00:16:02,225 --> 00:16:05,467
+we may also have similar experiences in our lives, right?
+
+223
+00:16:05,707 --> 00:16:07,569
+Maybe not in that level, right?
+
+224
+00:16:07,989 --> 00:16:10,271
+Like in this, both
+
+225
+00:16:11,111 --> 00:16:15,971
+experiments, right? with the Yale study and Stanford study, right?
+
+226
+00:16:16,391 --> 00:16:22,716
+But at least in a certain level, we may have had similar situations in our lives where kind
+
+227
+00:16:22,777 --> 00:16:29,542
+of we were tasked or commanded by those in power or by our superiors, right?
+
+228
+00:16:30,303 --> 00:16:35,327
+And maybe they gave us some tasks or some kind of...
+
+229
+00:16:35,707 --> 00:16:38,930
+They put us in certain situations that went...
+
+230
+00:16:39,924 --> 00:16:40,664
+against our
+
+231
+00:16:41,364 --> 00:16:44,205
+beliefs and kind of moral standards, right?
+
+232
+00:16:44,805 --> 00:16:45,425
+And
+
+233
+00:16:46,385 --> 00:16:48,146
+what did you do in such situations, guys?
+
+234
+00:16:48,206 --> 00:16:54,487
+I mean, if you had such situations, I mean, did you refuse or did you just do whatever you
+
+235
+00:16:54,507 --> 00:17:01,429
+were commanded? And if you did whatever you were commanded, I mean, how did you justify yourself?
+
+236
+00:17:02,348 --> 00:17:04,489
+Or vice versa, if you refused
+
+237
+00:17:05,250 --> 00:17:12,074
+to do what your superiors have ordered you, I mean, how did you kind of refuse it?
+
+238
+00:17:12,474 --> 00:17:14,315
+What kind of reasons and
+
+239
+00:17:15,236 --> 00:17:16,937
+arguments did you give to them?
+
+240
+00:17:20,733 --> 00:17:20,873
+And
+
+241
+00:17:21,654 --> 00:17:28,458
+now with this kind of cases in mind and these topics in mind, we're closely coming to
+
+242
+00:17:28,498 --> 00:17:35,022
+the topic of critical thinking, because these cases show us that the lack of
+
+243
+00:17:35,303 --> 00:17:37,644
+critical thinking skills can
+
+244
+00:17:38,505 --> 00:17:40,546
+negatively affect our lives, right?
+
+245
+00:17:40,866 --> 00:17:43,568
+And negatively affect our everyday decisions, right?
+
+246
+00:17:45,784 --> 00:17:52,207
+Sometimes if we don't have, let's say, similar critical thinking abilities, maybe
+
+247
+00:17:54,288 --> 00:18:01,171
+the people in power or maybe our family members or our friends or our kind of bosses,
+
+248
+00:18:01,311 --> 00:18:01,511
+our
+
+249
+00:18:02,452 --> 00:18:04,933
+employers, our friends, right?
+
+250
+00:18:04,973 --> 00:18:09,115
+They may try to kind of persuade their own
+
+251
+00:18:10,118 --> 00:18:16,982
+agendas on us right and later on let's say we may end up in some careers that we do not like
+
+252
+00:18:17,282 --> 00:18:22,965
+right or we may end up in certain universities that we do not like right or maybe what's worse
+
+253
+00:18:23,005 --> 00:18:29,708
+that we may end up in some families right in some kind of marriage that later on we kind of
+
+254
+00:18:31,609 --> 00:18:37,494
+kind of think about it hard right so therefore i mean the critical thinking abilities kind
+
+255
+00:18:37,554 --> 00:18:42,797
+of they're really important to have a kind of a better standard of living also, right?
+
+256
+00:18:43,557 --> 00:18:48,840
+And can you guys kind of post this video and think about what is critical thinking?
+
+257
+00:18:54,643 --> 00:18:59,786
+Okay, guys, I hope that you all had some opinions on this term, on this topic, right?
+
+258
+00:19:00,266 --> 00:19:02,807
+And let's see, I mean, how the book defines it.
+
+259
+00:19:03,168 --> 00:19:09,130
+So according to the book, the critical thinking is a collection of skills that we use every
+
+260
+00:19:09,170 --> 00:19:13,734
+day that are necessary for our full intellectual and
+
+261
+00:19:14,774 --> 00:19:21,279
+personal development. Okay, so they're not kind of just one skill, right, they're kind of
+
+262
+00:19:21,339 --> 00:19:25,402
+collection of several skills, right, that we'll learn later on.
+
+263
+00:19:25,963 --> 00:19:30,326
+And it requires learning how to think rather than what to think.
+
+264
+00:19:30,606 --> 00:19:32,528
+Okay. And there's also
+
+265
+00:19:34,139 --> 00:19:40,565
+a point of logic, right? Because critical thinking like logic requires good analytical skills
+
+266
+00:19:41,186 --> 00:19:44,408
+and logic is a part of critical thinking, okay?
+
+267
+00:19:44,869 --> 00:19:51,715
+And it's defined as the study of the methods and principles used in distinguishing correct
+
+268
+00:19:52,155 --> 00:19:52,536
+or good
+
+269
+00:19:53,657 --> 00:19:55,839
+arguments from bad or
+
+270
+00:19:57,320 --> 00:20:00,423
+incorrect ones, okay? And there's also
+
+271
+00:20:02,222 --> 00:20:06,667
+opinion. So how logic or critical thinking is different from opinion.
+
+272
+00:20:06,987 --> 00:20:13,694
+So when we say about opinion is a kind of a belief based solely on our personal feelings
+
+273
+00:20:14,154 --> 00:20:16,096
+rather than a reason or fact.
+
+274
+00:20:16,597 --> 00:20:16,897
+Okay.
+
+275
+00:20:20,461 --> 00:20:24,445
+And now let's talk about cognitive development in university students.
+
+276
+00:20:25,175 --> 00:20:26,856
+So here we're talking about
+
+277
+00:20:28,717 --> 00:20:35,501
+the study, the result of study conducted by education researcher William Perry
+
+278
+00:20:35,601 --> 00:20:42,124
+Jr. in the last century. He conducted the study on cognitive development with
+
+279
+00:20:42,444 --> 00:20:48,948
+college students and he wanted to understand the cognitive development of college
+
+280
+00:20:49,148 --> 00:20:55,500
+students. And even though he came up with several stages, but later on, the other researchers
+
+281
+00:20:55,840 --> 00:21:00,301
+kind of, they synced them into kind of these three levels, okay?
+
+282
+00:21:00,581 --> 00:21:03,022
+So first of all, when we are much younger,
+
+283
+00:21:03,722 --> 00:21:06,723
+we have a kind of stage of dualism, okay?
+
+284
+00:21:07,023 --> 00:21:11,524
+So here we are kind of, when we were kind of in the freshman years, for example,
+
+285
+00:21:12,244 --> 00:21:13,324
+we kind of tend to
+
+286
+00:21:14,245 --> 00:21:20,422
+assimilate knowledge and life experiences in a simplistic dualistic ways,
+
+287
+00:21:21,002 --> 00:21:24,505
+viewing something either right or wrong, either
+
+288
+00:21:25,206 --> 00:21:26,607
+good or bad.
+
+289
+00:21:27,307 --> 00:21:27,447
+And
+
+290
+00:21:29,189 --> 00:21:32,411
+here we may see knowledge as
+
+291
+00:21:33,412 --> 00:21:34,333
+something existing
+
+292
+00:21:35,954 --> 00:21:38,876
+outside of our kind of sphere.
+
+293
+00:21:39,297 --> 00:21:45,946
+And then we may tend to look to superior figures for the right answers, okay?
+
+294
+00:21:45,986 --> 00:21:52,570
+So I think that those in power, maybe your professor, maybe your parents, maybe those in
+
+295
+00:21:52,630 --> 00:21:53,191
+the
+
+296
+00:21:53,911 --> 00:22:00,415
+politics, right? Those in power, or the big guys, or the millionaires, billionaires, those
+
+297
+00:22:00,475 --> 00:22:04,438
+rich tech gurus, for example, they have the right answer, right?
+
+298
+00:22:05,238 --> 00:22:05,398
+And
+
+299
+00:22:06,819 --> 00:22:11,322
+however, also here, we have kind of in this stage, we kind of...
+
+300
+00:22:12,363 --> 00:22:16,385
+dualistic stage is most obvious when students confront a conflict.
+
+301
+00:22:16,486 --> 00:22:18,867
+Okay. Although they may be able to apply
+
+302
+00:22:20,348 --> 00:22:24,190
+critical thinking skills in the kind of more structured
+
+303
+00:22:25,030 --> 00:22:30,733
+classroom settings. However, when they go to outside, so they may have some difficulties in
+
+304
+00:22:30,833 --> 00:22:32,714
+applying these skills. Okay.
+
+305
+00:22:34,275 --> 00:22:37,423
+And here also in this stage, students may have
+
+306
+00:22:38,163 --> 00:22:40,425
+confirmation bias, okay?
+
+307
+00:22:40,445 --> 00:22:46,868
+And by this we mean at the dualistic stage of research seeking out only evidence that supports
+
+308
+00:22:47,549 --> 00:22:51,491
+their views and dismissing evidence that contradicts it, okay?
+
+309
+00:22:51,751 --> 00:22:58,595
+So we tend to look for kind of views or opinions or some research, maybe
+
+310
+00:22:58,655 --> 00:23:01,897
+papers or some facts that kind of
+
+311
+00:23:02,857 --> 00:23:05,459
+align with our own view, okay?
+
+312
+00:23:07,875 --> 00:23:08,015
+And
+
+313
+00:23:09,536 --> 00:23:13,978
+then we slowly, we may go to the next stage, okay?
+
+314
+00:23:14,279 --> 00:23:16,500
+So this is called relativism, okay?
+
+315
+00:23:16,540 --> 00:23:22,763
+Stage two, okay? Here, I mean, rather than accepting that ambiguity may be unavoidable
+
+316
+00:23:23,404 --> 00:23:27,366
+and that we need to make decisions despite uncertainty, okay?
+
+317
+00:23:27,826 --> 00:23:31,488
+Students at this relativist stage go to the
+
+318
+00:23:32,469 --> 00:23:32,849
+opposite,
+
+319
+00:23:34,590 --> 00:23:41,472
+extreme, okay? So they reject a dualistic worldview and instead maintain that all truth is
+
+320
+00:23:41,632 --> 00:23:44,833
+relative or just a matter of opinion, okay?
+
+321
+00:23:45,174 --> 00:23:48,675
+So people at this stage believe that stating your opinion
+
+322
+00:23:49,475 --> 00:23:56,377
+is the proper mode of expression and they look down on challenging others' opinions, okay?
+
+323
+00:23:57,718 --> 00:23:59,338
+However, despite their
+
+324
+00:24:00,039 --> 00:24:05,480
+belief in relativism, most students at this stage still expect their professor
+
+325
+00:24:06,280 --> 00:24:08,322
+to support their opinion, okay?
+
+326
+00:24:08,622 --> 00:24:11,403
+So here, in short, by relativism,
+
+327
+00:24:12,104 --> 00:24:13,305
+we may say that
+
+328
+00:24:15,506 --> 00:24:18,888
+there is no truth. There are no true facts, right?
+
+329
+00:24:18,928 --> 00:24:20,609
+There is no objective reality.
+
+330
+00:24:20,850 --> 00:24:22,030
+We may say that
+
+331
+00:24:23,051 --> 00:24:24,452
+everything is relative, right?
+
+332
+00:24:24,492 --> 00:24:28,995
+That everybody have their own opinions, and therefore, I mean,
+
+333
+00:24:30,183 --> 00:24:31,644
+I may have my own opinion.
+
+334
+00:24:32,244 --> 00:24:33,685
+You may have your own opinion.
+
+335
+00:24:34,025 --> 00:24:36,907
+Therefore, there is no real truth, okay?
+
+336
+00:24:36,927 --> 00:24:41,710
+So this is the, I mean, nature of this relativist perspective or relativist worldview.
+
+337
+00:24:42,451 --> 00:24:46,894
+And the next stage, I mean, the much higher stage is commitment, okay?
+
+338
+00:24:47,294 --> 00:24:53,438
+So when students get mature, okay, they come to realize that not all thinking is
+
+339
+00:24:54,318 --> 00:24:58,121
+equally valid, okay? And not only can...
+
+340
+00:24:59,424 --> 00:25:06,388
+those in power authorities be mistaken but also in some circumstances uncertainty and
+
+341
+00:25:06,548 --> 00:25:09,569
+ambiguity are unavoidable okay
+
+342
+00:25:10,330 --> 00:25:16,152
+and when students at this stage experience uncertainty and they are now able to make decisions
+
+343
+00:25:17,313 --> 00:25:23,836
+and commit to particular positions on the basis of reason okay and the best evidence available
+
+344
+00:25:23,856 --> 00:25:29,019
+okay so this is kind of a maturity stage right here we come to realize
+
+345
+00:25:31,216 --> 00:25:32,496
+that
+
+346
+00:25:33,577 --> 00:25:38,179
+things are not kind of easy and sometimes things can be kind of
+
+347
+00:25:39,099 --> 00:25:42,060
+ambiguous in real life and this is okay.
+
+348
+00:25:42,560 --> 00:25:48,883
+And therefore, I mean, based on kind of certain facts or based on
+
+349
+00:25:49,563 --> 00:25:50,003
+better
+
+350
+00:25:51,164 --> 00:25:57,787
+arguments or better reason, we kind of set on certain points or on certain kind of
+
+351
+00:25:57,867 --> 00:25:58,567
+size, right?
+
+352
+00:26:03,192 --> 00:26:09,816
+Okay, so if this is the point with this critical thinking, and what about the
+
+353
+00:26:09,916 --> 00:26:12,077
+characteristics of a good critical thinker?
+
+354
+00:26:12,777 --> 00:26:15,979
+So can you guys pause this video and think about it?
+
+355
+00:26:21,022 --> 00:26:22,442
+Okay, guys, thank you very much.
+
+356
+00:26:22,543 --> 00:26:24,223
+I hope you all had some
+
+357
+00:26:25,444 --> 00:26:27,025
+good, great opinions about it.
+
+358
+00:26:27,705 --> 00:26:27,865
+And
+
+359
+00:26:28,686 --> 00:26:33,588
+critical thinking, like we mentioned before, is not just a single skill, right?
+
+360
+00:26:33,908 --> 00:26:39,511
+It's a kind of a collection of skills that enhance and reinforce each other, okay?
+
+361
+00:26:39,851 --> 00:26:42,432
+So here, some of the kind of
+
+362
+00:26:43,652 --> 00:26:45,974
+sets of these critical
+
+363
+00:26:47,274 --> 00:26:52,853
+thinking skills, okay, characteristics, such as analytical skills, effective communication,
+
+364
+00:26:53,353 --> 00:26:58,117
+research and inquiry skills, and let's kind of discuss them one by one.
+
+365
+00:26:58,457 --> 00:27:03,300
+So first of all, as a critical thinker, you need to be able to
+
+366
+00:27:04,241 --> 00:27:10,505
+analyze and provide a logical support for your beliefs rather than relying on your own
+
+367
+00:27:11,086 --> 00:27:13,968
+kind of opinion or on your own experiences.
+
+368
+00:27:14,188 --> 00:27:14,508
+Okay.
+
+369
+00:27:15,442 --> 00:27:21,989
+Therefore, analytical skills are important in recognizing and evaluating other people's opinions,
+
+370
+00:27:22,169 --> 00:27:28,034
+other people's arguments, so that you're not taken in by faulty reasoning.
+
+371
+00:27:28,094 --> 00:27:29,996
+Second one is effective communication.
+
+372
+00:27:30,116 --> 00:27:30,517
+Of course,
+
+373
+00:27:31,978 --> 00:27:38,744
+skills in writing, speaking, listening are necessary in order to be a good critical thinker
+
+374
+00:27:39,265 --> 00:27:39,845
+and will not
+
+375
+00:27:41,401 --> 00:27:43,943
+talk in detail about this one because
+
+376
+00:27:44,783 --> 00:27:50,947
+we learned this last year right in our engineering and business communication class and the
+
+377
+00:27:50,987 --> 00:27:56,311
+next one is the research and inquiry skills of course this research skills is also important
+
+378
+00:27:56,651 --> 00:27:59,813
+because whenever we want to kind of
+
+379
+00:28:00,673 --> 00:28:06,679
+analyze the situation we want to kind of come to a better conclusion, of course, we need to
+
+380
+00:28:06,719 --> 00:28:13,141
+do research, right? We need to kind of look for the facts, look for certain information, right?
+
+381
+00:28:13,561 --> 00:28:18,643
+And therefore, this type of skills are also important to be a better critical thinker.
+
+382
+00:28:19,103 --> 00:28:23,785
+And the next one is flexibility and tolerance through ambiguity, okay?
+
+383
+00:28:24,065 --> 00:28:26,866
+So this is an also important skill, okay?
+
+384
+00:28:26,886 --> 00:28:33,419
+Because sorting through the various claims and evidence involves discernment and tolerance
+
+385
+00:28:33,479 --> 00:28:36,341
+for ambiguity on the part of the critical thinker.
+
+386
+00:28:37,061 --> 00:28:43,647
+Too many people defer to others or fail to take a position on a controversial issue simply
+
+387
+00:28:43,827 --> 00:28:47,029
+because they are unable to evaluate conflicting views.
+
+388
+00:28:47,810 --> 00:28:50,812
+So therefore, we need to be flexible.
+
+389
+00:28:51,253 --> 00:28:53,254
+We need to be kind of patient.
+
+390
+00:28:53,875 --> 00:28:57,538
+And we need to be able to thrive on some
+
+391
+00:28:58,557 --> 00:29:00,338
+ambiguous situations, okay?
+
+392
+00:29:00,918 --> 00:29:04,159
+And the next point is open-minded skepticism, okay?
+
+393
+00:29:04,579 --> 00:29:10,722
+So critical thinkers are willing to work toward overcoming personal prejudices and biases,
+
+394
+00:29:11,482 --> 00:29:13,583
+and they begin with an open mind and an
+
+395
+00:29:15,003 --> 00:29:18,364
+attitude of reflective skepticism, okay?
+
+396
+00:29:18,665 --> 00:29:21,646
+This is also called the method of doubt, okay?
+
+397
+00:29:22,086 --> 00:29:28,499
+Which was kind of the term coined by a French philosopher, René Descartes, Okay.
+
+398
+00:29:28,979 --> 00:29:35,968
+And here, I mean, in the method of doubt, rather than accepting the opinions or ideas
+
+399
+00:29:36,148 --> 00:29:42,776
+on their face value, we just approach it from the side of skepticism,
+
+400
+00:29:43,197 --> 00:29:46,501
+right? We kind of approach the situation on the
+
+401
+00:29:48,250 --> 00:29:50,210
+on the face of a kind of
+
+402
+00:29:51,251 --> 00:29:53,831
+skeptic, right? Skepticism, right?
+
+403
+00:29:53,891 --> 00:30:00,852
+Rather than just simply believing the situation, we kind of want the situation or
+
+404
+00:30:00,912 --> 00:30:03,713
+the point or the person who is kind of
+
+405
+00:30:05,133 --> 00:30:11,514
+raising this issue to prove the situation, to prove the point to be true, okay?
+
+406
+00:30:11,874 --> 00:30:13,615
+So this is called the method of doubt.
+
+407
+00:30:14,875 --> 00:30:15,855
+And the next point is
+
+408
+00:30:17,154 --> 00:30:18,495
+creative problem solving.
+
+409
+00:30:18,876 --> 00:30:23,380
+Creative thinkers can view problems from multiple
+
+410
+00:30:24,261 --> 00:30:29,545
+perspectives and they come up with original solutions to complex problems.
+
+411
+00:30:30,146 --> 00:30:32,088
+They may use their imagination
+
+412
+00:30:33,229 --> 00:30:38,353
+and to kind of foresee certain kind of scenarios.
+
+413
+00:30:41,268 --> 00:30:47,110
+when we are kind of trying to use our creative thinking and we're trying to foresee the situation
+
+414
+00:30:47,891 --> 00:30:48,231
+kind of
+
+415
+00:30:49,872 --> 00:30:53,993
+beforehand, kind of we can be better prepared for the situation, right?
+
+416
+00:30:54,814 --> 00:30:59,516
+And creativity also involves a willingness to take risks, okay?
+
+417
+00:30:59,856 --> 00:31:05,898
+To cope with the unexpected, to welcome challenge and even a failure as a part of the process
+
+418
+00:31:06,299 --> 00:31:09,600
+to arrive at the new and deeper understanding, okay?
+
+419
+00:31:11,681 --> 00:31:13,842
+And the next characteristics is
+
+420
+00:31:14,802 --> 00:31:20,303
+attentive, mindful, and curious that critical thinkers should be, okay?
+
+421
+00:31:20,964 --> 00:31:26,945
+And here, like critical thinkers, usually they're intellectually curious, okay?
+
+422
+00:31:27,425 --> 00:31:31,587
+And they're attentive and mindful to what's going on around them, okay?
+
+423
+00:31:31,827 --> 00:31:34,707
+And to their own thoughts and feelings, okay?
+
+424
+00:31:35,348 --> 00:31:37,488
+And the next one is
+
+425
+00:31:38,488 --> 00:31:40,249
+collaborative learning, okay?
+
+426
+00:31:41,048 --> 00:31:44,511
+And here by collaborative learning, we do not just mean
+
+427
+00:31:45,232 --> 00:31:49,075
+that you need to learn or study something together with someone.
+
+428
+00:31:49,095 --> 00:31:51,697
+We are not meaning it in the literally terms, okay?
+
+429
+00:31:52,157 --> 00:31:57,942
+So critical thinking occurs in the real life context and anticipate the reaction of others,
+
+430
+00:31:58,082 --> 00:32:04,247
+right? Because usually when we want to exercise our critical thinking abilities, it means that
+
+431
+00:32:04,287 --> 00:32:06,129
+we are in some social situation, right?
+
+432
+00:32:06,589 --> 00:32:09,712
+We are kind of in interaction with some other people.
+
+433
+00:32:10,132 --> 00:32:12,033
+whether it be our family members,
+
+434
+00:32:13,153 --> 00:32:17,334
+our colleagues, our friends, or someone outside in the street, right?
+
+435
+00:32:17,654 --> 00:32:23,136
+So it means that in such situations, kind of we should be open to learn, right?
+
+436
+00:32:23,336 --> 00:32:28,638
+We should be open to listen to the opinions and ideas of other people.
+
+437
+00:32:29,018 --> 00:32:31,099
+And then based on this, I mean,
+
+438
+00:32:31,939 --> 00:32:38,274
+evaluate the situation and maybe sometimes maybe lower some of our barriers, right?
+
+439
+00:32:38,595 --> 00:32:45,378
+And try to kind of come up with the solutions that can be beneficial for both sides, right?
+
+440
+00:32:50,180 --> 00:32:50,600
+Okay,
+
+441
+00:32:51,400 --> 00:32:51,740
+now
+
+442
+00:32:52,921 --> 00:32:54,482
+let's imagine now, you know,
+
+443
+00:32:55,577 --> 00:33:01,201
+what critical thinking means and you know some of the good characteristics of
+
+444
+00:33:01,922 --> 00:33:03,103
+critical thinkers, right?
+
+445
+00:33:03,223 --> 00:33:06,425
+And you try your best to be a better critical thinker.
+
+446
+00:33:06,865 --> 00:33:13,610
+But what about that sometimes there may be certain barriers or certain challenges that may
+
+447
+00:33:13,650 --> 00:33:15,972
+kind of make your critical thinking
+
+448
+00:33:16,993 --> 00:33:23,517
+much harder, right? So can you guys pause this video and think about some of the barriers to
+
+449
+00:33:23,557 --> 00:33:24,238
+critical thinking?
+
+450
+00:33:33,430 --> 00:33:34,891
+Okay, guys, thank you very much.
+
+451
+00:33:35,431 --> 00:33:35,752
+So
+
+452
+00:33:36,732 --> 00:33:38,573
+there may be certain barriers
+
+453
+00:33:39,474 --> 00:33:43,997
+that can kind of hinder your abilities of critical thinking.
+
+454
+00:33:44,557 --> 00:33:47,019
+And here, let's start from the first one here.
+
+455
+00:33:47,679 --> 00:33:54,043
+The authors of the book, they developed this model, which is a three-time model of thinking,
+
+456
+00:33:54,464 --> 00:33:54,764
+okay?
+
+457
+00:33:56,206 --> 00:33:56,586
+And the
+
+458
+00:33:57,446 --> 00:34:04,348
+processes used in critical thinking can be broken down into three types of levels.
+
+459
+00:34:04,428 --> 00:34:09,489
+As you can see, first experience, interpretation, and analysis.
+
+460
+00:34:10,049 --> 00:34:11,870
+Let's talk about them one by one.
+
+461
+00:34:12,290 --> 00:34:18,912
+First of all, in the first level, we have a certain situation, certain experience, that
+
+462
+00:34:18,952 --> 00:34:20,932
+something happened, certain event.
+
+463
+00:34:21,265 --> 00:34:26,868
+certain facts, right? For example, you went to a job interview and you were rejected.
+
+464
+00:34:27,608 --> 00:34:32,711
+Or maybe you saw some news in the internet or on TV, right?
+
+465
+00:34:32,751 --> 00:34:34,052
+That saying that the
+
+466
+00:34:35,532 --> 00:34:40,675
+proportion of young people participating in
+
+467
+00:34:41,535 --> 00:34:45,177
+voting in the political events is decreasing, right?
+
+468
+00:34:45,437 --> 00:34:46,538
+So this is experience.
+
+469
+00:34:47,363 --> 00:34:49,745
+And the second one is called interpretation.
+
+470
+00:34:50,206 --> 00:34:54,730
+So here it involves trying to make sense of that experience, okay?
+
+471
+00:34:55,050 --> 00:34:59,053
+So you saw the experience or you had the experience itself, and then you kind of
+
+472
+00:34:59,934 --> 00:35:02,577
+try to make sense of that experience, right?
+
+473
+00:35:03,137 --> 00:35:09,783
+And some of our interpretations may be well informed, whereas others may be based solely on
+
+474
+00:35:09,883 --> 00:35:16,641
+our own opinion. or on our own personal feelings or prejudices or previous
+
+475
+00:35:16,701 --> 00:35:19,122
+experiences, right? So for example,
+
+476
+00:35:20,082 --> 00:35:26,283
+that after getting rejected from this job interview, you may say that I didn't get the job
+
+477
+00:35:26,543 --> 00:35:30,024
+because I didn't have maybe the right connections, okay?
+
+478
+00:35:30,484 --> 00:35:35,505
+Or regarding this decreasing number of young voters, you may say that
+
+479
+00:35:37,735 --> 00:35:42,316
+The reason for this is because nowadays young people, they are not interested in politics,
+
+480
+00:35:42,536 --> 00:35:47,337
+right? So you may kind of try to make sense of this experience like this.
+
+481
+00:35:48,117 --> 00:35:50,097
+And the last point is analysis.
+
+482
+00:35:50,197 --> 00:35:56,999
+Here it requires that we raise our level of thinking and critically examine our interpretation
+
+483
+00:35:57,139 --> 00:35:58,559
+of that experience, right?
+
+484
+00:35:58,899 --> 00:36:00,319
+As well as those others, right?
+
+485
+00:36:00,659 --> 00:36:06,966
+Refusing to accept either narrow interpretations often experiences or interpretations that
+
+486
+00:36:07,046 --> 00:36:10,769
+are too broad, okay? And usually this step
+
+487
+00:36:11,870 --> 00:36:15,012
+requires us asking questions, okay?
+
+488
+00:36:15,052 --> 00:36:21,657
+For example, in the case of this job rejection, you can ask yourself that was it because of
+
+489
+00:36:21,737 --> 00:36:21,998
+your
+
+490
+00:36:23,179 --> 00:36:30,004
+lack of connections or maybe because of your lack of experience or maybe
+
+491
+00:36:30,464 --> 00:36:33,847
+your kind of skills on this job interview, right?
+
+492
+00:36:34,389 --> 00:36:35,930
+or also regarding these
+
+493
+00:36:36,970 --> 00:36:40,012
+young voters, right? You can ask yourself
+
+494
+00:36:41,072 --> 00:36:41,912
+why this happened.
+
+495
+00:36:42,753 --> 00:36:47,735
+I mean, what could be the real causes or the real reasons for this, right?
+
+496
+00:36:48,095 --> 00:36:52,837
+I mean, what can be the real interest of young people nowadays, right?
+
+497
+00:36:53,077 --> 00:36:54,258
+Rather than coming to
+
+498
+00:36:55,298 --> 00:37:00,993
+simplistic answers, you try to ask some questions and try to go to the
+
+499
+00:37:01,814 --> 00:37:06,517
+deeper meaning or the deeper reasons or deeper points of this
+
+500
+00:37:06,697 --> 00:37:13,381
+experience. The next set of barriers to
+
+501
+00:37:13,421 --> 00:37:17,224
+critical thinking is called resistance.
+
+502
+00:37:18,585 --> 00:37:19,545
+Because most of us
+
+503
+00:37:20,946 --> 00:37:21,527
+don't like
+
+504
+00:37:22,327 --> 00:37:25,089
+to be proven wrong, we may create barriers
+
+505
+00:37:25,829 --> 00:37:26,450
+to keep our
+
+506
+00:37:27,527 --> 00:37:30,348
+cherish the world views from being challenged.
+
+507
+00:37:30,948 --> 00:37:37,891
+And resistance here is defined as the habitual use of immature defense mechanisms
+
+508
+00:37:38,351 --> 00:37:41,132
+when our world views are challenged.
+
+509
+00:37:41,652 --> 00:37:44,413
+And here are some of the kind of
+
+510
+00:37:45,654 --> 00:37:49,415
+types of resistance such as avoidance, anger,
+
+511
+00:37:50,275 --> 00:37:56,920
+cliches, denial, ignorance, conformity, struggling and distractions.
+
+512
+00:37:57,400 --> 00:37:58,541
+So here, I mean,
+
+513
+00:37:59,521 --> 00:38:00,602
+I will not
+
+514
+00:38:02,684 --> 00:38:04,405
+be discussing them one by one.
+
+515
+00:38:04,745 --> 00:38:09,368
+So this will be your job, maybe to think about it and maybe to
+
+516
+00:38:10,069 --> 00:38:11,170
+research about it, right?
+
+517
+00:38:11,190 --> 00:38:15,113
+To find about it. I mean, if you don't know the meanings of these words, I mean, you can find
+
+518
+00:38:15,213 --> 00:38:17,574
+out from dictionaries, from online dictionaries.
+
+519
+00:38:17,975 --> 00:38:22,558
+And also after finding out the meaning, you just need to try to connect them
+
+520
+00:38:23,279 --> 00:38:25,780
+to this critical thinking barrier.
+
+521
+00:38:26,240 --> 00:38:31,581
+This will be your task. Let me just comment on the struggling point.
+
+522
+00:38:33,141 --> 00:38:36,202
+It may be normal sometimes
+
+523
+00:38:36,962 --> 00:38:37,662
+to struggle
+
+524
+00:38:38,462 --> 00:38:42,903
+on certain issues when you're trying to analyze the situation.
+
+525
+00:38:43,623 --> 00:38:50,445
+However, some people get so caught up in the details and what-ifs often
+
+526
+00:38:51,247 --> 00:38:53,228
+issue or situation, right?
+
+527
+00:38:53,649 --> 00:39:00,093
+And then they may kind of, they may accomplish nothing and they may lose time, right?
+
+528
+00:39:00,754 --> 00:39:06,418
+And the procrastinators are also most likely to use this type of resistance, right?
+
+529
+00:39:06,438 --> 00:39:12,242
+Struggling. Okay. And all those struggling with an issue as part of the analytical process
+
+530
+00:39:12,662 --> 00:39:18,766
+of coming up with a resolution and plan for action is an important kind of a part of critical
+
+531
+00:39:18,806 --> 00:39:25,644
+thinking, right? But when the struggle becomes an end itself, right, we are engaging in
+
+532
+00:39:25,664 --> 00:39:27,405
+resistance, not critical thinking.
+
+533
+00:39:27,966 --> 00:39:30,848
+Okay, just give me a, let me give you an example.
+
+534
+00:39:31,108 --> 00:39:38,093
+Like recently, I think last week, we had this terrible accident happened in Nepal, right?
+
+535
+00:39:38,373 --> 00:39:40,655
+There was some kind of mudfall, right?
+
+536
+00:39:41,195 --> 00:39:44,898
+And you may have heard about this case of this person
+
+537
+00:39:45,621 --> 00:39:46,941
+school director, right?
+
+538
+00:39:47,342 --> 00:39:54,023
+He kind of evacuated about 900 students, 900 pupils from school in a very kind of
+
+539
+00:39:54,263 --> 00:39:55,544
+short amount of time, right?
+
+540
+00:39:56,704 --> 00:40:03,666
+So just imagine, like he also pointed, right, if he were late for about 10 minutes, right,
+
+541
+00:40:03,986 --> 00:40:06,107
+maybe they all would die, right?
+
+542
+00:40:06,387 --> 00:40:08,567
+So kind of he made a quick decision, right?
+
+543
+00:40:08,848 --> 00:40:11,608
+He kind of didn't struggle with this thinking.
+
+544
+00:40:11,948 --> 00:40:17,841
+I mean, he, based on certain facts, he made a very quick decision, he realized that the situation
+
+545
+00:40:17,901 --> 00:40:21,885
+was very serious, and he acted immediately, right?
+
+546
+00:40:22,165 --> 00:40:26,689
+And he could save the lives of these 900 people, right?
+
+547
+00:40:28,251 --> 00:40:32,395
+So, okay, I mean, the rest will be your task, okay, to think about it.
+
+548
+00:40:33,355 --> 00:40:39,401
+And the next set of barriers to critical thinking is called narrow-mindedness, okay?
+
+549
+00:40:41,436 --> 00:40:45,780
+And by narrow-mindedness, we mean the rigid beliefs
+
+550
+00:40:46,581 --> 00:40:51,586
+that interfere with the critical analysis of our worldviews.
+
+551
+00:40:52,386 --> 00:40:59,313
+And here also, there are certain kind of points of this narrow-mindedness, such as
+
+552
+00:40:59,753 --> 00:41:05,198
+absolutism, fear of challenge, eco-centrism, ethnocentrism, and fascism.
+
+553
+00:41:06,041 --> 00:41:08,883
+anthropocentrism. And this will be also your task.
+
+554
+00:41:08,963 --> 00:41:11,924
+I mean, I will not be discussing them one by one.
+
+555
+00:41:12,044 --> 00:41:17,707
+So this will be a task. I just go to internet and try to find out the meanings of these kind
+
+556
+00:41:17,747 --> 00:41:22,509
+of terms and try to connect them to critical thinking barrier.
+
+557
+00:41:25,031 --> 00:41:26,572
+And here are some more
+
+558
+00:41:27,332 --> 00:41:31,654
+barriers to critical thinking such as rationalization and doublethink,
+
+559
+00:41:32,355 --> 00:41:35,116
+cognitive and social dissonance and stress.
+
+560
+00:41:35,856 --> 00:41:36,536
+So also
+
+561
+00:41:37,316 --> 00:41:44,239
+try to find out the meanings of these terms and try to connect them to a barrier
+
+562
+00:41:44,899 --> 00:41:46,419
+of critical thinking, okay?
+
+563
+00:41:46,439 --> 00:41:48,040
+Try to think about it, okay?
+
+564
+00:41:48,280 --> 00:41:49,540
+So this will be a task, guys.
+
+565
+00:41:51,021 --> 00:41:52,841
+So this was all for
+
+566
+00:41:53,662 --> 00:41:56,723
+these chapters and for today's lectures, okay guys?
+
+567
+00:41:57,583 --> 00:42:01,244
+Here in the conclusion, I just want to point out
+
+568
+00:42:01,964 --> 00:42:03,025
+something that
+
+569
+00:42:04,145 --> 00:42:10,059
+since I mean, in the first video, I forgot to mention, since we have quizzes, right, we have
+
+570
+00:42:10,099 --> 00:42:16,804
+some part of the grade, and sometimes right after these online lectures, I'll be posting
+
+571
+00:42:16,984 --> 00:42:17,684
+some quizzes
+
+572
+00:42:18,385 --> 00:42:19,185
+on the eClass.
+
+573
+00:42:21,267 --> 00:42:28,172
+And also, as I mentioned, we should be using our own mind, our own senses, our own kind of
+
+574
+00:42:28,252 --> 00:42:29,213
+judgment to
+
+575
+00:42:30,150 --> 00:42:30,850
+for this class,
+
+576
+00:42:31,550 --> 00:42:32,590
+I want to ask you guys
+
+577
+00:42:33,731 --> 00:42:35,951
+to complete these quizzes by yourself.
+
+578
+00:42:36,431 --> 00:42:42,972
+And therefore, I will do my best to not give you just simplistic quizzes where you can just
+
+579
+00:42:43,652 --> 00:42:48,113
+be choosing from multiple choice questions or finding from internet, right?
+
+580
+00:42:48,553 --> 00:42:54,635
+Rather, I'll be giving you questions kind of which will require your own thoughts, your own
+
+581
+00:42:54,795 --> 00:42:56,975
+opinions, which means there are no
+
+582
+00:42:57,689 --> 00:42:59,090
+right or wrong answers, right?
+
+583
+00:42:59,290 --> 00:43:03,791
+So even though we are going to relativism here, still, I mean, because this is a,
+
+584
+00:43:05,412 --> 00:43:07,613
+this will be your own judgment, your own opinions.
+
+585
+00:43:07,953 --> 00:43:11,394
+The questions will be asking about your own experiences, right?
+
+586
+00:43:11,694 --> 00:43:12,435
+So therefore,
+
+587
+00:43:13,275 --> 00:43:19,898
+these guys don't go to internet, don't use Google, don't use these AI tools, okay?
+
+588
+00:43:20,158 --> 00:43:22,919
+Just you use your own judgment, okay?
+
+589
+00:43:23,159 --> 00:43:23,839
+So which means
+
+590
+00:43:24,879 --> 00:43:31,470
+for all people for all those who will be using their own judgments and giving certain ideas,
+
+591
+00:43:31,570 --> 00:43:37,712
+right? Based on their own experiences, based on their own kind of answers, you'll get full
+
+592
+00:43:37,772 --> 00:43:40,213
+points for these quiz questions, okay?
+
+593
+00:43:40,493 --> 00:43:47,095
+So I'll not be kind of reading them in detail, but I'll be just looking them that if you wrote
+
+594
+00:43:47,695 --> 00:43:47,895
+them
+
+595
+00:43:48,616 --> 00:43:50,136
+based on your own words, okay?
+
+596
+00:43:50,356 --> 00:43:53,837
+So therefore, please, I mean, you don't have pressure, right?
+
+597
+00:43:54,217 --> 00:43:55,998
+I mean, don't have pressure to make it right.
+
+598
+00:43:56,875 --> 00:44:03,718
+100%. Therefore, don't use chat GPT, just spend at least five or 10 minutes on this each
+
+599
+00:44:03,818 --> 00:44:07,719
+quizzes and try to come up with your own ideas.
+
+600
+00:44:07,859 --> 00:44:14,262
+Okay, because as I said, this is the real opportunity to exercise your own mind and your own
+
+601
+00:44:14,322 --> 00:44:21,185
+judgment, and eventually try to please develop, maybe on certain level, our thinking and
+
+602
+00:44:21,265 --> 00:44:24,406
+critical thinking abilities, because writing is also thinking, right?
+
+603
+00:44:25,396 --> 00:44:30,553
+Okay, guys, with these points in mind, we'll finish our first lecture.
+
+604
+00:44:30,573 --> 00:44:32,339
+See you guys next week.

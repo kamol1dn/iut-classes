@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Block Packer — weight, virtual bytes, fee rate and the waiting room</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#FFC907; --gold-d:#a9800a; --gold-bg:#FFFAE6;
+  --red:#c0392b; --red-bg:#fdecea; --red-d:#7b241c;
+  --grn:#1e8449; --grn-bg:#eafaf1;
+  --blu:#1f6fb2; --blu-bg:#eaf3fb;
+  --ink:#333; --dim:#777; --dim2:#999; --line:#ddd; --line2:#ccc;
+  --panel:#fafafa; --head-bg:#f3f3f3; --navy:#1B3A6B; --lab:#666;
+  --mono:'JetBrains Mono','SFMono-Regular',Consolas,Menlo,monospace;
+  --sans:'Source Sans 3','Helvetica Neue',Arial,system-ui,sans-serif;
+  --head:'Oswald','Arial Narrow',Impact,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+body{padding:0 14px 50px}
+.wrap{max-width:980px;margin:0 auto}
+button{font-family:var(--sans)}
+button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+code{font-family:var(--mono);font-size:.86em;background:#edf1f7;color:var(--navy);padding:0 4px;border-radius:4px;white-space:nowrap}
+kbd{font-family:var(--mono);font-size:11px;font-weight:700;border:1px solid var(--line2);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:#fff;color:var(--ink);margin-left:6px;vertical-align:1px}
+.masthead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:20px 0 12px;border-bottom:4px solid var(--gold)}
+.masthead h1{font-family:var(--head);font-weight:600;font-size:30px;margin:0;color:var(--navy)}
+.masthead .sub{color:var(--dim);font-size:14px}
+.masthead .course{margin-left:auto;font-size:11px;letter-spacing:1.2px;color:var(--gold-d);border:1px solid var(--gold);background:var(--gold-bg);padding:3px 10px;border-radius:20px;font-weight:700}
+.lede{background:var(--gold-bg);border-left:4px solid var(--gold);padding:11px 15px;margin:16px 0;border-radius:0 6px 6px 0}
+.lede b{color:var(--gold-d)}
+.ctl{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0;padding:12px;background:var(--panel);border:1px solid var(--line2);border-radius:9px}
+.ctl button,.btn{background:#fff;border:1px solid var(--line2);border-radius:7px;padding:7px 15px;font-family:var(--sans);font-size:14px;cursor:pointer;color:var(--ink);font-weight:600;min-height:38px}
+.ctl button:hover,.btn:hover{background:var(--gold-bg);border-color:var(--gold)}
+.ctl button.key,.btn.key{background:var(--gold);border-color:var(--gold);color:#4a3800;min-width:92px}
+.ctl button:disabled,.btn:disabled{opacity:.45;cursor:default;background:#fff;border-color:var(--line2)}
+.log{border:1px solid var(--line2);border-radius:9px;background:#1E222A;color:#E6E9EE;font-family:var(--mono);font-size:12.5px;line-height:1.75;padding:11px 13px;white-space:pre-wrap;word-break:break-all}
+.log .t{color:#6ec1ff} .log .hi{color:#ffd45e} .log .bad{color:#ff8b7d} .log .ok{color:#8fe3a8} .log .dm{color:#8a8a8a}
+.banner{margin-top:14px;padding:12px 16px;border-radius:8px;font-size:15px;display:none}
+.banner.show{display:block}
+.banner.warn{background:var(--red);color:#fff}
+.banner.win{background:#b8ecc8;color:#153d22}
+.banner .hd{font-family:var(--head);letter-spacing:1px;text-transform:uppercase;display:block;font-size:16px;margin-bottom:3px}
+.banner code{background:rgba(255,255,255,.6);color:inherit}
+.banner .joke{display:block;margin-top:6px;font-style:italic}
+.note{border-left:4px solid var(--blu);background:var(--blu-bg);padding:10px 14px;margin:18px 0 0;border-radius:0 6px 6px 0;font-size:14px}
+.note b{color:var(--blu)}
+footer{color:var(--dim);font-size:13px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
+footer p{margin:0 0 7px}
+footer code{font-family:var(--mono);color:var(--blu);font-size:12.5px;background:none;padding:0}
+footer .reset{background:#fff;border:1px solid var(--line2);border-radius:7px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;min-height:36px;margin-right:10px}
+footer .reset:hover{border-color:var(--red);color:var(--red)}
+.lab{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--lab);font-weight:700;margin:0 0 7px}
+.panel{border:1px solid var(--line2);border-radius:9px;background:#fff;padding:11px 13px}
+.small{font-size:13px;color:var(--lab);margin:8px 0 0;line-height:1.4}
+.gloss{border:1px solid var(--gold);background:var(--gold-bg);border-radius:8px;padding:8px 12px;font-size:13.5px;margin:10px 0}
+.gloss b{color:var(--gold-d)}
+.mbar{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 18px}
+.mchip{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-height:58px;border:1px solid var(--line2);background:#fff;border-radius:9px;padding:7px 10px 8px;cursor:pointer;color:var(--ink)}
+.mchip:hover{border-color:var(--gold);background:var(--gold-bg)}
+.mchip .no{display:flex;align-items:center;gap:6px;font-family:var(--head);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--lab)}
+.mchip .tt{font-weight:700;font-size:13.5px;line-height:1.25}
+.mchip .ck{width:17px;height:17px;border-radius:50%;background:var(--grn);color:#fff;font-family:var(--sans);font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.mchip .ck.hp{background:var(--gold);color:#4a3800}
+.mchip.cur{border-color:var(--gold);box-shadow:inset 0 0 0 2px var(--gold);background:var(--gold-bg)}
+.mchip.cur .no{color:var(--navy)}
+.mhead{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 12px}
+.mhead .kind{flex-basis:100%;font-family:var(--head);font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--lab)}
+.mhead h2{font-family:var(--head);font-weight:600;font-size:25px;line-height:1.15;margin:0;color:var(--navy)}
+.mhead .goal{border:2px solid var(--navy);border-radius:20px;padding:1px 12px;font-size:14px;font-weight:700;color:var(--navy)}
+.mhead .goal i{font-style:normal;color:var(--lab);margin-right:7px;font-size:11px;text-transform:uppercase;letter-spacing:1.1px}
+.mhead .clr{background:var(--grn);color:#fff;border-radius:20px;padding:2px 12px;font-size:13px;font-weight:700}
+.mhead .clr.hp{background:var(--gold);color:#4a3800}
+.mhead .desc{flex-basis:100%;margin:2px 0 0;font-size:15.5px}
+.hintbox{margin-top:10px;font-size:14px}
+.hintbox p{margin:4px 0;padding:6px 10px;background:var(--blu-bg);border-radius:6px;border-left:3px solid var(--blu)}
+.calc{font-family:var(--mono);font-size:14px;background:#f6f8fb;border:1px solid var(--line2);border-radius:8px;padding:9px 12px;margin-top:8px;line-height:1.8}
+.calc b{color:var(--navy)}
+input[type=text]{font-family:var(--mono);font-size:15px;padding:7px 10px;border:1px solid var(--line2);border-radius:7px;min-height:38px;width:150px}
+input:focus{outline:3px solid var(--gold);border-color:var(--gold)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.tag{display:inline-block;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:1px 8px;border-radius:12px;background:var(--blu-bg);color:var(--blu);margin-left:6px;vertical-align:middle}
+.tag.ok{background:var(--grn-bg);color:var(--grn)}.tag.bad{background:var(--red-bg);color:var(--red)}.tag.gold{background:var(--gold-bg);color:var(--gold-d)}
+/* bytes bar */
+.bar{display:flex;height:22px;border-radius:5px;overflow:hidden;border:1px solid var(--line2);margin:6px 0 2px;background:#f3f3f3}
+.bar i{display:block;height:100%}
+.bar .b1{background:#1B3A6B}.bar .b2{background:#9ec3e6}
+.bar .f{background:#1e8449}.bar .f2{background:#FFC907}.bar .sel{background:#1B3A6B}
+.legend{font-size:12.5px;color:var(--lab)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin:0 4px 0 10px}
+/* pack */
+.pack{display:grid;grid-template-columns:1fr 290px;gap:14px}.pack>*{min-width:0}
+.txs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.tx{border:1px solid var(--line2);border-radius:9px;padding:8px 10px;background:#fff;cursor:pointer;text-align:left;font-family:var(--sans);font-size:13.5px}
+.tx:hover{border-color:var(--gold);background:var(--gold-bg)}
+.tx.on{border-color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy);background:var(--blu-bg)}
+.tx.no{opacity:.5;cursor:default}
+.tx .tn{font-weight:700}
+.tx .tm{font-family:var(--mono);font-size:12px;color:var(--navy)}
+.tx .tr{font-size:12.5px;color:var(--lab)}
+.block{border:2px solid var(--navy);border-radius:9px;padding:10px 12px;background:#fff}
+.block .bh{font-family:var(--head);font-size:16px;color:var(--navy);letter-spacing:.5px}
+.meter{height:26px;border:1px solid var(--line2);border-radius:6px;overflow:hidden;background:#f3f3f3;display:flex;margin:6px 0}
+.meter i{display:block;height:100%;background:var(--navy);border-right:1px solid #fff}
+.meter.over i{background:var(--red)}
+.kv{display:flex;justify-content:space-between;font-size:13.5px;margin:3px 0}
+.kv b{font-family:var(--mono);color:var(--navy)}
+.q{border:1px solid var(--line2);border-radius:9px;padding:11px 13px;margin:10px 0;background:#fff}
+.q .qt{font-weight:700;margin:0 0 8px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{text-align:left;border:1px solid var(--line2);border-radius:7px;padding:8px 12px;background:#fff;cursor:pointer;font-size:14.5px;min-height:38px;font-family:var(--sans)}
+.opt:hover{border-color:var(--gold);background:var(--gold-bg)}
+.opt.right{border-color:var(--grn);background:var(--grn-bg)}.opt.wrong{border-color:var(--red);background:var(--red-bg)}
+.why{font-size:13.5px;color:var(--lab);margin:7px 0 0;display:none}.why.show{display:block}
+/* mempool */
+.mp{display:grid;grid-template-columns:1fr 300px;gap:14px}.mp>*{min-width:0}
+.hist{display:flex;align-items:flex-end;gap:2px;height:170px;border-bottom:2px solid var(--line2);padding:0 2px}
+.hist i{display:block;flex:1;background:#9ec3e6;border-radius:2px 2px 0 0;position:relative;min-width:4px}
+.hist i.ahead{background:#1B3A6B}
+.hist i.me{background:var(--gold)}
+.hist i.in{background:#1e8449}
+.axis{display:flex;justify-content:space-between;font-size:11px;color:var(--lab);margin-top:3px}
+input[type=range]{width:100%;accent-color:var(--navy)}
+.big{font-family:var(--head);font-size:26px;color:var(--navy);line-height:1.1}
+.big.bad{color:var(--red)}.big.ok{color:var(--grn)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.two>*{min-width:0}
+@media (max-width:720px){.mbar{grid-template-columns:repeat(2,1fr)}.pack,.mp,.two,.txs{grid-template-columns:1fr}.masthead .course{margin-left:0}}
+#selftest-report{white-space:pre-wrap;font-family:var(--mono);font-size:12px;background:#f6f8fb;border:1px solid var(--line2);padding:8px;display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<pre id="selftest-report"></pre>
+<div class="masthead">
+  <h1>THE BLOCK PACKER</h1>
+  <span class="sub">a block has room for 4,000,000 weight units · you decide what goes in</span>
+  <span class="course">SOC4190 · LECTURE 6</span>
+</div>
+<div class="lede">
+  A payment does not pay a share of what it moves. It pays for the <b>room it takes in a block</b>, and room is measured in
+  <b>weight</b>: ordinary bytes count 4, witness bytes count 1. Weigh real payments, compute their <b>fee rate</b>, pack a block
+  the way a miner does, and find out what it really costs to get out of the <b>mempool</b> (the waiting room).
+</div>
+
+<div class="mbar" id="mbar"></div>
+<div id="stage"></div>
+
+<div class="note"><b>The lesson.</b> Weight = 3 × (bytes without witness) + (all bytes); virtual bytes = weight ÷ 4, rounded up to a whole byte; fee rate = fee ÷ vB.
+Miners fill the limited room with the highest fee rates first (a simplified model: a real miner also keeps related payments together), so what you pay is your size times the rate of the moment — not a
+percentage of the amount. A 30-input payment costs more than a 1-input one, whatever it moves.</div>
+
+<footer>
+  <p>Everything in this game comes from Slide 6 (Bitcoin Transactions). Real payments: ours <code>d9f91d3f…6dd6</code> (225 B, 900 WU, fee 1,356 sat),
+  SegWit <code>0db3220c…d854</code> (223 B = 113 + 2 + 108 witness, 562 WU, fee 980), P2SH <code>ac42ccf5…e290</code> (369 B, 1,476 WU),
+  the 30-input consolidation <code>0a1ddd01…b097</code> (2,078 vB, fee 8,238), the 83-BTC fee <code>b5a2af58…f9aa</code> (110 vB, fee 8,365,497,568 sat).
+  Block 971,108: 5,088 payments, weight 3,993,978 (99.8 %). Mempool on 2026-10-12 15:11 UTC: 80,848 payments, 39.2 M vB, suggested rate 1 sat/vB.
+  Weights equal the explorer's. The toy waiting room and the other six candidates in the packing mission are <b>illustrative</b> and labelled so.</p>
+  <p>Keys: <kbd>1</kbd>…<kbd>5</kbd> open a mission · <kbd>H</kbd> hint · <kbd>R</kbd> restart · <kbd>N</kbd> next</p>
+  <p><button class="reset" id="resetAll">Reset progress</button> <span id="progtxt"></span></p>
+</footer>
+</div>
+
+<script>
+const KEY='soc4190-blockpacker-v1'; let mem={};
+function loadP(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return mem; } }
+function saveP(p){ mem=p; try{ localStorage.setItem(KEY,JSON.stringify(p)); }catch(e){} }
+let prog=loadP();
+const $=s=>document.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
+const fmt=n=>n.toLocaleString('en-US');
+const num=s=>parseFloat(String(s||'').replace(/[,\s_]/g,''));
+let cur=1, hintIx=0, hintsUsed=0;
+const W=(bytes,wit)=>3*(bytes-wit)+bytes, VB=(bytes,wit)=>Math.ceil(W(bytes,wit)/4);
+
+const MISSIONS=[
+ {n:1,title:'Weigh it',kind:'weight and virtual bytes',goal:'3 payments weighed',desc:'Three real payments. For each, compute the <b>weight</b> and the <b>virtual bytes</b>. The formula is on the card; the bytes are measured.'},
+ {n:2,title:'Fee rate',kind:'sat per virtual byte',goal:'3 rates right',desc:'Fee ÷ virtual bytes = the number miners sort by. Compute it for the same three stories — including the most expensive 110 bytes in Bitcoin\'s history.'},
+ {n:3,title:'Pack the block',kind:'you are the miner',goal:'the most fee that fits',desc:'A toy block with room for <b>4,000 weight units</b> (1/1000 of a real one). Eight payments are waiting. Choose the set that earns the most fee. Two of the eight are our real payments; the others are illustrative. <i>Simplified: here every payment is independent; a real miner must also keep a payment together with the one it spends from.</i>'},
+ {n:4,title:'What does it cost?',kind:'size × rate',goal:'4 answers right',desc:'Four situations. What the sender pays depends on size and the rate of the moment — never on the amount. Check your intuition.'},
+ {n:5,title:'The waiting room',kind:'mempool',goal:'the cheapest rate for two deadlines',desc:'Valid payments wait in the mempool until a block takes them, highest fee rate first. Move the slider: how much room is ahead of you, and how many blocks until you are in? Find the <b>cheapest whole rate</b> for each deadline.'},
+];
+const HINTS={
+ 1:['Weight = 3 × (bytes without witness) + (all bytes). With no witness: 3 × bytes + bytes = 4 × bytes.','Virtual bytes = weight ÷ 4. SegWit: bytes without witness = 223 − 108 = 115? No — the marker and flag (2 bytes) are not counted either: 113.','<b>Show me:</b> ours 900 / 225 · SegWit 562 / 141 · P2SH 1,476 / 369 (no witness).'],
+ 2:['Fee rate = fee ÷ virtual bytes. Two decimals are enough.','Ours: 1,356 ÷ 225. SegWit: 980 ÷ 141.','<b>Show me:</b> 6.03 · 6.95 · 76,049,977.9 sat/vB.'],
+ 3:['Sort by fee rate (fee ÷ vB), not by fee. Take the best rates first while they fit.','The biggest fee in the list is a bad deal: it takes the whole block alone.','<b>Show me:</b> the best set is selected.'],
+ 4:['Fee = virtual bytes × rate. The amount being moved appears nowhere in that formula.','2,078 vB × 4 sat/vB; 225 vB × 6 sat/vB.','The 83-BTC payment: 76,049,977.9 ÷ 1.'],
+ 5:['Everything with a higher rate than yours goes first. A block holds 1,000,000 vB (4,000,000 weight ÷ 4).','Blocks to wait = (vB ahead of you ÷ 1,000,000), rounded up — plus 1 for the block you ride in.','<b>Show me:</b> the slider jumps to the cheapest rate for the next block; read the other one off the chart.'],
+};
+function drawBar(){ const bar=$('#mbar'); bar.innerHTML=''; MISSIONS.forEach(m=>{ const b=el('button','mchip'+(m.n===cur?' cur':'')); const st=prog[m.n]; b.innerHTML=`<span class="no">${st?`<span class="ck${st==='help'?' hp':''}">✓</span>`:''}Mission ${m.n}</span><span class="tt">${m.title}</span>`; b.onclick=()=>open(m.n); bar.appendChild(b); });
+  const done=MISSIONS.filter(m=>prog[m.n]).length; $('#progtxt').textContent=`${done} of ${MISSIONS.length} missions cleared`+(done===MISSIONS.length?' — you now overpay nobody.':''); }
+function head(m){ const st=prog[m.n]; return `<div class="mhead"><span class="kind">Mission ${m.n} · ${m.kind}</span><h2>${m.title}</h2><span class="goal"><i>goal</i>${m.goal}</span>${st?`<span class="clr${st==='help'?' hp':''}">cleared${st==='help'?' with help':''}</span>`:''}<p class="desc">${m.desc}</p></div>`; }
+function ctl(){ return `<div class="ctl"><button id="hintB"> Hint</button><button id="restartB">↺ Restart</button><button id="nextB" class="key" ${prog[cur]?'':'disabled'}>Next mission ▶</button></div><div class="hintbox" id="hintbox"></div><div class="banner" id="banner"></div>`; }
+function wire(){ $('#hintB').onclick=hint; $('#restartB').onclick=()=>open(cur); $('#nextB').onclick=()=>{ if(cur<5) open(cur+1); }; }
+const SHOW={};
+function hint(){ const hs=HINTS[cur]; if(hintIx>=hs.length) return; $('#hintbox').appendChild(el('p',null,hs[hintIx])); hintIx++; hintsUsed++; if(hintIx===hs.length&&SHOW[cur]) SHOW[cur](); }
+function banner(kind,hd,txt,joke){ const b=$('#banner'); b.className='banner show '+kind; b.innerHTML=`<span class="hd">${hd}</span>${txt}${joke?`<span class="joke">${joke}</span>`:''}`; }
+function won(txt,joke){ prog[cur]=hintsUsed>0?(prog[cur]||'help'):'ok'; saveP(prog); banner('win','Mission cleared',txt,joke); $('#nextB').disabled=cur>=5; drawBar(); }
+function open(n){ cur=n; hintIx=0; hintsUsed=0; drawBar(); window.scrollTo({top:0}); ({1:m1,2:m2,3:m3,4:m4,5:m5})[n](); }
+
+/* ================= M1: weigh ================= */
+const PAY=[
+ {n:'ours · d9f91d3f…6dd6 (block 968,391)',bytes:225,wit:0,fee:1356,note:'no witness: an old-style (P2PKH) payment'},
+ {n:'SegWit · 0db3220c…d854 (block 968,392)',bytes:223,wit:108,marker:2,fee:980,note:'113 ordinary bytes + 2 marker bytes + 108 witness bytes; the marker bytes count like witness'},
+ {n:'P2SH 2-of-3 · ac42ccf5…e290 (block 968,389)',bytes:369,wit:0,fee:2921,note:'the 105-byte script and two signatures are inside the input: all ordinary bytes'},
+];
+const base=p=>p.bytes-p.wit-(p.marker||0);
+let m1s;
+function m1(){
+  m1s={i:0};
+  $('#stage').innerHTML=head(MISSIONS[0])+`<div class="two"><div class="gloss"><b>Weight</b> — how much room a transaction takes in a block: every ordinary byte counts 4, every witness byte counts 1.<br>Weight = 3 × (bytes without witness) + (all bytes). A block may hold at most <b>4,000,000</b>.</div>
+  <div class="gloss"><b>Virtual byte (vB)</b> — weight ÷ 4, rounded up to a whole byte (562 ÷ 4 = 140.5 → 141). For a payment without a witness, virtual bytes = bytes. The explorer's "size" column shows vB.</div></div><div id="m1box"></div>${ctl()}`;
+  wire(); m1draw();
+}
+function m1draw(){
+  const box=$('#m1box'); if(cur!==1||!box) return; box.innerHTML='';
+  PAY.forEach((p,i)=>{ if(i>m1s.i) return; const done=i<m1s.i; const w=W(p.bytes,p.wit+(p.marker||0)), vb=Math.ceil(w/4);
+    const d=el('div','panel',`<p class="lab">${i+1} of 3 · ${p.n}</p>
+    <div class="bar"><i class="b1" style="width:${base(p)/p.bytes*100}%"></i><i class="b2" style="width:${(p.bytes-base(p))/p.bytes*100}%"></i></div>
+    <div class="legend"><i style="background:#1B3A6B"></i>${base(p)} ordinary bytes (× 4)<i style="background:#9ec3e6"></i>${p.bytes-base(p)} witness bytes (× 1) · ${p.bytes} bytes in all · ${p.note}</div>
+    <div class="calc">weight = 3 × ${base(p)} + ${p.bytes} = <b>${done?fmt(w):'?'}</b>   ·   vB = weight ÷ 4${p.marker?' (rounded up)':''} = <b>${done?fmt(vb):'?'}</b></div>
+    ${done?'':`<div class="row"><label>weight <input type="text" class="w" inputmode="numeric"></label><label>vB <input type="text" class="v" inputmode="numeric"></label><button class="btn key go">Check</button><span class="small fb" style="margin:0"></span></div>`}`);
+    d.style.marginBottom='10px'; box.appendChild(d);
+    if(!done){ const chk=()=>{ const a=num(d.querySelector('.w').value), b=num(d.querySelector('.v').value); if(a===w&&b===vb){ m1s.i++; m1draw(); } else d.querySelector('.fb').innerHTML=`<span style="color:var(--red)">${a!==w?'weight is not '+(isNaN(a)?'empty':fmt(a))+'. ':''}${b!==vb?'vB is not '+(isNaN(b)?'empty':fmt(b))+'.':''}</span>`; };
+      d.querySelector('.go').onclick=chk; d.querySelectorAll('input').forEach(x=>x.addEventListener('keydown',e=>{ if(e.key==='Enter') chk(); })); d.querySelector('.w').focus(); } });
+  if(m1s.i>=PAY.length){ if(!prog[1]) won('900 → 225 vB, 562 → 141 vB, 1,476 → 369 vB. Almost the same bytes (225 vs 223), but the SegWit payment takes 63 % of the room: its 108 witness bytes weigh a quarter each.','<i>[Insert Meme: "Is this a pigeon?" man pointing at a witness byte — "Is this a quarter of a byte?"]</i>'); }
+}
+SHOW[1]=()=>{ const d=document.querySelector('#m1box .panel:last-child'); if(d&&d.querySelector('.w')){ const p=PAY[m1s.i]; const w=W(p.bytes,p.wit+(p.marker||0)); d.querySelector('.w').value=w; d.querySelector('.v').value=Math.ceil(w/4); } };
+
+/* ================= M2: fee rate ================= */
+const RATES=[
+ {n:'ours',fee:1356,vb:225,ans:6.03,tol:0.02},
+ {n:'SegWit',fee:980,vb:141,ans:6.95,tol:0.02},
+ {n:'the 83-BTC fee · b5a2af58…f9aa (block 818,087, 23 Nov 2023)',fee:8365497568,vb:110,ans:76049977.9,tol:1},
+];
+let m2s;
+function m2(){
+  m2s={i:0};
+  $('#stage').innerHTML=head(MISSIONS[1])+`<div class="gloss"><b>Fee rate</b> — the fee divided by the size: satoshis per virtual byte (sat/vB). Miners fill the limited room of a block with the highest fee rates first.</div><div id="m2box"></div>${ctl()}`;
+  wire(); m2draw();
+}
+function m2draw(){
+  const box=$('#m2box'); if(cur!==2||!box) return; box.innerHTML='';
+  RATES.forEach((r,i)=>{ if(i>m2s.i) return; const done=i<m2s.i;
+    const d=el('div','panel',`<p class="lab">${i+1} of 3 · ${r.n}</p><div class="calc">fee ÷ vB = ${fmt(r.fee)} ÷ ${r.vb} = <b>${done?fmt(r.ans):'?'}</b> sat/vB${done&&i===2?' <span class="tag bad">about 76 million sat per byte</span>':''}</div>
+    ${done?'':`<div class="row"><label>sat/vB <input type="text" class="r" inputmode="decimal" placeholder="e.g. 6.03"></label><button class="btn key go">Check</button><span class="small fb" style="margin:0"></span></div>`}`);
+    d.style.marginBottom='10px'; box.appendChild(d);
+    if(!done){ const chk=()=>{ const v=num(d.querySelector('.r').value); if(Math.abs(v-r.ans)<=r.tol){ m2s.i++; m2draw(); } else d.querySelector('.fb').innerHTML=`<span style="color:var(--red)">${isNaN(v)?'Type a number.':fmt(v)+' is not it. Divide the fee by the virtual bytes.'}</span>`; };
+      d.querySelector('.go').onclick=chk; d.querySelector('.r').addEventListener('keydown',e=>{ if(e.key==='Enter') chk(); }); d.querySelector('.r').focus(); } });
+  if(m2s.i>=RATES.length&&!prog[2]) won('6.03, 6.95 and 76,049,977.9 sat/vB. The last one moved 55.77 BTC and paid 83.65 BTC to do it — a faulty wallet program built the payment. On 30 Nov 2023 the miners who wrote that block offered to return the fee if the owner signed a message with the private key (⚠️ verify the outcome).','<i>Fee rate is the only number in Bitcoin where "76 million" means "please check your wallet software".</i>');
+}
+SHOW[2]=()=>{ const d=document.querySelector('#m2box .panel:last-child'); if(d&&d.querySelector('.r')) d.querySelector('.r').value=RATES[m2s.i].ans; };
+
+/* ================= M3: pack ================= */
+const LIMIT=4000;
+const CAND=[
+ {id:'A',n:'ours (real)',bytes:225,wit:0,fee:1356},
+ {id:'B',n:'SegWit (real)',bytes:223,wit:110,lbl:'108 witness + 2 marker',fee:980},
+ {id:'C',n:'T3 (illustrative)',bytes:600,wit:0,fee:9000},
+ {id:'D',n:'T4 (illustrative)',bytes:400,wit:200,fee:500},
+ {id:'E',n:'T5 (illustrative)',bytes:150,wit:0,fee:3000},
+ {id:'F',n:'T6 (illustrative)',bytes:300,wit:160,fee:1440},
+ {id:'G',n:'T7 (illustrative)',bytes:1000,wit:0,fee:12000},
+ {id:'H',n:'T8 (illustrative)',bytes:120,wit:40,fee:300},
+].map(c=>({...c,w:W(c.bytes,c.wit),vb:Math.ceil(W(c.bytes,c.wit)/4),rate:c.fee/Math.ceil(W(c.bytes,c.wit)/4)}));
+function best(){ let bestFee=0,bestSet=[]; const n=CAND.length; for(let m=0;m<(1<<n);m++){ let w=0,f=0; const set=[]; for(let i=0;i<n;i++) if(m&(1<<i)){ w+=CAND[i].w; f+=CAND[i].fee; set.push(CAND[i].id); } if(w<=LIMIT&&f>bestFee){ bestFee=f; bestSet=set; } } return {fee:bestFee,set:bestSet}; }
+let m3s;
+function m3(){
+  m3s={on:new Set(),sealed:false};
+  $('#stage').innerHTML=head(MISSIONS[2])+`<div class="pack"><div><p class="lab">waiting payments · click to put in the block</p><div class="txs" id="txs"></div><p class="small">Each card shows bytes, witness bytes, and the fee. Weight, vB and fee rate are computed for you — the formula is Mission 1's.</p></div>
+  <div class="block"><div class="bh">YOUR BLOCK</div><div class="meter" id="meter"></div><div class="kv"><span>weight used</span><b id="wu">0 / ${fmt(LIMIT)}</b></div><div class="kv"><span>fee collected</span><b id="fc">0 sat</b></div><div class="kv"><span>payments</span><b id="pc">0</b></div>
+  <div class="row"><button class="btn key" id="seal">Seal the block</button><button class="btn" id="m3clr">Empty it</button></div><p class="small" id="m3fb"></p></div></div>${ctl()}`;
+  wire(); $('#seal').onclick=m3seal; $('#m3clr').onclick=()=>{ m3s.on.clear(); m3draw(); }; m3draw();
+}
+function m3used(){ return [...m3s.on].reduce((a,id)=>a+CAND.find(c=>c.id===id).w,0); }
+function m3draw(){
+  const box=$('#txs'); if(cur!==3||!box) return; box.innerHTML='';
+  const used=m3used();
+  CAND.forEach(c=>{ const on=m3s.on.has(c.id); const fits=on||used+c.w<=LIMIT; const b=el('button','tx'+(on?' on':'')+(fits?'':' no'),`<div class="tn">${c.n}</div><div class="tm">${c.bytes} B · ${c.lbl||c.wit+' witness'} · fee ${fmt(c.fee)} sat</div><div class="tr">weight ${fmt(c.w)} · ${c.vb} vB · <b>${c.rate.toFixed(2)} sat/vB</b></div>`); b.onclick=()=>{ if(on) m3s.on.delete(c.id); else if(fits) m3s.on.add(c.id); m3draw(); }; box.appendChild(b); });
+  const fee=[...m3s.on].reduce((a,id)=>a+CAND.find(c=>c.id===id).fee,0);
+  const mt=$('#meter'); mt.innerHTML=[...m3s.on].map(id=>`<i style="width:${CAND.find(c=>c.id===id).w/LIMIT*100}%" title="${id}"></i>`).join(''); mt.className='meter'+(used>LIMIT?' over':'');
+  $('#wu').textContent=`${fmt(used)} / ${fmt(LIMIT)}`; $('#fc').textContent=fmt(fee)+' sat'; $('#pc').textContent=m3s.on.size;
+}
+function m3seal(){
+  const used=m3used(); const fee=[...m3s.on].reduce((a,id)=>a+CAND.find(c=>c.id===id).fee,0); const b=best();
+  if(used>LIMIT){ $('#m3fb').textContent='Over the limit: every node would reject this block.'; return; }
+  if(fee===b.fee){ won(`${fmt(fee)} sat in ${fmt(used)} weight units: the best possible. Highest fee rate first — T5 (20), T3 (15), then T6 (8) — and the 12,000-sat payment stays out because it would have taken the whole block for less. The real block 971,108 was packed to 99.8 % the same way.`,'<i>A miner is not greedy for fees. A miner is greedy for fees per weight unit. The difference is 12,000 sat.</i>'); }
+  else { banner('warn',`${fmt(fee)} sat — a better block exists`,`The best block earns <b>${fmt(b.fee)}</b> sat. ${m3s.on.has('G')?'T7 has the biggest fee but only 12 sat/vB — alone it fills the whole block. ':''}Sort by fee rate and take the best while they fit.`); }
+}
+SHOW[3]=()=>{ m3s.on=new Set(best().set); m3draw(); };
+
+/* ================= M4: cost ================= */
+const M4Q=[
+ {q:'You send <b>100 BTC</b> in a payment like ours: 1 input, 2 outputs, 225 vB, when the rate of the moment is 6 sat/vB. What is the fee?',
+  opts:['1,350 sat — about 0.0000135 BTC','0.6 BTC — 0.6 % of the amount','6 sat'],ans:0,why:'225 vB × 6 sat/vB = 1,350 sat. The 100 BTC never enters the formula.'},
+ {q:'The 30-input consolidation of block 968,390 (2,078 vB) is sent when the rate is 4 sat/vB. Fee?',
+  opts:['about 8,300 sat — the real one paid 8,238 (3.96 sat/vB)','about 1,350 sat — same as ours','4 sat per input = 120 sat'],ans:0,why:'2,078 × 4 = 8,312 sat. A 30-input payment costs more than a 1-input one, whatever it moves: inputs are bytes.'},
+ {q:'Two payments of 225 vB each are sent at the same moment and the same rate. One moves 0.01 BTC, the other 1,000 BTC. Which pays the higher fee?',
+  opts:['Neither — same size, same rate, same fee','The 1,000 BTC one, in proportion','The 0.01 BTC one: small payments are penalised'],ans:0,why:'Fee = size × rate. Space in a block is what you pay for; the amount is just 8 bytes either way.'},
+ {q:'On 12 Oct 2026 the suggested rate was 1 sat/vB. The 83-BTC payment paid 76,049,977.9 sat/vB. Roughly how many times the going rate was that?',
+  opts:['about 76 million times','about 83 times','about 110 times'],ans:0,why:'76,049,977.9 ÷ 1 ≈ 76 million. The mempool that day was nearly empty of urgent payments; 1 sat/vB would have done.'},
+];
+let m4s;
+function m4(){ m4s={i:0}; $('#stage').innerHTML=head(MISSIONS[3])+`<div class="gloss"><b>So what does a payment cost?</b> Not a share of the amount: its size times the fee rate of the moment.</div><div id="m4q"></div>${ctl()}`; wire(); m4draw(); }
+function m4draw(){
+  const box=$('#m4q'); if(cur!==4||!box) return; box.innerHTML='';
+  M4Q.forEach((q,i)=>{ if(i>m4s.i) return; const d=el('div','q',`<p class="qt">${i+1}. ${q.q}</p><div class="opts"></div><p class="why"></p>`); const o=d.querySelector('.opts');
+    q.opts.forEach((t,k)=>{ const b=el('button','opt',t); b.onclick=()=>m4ans(i,k,d); if(i<m4s.i){ b.disabled=true; if(k===q.ans) b.classList.add('right'); } o.appendChild(b); });
+    if(i<m4s.i){ d.querySelector('.why').className='why show'; d.querySelector('.why').innerHTML=q.why; } box.appendChild(d); });
+}
+function m4ans(i,k,d){
+  const q=M4Q[i]; const btns=d.querySelectorAll('.opt');
+  if(k===q.ans){ btns.forEach((b,j)=>{ b.disabled=true; if(j===k) b.classList.add('right'); }); d.querySelector('.why').className='why show'; d.querySelector('.why').innerHTML='✓ '+q.why; m4s.i++;
+    if(m4s.i>=M4Q.length) won('Four times the same formula: fee = virtual bytes × sat/vB. The amount is eight bytes; the inputs are the expensive part.','<i>Bitcoin charges by the kilogram, not by the value of the parcel. Send a diamond or a brick: same postage.</i>'); else m4draw(); }
+  else { btns[k].classList.add('wrong'); btns[k].disabled=true; }
+}
+
+/* ================= M5: mempool ================= */
+const BLOCK_VB=1000000;
+const MAXR=40;
+const POOL=[]; for(let r=1;r<=MAXR;r++) POOL[r]=Math.round(3000000*Math.exp(-r/6));   // illustrative shape: lots of cheap payments, few expensive ones
+function ahead(rate){ let s=0; for(let r=rate;r<=MAXR;r++) s+=POOL[r]; return s; } // ties go first (you arrived last)
+function blocksFor(rate){ return Math.floor(ahead(rate)/BLOCK_VB)+1; }
+function cheapest(maxBlocks){ for(let r=1;r<=MAXR;r++) if(blocksFor(r)<=maxBlocks) return r; return MAXR; }
+let m5s;
+function m5(){
+  m5s={rate:5,got:{}};
+  const total=POOL.reduce((a,b)=>a+(b||0),0);
+  $('#stage').innerHTML=head(MISSIONS[4])+`<div class="two"><div class="gloss"><b>Mempool</b> — the waiting room: valid payments that every node has heard of but no block holds yet. mempool.space is named after it.</div>
+  <div class="gloss"><b>Real figures, 2026-10-12 15:11 UTC</b> — 80,848 payments waiting, 39.2 M vB in all; suggested rate <b>1</b> sat/vB. The waiting room below is an <b>illustrative</b> shape (${(total/1e6).toFixed(1)} M vB), chosen so the slider has something to do.</div></div>
+  <div class="mp"><div class="panel"><p class="lab">virtual bytes waiting, by fee rate · dark = ahead of you · gold = you · green = goes in the next block</p><div class="hist" id="hist"></div><div class="axis"><span>1 sat/vB</span><span>10</span><span>20</span><span>30</span><span>${MAXR} sat/vB</span></div>
+  <div class="row" style="margin-top:12px"><span style="min-width:120px">your fee rate: <b id="rv">5</b> sat/vB</span><input type="range" id="rate" min="1" max="${MAXR}" value="5" style="flex:1"></div>
+  <p class="small">A 225-vB payment like ours would pay <b id="cost">—</b> sat at this rate. A block takes ${fmt(BLOCK_VB)} vB (4,000,000 weight ÷ 4).</p></div>
+  <div class="panel"><p class="lab">where you stand</p><div class="kv"><span>vB ahead of you</span><b id="ah">—</b></div><div class="kv"><span>blocks until you are in</span><b id="bl">—</b></div>
+  <div class="big" id="verdict">—</div>
+  <p class="lab" style="margin-top:12px">submit this rate as the cheapest for…</p><div class="row"><button class="btn key" id="sub1">the next block</button><button class="btn key" id="sub3">within 3 blocks</button></div><p class="small" id="m5fb"></p></div></div>${ctl()}`;
+  wire(); const sl=$('#rate'); sl.addEventListener('input',()=>{ m5s.rate=+sl.value; m5upd(); }); $('#sub1').onclick=()=>m5sub(1); $('#sub3').onclick=()=>m5sub(3); m5upd();
+}
+function m5upd(){
+  const h=$('#hist'); if(cur!==5||!h) return; const r=m5s.rate; const mx=POOL[1];
+  const cutNext=cheapest(1);
+  h.innerHTML=''; for(let k=1;k<=MAXR;k++){ const i=el('i'); i.style.height=(POOL[k]/mx*100)+'%'; i.title=`${k} sat/vB: ${fmt(POOL[k])} vB`; if(k===r) i.className='me'; else if(k>r) i.className=k>=cutNext?'in ahead':'ahead'; h.appendChild(i); }
+  $('#rv').textContent=r; $('#cost').textContent=fmt(225*r); const a=ahead(r); const b=blocksFor(r);
+  $('#ah').textContent=fmt(a); $('#bl').textContent=b; const v=$('#verdict'); v.textContent=b===1?'next block':b<=3?`block ${b}`:`block ${b} — about ${b*10} minutes`; v.className='big '+(b===1?'ok':b<=3?'':'bad');
+}
+function m5sub(maxB){
+  const r=m5s.rate; const c=cheapest(maxB); const fb=$('#m5fb');
+  if(r===c){ m5s.got[maxB]=true; fb.innerHTML=`<span style="color:var(--grn)">✓ ${r} sat/vB is the cheapest whole rate for ${maxB===1?'the next block':'3 blocks'}: ${fmt(225*r)} sat for a payment like ours.</span>`; if(m5s.got[1]&&m5s.got[3]&&!prog[5]) won(`Next block: ${cheapest(1)} sat/vB. Within three: ${cheapest(3)} sat/vB. Same payment, a third of the price, for the patience of half an hour. These deadlines are estimates from an illustrative waiting room. On 12 Oct 2026 the <i>suggested</i> rate was 1 sat/vB (⚠️ verify) — a suggestion, not a guarantee of the next block.`,'<i>The mempool is the only queue where you can pay to skip it and everyone thinks that is fair.</i>'); }
+  else if(blocksFor(r)>maxB){ fb.innerHTML=`<span style="color:var(--red)">At ${r} sat/vB you are in block ${blocksFor(r)} — too late for ${maxB===1?'the next block':'3 blocks'}.</span>`; }
+  else { fb.innerHTML=`<span style="color:var(--red)">${r} sat/vB gets you in — but a cheaper rate does too. Slide down until it stops working.</span>`; }
+}
+SHOW[5]=()=>{ m5s.rate=cheapest(1); $('#rate').value=m5s.rate; m5upd(); };
+
+/* ---------- keys, boot ---------- */
+document.addEventListener('keydown',e=>{ if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return; const k=e.key.toLowerCase(); if(e.key>='1'&&e.key<='5') open(+e.key); else if(k==='h') hint(); else if(k==='r') open(cur); else if(k==='n'&&prog[cur]&&cur<5) open(cur+1); });
+$('#resetAll').onclick=()=>{ prog={}; saveP(prog); open(1); };
+function qp(k){ try{ return new URLSearchParams(location.search).get(k); }catch(e){ return null; } }
+open(+(qp('mission')||1)||1);
+
+/* ---------- selftest ---------- */
+function selftest(){
+  const out=[]; const ok=(n,c,d)=>out.push((c?'PASS ':'FAIL ')+n+(c?'':' — '+(d||'')));
+  const real=prog; prog={};
+  try{
+    ok('ours 900/225', W(225,0)===900&&VB(225,0)===225); ok('segwit 562/141', W(223,110)===562&&VB(223,110)===141); ok('p2sh 1476/369', W(369,0)===1476);
+    ok('rates', Math.abs(1356/225-6.03)<0.005&&Math.abs(980/141-6.95)<0.005&&Math.abs(8365497568/110-76049977.9)<0.05);
+    const b=best(); ok('best pack = C+E+F 13,440', b.fee===13440&&b.set.join()==='C,E,F', JSON.stringify(b));
+    ok('greedy by rate reaches optimum', (()=>{ let w=0,f=0; CAND.slice().sort((x,y)=>y.rate-x.rate).forEach(c=>{ if(w+c.w<=LIMIT){w+=c.w;f+=c.fee;} }); return f===b.fee; })());
+    ok('cheapest next-block rate is between 10 and 30', cheapest(1)>10&&cheapest(1)<30, cheapest(1)); ok('3-block rate cheaper', cheapest(3)<cheapest(1));
+    open(1); PAY.forEach(()=>{ SHOW[1](); document.querySelector('#m1box .panel:last-child .go').click(); }); ok('M1 clears', !!prog[1]);
+    open(2); RATES.forEach(()=>{ SHOW[2](); document.querySelector('#m2box .panel:last-child .go').click(); }); ok('M2 clears', !!prog[2]);
+    open(3); m3s.on=new Set(['G']); m3draw(); m3seal(); ok('M3 T7 alone not cleared', !prog[3]); SHOW[3](); m3seal(); ok('M3 clears', !!prog[3]);
+    open(4); M4Q.forEach((q,i)=>{ m4draw(); const d=document.querySelectorAll('#m4q .q')[i]; m4ans(i,q.ans,d); }); ok('M4 clears', !!prog[4]);
+    open(5); m5s.rate=cheapest(1); m5upd(); m5sub(1); m5s.rate=cheapest(3); m5upd(); m5sub(3); ok('M5 clears', !!prog[5]);
+  }catch(e){ out.push('FAIL exception — '+e.message+' '+(e.stack||'').split('\n')[1]); }
+  prog=real; saveP(prog); open(1);
+  const fails=out.filter(l=>l.startsWith('FAIL')).length; out.push(fails?`SELFTEST: ${fails} FAILED`:'SELFTEST: ALL PASS');
+  const r=$('#selftest-report'); r.style.display='block'; r.textContent=out.join('\n');
+}
+if(qp('selftest')==='1'){ window.onerror=(m)=>{ const r=$('#selftest-report'); r.style.display='block'; r.textContent+='\nFAIL script error — '+m; }; setTimeout(selftest,50); }
+</script>
+</body>
+</html>

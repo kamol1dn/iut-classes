@@ -1,0 +1,3251 @@
+1
+00:00:00,617 --> 00:00:00,857
+okay
+
+2
+00:00:01,877 --> 00:00:05,238
+so we continue with the second one so i just want to show you guys
+
+3
+00:00:06,698 --> 00:00:06,978
+what
+
+4
+00:00:08,719 --> 00:00:12,400
+tools i have in the platform where i can
+
+5
+00:00:13,480 --> 00:00:15,180
+see very good statistics
+
+6
+00:00:16,641 --> 00:00:20,041
+about the activities in the in the platform so
+
+7
+00:00:20,942 --> 00:00:22,302
+what is it just a second
+
+8
+00:00:23,885 --> 00:00:26,046
+So it's here. So as you can see, I
+
+9
+00:00:26,766 --> 00:00:33,349
+can see stuff, okay? So by now I can see that 88 only students had a look at the
+
+10
+00:00:33,409 --> 00:00:34,009
+syllables
+
+11
+00:00:34,970 --> 00:00:35,150
+and
+
+12
+00:00:36,250 --> 00:00:40,232
+67 of you watched the videos only, okay?
+
+13
+00:00:40,952 --> 00:00:42,534
+I don't know, 42 is watched.
+
+14
+00:00:42,974 --> 00:00:45,857
+Some of you watched it multiple times maybe,
+
+15
+00:00:46,658 --> 00:00:49,460
+but you have to watch. We have to attend the class.
+
+16
+00:00:50,181 --> 00:00:54,565
+Maybe at some point if I don't like this, I might make sure that
+
+17
+00:00:55,967 --> 00:00:57,208
+you have to also
+
+18
+00:00:58,770 --> 00:01:00,651
+pass the watching the video.
+
+19
+00:01:00,671 --> 00:01:01,893
+I can make it compulsory.
+
+20
+00:01:02,802 --> 00:01:03,282
+So please
+
+21
+00:01:04,203 --> 00:01:07,924
+follow the classes. I know it's just started so we can continue.
+
+22
+00:01:07,944 --> 00:01:08,064
+So
+
+23
+00:01:10,105 --> 00:01:13,367
+these are the slides. So what we were talking last time.
+
+24
+00:01:13,407 --> 00:01:15,028
+So last time we said that...
+
+25
+00:01:19,264 --> 00:01:22,408
+there was a big problem okay so there was a big problem
+
+26
+00:01:23,168 --> 00:01:29,736
+in 2008 and then people started to looking for another solution so in the solution the idea
+
+27
+00:01:30,016 --> 00:01:30,557
+everyone
+
+28
+00:01:32,379 --> 00:01:34,441
+keeps a copy of the
+
+29
+00:01:36,913 --> 00:01:37,293
+ledger
+
+30
+00:01:39,114 --> 00:01:39,694
+would be
+
+31
+00:01:40,455 --> 00:01:44,037
+the first thing to start for instance we start by answering to the question of
+
+32
+00:01:45,417 --> 00:01:50,820
+who keeps the ledger so in this case the answer is with this solution that I'm going to show
+
+33
+00:01:50,880 --> 00:01:57,163
+you the idea everyone gets the copy okay so nobody can change it when everyone has it
+
+34
+00:01:58,103 --> 00:02:01,485
+and if you lost one of the copies it's okay
+
+35
+00:02:02,786 --> 00:02:08,451
+we can check the other. So the idea is that if I just gave the money to the nozzle, we will
+
+36
+00:02:08,952 --> 00:02:12,956
+put this notebook, the ledger, to everyone else, okay?
+
+37
+00:02:13,616 --> 00:02:18,962
+And this is called shared ledger, and the shared ledger means the ledger that many people keep
+
+38
+00:02:19,002 --> 00:02:19,923
+together, okay?
+
+39
+00:02:20,643 --> 00:02:22,145
+And everyone had a copy of it, and
+
+40
+00:02:23,086 --> 00:02:26,029
+the technical name for that is the distributed ledger.
+
+41
+00:02:27,335 --> 00:02:29,637
+The copies are distributed over many
+
+42
+00:02:30,738 --> 00:02:37,144
+computers. In the case of the blockchain, the data is in your computer.
+
+43
+00:02:38,565 --> 00:02:41,227
+All the ideas about this I will
+
+44
+00:02:42,288 --> 00:02:42,868
+describe
+
+45
+00:02:44,670 --> 00:02:47,793
+step by step separately in the upcoming classes.
+
+46
+00:02:47,833 --> 00:02:53,417
+Here I'm just giving you the very broad idea about everything else in the blockchain in one
+
+47
+00:02:53,457 --> 00:02:53,878
+lecture.
+
+48
+00:02:54,598 --> 00:02:59,020
+At least in one week, I want to give you the whole big picture and then we divide the things
+
+49
+00:02:59,140 --> 00:03:01,662
+into pieces and then we try to get more details.
+
+50
+00:03:05,404 --> 00:03:06,705
+in this idea to
+
+51
+00:03:07,946 --> 00:03:11,950
+overcome the the problem of the banks having the copy
+
+52
+00:03:14,052 --> 00:03:20,858
+for everyone and no one actually owns the ledger in this case everyone owns it is nobody owns
+
+53
+00:03:20,938 --> 00:03:23,640
+actually because everyone has the copy so this
+
+54
+00:03:24,381 --> 00:03:24,762
+idea
+
+55
+00:03:26,061 --> 00:03:26,882
+has this little
+
+56
+00:03:27,763 --> 00:03:31,566
+issue with it, okay? So the issue is that when you have the
+
+57
+00:03:32,907 --> 00:03:33,308
+copy
+
+58
+00:03:34,529 --> 00:03:36,110
+of the ledger in one
+
+59
+00:03:37,011 --> 00:03:41,435
+shop, for instance, there it says, sorry, I have to move it here.
+
+60
+00:03:42,316 --> 00:03:42,977
+Then it says,
+
+61
+00:03:45,980 --> 00:03:48,982
+Aziz gave money to Delnozza and
+
+62
+00:03:51,687 --> 00:03:53,348
+Mahler gave the
+
+63
+00:03:55,229 --> 00:03:56,390
+coin to the shop B,
+
+64
+00:03:57,150 --> 00:03:59,912
+and in the shop B, what we have,
+
+65
+00:04:01,413 --> 00:04:01,553
+and
+
+66
+00:04:03,274 --> 00:04:04,435
+so she spent money in A,
+
+67
+00:04:05,895 --> 00:04:07,476
+and she spent the money in B.
+
+68
+00:04:07,556 --> 00:04:08,077
+But what if
+
+69
+00:04:08,857 --> 00:04:11,579
+in the other copy, since we don't know the order,
+
+70
+00:04:12,319 --> 00:04:17,823
+when she actually spent, like if it is milliseconds, the other shop B,
+
+71
+00:04:19,524 --> 00:04:25,551
+In his ledger he can write, I got the money first and then she spent the money on another shop.
+
+72
+00:04:25,931 --> 00:04:28,434
+So that's a very huge problem
+
+73
+00:04:29,155 --> 00:04:29,395
+when
+
+74
+00:04:30,236 --> 00:04:34,981
+it comes to this problem, the idea of having a ledger copied in all the
+
+75
+00:04:35,682 --> 00:04:37,104
+nodes, in all the computers.
+
+76
+00:04:37,604 --> 00:04:43,407
+The same payments can have a different order and which one we have to refuse.
+
+77
+00:04:43,467 --> 00:04:48,529
+This is the biggest problem because the copy of the document,
+
+78
+00:04:52,471 --> 00:04:57,453
+the transaction that you made can travel to different computers in different speeds because
+
+79
+00:04:57,533 --> 00:04:59,835
+if you know, as you remember,
+
+80
+00:05:01,755 --> 00:05:07,136
+Since everyone has a copy, some guy can live in Tashkent, some guy can live in Khorasan.
+
+81
+00:05:07,676 --> 00:05:11,497
+Sending a data to Tashkent or Khorasan can travel in different times.
+
+82
+00:05:13,037 --> 00:05:19,018
+Mohler Roy's payment can reach some people in one order and other people in the other order
+
+83
+00:05:19,058 --> 00:05:22,799
+because of the network, because of the internet, how it works.
+
+84
+00:05:22,839 --> 00:05:28,320
+Then the cheater may even show different people in different lines because of this issue.
+
+85
+00:05:31,911 --> 00:05:33,092
+We have to at least
+
+86
+00:05:35,172 --> 00:05:41,414
+agree that many copies are only useful only if we can agree that the agreement
+
+87
+00:05:42,614 --> 00:05:45,334
+between all of us will follow some kind of order.
+
+88
+00:05:46,495 --> 00:05:49,375
+This agreement is called consensus.
+
+89
+00:05:49,395 --> 00:05:52,196
+Consensus I will be using a lot in this course, the wording.
+
+90
+00:05:53,036 --> 00:05:57,697
+Consensus means the agreement between all the copies about the
+
+91
+00:05:58,418 --> 00:05:59,958
+order of the records
+
+92
+00:06:00,958 --> 00:06:01,618
+in the ledger.
+
+93
+00:06:02,519 --> 00:06:03,839
+We have to agree first
+
+94
+00:06:04,720 --> 00:06:10,182
+with everyone else. The order is that Mallorca spend money in shop A and then spend the money
+
+95
+00:06:10,202 --> 00:06:14,483
+in shop B. The others cannot have different orders.
+
+96
+00:06:14,623 --> 00:06:16,644
+Everyone has to follow this and this
+
+97
+00:06:18,825 --> 00:06:21,806
+agreement on specific rules is called consensus rules.
+
+98
+00:06:23,845 --> 00:06:27,346
+In a class, we will vote for the final version of the timetable.
+
+99
+00:06:27,966 --> 00:06:31,507
+For instance, we all agree that this timetable should be a final.
+
+100
+00:06:31,887 --> 00:06:35,468
+So everyone agrees, and then only after that the order is decided, okay?
+
+101
+00:06:36,049 --> 00:06:37,829
+And everyone copies that order.
+
+102
+00:06:38,109 --> 00:06:39,550
+This is called consensus.
+
+103
+00:06:39,610 --> 00:06:44,651
+This is a very interesting idea in the blockchain, and we will describe this in week six or
+
+104
+00:06:44,731 --> 00:06:45,311
+seven, but
+
+105
+00:06:46,392 --> 00:06:47,432
+these numbers are quite...
+
+106
+00:06:48,694 --> 00:06:53,638
+dynamic so be careful so it might be week six or week seven so we'll see depending on how we
+
+107
+00:06:53,698 --> 00:06:54,839
+proceed so
+
+108
+00:06:56,340 --> 00:06:57,381
+uh and
+
+109
+00:06:58,442 --> 00:07:04,787
+in these uh documents in these documents that you keep the copy uh they
+
+110
+00:07:06,238 --> 00:07:12,950
+ever pages, right? The notebook has a page and this page, we call them blocks in the
+
+111
+00:07:12,990 --> 00:07:14,192
+blockchain world, okay?
+
+112
+00:07:14,693 --> 00:07:16,796
+And the blocks means that
+
+113
+00:07:17,878 --> 00:07:18,679
+when you agree,
+
+114
+00:07:20,876 --> 00:07:21,697
+when you agree
+
+115
+00:07:22,598 --> 00:07:26,521
+on a single line with the colleagues, one by one,
+
+116
+00:07:27,422 --> 00:07:27,682
+these
+
+117
+00:07:28,623 --> 00:07:33,086
+agreements, these transactions will form the pages in your notebook.
+
+118
+00:07:33,106 --> 00:07:34,668
+So you write in your notebook, you say
+
+119
+00:07:35,408 --> 00:07:42,273
+in the page 41, for instance, you say Aziz spent money to Delnoza, uh bigzot give
+
+120
+00:07:42,353 --> 00:07:44,454
+to money to aziz and all these
+
+121
+00:07:45,214 --> 00:07:51,435
+multiple transactions they are collected into one page and everyone agrees on a page not in
+
+122
+00:07:51,455 --> 00:07:56,836
+a two transaction not an intent transactions but on a page we we have to i'm trying to give
+
+123
+00:07:56,876 --> 00:08:02,677
+you the the analogy in the real world where we have a ledger paper notebook and every page
+
+124
+00:08:02,757 --> 00:08:03,177
+is the
+
+125
+00:08:04,317 --> 00:08:07,798
+uh the collection of transactions so one page is many transactions
+
+126
+00:08:08,518 --> 00:08:15,143
+agreed on together okay we have to agree on the page not on the specific transactions
+
+127
+00:08:15,824 --> 00:08:22,190
+and these pages have a numbers just like your notebook for instance in this case it's a page
+
+128
+00:08:22,671 --> 00:08:26,795
+41 and every page has numbers like this and they are
+
+129
+00:08:27,616 --> 00:08:27,916
+added
+
+130
+00:08:28,986 --> 00:08:31,969
+strictly one after the other, 41, 42, 46.
+
+131
+00:08:32,029 --> 00:08:37,313
+Why? Because we don't want that some guy comes and inserts into the notebook the additional
+
+132
+00:08:37,353 --> 00:08:40,956
+page like 42. If he inserts 42, what happens?
+
+133
+00:08:41,516 --> 00:08:44,279
+We will have the two 42 pages, okay?
+
+134
+00:08:44,619 --> 00:08:46,260
+That's a very important idea.
+
+135
+00:08:46,981 --> 00:08:47,161
+And
+
+136
+00:08:48,262 --> 00:08:49,443
+we can think of a little
+
+137
+00:08:50,684 --> 00:08:53,186
+issue that will be discussed a lot in this course.
+
+138
+00:08:54,527 --> 00:08:54,867
+What if
+
+139
+00:08:55,568 --> 00:08:57,389
+someone really wants to insert
+
+140
+00:08:58,272 --> 00:08:59,033
+some page
+
+141
+00:09:01,295 --> 00:09:01,636
+here,
+
+142
+00:09:02,436 --> 00:09:07,342
+so it's 41, and then after comes 42, and then after comes 43.
+
+143
+00:09:07,842 --> 00:09:10,945
+What if someone wants to insert here some
+
+144
+00:09:12,927 --> 00:09:14,869
+updated transactions, 42?
+
+145
+00:09:15,710 --> 00:09:16,992
+Can you imagine what he has to do?
+
+146
+00:09:18,650 --> 00:09:19,591
+Two seconds, think.
+
+147
+00:09:20,593 --> 00:09:24,318
+If he inserts this, since this is a duplicate, what he has to do?
+
+148
+00:09:24,519 --> 00:09:27,263
+He has to change this to 43, exactly, right?
+
+149
+00:09:27,804 --> 00:09:29,526
+Then he has to change 44.
+
+150
+00:09:31,040 --> 00:09:36,262
+This is the best solution in the blockchain that we'll discuss again, this idea.
+
+151
+00:09:36,742 --> 00:09:39,583
+This is the best thing the blockchain offers, okay?
+
+152
+00:09:39,603 --> 00:09:42,724
+So the attacker has a very
+
+153
+00:09:43,484 --> 00:09:44,204
+big problem
+
+154
+00:09:45,005 --> 00:09:45,165
+in
+
+155
+00:09:47,205 --> 00:09:48,506
+inserting these kinds of pages.
+
+156
+00:09:49,006 --> 00:09:54,828
+so transactions since they are collected into the blocks so we call them not a page
+
+157
+00:09:55,629 --> 00:10:01,391
+in the blockchain world is called the blocks and the ledger grows one block at a time so one
+
+158
+00:10:01,431 --> 00:10:07,773
+page at a time okay block is just page in the shared ledger so always try
+
+159
+00:10:07,793 --> 00:10:08,454
+to
+
+160
+00:10:09,934 --> 00:10:15,416
+associate it with this word okay it's just a group of transactions that are added to the ledger
+
+161
+00:10:15,917 --> 00:10:16,337
+together
+
+162
+00:10:17,423 --> 00:10:22,086
+For example, in the 40 points page, we have all the loans just like this.
+
+163
+00:10:22,146 --> 00:10:24,347
+So that's the terminology we're going to use, okay?
+
+164
+00:10:25,488 --> 00:10:26,528
+And you might have a
+
+165
+00:10:27,449 --> 00:10:33,652
+question asking that in the notebook, how we put all these pages together?
+
+166
+00:10:33,712 --> 00:10:34,933
+We glue them together, right?
+
+167
+00:10:35,493 --> 00:10:42,197
+And this same glue, we have the idea of gluing in the blockchain world and we call it what?
+
+168
+00:10:42,397 --> 00:10:43,238
+Chain, okay?
+
+169
+00:10:44,098 --> 00:10:46,879
+pages are linked in order blocks are
+
+170
+00:10:47,699 --> 00:10:48,479
+linked in order
+
+171
+00:10:49,279 --> 00:10:49,519
+and uh
+
+172
+00:10:50,360 --> 00:10:51,840
+there is another term guys
+
+173
+00:10:53,280 --> 00:10:57,862
+in the in the in the beginning i i will introduce you a lot of terminology and then we'll be
+
+174
+00:10:57,982 --> 00:11:04,403
+using them but your job uh is to is to memorize them okay remember but the best way to
+
+175
+00:11:04,503 --> 00:11:05,164
+memorize is by
+
+176
+00:11:08,385 --> 00:11:08,826
+using them
+
+177
+00:11:09,666 --> 00:11:14,470
+in practice. I have a lot of practical sessions, I have demo sessions, so you'll be watching,
+
+178
+00:11:14,530 --> 00:11:16,132
+you'll be doing some homeworks
+
+179
+00:11:17,092 --> 00:11:19,194
+and this is how you're going to remember.
+
+180
+00:11:19,234 --> 00:11:22,937
+Now don't try to memorize everything, just try to
+
+181
+00:11:24,058 --> 00:11:28,001
+understand the idea and when you read the idea you should be able to at least
+
+182
+00:11:28,742 --> 00:11:29,743
+recall what I told you.
+
+183
+00:11:31,854 --> 00:11:34,755
+the seal what is the seal seal is the
+
+184
+00:11:35,656 --> 00:11:37,637
+when you have the content of the page
+
+185
+00:11:39,938 --> 00:11:40,278
+you
+
+186
+00:11:42,479 --> 00:11:46,621
+based on that content you can create the seal it can you can think of like
+
+187
+00:11:49,002 --> 00:11:50,303
+like a stamp or
+
+188
+00:11:51,604 --> 00:11:52,605
+laminate okay
+
+189
+00:11:53,465 --> 00:11:59,009
+you do the laminate of the page right so when you do the laminate is the seal of the of the
+
+190
+00:11:59,049 --> 00:12:02,511
+page in the notebook again think of a notebook where you do the laminations
+
+191
+00:12:03,272 --> 00:12:03,652
+there why
+
+192
+00:12:06,098 --> 00:12:07,278
+There, when you do this,
+
+193
+00:12:07,999 --> 00:12:10,580
+you are sealing the document, okay?
+
+194
+00:12:11,080 --> 00:12:12,380
+So blocks works like this.
+
+195
+00:12:12,420 --> 00:12:12,980
+So you can
+
+196
+00:12:13,741 --> 00:12:17,082
+compute a small code on the page that you have,
+
+197
+00:12:17,902 --> 00:12:22,944
+and if you change even a single letter on that page, seal
+
+198
+00:12:23,724 --> 00:12:25,685
+should come out completely different.
+
+199
+00:12:25,705 --> 00:12:27,946
+So you have to remove the laminate.
+
+200
+00:12:28,746 --> 00:12:29,930
+if you want to change something, right?
+
+201
+00:12:30,070 --> 00:12:31,674
+So you have to redo the laminate again.
+
+202
+00:12:31,694 --> 00:12:34,181
+So it will not be the same laminate in the future.
+
+203
+00:12:34,221 --> 00:12:34,361
+So
+
+204
+00:12:35,144 --> 00:12:36,988
+each new page copy
+
+205
+00:12:38,476 --> 00:12:40,057
+the seal of the page before it's
+
+206
+00:12:40,938 --> 00:12:47,821
+in the top. So the idea is that not only we seal the page, we seal, we do the lamination
+
+207
+00:12:47,981 --> 00:12:48,882
+of one page
+
+208
+00:12:50,163 --> 00:12:50,583
+with
+
+209
+00:12:51,603 --> 00:12:55,245
+the previous one. That's very interesting idea and I want to show you this.
+
+210
+00:12:55,326 --> 00:12:57,787
+Again, this is called the hashing.
+
+211
+00:12:58,047 --> 00:13:02,750
+We'll study this. I just want to give you today the very brief idea how it works, okay?
+
+212
+00:13:04,174 --> 00:13:05,674
+always think of your notebook.
+
+213
+00:13:05,714 --> 00:13:07,835
+So you have a notebook, you have a page 41,
+
+214
+00:13:08,935 --> 00:13:12,196
+and he has a laminated, this lamination, okay?
+
+215
+00:13:12,956 --> 00:13:14,116
+Some strange number.
+
+216
+00:13:14,917 --> 00:13:17,017
+And in that page, you have only two transactions.
+
+217
+00:13:17,077 --> 00:13:21,518
+Can you have only two? Yes, you can have hundreds, you can have two hundreds, we'll discuss
+
+218
+00:13:21,538 --> 00:13:26,520
+this point. So for now, I have some data in that page.
+
+219
+00:13:26,540 --> 00:13:26,700
+So
+
+220
+00:13:27,560 --> 00:13:27,840
+then,
+
+221
+00:13:29,980 --> 00:13:30,701
+after that,
+
+222
+00:13:32,622 --> 00:13:39,512
+we come we have the next page 42 okay 42 is another page in your notebook and of course
+
+223
+00:13:39,972 --> 00:13:44,779
+it comes with its own uh seal okay it comes with its own seal
+
+224
+00:13:45,990 --> 00:13:48,171
+Sorry, for my drawing, I confused
+
+225
+00:13:49,172 --> 00:13:51,093
+something. This one is the previous one.
+
+226
+00:13:51,173 --> 00:13:52,554
+This is the seal of the previous one.
+
+227
+00:13:53,014 --> 00:13:55,716
+This is the previous one, and this is your own seal, okay?
+
+228
+00:13:55,736 --> 00:14:01,060
+So you keep the seal of the previous guy on top.
+
+229
+00:14:01,880 --> 00:14:08,805
+So you take this old document, So you take all this document with the seal of the
+
+230
+00:14:08,845 --> 00:14:12,648
+previous guy, and then you will seal it again on top of this.
+
+231
+00:14:13,228 --> 00:14:15,770
+Why you do this? This is done
+
+232
+00:14:16,630 --> 00:14:20,153
+to create the chain. We want to have a chain so that
+
+233
+00:14:21,134 --> 00:14:21,934
+even if someone
+
+234
+00:14:22,895 --> 00:14:25,457
+has a chance to change something here,
+
+235
+00:14:28,139 --> 00:14:33,723
+the other page 43 that is pointing to that seal will not be anymore the same.
+
+236
+00:14:34,865 --> 00:14:39,707
+The second beauty of this algorithm, this idea is that
+
+237
+00:14:40,888 --> 00:14:42,869
+first one was that no one
+
+238
+00:14:43,589 --> 00:14:47,290
+can change the data inside because the seal number will change.
+
+239
+00:14:47,771 --> 00:14:54,453
+But also this time, the second advantage of this algorithm is that that if when you change
+
+240
+00:14:54,493 --> 00:15:00,475
+some document, like if you send the nozzle sent to begs out 20,000 zooms, even if you manage
+
+241
+00:15:00,495 --> 00:15:01,355
+to get the
+
+242
+00:15:02,956 --> 00:15:09,598
+similar seal, the number for page two and try to insert it there, you cannot do it because
+
+243
+00:15:09,618 --> 00:15:11,439
+the page three is
+
+244
+00:15:12,359 --> 00:15:15,240
+expecting this number, B09E.
+
+245
+00:15:16,560 --> 00:15:20,582
+you will never be able to get this number because you changed the document.
+
+246
+00:15:20,622 --> 00:15:21,783
+That's the idea behind
+
+247
+00:15:22,503 --> 00:15:24,924
+the blockchain. That's why it's called blockchain.
+
+248
+00:15:25,584 --> 00:15:28,846
+Each block carries the seal of the one before it.
+
+249
+00:15:29,446 --> 00:15:30,747
+That's called the link.
+
+250
+00:15:31,667 --> 00:15:32,908
+Linking the chain.
+
+251
+00:15:34,649 --> 00:15:36,189
+We have a chain of documents.
+
+252
+00:15:36,389 --> 00:15:42,932
+That's how we link it. Chain means blocks are linked in order because each block carries the
+
+253
+00:15:42,972 --> 00:15:43,473
+seal of the
+
+254
+00:15:44,453 --> 00:15:49,037
+lock before it so there is an invisible this kind of chain between the
+
+255
+00:15:49,778 --> 00:15:52,460
+between the pages so that's the that's the idea so
+
+256
+00:15:54,802 --> 00:15:59,647
+that's a very nice idea to have the ledger in this format
+
+257
+00:16:01,719 --> 00:16:03,220
+And this blockchain idea
+
+258
+00:16:04,021 --> 00:16:08,364
+is not only related to the cryptocurrencies, okay?
+
+259
+00:16:08,384 --> 00:16:14,749
+So you have to clearly differentiate the idea of a cryptocurrency from the idea of a blockchain,
+
+260
+00:16:14,769 --> 00:16:16,891
+because I will also explain the cryptocurrency.
+
+261
+00:16:16,931 --> 00:16:20,053
+Blockchain is an idea, is this chain, okay?
+
+262
+00:16:20,073 --> 00:16:24,497
+It can contain not only transactions inside, you can put anything inside.
+
+263
+00:16:24,517 --> 00:16:24,657
+So
+
+264
+00:16:26,218 --> 00:16:30,462
+in the world today, blockchain are not only used for the cryptocurrency,
+
+265
+00:16:31,603 --> 00:16:36,288
+This idea of putting pieces together in a shared ledger, grouping them into the blocks and
+
+266
+00:16:36,328 --> 00:16:37,529
+then linking with the chain,
+
+267
+00:16:38,370 --> 00:16:39,592
+you get the blockchain.
+
+268
+00:16:40,373 --> 00:16:43,316
+And it shouldn't be always about money, okay?
+
+269
+00:16:44,197 --> 00:16:45,198
+There are other
+
+270
+00:16:46,640 --> 00:16:47,741
+businesses using
+
+271
+00:16:48,902 --> 00:16:51,024
+the blockchain in various fields.
+
+272
+00:16:51,545 --> 00:16:56,993
+For instance, of course there is a digital money where we do the payment between the people
+
+273
+00:16:57,093 --> 00:17:03,883
+across the borders whenever we want without any bank in the middle and we'll study this in
+
+274
+00:17:03,923 --> 00:17:05,826
+the next part of my slides.
+
+275
+00:17:07,047 --> 00:17:09,889
+But not only, these are used in the supply chain.
+
+276
+00:17:10,029 --> 00:17:15,032
+The blockchain is used in supply chains where shops and farms, they share one record of where
+
+277
+00:17:15,052 --> 00:17:19,935
+the food coming from. And for instance, in 2018, Walmart has a real scenario.
+
+278
+00:17:20,335 --> 00:17:25,218
+If you open up the news, I will talk about this when I come to this point of supply chains.
+
+279
+00:17:26,098 --> 00:17:26,359
+There,
+
+280
+00:17:27,080 --> 00:17:28,141
+Walmart actually
+
+281
+00:17:28,882 --> 00:17:32,847
+used the blockchain to trace the mango origin, where the mango came from,
+
+282
+00:17:33,688 --> 00:17:35,690
+thanks to the blockchain in two seconds.
+
+283
+00:17:36,211 --> 00:17:38,253
+In the past, they were doing this in seven days.
+
+284
+00:17:39,192 --> 00:17:40,532
+or in the land and property.
+
+285
+00:17:40,612 --> 00:17:42,953
+Governments, registries, they try to
+
+286
+00:17:44,594 --> 00:17:46,514
+record the land titles on a blockchain.
+
+287
+00:17:47,034 --> 00:17:51,575
+For instance, Georgia is using it, Sweden is using it, it's a pilot process, but
+
+288
+00:17:52,316 --> 00:17:53,456
+they still used it, okay?
+
+289
+00:17:53,476 --> 00:17:59,898
+So they use the blockchain to record the ownership of the land and the property.
+
+290
+00:18:00,478 --> 00:18:02,438
+Or for the certificates, there are a lot of
+
+291
+00:18:03,619 --> 00:18:06,439
+research work going on, also,
+
+292
+00:18:08,660 --> 00:18:15,187
+uh many projects uh are done on the blockchain for the diplomas some universities provide the
+
+293
+00:18:15,207 --> 00:18:18,191
+diploma in the blockchain why because blockchain is
+
+294
+00:18:19,752 --> 00:18:24,518
+doesn't require any middleman and it's a very trustable system
+
+295
+00:18:25,579 --> 00:18:30,204
+where the authenticity of the document can be easily verified okay
+
+296
+00:18:31,325 --> 00:18:36,871
+all the details we are going to discuss but why I'm showing you this today because during the
+
+297
+00:18:36,991 --> 00:18:43,117
+course you will be working on a project in your project you have to select some field in Uzbekistan
+
+298
+00:18:44,138 --> 00:18:45,099
+and actually
+
+299
+00:18:46,781 --> 00:18:52,784
+design the implementation of a blockchain in that field okay forget about the cryptocurrency
+
+300
+00:18:52,824 --> 00:18:59,628
+okay we will be working with the blockchain that's not only tied to money not only money
+
+301
+00:18:59,948 --> 00:19:04,090
+can be exchanged thanks to the blockchain but many interesting other things that we're going
+
+302
+00:19:04,130 --> 00:19:08,536
+to cover in this course so The course first I will teach you what is a blockchain, cryptocurrency,
+
+303
+00:19:08,856 --> 00:19:12,041
+what is a Bitcoin, Ethereum, but then we'll see actually
+
+304
+00:19:13,123 --> 00:19:16,388
+where else these ideas are being implemented.
+
+305
+00:19:17,345 --> 00:19:18,465
+So by the
+
+306
+00:19:21,527 --> 00:19:25,128
+end of the course, you will see that many projects are stayed just like pilots.
+
+307
+00:19:25,308 --> 00:19:29,410
+They didn't continue just like metaverse by the Facebook.
+
+308
+00:19:29,510 --> 00:19:35,512
+They simply stopped because they found that ordinary database is even better than the blockchain
+
+309
+00:19:35,552 --> 00:19:35,973
+is enough.
+
+310
+00:19:37,433 --> 00:19:40,575
+and then i will show you which ones actually work which are failed which are
+
+311
+00:19:41,436 --> 00:19:46,599
+supposed to be not used by you now because it's obsolete i will speak about this by the end
+
+312
+00:19:46,659 --> 00:19:50,322
+of the course and i will show you which projects are being
+
+313
+00:19:52,363 --> 00:19:53,743
+implemented in Uzbekistan.
+
+314
+00:19:53,943 --> 00:19:56,144
+So that's what we are going to discuss very soon.
+
+315
+00:19:56,164 --> 00:20:00,285
+So blockchains are used where many parties must share
+
+316
+00:20:01,065 --> 00:20:03,426
+one record that none of them control.
+
+317
+00:20:03,506 --> 00:20:03,706
+So
+
+318
+00:20:04,426 --> 00:20:07,687
+not only in the field of the currency.
+
+319
+00:20:07,847 --> 00:20:08,787
+So this can be
+
+320
+00:20:10,567 --> 00:20:13,608
+used in many, many fields and we're going to discuss this.
+
+321
+00:20:15,040 --> 00:20:16,982
+in the part one what you have to
+
+322
+00:20:17,702 --> 00:20:22,666
+remember this is your terminology you can just print out as a small sheet for you
+
+323
+00:20:23,507 --> 00:20:23,647
+and
+
+324
+00:20:24,888 --> 00:20:25,369
+you can
+
+325
+00:20:27,030 --> 00:20:27,410
+always
+
+326
+00:20:28,491 --> 00:20:31,254
+keep it with you just to remember okay in your notes so
+
+327
+00:20:32,178 --> 00:20:38,362
+is almost enough if you know this to read any news about blockchain today if you open up the
+
+328
+00:20:38,382 --> 00:20:40,063
+news
+
+329
+00:20:40,843 --> 00:20:42,084
+and if you read something
+
+330
+00:20:42,985 --> 00:20:44,746
+most of the time you will find them
+
+331
+00:20:45,506 --> 00:20:50,029
+and of course i will explain all the details what's a seal what's a hash
+
+332
+00:20:50,949 --> 00:20:54,672
+what is the digital money in more detail in the upcoming classes okay so
+
+333
+00:20:56,353 --> 00:21:01,597
+In this part of the video, I ask you to simply pause the recording, answer
+
+334
+00:21:03,038 --> 00:21:05,320
+this question on a paper, then check your answers,
+
+335
+00:21:06,681 --> 00:21:09,883
+but I don't give you the answers, so you can check it on the slide.
+
+336
+00:21:10,784 --> 00:21:12,986
+In your own words, explain what's a ledger,
+
+337
+00:21:13,846 --> 00:21:15,668
+what two things about it matters,
+
+338
+00:21:16,548 --> 00:21:21,752
+why does digital money have double spending problem, how does the bank stop it if everyone
+
+339
+00:21:21,812 --> 00:21:24,875
+keeps the copy of a ledger, who also needs the consensus,
+
+340
+00:21:25,735 --> 00:21:27,617
+Someone secretly changed one line on
+
+341
+00:21:28,618 --> 00:21:32,983
+page 41 of the notebook. What happens for the page 42?
+
+342
+00:21:33,984 --> 00:21:38,008
+Please have a look. If you can answer these five in your own words,
+
+343
+00:21:38,729 --> 00:21:40,951
+it means that this part is covered by you.
+
+344
+00:21:41,411 --> 00:21:43,874
+I will start the next part of the
+
+345
+00:21:45,195 --> 00:21:45,495
+slides.
+
+346
+00:21:46,509 --> 00:21:47,570
+So here we will
+
+347
+00:21:48,431 --> 00:21:53,355
+start the part two by speaking about actually what is a blockchain.
+
+348
+00:21:53,575 --> 00:21:55,437
+So blockchain
+
+349
+00:21:56,297 --> 00:21:56,438
+is
+
+350
+00:21:57,378 --> 00:22:00,521
+still the ledger that we were studying earlier.
+
+351
+00:22:00,541 --> 00:22:01,902
+So now we know what's a ledger.
+
+352
+00:22:02,283 --> 00:22:03,343
+It's a shared ledger.
+
+353
+00:22:04,084 --> 00:22:09,068
+It's kept by many computers in which the transactions are grouped into blocks.
+
+354
+00:22:09,148 --> 00:22:10,770
+So we have blocks in the blockchain.
+
+355
+00:22:13,084 --> 00:22:13,504
+of course
+
+356
+00:22:16,506 --> 00:22:21,389
+with just one line you can say it's a record that many people keep together with no single
+
+357
+00:22:21,449 --> 00:22:24,230
+owner so there is no single owner and if you remember our questions
+
+358
+00:22:25,491 --> 00:22:27,192
+to be an alternative for the
+
+359
+00:22:29,934 --> 00:22:33,797
+traditional banks, we have to answer three questions.
+
+360
+00:22:34,178 --> 00:22:35,559
+It was four, I don't remember.
+
+361
+00:22:36,020 --> 00:22:36,620
+First was,
+
+362
+00:22:38,082 --> 00:22:43,747
+who keeps the ledger? Ledger is kept by many computers.
+
+363
+00:22:43,828 --> 00:22:46,790
+According to the blockchain, many computers will keep them.
+
+364
+00:22:48,132 --> 00:22:54,356
+everyone agrees on one history so who decides the order we have to agree on the order and then
+
+365
+00:22:54,396 --> 00:22:59,839
+this is the consensus algorithm that solves this question and the last question was who stops
+
+366
+00:22:59,879 --> 00:23:01,681
+the cheating since there is no one in the
+
+367
+00:23:02,721 --> 00:23:03,382
+governing the
+
+368
+00:23:04,603 --> 00:23:09,586
+the system no owner who will stop the cheating and that we saw in the previous slides
+
+369
+00:23:10,427 --> 00:23:16,772
+chain makes this change cheating impossible okay or at least visible we can see someone cheated
+
+370
+00:23:17,132 --> 00:23:19,834
+and exactly who cheated we can also see so
+
+371
+00:23:20,574 --> 00:23:22,696
+because blocks are linked in order so
+
+372
+00:23:23,837 --> 00:23:26,759
+if you if you remember the chain is like
+
+373
+00:23:27,560 --> 00:23:28,700
+if you started the
+
+374
+00:23:29,681 --> 00:23:30,101
+in your
+
+375
+00:23:31,322 --> 00:23:36,786
+a system programming course or in C or in algorithms it's like a linked list I hope you studied
+
+376
+00:23:36,866 --> 00:23:36,947
+it
+
+377
+00:23:38,248 --> 00:23:38,608
+if not
+
+378
+00:23:39,649 --> 00:23:42,311
+don't care about it it's just the
+
+379
+00:23:43,231 --> 00:23:49,576
+analogy in the algorithm world where the blockchain is just like a linked list with some more
+
+380
+00:23:49,616 --> 00:23:51,678
+additional stuff okay so to summarize
+
+381
+00:23:53,372 --> 00:23:57,614
+Blockchain is a record that many people keep together without the owner.
+
+382
+00:23:57,814 --> 00:24:00,475
+That's what we have to agree on.
+
+383
+00:24:00,775 --> 00:24:01,115
+And then
+
+384
+00:24:01,815 --> 00:24:03,116
+you can ask now, so
+
+385
+00:24:03,956 --> 00:24:06,977
+blockchain, and you said in the previous slides that
+
+386
+00:24:07,757 --> 00:24:08,518
+it's not about money.
+
+387
+00:24:10,916 --> 00:24:13,117
+We have to agree on this. It's not only about money.
+
+388
+00:24:13,378 --> 00:24:15,979
+But what about the money part?
+
+389
+00:24:16,940 --> 00:24:19,761
+How the blockchain is being used in
+
+390
+00:24:21,803 --> 00:24:24,564
+the sector of the currency?
+
+391
+00:24:24,845 --> 00:24:27,326
+And we call this field
+
+392
+00:24:28,967 --> 00:24:31,208
+by introducing the word cryptocurrency.
+
+393
+00:24:31,689 --> 00:24:37,953
+So we have to first agree on this word and then we will dive deeper in the field very soon.
+
+394
+00:24:39,060 --> 00:24:41,721
+Cryptocurrency is just the digital money
+
+395
+00:24:42,481 --> 00:24:47,002
+where the ledger is a blockchain instead of a bank, okay?
+
+396
+00:24:47,462 --> 00:24:50,683
+So for the digital money, we had to keep the
+
+397
+00:24:51,783 --> 00:24:52,744
+transactions, you remember?
+
+398
+00:24:53,724 --> 00:24:57,645
+Now it's not the bank. In the past, it was a bank, but this time it's a blockchain.
+
+399
+00:24:57,885 --> 00:25:02,906
+When the digital money is stored in a blockchain, we call it cryptocurrency in very generic
+
+400
+00:25:02,946 --> 00:25:05,867
+terms, okay? For now, it's very easy to remember this.
+
+401
+00:25:05,887 --> 00:25:08,188
+So its units are called coins.
+
+402
+00:25:08,908 --> 00:25:09,148
+so
+
+403
+00:25:09,989 --> 00:25:15,012
+digital money for the dollar
+
+404
+00:25:16,212 --> 00:25:17,413
+currency is called dollar
+
+405
+00:25:18,313 --> 00:25:20,295
+and for the cryptocurrency we call it
+
+406
+00:25:22,216 --> 00:25:23,837
+coins okay so
+
+407
+00:25:24,877 --> 00:25:30,600
+first one of the coin appeared in 2009 thanks to the Satoshi Nakamoto but today guys there
+
+408
+00:25:30,640 --> 00:25:33,162
+are even more than thousands of coins
+
+409
+00:25:34,453 --> 00:25:41,314
+So again, as a contrast, the bank money that we all used to see, where the bond
+
+410
+00:25:41,375 --> 00:25:43,695
+bank keeps the ledger, the bank decides.
+
+411
+00:25:44,775 --> 00:25:46,876
+Instead in the cryptocurrency, many computers
+
+412
+00:25:47,576 --> 00:25:52,017
+in the system, in the network, because we need a computer or the mobile phone, it keeps the
+
+413
+00:25:52,057 --> 00:25:52,417
+ledger
+
+414
+00:25:53,517 --> 00:25:56,998
+and the rules decided by the cryptocurrency, okay?
+
+415
+00:25:59,386 --> 00:26:05,270
+Many students ask me all the time why it's called crypto, cryptocurrency.
+
+416
+00:26:05,350 --> 00:26:06,271
+The crypto word
+
+417
+00:26:07,032 --> 00:26:09,133
+naming comes from the cryptography,
+
+418
+00:26:10,454 --> 00:26:11,235
+a very famous
+
+419
+00:26:12,936 --> 00:26:13,677
+field in the
+
+420
+00:26:15,198 --> 00:26:17,280
+cybersecurity, in the mathematics,
+
+421
+00:26:19,637 --> 00:26:23,238
+and cryptography is the science of secret codes
+
+422
+00:26:24,018 --> 00:26:30,621
+and proofs and that's what is the idea of a seal that we have seen earlier.
+
+423
+00:26:30,961 --> 00:26:32,121
+So we
+
+424
+00:26:32,901 --> 00:26:34,802
+will see in the future
+
+425
+00:26:35,982 --> 00:26:38,063
+the cryptography will help us to tell
+
+426
+00:26:38,863 --> 00:26:42,905
+who is the owner of the coin with the proof, with the mathematical proof.
+
+427
+00:26:44,086 --> 00:26:47,875
+uh and that's the idea we're going to we're going to cover so
+
+428
+00:26:48,656 --> 00:26:51,663
+cryptocurrency and the bank account so banks
+
+429
+00:26:52,946 --> 00:26:53,808
+there is only one bank
+
+430
+00:26:54,832 --> 00:26:58,715
+or a couple of more, but among the users, there is only one bank.
+
+431
+00:26:58,775 --> 00:27:01,878
+And this bank, we call it centralized, okay?
+
+432
+00:27:01,898 --> 00:27:03,499
+It's a centralized bank.
+
+433
+00:27:03,679 --> 00:27:06,582
+And centralized means one party,
+
+434
+00:27:07,523 --> 00:27:07,803
+like
+
+435
+00:27:08,844 --> 00:27:13,227
+NBU, the Milibank controls the system and it's all records, okay?
+
+436
+00:27:13,247 --> 00:27:16,630
+So everyone connects to that one center.
+
+437
+00:27:16,951 --> 00:27:22,655
+And we usually depict it in this format, like centralized where the, The nodes are around
+
+438
+00:27:23,356 --> 00:27:25,978
+the main guy and the owner is in the middle.
+
+439
+00:27:25,998 --> 00:27:26,718
+So this is the
+
+440
+00:27:27,859 --> 00:27:30,141
+sketch we use for the centralized systems.
+
+441
+00:27:30,221 --> 00:27:33,284
+It can be a bank, it can be a single company, some kind of app.
+
+442
+00:27:33,944 --> 00:27:37,107
+It is centralized and the other clients will use it.
+
+443
+00:27:37,547 --> 00:27:38,708
+But the cryptocurrency
+
+444
+00:27:39,508 --> 00:27:43,412
+is the digital money that is seen in the centralized
+
+445
+00:27:44,112 --> 00:27:44,512
+banks,
+
+446
+00:27:45,233 --> 00:27:47,415
+but it is kept in a blockchain.
+
+447
+00:27:48,393 --> 00:27:51,254
+And guys, blockchain is not centralized.
+
+448
+00:27:51,314 --> 00:27:55,535
+That's why I have this. We don't have one owner, if you remember.
+
+449
+00:27:55,675 --> 00:27:57,595
+For the blockchain, we have multiple owners.
+
+450
+00:27:57,635 --> 00:27:57,835
+So
+
+451
+00:27:58,896 --> 00:27:59,916
+the depiction is a bit
+
+452
+00:28:00,736 --> 00:28:02,617
+different here. So instead
+
+453
+00:28:03,477 --> 00:28:06,177
+of one owner, now we have multiple owners.
+
+454
+00:28:06,357 --> 00:28:10,218
+And this scenario is called decentralized, okay?
+
+455
+00:28:10,258 --> 00:28:15,940
+This is a network of blockchain where the nodes are working with the system.
+
+456
+00:28:16,800 --> 00:28:23,388
+this is called the decentralized system okay decentralized has a many equal parts uh
+
+457
+00:28:23,728 --> 00:28:30,536
+control is shared by many independent parties independent we don't know each other and no
+
+458
+00:28:30,736 --> 00:28:32,057
+single is in charge
+
+459
+00:28:33,008 --> 00:28:36,231
+And the system works if some of them leave, okay?
+
+460
+00:28:36,672 --> 00:28:38,774
+System can continue if some of them leave.
+
+461
+00:28:38,834 --> 00:28:44,319
+But in your centralized system, if you remember the single point of failure, if the bank is
+
+462
+00:28:44,380 --> 00:28:46,382
+crashed, no one can use it.
+
+463
+00:28:46,562 --> 00:28:48,163
+That's the difference.
+
+464
+00:28:49,346 --> 00:28:49,686
+it's like
+
+465
+00:28:50,847 --> 00:28:53,470
+sharing the notebook with all your friends so
+
+466
+00:28:54,230 --> 00:29:00,616
+centralized there is one owner he decides decentralized many they share the control but remember
+
+467
+00:29:01,356 --> 00:29:06,361
+you should not confuse the decentralized with the other drawing that is
+
+468
+00:29:08,262 --> 00:29:12,403
+available in the literature is called distributed.
+
+469
+00:29:13,504 --> 00:29:14,284
+Always students
+
+470
+00:29:16,284 --> 00:29:17,705
+confuse these two questions.
+
+471
+00:29:18,725 --> 00:29:20,406
+Where we keep the copies?
+
+472
+00:29:20,606 --> 00:29:21,806
+Where we keep the copies?
+
+473
+00:29:21,846 --> 00:29:24,767
+Based on this, you can understand the difference.
+
+474
+00:29:26,627 --> 00:29:27,688
+Where we keep the copies?
+
+475
+00:29:28,148 --> 00:29:29,788
+One computer or many computers?
+
+476
+00:29:29,948 --> 00:29:31,049
+This is called distributed.
+
+477
+00:29:31,769 --> 00:29:35,650
+Who controls them? Is it the one party or many independent parties?
+
+478
+00:29:36,512 --> 00:29:39,096
+If it's many independent parties, we call it distributed.
+
+479
+00:29:39,136 --> 00:29:41,400
+So this is the sketch, okay?
+
+480
+00:29:41,420 --> 00:29:43,884
+So for the decentralized, we have,
+
+481
+00:29:45,467 --> 00:29:45,707
+again,
+
+482
+00:29:46,637 --> 00:29:47,958
+many independent parties
+
+483
+00:29:48,679 --> 00:29:54,483
+and for the distributed we have many computers okay it's spread across the many computers but
+
+484
+00:29:55,043 --> 00:29:56,104
+there is a very big
+
+485
+00:29:58,345 --> 00:30:03,129
+confusion where banks usually if you remember banks
+
+486
+00:30:04,009 --> 00:30:07,272
+not always have one server they can put their server in new york
+
+487
+00:30:08,694 --> 00:30:13,221
+The Milli Bank can put it in Tashkent, in Bukhara, Samarkand.
+
+488
+00:30:13,581 --> 00:30:19,190
+They have branches, just like in decentralized, so banks are decentralized, but
+
+489
+00:30:20,532 --> 00:30:20,792
+they are
+
+490
+00:30:22,778 --> 00:30:23,658
+but
+
+491
+00:30:25,040 --> 00:30:26,541
+it seems like a decentralized.
+
+492
+00:30:26,581 --> 00:30:31,907
+The trap is that the big banks keeps the copies in several cities, but it is still centralized.
+
+493
+00:30:31,927 --> 00:30:35,550
+So don't think it's a decentralized because there is one guy still controlling everything.
+
+494
+00:30:35,570 --> 00:30:37,432
+So should not confuse it with this.
+
+495
+00:30:37,892 --> 00:30:41,116
+But in the blockchain, blockchain wants to be the both.
+
+496
+00:30:41,576 --> 00:30:43,017
+So many copies,
+
+497
+00:30:44,002 --> 00:30:46,344
+will be spread along the
+
+498
+00:30:47,425 --> 00:30:52,589
+other computers so it's distributed and there will be many owners so it's decentralized so
+
+499
+00:30:53,510 --> 00:30:54,751
+the blockchain often
+
+500
+00:30:56,092 --> 00:31:00,436
+explained with these two properties it is decentralized and distributed of course it depends
+
+501
+00:31:00,496 --> 00:31:05,700
+on the type of the blockchain but for now you have to clearly understand what is centralized
+
+502
+00:31:05,780 --> 00:31:09,103
+what is decentralized what is distributed Bitcoin
+
+503
+00:31:09,924 --> 00:31:10,825
+sorry blockchain
+
+504
+00:31:12,546 --> 00:31:17,530
+is distributed meaning that there are a lot of copies throughout the nodes and is also called
+
+505
+00:31:17,610 --> 00:31:21,874
+decentralized meaning that nobody is in charge so these are the terminology we have to
+
+506
+00:31:23,015 --> 00:31:28,219
+discuss because in the network of the blockchain
+
+507
+00:31:29,943 --> 00:31:32,465
+There are a bunch of computers are connected to each other.
+
+508
+00:31:32,545 --> 00:31:36,929
+And then you can ask me why the computers and how they talk to each other.
+
+509
+00:31:37,089 --> 00:31:37,249
+And I
+
+510
+00:31:38,710 --> 00:31:41,112
+want to explain it with this sketch where
+
+511
+00:31:42,153 --> 00:31:46,196
+we can see the distributed decentralized system where there is nothing
+
+512
+00:31:47,317 --> 00:31:50,799
+in the center. And every node talks to the
+
+513
+00:31:51,760 --> 00:31:54,062
+few of the guys, not everyone, okay?
+
+514
+00:31:54,122 --> 00:31:55,023
+Few of the guys,
+
+515
+00:31:55,863 --> 00:31:59,046
+and they each keep the full copy of the ledger
+
+516
+00:32:00,077 --> 00:32:00,257
+And
+
+517
+00:32:01,577 --> 00:32:01,837
+this
+
+518
+00:32:03,278 --> 00:32:08,939
+shows us the blockchain network has no central server and every node is equal peer.
+
+519
+00:32:09,359 --> 00:32:12,219
+And I'm referring to another word, node.
+
+520
+00:32:12,780 --> 00:32:19,241
+I think it is a computer that runs the blockchains program and keeps the full copy of the ledger,
+
+521
+00:32:19,261 --> 00:32:23,222
+okay? So when I call the node, just remember it's a computer that's attached to the network
+
+522
+00:32:23,542 --> 00:32:24,282
+that keeps the
+
+523
+00:32:25,162 --> 00:32:26,422
+copy of the notebook, okay?
+
+524
+00:32:27,743 --> 00:32:28,083
+Just like a
+
+525
+00:32:28,863 --> 00:32:29,223
+computer.
+
+526
+00:32:30,508 --> 00:32:36,692
+and this system is called peer-to-peer also because computers connected directly to each other
+
+527
+00:32:36,712 --> 00:32:36,752
+as
+
+528
+00:32:37,632 --> 00:32:42,995
+just like peers okay with no central server and peer-to-peer
+
+529
+00:32:44,356 --> 00:32:49,139
+network topology is usually studied in the computer networks i hope you know what is the big
+
+530
+00:32:49,199 --> 00:32:50,200
+torrent and torrent
+
+531
+00:32:52,142 --> 00:32:54,885
+protocol which relies on this peer-to-peer connection.
+
+532
+00:32:54,905 --> 00:32:57,508
+That's where the blockchain also relies on.
+
+533
+00:32:57,648 --> 00:33:01,493
+So it is densely standardized, distributed and peer-to-peer.
+
+534
+00:33:01,894 --> 00:33:02,094
+So
+
+535
+00:33:03,355 --> 00:33:10,103
+it can be the client server program in your operating system cores, where the node is the client
+
+536
+00:33:10,244 --> 00:33:11,125
+and the server
+
+537
+00:33:12,166 --> 00:33:13,748
+is also the node at the same time.
+
+538
+00:33:14,729 --> 00:33:18,073
+Slightly different, but you should already have covered this topic.
+
+539
+00:33:18,233 --> 00:33:20,296
+Again, we will cover. If you didn't, it's fine.
+
+540
+00:33:20,456 --> 00:33:21,718
+We will talk about this.
+
+541
+00:33:23,687 --> 00:33:29,788
+When you have a lot of nodes, you see I'm trying to give all the details of a blockchain almost
+
+542
+00:33:29,848 --> 00:33:30,868
+in one, two
+
+543
+00:33:32,068 --> 00:33:38,290
+lectures but we will dive deeper so you can keep your questions for now because later on we'll
+
+544
+00:33:38,870 --> 00:33:42,590
+describe each of these properties separately in the upcoming classes.
+
+545
+00:33:43,130 --> 00:33:49,551
+How we communicate with the other nodes, how we spread the news if we have this
+
+546
+00:33:49,631 --> 00:33:51,912
+peer-to-peer communication between the nodes.
+
+547
+00:33:53,686 --> 00:33:54,407
+When someone
+
+548
+00:33:55,427 --> 00:34:01,811
+will do the transaction, if I send the money to someone else, how does the whole world know
+
+549
+00:34:01,871 --> 00:34:02,232
+about
+
+550
+00:34:05,494 --> 00:34:07,995
+the transaction that I made if there is no one in the center?
+
+551
+00:34:08,055 --> 00:34:13,019
+If there was a server, I would tell to server, server would deliver this message, but what
+
+552
+00:34:13,059 --> 00:34:14,079
+if we don't have it?
+
+553
+00:34:16,087 --> 00:34:19,950
+how this happens. So the transaction reaches one node.
+
+554
+00:34:19,990 --> 00:34:21,351
+So you say that I spend
+
+555
+00:34:22,412 --> 00:34:27,056
+$1,000, for instance. That node checks the against the rules.
+
+556
+00:34:27,136 --> 00:34:29,338
+So is the money really there?
+
+557
+00:34:29,378 --> 00:34:31,239
+So did you actually
+
+558
+00:34:32,200 --> 00:34:38,725
+send this money? And if it is true, node passes it to the few other nodes connected to it.
+
+559
+00:34:38,785 --> 00:34:38,945
+So
+
+560
+00:34:39,786 --> 00:34:41,367
+it's not sending to everyone, okay?
+
+561
+00:34:41,387 --> 00:34:47,653
+Just have a look. is not sending it to everyone but to the nodes that are connected to it
+
+562
+00:34:48,073 --> 00:34:54,459
+okay they will also check it too and then and pass it on so within a seconds you will see that
+
+563
+00:34:54,779 --> 00:35:01,225
+every node in your system thanks to this topology know the news okay heard about the news
+
+564
+00:35:02,274 --> 00:35:03,055
+And there are a bunch of
+
+565
+00:35:03,975 --> 00:35:04,516
+interesting
+
+566
+00:35:05,576 --> 00:35:08,339
+issues we're going to discuss with this, okay?
+
+567
+00:35:08,359 --> 00:35:08,519
+So
+
+568
+00:35:10,020 --> 00:35:12,542
+how do we believe? Who do we believe, okay?
+
+569
+00:35:15,304 --> 00:35:17,826
+And the answer is that we don't believe anyone.
+
+570
+00:35:18,126 --> 00:35:19,927
+So I should open my second slide.
+
+571
+00:35:19,967 --> 00:35:25,571
+So we don't believe anyone because the node never accepts the news just because the another
+
+572
+00:35:25,631 --> 00:35:28,934
+node sent the data. We just don't trust that...
+
+573
+00:35:30,855 --> 00:35:35,297
+the other guy is telling us the truth we will check it okay we get the message and we check
+
+574
+00:35:35,337 --> 00:35:36,557
+it by ourselves because
+
+575
+00:35:37,797 --> 00:35:38,238
+liar
+
+576
+00:35:38,978 --> 00:35:44,960
+can agree with the other neighbors they can agree like let's guys try to break the system he
+
+577
+00:35:45,000 --> 00:35:48,901
+can agree with almost 100 people for instance but
+
+578
+00:35:49,681 --> 00:35:51,402
+later on there will be other node
+
+579
+00:35:52,592 --> 00:35:53,373
+they don't know these
+
+580
+00:35:54,113 --> 00:35:56,535
+100 guys, they will check the message.
+
+581
+00:35:57,156 --> 00:36:00,338
+At this first stop, the honest node will find out about the lie.
+
+582
+00:36:00,358 --> 00:36:02,300
+So it's very difficult to
+
+583
+00:36:03,541 --> 00:36:04,562
+comprehend this system.
+
+584
+00:36:05,482 --> 00:36:06,123
+And the message
+
+585
+00:36:06,964 --> 00:36:07,764
+goes like a rumor.
+
+586
+00:36:09,025 --> 00:36:11,687
+like a normal rumor or we call it also gossip.
+
+587
+00:36:12,108 --> 00:36:17,132
+So you just tell the gossip to the other guy and the other guy delivers the gossip to any other
+
+588
+00:36:17,172 --> 00:36:21,835
+person. So this is how the gossips reach the city sometimes.
+
+589
+00:36:21,855 --> 00:36:27,700
+Okay, so just like this. But here the gossip will be verified, will be validated by every node.
+
+590
+00:36:27,720 --> 00:36:32,584
+They will check, okay? Every node checks it and then passes it on to the next guy.
+
+591
+00:36:32,604 --> 00:36:34,485
+So nobody will be trusted
+
+592
+00:36:35,766 --> 00:36:36,387
+in this system.
+
+593
+00:36:37,675 --> 00:36:37,916
+Again,
+
+594
+00:36:38,737 --> 00:36:43,246
+when you are reading the news from now on, since you are studying this course, you will come
+
+595
+00:36:43,306 --> 00:36:45,510
+across with very strange words, okay?
+
+596
+00:36:46,371 --> 00:36:49,117
+Sometimes people call this as DLT, okay?
+
+597
+00:36:50,615 --> 00:36:54,876
+So they call it DLT, but remember the blockchain is not a DLT.
+
+598
+00:36:55,096 --> 00:36:56,356
+We'll discuss about this, okay?
+
+599
+00:36:57,357 --> 00:36:59,617
+It's a term that you will understand now.
+
+600
+00:36:59,677 --> 00:37:03,078
+The blockchain is the subset of these systems, okay?
+
+601
+00:37:03,518 --> 00:37:04,018
+Because
+
+602
+00:37:05,239 --> 00:37:09,840
+not all the DLT systems is not a blockchain.
+
+603
+00:37:09,920 --> 00:37:13,221
+What is a DLT? DLT is the distributed ledger.
+
+604
+00:37:13,821 --> 00:37:16,181
+And we'll talk about the immutability in a moment.
+
+605
+00:37:18,322 --> 00:37:18,882
+DLT,
+
+606
+00:37:20,240 --> 00:37:21,481
+And immutable means
+
+607
+00:37:22,441 --> 00:37:24,783
+the data cannot be changed.
+
+608
+00:37:24,823 --> 00:37:27,384
+Blockchain for instance is a temporary system.
+
+609
+00:37:27,424 --> 00:37:32,507
+No one can change. Changing something in the history is very difficult because of the things
+
+610
+00:37:32,588 --> 00:37:34,088
+I showed you earlier in the video.
+
+611
+00:37:34,889 --> 00:37:36,610
+And it's visible to every node.
+
+612
+00:37:36,630 --> 00:37:39,412
+So whenever you do this change, everyone can see it.
+
+613
+00:37:40,913 --> 00:37:41,073
+and
+
+614
+00:37:41,813 --> 00:37:47,958
+there are some exceptions we'll discuss later in the class but the distributed ledger technology
+
+615
+00:37:50,120 --> 00:37:51,621
+is meant for the
+
+616
+00:37:52,361 --> 00:37:54,663
+systems like a blockchain where the general
+
+617
+00:37:56,024 --> 00:37:58,606
+name for all the systems not only for the blockchain
+
+618
+00:37:59,387 --> 00:38:05,031
+ledger is shared across many computers okay just like a blockchain the ledger will share with
+
+619
+00:38:05,091 --> 00:38:06,232
+the everyone
+
+620
+00:38:06,992 --> 00:38:13,434
+and the blockchain is one of the cases where if you remember my transaction list
+
+621
+00:38:13,554 --> 00:38:14,734
+when
+
+622
+00:38:15,495 --> 00:38:16,795
+we have multiple pages
+
+623
+00:38:18,455 --> 00:38:19,076
+for the
+
+624
+00:38:19,996 --> 00:38:22,216
+blockchain each block is
+
+625
+00:38:23,017 --> 00:38:29,259
+connected thanks to the seal that we have here so we store the seal of the page 41 in the page
+
+626
+00:38:29,279 --> 00:38:30,659
+42 and the 42 we save it in page 33
+
+627
+00:38:34,700 --> 00:38:38,501
+and if someone changes the seal of the 41
+
+628
+00:38:40,902 --> 00:38:46,804
+we can see the change immediately in the PH43 because they don't match and these systems are
+
+629
+00:38:46,904 --> 00:38:47,224
+called
+
+630
+00:38:48,424 --> 00:38:51,925
+distributed ledger, we're going to discuss this but when you
+
+631
+00:38:52,866 --> 00:38:57,427
+hear that the blockchain is distributed ledger don't confuse, these are not the same thing
+
+632
+00:38:58,508 --> 00:39:01,590
+they are the subset meaning that blockchain actually
+
+633
+00:39:02,331 --> 00:39:04,893
+is a DLT okay but not
+
+634
+00:39:06,073 --> 00:39:06,374
+any
+
+635
+00:39:07,094 --> 00:39:07,675
+DLT
+
+636
+00:39:08,515 --> 00:39:13,979
+can be a blockchain not every DLT can be a blockchain because blockchain has specific properties
+
+637
+00:39:14,300 --> 00:39:20,204
+that we're going to discuss so changing one block for today what you have to remember breaks
+
+638
+00:39:20,284 --> 00:39:23,407
+the link in front of the other nodes so you just have to
+
+639
+00:39:24,147 --> 00:39:24,908
+remember this
+
+640
+00:39:26,602 --> 00:39:28,644
+and in the blockchain world as
+
+641
+00:39:29,504 --> 00:39:36,050
+I said a lot about the trust we have to trust the other nodes that the change is coming from
+
+642
+00:39:36,070 --> 00:39:36,470
+them
+
+643
+00:39:37,551 --> 00:39:41,054
+is the actual block for instance if I receive this block from the other
+
+644
+00:39:41,934 --> 00:39:45,857
+node with the with the correct page how can I trust them
+
+645
+00:39:48,840 --> 00:39:48,940
+and
+
+646
+00:39:50,375 --> 00:39:55,117
+Trust is a very important thing in the blockchain because with the bank we trust the company
+
+647
+00:39:55,498 --> 00:39:56,538
+but with the blockchain
+
+648
+00:39:57,419 --> 00:40:02,662
+we trust something else and this something else is composed of four things so first thing
+
+649
+00:40:03,462 --> 00:40:09,346
+many copies we know that thousands of nodes each hold the full ledger there is no single
+
+650
+00:40:10,486 --> 00:40:12,428
+copy that matters so we trust on this
+
+651
+00:40:13,328 --> 00:40:17,010
+Everyone checks. We know that every node checks every transaction.
+
+652
+00:40:17,090 --> 00:40:21,573
+Since this is a rule, I know the rule, it works, I trust the rule.
+
+653
+00:40:21,693 --> 00:40:25,255
+Every block against the public rules they have to respect.
+
+654
+00:40:25,916 --> 00:40:26,776
+Chain changes.
+
+655
+00:40:28,117 --> 00:40:32,460
+Every block carries the seal on one before.
+
+656
+00:40:32,700 --> 00:40:32,960
+So
+
+657
+00:40:34,321 --> 00:40:37,202
+if something changed, I can see the change.
+
+658
+00:40:37,563 --> 00:40:39,704
+I know the rule, I trust because of this.
+
+659
+00:40:41,681 --> 00:40:45,843
+Cheating costs more than it earns because you will see that
+
+660
+00:40:46,583 --> 00:40:50,444
+in the upcoming weeks I will show you just changing the blockchain,
+
+661
+00:40:51,325 --> 00:40:54,666
+changing the page 41 with some data is not actually easy.
+
+662
+00:40:54,706 --> 00:40:57,267
+You cannot just go in there and change something.
+
+663
+00:40:57,347 --> 00:40:58,127
+It actually
+
+664
+00:40:58,887 --> 00:41:00,168
+is very expensive to do this.
+
+665
+00:41:02,339 --> 00:41:09,149
+the goal from this slide I want to deliver you that the trust established not on a person
+
+666
+00:41:09,229 --> 00:41:15,697
+not on a node not on a computer we just trust these four things the rules okay rules that everyone
+
+667
+00:41:15,737 --> 00:41:16,178
+can check
+
+668
+00:41:17,239 --> 00:41:19,321
+can we check the copies yes can we
+
+669
+00:41:20,422 --> 00:41:25,666
+check that someone else tested my note the block yes if everything
+
+670
+00:41:26,507 --> 00:41:32,752
+can be checked we can trust to the system we trust to the mathematics behind it okay not not
+
+671
+00:41:32,772 --> 00:41:34,153
+the person is claiming this
+
+672
+00:41:35,634 --> 00:41:36,014
+there are
+
+673
+00:41:38,317 --> 00:41:38,838
+various
+
+674
+00:41:40,759 --> 00:41:44,021
+cryptocurrencies that are working on a blockchain today
+
+675
+00:41:44,821 --> 00:41:51,606
+and as I told you there are more than thousands of coins today and mostly in the course I will
+
+676
+00:41:51,646 --> 00:41:54,968
+be focusing and giving emphasis on the two
+
+677
+00:41:55,928 --> 00:41:57,549
+first one is called the Bitcoin
+
+678
+00:41:58,430 --> 00:42:00,852
+its first block started in January 2009 and
+
+679
+00:42:01,832 --> 00:42:02,712
+and since then
+
+680
+00:42:04,093 --> 00:42:04,893
+it is the
+
+681
+00:42:05,953 --> 00:42:11,555
+base for the digital money with no intermediary so cryptocurrency built for money
+
+682
+00:42:12,315 --> 00:42:18,457
+and its coin is also called bitcoin so remember then the network of blockchain can be called
+
+683
+00:42:18,497 --> 00:42:19,937
+something else and the coin can be
+
+684
+00:42:20,638 --> 00:42:22,278
+called something else for instance
+
+685
+00:42:23,178 --> 00:42:28,580
+for the telegram telegram is a very big change now they have a tone coin
+
+686
+00:42:29,680 --> 00:42:30,661
+then they have
+
+687
+00:42:31,682 --> 00:42:35,785
+gram, we'll discuss all this but remember that
+
+688
+00:42:36,645 --> 00:42:36,886
+the
+
+689
+00:42:37,806 --> 00:42:42,770
+blockchain can be called something else and the coins can have a different name and you know
+
+690
+00:42:42,810 --> 00:42:47,013
+the second biggest guy in the world is the Ethereum.
+
+691
+00:42:47,533 --> 00:42:49,034
+Ethereum blockchain
+
+692
+00:42:50,355 --> 00:42:56,598
+that can run programs so it's not only designed for sending money but it's actually programmable
+
+693
+00:42:56,738 --> 00:43:00,099
+and you can see from here that you will be doing a lot of coding.
+
+694
+00:43:00,220 --> 00:43:05,502
+It's strange in the cryptocurrency you will be doing coding but it will be much fun you will
+
+695
+00:43:05,522 --> 00:43:05,682
+see.
+
+696
+00:43:08,759 --> 00:43:13,821
+not only I will be only speaking in this set of videos but we will be doing actual work okay
+
+697
+00:43:13,841 --> 00:43:16,002
+very soon so but before that I have to
+
+698
+00:43:16,842 --> 00:43:20,724
+explain you some some basics and I want to open up the whole
+
+699
+00:43:22,685 --> 00:43:27,867
+storyline behind my classes okay so I will tell you what you're gonna do in the future so that
+
+700
+00:43:27,907 --> 00:43:29,387
+you understand,
+
+701
+00:43:30,567 --> 00:43:31,648
+you will decide
+
+702
+00:43:32,728 --> 00:43:39,710
+your interest based on this and then we can start discussing each point at a time.
+
+703
+00:43:40,930 --> 00:43:41,430
+Ethereum,
+
+704
+00:43:42,370 --> 00:43:47,211
+I'm actually a big favor of an Ethereum over the Bitcoin, but these are the most biggest
+
+705
+00:43:47,992 --> 00:43:50,352
+two networks in the world today.
+
+706
+00:43:51,472 --> 00:43:55,093
+This one is almost costing us today $85,000.
+
+707
+00:43:59,335 --> 00:44:06,219
+very bullish these days and then the Ethereum is the the next second biggest
+
+708
+00:44:06,299 --> 00:44:12,882
+guy doesn't is not that expensive unfortunately now it's $2,500 something like this
+
+709
+00:44:13,883 --> 00:44:14,023
+and
+
+710
+00:44:16,204 --> 00:44:16,685
+as a
+
+711
+00:44:18,746 --> 00:44:20,747
+not only because of a teacher but
+
+712
+00:44:23,495 --> 00:44:24,856
+since I am in this field a
+
+713
+00:44:26,057 --> 00:44:28,219
+lot I always keep the
+
+714
+00:44:29,560 --> 00:44:34,583
+small widget if I can show you on my phone is always there so whenever I am
+
+715
+00:44:36,925 --> 00:44:43,790
+on my phone the widget always stays on the left side you see is green red so but only to cryptocurrency
+
+716
+00:44:43,810 --> 00:44:46,613
+I watch every single day on my phone even is
+
+717
+00:44:47,813 --> 00:44:48,734
+when I have other apps
+
+718
+00:44:49,515 --> 00:44:54,679
+it floats on top of them and these two guys okay these
+
+719
+00:44:56,080 --> 00:44:59,683
+are the big guys today in the world so most of the course will be
+
+720
+00:45:00,523 --> 00:45:05,927
+mostly based on this if I have time I will mention some other stuff why because of these two
+
+721
+00:45:05,987 --> 00:45:12,411
+because they are foundational networks most other blockchain just copy their ideas okay because
+
+722
+00:45:12,471 --> 00:45:16,614
+here actually the idea of a book bitcoin and ethereum are really
+
+723
+00:45:20,236 --> 00:45:20,617
+different
+
+724
+00:45:21,357 --> 00:45:23,538
+They share some ideas, but actually
+
+725
+00:45:24,959 --> 00:45:28,880
+the algorithms behind is really amazing, so we'll be discussing algorithms.
+
+726
+00:45:31,521 --> 00:45:34,203
+If you understand these two, you can almost understand
+
+727
+00:45:35,183 --> 00:45:35,463
+any
+
+728
+00:45:36,203 --> 00:45:37,084
+blockchain network,
+
+729
+00:45:37,844 --> 00:45:39,765
+the cryptocurrencies in this world.
+
+730
+00:45:42,726 --> 00:45:49,188
+It will help us to understand the idea, Ethereum will actually build something on top of the
+
+731
+00:45:49,208 --> 00:45:54,430
+blockchain. So this will be our main topic in the upcoming weeks.
+
+732
+00:45:54,450 --> 00:45:55,550
+And already today
+
+733
+00:45:57,071 --> 00:46:00,752
+you can open up the blockchain for the Bitcoin
+
+734
+00:46:02,252 --> 00:46:04,633
+and see the records, see the transactions.
+
+735
+00:46:04,673 --> 00:46:06,034
+That's the amazing part of it.
+
+736
+00:46:06,054 --> 00:46:11,315
+So on a website. so there is a website called the mempool space okay
+
+737
+00:46:12,156 --> 00:46:17,698
+it is the block explorer website there are many others some of them are not accessible in uzbekistan
+
+738
+00:46:17,738 --> 00:46:23,100
+remember bitcoin.com i guess not working like last year it wasn't working i usually use this
+
+739
+00:46:23,240 --> 00:46:23,380
+one
+
+740
+00:46:24,240 --> 00:46:26,841
+but let's check blockchain
+
+741
+00:46:30,823 --> 00:46:31,303
+because of
+
+742
+00:46:32,704 --> 00:46:33,405
+some things are
+
+743
+00:46:34,907 --> 00:46:36,448
+not accessible in Uzbekistan.
+
+744
+00:46:36,849 --> 00:46:39,732
+We have a very good news on the blockchain field because
+
+745
+00:46:40,893 --> 00:46:44,778
+in the last years when I started teaching this course Uzbekistan
+
+746
+00:46:45,579 --> 00:46:47,901
+is bringing very good news regarding the
+
+747
+00:46:49,183 --> 00:46:51,205
+blockchain and this become
+
+748
+00:46:52,526 --> 00:46:53,487
+almost legal
+
+749
+00:46:54,248 --> 00:46:56,829
+to work on so we'll discuss this a bit later
+
+750
+00:46:57,629 --> 00:47:02,331
+but some sites are still not accessible okay this comes from the past in the past it was blocked
+
+751
+00:47:02,431 --> 00:47:09,313
+but mempool today is available you can just open it is a bitcoin explorer explorer means
+
+752
+00:47:09,393 --> 00:47:15,235
+the website that shows every block of the blockchain and every transaction of a blockchain
+
+753
+00:47:15,415 --> 00:47:19,436
+for anyone to read that's the amazing part about the public
+
+754
+00:47:20,916 --> 00:47:23,537
+blockchain systems, where you can just go and read.
+
+755
+00:47:23,818 --> 00:47:26,699
+Why? Because you want to check,
+
+756
+00:47:27,539 --> 00:47:29,680
+okay? This gives us the extra trust.
+
+757
+00:47:30,540 --> 00:47:32,621
+And already now you can ask questions like,
+
+758
+00:47:33,541 --> 00:47:33,701
+but
+
+759
+00:47:34,481 --> 00:47:38,323
+if we can read, is there any privacy or something like this?
+
+760
+00:47:38,383 --> 00:47:39,803
+But we'll speak about this, okay?
+
+761
+00:47:40,144 --> 00:47:41,464
+Actually, you don't know if
+
+762
+00:47:42,324 --> 00:47:43,505
+Joe Alden is sending
+
+763
+00:47:44,325 --> 00:47:46,966
+10 Bitcoins to Bobo, so we don't see it.
+
+764
+00:47:47,426 --> 00:47:47,947
+There are some...
+
+765
+00:47:51,127 --> 00:47:53,188
+something is hidden, but we'll look at it.
+
+766
+00:47:53,208 --> 00:47:56,709
+So if you open up the Mempool space, you will see that I did it
+
+767
+00:47:57,689 --> 00:48:00,590
+yesterday. Maybe it was this block number I saw.
+
+768
+00:48:00,630 --> 00:48:03,211
+This is a height. It is the page number.
+
+769
+00:48:03,231 --> 00:48:05,851
+We call it height. Height is the page number
+
+770
+00:48:07,172 --> 00:48:07,672
+of a block.
+
+771
+00:48:08,673 --> 00:48:14,658
+it means how many blocks came before it so it's a very important number for example this number
+
+772
+00:48:14,959 --> 00:48:21,105
+has this much blocks before it so it counts from zero so it counts from zero zero is the first
+
+773
+00:48:21,185 --> 00:48:24,488
+block ever produced and if you open up the mempool
+
+774
+00:48:25,589 --> 00:48:28,131
+you get this data you see for today we have this block
+
+775
+00:48:29,292 --> 00:48:32,614
+the one that I recorded yesterday is called what
+
+776
+00:48:34,795 --> 00:48:40,198
+nine hundred thousand or something like this you can even type it here I have a demo session
+
+777
+00:48:40,418 --> 00:48:44,801
+so we'll be doing some demos so you can just look at that and
+
+778
+00:48:45,929 --> 00:48:49,290
+you can see the seal it's called hash we'll study this
+
+779
+00:48:50,290 --> 00:48:51,030
+when it was
+
+780
+00:48:53,031 --> 00:48:59,633
+built the block block size i will teach you what is the weight i will teach you what is
+
+781
+00:48:59,693 --> 00:49:01,793
+satoshi's per byte
+
+782
+00:49:02,553 --> 00:49:08,675
+subsidy the fee you can earn money what is mining very interesting topics are ahead so
+
+783
+00:49:09,535 --> 00:49:15,117
+we'll be discussing about this so that's the hash that's the seal of that blocks that it contains
+
+784
+00:49:15,217 --> 00:49:15,337
+the
+
+785
+00:49:16,479 --> 00:49:18,062
+the data from the previous block
+
+786
+00:49:18,803 --> 00:49:21,688
+because you can see it the previous block somewhere
+
+787
+00:49:22,871 --> 00:49:23,492
+do i have it
+
+788
+00:49:27,130 --> 00:49:32,813
+sometimes websites change yes there should be previous block but it's okay I will show you
+
+789
+00:49:32,853 --> 00:49:37,054
+so you can also see the the hash of the previous block
+
+790
+00:49:37,775 --> 00:49:37,995
+so
+
+791
+00:49:38,915 --> 00:49:45,478
+just remember anyone opening up this main pool space or the website that is a public blockchain
+
+792
+00:49:45,538 --> 00:49:46,258
+and can see
+
+793
+00:49:47,598 --> 00:49:53,561
+any page and check the chain by themselves okay you can even see how much money is being sent
+
+794
+00:49:53,601 --> 00:49:55,662
+from one account to another one but you don't know
+
+795
+00:49:56,602 --> 00:49:58,045
+whose account is this, okay?
+
+796
+00:49:58,065 --> 00:49:58,225
+So
+
+797
+00:49:59,187 --> 00:49:59,688
+for today,
+
+798
+00:50:01,511 --> 00:50:02,272
+for this video,
+
+799
+00:50:03,986 --> 00:50:06,387
+try to pause the video and have this
+
+800
+00:50:07,808 --> 00:50:14,750
+terminology as a note with you because we'll be discussing them a lot, we saw what is
+
+801
+00:50:14,810 --> 00:50:20,392
+a gossip, the DLT, the temper resistance, the Bitcoin, Ethereum we saw,
+
+802
+00:50:21,713 --> 00:50:27,655
+smart contracts we actually didn't discuss but I will discuss it in later weeks because it's
+
+803
+00:50:28,095 --> 00:50:29,976
+something very complicated for the coding.
+
+804
+00:50:31,117 --> 00:50:37,042
+block explorer, the what is a blockchain, cryptocurrency, the node, the peer-to-peer, centralized,
+
+805
+00:50:37,062 --> 00:50:40,585
+decentralized and distributed, they should be clearly identified by you, okay?
+
+806
+00:50:40,605 --> 00:50:43,888
+So because I will give you some examples, you will have to decide
+
+807
+00:50:44,949 --> 00:50:45,930
+if it is the
+
+808
+00:50:46,790 --> 00:50:48,031
+centralized or decentralized.
+
+809
+00:50:48,051 --> 00:50:50,133
+So at this moment, I stopped the video.
+
+810
+00:50:50,193 --> 00:50:52,635
+I will share with you some quiz for this week
+
+811
+00:50:53,576 --> 00:50:56,238
+and some demonstration if I have time.
+
+812
+00:50:56,960 --> 00:50:58,690
+so that you can actually do something
+
+813
+00:51:00,078 --> 00:51:05,167
+fun okay so in the meantime please watch the videos take your notes and then wait for the quiz

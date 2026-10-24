@@ -1,0 +1,2891 @@
+1
+00:00:00,901 --> 00:00:05,145
+Okay, let's start. Hi everyone, my name is
+
+2
+00:00:05,886 --> 00:00:09,410
+Jalol Neusupov and I will be your instructor
+
+3
+00:00:10,291 --> 00:00:12,693
+for this semester on this new course
+
+4
+00:00:13,634 --> 00:00:15,256
+Blockchain Basics and Platforms.
+
+5
+00:00:16,523 --> 00:00:22,606
+This course will be in the form of online and mostly it will be asynchronous.
+
+6
+00:00:23,026 --> 00:00:24,187
+Asynchronous meaning that
+
+7
+00:00:25,367 --> 00:00:31,490
+I will be sharing the recorded sessions of videos with you, but not always.
+
+8
+00:00:31,530 --> 00:00:32,051
+Sometimes
+
+9
+00:00:33,551 --> 00:00:35,512
+I plan to have
+
+10
+00:00:36,753 --> 00:00:40,255
+synchronous online sessions if I find the means because it's
+
+11
+00:00:41,354 --> 00:00:44,536
+You are 300 students and it's not easy to
+
+12
+00:00:45,977 --> 00:00:49,438
+invite you all into the same class, but I will try to find a way.
+
+13
+00:00:50,539 --> 00:00:52,200
+But I will inform you if I do it.
+
+14
+00:00:52,260 --> 00:00:54,681
+Otherwise, you can keep watching the video.
+
+15
+00:00:55,902 --> 00:00:56,502
+In this course,
+
+16
+00:00:58,403 --> 00:01:01,405
+I want to start the lecture with the introductory part.
+
+17
+00:01:02,337 --> 00:01:03,698
+to the blockchain technology.
+
+18
+00:01:04,238 --> 00:01:06,860
+But before that, just a little about me.
+
+19
+00:01:08,360 --> 00:01:11,262
+My name is Gialdo Iusupov and
+
+20
+00:01:13,003 --> 00:01:17,345
+here you can see my email, my website, even my Instagram
+
+21
+00:01:17,405 --> 00:01:23,829
+account. And I worked in the
+
+22
+00:01:23,889 --> 00:01:26,230
+past in Turin Polytechnic University.
+
+23
+00:01:27,451 --> 00:01:28,712
+I worked there for
+
+24
+00:01:32,061 --> 00:01:36,807
+all my life I can say it's been 10 years I've been teaching there I've been teaching there
+
+25
+00:01:36,827 --> 00:01:41,713
+computer science the algorithms and programming course algorithm and programming course two
+
+26
+00:01:42,253 --> 00:01:45,798
+operating systems satellite communication it was really
+
+27
+00:01:46,498 --> 00:01:49,359
+very various types of classes that we did.
+
+28
+00:01:50,580 --> 00:01:52,461
+Now I completely
+
+29
+00:01:53,201 --> 00:01:55,082
+moved to Jön University.
+
+30
+00:01:56,042 --> 00:01:59,044
+I am now fully employed at INHAI and in INHAI I'm
+
+31
+00:02:00,044 --> 00:02:04,766
+teaching only the system programming course, maybe with some of you already met,
+
+32
+00:02:05,526 --> 00:02:08,188
+and the operating systems course that I'm currently holding.
+
+33
+00:02:09,648 --> 00:02:12,570
+and in the master's degree I do the same course but
+
+34
+00:02:13,811 --> 00:02:18,314
+with the business application it's slightly different not slightly I mean it's
+
+35
+00:02:19,114 --> 00:02:22,617
+very different because these guys don't know what the programming is then I have to
+
+36
+00:02:24,198 --> 00:02:25,959
+make it simpler but in any case
+
+37
+00:02:29,721 --> 00:02:33,862
+that's the course and that was the confusion that's the problem with the confusion
+
+38
+00:02:34,743 --> 00:02:37,483
+I saw the subject and I don't know why I
+
+39
+00:02:39,144 --> 00:02:40,464
+contacted the master degree
+
+40
+00:02:41,904 --> 00:02:46,885
+research department and they told me we have to hold on the class on blockchain and I was thinking
+
+41
+00:02:46,905 --> 00:02:47,746
+that we have to
+
+42
+00:02:48,846 --> 00:02:54,207
+wait and then I forgot totally about the course and the one student I forgot his name thank
+
+43
+00:02:54,227 --> 00:02:58,028
+you so much he sent me an email asking when are we going to start so
+
+44
+00:02:59,569 --> 00:03:02,250
+It was a good call, so I just now started.
+
+45
+00:03:02,831 --> 00:03:05,272
+Regarding the organization, don't worry,
+
+46
+00:03:06,072 --> 00:03:08,814
+even if you are two weeks behind, I will try to
+
+47
+00:03:09,574 --> 00:03:10,815
+redo the classes,
+
+48
+00:03:12,496 --> 00:03:13,696
+make-up classes you call it,
+
+49
+00:03:14,417 --> 00:03:16,618
+and in those make-up classes definitely
+
+50
+00:03:17,539 --> 00:03:21,481
+we also don't have an exam, so in the midterm session I will also share some videos.
+
+51
+00:03:22,841 --> 00:03:23,902
+Now we can start.
+
+52
+00:03:25,883 --> 00:03:32,667
+I did my bachelor degree in Turin and then I went to Italy to do my master's degree I did it
+
+53
+00:03:32,767 --> 00:03:38,310
+in two years and then I started immediately my PhD again in Torino in Italy
+
+54
+00:03:39,090 --> 00:03:43,273
+and one year I spent my PhD in Eurocom Institute in France
+
+55
+00:03:45,014 --> 00:03:48,195
+then very recently I got my Doctor of Science so
+
+56
+00:03:49,416 --> 00:03:51,557
+that's little about me in the future
+
+57
+00:03:53,258 --> 00:04:00,061
+During the course, during the office hours, if you're interested about the path, which path
+
+58
+00:04:00,101 --> 00:04:06,563
+to take, are you interested in master's degree or in PhD, having the recommendation
+
+59
+00:04:06,624 --> 00:04:12,466
+letters or how to pursue your future in these areas, you can always contact me.
+
+60
+00:04:12,566 --> 00:04:15,227
+Don't send me an email. I really don't like emails.
+
+61
+00:04:15,808 --> 00:04:22,036
+will try to respond but I think the best way just send me a message on eClass so first thing
+
+62
+00:04:22,116 --> 00:04:23,698
+is eClass is much better
+
+63
+00:04:24,479 --> 00:04:26,401
+and otherwise just join me in the
+
+64
+00:04:28,965 --> 00:04:29,706
+what's called
+
+65
+00:04:30,687 --> 00:04:32,750
+office hour sessions
+
+66
+00:04:34,351 --> 00:04:36,212
+and we can chitchat there, okay?
+
+67
+00:04:36,232 --> 00:04:36,372
+So
+
+68
+00:04:37,973 --> 00:04:38,653
+I'm here
+
+69
+00:04:39,414 --> 00:04:45,297
+not only for delivering the course, but also to interact with you, to share my
+
+70
+00:04:45,817 --> 00:04:46,517
+insights,
+
+71
+00:04:48,498 --> 00:04:54,261
+to have real fun while learning this course, because this course really is amazing, especially
+
+72
+00:04:54,321 --> 00:04:58,203
+for me, because I am in this field for quite a lot now,
+
+73
+00:04:59,283 --> 00:05:02,185
+and the only thing I check in the morning
+
+74
+00:05:03,188 --> 00:05:04,469
+Besides talking to the cloud,
+
+75
+00:05:05,871 --> 00:05:11,355
+I just wake up and check the price of a Bitcoin and all the cryptocurrencies and all the news
+
+76
+00:05:11,456 --> 00:05:13,437
+I read in the morning. So that's my schedule.
+
+77
+00:05:13,457 --> 00:05:18,001
+So because I'm into this field and I was really lucky to
+
+78
+00:05:18,702 --> 00:05:19,963
+get this course because
+
+79
+00:05:21,084 --> 00:05:22,505
+I really like to share information.
+
+80
+00:05:23,846 --> 00:05:26,127
+the things that I'm really into it.
+
+81
+00:05:26,487 --> 00:05:30,749
+Apart from the other classes, most of them are of my interest, but
+
+82
+00:05:31,889 --> 00:05:35,530
+in general this course has a deep connection with me.
+
+83
+00:05:36,050 --> 00:05:37,751
+In this course I try to share
+
+84
+00:05:39,411 --> 00:05:40,072
+the fresh
+
+85
+00:05:41,532 --> 00:05:42,052
+topics,
+
+86
+00:05:42,753 --> 00:05:47,494
+I would share the best practices, the ones that I'm using and
+
+87
+00:05:48,975 --> 00:05:49,195
+etc.
+
+88
+00:05:50,998 --> 00:05:53,421
+we will have fun okay only thing from you
+
+89
+00:05:54,122 --> 00:05:54,823
+you have the best
+
+90
+00:05:55,624 --> 00:05:56,145
+way of
+
+91
+00:05:58,007 --> 00:06:02,193
+learning so you have the videos so you watch whenever you want
+
+92
+00:06:03,274 --> 00:06:03,414
+and
+
+93
+00:06:04,772 --> 00:06:06,974
+And sometimes students ask me,
+
+94
+00:06:08,875 --> 00:06:15,200
+why do the universities exist in this
+
+95
+00:06:15,781 --> 00:06:19,904
+day and age of AI? Why can't I just watch the YouTube and
+
+96
+00:06:20,765 --> 00:06:22,326
+as Elon Musk said today,
+
+97
+00:06:23,287 --> 00:06:24,928
+you can learn whatever you want with AI.
+
+98
+00:06:25,008 --> 00:06:25,188
+But
+
+99
+00:06:26,770 --> 00:06:27,270
+for that,
+
+100
+00:06:28,051 --> 00:06:29,272
+I would share my experience
+
+101
+00:06:30,292 --> 00:06:33,693
+insights for the role of the university and the professors
+
+102
+00:06:34,413 --> 00:06:40,255
+the only thing that we it's in my humble opinion okay maybe someone else has a different idea
+
+103
+00:06:40,295 --> 00:06:40,435
+but
+
+104
+00:06:42,756 --> 00:06:44,776
+in my opinion what we give you
+
+105
+00:06:45,496 --> 00:06:48,337
+as a university or and as a professor we give you
+
+106
+00:06:52,318 --> 00:06:52,738
+sort of
+
+107
+00:06:54,179 --> 00:06:54,859
+a planned
+
+108
+00:06:55,839 --> 00:06:57,780
+organized way of learning stuff okay
+
+109
+00:06:59,843 --> 00:07:04,748
+Sometimes there are multiple types of students, but I want to talk about a lot of stuff.
+
+110
+00:07:04,768 --> 00:07:06,850
+We have a lot of videos, so I will deliver them.
+
+111
+00:07:07,650 --> 00:07:11,113
+The thing is that in your class, there are very different types of students.
+
+112
+00:07:11,133 --> 00:07:12,435
+So some students just spend
+
+113
+00:07:14,777 --> 00:07:16,298
+one day, they can learn everything.
+
+114
+00:07:16,318 --> 00:07:23,164
+Some students are lazy. I was lazy in the past and I needed someone to guide me.
+
+115
+00:07:24,660 --> 00:07:24,940
+they,
+
+116
+00:07:25,780 --> 00:07:29,522
+I wanted someone to give me the data in a
+
+117
+00:07:30,462 --> 00:07:31,903
+portion by portion, okay?
+
+118
+00:07:32,403 --> 00:07:34,124
+So if I want to learn something,
+
+119
+00:07:34,964 --> 00:07:39,366
+if I open up the YouTube now and some free classes on online,
+
+120
+00:07:40,646 --> 00:07:41,147
+things really
+
+121
+00:07:42,707 --> 00:07:45,308
+get messy because the topics are quite long
+
+122
+00:07:46,249 --> 00:07:46,469
+and
+
+123
+00:07:47,389 --> 00:07:49,410
+I don't have a,
+
+124
+00:07:50,831 --> 00:07:51,291
+how to say,
+
+125
+00:07:52,131 --> 00:07:53,071
+I don't want to
+
+126
+00:07:54,712 --> 00:07:55,833
+do the planning and
+
+127
+00:07:57,153 --> 00:08:03,236
+divide the load for one year, but in university what you get is that you get the topic, you
+
+128
+00:08:03,296 --> 00:08:08,719
+get your dose of information weekly, you get your homework, so someone will be looking after
+
+129
+00:08:08,759 --> 00:08:12,520
+you in some way. You will be given the data by portion by portion.
+
+130
+00:08:12,560 --> 00:08:14,341
+That's much, much helpful.
+
+131
+00:08:14,401 --> 00:08:19,266
+Apart from this, what I am teaching, the topics you can you can watch on the internet most
+
+132
+00:08:19,326 --> 00:08:25,035
+of the things are available but the interesting part is this so we try to help you to deliver
+
+133
+00:08:25,075 --> 00:08:25,576
+the data
+
+134
+00:08:26,317 --> 00:08:29,341
+in a organized manner okay so
+
+135
+00:08:30,263 --> 00:08:31,004
+we decide
+
+136
+00:08:32,105 --> 00:08:33,106
+what is best for you
+
+137
+00:08:34,007 --> 00:08:37,510
+in the sense that we based on our background
+
+138
+00:08:39,071 --> 00:08:42,354
+and in addition in my classes i don't only teach
+
+139
+00:08:43,175 --> 00:08:47,539
+most of them i speak i talk like this i speak about many many other stuff i
+
+140
+00:08:48,340 --> 00:08:50,622
+i'm very talkative person so but in any case
+
+141
+00:08:53,594 --> 00:08:55,595
+the goal of the university I'll be talking about this
+
+142
+00:08:56,376 --> 00:08:57,596
+a lot during the course
+
+143
+00:08:59,197 --> 00:08:59,397
+and
+
+144
+00:09:00,238 --> 00:09:01,178
+that's it
+
+145
+00:09:02,599 --> 00:09:05,000
+let's talk first about the
+
+146
+00:09:05,861 --> 00:09:07,902
+course how the course runs and
+
+147
+00:09:09,503 --> 00:09:10,904
+how the week hours
+
+148
+00:09:11,764 --> 00:09:18,388
+work and what's about the grading so I'm planning that's my plan for now I want to
+
+149
+00:09:18,488 --> 00:09:22,410
+deliver the classes by Friday every week
+
+150
+00:09:23,110 --> 00:09:28,666
+so model opens on E-Class, I plan to have two recordings for two sessions because
+
+151
+00:09:30,303 --> 00:09:33,224
+in the asynchronous manner when we teach we cannot speak for
+
+152
+00:09:34,225 --> 00:09:35,306
+80 minutes okay
+
+153
+00:09:36,266 --> 00:09:37,707
+and the rule is that
+
+154
+00:09:38,447 --> 00:09:40,948
+when you don't have someone to speak in class
+
+155
+00:09:42,429 --> 00:09:47,131
+delivering class becomes too long so i will divide the class into two portions of 40 minutes
+
+156
+00:09:47,612 --> 00:09:50,413
+and believe me you don't want me to speak for 80 minutes okay
+
+157
+00:09:51,193 --> 00:09:56,316
+so 40 minutes and we can consider it as a lecture and then i will upload the slides
+
+158
+00:09:57,036 --> 00:10:01,240
+And every week you watch, you try on the chain, you work on the homework.
+
+159
+00:10:01,841 --> 00:10:05,825
+On Saturdays from 10 to 11 I try to give you, not
+
+160
+00:10:06,986 --> 00:10:09,448
+try to, this one is fixed so I will share
+
+161
+00:10:10,269 --> 00:10:12,411
+my online link for the office hours.
+
+162
+00:10:12,431 --> 00:10:13,652
+You can join, we can chat.
+
+163
+00:10:14,761 --> 00:10:16,002
+One hour is too much, I guess.
+
+164
+00:10:16,082 --> 00:10:17,443
+It depends on the Zoom timing.
+
+165
+00:10:17,463 --> 00:10:19,064
+We can put 40 minutes, we'll see.
+
+166
+00:10:21,606 --> 00:10:26,390
+And if there are too many students because you are 300, I will give you speech one by one,
+
+167
+00:10:26,410 --> 00:10:29,772
+okay? Maybe I'm planning also use the Telegram
+
+168
+00:10:31,093 --> 00:10:33,795
+chat where it's easier to
+
+169
+00:10:34,956 --> 00:10:37,178
+hold the streaming. That's also interesting.
+
+170
+00:10:37,198 --> 00:10:38,659
+So I will think about this.
+
+171
+00:10:38,679 --> 00:10:39,519
+So then
+
+172
+00:10:40,460 --> 00:10:42,862
+on Sundays, there will be a quiz.
+
+173
+00:10:45,312 --> 00:10:47,153
+I will share the quiz, so next week
+
+174
+00:10:47,873 --> 00:10:50,694
+it will close on Sunday again, you have one week
+
+175
+00:10:51,575 --> 00:10:57,877
+and the deadlines are always on Sundays, so you have one week to work on the game.
+
+176
+00:10:58,137 --> 00:11:02,519
+This course is highly dynamic, if something changes I will tell you throughout the class, but
+
+177
+00:11:03,039 --> 00:11:04,739
+we stick to this plan for now.
+
+178
+00:11:06,500 --> 00:11:11,164
+Where everything is. So everything based on recordings, my recordings will be in the class
+
+179
+00:11:11,624 --> 00:11:15,768
+slides, quiz and grades always in the class.
+
+180
+00:11:15,948 --> 00:11:16,148
+I'm
+
+181
+00:11:17,589 --> 00:11:20,652
+I can say I'm the master of E class because I
+
+182
+00:11:21,493 --> 00:11:24,415
+is a side work is my professional life.
+
+183
+00:11:24,975 --> 00:11:30,601
+I also work on the e-learning systems, LMS, learning management systems,
+
+184
+00:11:31,322 --> 00:11:37,829
+and in my small company I deliver the service to other universities and I handle the
+
+185
+00:11:38,209 --> 00:11:41,633
+e-class platforms of other 10 universities.
+
+186
+00:11:42,214 --> 00:11:44,496
+I'm the administrator and I provide services.
+
+187
+00:11:45,657 --> 00:11:50,622
+I know how the system works and you will see most of my stuff will be on the E-Class.
+
+188
+00:11:51,103 --> 00:11:54,727
+We will be using its full potential hopefully in this course.
+
+189
+00:11:55,488 --> 00:11:59,512
+LMS has a clock and is the only clock that counts for the deadlines.
+
+190
+00:12:01,002 --> 00:12:05,524
+Pay attention, it's a strict deadline there, so you have to follow the deadlines.
+
+191
+00:12:06,104 --> 00:12:11,386
+In this course, I want to use the grader of the E-Class where you will see dynamically your
+
+192
+00:12:11,446 --> 00:12:13,007
+grades. As soon as you get
+
+193
+00:12:14,748 --> 00:12:18,089
+your grades, you will see them in your E-Class page.
+
+194
+00:12:18,249 --> 00:12:20,450
+How to see, if you don't know, I will show you later.
+
+195
+00:12:21,070 --> 00:12:27,860
+about the grading I want to have the attendance even if no one attends these online sessions
+
+196
+00:12:27,920 --> 00:12:28,041
+but
+
+197
+00:12:28,922 --> 00:12:29,523
+I will
+
+198
+00:12:30,745 --> 00:12:34,690
+use the participation of 10% of attendance which will be
+
+199
+00:12:36,092 --> 00:12:41,537
+with the formula linked to the weekly quizzes so there will be quizzes so quizzes will
+
+200
+00:12:42,577 --> 00:12:49,002
+get 15 of the of your grade and if if you do the quiz you get additional
+
+201
+00:12:49,022 --> 00:12:51,404
+attendance point which is the participation okay
+
+202
+00:12:52,946 --> 00:12:57,269
+uh if you don't know if you don't understand how the formula works i will explain throughout
+
+203
+00:12:57,329 --> 00:13:02,013
+the class so then we have the home assignments uh home assignments
+
+204
+00:13:03,585 --> 00:13:08,069
+are 25% of the class where will be practical work
+
+205
+00:13:08,789 --> 00:13:11,732
+on the test network. I will explain what is a test network and
+
+206
+00:13:12,432 --> 00:13:18,097
+handwritten parts. So most of the time I will ask you to write something on a paper, scan it
+
+207
+00:13:18,157 --> 00:13:22,580
+and share on the eClass and I will check if I have time, of course, I will check.
+
+208
+00:13:24,502 --> 00:13:26,303
+and there will be term project
+
+209
+00:13:28,145 --> 00:13:31,027
+it will be I'm planning it will be individual
+
+210
+00:13:32,328 --> 00:13:38,952
+it's instead of the midterm exam and then we'll do the term project 2 where you work in teams
+
+211
+00:13:39,933 --> 00:13:46,818
+it will be a mess with 300 students again but we'll find a way okay so that's how things
+
+212
+00:13:46,918 --> 00:13:47,178
+work
+
+213
+00:13:49,100 --> 00:13:49,240
+then
+
+214
+00:13:51,988 --> 00:13:54,971
+uh what i wanted to tell you about the e-class okay
+
+215
+00:13:55,692 --> 00:13:57,294
+on e-class let me show you
+
+216
+00:13:58,715 --> 00:14:04,821
+so on e-class you have a section specifically for questions and answers please uh
+
+217
+00:14:05,862 --> 00:14:06,062
+when
+
+218
+00:14:07,058 --> 00:14:07,658
+your question
+
+219
+00:14:08,538 --> 00:14:15,380
+is related to the class topic I strongly advise you to ask me here not in the messages
+
+220
+00:14:15,460 --> 00:14:20,702
+part okay if something direct you can ask there but it's nice to have it here because
+
+221
+00:14:21,662 --> 00:14:26,764
+it would help the other students who might have the similar question they can find their answers
+
+222
+00:14:26,844 --> 00:14:32,346
+here okay Apart from this, how the platform is organized, I hope you already know, I will be
+
+223
+00:14:32,426 --> 00:14:32,926
+sharing
+
+224
+00:14:33,666 --> 00:14:39,389
+some documents here. Here you can see my syllabus of the course and I hope the syllabus is
+
+225
+00:14:39,409 --> 00:14:41,450
+also available now here, not yet, no,
+
+226
+00:14:42,190 --> 00:14:45,091
+it's not yet available here, but I shared the PDF.
+
+227
+00:14:49,278 --> 00:14:50,860
+Do I have to go through it now?
+
+228
+00:14:51,000 --> 00:14:56,547
+No. Read about this, there is the textbooks, which textbooks are we going to use,
+
+229
+00:14:57,908 --> 00:15:02,613
+class structure, explain what's a quiz, what's a home assignment, what is a term project, but
+
+230
+00:15:02,653 --> 00:15:03,274
+term project
+
+231
+00:15:04,656 --> 00:15:06,277
+I give you more details later.
+
+232
+00:15:07,628 --> 00:15:09,310
+Grading, I told you about this.
+
+233
+00:15:09,470 --> 00:15:15,755
+Attendance, please don't skip the quizzes because these are considered as your attendance.
+
+234
+00:15:17,216 --> 00:15:20,298
+And I have the whole list of topics for the blockchain.
+
+235
+00:15:20,478 --> 00:15:23,621
+And regarding the syllabus, guys, this course is,
+
+236
+00:15:24,502 --> 00:15:25,703
+strangely enough, it is
+
+237
+00:15:26,543 --> 00:15:27,264
+a very
+
+238
+00:15:27,984 --> 00:15:31,907
+dynamic field. If you see the news, things change every single day.
+
+239
+00:15:32,928 --> 00:15:34,609
+and I do my best
+
+240
+00:15:35,350 --> 00:15:36,530
+and that's my one of my
+
+241
+00:15:37,271 --> 00:15:40,133
+very important rules regarding the course
+
+242
+00:15:41,454 --> 00:15:43,014
+I really want to
+
+243
+00:15:44,816 --> 00:15:49,639
+deliver the new data in my slides that's why every year I change my slides
+
+244
+00:15:50,542 --> 00:15:54,685
+because as you know things are getting old especially in the it field
+
+245
+00:15:55,385 --> 00:16:00,408
+and i want to teach you something that's old okay if it was mathematics physics i would spend
+
+246
+00:16:01,168 --> 00:16:06,132
+the same speech every single year but with our courses are really strange because as soon as
+
+247
+00:16:06,172 --> 00:16:12,235
+i explain you something about bitcoin it can get old and it can be already uh obsolete okay
+
+248
+00:16:12,255 --> 00:16:12,475
+so
+
+249
+00:16:13,316 --> 00:16:19,400
+uh it's a bad thing that i refresh the slides and throughout the the class in the
+
+250
+00:16:20,823 --> 00:16:22,825
+something can get changed, okay?
+
+251
+00:16:23,885 --> 00:16:24,106
+So
+
+252
+00:16:25,106 --> 00:16:26,227
+don't get surprised, but
+
+253
+00:16:27,048 --> 00:16:28,949
+if something gets changed, I will tell you.
+
+254
+00:16:29,209 --> 00:16:31,110
+So we can start the class.
+
+255
+00:16:31,591 --> 00:16:33,112
+How long I've been speaking to?
+
+256
+00:16:33,312 --> 00:16:34,553
+Okay, 60 minutes already.
+
+257
+00:16:34,593 --> 00:16:34,753
+So
+
+258
+00:16:35,734 --> 00:16:39,476
+let's start the course. And in the first part, I will
+
+259
+00:16:40,297 --> 00:16:43,499
+talk a lot about money, about the history,
+
+260
+00:16:44,240 --> 00:16:46,321
+and then we slowly move to
+
+261
+00:16:47,082 --> 00:16:48,823
+the idea of the course, okay?
+
+262
+00:16:51,116 --> 00:16:57,881
+I will start with a story where the friend who lends the money so assume we have five friends
+
+263
+00:16:58,021 --> 00:16:58,882
+study together
+
+264
+00:17:00,923 --> 00:17:06,308
+in Tashkent they often lend money to each other some amount of money and on Monday for instance
+
+265
+00:17:06,468 --> 00:17:09,690
+Aziz lend some money to the Nose sorry if I'm using
+
+266
+00:17:10,779 --> 00:17:12,000
+some of your names, because
+
+267
+00:17:12,760 --> 00:17:18,063
+there is a high chance someone is Aziz and Elnoza, but just to make it familiar to you, okay?
+
+268
+00:17:18,123 --> 00:17:19,004
+I'm using these names.
+
+269
+00:17:19,784 --> 00:17:20,505
+For the lunch,
+
+270
+00:17:22,286 --> 00:17:28,029
+he's lending some money, and on Tuesday, Elnoza lending Begzot 30,000, and on Wednesday, Begzot
+
+271
+00:17:28,069 --> 00:17:30,950
+pays Aziz back 20,000, and then you see the mess.
+
+272
+00:17:32,131 --> 00:17:36,633
+After months, nobody can remember what's going on and then the argument can start.
+
+273
+00:17:38,234 --> 00:17:39,454
+In order to remember what they do,
+
+274
+00:17:40,215 --> 00:17:44,416
+normally they buy the notebook.
+
+275
+00:17:44,557 --> 00:17:47,378
+From now on, they write down everything about the loan.
+
+276
+00:17:49,518 --> 00:17:50,019
+One line
+
+277
+00:17:50,819 --> 00:17:50,980
+is
+
+278
+00:17:52,521 --> 00:17:59,048
+what happened. That's the very simple way of keeping things tracked.
+
+279
+00:17:59,268 --> 00:18:03,792
+I'm starting from very simple stuff and then we will move on what the course tells.
+
+280
+00:18:05,594 --> 00:18:08,157
+When the memory is not enough, what do we do?
+
+281
+00:18:08,597 --> 00:18:09,899
+We write things down, okay?
+
+282
+00:18:09,919 --> 00:18:15,524
+We get the paper like this, friend's notebook, we say, on Monday, Aziz and Noda gave 50,000,
+
+283
+00:18:15,544 --> 00:18:19,989
+look at the dates, also we have to write the dates, and how much we gave, from whom to who,
+
+284
+00:18:20,189 --> 00:18:26,455
+okay? This thing, guys, will be called from now on as a ledger, okay?
+
+285
+00:18:26,636 --> 00:18:32,339
+What is a ledger? And whenever I introduce some new word for you, I always give you the definition.
+
+286
+00:18:32,379 --> 00:18:35,401
+So the ledger is the list of records
+
+287
+00:18:36,101 --> 00:18:38,563
+of who gave what to whom,
+
+288
+00:18:39,283 --> 00:18:42,945
+and it's written in order, one line after the other, okay?
+
+289
+00:18:43,345 --> 00:18:48,228
+For example, your friend's notebook, or in a bank you have the list of payments, or in the
+
+290
+00:18:48,268 --> 00:18:52,731
+shop you have the book of sales, or in the university you have the list of tuition payments.
+
+291
+00:18:53,191 --> 00:18:54,612
+All these things are called ledger.
+
+292
+00:18:55,392 --> 00:18:58,237
+And ledger is just the memory, okay?
+
+293
+00:18:58,257 --> 00:18:59,739
+Memory who paid what.
+
+294
+00:19:00,738 --> 00:19:05,501
+And whatever you have in here as a notebook is the same
+
+295
+00:19:06,201 --> 00:19:06,541
+thing
+
+296
+00:19:07,422 --> 00:19:08,603
+inside your ledger
+
+297
+00:19:09,403 --> 00:19:11,084
+is written in this way, okay?
+
+298
+00:19:11,544 --> 00:19:12,745
+He has the ID,
+
+299
+00:19:13,545 --> 00:19:16,987
+the date, it's a table, sort of a table where
+
+300
+00:19:17,888 --> 00:19:21,890
+we show from where to and how much amount is used.
+
+301
+00:19:21,910 --> 00:19:26,993
+So that's a ledger for us because this word I will be using quite a lot, especially in this
+
+302
+00:19:27,073 --> 00:19:28,254
+course, so you have to understand.
+
+303
+00:19:28,614 --> 00:19:29,795
+Whenever you hear a ledger,
+
+304
+00:19:31,295 --> 00:19:34,337
+ledger is just the notebook of the
+
+305
+00:19:35,178 --> 00:19:39,440
+transactions and then transaction is another word I will explain in the next slide so
+
+306
+00:19:40,541 --> 00:19:47,184
+so whenever I introduce I have this kind of cards all over the slides so your job is to remember
+
+307
+00:19:47,225 --> 00:19:51,427
+them okay these are very very important things and you will remember if you don't
+
+308
+00:19:52,968 --> 00:19:55,649
+thanks to my quizzes okay there will be quite a lot of quizzes
+
+309
+00:19:56,410 --> 00:19:56,530
+so
+
+310
+00:19:58,416 --> 00:20:01,559
+We call these things as a record.
+
+311
+00:20:01,759 --> 00:20:02,280
+Everything
+
+312
+00:20:03,021 --> 00:20:04,382
+is a record inside the table.
+
+313
+00:20:05,043 --> 00:20:07,346
+And then we can also understand the balance.
+
+314
+00:20:07,386 --> 00:20:09,748
+So what is a record and what's a balance?
+
+315
+00:20:09,768 --> 00:20:12,271
+So balance are just the calculated
+
+316
+00:20:13,753 --> 00:20:16,155
+values from the history of transactions.
+
+317
+00:20:16,436 --> 00:20:18,057
+But what is the transaction?
+
+318
+00:20:18,871 --> 00:20:22,174
+Transaction is one record in your ledger,
+
+319
+00:20:22,894 --> 00:20:25,256
+one transfer of value from one person to another.
+
+320
+00:20:25,436 --> 00:20:30,060
+So when you send some money from one person to another, you keep a row, and this row is called
+
+321
+00:20:30,481 --> 00:20:31,642
+transaction, okay?
+
+322
+00:20:32,842 --> 00:20:34,144
+So quite simple
+
+323
+00:20:35,104 --> 00:20:35,385
+stuff.
+
+324
+00:20:36,123 --> 00:20:39,306
+then balance balance is how much someone
+
+325
+00:20:40,227 --> 00:20:46,352
+has now okay found by going through all their transactions so if you calculate that's your
+
+326
+00:20:46,592 --> 00:20:51,837
+your balance you have to subtract something you have to remove some add something so it's the
+
+327
+00:20:51,877 --> 00:20:52,837
+number your bank
+
+328
+00:20:54,066 --> 00:20:57,268
+program shows, if you have a, I don't know, Capital Bank
+
+329
+00:20:58,409 --> 00:21:03,533
+and Bull Bank on top of this, pay me, pay me or the click where you see your
+
+330
+00:21:04,414 --> 00:21:06,155
+amount of money, it's called the balance.
+
+331
+00:21:06,175 --> 00:21:08,617
+So if we go back to the Aziz, Aziz
+
+332
+00:21:09,597 --> 00:21:11,078
+in the beginning of the month,
+
+333
+00:21:12,359 --> 00:21:13,060
+just a second.
+
+334
+00:21:15,260 --> 00:21:16,221
+start of the month,
+
+335
+00:21:16,922 --> 00:21:21,807
+but again, remember your click or pay me, there you see everything, like start of the month,
+
+336
+00:21:21,827 --> 00:21:25,130
+you spend some money, you get some money, and this is your balance, okay?
+
+337
+00:21:25,150 --> 00:21:29,694
+I don't have to spend too much time on this, so everybody knows what it is, but I have to explain.
+
+338
+00:21:29,714 --> 00:21:35,640
+So here, the key point is the balance is not a separate secret number, because anyone, who
+
+339
+00:21:35,680 --> 00:21:41,066
+has the ledger, if they see the notebook like your friends, if you're staying in the apartment,
+
+340
+00:21:41,366 --> 00:21:44,870
+they can have a look and they can calculate it and they know the balance, okay?
+
+341
+00:21:45,350 --> 00:21:48,133
+But the problem is if you are in the
+
+342
+00:21:50,155 --> 00:21:51,516
+dormitory living together,
+
+343
+00:21:52,657 --> 00:21:53,218
+Notebook
+
+344
+00:21:54,839 --> 00:21:56,260
+is public, so everyone can see it.
+
+345
+00:21:56,341 --> 00:22:00,324
+I mean, not public, among you, you can share the notebook.
+
+346
+00:22:00,344 --> 00:22:00,464
+But
+
+347
+00:22:01,505 --> 00:22:03,807
+in general, who holds the notebook?
+
+348
+00:22:03,847 --> 00:22:05,969
+That's the first question we have to ask.
+
+349
+00:22:06,930 --> 00:22:08,751
+There is only one notebook, remember,
+
+350
+00:22:09,532 --> 00:22:12,214
+and Timur keeps it in his bag, for instance.
+
+351
+00:22:13,155 --> 00:22:15,757
+And now ask yourself four questions.
+
+352
+00:22:15,797 --> 00:22:17,579
+So Timur has the notebook.
+
+353
+00:22:18,099 --> 00:22:24,024
+what is wrong with the notebook so what if timur quietly it's a line saying aziz gave timur
+
+354
+00:22:24,064 --> 00:22:30,369
+40 000 okay what if he loses the bag what happens what if he refuses to show the notebook to
+
+355
+00:22:30,409 --> 00:22:31,490
+malika for instance so
+
+356
+00:22:32,531 --> 00:22:32,931
+uh what if
+
+357
+00:22:33,955 --> 00:22:34,735
+It doesn't give the
+
+358
+00:22:36,836 --> 00:22:41,458
+data. And what if two friends don't agree what the line says?
+
+359
+00:22:41,498 --> 00:22:42,939
+For instance, in the line you wrote,
+
+360
+00:22:43,659 --> 00:22:44,980
+it's an even bigger issue.
+
+361
+00:22:45,540 --> 00:22:48,221
+You wrote, Aziz gave to Timur 40,000.
+
+362
+00:22:48,281 --> 00:22:51,002
+You wrote it down, but at some point Timur can come and say,
+
+363
+00:22:51,822 --> 00:22:53,823
+I didn't get this 40. Who wrote this?
+
+364
+00:22:54,203 --> 00:22:57,905
+So these are the really, the problematic part of the notebook.
+
+365
+00:22:57,945 --> 00:23:02,987
+Then whoever holds the ledger, the only ledger has the power
+
+366
+00:23:04,282 --> 00:23:05,742
+over everyone on it because
+
+367
+00:23:06,623 --> 00:23:08,783
+Timur actually can change something
+
+368
+00:23:09,523 --> 00:23:14,785
+and the others can only hope that Timur is the honest and careful and we have to select
+
+369
+00:23:16,145 --> 00:23:17,105
+someone that is
+
+370
+00:23:19,506 --> 00:23:26,228
+trustable okay so every ledger needs answer to one question also these four but
+
+371
+00:23:26,868 --> 00:23:31,571
+the most important question is who do we trust okay that's what we are going to talk about
+
+372
+00:23:31,611 --> 00:23:36,694
+today we're going to talk about trust and what is a trust trust is just believing that someone
+
+373
+00:23:36,734 --> 00:23:43,658
+will act honestly even when you cannot check what they do okay that's a trust for example
+
+374
+00:23:43,698 --> 00:23:49,601
+you trust your bus driver because either you drive safely you trust your bank they record your
+
+375
+00:23:49,681 --> 00:23:52,163
+salary correctly are you going to check
+
+376
+00:23:53,088 --> 00:23:55,991
+open up the ledger of the whole bank and see your transactions.
+
+377
+00:23:56,031 --> 00:23:59,034
+No, you trust. Everything is based on trust
+
+378
+00:23:59,794 --> 00:24:00,975
+when regarding the money
+
+379
+00:24:01,876 --> 00:24:02,517
+for the banks.
+
+380
+00:24:04,766 --> 00:24:06,427
+you will connect the dots at the end, okay?
+
+381
+00:24:06,447 --> 00:24:10,088
+So I'm starting with the trust and then I tell you don't trust, okay?
+
+382
+00:24:10,108 --> 00:24:15,530
+So it's a very interesting things or ideas we're going to cover, but I want to keep it as a
+
+383
+00:24:15,590 --> 00:24:20,891
+story. So we start from a story, we are living in a dormitory, we have a notebook now, we have
+
+384
+00:24:20,931 --> 00:24:24,953
+a trust now, so let's see and at some point I tell you don't trust, okay?
+
+385
+00:24:25,533 --> 00:24:28,414
+So the friends have only two choices, okay?
+
+386
+00:24:28,614 --> 00:24:33,935
+Choice A is that we have to choose one person, Timur for instance, everyone should trust and
+
+387
+00:24:33,995 --> 00:24:35,115
+let them keep the ledger,
+
+388
+00:24:36,056 --> 00:24:36,656
+we have to trust.
+
+389
+00:24:37,596 --> 00:24:42,957
+Or choice B is that find a way for everyone to check the ledger so that no one needs to be
+
+390
+00:24:43,017 --> 00:24:45,978
+trusted. So these two choices will be our
+
+391
+00:24:46,678 --> 00:24:49,879
+basic building blocks throughout the course, okay?
+
+392
+00:24:50,479 --> 00:24:53,920
+So choose one person everyone trusts or
+
+393
+00:24:55,026 --> 00:24:57,268
+make the ledger public so that everyone can see it.
+
+394
+00:24:58,609 --> 00:25:03,553
+Maybe you haven't heard of choice B never, but the choice A you can imagine, it's a bank.
+
+395
+00:25:03,633 --> 00:25:03,833
+Let's
+
+396
+00:25:04,854 --> 00:25:06,215
+talk about what happens today.
+
+397
+00:25:06,475 --> 00:25:08,917
+Today, bank stays in the middle
+
+398
+00:25:09,638 --> 00:25:10,218
+and if I
+
+399
+00:25:10,959 --> 00:25:17,926
+send 50,000 using a pay me or click or the bank transaction bank has a ledger and it's
+
+400
+00:25:17,946 --> 00:25:24,534
+called database okay the database is the is the ledger so there we see that aziz spent
+
+401
+00:25:24,814 --> 00:25:25,655
+some money
+
+402
+00:25:26,436 --> 00:25:32,544
+and then his account has two million two hundred fifty thousand the nozzle has something else
+
+403
+00:25:32,584 --> 00:25:32,704
+so
+
+404
+00:25:33,765 --> 00:25:40,390
+When you do this transaction, the NOZA gets paid 50,000 and then what's interesting is that
+
+405
+00:25:40,910 --> 00:25:42,111
+when you send this money
+
+406
+00:25:42,911 --> 00:25:43,732
+digitally,
+
+407
+00:25:44,433 --> 00:25:47,635
+I'm talking about click and pay me, when you send,
+
+408
+00:25:48,595 --> 00:25:49,716
+no banknote is moved.
+
+409
+00:25:50,817 --> 00:25:54,139
+Two lines change just in the database.
+
+410
+00:25:54,539 --> 00:25:57,321
+This is just a simplified version, but it looks like this.
+
+411
+00:26:00,333 --> 00:26:03,276
+The bank has a database and no banknotes moved.
+
+412
+00:26:03,676 --> 00:26:05,338
+We are just dealing with the
+
+413
+00:26:06,699 --> 00:26:07,139
+database.
+
+414
+00:26:08,080 --> 00:26:10,322
+And the world chose this version of A.
+
+415
+00:26:11,764 --> 00:26:15,067
+Most of us today trust the bank.
+
+416
+00:26:15,547 --> 00:26:16,848
+When you pay with a card,
+
+417
+00:26:17,912 --> 00:26:18,913
+app or with your
+
+418
+00:26:20,314 --> 00:26:20,794
+ClickUp,
+
+419
+00:26:21,654 --> 00:26:24,036
+the money actually is not being sent, okay?
+
+420
+00:26:24,056 --> 00:26:30,940
+The bank is changing just the two line in their ledger without moving money, and your money
+
+421
+00:26:31,080 --> 00:26:35,362
+is the line in the bank's ledger, and you just trust the bank that they will keep it right,
+
+422
+00:26:35,462 --> 00:26:37,443
+okay? So you trust,
+
+423
+00:26:38,624 --> 00:26:41,246
+and everybody does it today, most of us.
+
+424
+00:26:41,606 --> 00:26:41,926
+I don't.
+
+425
+00:26:46,471 --> 00:26:49,854
+I'm into the blockchain because I teach and also
+
+426
+00:26:51,895 --> 00:26:54,297
+I want my money safe, but we'll talk about this.
+
+427
+00:26:55,138 --> 00:26:59,021
+So today, intermediary keeps the ledger, okay?
+
+428
+00:26:59,181 --> 00:27:00,962
+And we trust it. And what's intermediary?
+
+429
+00:27:01,323 --> 00:27:05,746
+Intermediary is just someone in the middle who keeps the ledger for everybody and makes the
+
+430
+00:27:05,786 --> 00:27:06,627
+transfers happen.
+
+431
+00:27:07,502 --> 00:27:10,463
+In everyday English, we call it a middleman, okay?
+
+432
+00:27:10,483 --> 00:27:16,264
+There is a middleman, the bank, the click, the pay me or the card company that you have.
+
+433
+00:27:16,504 --> 00:27:17,484
+I don't know what it's called.
+
+434
+00:27:17,504 --> 00:27:17,524
+I
+
+435
+00:27:19,224 --> 00:27:19,645
+was or
+
+436
+00:27:20,485 --> 00:27:21,905
+many, many, many of them today.
+
+437
+00:27:22,025 --> 00:27:26,546
+So we trust on it. And why this guy is there?
+
+438
+00:27:27,066 --> 00:27:28,426
+Why we need the intermediary?
+
+439
+00:27:28,446 --> 00:27:29,667
+Why we need the middleman?
+
+440
+00:27:33,054 --> 00:27:35,415
+Banks are not by mistake there, okay?
+
+441
+00:27:35,895 --> 00:27:36,855
+They have
+
+442
+00:27:37,995 --> 00:27:41,076
+real work behind the scenes, so we need them.
+
+443
+00:27:41,416 --> 00:27:47,458
+They do some useful work of keeping the notebook among the friends who cannot do, okay?
+
+444
+00:27:47,758 --> 00:27:49,779
+So you cannot trust your friend, but you trust the bank.
+
+445
+00:27:50,779 --> 00:27:56,284
+the intermediary what it does intermediary keeps the ledger safe and backed up so the first
+
+446
+00:27:56,344 --> 00:28:01,049
+problem is keeping it safe nobody stalls it nobody changes it and
+
+447
+00:28:02,510 --> 00:28:09,136
+backing up like if something gets burned if the electricity is down so they have to
+
+448
+00:28:09,497 --> 00:28:10,277
+manage it okay
+
+449
+00:28:11,337 --> 00:28:15,621
+They have to check who you are because you don't want someone else using your money.
+
+450
+00:28:16,282 --> 00:28:17,844
+They put all the monies in order.
+
+451
+00:28:18,424 --> 00:28:21,787
+They stop people spending what they don't have.
+
+452
+00:28:21,868 --> 00:28:23,329
+If you don't have money,
+
+453
+00:28:24,190 --> 00:28:27,693
+the bank should not keep spending infinite money.
+
+454
+00:28:28,054 --> 00:28:32,598
+They have to keep the balance and then if balance is less than zero, don't allow to spend.
+
+455
+00:28:33,439 --> 00:28:38,861
+this fixes the mistakes and handles the complaints so sometimes you have a complaint like you
+
+456
+00:28:38,901 --> 00:28:45,243
+didn't want to send money so someone else so you had this a mistake by mistake you paid for
+
+457
+00:28:45,323 --> 00:28:49,564
+the booking.com maybe so all these things are made by the
+
+458
+00:28:50,705 --> 00:28:52,726
+intermediary so nothing is lost
+
+459
+00:28:53,646 --> 00:28:53,726
+uh
+
+460
+00:28:54,438 --> 00:28:59,619
+Nobody else can spend your money, everyone agrees, and balance stays correct, okay?
+
+461
+00:28:59,639 --> 00:29:03,120
+And there is someone to call when something bad happens, okay?
+
+462
+00:29:03,900 --> 00:29:04,080
+So
+
+463
+00:29:04,940 --> 00:29:10,021
+intermediaries exist because keeping one ledger honest for millions of people is really hard
+
+464
+00:29:10,081 --> 00:29:15,282
+work, so we keep it. But having an intermediary has its own costs.
+
+465
+00:29:15,862 --> 00:29:16,963
+So you have to pay a fee.
+
+466
+00:29:17,743 --> 00:29:19,083
+Every service is paid.
+
+467
+00:29:21,793 --> 00:29:24,254
+Maybe in Uzbekistan we have a growing fintech.
+
+468
+00:29:24,634 --> 00:29:26,655
+We don't actually pay too much.
+
+469
+00:29:27,455 --> 00:29:29,736
+Believe me, you should be very thankful for that because
+
+470
+00:29:30,656 --> 00:29:32,757
+I lived in Italy for five years.
+
+471
+00:29:33,137 --> 00:29:36,858
+I lived in the United States, Japan.
+
+472
+00:29:36,878 --> 00:29:38,399
+I've seen many bank accounts.
+
+473
+00:29:39,399 --> 00:29:42,562
+where the fees are crazy really crazy so
+
+474
+00:29:43,663 --> 00:29:48,988
+especially if you are across the borders spending some money they're crazy so in uzbekistan
+
+475
+00:29:49,248 --> 00:29:51,971
+we are very lucky in this growing economy today
+
+476
+00:29:52,691 --> 00:29:57,636
+and the digitalization of the services we are almost paying nothing
+
+477
+00:29:58,577 --> 00:29:59,718
+depending on your bank of course
+
+478
+00:30:00,853 --> 00:30:01,253
+Timing,
+
+479
+00:30:02,514 --> 00:30:04,356
+you have to wait
+
+480
+00:30:05,216 --> 00:30:08,739
+for the weekends. If you ever
+
+481
+00:30:09,619 --> 00:30:10,080
+had
+
+482
+00:30:12,161 --> 00:30:13,122
+to deal with the banks,
+
+483
+00:30:14,022 --> 00:30:17,024
+you should know that they don't work on weekends.
+
+484
+00:30:17,084 --> 00:30:19,326
+On Saturday, if you want to send like $10,000
+
+485
+00:30:20,227 --> 00:30:23,609
+to your friend in the United States, you cannot because the bank doesn't work.
+
+486
+00:30:24,885 --> 00:30:29,769
+There are some workarounds like you can do them from the Western Union or some apps they can
+
+487
+00:30:29,849 --> 00:30:34,292
+do it today, but in general you cannot because the banks don't work.
+
+488
+00:30:34,312 --> 00:30:35,312
+Also on holidays
+
+489
+00:30:36,573 --> 00:30:39,575
+in the office hours they only work, so that's the limitation.
+
+490
+00:30:39,655 --> 00:30:41,537
+Then they have permission issues.
+
+491
+00:30:41,617 --> 00:30:41,997
+If they
+
+492
+00:30:43,458 --> 00:30:47,641
+find that you are cheating or doing something they can just refuse you or freeze your account,
+
+493
+00:30:48,001 --> 00:30:49,182
+sometimes by accident.
+
+494
+00:30:49,976 --> 00:30:51,039
+sometimes on purpose,
+
+495
+00:30:52,081 --> 00:30:55,188
+and it's not private. They can see what you're doing, okay?
+
+496
+00:30:55,669 --> 00:30:57,774
+If you are doing something illegal, they can see it.
+
+497
+00:31:00,127 --> 00:31:03,389
+Another thing is the single point of failure.
+
+498
+00:31:03,649 --> 00:31:09,132
+So this sentence we are going to use a lot in this course and it means that if your bank gets
+
+499
+00:31:09,212 --> 00:31:12,114
+offline, even the backup servers, they all get
+
+500
+00:31:13,514 --> 00:31:16,056
+offline or they got hacked or they fail,
+
+501
+00:31:17,016 --> 00:31:19,318
+everyone stops at once. So nothing works, okay?
+
+502
+00:31:19,338 --> 00:31:20,498
+You cannot access your money.
+
+503
+00:31:20,538 --> 00:31:20,678
+So
+
+504
+00:31:21,539 --> 00:31:22,920
+besides all of this,
+
+505
+00:31:23,952 --> 00:31:26,994
+we trust, we should have a balance.
+
+506
+00:31:27,034 --> 00:31:31,137
+Most of the time, the costs that we have to pay like here in the list
+
+507
+00:31:31,837 --> 00:31:32,618
+are worth paying
+
+508
+00:31:33,618 --> 00:31:38,502
+because we have no alternative solution, at least before the Satoshi Nakamoto, we didn't have
+
+509
+00:31:38,602 --> 00:31:40,083
+the best alternative solution.
+
+510
+00:31:43,085 --> 00:31:46,647
+The question is only whether there could be another way.
+
+511
+00:31:46,987 --> 00:31:48,168
+If we had another way,
+
+512
+00:31:49,852 --> 00:31:53,558
+we could choose it. And that's the goal of the course for today.
+
+513
+00:31:53,698 --> 00:31:55,380
+So what is the alternative way?
+
+514
+00:31:56,722 --> 00:31:58,805
+And why we're looking for an alternative way?
+
+515
+00:31:58,846 --> 00:32:03,352
+Because of this single point of failure, because when this intermediary fails,
+
+516
+00:32:04,214 --> 00:32:05,035
+like it happened,
+
+517
+00:32:06,386 --> 00:32:07,607
+Believe me, this big
+
+518
+00:32:08,387 --> 00:32:10,348
+showdown has happened like in 2018.
+
+519
+00:32:10,528 --> 00:32:11,328
+That's
+
+520
+00:32:12,769 --> 00:32:16,731
+from the Gazette, the newspaper.
+
+521
+00:32:17,271 --> 00:32:22,954
+In 2018, September 16th was a big day for the whole world.
+
+522
+00:32:23,014 --> 00:32:25,235
+Maybe you were, I don't know where you were.
+
+523
+00:32:26,556 --> 00:32:29,757
+In school, I don't know. But this thing happened and many people felt it.
+
+524
+00:32:29,797 --> 00:32:31,038
+And what happened back then?
+
+525
+00:32:31,778 --> 00:32:32,859
+So back then,
+
+526
+00:32:33,854 --> 00:32:34,815
+Lehman Brothers
+
+527
+00:32:36,457 --> 00:32:38,599
+is one of the largest banks
+
+528
+00:32:40,060 --> 00:32:41,902
+in the United States. It was founded
+
+529
+00:32:43,844 --> 00:32:48,169
+in 1850. Look at the numbers, this is a quite old bank.
+
+530
+00:32:48,910 --> 00:32:52,253
+On 15 September 2008 it went bankrupt.
+
+531
+00:32:52,773 --> 00:32:53,855
+It's amazing, it went bankrupt.
+
+532
+00:32:53,875 --> 00:32:54,415
+They just said
+
+533
+00:32:56,997 --> 00:32:57,557
+the failure
+
+534
+00:32:58,937 --> 00:33:05,900
+to return some money they just went bankrupt so the failure spread the fear throughout the
+
+535
+00:33:05,960 --> 00:33:08,541
+whole financial system because banks usually don't
+
+536
+00:33:09,561 --> 00:33:14,403
+fail they don't fail big intermediaries don't fail especially the big ones okay around the
+
+537
+00:33:14,423 --> 00:33:20,705
+world governments spend public money to rescue the other banks so since
+
+538
+00:33:21,066 --> 00:33:24,147
+everyone is rushing we will come back to this point later
+
+539
+00:33:25,756 --> 00:33:29,339
+why everyone started to panic.
+
+540
+00:33:31,240 --> 00:33:32,221
+And since this bank was
+
+541
+00:33:34,323 --> 00:33:38,987
+going bankrupt, the other banks started to do the same, and then the government
+
+542
+00:33:39,688 --> 00:33:40,389
+had to
+
+543
+00:33:41,249 --> 00:33:41,610
+pay
+
+544
+00:33:42,590 --> 00:33:48,316
+the problem of the bank, who is failing, they had to bail, we have this word, it's called bail,
+
+545
+00:33:48,396 --> 00:33:50,758
+bail out the bank by
+
+546
+00:33:52,235 --> 00:33:53,075
+replacing
+
+547
+00:33:53,815 --> 00:33:54,796
+their losses
+
+548
+00:33:55,596 --> 00:34:01,417
+and where can they replace the losses where they can get the money they get the money
+
+549
+00:34:02,177 --> 00:34:03,978
+using your money okay
+
+550
+00:34:04,838 --> 00:34:06,439
+maybe not yours your parents
+
+551
+00:34:07,299 --> 00:34:08,059
+all savings
+
+552
+00:34:11,020 --> 00:34:17,241
+whatever the savings you have they use the budget money so they the government bailed out the
+
+553
+00:34:17,441 --> 00:34:17,841
+banks
+
+554
+00:34:18,842 --> 00:34:19,842
+and that was the
+
+555
+00:34:22,435 --> 00:34:26,657
+countermeasure to not to let the other banks go bankrupt.
+
+556
+00:34:26,717 --> 00:34:30,359
+Why the other banks could go bankrupt after the John Lehman?
+
+557
+00:34:30,499 --> 00:34:35,982
+I will explain, but for now just remember this history, the big thing happened, it was a very
+
+558
+00:34:36,022 --> 00:34:41,244
+well-known crisis, you can read on the internet, it's widely documented what happened, you
+
+559
+00:34:41,264 --> 00:34:46,867
+can just open up the podcasts or on YouTube and listen to it, it was a really big disaster,
+
+560
+00:34:46,907 --> 00:34:48,008
+there are movies about this.
+
+561
+00:34:48,828 --> 00:34:53,136
+that's what we are going to cover okay that's i introduced you the
+
+562
+00:34:54,518 --> 00:34:55,079
+solution
+
+563
+00:34:56,080 --> 00:34:59,787
+now i show you the problem with that solution to money problem
+
+564
+00:35:01,249 --> 00:35:02,431
+and that's the
+
+565
+00:35:03,752 --> 00:35:04,152
+date
+
+566
+00:35:05,413 --> 00:35:06,413
+that stayed in our
+
+567
+00:35:08,114 --> 00:35:09,974
+history and is very important.
+
+568
+00:35:09,994 --> 00:35:12,575
+So that's why we will come back to this point a bit later.
+
+569
+00:35:12,595 --> 00:35:12,775
+So
+
+570
+00:35:13,716 --> 00:35:18,557
+what happened? 158-year-old record keeper
+
+571
+00:35:19,278 --> 00:35:20,618
+where everyone trusted.
+
+572
+00:35:21,098 --> 00:35:22,859
+So we said trust is very important.
+
+573
+00:35:23,419 --> 00:35:27,341
+They collapsed. How they collapsed, why they collapsed is not important for now.
+
+574
+00:35:27,361 --> 00:35:29,181
+Remember, intermediate failed
+
+575
+00:35:30,182 --> 00:35:31,042
+in a single weekend.
+
+576
+00:35:33,459 --> 00:35:34,680
+That was the big problem.
+
+577
+00:35:34,720 --> 00:35:35,942
+Then what we learned from this?
+
+578
+00:35:38,624 --> 00:35:40,206
+Even the biggest guys,
+
+579
+00:35:43,429 --> 00:35:44,410
+even the biggest guys
+
+580
+00:35:45,331 --> 00:35:48,935
+intermediary just like this one, they can fail.
+
+581
+00:35:49,796 --> 00:35:53,080
+After 2008, many people started to ask the question.
+
+582
+00:35:53,976 --> 00:35:57,638
+Can we actually keep the records without trusting one company?
+
+583
+00:35:58,958 --> 00:36:00,899
+Because they found that they can fail.
+
+584
+00:36:01,979 --> 00:36:05,321
+Trusting in one keeper works until something fails.
+
+585
+00:36:05,801 --> 00:36:07,142
+People started to ask a question.
+
+586
+00:36:11,785 --> 00:36:16,287
+there are some solutions okay we'll be talking about this but before that I explain you some
+
+587
+00:36:16,327 --> 00:36:19,268
+terminology for that okay so today guys
+
+588
+00:36:21,569 --> 00:36:25,750
+after these big changes the money is not actually digital now okay so
+
+589
+00:36:27,531 --> 00:36:32,613
+you can think of your last payments when you go to the Carzinga or you paid for the
+
+590
+00:36:33,413 --> 00:36:34,274
+subway station
+
+591
+00:36:35,054 --> 00:36:37,295
+have you used the money in the last days no
+
+592
+00:36:38,230 --> 00:36:41,653
+There is even bigger conspiracy theory where the banks are
+
+593
+00:36:42,373 --> 00:36:44,475
+pushing to this very hard to
+
+594
+00:36:45,776 --> 00:36:45,996
+keep
+
+595
+00:36:46,916 --> 00:36:48,738
+the bank notes away, but it's another topic.
+
+596
+00:36:48,758 --> 00:36:48,898
+But
+
+597
+00:36:50,059 --> 00:36:52,901
+you don't use today bank notes very often, okay?
+
+598
+00:36:54,322 --> 00:36:56,783
+I love China. In China, when you travel,
+
+599
+00:36:57,844 --> 00:37:00,966
+you cannot spend money. You cannot give bank notes to
+
+600
+00:37:01,767 --> 00:37:02,888
+the place wherever you want.
+
+601
+00:37:03,811 --> 00:37:08,233
+Some places don't accept any banknotes, even no cards.
+
+602
+00:37:08,493 --> 00:37:12,034
+You have to pay by WeChat or some other apps.
+
+603
+00:37:13,295 --> 00:37:13,435
+And
+
+604
+00:37:14,235 --> 00:37:14,795
+this thing is
+
+605
+00:37:15,756 --> 00:37:17,136
+growing also in Uzbekistan.
+
+606
+00:37:18,677 --> 00:37:21,518
+And what changed? The paper money,
+
+607
+00:37:23,364 --> 00:37:26,426
+that you used to hold in your hands now is digital.
+
+608
+00:37:27,266 --> 00:37:31,289
+It's just digital meaning that it's the line in the ledger and nothing else.
+
+609
+00:37:31,389 --> 00:37:33,371
+So the money doesn't exist, it's just
+
+610
+00:37:34,271 --> 00:37:37,073
+the ledger's data transaction that it keeps.
+
+611
+00:37:38,945 --> 00:37:39,385
+And this
+
+612
+00:37:40,305 --> 00:37:46,387
+ledger is faster to change in the database than moving the actual money from one country to
+
+613
+00:37:46,427 --> 00:37:48,647
+another one. That's why it's called digital money.
+
+614
+00:37:48,707 --> 00:37:54,508
+Digital money that exits only in the record of a computer, not as a paper or metal, but just
+
+615
+00:37:54,648 --> 00:37:55,068
+as a
+
+616
+00:37:56,809 --> 00:37:57,809
+line of code, okay?
+
+617
+00:37:59,289 --> 00:37:59,449
+And
+
+618
+00:38:00,190 --> 00:38:01,870
+things made of the information,
+
+619
+00:38:03,008 --> 00:38:08,854
+like the row in your database, they are different from the physical assets that you have.
+
+620
+00:38:11,597 --> 00:38:12,818
+And that's the real danger.
+
+621
+00:38:13,178 --> 00:38:16,001
+Why? Because digital money can be copied.
+
+622
+00:38:16,842 --> 00:38:17,062
+So
+
+623
+00:38:18,423 --> 00:38:21,346
+think of digital photo. You can send a photo
+
+624
+00:38:22,167 --> 00:38:23,388
+to hundreds of friends,
+
+625
+00:38:24,169 --> 00:38:25,170
+you still have the photo.
+
+626
+00:38:27,473 --> 00:38:31,714
+Anything as a data, like a transaction in your bank, can be duplicated.
+
+627
+00:38:31,774 --> 00:38:33,935
+They can be copied for free.
+
+628
+00:38:34,895 --> 00:38:38,156
+And now imagine digital money.
+
+629
+00:38:38,316 --> 00:38:41,297
+We call it coin for now. It's a simple
+
+630
+00:38:42,117 --> 00:38:43,377
+file saying
+
+631
+00:38:44,098 --> 00:38:47,279
+coin number 001. File, just a file.
+
+632
+00:38:47,719 --> 00:38:50,679
+It can belong to who has the file.
+
+633
+00:38:50,699 --> 00:38:53,080
+Let's assume whoever has the file,
+
+634
+00:38:54,180 --> 00:38:55,281
+the coin belongs to them.
+
+635
+00:38:56,536 --> 00:38:57,557
+You send the file
+
+636
+00:38:58,377 --> 00:38:59,538
+to shop A
+
+637
+00:39:00,359 --> 00:39:06,243
+and then you send the same file to the shop B and then they have the copy of this and one coin,
+
+638
+00:39:06,904 --> 00:39:08,145
+you will have two purchases.
+
+639
+00:39:08,205 --> 00:39:09,446
+That's the biggest problem.
+
+640
+00:39:09,466 --> 00:39:13,569
+So paper cash doesn't have this problem as a physical asset.
+
+641
+00:39:14,309 --> 00:39:19,073
+The banknote in the shop A's drawer will not be in the drawer of the
+
+642
+00:39:19,793 --> 00:39:23,076
+shop B. You cannot give to shop B because you already spent it, okay?
+
+643
+00:39:24,191 --> 00:39:26,912
+So this thing is the really big danger.
+
+644
+00:39:27,853 --> 00:39:34,717
+And if I summarize this here, where you have a digital coin 001, if you spend it in
+
+645
+00:39:34,777 --> 00:39:38,319
+the shop A, and if you spend it in the shop B,
+
+646
+00:39:39,519 --> 00:39:45,362
+if it's a digital, each shop sees the coin that's real because the file is the real.
+
+647
+00:39:45,823 --> 00:39:47,504
+And this thing is called double spending.
+
+648
+00:39:48,424 --> 00:39:54,186
+and double spending is the biggest problem should be solved by the digital money that we are
+
+649
+00:39:54,246 --> 00:39:55,046
+discussing so
+
+650
+00:39:56,206 --> 00:40:02,148
+double spending means spending the same digital money twice by sending it to two people at
+
+651
+00:40:02,208 --> 00:40:03,788
+almost at the same moment okay
+
+652
+00:40:05,129 --> 00:40:07,549
+for example you are paying uh
+
+653
+00:40:08,670 --> 00:40:12,491
+to shop a and job b with the same coin that's the that's the problem
+
+654
+00:40:13,431 --> 00:40:13,611
+and
+
+655
+00:40:14,391 --> 00:40:15,111
+how the
+
+656
+00:40:16,051 --> 00:40:16,132
+uh
+
+657
+00:40:17,272 --> 00:40:17,832
+industry
+
+658
+00:40:18,728 --> 00:40:20,249
+or the bank will stop this.
+
+659
+00:40:20,710 --> 00:40:21,110
+How can
+
+660
+00:40:21,890 --> 00:40:23,191
+they stop the double spending?
+
+661
+00:40:23,211 --> 00:40:24,512
+So with the bank,
+
+662
+00:40:25,653 --> 00:40:29,556
+the problem of course disappears because every payment passes through one ledger.
+
+663
+00:40:29,576 --> 00:40:30,557
+There is only one ledger.
+
+664
+00:40:30,577 --> 00:40:36,081
+So if you spend money at 1240 microseconds
+
+665
+00:40:36,861 --> 00:40:37,701
+the bank checks the
+
+666
+00:40:38,602 --> 00:40:40,183
+balance. If it's enough,
+
+667
+00:40:40,963 --> 00:40:43,524
+it gets accepted and the balance is zero now.
+
+668
+00:40:44,165 --> 00:40:48,987
+Later on, if you try to do the double spending to the shop B, the bank checks again and
+
+669
+00:40:50,168 --> 00:40:51,608
+it refuses.
+
+670
+00:40:53,049 --> 00:40:57,971
+Double spending is fixed by the ledger thanks to the bank because next time when you try to
+
+671
+00:40:58,011 --> 00:41:00,293
+spend, you don't have a balance, so they check this.
+
+672
+00:41:01,900 --> 00:41:02,901
+Why this works? Because
+
+673
+00:41:03,641 --> 00:41:06,944
+there is one keeper that it sees everything and it can
+
+674
+00:41:07,864 --> 00:41:09,625
+put all the payments in the order.
+
+675
+00:41:10,106 --> 00:41:10,986
+So by the order,
+
+676
+00:41:12,287 --> 00:41:13,488
+you have the
+
+677
+00:41:14,809 --> 00:41:18,372
+correct transaction. That's where the choice A coming from, okay?
+
+678
+00:41:18,652 --> 00:41:22,715
+We trust the bank because he sees everything we trust and that's why it works.
+
+679
+00:41:23,375 --> 00:41:29,820
+But he has some problem because for many years, this was the only known way to make digital
+
+680
+00:41:29,860 --> 00:41:30,120
+money.
+
+681
+00:41:31,805 --> 00:41:33,346
+safe by looking at the balance
+
+682
+00:41:34,147 --> 00:41:34,307
+and
+
+683
+00:41:35,308 --> 00:41:37,329
+always we needed someone in the middle.
+
+684
+00:41:37,569 --> 00:41:42,152
+So digital money exists in the past.
+
+685
+00:41:42,692 --> 00:41:44,013
+But there was a big problem.
+
+686
+00:41:44,053 --> 00:41:45,814
+We needed again someone in the middle.
+
+687
+00:41:45,834 --> 00:41:51,278
+So digital money needed some middlemen because someone had to decide the order.
+
+688
+00:41:51,398 --> 00:41:52,399
+Who decides the order?
+
+689
+00:41:55,523 --> 00:42:02,464
+And the people, after 2008, trusting to the bank, they started to ask questions, the big questions.
+
+690
+00:42:03,004 --> 00:42:05,685
+So what happens if we lose the bank?
+
+691
+00:42:05,965 --> 00:42:07,705
+Let's not have the middleman.
+
+692
+00:42:09,026 --> 00:42:09,726
+Can we
+
+693
+00:42:10,706 --> 00:42:14,507
+design a system where a bunch of strangers can
+
+694
+00:42:15,667 --> 00:42:18,648
+have some digital money without anyone in the middle?
+
+695
+00:42:22,103 --> 00:42:28,707
+at this moment when you want to decide to have this without the intermediate man in the
+
+696
+00:42:28,907 --> 00:42:31,349
+person in the middle what what do you do
+
+697
+00:42:32,290 --> 00:42:37,554
+so you have to answer three questions at the same time okay so first question who keeps the
+
+698
+00:42:37,574 --> 00:42:38,934
+ledger we have to agree
+
+699
+00:42:39,935 --> 00:42:41,937
+remember group of strangers
+
+700
+00:42:42,779 --> 00:42:48,546
+your neighbors, a neighbor maybe is familiar, but some random people from another part of the
+
+701
+00:42:48,606 --> 00:42:50,288
+world, we have to decide, okay?
+
+702
+00:42:50,348 --> 00:42:51,990
+It's even difficult, imagine.
+
+703
+00:42:52,611 --> 00:42:56,815
+Who keeps the ledger? Am I going to give it to the Americans?
+
+704
+00:42:56,976 --> 00:42:58,778
+Am I going to give it to the Africans?
+
+705
+00:42:58,818 --> 00:43:00,360
+I don't know. Who keeps it?
+
+706
+00:43:00,680 --> 00:43:03,103
+If nobody owns it, where does it live?
+
+707
+00:43:04,598 --> 00:43:10,320
+Who decides the order? So I pay in the millisecond to one bank and
+
+708
+00:43:11,240 --> 00:43:13,641
+I paid also in the next millisecond to another
+
+709
+00:43:14,561 --> 00:43:14,802
+shop.
+
+710
+00:43:15,862 --> 00:43:18,383
+Otherwise, again, the problem of the double spending comes.
+
+711
+00:43:18,403 --> 00:43:19,723
+So who decides this order?
+
+712
+00:43:20,904 --> 00:43:24,565
+And who stops cheating? If something goes wrong, if someone is cheating
+
+713
+00:43:25,952 --> 00:43:29,434
+If someone is rewriting the past, like changing the
+
+714
+00:43:30,914 --> 00:43:35,997
+ledger who we trust, if they change something, who will find them, okay?
+
+715
+00:43:36,317 --> 00:43:41,720
+So these are the very difficult questions to answer, and someone answered to these questions.
+
+716
+00:43:41,920 --> 00:43:43,180
+I will talk about this later.
+
+717
+00:43:44,121 --> 00:43:44,281
+And
+
+718
+00:43:45,962 --> 00:43:48,163
+no intermediate means these three things.
+
+719
+00:43:49,003 --> 00:43:53,787
+problems should be done another way so we have to find a way
+
+720
+00:43:54,848 --> 00:43:59,452
+in contrast to the banks to answer these questions okay in my next set of
+
+721
+00:44:01,214 --> 00:44:06,618
+videos i will i will explain this i will pause the video for now and you will wait for the
+
+722
+00:44:06,738 --> 00:44:11,983
+second session hopefully i will upload it maybe today by the evening i don't know let's see
+
+723
+00:44:12,884 --> 00:44:13,104
+see you

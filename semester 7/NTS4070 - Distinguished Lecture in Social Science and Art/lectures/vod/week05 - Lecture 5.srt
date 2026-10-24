@@ -1,0 +1,2375 @@
+1
+00:00:03,541 --> 00:00:05,723
+Hi dear students, welcome to our next class.
+
+2
+00:00:06,003 --> 00:00:07,284
+I hope everybody's doing well.
+
+3
+00:00:07,944 --> 00:00:14,229
+And before starting our next lecture, so let me give some information regarding the class administration.
+
+4
+00:00:14,789 --> 00:00:18,572
+So in the beginning, as we were having some timetable changes,
+
+5
+00:00:19,353 --> 00:00:21,494
+I didn't tell you about my
+
+6
+00:00:23,536 --> 00:00:30,481
+office hours, right? So now I decided to make office hours on Tuesdays, the
+
+7
+00:00:30,521 --> 00:00:31,822
+first half of the day, okay?
+
+8
+00:00:32,133 --> 00:00:38,055
+So if in case you have any questions or want to talk about something, you can visit my office
+
+9
+00:00:38,396 --> 00:00:40,837
+in B410.
+
+10
+00:00:41,617 --> 00:00:46,079
+It's in the left side of the B building, same as last semester.
+
+11
+00:00:46,219 --> 00:00:47,999
+But I think I didn't teach you guys, right?
+
+12
+00:00:48,059 --> 00:00:54,482
+Last semester. So in any way, so on Tuesdays from 9 to 12 or 9 to 12.30.
+
+13
+00:00:54,602 --> 00:00:56,563
+So depending on the kind of my
+
+14
+00:00:57,703 --> 00:01:01,505
+availability. So you can visit my office in case if you have any questions.
+
+15
+00:01:02,112 --> 00:01:08,095
+And secondly, so as you guys remember, we wanted to have debates in the second part of our
+
+16
+00:01:08,135 --> 00:01:14,217
+semester. And I'm about to finalize some of the points because
+
+17
+00:01:15,178 --> 00:01:17,839
+I think we are kind of,
+
+18
+00:01:18,840 --> 00:01:24,402
+we're coming to the point to the final dates of retake and drop, right?
+
+19
+00:01:24,442 --> 00:01:30,025
+So I think some of the guys joined and I believe there will be no more new students.
+
+20
+00:01:30,065 --> 00:01:35,925
+So based on this, So you can start forming the groups of five people, okay?
+
+21
+00:01:36,685 --> 00:01:42,328
+And then why I'm telling five, because this is a kind of a good number
+
+22
+00:01:43,069 --> 00:01:45,150
+to have kind of a good number of teams.
+
+23
+00:01:45,750 --> 00:01:45,890
+And
+
+24
+00:01:46,811 --> 00:01:47,331
+in the
+
+25
+00:01:48,372 --> 00:01:54,515
+extreme cases, like you can make four or six, but five is the best, okay?
+
+26
+00:01:54,635 --> 00:01:55,095
+It's
+
+27
+00:01:56,176 --> 00:02:02,388
+ideal. And I hope to give you the instructions of these debates by next week.
+
+28
+00:02:03,069 --> 00:02:07,650
+So please check eClass by next week so that you can start preparing.
+
+29
+00:02:07,870 --> 00:02:11,090
+Okay. So now let's start our next chapter.
+
+30
+00:02:12,050 --> 00:02:14,831
+Just one second. I'll share my slides.
+
+31
+00:02:19,792 --> 00:02:22,953
+Okay, guys, I hope the slides is visible to you.
+
+32
+00:02:23,493 --> 00:02:25,693
+So today we'll be talking about
+
+33
+00:02:26,593 --> 00:02:28,934
+recognizing, analyzing and constructing
+
+34
+00:02:30,088 --> 00:02:33,430
+arguments. Okay. And this is from chapter six
+
+35
+00:02:34,191 --> 00:02:36,052
+of the book, which we started.
+
+36
+00:02:36,693 --> 00:02:42,617
+And even though it doesn't cover the full information of this chapter, but I tried to take
+
+37
+00:02:42,657 --> 00:02:46,219
+some of the main points regarding this main topic.
+
+38
+00:02:46,399 --> 00:02:53,244
+Okay. And to begin with, let's watch one short
+
+39
+00:02:53,504 --> 00:02:56,887
+video clip of Lincoln Douglas debates.
+
+40
+00:02:57,287 --> 00:02:57,567
+Okay.
+
+41
+00:03:28,968 --> 00:03:31,130
+We have now heard the leading arguments
+
+42
+00:03:31,970 --> 00:03:37,435
+for the two candidates for the high office of United States Senator from Illinois, Judge Stephen
+
+43
+00:03:37,475 --> 00:03:38,035
+A. Douglas
+
+44
+00:03:38,876 --> 00:03:40,097
+and Mr. Abraham Lincoln.
+
+45
+00:03:40,817 --> 00:03:43,139
+Each of the candidates will now speak in rebuttal.
+
+46
+00:03:44,200 --> 00:03:44,440
+Judge
+
+47
+00:03:44,460 --> 00:03:52,546
+Douglas.
+
+48
+00:03:53,967 --> 00:03:54,888
+My fellow citizens,
+
+49
+00:03:56,300 --> 00:04:02,061
+My good friend Mr. Lincoln has addressed you with his usual artless sincerity, his pure homely
+
+50
+00:04:02,121 --> 00:04:04,922
+charm, his perennial native humor.
+
+51
+00:04:05,482 --> 00:04:09,383
+Like Brutus, in Shakespeare's immortal tragedy, Mr.
+
+52
+00:04:09,443 --> 00:04:11,184
+Lincoln is an honorable man.
+
+53
+00:04:11,604 --> 00:04:17,565
+But also like Brutus, he is an adept at the art of inserting daggers between an opponent's
+
+54
+00:04:17,645 --> 00:04:21,106
+ribs just when said opponent least expects it.
+
+55
+00:04:21,786 --> 00:04:26,147
+Behold me, ladies and gentlemen, I am covered with scars.
+
+56
+00:04:31,717 --> 00:04:35,739
+Mr. Lincoln harps constantly on this subject of equality.
+
+57
+00:04:36,639 --> 00:04:42,242
+He repeats over and over the argument used by Lovejoy and other abolitionists to wit that the
+
+58
+00:04:42,282 --> 00:04:48,645
+Declaration of Independence, having declared all men free and equal by divine law, thus Negro
+
+59
+00:04:48,705 --> 00:04:50,726
+equality, is an inalienable right.
+
+60
+00:04:51,946 --> 00:04:56,429
+Contrary to this stands the verdict of the Supreme Court in the case of Dred Scott.
+
+61
+00:04:57,989 --> 00:04:59,370
+Mr. Lincoln is a lawyer.
+
+62
+00:05:00,377 --> 00:05:05,867
+And I presume therefore that he knows that when he seeks to destroy public confidence in the
+
+63
+00:05:05,907 --> 00:05:10,877
+integrity, the inviolability of the Supreme Court, he is preaching revolution.
+
+64
+00:05:13,274 --> 00:05:19,036
+He asks me to state my opinion of the Dred Scott decision, and I answer him unequivocally by
+
+65
+00:05:19,096 --> 00:05:25,199
+saying I take the decisions of the Supreme Court to be the law of the land, and I intend to
+
+66
+00:05:25,339 --> 00:05:31,481
+obey them as such. Now will I be swayed from that position by all the ranting of all the fanatics
+
+67
+00:05:31,821 --> 00:05:38,104
+who preach racial equality, who would ask us to vote, eat, sleep, and marry with Negroes?
+
+68
+00:05:38,782 --> 00:05:43,765
+And I say further, let each state mind its own business and leave its neighbors alone.
+
+69
+00:05:44,485 --> 00:05:47,307
+If we'll stand on that principle, then Mr.
+
+70
+00:05:47,387 --> 00:05:54,291
+Lincoln will find that this great republic can exist, forever divided into free and slave states,
+
+71
+00:05:54,571 --> 00:06:01,475
+and we can go on as we have done, increasing in wealth, in population, in power, until
+
+72
+00:06:01,515 --> 00:06:03,216
+we shall become the admiration
+
+73
+00:06:03,997 --> 00:06:05,638
+and the terror of the world.
+
+74
+00:06:11,692 --> 00:06:12,922
+Mr. Abraham Lincoln.
+
+75
+00:06:25,027 --> 00:06:30,550
+Now, you've heard the judge make allusion to those who advocate voting and eating and marrying
+
+76
+00:06:30,630 --> 00:06:32,031
+and sleeping with Negroes.
+
+77
+00:06:32,551 --> 00:06:35,173
+Whether he meant me specifically, I do not know.
+
+78
+00:06:35,373 --> 00:06:40,436
+If he did, I can only say that just because I do not want a colored woman for a slave, I do
+
+79
+00:06:40,496 --> 00:06:42,577
+not necessarily want her for a wife.
+
+80
+00:06:43,317 --> 00:06:45,238
+I do not need to have her for either.
+
+81
+00:06:45,498 --> 00:06:47,079
+I can just leave her alone.
+
+82
+00:06:48,100 --> 00:06:53,463
+In some respects, she is certainly not my equal any more than I am the judge's equal in...
+
+83
+00:06:54,213 --> 00:06:55,053
+Some respects.
+
+84
+00:06:56,014 --> 00:07:00,856
+But in her natural right to eat the bread she earns with her own hands without asking leave
+
+85
+00:07:00,916 --> 00:07:04,978
+of somebody else, she is my equal and the equal of all others.
+
+86
+00:07:05,979 --> 00:07:11,301
+The purpose of the Dred Scott decision is to make property and nothing but property of the
+
+87
+00:07:11,381 --> 00:07:13,602
+Negro in all states of the Union.
+
+88
+00:07:14,363 --> 00:07:19,565
+As a nation, we began by declaring all men are created equal.
+
+89
+00:07:20,687 --> 00:07:25,711
+There was no mention of any exception to that rule in the Declaration of Independence.
+
+90
+00:07:26,371 --> 00:07:31,635
+But we now practically read it, all men are created equal except Negroes.
+
+91
+00:07:32,316 --> 00:07:34,977
+What is to stop us in future from decreeing
+
+92
+00:07:35,758 --> 00:07:42,523
+all men are created equal except Negroes, foreigners, Catholics, Jews,
+
+93
+00:07:43,584 --> 00:07:50,260
+or just poor people? This is the complacent policy of indifference to
+
+94
+00:07:50,460 --> 00:07:50,820
+evil,
+
+95
+00:07:51,720 --> 00:07:55,922
+and that policy I cannot but hate.
+
+96
+00:07:57,022 --> 00:08:02,004
+I hate it because it deprives our republic of its just influence in the world,
+
+97
+00:08:02,904 --> 00:08:09,726
+enables the enemies of free institutions everywhere to taunt us as hypocrites, causes
+
+98
+00:08:09,806 --> 00:08:14,048
+the real friends of freedom to doubt our sincerity.
+
+99
+00:08:14,963 --> 00:08:17,184
+In his final words tonight,
+
+100
+00:08:18,064 --> 00:08:18,984
+the judge said
+
+101
+00:08:20,165 --> 00:08:22,986
+that we can be the terror of the world.
+
+102
+00:08:24,806 --> 00:08:27,167
+I don't think we want to be that.
+
+103
+00:08:29,028 --> 00:08:33,389
+I think we would prefer to be the encouragement of the world,
+
+104
+00:08:34,349 --> 00:08:38,711
+the proof that at last man is worthy to be free.
+
+105
+00:08:40,168 --> 00:08:46,191
+But we shall provide no such encouragement unless we can establish our ability as a nation
+
+106
+00:08:46,211 --> 00:08:47,572
+to live and grow.
+
+107
+00:08:48,573 --> 00:08:55,536
+And we shall surely do neither if these states fail to remain united.
+
+108
+00:08:56,877 --> 00:09:03,801
+There can be no distinction in the definition of liberty as between one section and
+
+109
+00:09:03,861 --> 00:09:08,003
+another, one class and another, one race and another.
+
+110
+00:09:10,206 --> 00:09:14,448
+A house divided against itself cannot stand.
+
+111
+00:09:15,909 --> 00:09:22,191
+This government cannot endure permanently half slave
+
+112
+00:09:24,052 --> 00:09:24,592
+and half free.
+
+113
+00:09:40,809 --> 00:09:43,030
+Guys, I hope we all watched it.
+
+114
+00:09:43,751 --> 00:09:43,911
+And
+
+115
+00:09:45,151 --> 00:09:49,554
+even though the Lincoln lost the senatorial
+
+116
+00:09:50,675 --> 00:09:51,215
+election,
+
+117
+00:09:52,055 --> 00:09:53,036
+but he has
+
+118
+00:09:53,996 --> 00:09:55,637
+emerged from these debates
+
+119
+00:09:56,558 --> 00:09:59,219
+as a nationally renowned
+
+120
+00:10:00,680 --> 00:10:03,161
+public speaker and also critical thinker.
+
+121
+00:10:03,962 --> 00:10:10,355
+And the reason we're kind of bringing this example now is because this format which was
+
+122
+00:10:10,435 --> 00:10:11,976
+established in these debates
+
+123
+00:10:12,736 --> 00:10:19,099
+in like 200 years ago, in which one person kind of presents an argument and the other person,
+
+124
+00:10:19,119 --> 00:10:25,902
+the response with counter arguments has been adopted today by many organizations,
+
+125
+00:10:26,402 --> 00:10:32,404
+including in the kind of scientific debates, including and also political debates and so on.
+
+126
+00:10:32,745 --> 00:10:36,086
+Okay. And the ability to recognize
+
+127
+00:10:36,927 --> 00:10:43,909
+or construct and analyze similar arguments is one of the most basic skills in critical
+
+128
+00:10:43,949 --> 00:10:44,649
+thinking today.
+
+129
+00:10:45,509 --> 00:10:51,930
+And to many of us, the word argument brings to mind the pictures
+
+130
+00:10:52,050 --> 00:10:54,251
+of maybe quarreling
+
+131
+00:10:55,051 --> 00:10:58,472
+or shouting, right? Or some kind of other negative behavior.
+
+132
+00:10:58,992 --> 00:11:05,553
+However, in the logic and in critical thinking, argument refers to the use of reason and evidence
+
+133
+00:11:06,212 --> 00:11:07,993
+to support a claim or conclusion.
+
+134
+00:11:09,615 --> 00:11:16,420
+And we can conclude that their kind of arguments are a form of inquiry that provides us
+
+135
+00:11:16,620 --> 00:11:23,565
+with reasons to accept or reject a particular position so that we can make up our own minds
+
+136
+00:11:24,025 --> 00:11:28,008
+about a particular issue or kind of a problem and so on.
+
+137
+00:11:31,070 --> 00:11:34,753
+And with these points in mind, so let me introduce
+
+138
+00:11:35,600 --> 00:11:37,541
+what we're going to discuss today.
+
+139
+00:11:37,561 --> 00:11:37,601
+So
+
+140
+00:11:38,761 --> 00:11:41,862
+first of all, we learn how to identify an issue.
+
+141
+00:11:42,563 --> 00:11:49,485
+And secondly, we learn how to recognize the parts of an argument, including the premise,
+
+142
+00:11:49,947 --> 00:11:51,368
+and conclusion and so on.
+
+143
+00:11:52,028 --> 00:11:58,990
+And we'll also learn about distinguishing among the argument, explanation and conditional statements.
+
+144
+00:11:59,570 --> 00:12:05,833
+And then we'll also learn to break down an argument into its premises and conclusion.
+
+145
+00:12:06,513 --> 00:12:08,153
+And we'll also learn how to
+
+146
+00:12:09,354 --> 00:12:11,875
+construct our own arguments.
+
+147
+00:12:11,895 --> 00:12:17,517
+And also we'll kind of learn to explore the basics of evaluating arguments.
+
+148
+00:12:18,017 --> 00:12:18,297
+Okay.
+
+149
+00:12:22,060 --> 00:12:28,705
+Okay then, so first topic is about issue, or some people may say it also is a problem,
+
+150
+00:12:28,945 --> 00:12:30,947
+okay? So what is an issue?
+
+151
+00:12:31,487 --> 00:12:38,313
+So arguments help us to analyze issues and to determine whether a particular position on an
+
+152
+00:12:38,393 --> 00:12:39,554
+issue is reasonable.
+
+153
+00:12:40,615 --> 00:12:43,777
+And by issue, we mean a kind of ill-defined
+
+154
+00:12:44,638 --> 00:12:51,163
+complex of problems involving a controversy or some kind of uncertainty, okay?
+
+155
+00:12:53,540 --> 00:12:54,081
+And
+
+156
+00:12:54,923 --> 00:12:56,205
+usually like
+
+157
+00:12:57,187 --> 00:12:59,351
+when we have kind of less skills
+
+158
+00:13:00,072 --> 00:13:06,273
+in this making arguments, and also writing skills, critical thinking skills, we may have a
+
+159
+00:13:06,333 --> 00:13:11,298
+problem of defining the issue clearly, okay?
+
+160
+00:13:11,618 --> 00:13:15,381
+So, and why it becomes an issue is that when we,
+
+161
+00:13:16,222 --> 00:13:22,708
+or if we don't define the issue or the problem clearly, then we have a kind of a slippery pass,
+
+162
+00:13:22,768 --> 00:13:26,151
+right? We may kind of slip to certain points
+
+163
+00:13:26,958 --> 00:13:33,522
+sideways right to certain kind of different topics or kind of different areas or the the other
+
+164
+00:13:33,562 --> 00:13:35,042
+part who is kind of
+
+165
+00:13:35,743 --> 00:13:41,386
+uh discussing the issue with us right or debating the topic with us they can easily kind of
+
+166
+00:13:41,626 --> 00:13:48,049
+manipulate with the situation and kind of drag us to different directions right so therefore
+
+167
+00:13:48,430 --> 00:13:54,293
+it's important first of all to clearly define the problem or issue okay
+
+168
+00:13:56,302 --> 00:14:02,984
+However, defining an issue requires certain skills such as clear thinking and also good
+
+169
+00:14:03,504 --> 00:14:05,485
+communication skills, okay?
+
+170
+00:14:08,486 --> 00:14:15,388
+And when the issue, like I said, is not clear, like it can lead us to nowhere and we
+
+171
+00:14:15,408 --> 00:14:17,649
+may end up in frustration, right?
+
+172
+00:14:18,009 --> 00:14:22,590
+In kind of maybe shouting and some other negative behaviors, for example, right?
+
+173
+00:14:26,077 --> 00:14:32,402
+And sometimes we may not have the opportunity to clarify an issue by just talking to another
+
+174
+00:14:32,442 --> 00:14:32,822
+person.
+
+175
+00:14:34,203 --> 00:14:36,965
+And this can be case in the written materials, right?
+
+176
+00:14:37,045 --> 00:14:40,508
+Maybe in newspapers or in magazines, for example, right?
+
+177
+00:14:40,988 --> 00:14:41,469
+And so on.
+
+178
+00:14:43,851 --> 00:14:49,395
+And therefore, one of the kind of skills or one of the ways to better communicate
+
+179
+00:14:50,382 --> 00:14:54,206
+clarify the issue is by asking the right questions.
+
+180
+00:14:54,366 --> 00:14:56,229
+Okay, so we should keep asking the questions.
+
+181
+00:14:56,749 --> 00:15:02,796
+So how we work our questions about an issue will influence how we go about seeking a
+
+182
+00:15:03,336 --> 00:15:05,138
+solution for this issue.
+
+183
+00:15:06,420 --> 00:15:10,044
+And during these debates, which we watched just now,
+
+184
+00:15:11,364 --> 00:15:15,506
+by this senator and also Lincoln, right?
+
+185
+00:15:15,906 --> 00:15:22,530
+So here Lincoln changed the national controversy about slavery by reframing the
+
+186
+00:15:22,630 --> 00:15:28,734
+issue so that it was not simply a controversy over kind of the particular state sovereignty,
+
+187
+00:15:29,254 --> 00:15:35,698
+but a burning question that affected the very existence of the entire nation, right?
+
+188
+00:15:35,758 --> 00:15:37,799
+Entire state or entire country.
+
+189
+00:15:43,669 --> 00:15:46,550
+Or we can also use some personal example.
+
+190
+00:15:47,050 --> 00:15:50,152
+So just assume that when you come back
+
+191
+00:15:50,972 --> 00:15:56,314
+to the dormitory, right, to your room after the class and you find out that your
+
+192
+00:15:57,054 --> 00:15:58,175
+wallet is missing
+
+193
+00:15:59,295 --> 00:16:06,038
+and you think that you left it in your maybe some dresser, but it is not
+
+194
+00:16:06,058 --> 00:16:08,078
+there. And what is the issue?
+
+195
+00:16:08,538 --> 00:16:12,360
+So when asked, many students may answer that the issue is
+
+196
+00:16:13,101 --> 00:16:14,882
+who stole my wallet, right?
+
+197
+00:16:15,442 --> 00:16:19,284
+However, the question is a loaded question based on
+
+198
+00:16:21,726 --> 00:16:22,346
+unfounded
+
+199
+00:16:23,847 --> 00:16:26,748
+assumption that someone stole your wallet, right?
+
+200
+00:16:27,509 --> 00:16:34,192
+Maybe you misplaced your wallet or you lost it in your way to the class, or maybe it got knocked
+
+201
+00:16:34,713 --> 00:16:36,013
+behind the dresser, right?
+
+202
+00:16:36,414 --> 00:16:39,255
+So for now, all we know is that the wallet is missing.
+
+203
+00:16:39,715 --> 00:16:45,811
+So therefore, rather than making assumptions you cannot support, it would be better to state
+
+204
+00:16:45,851 --> 00:16:51,658
+the issue as what happened to my wallet rather than who stole my wallet.
+
+205
+00:16:52,339 --> 00:16:59,308
+And we should know that one of the traits of a good critical thinker and of a great detective
+
+206
+00:16:59,408 --> 00:17:00,890
+also is open-mindedness.
+
+207
+00:17:18,308 --> 00:17:23,472
+Okay, guys, let's talk about rhetoric now because sometimes we may confuse
+
+208
+00:17:24,172 --> 00:17:26,835
+the argumentation and the rhetorics, okay?
+
+209
+00:17:27,455 --> 00:17:30,037
+So when we start with a position statement
+
+210
+00:17:30,798 --> 00:17:32,859
+rather than with an open-ended question
+
+211
+00:17:33,600 --> 00:17:39,664
+that invites us to explore and analyze a particular issue, so in such cases, we are using rhetoric.
+
+212
+00:17:40,465 --> 00:17:44,368
+And many people mistake rhetoric for logical arguments, okay?
+
+213
+00:17:44,868 --> 00:17:47,190
+So as you can see in the screen, rhetoric,
+
+214
+00:17:48,102 --> 00:17:54,507
+It's also known as the art of persuasion is used to promote a particular position or worldview.
+
+215
+00:17:55,308 --> 00:17:57,970
+Okay. So here, like when we already
+
+216
+00:17:59,371 --> 00:18:02,874
+came to some conclusion, right, and we want to kind of
+
+217
+00:18:03,915 --> 00:18:06,017
+persuade some people right about
+
+218
+00:18:06,817 --> 00:18:12,722
+our worldview about our situation, then in such cases, we may be using rhetoric.
+
+219
+00:18:13,183 --> 00:18:13,543
+Okay.
+
+220
+00:18:15,585 --> 00:18:15,805
+So
+
+221
+00:18:19,089 --> 00:18:19,990
+Here, as we see,
+
+222
+00:18:20,790 --> 00:18:27,476
+while the purpose of rhetoric is to persuade, the purpose of argument is to
+
+223
+00:18:27,516 --> 00:18:30,098
+discover the truth, okay?
+
+224
+00:18:30,398 --> 00:18:36,583
+So when we're using argumentation, we didn't have, or may not have taken a particular position
+
+225
+00:18:36,643 --> 00:18:40,386
+yet, but our aim is to find the truth, okay?
+
+226
+00:18:45,891 --> 00:18:46,051
+And,
+
+227
+00:18:47,887 --> 00:18:51,675
+Unlike rhetoric, arguments are open to multiple perspectives
+
+228
+00:18:52,396 --> 00:18:58,769
+and we should resist the temptation to polarize an issue or reduce it to two sides.
+
+229
+00:18:59,815 --> 00:19:06,802
+polarization of an issue can occur in politics where we, for example, our country,
+
+230
+00:19:07,322 --> 00:19:13,668
+our religion, our party, or our worldview are good, while they, or another country,
+
+231
+00:19:14,029 --> 00:19:20,615
+another people, another kind of religious followers, right, they are labeled as wrongdoers,
+
+232
+00:19:20,655 --> 00:19:21,836
+right, or as evils.
+
+233
+00:19:22,565 --> 00:19:24,066
+So there is no in between.
+
+234
+00:19:24,847 --> 00:19:28,489
+And the tendency to frame a discussion of an issue as a debate
+
+235
+00:19:29,189 --> 00:19:30,450
+between two opposing sides
+
+236
+00:19:31,151 --> 00:19:35,994
+can make it harder for us to come up with effective and creative solutions.
+
+237
+00:19:42,538 --> 00:19:48,202
+And the purpose of argumentation is not simply to persuade someone,
+
+238
+00:19:49,168 --> 00:19:52,010
+to take a particular action or position on an issue,
+
+239
+00:19:52,810 --> 00:19:58,453
+but more importantly, the purpose is also to present the person with reasons.
+
+240
+00:20:00,834 --> 00:20:03,215
+Because of this, it's important to identify
+
+241
+00:20:03,956 --> 00:20:10,659
+our audience and to communicate, whether verbally or in written form, our argument using
+
+242
+00:20:10,719 --> 00:20:14,581
+language and concepts that are appropriate for that audience.
+
+243
+00:20:15,590 --> 00:20:21,294
+And good arguments also invite feedback and analysis of an issue in light of the feedback.
+
+244
+00:20:29,379 --> 00:20:33,842
+Okay, guys, let's talk now about more details about
+
+245
+00:20:34,882 --> 00:20:37,424
+arguments. So how to recognize an argument.
+
+246
+00:20:38,260 --> 00:20:45,126
+So first of all, an argument is made up of two or more propositions, one of which, the
+
+247
+00:20:45,166 --> 00:20:47,428
+conclusion, is supported by the
+
+248
+00:20:48,769 --> 00:20:49,069
+other
+
+249
+00:20:51,071 --> 00:20:52,312
+premises, okay?
+
+250
+00:20:54,374 --> 00:20:55,255
+And by
+
+251
+00:20:56,215 --> 00:21:02,533
+proposition, So an argument is made up of statements known as propositions, okay?
+
+252
+00:21:03,013 --> 00:21:04,613
+And what do we mean by a proposition?
+
+253
+00:21:04,933 --> 00:21:09,274
+So a proposition is a statement that expresses a complete thought.
+
+254
+00:21:09,714 --> 00:21:15,475
+So this is kind of just a sentence with some thought or with some idea behind, right?
+
+255
+00:21:15,755 --> 00:21:18,416
+So it can be either true or false.
+
+256
+00:21:18,836 --> 00:21:20,516
+Like here you see an example,
+
+257
+00:21:21,236 --> 00:21:23,577
+the earth revolves around the sun.
+
+258
+00:21:23,917 --> 00:21:25,197
+So it's a true statement, right?
+
+259
+00:21:26,359 --> 00:21:30,682
+Toronto is the capital of Canada is a false statement right because
+
+260
+00:21:31,682 --> 00:21:35,204
+Ottawa is the capital of Canada right so
+
+261
+00:21:36,045 --> 00:21:42,749
+then you can also pause the video and kind of come up with others propositions okay and
+
+262
+00:21:42,769 --> 00:21:49,253
+then what about the conclusion so the conclusion of an argument is the proposition that is
+
+263
+00:21:49,313 --> 00:21:49,873
+supported
+
+264
+00:21:50,734 --> 00:21:54,556
+or denied on the basis of other propositions or reasons
+
+265
+00:21:56,004 --> 00:22:00,847
+And usually the conclusion is what the argument is trying to prove.
+
+266
+00:22:01,847 --> 00:22:08,651
+And the conclusions may also be called as claims, viewpoints, or positions.
+
+267
+00:22:08,671 --> 00:22:11,773
+And conclusion can appear anywhere in the argument, okay?
+
+268
+00:22:11,813 --> 00:22:15,755
+So it can come in the beginning, like sometimes we may say it's a
+
+269
+00:22:16,916 --> 00:22:18,076
+thesis statement, right?
+
+270
+00:22:18,436 --> 00:22:18,977
+Or maybe
+
+271
+00:22:20,418 --> 00:22:21,518
+topic statement, right?
+
+272
+00:22:21,858 --> 00:22:24,620
+Or usually it can also come up in the end of the
+
+273
+00:22:26,008 --> 00:22:28,029
+certain paragraphs, for example, right?
+
+274
+00:22:28,830 --> 00:22:30,011
+And what about the premise?
+
+275
+00:22:30,711 --> 00:22:37,116
+A premise is a proposition that supports or gives reasons for accepting the conclusion.
+
+276
+00:22:37,917 --> 00:22:40,959
+And the reasoning goes from the premises to the conclusion.
+
+277
+00:22:44,102 --> 00:22:50,526
+And the good premises are based on fact and experience, but not on opinions and
+
+278
+00:22:50,747 --> 00:22:57,624
+assumptions. So the more credible the premises are, the better the argument is likely to
+
+279
+00:22:57,664 --> 00:22:57,844
+be.
+
+280
+00:23:02,407 --> 00:23:08,390
+And the conclusion should be supported by a follow from the premises, as we can see in the
+
+281
+00:23:08,430 --> 00:23:09,571
+following example, right?
+
+282
+00:23:09,951 --> 00:23:10,752
+So like,
+
+283
+00:23:12,333 --> 00:23:18,937
+for example, we can start saying that Canada has only one capital, and Ottawa is the capital
+
+284
+00:23:18,977 --> 00:23:23,741
+of Canada. Canada. So therefore, Toronto isn't the capital of Canada.
+
+285
+00:23:24,981 --> 00:23:28,323
+So here, the premise is the first sentence, right?
+
+286
+00:23:28,744 --> 00:23:34,648
+Ottawa is the capital of Canada, whereas the conclusion is, therefore, Toronto isn't the capital
+
+287
+00:23:34,688 --> 00:23:35,348
+of Canada.
+
+288
+00:23:40,351 --> 00:23:43,153
+Okay, let's talk more about the premises.
+
+289
+00:23:44,154 --> 00:23:49,317
+So there are several types of premises, as you guys can see in your screens, okay?
+
+290
+00:23:50,014 --> 00:23:54,855
+So first of all, descriptive premises, they're based on empirical facts.
+
+291
+00:23:55,615 --> 00:24:02,397
+And by empirical facts, we mean the scientific observation or the evidence of our five senses.
+
+292
+00:24:02,917 --> 00:24:04,458
+So something that we can
+
+293
+00:24:05,618 --> 00:24:06,938
+see, for example, right?
+
+294
+00:24:07,238 --> 00:24:08,879
+Something we can maybe...
+
+295
+00:24:09,887 --> 00:24:14,410
+Gernot Wagner- get the knowledge, based on the scientific testing, for example, right by just
+
+296
+00:24:14,450 --> 00:24:20,033
+maybe viewing what's going on outside right, so this is called as empirical evidence right.
+
+297
+00:24:20,053 --> 00:24:20,193
+Gernot
+
+298
+00:24:22,795 --> 00:24:29,679
+Wagner- And what about the prescriptive premises so in contrast and they contain a very statements
+
+299
+00:24:30,339 --> 00:24:31,900
+okay so such as.
+
+300
+00:24:32,627 --> 00:24:38,371
+We should strive for diversity on the university campuses or it's wrong to cheat on exams.
+
+301
+00:24:38,872 --> 00:24:39,312
+So here
+
+302
+00:24:40,133 --> 00:24:41,994
+they are kind of a value statements, right?
+
+303
+00:24:42,314 --> 00:24:45,997
+So, but they may not be facts also, right?
+
+304
+00:24:46,037 --> 00:24:49,239
+They may not be as a kind of empirical facts.
+
+305
+00:24:51,521 --> 00:24:52,682
+And the next one is a
+
+306
+00:24:53,754 --> 00:25:00,557
+analogical premise, which takes the form of an analogy in which a comparison is made
+
+307
+00:25:00,877 --> 00:25:03,498
+between two similar events or things.
+
+308
+00:25:04,239 --> 00:25:04,619
+Okay,
+
+309
+00:25:05,519 --> 00:25:11,782
+so we have seen some of the examples in the previous chapters, right, by Greek philosophers,
+
+310
+00:25:11,882 --> 00:25:12,202
+right?
+
+311
+00:25:16,284 --> 00:25:16,824
+Like,
+
+312
+00:25:17,624 --> 00:25:18,765
+just as the
+
+313
+00:25:20,849 --> 00:25:27,834
+charioteer is in charge of the horses, said Plato, so too should our reason be in
+
+314
+00:25:27,914 --> 00:25:30,216
+charge of our emotions and passions.
+
+315
+00:25:30,676 --> 00:25:32,837
+So this is called as analogical premises.
+
+316
+00:25:33,838 --> 00:25:39,782
+And the last one is a definitional premise, which contains a definition of a key term.
+
+317
+00:25:40,483 --> 00:25:46,267
+So this is particularly important when the key term is ambiguous and has different definitions,
+
+318
+00:25:46,507 --> 00:25:47,728
+right? For example,
+
+319
+00:25:48,564 --> 00:25:49,766
+What do you mean by right?
+
+320
+00:25:50,606 --> 00:25:52,829
+What do we mean exactly by diversity?
+
+321
+00:25:53,330 --> 00:25:53,690
+Okay.
+
+322
+00:25:55,492 --> 00:26:00,638
+So therefore, like it would be better also to clarify right in the beginning of the argument
+
+323
+00:26:00,999 --> 00:26:04,763
+or in the middle of the argument also to clarify some of the definitions.
+
+324
+00:26:05,384 --> 00:26:05,684
+Okay.
+
+325
+00:26:11,972 --> 00:26:18,014
+And we sometimes confuse explanations and conditional statements with arguments also.
+
+326
+00:26:18,734 --> 00:26:25,016
+And by explanation, we mean a statement about why or how something is the case.
+
+327
+00:26:26,296 --> 00:26:29,997
+And with an explanation, we know that something has occurred.
+
+328
+00:26:30,537 --> 00:26:31,537
+Like in the example,
+
+329
+00:26:32,277 --> 00:26:34,598
+the baby cried because
+
+330
+00:26:35,298 --> 00:26:37,219
+maybe her mother left, right?
+
+331
+00:26:37,279 --> 00:26:39,499
+Or maybe because she's hungry.
+
+332
+00:26:39,960 --> 00:26:41,560
+Okay, so this is called explanation.
+
+333
+00:26:44,040 --> 00:26:47,981
+The cat yelled because I stepped on her tail.
+
+334
+00:26:50,662 --> 00:26:54,623
+And the conditional statements can also be mistaken for arguments.
+
+335
+00:26:55,263 --> 00:26:56,603
+And the conditional statements,
+
+336
+00:26:57,404 --> 00:27:02,825
+the statements with the following formula, like if-then statement.
+
+337
+00:27:04,305 --> 00:27:10,167
+So like an example, you see, if you're coming from Russia, then you speak Russian.
+
+338
+00:27:12,148 --> 00:27:12,288
+If
+
+339
+00:27:13,088 --> 00:27:19,474
+18-year-olds are emotionally mature enough to go to war, then they should be allowed to drink
+
+340
+00:27:21,216 --> 00:27:21,676
+alcohol.
+
+341
+00:27:22,437 --> 00:27:25,300
+But here, I think this is a bit of a stretched statement, right?
+
+342
+00:27:30,264 --> 00:27:36,570
+So, conditional statement by itself is not an argument because no claim or conclusion follows
+
+343
+00:27:36,871 --> 00:27:37,251
+from it.
+
+344
+00:27:42,990 --> 00:27:46,553
+Okay then, let's talk about breaking down the arguments.
+
+345
+00:27:48,074 --> 00:27:50,575
+And knowing how to identify the parts
+
+346
+00:27:51,536 --> 00:27:57,200
+of an argument allows us to follow the line of thought in an argument more easily.
+
+347
+00:27:58,301 --> 00:28:00,502
+And breaking down the arguments
+
+348
+00:28:01,923 --> 00:28:03,505
+into kind of the
+
+349
+00:28:04,385 --> 00:28:11,070
+propositions and the premises and conclusions kind of helps us also to visualize
+
+350
+00:28:11,917 --> 00:28:13,798
+the entire argument, okay?
+
+351
+00:28:17,819 --> 00:28:20,040
+And the arguments kind of
+
+352
+00:28:21,141 --> 00:28:25,782
+may appear in one sentence or in several sentences, okay?
+
+353
+00:28:28,904 --> 00:28:34,726
+And we can follow the following steps, right, in breaking down the arguments.
+
+354
+00:28:34,786 --> 00:28:40,488
+First of all, we can kind of identify the propositions in the argument.
+
+355
+00:28:40,852 --> 00:28:46,633
+Right. So what are the propositions like, uh, in the, in the end of the slide, as you can see,
+
+356
+00:28:46,653 --> 00:28:49,814
+uh, just a kind of a philosophical, uh,
+
+357
+00:28:51,134 --> 00:28:53,434
+argument, uh, by some philosophers, right?
+
+358
+00:28:53,714 --> 00:28:54,114
+Like, uh,
+
+359
+00:28:55,214 --> 00:29:02,016
+I think therefore I am so here, uh, in the brackets kind of, uh, I put, uh, the two propositions,
+
+360
+00:29:02,076 --> 00:29:08,277
+right? Uh, the first proposition is that I think, and the second proposition is I am so here
+
+361
+00:29:08,317 --> 00:29:10,277
+we have kind of two sentences, right?
+
+362
+00:29:11,106 --> 00:29:13,807
+And secondly, we should identify the conclusion.
+
+363
+00:29:14,268 --> 00:29:16,409
+So what is the person trying to prove?
+
+364
+00:29:16,789 --> 00:29:18,990
+So what's the main aim or
+
+365
+00:29:19,730 --> 00:29:24,293
+main goal or main pieces of that person, right?
+
+366
+00:29:24,833 --> 00:29:30,356
+And here we can look into, look for some of the conclusion indicators, right?
+
+367
+00:29:30,636 --> 00:29:32,597
+Such as the keywords, such as
+
+368
+00:29:33,537 --> 00:29:37,795
+their pool, for example, thus, hence, So
+
+369
+00:29:38,516 --> 00:29:43,701
+which shows that for these reasons, consequently, it follows that.
+
+370
+00:29:44,281 --> 00:29:49,206
+So sometimes we may have or may not have such conclusion indicators.
+
+371
+00:29:49,926 --> 00:29:53,790
+And then next step is to identify the premises.
+
+372
+00:29:54,570 --> 00:29:55,131
+And
+
+373
+00:29:56,232 --> 00:30:01,777
+we can also look for some keywords as a premise indicators, such as
+
+374
+00:30:02,657 --> 00:30:09,648
+because, since, for, given that, or maybe inferred from, the reason
+
+375
+00:30:09,728 --> 00:30:12,790
+is that, as shown by, in view of.
+
+376
+00:30:13,551 --> 00:30:13,911
+And
+
+377
+00:30:16,714 --> 00:30:17,014
+here,
+
+378
+00:30:19,476 --> 00:30:23,699
+like in the first example, like we have already discussed about,
+
+379
+00:30:27,664 --> 00:30:31,865
+we can see the second part of the sentence is a conclusion, right?
+
+380
+00:30:32,245 --> 00:30:35,686
+Therefore, I am. So therefore here, I kind of
+
+381
+00:30:37,506 --> 00:30:40,307
+underlined the conclusion part, okay?
+
+382
+00:30:41,147 --> 00:30:46,768
+And here also, there is a second example, which is a more complicated sentence we can read
+
+383
+00:30:46,788 --> 00:30:52,769
+together. Students who sit in the front of a class generally earn higher grades.
+
+384
+00:30:53,349 --> 00:30:59,456
+Therefore, you should move out to the front of the class Since I know you want to improve your
+
+385
+00:30:59,516 --> 00:31:03,738
+GPA. So here guys, this will be your task to do some example,
+
+386
+00:31:05,059 --> 00:31:10,901
+to do some exercise. You can pause the video and from this complicated, from this more complex
+
+387
+00:31:10,921 --> 00:31:12,442
+sentence, you can find out
+
+388
+00:31:13,742 --> 00:31:19,304
+what are the propositions, what is the conclusion and what is the premise sentence.
+
+389
+00:31:19,745 --> 00:31:20,105
+Okay.
+
+390
+00:31:20,885 --> 00:31:25,367
+And you can also make up your own kind of examples based on this structure.
+
+391
+00:31:31,238 --> 00:31:34,400
+Okay, guys, let's talk about evaluating arguments.
+
+392
+00:31:43,165 --> 00:31:49,008
+So here, we'll be briefly talking on some of the main criteria for evaluating
+
+393
+00:31:49,189 --> 00:31:55,973
+arguments, such as clarity, credibility, relevance, completeness, and
+
+394
+00:31:56,073 --> 00:31:58,836
+soundness. So first of all is clarity.
+
+395
+00:31:59,357 --> 00:32:03,039
+Is the argument clear and unambiguous?
+
+396
+00:32:03,800 --> 00:32:09,203
+So the first step in evaluating an argument is to make sure that we understand
+
+397
+00:32:09,904 --> 00:32:12,786
+the argument clearly and correctly.
+
+398
+00:32:13,386 --> 00:32:15,547
+So once we have broken down the argument,
+
+399
+00:32:16,828 --> 00:32:18,830
+examine each premise and conclusion,
+
+400
+00:32:25,254 --> 00:32:28,426
+then we can ask ourselves the following question.
+
+401
+00:32:31,669 --> 00:32:35,452
+Are they stated in terms that are clear and understandable?
+
+402
+00:32:35,852 --> 00:32:41,517
+So if any part of the argument is unclear, or if the meaning of a key term is ambiguous, we
+
+403
+00:32:41,557 --> 00:32:42,418
+should ask for
+
+404
+00:32:43,739 --> 00:32:45,921
+clarification, okay? Because
+
+405
+00:32:46,782 --> 00:32:53,567
+if we kind of know the battleground, right, where we are fighting for, then we can kind of
+
+406
+00:32:53,607 --> 00:32:54,208
+come up with
+
+407
+00:32:56,479 --> 00:32:57,900
+Relevant strategies, right?
+
+408
+00:32:58,140 --> 00:33:03,705
+So therefore, we should be sure of the battleground, of the definitions, of the key terms,
+
+409
+00:33:03,745 --> 00:33:08,949
+right? Of the kind of the points, what they mean behind it, right?
+
+410
+00:33:12,411 --> 00:33:16,975
+And secondly, credibility, other premises supported by evidence.
+
+411
+00:33:18,752 --> 00:33:25,698
+So as we noted earlier, arguments are made up of propositions that each make a claim that can
+
+412
+00:33:25,758 --> 00:33:27,299
+be either true or false.
+
+413
+00:33:28,200 --> 00:33:33,204
+And in a good argument, the premises are credible and backed by evidence.
+
+414
+00:33:34,185 --> 00:33:37,847
+And it's reasonable for us to accept them as true, okay?
+
+415
+00:33:39,869 --> 00:33:44,673
+And in evaluating an argument, we should examine each premise individually.
+
+416
+00:33:46,564 --> 00:33:49,025
+We need to be particularly alert for assumptions
+
+417
+00:33:49,746 --> 00:33:56,469
+that are being passed off as facts, especially assumptions that are widely accepted in a culture
+
+418
+00:33:56,929 --> 00:34:02,571
+or those that are being put forth by someone who is not an authority in the field.
+
+419
+00:34:07,774 --> 00:34:09,794
+And the next one is relevance.
+
+420
+00:34:11,955 --> 00:34:12,316
+Okay.
+
+421
+00:34:13,076 --> 00:34:15,357
+Are the premises relevant to the conclusion?
+
+422
+00:34:16,547 --> 00:34:23,473
+And in addition to being true, the premises should provide relevant evidence in support of
+
+423
+00:34:23,493 --> 00:34:24,154
+the conclusion.
+
+424
+00:34:24,895 --> 00:34:30,439
+So in other words, the premises should provide good reasons for accepting the conclusion.
+
+425
+00:34:34,803 --> 00:34:39,888
+A premise can be relevant to conclusion without providing sufficient grounds for accepting
+
+426
+00:34:39,928 --> 00:34:41,869
+the conclusion. The fact that
+
+427
+00:34:47,567 --> 00:34:49,087
+For example, when
+
+428
+00:34:51,188 --> 00:34:57,229
+my daughter was young, most doctors were men and most nurses were women.
+
+429
+00:34:57,789 --> 00:35:00,090
+It doesn't provide sufficient support
+
+430
+00:35:01,590 --> 00:35:05,591
+to make a conclusion that my daughter
+
+431
+00:35:06,291 --> 00:35:08,352
+should give up becoming a doctor.
+
+432
+00:35:09,578 --> 00:35:11,479
+Because we know that
+
+433
+00:35:12,759 --> 00:35:14,380
+maybe today, many
+
+434
+00:35:15,620 --> 00:35:17,881
+medical students, they are women, right?
+
+435
+00:35:17,901 --> 00:35:23,002
+So even though maybe previously, maybe in the last century or 20, 30 years ago,
+
+436
+00:35:23,703 --> 00:35:25,803
+that maybe most of the
+
+437
+00:35:26,964 --> 00:35:29,805
+doctors were men. And therefore, we kind of
+
+438
+00:35:30,585 --> 00:35:36,247
+give advice to our girls, to our daughters, that it's difficult to become a doctor, for example,
+
+439
+00:35:36,267 --> 00:35:36,507
+right?
+
+440
+00:35:37,660 --> 00:35:40,841
+Men mainly become doctors, so you should aim for those.
+
+441
+00:35:41,261 --> 00:35:44,642
+But however, maybe it may not be relevant today, right?
+
+442
+00:35:45,002 --> 00:35:46,423
+The facts may be different today.
+
+443
+00:35:49,484 --> 00:35:51,264
+And the next point is completeness.
+
+444
+00:35:51,625 --> 00:35:55,606
+So are there any unstated premises and conclusions?
+
+445
+00:35:56,406 --> 00:35:59,467
+So in evaluating an argument, we should ask ourselves,
+
+446
+00:36:00,407 --> 00:36:02,108
+are there unstated premises?
+
+447
+00:36:02,988 --> 00:36:05,429
+Premises may be omitted for several reasons.
+
+448
+00:36:06,088 --> 00:36:11,212
+The person making the argument may simply be unaware of a particular bit of key information
+
+449
+00:36:11,773 --> 00:36:13,194
+related to the issue.
+
+450
+00:36:13,955 --> 00:36:15,416
+So incomplete research
+
+451
+00:36:16,557 --> 00:36:22,922
+or confirmation bias may cause us to overlook important information or premises that do not
+
+452
+00:36:22,982 --> 00:36:24,203
+support our worldview.
+
+453
+00:36:26,044 --> 00:36:26,385
+Okay.
+
+454
+00:36:33,491 --> 00:36:33,931
+So here,
+
+455
+00:36:34,769 --> 00:36:38,050
+Sometimes premises are obvious and don't have to be stated.
+
+456
+00:36:38,430 --> 00:36:38,891
+So here,
+
+457
+00:36:39,611 --> 00:36:40,211
+let me give
+
+458
+00:36:40,971 --> 00:36:42,052
+you the following argument.
+
+459
+00:36:42,772 --> 00:36:48,594
+Federal funding for education should be allocated on the basis of the size of a state.
+
+460
+00:36:49,255 --> 00:36:54,857
+Therefore, Texas should get a larger share of federal money than Rhode Island.
+
+461
+00:36:55,757 --> 00:37:02,700
+So in this argument, the unstated premise is that Texas is larger than Rhode
+
+462
+00:37:03,020 --> 00:37:03,300
+Island.
+
+463
+00:37:04,225 --> 00:37:08,008
+an uncontroversial fact known by most people in the US.
+
+464
+00:37:08,408 --> 00:37:11,911
+So however, if we were presenting the argument to someone
+
+465
+00:37:12,691 --> 00:37:17,154
+from other country like Uzbekistan, right, yes, we might want to include the premise.
+
+466
+00:37:18,035 --> 00:37:20,176
+Okay, so therefore, it should be complete.
+
+467
+00:37:26,421 --> 00:37:28,302
+And the last one is a soundness.
+
+468
+00:37:28,803 --> 00:37:29,183
+So
+
+469
+00:37:30,043 --> 00:37:33,466
+are the premises true? And do they support the conclusion?
+
+470
+00:37:34,485 --> 00:37:37,767
+So the reasoning process in an argument should be sound.
+
+471
+00:37:38,307 --> 00:37:44,931
+A sound argument is one in which the premises are true and they support the conclusion.
+
+472
+00:37:47,232 --> 00:37:52,755
+The connection between the premise and conclusion should be based on the reason rather than
+
+473
+00:37:52,975 --> 00:37:54,756
+on fallacious appeals.
+
+474
+00:38:07,821 --> 00:38:14,526
+On the other hand, do not assume that the conclusion is false simply because it's not supported
+
+475
+00:38:14,726 --> 00:38:15,606
+by the premises.
+
+476
+00:38:16,467 --> 00:38:22,811
+So when this happens, the most we can say is that we don't know whether the conclusion is true
+
+477
+00:38:23,111 --> 00:38:24,732
+or false.
+
+478
+00:38:29,376 --> 00:38:35,840
+For example, some issues such as the presence of consciousness in other people
+
+479
+00:38:36,550 --> 00:38:41,451
+probably cannot be proved or disproved through logical argumentation.
+
+480
+00:38:42,232 --> 00:38:42,572
+Okay?
+
+481
+00:38:52,395 --> 00:38:56,896
+Okay, then guys, so this is the last topic in our today's discussion.
+
+482
+00:38:59,297 --> 00:39:02,638
+And let's talk about how to construct an argument.
+
+483
+00:39:03,418 --> 00:39:03,758
+Okay?
+
+484
+00:39:05,385 --> 00:39:08,747
+So here we can have the following steps.
+
+485
+00:39:09,728 --> 00:39:14,551
+First of all, we should state the issue clearly.
+
+486
+00:39:17,453 --> 00:39:21,436
+So what question or issue are we going to address?
+
+487
+00:39:21,997 --> 00:39:24,939
+So we should clearly identify the issue
+
+488
+00:39:25,919 --> 00:39:28,521
+and it can help us to stay on track.
+
+489
+00:39:31,423 --> 00:39:34,025
+So we should word the issue in neutral terms
+
+490
+00:39:34,775 --> 00:39:35,415
+For example,
+
+491
+00:39:36,135 --> 00:39:36,376
+should
+
+492
+00:39:37,436 --> 00:39:41,557
+the USA have a stricter gun control laws
+
+493
+00:39:42,457 --> 00:39:48,479
+and not should the government be doing more to keep guns out of the hands of criminals?
+
+494
+00:39:49,039 --> 00:39:49,359
+Okay.
+
+495
+00:39:50,440 --> 00:39:51,100
+So the more
+
+496
+00:39:51,900 --> 00:39:57,222
+the issue is clear, so the better it will be kind of to debate the argument.
+
+497
+00:39:57,482 --> 00:39:57,782
+Okay.
+
+498
+00:39:58,602 --> 00:39:59,482
+And secondly,
+
+499
+00:40:00,803 --> 00:40:01,183
+develop
+
+500
+00:40:02,527 --> 00:40:05,430
+a list of premises that address the issue.
+
+501
+00:40:08,232 --> 00:40:14,937
+So in coming up with a list of possible premises, we should kind of put our
+
+502
+00:40:15,018 --> 00:40:20,782
+personal opinions aside and we should avoid the trap of seeing the issue as having two sides,
+
+503
+00:40:21,343 --> 00:40:27,979
+one right and one wrong. So the two sides approach tends to be the norm in some culture in
+
+504
+00:40:28,059 --> 00:40:30,241
+which rhetoric is used to settle issues
+
+505
+00:40:31,141 --> 00:40:35,004
+with one side winning and the other side losing.
+
+506
+00:40:35,685 --> 00:40:40,149
+And in developing a list of premises, we should try to remain as objective
+
+507
+00:40:41,770 --> 00:40:43,471
+and open-minded as possible.
+
+508
+00:40:44,112 --> 00:40:49,656
+And rather than selecting only those premises that support our particular worldview, we should
+
+509
+00:40:49,716 --> 00:40:53,143
+try to explore explore all sides of the issue
+
+510
+00:40:54,003 --> 00:41:00,807
+and we should brainstorm with others and letting the ideas flow freely and creatively.
+
+511
+00:41:01,527 --> 00:41:04,089
+It can help us to widen our perspective.
+
+512
+00:41:04,289 --> 00:41:04,629
+Okay.
+
+513
+00:41:08,071 --> 00:41:11,072
+And our premises should be relatively uncontroversial.
+
+514
+00:41:11,232 --> 00:41:11,572
+Okay.
+
+515
+00:41:12,353 --> 00:41:16,735
+And we should watch out for unsupported interpretations or assumptions,
+
+516
+00:41:17,515 --> 00:41:20,077
+and we can also adopt the skeptics attitude.
+
+517
+00:41:20,097 --> 00:41:20,717
+Okay.
+
+518
+00:41:22,563 --> 00:41:23,924
+And in doing our research,
+
+519
+00:41:24,805 --> 00:41:25,865
+we should make sure we
+
+520
+00:41:26,606 --> 00:41:31,950
+use only reliable sources and continue to consider all sides of the issue.
+
+521
+00:41:41,356 --> 00:41:43,577
+And the next one is to eliminate
+
+522
+00:41:44,458 --> 00:41:46,539
+weak or irrelevant premises.
+
+523
+00:41:47,300 --> 00:41:47,680
+Okay?
+
+524
+00:41:48,421 --> 00:41:53,994
+So after coming up with our list of premises, and we should review them once again,
+
+525
+00:41:54,775 --> 00:42:01,499
+eliminate any premises that are weak or irrelevant to the particular problem or issue.
+
+526
+00:42:08,004 --> 00:42:10,085
+And we should also resist the temptation
+
+527
+00:42:10,825 --> 00:42:12,166
+to eliminate premises
+
+528
+00:42:12,907 --> 00:42:17,610
+that don't mesh with our particular opinion regarding the issue.
+
+529
+00:42:35,008 --> 00:42:38,391
+And the next one is we should establish a conclusion.
+
+530
+00:42:39,132 --> 00:42:45,597
+So only after we are satisfied with our list of premises, then we should draw a
+
+531
+00:42:45,657 --> 00:42:48,820
+particular conclusion, a particular point or thesis.
+
+532
+00:42:49,180 --> 00:42:49,540
+Okay.
+
+533
+00:42:50,881 --> 00:42:54,564
+So we should examine all the premises we have retained
+
+534
+00:42:55,265 --> 00:43:01,450
+and in developing a conclusion, we should keep an open mind and we can ask ourselves what conclusion
+
+535
+00:43:01,911 --> 00:43:03,612
+follows from these premises.
+
+536
+00:43:05,123 --> 00:43:10,644
+And remember to avoid looking at our issue as a contest between two sides.
+
+537
+00:43:11,405 --> 00:43:18,346
+And we can look at all the premises in our final list and consider how the conclusion can take
+
+538
+00:43:18,526 --> 00:43:21,267
+into account as many of the premises as possible.
+
+539
+00:43:28,109 --> 00:43:30,730
+And next one, we should organize our argument.
+
+540
+00:43:31,290 --> 00:43:32,250
+So there are many
+
+541
+00:43:33,036 --> 00:43:35,858
+and ways to organize an argument.
+
+542
+00:43:35,898 --> 00:43:42,861
+For example, we can first list or diagram our premises and conclusion, or we can present our
+
+543
+00:43:42,961 --> 00:43:45,083
+argument in the written or oral form.
+
+544
+00:43:45,723 --> 00:43:52,166
+So if we are presenting our argument in essay form or making an oral presentation, we should
+
+545
+00:43:52,226 --> 00:43:58,730
+clearly state the issue in the first paragraph of our essay or in our opening sentence.
+
+546
+00:43:59,270 --> 00:44:06,256
+So this will allow our audience to easily identify exactly what issue we are addressing.
+
+547
+00:44:08,758 --> 00:44:14,403
+And the conclusion also usually appears in the first paragraph or at the beginning of the presentation.
+
+548
+00:44:15,144 --> 00:44:17,526
+And in the essays, that's sometimes called the
+
+549
+00:44:18,406 --> 00:44:20,949
+thesis statement, okay, like I was mentioning.
+
+550
+00:44:21,589 --> 00:44:26,153
+And if possible, we should limit our thesis statement to one sentence.
+
+551
+00:44:27,750 --> 00:44:33,973
+And our opening paragraph can also let the reader know how we plan to defend our conclusion
+
+552
+00:44:34,153 --> 00:44:36,054
+and organize our argument.
+
+553
+00:44:37,615 --> 00:44:43,518
+As well as include a sentence or two to grab the reader's attention about the issue's importance.
+
+554
+00:44:50,421 --> 00:44:54,403
+And the next one is to try out your argument on others.
+
+555
+00:44:54,984 --> 00:45:01,327
+So once we have come up with what we think is a strong argument, we are ready to try it out
+
+556
+00:45:01,948 --> 00:45:07,070
+on someone else. And in doing this, we should keep in mind that as critical thinkers,
+
+557
+00:45:07,831 --> 00:45:11,893
+we need to be both open-minded and good listeners.
+
+558
+00:45:12,901 --> 00:45:19,625
+If we find that our argument is weak or that the particular conclusion we have drawn does
+
+559
+00:45:19,705 --> 00:45:25,308
+not follow from the premises, we should go back and revise our argument.
+
+560
+00:45:25,748 --> 00:45:26,108
+Okay?
+
+561
+00:45:27,669 --> 00:45:32,391
+And the next logical step is to revise our argument.
+
+562
+00:45:33,072 --> 00:45:33,432
+So,
+
+563
+00:45:34,818 --> 00:45:37,799
+If necessary, we should revise our argument
+
+564
+00:45:38,739 --> 00:45:41,820
+when we receive particular feedback.
+
+565
+00:45:42,500 --> 00:45:48,101
+And if the other person's counter argument is compelling, it would be irrational
+
+566
+00:45:49,001 --> 00:45:55,363
+for you not to accept it and revise your own position in light of the counter argument.
+
+567
+00:46:02,242 --> 00:46:02,382
+And
+
+568
+00:46:03,123 --> 00:46:04,904
+the last one is
+
+569
+00:46:06,065 --> 00:46:09,307
+putting our solution or conclusion into action.
+
+570
+00:46:09,748 --> 00:46:10,708
+So if necessary.
+
+571
+00:46:11,449 --> 00:46:11,829
+So
+
+572
+00:46:12,690 --> 00:46:18,073
+sometimes if it's appropriate, we should put our solution or conclusion into action.
+
+573
+00:46:18,774 --> 00:46:22,417
+So good critical thinking has a behavioral component.
+
+574
+00:46:23,337 --> 00:46:25,839
+It involves taking critical action.
+
+575
+00:46:26,519 --> 00:46:28,681
+So for instance, if you're writing to
+
+576
+00:46:30,771 --> 00:46:32,772
+for example, to the government, right?
+
+577
+00:46:33,153 --> 00:46:34,334
+Or to some politicians,
+
+578
+00:46:35,094 --> 00:46:35,955
+to some
+
+579
+00:46:37,796 --> 00:46:40,758
+maybe officials, let's say government officials, right?
+
+580
+00:46:41,298 --> 00:46:41,939
+About
+
+581
+00:46:43,280 --> 00:46:45,101
+certain particular issue, right?
+
+582
+00:46:45,701 --> 00:46:46,942
+So you may want
+
+583
+00:46:47,663 --> 00:46:49,704
+to suggest a realistic solution
+
+584
+00:46:50,425 --> 00:46:54,968
+to that problem and also offer to help with this implementation.
+
+585
+00:46:56,409 --> 00:47:03,336
+And knowing how to construct and present an argument are important skills for critical thinker.
+
+586
+00:47:03,916 --> 00:47:04,916
+So it's not only
+
+587
+00:47:05,716 --> 00:47:07,497
+makes you more effective
+
+588
+00:47:08,697 --> 00:47:10,898
+in presenting an argument or an issue,
+
+589
+00:47:12,158 --> 00:47:17,620
+but can also help us in resolving issues in our own lives also.
+
+590
+00:47:21,401 --> 00:47:22,461
+So with these
+
+591
+00:47:23,502 --> 00:47:24,482
+ideas in mind,
+
+592
+00:47:25,222 --> 00:47:27,523
+let me finish our today's topic.
+
+593
+00:47:28,172 --> 00:47:29,640
+And thank you very much, guys.
+
+594
+00:47:30,384 --> 00:47:31,731
+And see you next week.

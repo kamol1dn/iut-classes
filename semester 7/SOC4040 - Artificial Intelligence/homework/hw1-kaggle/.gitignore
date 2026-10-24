@@ -1,0 +1,5 @@
+# Kept out of the public repo: the rules forbid redistributing the data or sharing code before 2026-10-25 23:59
+data/
+*.csv
+*.ipynb
+*.py

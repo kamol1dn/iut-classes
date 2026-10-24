@@ -1,0 +1,8 @@
+{
+  // Open .md files in the rendered preview by default.
+  // To edit one: right-click the file -> Open With... -> Text Editor,
+  // or Ctrl+Shift+P -> "Reopen Editor With..." -> Text Editor.
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "_comment": "eClass VOD manifest. The stream URLs are extracted from /mod/vod/viewer.php?id=<mod> (which needs a logged-in session); the vod.inha.ac.kr:8443 HLS endpoints themselves are unauthenticated, so downloading needs no credentials. Ask Claude to 'refresh the VOD manifest' when new lectures appear.",
+  "_extracted": "2026-10-18",
+  "vods": [
+    {
+      "mod": 70109,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 1,
+      "title": "Class intro",
+      "duration": "18:09",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/08/6e3febaa-7c09-4cf7-8afd-e095e278840d/2bdd5af2-3b33-4f3a-aabc-dd8da1f9b42d.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 70112,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 1,
+      "title": "Lecture 1",
+      "duration": "44:35",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/08/fad4d288-0104-4d9b-b4d7-05a5ca6de192/cbc3748e-bb8d-4c86-bf5a-78898768e715.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 70704,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 2,
+      "title": "Lecture 2",
+      "duration": "1:00:34",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/12/1318ca21-72a0-4d4b-8ba5-225b7b6348be/6c6ba9f2-8135-4601-bc48-c8a15c73216c.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71123,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 3,
+      "title": "Lecture 2-1",
+      "duration": "38:22",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/18/6c7becc7-d976-4e08-a587-6ba2cee91b05/23a9cf18-3743-4677-89dc-145e30ef3191.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71124,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 3,
+      "title": "Lecture 3-2",
+      "duration": "25:35",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/18/0a09603b-5670-4c42-b01b-710ccdff42d1/c268128a-bb9d-435c-b7de-0f4b5dda6cb2.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71402,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 3,
+      "title": "Introduction to Blockchain Technology (Part 1)",
+      "duration": "44:14",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/24/79d2f292-71e2-46d4-b542-7c0718e2fc8c/bc569686-9561-498d-b57b-f29615f7af9a.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71446,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 3,
+      "title": "Introduction to Blockchain Technology (Part 2)",
+      "duration": "51:05",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/25/f4458be0-cfbe-4595-9949-ddb374afaf1f/ff608915-1e8c-40fa-aec6-ee9ccc7f4c1f.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71475,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 4,
+      "title": "Lecture 4",
+      "duration": "52:26",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/09/26/f2a7fc1b-2e35-4102-8ae2-0b506ec04c3f/1c038bec-aec6-4798-bfd4-7a3496229a72.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71777,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 5,
+      "title": "Lecture 5",
+      "duration": "47:34",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/03/36c3ae78-30c7-4ca9-952f-39f40b5efdc7/1576ae26-00cb-4fd6-8362-5322a20d542e.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71744,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 4,
+      "title": "Bitcoin - Where It Came From, and What a Block Is",
+      "duration": "1:04:15",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/02/89353f25-4f92-453d-8f00-727f0f71eaa8/12d59c11-da32-4c37-b5fe-da5cec485236.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 71796,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 4,
+      "title": "Cryptography for Blockchains",
+      "duration": "59:32",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/03/05f0c3a5-08f5-4931-9eee-96ea1ff35a85/481b8f60-224b-4fd2-a89a-c599e56db81b.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72210,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 6,
+      "title": "Debate survey",
+      "duration": "8:11",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/12/e6546adf-1025-4f16-86f9-14b46b228d37/0b29ed34-6221-431a-a2b5-fd7282d25edd.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72217,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 6,
+      "title": "Lecture 6-1",
+      "duration": "29:06",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/12/202433d0-4d0b-42e5-b5dc-bf81e2309e9d/fb3edd65-1e92-429d-a5ee-3dfa57b215d5.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72220,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 6,
+      "title": "Lecture 6-2",
+      "duration": "26:43",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/12/b2feb518-28ab-4f22-b7e4-2e3d3f20b947/b8009109-c74d-4278-aee5-b2c63cad22ce.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72441,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 7,
+      "title": "Video 7",
+      "duration": "55:33",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/16/90507b25-0ddf-4e05-a613-cdf8b1aaa03a/05a8969b-c0ed-4e4f-b8d5-17fbb9dd05f5.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72223,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 5,
+      "title": "Wallets, Addresses and the First Transaction (Part 1)",
+      "duration": "55:56",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/12/25876fdd-b181-48e6-b83e-3420c3efd592/4f63b9a2-55f9-43ed-80a7-859bfee9f088.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72233,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 5,
+      "title": "Wallets, Addresses and the First Transaction (Part 2)",
+      "duration": "27:58",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/12/66ce533c-0cc0-4760-b1b0-74043fadcd1f/ce4df529-1618-4886-af04-a14d36ddc363.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72455,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 6,
+      "title": "Bitcoin Transactions (Part 1)",
+      "duration": "50:06",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/17/c804015b-c5c2-4b09-a130-2e84b89e721c/3a6aa3f7-5dfa-4784-8a89-dd85bbda6120.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72467,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 6,
+      "title": "Bitcoin Transactions (Part 2)",
+      "duration": "57:22",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/17/f179ea6e-1753-41c4-93ac-75227d54995f/337ef554-4d66-46e9-ac80-fb444d13b5e4.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72743,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 7,
+      "title": "Midterm info",
+      "duration": "03:19",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/20/68b78958-8a81-4c39-b178-f0158558b8b9/ce1820e9-465c-41f6-b055-0e9bfebc6368.mp4/playlist.m3u8"
+    }
+  ]
+}

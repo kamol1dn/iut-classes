@@ -1,0 +1,1783 @@
+1
+00:00:00,948 --> 00:00:02,209
+So let's continue again
+
+2
+00:00:02,929 --> 00:00:05,470
+our topic on the wallets.
+
+3
+00:00:06,671 --> 00:00:07,891
+Last time we saw
+
+4
+00:00:08,932 --> 00:00:14,994
+what's a private key, public key, what the address is, where it comes from, where it lives,
+
+5
+00:00:15,815 --> 00:00:19,036
+and what we actually store inside the wallet.
+
+6
+00:00:21,137 --> 00:00:21,497
+wallets
+
+7
+00:00:22,298 --> 00:00:26,040
+so today i will introduce you to two more
+
+8
+00:00:27,040 --> 00:00:33,943
+new terminologies one is on the mainnet and the testnet so we will
+
+9
+00:00:34,003 --> 00:00:36,665
+be looking and doing a lot of demo for today
+
+10
+00:00:37,834 --> 00:00:40,056
+So the main net
+
+11
+00:00:41,017 --> 00:00:44,260
+that we are going to use in the future is the real network
+
+12
+00:00:45,020 --> 00:00:48,283
+of blockchain where the coins have a real value.
+
+13
+00:00:48,743 --> 00:00:50,785
+And we will study very soon what's
+
+14
+00:00:51,506 --> 00:00:54,308
+Ethereum. Ethereum is just like a Bitcoin blockchain.
+
+15
+00:00:55,429 --> 00:01:01,370
+and ethereum's mainnet is where the people call it ethereum so when we call ethereum it's the
+
+16
+00:01:01,430 --> 00:01:02,191
+the main main
+
+17
+00:01:03,091 --> 00:01:09,292
+blockchain but and then you can ask what is not main blockchain the not main blockchain it's
+
+18
+00:01:09,352 --> 00:01:15,094
+called testnet as the name goes we call it test so it is where we test
+
+19
+00:01:15,914 --> 00:01:19,335
+same block similar blockchain technology but
+
+20
+00:01:20,135 --> 00:01:24,016
+is mostly used for testing there is no real money in this case okay so
+
+21
+00:01:26,236 --> 00:01:28,957
+The main net's purpose is the functional blockchain.
+
+22
+00:01:29,197 --> 00:01:35,199
+The test net's idea is to have some testing environment and we will be working on this area
+
+23
+00:01:35,279 --> 00:01:37,279
+to test. We are not going to work with real money.
+
+24
+00:01:37,639 --> 00:01:39,460
+We'll be working with the test net.
+
+25
+00:01:39,520 --> 00:01:39,760
+Then
+
+26
+00:01:40,640 --> 00:01:46,202
+transactions are here are considered as a real transaction that you make or this one is the
+
+27
+00:01:46,662 --> 00:01:51,783
+fake transactions. We will do fake transactions because at some point I will be asking you
+
+28
+00:01:51,823 --> 00:01:52,864
+to send me some money
+
+29
+00:01:54,404 --> 00:01:57,346
+and please don't cut the video out of context
+
+30
+00:01:58,067 --> 00:01:58,527
+context
+
+31
+00:01:59,448 --> 00:02:03,811
+and i will be referring to the testnet okay it will not be real money will be sending okay
+
+32
+00:02:04,431 --> 00:02:05,272
+so uh
+
+33
+00:02:06,698 --> 00:02:12,880
+We will see that coins in the mainnet of the real blockchain, they have a
+
+34
+00:02:12,940 --> 00:02:15,341
+value. Value is quite high.
+
+35
+00:02:15,401 --> 00:02:20,143
+Like one Bitcoin today is like $80,000.
+
+36
+00:02:20,303 --> 00:02:20,963
+It's quite a lot.
+
+37
+00:02:21,883 --> 00:02:23,204
+And here the money,
+
+38
+00:02:23,964 --> 00:02:24,124
+one
+
+39
+00:02:25,444 --> 00:02:27,745
+Bitcoin or one Ethereum in that testnet
+
+40
+00:02:28,466 --> 00:02:31,367
+has no value. It's zero. It costs zero.
+
+41
+00:02:33,707 --> 00:02:35,788
+value. Transaction cost.
+
+42
+00:02:36,448 --> 00:02:38,289
+We will study what is a transaction cost.
+
+43
+00:02:38,409 --> 00:02:40,909
+Actually you have to in order to send some money
+
+44
+00:02:41,630 --> 00:02:45,731
+you have to spend some transaction but here in Testnet of course we don't spend money again
+
+45
+00:02:45,771 --> 00:02:50,572
+for the transaction. The transaction frequency is quite high because people do a lot of
+
+46
+00:02:51,373 --> 00:02:55,394
+transactions throughout the world but not many people use the Testnet.
+
+47
+00:02:55,414 --> 00:02:59,095
+So we will use the Testnet only for the teaching purposes.
+
+48
+00:03:00,160 --> 00:03:02,683
+And there is no economic benefit out of this.
+
+49
+00:03:03,343 --> 00:03:07,407
+So we will be using the Sepolia testnet.
+
+50
+00:03:07,587 --> 00:03:10,230
+It is the Ethereum testnet because for the Bitcoin
+
+51
+00:03:11,811 --> 00:03:14,774
+I don't have the currently functional testnet for it.
+
+52
+00:03:14,814 --> 00:03:16,316
+So we'll be using the Ethereum one.
+
+53
+00:03:16,716 --> 00:03:20,398
+even if you don't know what is Ethereum, just think of it as a Bitcoin for now.
+
+54
+00:03:20,978 --> 00:03:24,099
+It is recommended for building and trying some applications.
+
+55
+00:03:24,640 --> 00:03:28,841
+Its explorer is called Cipollia Ethernet IO.
+
+56
+00:03:28,881 --> 00:03:30,402
+We will go there and see
+
+57
+00:03:31,503 --> 00:03:33,804
+some transactions and this is the best known
+
+58
+00:03:35,084 --> 00:03:36,085
+block explorer.
+
+59
+00:03:37,105 --> 00:03:43,572
+for the bitcoin actually this platform supposed to finish on september 2026 but
+
+60
+00:03:44,112 --> 00:03:49,617
+apparently they extended it to 2027 so
+
+61
+00:03:50,438 --> 00:03:55,804
+i checked a couple of days ago the block is being generated every day so we'll be using it
+
+62
+00:03:56,624 --> 00:04:00,689
+hopefully it will survive until we finish this course so
+
+63
+00:04:01,549 --> 00:04:02,090
+in order to
+
+64
+00:04:03,291 --> 00:04:08,296
+use this of course these are the blockchains but in order to work with these blockchains of
+
+65
+00:04:08,336 --> 00:04:12,621
+course you need what you need some wallet okay today we'll be working on this
+
+66
+00:04:13,322 --> 00:04:13,622
+so
+
+67
+00:04:14,423 --> 00:04:16,385
+in the demo session you can pause the video
+
+68
+00:04:17,246 --> 00:04:19,668
+you will have to install the metamask
+
+69
+00:04:21,229 --> 00:04:23,390
+type just metamask in your browser
+
+70
+00:04:24,751 --> 00:04:30,494
+never click on the advertisements be careful okay install it from the metamask.io because the
+
+71
+00:04:30,534 --> 00:04:31,174
+name can be
+
+72
+00:04:32,855 --> 00:04:35,536
+changed in the internet so always use the same name
+
+73
+00:04:36,497 --> 00:04:41,439
+create a new wallet you set a password I will show you how to do it and then you remember what
+
+74
+00:04:41,479 --> 00:04:43,260
+we studied the seed
+
+75
+00:04:45,041 --> 00:04:48,103
+phrase they will give you the seed phrase so you have to take a
+
+76
+00:04:49,137 --> 00:04:52,018
+take it down write it down on some on some paper
+
+77
+00:04:53,418 --> 00:04:57,179
+and confirm them when asked okay so sometimes
+
+78
+00:04:57,939 --> 00:05:02,240
+the metamask asks this value pin the metamask next to the address bar
+
+79
+00:05:02,961 --> 00:05:05,241
+so that you can always find it to the
+
+80
+00:05:06,241 --> 00:05:07,542
+favorite websites
+
+81
+00:05:08,382 --> 00:05:13,003
+and you have to open one account okay and then they will give you this account i will show
+
+82
+00:05:13,043 --> 00:05:15,604
+you that will be your address just
+
+83
+00:05:16,484 --> 00:05:21,126
+uh copy set the copy button it will copy your address so
+
+84
+00:05:22,807 --> 00:05:23,707
+already use
+
+85
+00:05:24,567 --> 00:05:30,650
+metamask for real money if you're already using it for real money don't use it so create a
+
+86
+00:05:30,690 --> 00:05:32,030
+separate browser profile
+
+87
+00:05:32,871 --> 00:05:35,192
+install the new metamask there because you should not
+
+88
+00:05:37,133 --> 00:05:40,334
+mix it with your real money okay because we'll be doing it for testing
+
+89
+00:05:41,274 --> 00:05:45,898
+If you have if you don't have it you can you can use it So install from the official site right
+
+90
+00:05:45,938 --> 00:05:52,523
+towards and copy copy the address So I will maybe show you in a moment.
+
+91
+00:05:52,603 --> 00:05:54,624
+So main meta mask
+
+92
+00:06:02,210 --> 00:06:03,411
+So when you go to the website
+
+93
+00:06:04,470 --> 00:06:07,413
+what you see is this so pay attention always
+
+94
+00:06:09,135 --> 00:06:11,297
+look at look at the
+
+95
+00:06:12,458 --> 00:06:16,803
+domain should be the same there should not be any change in the letters because there are some
+
+96
+00:06:16,843 --> 00:06:18,424
+fake websites also for this
+
+97
+00:06:19,245 --> 00:06:23,910
+and their mascot is the fox so you just click on the get the meta mask
+
+98
+00:06:27,702 --> 00:06:34,127
+and you have three options okay you have to install either the mobile app i prefer the browser
+
+99
+00:06:34,168 --> 00:06:36,189
+extension so you can click on
+
+100
+00:06:37,130 --> 00:06:38,871
+chrome and it will install it
+
+101
+00:06:40,152 --> 00:06:42,754
+for your machine i already have it on my computer
+
+102
+00:06:43,635 --> 00:06:45,797
+and once you have the
+
+103
+00:06:46,637 --> 00:06:49,580
+browser extension maybe with the browser we can also try
+
+104
+00:06:50,477 --> 00:06:51,177
+I tried the
+
+105
+00:06:52,678 --> 00:06:55,439
+extension, but both of them should work.
+
+106
+00:06:55,899 --> 00:06:57,299
+So you just click connect.
+
+107
+00:07:00,480 --> 00:07:02,481
+Yes, you have to install it in any way.
+
+108
+00:07:02,541 --> 00:07:05,522
+So you have to install. So assume that you installed the
+
+109
+00:07:06,803 --> 00:07:07,243
+tool.
+
+110
+00:07:09,023 --> 00:07:09,744
+And here,
+
+111
+00:07:11,044 --> 00:07:14,585
+once you log in, maybe you have to log out just to show you.
+
+112
+00:07:16,106 --> 00:07:16,486
+Ah, no.
+
+113
+00:07:17,867 --> 00:07:19,187
+Wait, I will pause the video.
+
+114
+00:07:21,412 --> 00:07:27,336
+okay apparently i can i cannot show you it here but so you will be using this website so when
+
+115
+00:07:27,356 --> 00:07:28,036
+you log in uh
+
+116
+00:07:28,957 --> 00:07:30,718
+sign up i should have some
+
+117
+00:07:31,839 --> 00:07:32,159
+some
+
+118
+00:07:33,099 --> 00:07:34,860
+screenshots i prepared for you
+
+119
+00:07:36,201 --> 00:07:36,601
+where are they
+
+120
+00:07:40,677 --> 00:07:45,684
+Oh, here it is. So when you are in the MetaMask after installing the extension, it will ask
+
+121
+00:07:45,704 --> 00:07:49,168
+you to create a wallet. Don't click I have existing wallet.
+
+122
+00:07:49,188 --> 00:07:53,794
+Just click on the create wallet and then you will be asked to go through the Google, Apple
+
+123
+00:07:53,914 --> 00:07:55,396
+or the Telegram. But
+
+124
+00:07:57,319 --> 00:08:04,065
+uh these are quite uh not safe i would say but you can use them i i use this one using the
+
+125
+00:08:04,145 --> 00:08:08,049
+secret recovery phrase so they gave me the the 16
+
+126
+00:08:08,750 --> 00:08:13,855
+uh 12 sorry 12 seed phrases and i write it down this is my login
+
+127
+00:08:14,756 --> 00:08:19,581
+account okay so you can also select this one i i propose you to to select this one
+
+128
+00:08:20,877 --> 00:08:22,199
+then after that
+
+129
+00:08:23,320 --> 00:08:29,769
+in your screen you will see this thing okay so this is your account if you go
+
+130
+00:08:30,610 --> 00:08:31,412
+to here it
+
+131
+00:08:32,353 --> 00:08:33,234
+will show you
+
+132
+00:08:34,115 --> 00:08:36,799
+you will have the account one i have the account two for now
+
+133
+00:08:37,798 --> 00:08:41,160
+And in the account tool, you will have a lot of
+
+134
+00:08:42,341 --> 00:08:44,822
+blockchains. So the cryptocurrencies.
+
+135
+00:08:45,282 --> 00:08:46,543
+So here is the Bitcoin
+
+136
+00:08:48,044 --> 00:08:49,765
+cryptocurrency. There is Ethereum.
+
+137
+00:08:50,105 --> 00:08:51,406
+So we'll be working with Ethereum.
+
+138
+00:08:51,426 --> 00:08:52,527
+I will explain you why.
+
+139
+00:08:53,647 --> 00:08:53,888
+And
+
+140
+00:08:54,808 --> 00:08:57,109
+once you install it, you are almost ready.
+
+141
+00:08:57,710 --> 00:08:59,291
+So this will be your address.
+
+142
+00:08:59,331 --> 00:09:00,692
+So you have to copy it.
+
+143
+00:09:01,812 --> 00:09:06,913
+If you look at here, you see, it's not showing me the whole address because as I told you,
+
+144
+00:09:06,933 --> 00:09:08,694
+it's for the safety reasons, but
+
+145
+00:09:09,394 --> 00:09:11,815
+you can pass it here and check your whole
+
+146
+00:09:12,995 --> 00:09:15,136
+address that we studied earlier.
+
+147
+00:09:15,676 --> 00:09:17,756
+This is your real address.
+
+148
+00:09:18,376 --> 00:09:24,238
+I will tell you a bit later in the slides that this will be your student ID for this course.
+
+149
+00:09:24,418 --> 00:09:27,759
+Don't lose it. We'll be using it as a student ID.
+
+150
+00:09:28,986 --> 00:09:30,186
+once you install the
+
+151
+00:09:31,127 --> 00:09:31,707
+metamask
+
+152
+00:09:33,087 --> 00:09:35,128
+you will have to set up it now
+
+153
+00:09:36,108 --> 00:09:36,808
+so we'll be
+
+154
+00:09:38,669 --> 00:09:42,650
+not working on the real blockchain we'll be working on the
+
+155
+00:09:43,971 --> 00:09:50,813
+testnet that we that i showed you before so open the network menu show the test networks choose
+
+156
+00:09:50,853 --> 00:09:51,473
+the sepolia
+
+157
+00:09:52,193 --> 00:09:57,897
+And then your balance in Sepolia, which is the test net, the Ethereum, it will be slightly
+
+158
+00:09:57,957 --> 00:09:59,218
+different coin.
+
+159
+00:10:00,999 --> 00:10:02,620
+Let's say it's a Bitcoin for now.
+
+160
+00:10:02,700 --> 00:10:03,821
+That's what we started.
+
+161
+00:10:04,581 --> 00:10:05,622
+The Ethereum just like it.
+
+162
+00:10:06,282 --> 00:10:09,104
+And your address is the same on every network.
+
+163
+00:10:09,124 --> 00:10:13,667
+So what you get as an address, it will be same also in the Sepolia, in the real network is
+
+164
+00:10:13,707 --> 00:10:14,648
+the same also. Okay.
+
+165
+00:10:15,745 --> 00:10:16,325
+and depends
+
+166
+00:10:17,646 --> 00:10:18,986
+on where
+
+167
+00:10:19,906 --> 00:10:21,387
+our transactions are written.
+
+168
+00:10:21,427 --> 00:10:23,867
+So the ledger will be our testnet.
+
+169
+00:10:24,027 --> 00:10:27,348
+All the things that we do will be the testnet.
+
+170
+00:10:27,728 --> 00:10:27,928
+So
+
+171
+00:10:29,709 --> 00:10:32,530
+if MetaMask says Ethereum Mainnet, it means
+
+172
+00:10:34,850 --> 00:10:36,691
+the payment using the real coins.
+
+173
+00:10:36,811 --> 00:10:40,032
+Never select Ethereum Mainnet, I will show you.
+
+174
+00:10:41,212 --> 00:10:43,553
+And then you don't have one currently.
+
+175
+00:10:44,493 --> 00:10:47,675
+when you open it freshly, so always use the Sepolia.
+
+176
+00:10:47,915 --> 00:10:54,219
+If Sepolia will have problems, we'll choose others, but for today I tested everything is working,
+
+177
+00:10:54,259 --> 00:10:56,661
+so we'll be working with it.
+
+178
+00:10:56,701 --> 00:10:59,723
+So one address and many networks.
+
+179
+00:10:59,783 --> 00:11:02,425
+Read the network name before doing any action.
+
+180
+00:11:02,445 --> 00:11:05,066
+So I will show you this step by step for you.
+
+181
+00:11:05,547 --> 00:11:08,649
+So go here, go to the networks, okay?
+
+182
+00:11:09,309 --> 00:11:14,532
+go to the networks and you see these are the networks these are the real networks for d2m this
+
+183
+00:11:14,632 --> 00:11:20,756
+one is real for the blockchain for the bitcoin there should be here yes but then you have to
+
+184
+00:11:20,796 --> 00:11:27,621
+go a bit down and your value here will be disabled okay just enable this button just
+
+185
+00:11:27,681 --> 00:11:29,282
+enable it okay once you enable
+
+186
+00:11:30,222 --> 00:11:30,343
+uh
+
+187
+00:11:31,103 --> 00:11:31,804
+you will see
+
+188
+00:11:34,030 --> 00:11:38,972
+here the network so below you will see once you enable you will see the networks you select
+
+189
+00:11:39,052 --> 00:11:39,753
+on the network
+
+190
+00:11:40,473 --> 00:11:47,016
+and it will be ethereum in your computer so in ethereum we have no money uh i suppose to you
+
+191
+00:11:47,076 --> 00:11:52,459
+i don't have money this is the real network don't don't work with this select the network
+
+192
+00:11:53,560 --> 00:11:56,541
+and select the test net that is the sepolia
+
+193
+00:11:58,202 --> 00:12:04,365
+and sepolia i have some money which doesn't uh cost uh a thing it's uh it's uh
+
+194
+00:12:06,206 --> 00:12:12,328
+it's not a money and now now once you are here without uh money again still you should see
+
+195
+00:12:12,388 --> 00:12:13,069
+zero here uh
+
+196
+00:12:14,109 --> 00:12:20,232
+our next job is to fill it with some coins and how we do is the most interesting part of this
+
+197
+00:12:20,412 --> 00:12:22,433
+today's lecture how can we
+
+198
+00:12:23,373 --> 00:12:26,996
+fill our wallet with some fake money.
+
+199
+00:12:27,036 --> 00:12:32,241
+How do we do it? For that, we'll be using the Sepolia testnet faucet.
+
+200
+00:12:32,321 --> 00:12:34,082
+It's called faucet, I guess.
+
+201
+00:12:34,122 --> 00:12:37,085
+Faucet list. So faucet is this thing.
+
+202
+00:12:37,325 --> 00:12:39,027
+So we'll get some money
+
+203
+00:12:39,827 --> 00:12:41,289
+flowing from the faucet.
+
+204
+00:12:41,309 --> 00:12:43,230
+So what is the faucet? Let's study this.
+
+205
+00:12:43,731 --> 00:12:44,832
+The faucet is...
+
+206
+00:12:46,123 --> 00:12:49,326
+uh a website that gives out free
+
+207
+00:12:50,087 --> 00:12:55,533
+first of all free testnet coins okay not the main net coins testnet coins
+
+208
+00:12:56,253 --> 00:13:02,039
+and they don't give you like a lot they give you a little at a time okay so we will see this
+
+209
+00:13:02,099 --> 00:13:09,026
+so there are two ways to get the uh the coins the one with from the google is
+
+210
+00:13:09,267 --> 00:13:13,670
+it definitely works you can try but you have to sign in with your google account so you should
+
+211
+00:13:13,710 --> 00:13:15,872
+have a google account if you are not
+
+212
+00:13:16,693 --> 00:13:18,174
+finding it safe it is safe
+
+213
+00:13:19,435 --> 00:13:25,840
+you can try the this german website you don't need a account just you need a browser and your
+
+214
+00:13:25,901 --> 00:13:27,382
+browser will be doing some
+
+215
+00:13:30,459 --> 00:13:30,699
+how it's
+
+216
+00:13:31,920 --> 00:13:32,801
+mining, okay?
+
+217
+00:13:33,642 --> 00:13:34,723
+Don't get scared. It's
+
+218
+00:13:35,944 --> 00:13:37,846
+not something illegal to do in Uzbekistan.
+
+219
+00:13:37,906 --> 00:13:39,448
+I am the teacher. I will
+
+220
+00:13:40,709 --> 00:13:41,730
+be responsible for this.
+
+221
+00:13:41,770 --> 00:13:48,096
+So you will be doing some mining and actually your computer will be going really fast uh hot
+
+222
+00:13:48,636 --> 00:13:53,940
+uh because it will use a lot of resources of your computer but again it gives you a very small
+
+223
+00:13:53,980 --> 00:13:59,945
+amount which is still not the money okay it is just doing some uh magic behind the scenes but
+
+224
+00:14:00,065 --> 00:14:01,406
+is using your energy so
+
+225
+00:14:02,206 --> 00:14:07,631
+this one uses your browser a computer this was that will not use it so i will show you both
+
+226
+00:14:07,691 --> 00:14:08,551
+of them today okay
+
+227
+00:14:09,332 --> 00:14:09,392
+uh
+
+228
+00:14:10,665 --> 00:14:14,808
+in the full set uh just uh insert your address
+
+229
+00:14:15,568 --> 00:14:20,571
+uh don't insert your 12 words seed i told you don't don't give it to anyone in the world
+
+230
+00:14:21,411 --> 00:14:21,632
+and uh
+
+231
+00:14:23,713 --> 00:14:24,333
+your address
+
+232
+00:14:25,114 --> 00:14:29,977
+you have to save it because this will be your registered course address the ones a poly address
+
+233
+00:14:30,017 --> 00:14:35,080
+you register on e-class keep them for the semester because this will be your
+
+234
+00:14:36,000 --> 00:14:41,786
+attendance check okay every practical answer must come from it so homework is checked by looking
+
+235
+00:14:41,886 --> 00:14:46,931
+up that this address in the blockchain so you do some real transactions on the test net again
+
+236
+00:14:46,951 --> 00:14:53,778
+i will check and i will get accept your uh homework for this so these test coins are free guys
+
+237
+00:14:54,098 --> 00:14:56,220
+okay anyone who asks for money uh
+
+238
+00:14:58,282 --> 00:15:01,644
+uh remember it's a stick okay if i ask you money for uh
+
+239
+00:15:02,465 --> 00:15:07,908
+giving you this much ethereum which is quite a big value let me show you
+
+240
+00:15:09,029 --> 00:15:10,030
+zero zero
+
+241
+00:15:10,730 --> 00:15:12,772
+ethereum so you can type
+
+242
+00:15:13,732 --> 00:15:20,717
+in in chrome you can say zero zero ethereum look how much it will be quite a lot it will be
+
+243
+00:15:20,737 --> 00:15:22,017
+oh my god 29 million
+
+244
+00:15:24,783 --> 00:15:26,144
+zooms no come on
+
+245
+00:15:27,204 --> 00:15:30,066
+oh my god this is going again up now
+
+246
+00:15:33,067 --> 00:15:34,227
+so the price is going
+
+247
+00:15:36,929 --> 00:15:39,810
+yeah it's going up yes it's been
+
+248
+00:15:40,510 --> 00:15:43,652
+i just watched in the afternoon everything was fine it was 2000
+
+249
+00:15:44,432 --> 00:15:47,614
+something and then it got up again so it's a good news
+
+250
+00:15:48,868 --> 00:15:50,549
+but we had ups and downs in the past.
+
+251
+00:15:50,569 --> 00:15:56,531
+So what I was telling you, yeah, when you get this much, it is 29 million Zooms, but it's not
+
+252
+00:15:56,551 --> 00:15:57,631
+the actual money, okay? So
+
+253
+00:15:59,172 --> 00:16:01,393
+be careful on this if someone asks some money for this.
+
+254
+00:16:01,413 --> 00:16:01,573
+So
+
+255
+00:16:03,113 --> 00:16:08,815
+I will be showing you everything, but just remember your address will be your student ID for
+
+256
+00:16:08,855 --> 00:16:10,596
+this course. So write it down somewhere.
+
+257
+00:16:10,956 --> 00:16:13,317
+It is not something secret, okay?
+
+258
+00:16:13,337 --> 00:16:16,178
+Your 12th word is secret, but your address is fine.
+
+259
+00:16:16,198 --> 00:16:20,781
+At some point, I will ask you to insert your address address in some database in the class,
+
+260
+00:16:21,321 --> 00:16:24,984
+and then we'll be using it for the further operations.
+
+261
+00:16:25,044 --> 00:16:25,204
+So
+
+262
+00:16:26,405 --> 00:16:27,785
+I hope I'm not going too fast.
+
+263
+00:16:27,805 --> 00:16:29,447
+You can always pause the video
+
+264
+00:16:30,467 --> 00:16:32,028
+to do these operations.
+
+265
+00:16:32,769 --> 00:16:34,690
+So let's go back to the MetaMask.
+
+266
+00:16:36,471 --> 00:16:38,833
+And let's choose one of the four shades.
+
+267
+00:16:38,993 --> 00:16:44,157
+So I will first choose this German PK900 for now.
+
+268
+00:16:44,217 --> 00:16:45,558
+I will show you a very interesting thing.
+
+269
+00:16:45,578 --> 00:16:46,478
+910.
+
+270
+00:16:48,214 --> 00:16:49,075
+When you open up that
+
+271
+00:16:49,996 --> 00:16:52,117
+platform, it's a push as you can see,
+
+272
+00:16:52,938 --> 00:16:54,499
+here you have to insert your
+
+273
+00:16:55,500 --> 00:16:55,841
+address.
+
+274
+00:16:57,322 --> 00:16:59,804
+First, they will check if this is really you
+
+275
+00:17:00,565 --> 00:17:01,025
+or not.
+
+276
+00:17:03,667 --> 00:17:06,290
+Come on. Okay, let it check.
+
+277
+00:17:07,168 --> 00:17:12,631
+In the meantime, I will copy my Ethereum address on the Sepolia network.
+
+278
+00:17:12,691 --> 00:17:14,732
+Okay. Copy only this one.
+
+279
+00:17:14,872 --> 00:17:17,153
+It should show you Sepolia address.
+
+280
+00:17:17,953 --> 00:17:18,914
+Save it here.
+
+281
+00:17:20,894 --> 00:17:22,115
+Verify that you are human.
+
+282
+00:17:23,216 --> 00:17:24,036
+Oh, come on. Why?
+
+283
+00:17:25,377 --> 00:17:26,117
+I am the human.
+
+284
+00:17:29,365 --> 00:17:30,126
+Okay, I am the human.
+
+285
+00:17:31,308 --> 00:17:33,952
+So past and start mining.
+
+286
+00:17:34,232 --> 00:17:36,115
+Okay, a little about this.
+
+287
+00:17:36,155 --> 00:17:38,018
+Let's read first before doing this,
+
+288
+00:17:38,719 --> 00:17:41,402
+just to show you that it's not something illegal stuff.
+
+289
+00:17:41,843 --> 00:17:44,607
+This is Ethereum's faucet running on Cipolla testnet.
+
+290
+00:17:45,328 --> 00:17:50,410
+To prevent malicious actors from exhausting all available funds, accumulating enough for the
+
+291
+00:17:50,430 --> 00:17:57,372
+Ethereum mount long-running spam attacks is free, but you have to do some mining,
+
+292
+00:17:57,552 --> 00:18:02,154
+so they will need your computer's power only for that, nothing to do the real mining.
+
+293
+00:18:02,174 --> 00:18:04,615
+You don't know what is mining yet, we'll study it, but
+
+294
+00:18:05,315 --> 00:18:09,718
+Before that we need to, I have to show you some interesting transaction, okay?
+
+295
+00:18:10,158 --> 00:18:12,760
+You can skip this process for now because you don't need
+
+296
+00:18:13,620 --> 00:18:18,723
+actual money for your account if you already have this address is more than enough, but this
+
+297
+00:18:18,783 --> 00:18:21,545
+is something extra if you wanna try, okay?
+
+298
+00:18:21,565 --> 00:18:23,746
+You can get some Ethereums for this.
+
+299
+00:18:23,766 --> 00:18:28,729
+So you will click on the start mining, but at this moment I want to show you
+
+300
+00:18:29,910 --> 00:18:36,371
+uh something very important so once you run this uh you can open the task manager in your computer
+
+301
+00:18:36,391 --> 00:18:37,072
+okay
+
+302
+00:18:37,812 --> 00:18:44,313
+so that's my computer so i have cpu almost very calm now and my ram working here
+
+303
+00:18:45,013 --> 00:18:46,314
+and you can also open
+
+304
+00:18:47,154 --> 00:18:47,894
+let me make it
+
+305
+00:18:50,735 --> 00:18:52,855
+always on top where was the settings
+
+306
+00:19:00,824 --> 00:19:01,685
+Okay, always on top.
+
+307
+00:19:04,349 --> 00:19:04,990
+Performance.
+
+308
+00:19:05,932 --> 00:19:09,998
+Let's look at the performance because you will see that it will go crazy now after I start
+
+309
+00:19:10,038 --> 00:19:11,881
+mining because it actually starts to
+
+310
+00:19:13,315 --> 00:19:19,019
+burn some power okay so and it depends on your computer if you have a very nice gaming machine
+
+311
+00:19:19,039 --> 00:19:25,803
+you will get it faster yeah and open the chrome's if you have a chrome browser task manager
+
+312
+00:19:25,983 --> 00:19:28,405
+of the chrome okay
+
+313
+00:19:29,686 --> 00:19:32,227
+maybe it is not nice you can open
+
+314
+00:19:33,288 --> 00:19:33,908
+performance
+
+315
+00:19:34,849 --> 00:19:35,369
+and okay
+
+316
+00:19:36,230 --> 00:19:37,131
+task manager is okay
+
+317
+00:19:40,133 --> 00:19:40,753
+task manager
+
+318
+00:19:53,059 --> 00:19:53,179
+uh
+
+319
+00:19:54,000 --> 00:19:59,323
+what i was telling you okay for the cpu we'll be watching for the cpu power okay so i will
+
+320
+00:19:59,763 --> 00:20:06,347
+click click on this now start mining so it will be doing some crazy work you see
+
+321
+00:20:06,367 --> 00:20:07,448
+and a
+
+322
+00:20:08,428 --> 00:20:12,451
+reward i got nothing for now look at my computer usage now
+
+323
+00:20:13,311 --> 00:20:14,312
+my cpu is going
+
+324
+00:20:15,212 --> 00:20:16,153
+really uh
+
+325
+00:20:18,867 --> 00:20:24,037
+doing some work look at the utilization is hundred percent and also here you can see
+
+326
+00:20:25,279 --> 00:20:27,423
+where can you see it should show us the
+
+327
+00:20:28,645 --> 00:20:35,416
+tabs okay it's not on top here here look this browser is using almost 900
+
+328
+00:20:36,057 --> 00:20:40,060
+is it the percentage i don't know is using the whole my machine i
+
+329
+00:20:41,221 --> 00:20:41,642
+can even
+
+330
+00:20:42,542 --> 00:20:48,467
+i can listen the fan is working now and you have to wait okay you have to wait until
+
+331
+00:20:49,368 --> 00:20:49,889
+a minimum
+
+332
+00:20:50,769 --> 00:20:51,610
+amount of the
+
+333
+00:20:52,511 --> 00:20:53,752
+ethereum is claimed or not
+
+334
+00:20:55,866 --> 00:21:00,954
+And this is my hash rate. But if you use some other machine, I used my Mac earlier.
+
+335
+00:21:01,254 --> 00:21:02,616
+I have a lot of cores there.
+
+336
+00:21:03,077 --> 00:21:05,761
+It was quite, quite fast.
+
+337
+00:21:06,742 --> 00:21:08,825
+There is something lost in the network.
+
+338
+00:21:08,986 --> 00:21:13,189
+It's my network, maybe. But once you do, if everything goes fine,
+
+339
+00:21:14,330 --> 00:21:19,792
+if you see here zero point something and then your computer doesn't blow up after this, you
+
+340
+00:21:19,812 --> 00:21:21,133
+should see some money here.
+
+341
+00:21:21,233 --> 00:21:22,513
+Okay, this is the option one.
+
+342
+00:21:23,093 --> 00:21:24,194
+And then this
+
+343
+00:21:25,094 --> 00:21:30,477
+Ethereum, this much I have now, this Ethereum will be transferred directly to your
+
+344
+00:21:31,897 --> 00:21:32,278
+wallet
+
+345
+00:21:33,398 --> 00:21:35,219
+thanks to the blockchain again.
+
+346
+00:21:35,639 --> 00:21:39,741
+Blockchain will do the transaction, the one that we are studying.
+
+347
+00:21:40,895 --> 00:21:44,157
+and you should see it there let it burn for now i
+
+348
+00:21:45,138 --> 00:21:51,462
+will show you also the other option this one is definitely works so go to the cloud google
+
+349
+00:21:51,562 --> 00:21:52,723
+full shed okay
+
+350
+00:21:54,944 --> 00:21:56,625
+should have saved it somewhere oh
+
+351
+00:22:05,028 --> 00:22:06,629
+what is the website let's check
+
+352
+00:22:07,850 --> 00:22:10,111
+actually it's not text you cannot copy it
+
+353
+00:22:10,992 --> 00:22:12,033
+or cloud google
+
+354
+00:22:15,475 --> 00:22:18,617
+cloud google full shade ethereum c probably okay this one
+
+355
+00:22:20,078 --> 00:22:21,479
+so once you are in you
+
+356
+00:22:22,740 --> 00:22:23,680
+can delete this
+
+357
+00:22:24,661 --> 00:22:25,902
+i know i need another mask
+
+358
+00:22:26,713 --> 00:22:28,814
+so once you are in the google
+
+359
+00:22:29,735 --> 00:22:36,099
+uh it will again ask your address this is a real website okay it's a google is very trust trusted
+
+360
+00:22:36,199 --> 00:22:37,600
+company so we can use it
+
+361
+00:22:38,741 --> 00:22:39,741
+i am in the metamask
+
+362
+00:22:40,742 --> 00:22:47,626
+let's give him my address fast okay i already have some some earned some ethereums but i guess
+
+363
+00:22:47,646 --> 00:22:49,828
+it will give you again if you try
+
+364
+00:22:53,395 --> 00:22:55,497
+So your testnet tokens are in queue.
+
+365
+00:22:55,637 --> 00:22:58,099
+So it will take some time because they have to do some operation.
+
+366
+00:22:59,760 --> 00:23:02,882
+The operations that we will study, what kind of operations.
+
+367
+00:23:03,443 --> 00:23:04,464
+Recipient is this.
+
+368
+00:23:05,464 --> 00:23:06,785
+Then we have the transaction hash.
+
+369
+00:23:06,965 --> 00:23:08,286
+This is the real transaction.
+
+370
+00:23:08,567 --> 00:23:13,010
+Okay. In the Sepolia scan, Etherscan IO, we can actually see this.
+
+371
+00:23:13,631 --> 00:23:16,052
+We will see very interesting ideas here.
+
+372
+00:23:16,813 --> 00:23:17,654
+Again, this is optional.
+
+373
+00:23:17,714 --> 00:23:20,236
+Okay. We'll study all of these details very soon.
+
+374
+00:23:21,192 --> 00:23:27,715
+and transaction is complete if i go my to my wall i have it now okay so now i have zero one
+
+375
+00:23:27,735 --> 00:23:27,775
+it
+
+376
+00:23:29,816 --> 00:23:30,796
+in uzs
+
+377
+00:23:32,597 --> 00:23:33,798
+i have now 29
+
+378
+00:23:35,619 --> 00:23:40,021
+million zooms but again this is fake it's not the real real money so i got i got the
+
+379
+00:23:41,078 --> 00:23:48,001
+data and in Sipolia if you look at that transaction it writes that it is only testnet
+
+380
+00:23:48,321 --> 00:23:49,662
+so you have to read this
+
+381
+00:23:50,502 --> 00:23:52,983
+and someone transferred money
+
+382
+00:23:53,744 --> 00:23:59,806
+transaction hash every transaction has its own id we'll see it again from
+
+383
+00:24:00,366 --> 00:24:00,847
+someone
+
+384
+00:24:01,847 --> 00:24:03,228
+To my account, is it the same?
+
+385
+00:24:03,748 --> 00:24:09,530
+02B772. 02B772.
+
+386
+00:24:10,310 --> 00:24:15,352
+So that's my address. So this transaction is now in the blockchain, not on
+
+387
+00:24:16,092 --> 00:24:17,973
+the mainnet. It is in the testnet.
+
+388
+00:24:18,766 --> 00:24:20,848
+And then there are a bunch of stuff that we will study.
+
+389
+00:24:20,868 --> 00:24:23,230
+What is the GV? What is the gas price?
+
+390
+00:24:23,270 --> 00:24:24,751
+What's the transaction fee?
+
+391
+00:24:25,812 --> 00:24:29,194
+All this data, even this ERC 2020, we'll study.
+
+392
+00:24:29,695 --> 00:24:31,016
+We'll study all these details.
+
+393
+00:24:31,056 --> 00:24:33,357
+For now, I'm just showing you some magic.
+
+394
+00:24:33,517 --> 00:24:37,360
+I wanted to make it fun. So now most of you should have some money.
+
+395
+00:24:37,481 --> 00:24:41,704
+Oh, so this one now is, oh my God, my CPU is going crazy already.
+
+396
+00:24:41,724 --> 00:24:42,585
+I have to stop it.
+
+397
+00:24:43,345 --> 00:24:48,067
+So once it reaches, I know I have to stop it when it reached 0.05.
+
+398
+00:24:48,728 --> 00:24:52,089
+I want to test it. Maybe I will pause the video for a while
+
+399
+00:24:53,170 --> 00:24:58,632
+and come back when it is 0.05, which should be enough
+
+400
+00:25:00,273 --> 00:25:01,874
+as a minimum reward claim.
+
+401
+00:25:02,134 --> 00:25:03,434
+Maximum you can get this much,
+
+402
+00:25:04,195 --> 00:25:06,116
+but let's come back a bit later.
+
+403
+00:25:06,156 --> 00:25:06,956
+I will pause the video.
+
+404
+00:25:11,213 --> 00:25:12,154
+Okay. I have enough now.
+
+405
+00:25:12,955 --> 00:25:15,737
+I try to claim it, but last time it didn't work.
+
+406
+00:25:16,038 --> 00:25:17,139
+Oh, it worked.
+
+407
+00:25:18,640 --> 00:25:19,441
+Uh, okay.
+
+408
+00:25:20,202 --> 00:25:22,624
+Wallet to my wallet, claim the rewards.
+
+409
+00:25:23,565 --> 00:25:25,267
+Let's see. Let's see. Transaction stats.
+
+410
+00:25:25,487 --> 00:25:26,988
+They're trying to send it to me.
+
+411
+00:25:29,150 --> 00:25:31,713
+Thanks to the lecture. I got some, some Ethereum now.
+
+412
+00:25:34,616 --> 00:25:35,016
+Uh, come on.
+
+413
+00:25:40,903 --> 00:25:41,243
+Of course,
+
+414
+00:25:42,503 --> 00:25:44,304
+this is a real thing we are doing on
+
+415
+00:25:45,144 --> 00:25:46,664
+really working on the blockchain.
+
+416
+00:25:46,724 --> 00:25:47,644
+It's really nice.
+
+417
+00:25:48,464 --> 00:25:49,545
+Of course, we didn't study.
+
+418
+00:25:49,705 --> 00:25:52,205
+Oh, yes. That's a transaction ID.
+
+419
+00:25:52,405 --> 00:25:53,205
+If you open again
+
+420
+00:25:54,165 --> 00:25:56,846
+on Sepolia Ethernet IO, it is
+
+421
+00:25:58,166 --> 00:25:58,946
+what we called it.
+
+422
+00:26:04,267 --> 00:26:04,767
+I'm sorry.
+
+423
+00:26:05,928 --> 00:26:08,468
+It's quite late. I'm losing my mind now.
+
+424
+00:26:12,680 --> 00:26:14,521
+Ah, what I wanted to say...
+
+425
+00:26:21,644 --> 00:26:22,464
+Okay, I forgot.
+
+426
+00:26:29,307 --> 00:26:31,168
+It is about Sepolia
+
+427
+00:26:33,809 --> 00:26:34,369
+network.
+
+428
+00:26:40,752 --> 00:26:41,012
+Okay.
+
+429
+00:26:42,851 --> 00:26:45,620
+Let's see now. We should see the transaction.
+
+430
+00:26:45,640 --> 00:26:47,265
+So transaction is succeeded.
+
+431
+00:26:47,746 --> 00:26:50,053
+Again to my account, they sent us this.
+
+432
+00:26:52,457 --> 00:26:55,278
+We should see it here that I'm, I have this much now.
+
+433
+00:26:55,338 --> 00:26:59,700
+Okay. So I can send some of you, some of them to you.
+
+434
+00:26:59,760 --> 00:27:03,161
+Now I can direct send it from here to your address.
+
+435
+00:27:03,742 --> 00:27:07,503
+Okay. On, of course on Sepolia, not on the real, uh, real,
+
+436
+00:27:08,323 --> 00:27:11,784
+uh, network. So we'll be working on this very soon.
+
+437
+00:27:12,645 --> 00:27:18,547
+So done. Uh, you can also try, uh, try this at this moment, uh,
+
+438
+00:27:20,155 --> 00:27:22,396
+everything is done so if you try
+
+439
+00:27:23,096 --> 00:27:28,618
+just you can go until obtaining your address is very important obtain your address save it
+
+440
+00:27:28,638 --> 00:27:34,920
+with yourself later on I will ask you for that address okay so stop the video try this and
+
+441
+00:27:35,160 --> 00:27:35,701
+hopefully
+
+442
+00:27:36,961 --> 00:27:41,963
+on Sunday I will release some quiz where you need to insert your address so keep it with you
+
+443
+00:27:42,243 --> 00:27:47,285
+okay keep it before the quiz otherwise it will take you time and you will lose time on quiz
+
+444
+00:27:48,587 --> 00:27:50,872
+maybe on quiz i will ask you to insert your
+
+445
+00:27:52,015 --> 00:27:55,724
+address so that i will check later okay so i'm stopping it here now see
+
+446
+00:27:56,446 --> 00:27:56,867
+you later

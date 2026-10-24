@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lock &amp; Key — run a Bitcoin lock on the stack, one opcode at a time</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#FFC907; --gold-d:#a9800a; --gold-bg:#FFFAE6;
+  --red:#c0392b; --red-bg:#fdecea; --red-d:#7b241c;
+  --grn:#1e8449; --grn-bg:#eafaf1;
+  --blu:#1f6fb2; --blu-bg:#eaf3fb;
+  --ink:#333; --dim:#777; --dim2:#999; --line:#ddd; --line2:#ccc;
+  --panel:#fafafa; --head-bg:#f3f3f3; --navy:#1B3A6B; --lab:#666;
+  --mono:'JetBrains Mono','SFMono-Regular',Consolas,Menlo,monospace;
+  --sans:'Source Sans 3','Helvetica Neue',Arial,system-ui,sans-serif;
+  --head:'Oswald','Arial Narrow',Impact,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+body{padding:0 14px 50px}
+.wrap{max-width:980px;margin:0 auto}
+button{font-family:var(--sans)}
+button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+code{font-family:var(--mono);font-size:.86em;background:#edf1f7;color:var(--navy);padding:0 4px;border-radius:4px;white-space:nowrap}
+kbd{font-family:var(--mono);font-size:11px;font-weight:700;border:1px solid var(--line2);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:#fff;color:var(--ink);margin-left:6px;vertical-align:1px}
+.masthead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:20px 0 12px;border-bottom:4px solid var(--gold)}
+.masthead h1{font-family:var(--head);font-weight:600;font-size:30px;margin:0;color:var(--navy)}
+.masthead .sub{color:var(--dim);font-size:14px}
+.masthead .course{margin-left:auto;font-size:11px;letter-spacing:1.2px;color:var(--gold-d);border:1px solid var(--gold);background:var(--gold-bg);padding:3px 10px;border-radius:20px;font-weight:700}
+.lede{background:var(--gold-bg);border-left:4px solid var(--gold);padding:11px 15px;margin:16px 0;border-radius:0 6px 6px 0}
+.lede b{color:var(--gold-d)}
+.ctl{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0;padding:12px;background:var(--panel);border:1px solid var(--line2);border-radius:9px}
+.ctl button,.btn{background:#fff;border:1px solid var(--line2);border-radius:7px;padding:7px 15px;font-family:var(--sans);font-size:14px;cursor:pointer;color:var(--ink);font-weight:600;min-height:38px}
+.ctl button:hover,.btn:hover{background:var(--gold-bg);border-color:var(--gold)}
+.ctl button.key,.btn.key{background:var(--gold);border-color:var(--gold);color:#4a3800;min-width:92px}
+.ctl button:disabled,.btn:disabled{opacity:.45;cursor:default;background:#fff;border-color:var(--line2)}
+.log{border:1px solid var(--line2);border-radius:9px;background:#1E222A;color:#E6E9EE;font-family:var(--mono);font-size:12.5px;line-height:1.75;padding:11px 13px;white-space:pre-wrap;word-break:break-all}
+.log .t{color:#6ec1ff} .log .hi{color:#ffd45e} .log .bad{color:#ff8b7d} .log .ok{color:#8fe3a8} .log .dm{color:#8a8a8a}
+.banner{margin-top:14px;padding:12px 16px;border-radius:8px;font-size:15px;display:none}
+.banner.show{display:block}
+.banner.warn{background:var(--red);color:#fff}
+.banner.win{background:#b8ecc8;color:#153d22}
+.banner .hd{font-family:var(--head);letter-spacing:1px;text-transform:uppercase;display:block;font-size:16px;margin-bottom:3px}
+.banner code{background:rgba(255,255,255,.6);color:inherit}
+.banner .joke{display:block;margin-top:6px;font-style:italic}
+.note{border-left:4px solid var(--blu);background:var(--blu-bg);padding:10px 14px;margin:18px 0 0;border-radius:0 6px 6px 0;font-size:14px}
+.note b{color:var(--blu)}
+footer{color:var(--dim);font-size:13px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
+footer p{margin:0 0 7px}
+footer code{font-family:var(--mono);color:var(--blu);font-size:12.5px;background:none;padding:0}
+footer .reset{background:#fff;border:1px solid var(--line2);border-radius:7px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;min-height:36px;margin-right:10px}
+footer .reset:hover{border-color:var(--red);color:var(--red)}
+.lab{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--lab);font-weight:700;margin:0 0 7px}
+.panel{border:1px solid var(--line2);border-radius:9px;background:#fff;padding:11px 13px}
+.small{font-size:13px;color:var(--lab);margin:8px 0 0;line-height:1.4}
+.gloss{border:1px solid var(--gold);background:var(--gold-bg);border-radius:8px;padding:8px 12px;font-size:13.5px;margin:10px 0}
+.gloss b{color:var(--gold-d)}
+.mbar{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:0 0 18px}
+.mchip{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-height:58px;border:1px solid var(--line2);background:#fff;border-radius:9px;padding:7px 10px 8px;cursor:pointer;color:var(--ink)}
+.mchip:hover{border-color:var(--gold);background:var(--gold-bg)}
+.mchip .no{display:flex;align-items:center;gap:6px;font-family:var(--head);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--lab)}
+.mchip .tt{font-weight:700;font-size:13.5px;line-height:1.25}
+.mchip .ck{width:17px;height:17px;border-radius:50%;background:var(--grn);color:#fff;font-family:var(--sans);font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.mchip .ck.hp{background:var(--gold);color:#4a3800}
+.mchip.cur{border-color:var(--gold);box-shadow:inset 0 0 0 2px var(--gold);background:var(--gold-bg)}
+.mchip.cur .no{color:var(--navy)}
+.mhead{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 12px}
+.mhead .kind{flex-basis:100%;font-family:var(--head);font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--lab)}
+.mhead h2{font-family:var(--head);font-weight:600;font-size:25px;line-height:1.15;margin:0;color:var(--navy)}
+.mhead .goal{border:2px solid var(--navy);border-radius:20px;padding:1px 12px;font-size:14px;font-weight:700;color:var(--navy)}
+.mhead .goal i{font-style:normal;color:var(--lab);margin-right:7px;font-size:11px;text-transform:uppercase;letter-spacing:1.1px}
+.mhead .clr{background:var(--grn);color:#fff;border-radius:20px;padding:2px 12px;font-size:13px;font-weight:700}
+.mhead .clr.hp{background:var(--gold);color:#4a3800}
+.mhead .desc{flex-basis:100%;margin:2px 0 0;font-size:15.5px}
+/* lock + key cards */
+.lk{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.lk>*{min-width:0}
+.card{border:1px solid var(--line2);border-radius:9px;padding:10px 12px;background:#fff}
+.card.lock{border-top:4px solid var(--red)}
+.card.keyc{border-top:4px solid var(--blu)}
+.card .lab{margin-bottom:4px}
+.prog{display:flex;flex-wrap:wrap;gap:5px;font-family:var(--mono);font-size:12.5px;margin-top:6px}
+.prog span{border:1px solid var(--line2);border-radius:5px;padding:2px 7px;background:#f6f8fb}
+.prog span.cur{background:var(--gold);border-color:var(--gold);color:#4a3800;font-weight:700}
+.prog span.done{opacity:.55}
+.prog span.fail{background:var(--red);border-color:var(--red);color:#fff}
+/* the stage: stack + question */
+.stage{display:grid;grid-template-columns:230px 1fr;gap:14px;align-items:start}
+.stage>*{min-width:0}
+.stackbox{border:1px solid var(--line2);border-radius:9px;padding:10px;background:#fafafa;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+.item{border:1px solid;border-radius:7px;padding:7px 9px;font-family:var(--mono);font-size:12.5px;text-align:center;line-height:1.3;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.item.sig{background:#fdecea;border-color:#e6b0a8;color:#7b241c}
+.item.pub{background:#eaf3fb;border-color:#9ec3e6;color:#123f6b}
+.item.hash{background:#fff7d6;border-color:#e6c84f;color:#6b5300}
+.item.bool{background:#eafaf1;border-color:#8fd4a8;color:#14532d;font-weight:700}
+.item.bool.f{background:#fdecea;border-color:#e6b0a8;color:#7b241c}
+.item.zero{background:#f0f0f0;border-color:#ccc;color:#555}
+.item.scr{background:#efe8f7;border-color:#c3b1dc;color:#4a2d73}
+.item .k{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:1px;text-transform:uppercase;opacity:.75}
+.stackbox .empty{color:var(--dim2);font-size:13px;text-align:center;padding:20px 0}
+.stackbox .top{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--lab);text-align:center}
+.step{border:1px solid var(--line2);border-radius:9px;padding:11px 13px;background:#fff}
+.step .op{font-family:var(--mono);font-size:17px;color:var(--navy);font-weight:700}
+.step .opd{font-size:14px;color:var(--lab);margin:2px 0 10px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.opt{border:1px solid var(--line2);border-radius:9px;padding:8px;background:#fff;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;min-height:120px;text-align:center;font-family:var(--sans)}
+.opt:hover{border-color:var(--gold);background:var(--gold-bg)}
+.opt.right{border-color:var(--grn);background:var(--grn-bg)}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);opacity:.7}
+.opt .item{padding:4px 6px;font-size:11px}
+.opt .stop{font-weight:700;color:var(--red);font-size:14px;padding:30px 0}
+.opt .ol{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--lab)}
+.why{font-size:13.5px;margin:8px 0 0;color:var(--ink);display:none;padding:7px 10px;border-radius:6px;background:var(--blu-bg);border-left:3px solid var(--blu)}
+.why.show{display:block}
+.hintbox{margin-top:10px;font-size:14px}
+.hintbox p{margin:4px 0;padding:6px 10px;background:var(--blu-bg);border-radius:6px;border-left:3px solid var(--blu)}
+.trace{font-size:13px;margin-top:8px}
+.trace table{border-collapse:collapse;width:100%}
+.trace td,.trace th{border-bottom:1px solid var(--line);padding:3px 6px;text-align:left;font-size:12.5px;vertical-align:top}
+.trace th{color:var(--lab);font-weight:700;text-transform:uppercase;letter-spacing:.8px;font-size:10.5px}
+.trace td.st{font-family:var(--mono);font-size:11.5px}
+/* sandbox */
+.parts{display:flex;flex-wrap:wrap;gap:8px}
+.part{border:1px solid var(--line2);border-radius:8px;padding:6px 10px;background:#fff;cursor:pointer;font-family:var(--mono);font-size:12.5px;min-height:36px}
+.part:hover{border-color:var(--gold);background:var(--gold-bg)}
+.part.used{opacity:.4;cursor:default}
+.part .k{font-family:var(--sans);font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--lab);margin-right:6px}
+.keyslots{display:flex;gap:8px;margin:8px 0;min-height:44px;align-items:center}
+.ks{flex:1;border:2px dashed var(--line2);border-radius:8px;min-height:42px;padding:5px 9px;font-family:var(--mono);font-size:12.5px;display:flex;align-items:center;color:var(--dim2)}
+.ks.f{border-style:solid;border-color:var(--blu);background:var(--blu-bg);color:var(--navy)}
+.tries{margin-top:10px;font-size:13.5px}
+.tries li{margin:3px 0}
+.tries .ok{color:var(--grn);font-weight:700}.tries .no{color:var(--red);font-weight:700}
+@media (max-width:720px){.mbar{grid-template-columns:repeat(2,1fr)}.lk,.stage{grid-template-columns:1fr}.opts{grid-template-columns:1fr}.masthead .course{margin-left:0}}
+#selftest-report{white-space:pre-wrap;font-family:var(--mono);font-size:12px;background:#f6f8fb;border:1px solid var(--line2);padding:8px;display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<pre id="selftest-report"></pre>
+<div class="masthead">
+  <h1>LOCK &amp; KEY: THE STACK MACHINE</h1>
+  <span class="sub">every node runs the key in the lock · you are the node</span>
+  <span class="course">SOC4190 · LECTURE 6</span>
+</div>
+<div class="lede">
+  Every output carries a <b>lock</b> (a tiny program). Every input brings a <b>key</b> (a signature and a public key).
+  A node puts the key on a <b>stack</b>, then runs the lock one <b>opcode</b> at a time. If <b>TRUE</b> is left on the stack, the coins may move.
+  The lock below is the real P2PKH lock of our payment's coin; the keys are real too — some of them belong to somebody else.
+  At each step, <b>choose what the stack looks like next</b>. The hashes and signature results are <b>precomputed</b> (measured 12 Oct 2026): this page shows the stack operations, it does not run the cryptography itself.
+</div>
+
+<div class="mbar" id="mbar"></div>
+<div id="stage"></div>
+
+<div class="note"><b>The lesson.</b> There is no account and no "owner" field. A coin belongs to whoever can make the lock's program end with TRUE.
+P2PKH asks for two things in order: a public key whose HASH160 matches the 20 bytes in the lock, and a signature that fits that public key
+<i>and this exact payment</i>. The wrong key, the wrong order, or a changed payment: the program stops, and every node agrees.</div>
+
+<footer>
+  <p>Everything in this game comes from Slide 6 (Bitcoin Transactions). The lock is output #1 of <code>c9dd84b1…9bb2</code> (spent by our payment
+  <code>d9f91d3f…6dd6</code>, block 968,391). The "other" public key is from a SegWit payment in block 968,392; the 2-of-3 lock is
+  <code>3CTkLec3…fJLG</code> from block 968,389. All HASH160 values were computed on 12 Oct 2026 and equal the explorer's.
+  The result of OP_CHECKSIG is the measured one: the real signature verifies; with output #0 one satoshi larger it fails.</p>
+  <p>Keys: <kbd>1</kbd>…<kbd>6</kbd> open a mission · <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> choose answer 1 / 2 / 3 · <kbd>H</kbd> hint · <kbd>R</kbd> restart · <kbd>N</kbd> next</p>
+  <p><button class="reset" id="resetAll">Reset progress</button> <span id="progtxt"></span></p>
+</footer>
+</div>
+
+<script>
+/* ---------- real data (12 Oct 2026, mempool.space; HASH160 computed with cryptolib) ---------- */
+const H_OWNER='c471c2ac102c39809c341a1a71b1c7b0dd6681d7';   // HASH160 of the real public key, the 20 bytes in the lock
+const H_OTHER='4ad6d25d4a81813e0defafe60070e30510cd12c7';   // HASH160 of a public key from block 968,392
+const H_SIG  ='9f716ef96aa486dbed8b3f44018a650a4ab0e26b';   // HASH160 of the signature bytes (what you get if you hash the wrong item)
+const H_SCRIPT='7626f78867dbf7a41876e63434452b8ac33b10bc';  // HASH160 of the 2-of-3 script of 3CTkLec3…
+const ITEMS={
+  sigA:{t:'sig',k:'signature',v:'3044…9a01',s:'71 bytes, made by the owner for this payment',h:H_SIG},
+  sigX:{t:'sig',k:'signature',v:'3044…9a01 ✱',s:'the same signature, but the payment was changed by 1 satoshi after signing',h:H_SIG},
+  pubA:{t:'pub',k:'public key',v:'026c2216…f405',s:'the owner\'s 33-byte public key',h:H_OWNER},
+  pubB:{t:'pub',k:'public key',v:'03f30bbc…fc56',s:'somebody else\'s public key (block 968,392)',h:H_OTHER},
+  hOwner:{t:'hash',k:'hash in the lock',v:'c471c2ac…81d7'},
+  hashOf:(x)=>({t:'hash',k:'HASH160',v:x.h.slice(0,8)+'…'+x.h.slice(-4),h:x.h}),
+  zero:{t:'zero',k:'OP_0',v:'(empty item)',s:'a historical quirk: the 2-of-3 check pops one extra item'},
+  sigP:{t:'sig',k:'signature 1',v:'3045…fe01',s:'72 bytes, from owner 1 of 3'},
+  sigQ:{t:'sig',k:'signature 2',v:'3044…f201',s:'71 bytes, from owner 2 of 3'},
+  scr:{t:'scr',k:'the script',v:'52 21 03db… 21 0372… 21 025b… 53 ae',s:'105 bytes: "2 of these 3 public keys must sign"',h:H_SCRIPT},
+  T:{t:'bool',k:'',v:'TRUE'}, F:{t:'bool',k:'',v:'FALSE',f:true},
+};
+const OPS={
+  DUP:{name:'OP_DUP',hex:'76',d:'copy the top item'},
+  HASH160:{name:'OP_HASH160',hex:'a9',d:'replace the top item by its 20-byte hash (SHA-256, then RIPEMD-160)'},
+  EQUALVERIFY:{name:'OP_EQUALVERIFY',hex:'88',d:'the two top items must be equal: remove both and go on — else stop: FALSE'},
+  CHECKSIG:{name:'OP_CHECKSIG',hex:'ac',d:'does the signature fit this public key and this payment? push TRUE or FALSE'},
+  EQUAL:{name:'OP_EQUAL',hex:'87',d:'remove the two top items; push TRUE if they were equal, else FALSE'},
+  RUNSCRIPT:{name:'run the revealed script',hex:'',d:'the hash matched, so the script is real: now run it with the signatures still on the stack'},
+};
+
+/* ---------- the engine ---------- */
+function same(a,b){ return a.t===b.t && a.v===b.v; }
+function step(stack, op, ctx){ // returns {stack, fail?, msg}
+  const s=stack.slice();
+  switch(op){
+    case 'push': s.push(ctx.item); return {stack:s};
+    case 'DUP': if(!s.length) return {stack:s,fail:'nothing to copy'}; s.push(s[s.length-1]); return {stack:s};
+    case 'HASH160': { const x=s.pop(); if(!x||!x.h) return {stack:s,fail:'no item to hash'}; s.push(ITEMS.hashOf(x)); return {stack:s}; }
+    case 'EQUALVERIFY': { const a=s.pop(), b=s.pop(); if(a.h===b.h || (a.v===b.v)) return {stack:s}; return {stack:s,fail:'OP_EQUALVERIFY: the two hashes differ — stop: FALSE'}; }
+    case 'EQUAL': { const a=s.pop(), b=s.pop(); s.push((a.h===b.h||a.v===b.v)?ITEMS.T:ITEMS.F); return {stack:s}; }
+    case 'CHECKSIG': { const pub=s.pop(), sig=s.pop(); const ok=pub&&sig&&pub.t==='pub'&&sig.t==='sig'&&pub.v===ITEMS.pubA.v&&sig.v===ITEMS.sigA.v; s.push(ok?ITEMS.T:ITEMS.F); return {stack:s}; }
+    case 'RUNSCRIPT': { // simplified: the 2-of-3 check is not executed here, its measured result is used
+      const eq=s.pop(); if(!eq||eq.t!=='bool'||eq.f) return {stack:s,fail:'the hash did not match: the script is not run'};
+      const b=s.pop(), a=s.pop(), z=s.pop(); const ok=a&&b&&a.t==='sig'&&b.t==='sig'&&z&&z.t==='zero'; s.push(ok?ITEMS.T:ITEMS.F); return {stack:s}; }
+  }
+  return {stack:s,fail:'unknown op'};
+}
+function run(keyItems, lockOps){ // full trace
+  let st=[]; const tr=[];
+  keyItems.forEach(it=>{ const r=step(st,'push',{item:it}); st=r.stack; tr.push({op:'push',label:'push '+it.k,stack:st,ok:true}); });
+  for(const op of lockOps){ const r=step(st,op,{}); st=r.stack; tr.push({op,label:op==='push'?'':OPS[op].name,stack:st,ok:!r.fail,fail:r.fail}); if(r.fail) break; }
+  const last=tr[tr.length-1]; const result=last.ok && st.length>=1 && st[st.length-1].t==='bool' && !st[st.length-1].f;
+  return {trace:tr, result, stack:st};
+}
+
+/* ---------- missions ---------- */
+const P2PKH=['DUP','HASH160','pushH','EQUALVERIFY','CHECKSIG'];
+const MISSIONS=[
+ {n:1,title:'The honest key',kind:'P2PKH · the real key',goal:'7 stacks right',key:['sigA','pubA'],lock:'p2pkh',
+  desc:'The owner spends their own coin: signature, then public key. Predict the stack after each of the seven steps.'},
+ {n:2,title:'Someone else\'s public key',kind:'P2PKH · wrong key',goal:'find where it stops',key:['sigA','pubB'],lock:'p2pkh',
+  desc:'A stranger shows their own public key with the owner\'s signature. Where does the program stop?'},
+ {n:3,title:'Right items, wrong order',kind:'P2PKH · order matters',goal:'find where it stops',key:['pubA','sigA'],lock:'p2pkh',
+  desc:'The real public key and the real signature — pushed the other way round. The lock does not know; it only sees a stack.'},
+ {n:4,title:'A changed payment',kind:'P2PKH · the signature and the bytes',goal:'reach the final answer',key:['sigX','pubA'],lock:'p2pkh',
+  desc:'Everything is the owner\'s — but output #0 was changed by one satoshi after signing. The signature was made for the old bytes. Which step notices?'},
+ {n:5,title:'A lock that hides its script',kind:'P2SH · 2 of 3',goal:'run both halves',key:['zero','sigP','sigQ','scr'],lock:'p2sh',
+  desc:'A <b>3…</b> address: the lock holds only the HASH160 of a longer script. The spender must show that script — and satisfy it. Two of three owners signed. <i>Simplified: the last step uses the measured result of the 2-of-3 check instead of running it.</i>'},
+ {n:6,title:'Build the key',kind:'sandbox',goal:'the one key that opens the lock',lock:'p2pkh',
+  desc:'Four real parts. Pick two and put them in order, then run. Only one key opens the lock; see where every other one stops.'},
+];
+const HINTS={
+ 1:['OP_DUP copies the top item: two public keys on the stack. OP_HASH160 hashes only the top one.','After OP_EQUALVERIFY two items are gone; the signature and one public key remain for OP_CHECKSIG.','<b>Show me:</b> the right answer is highlighted at each step.'],
+ 2:['The stranger\'s public key hashes to <code>4ad6d25d…</code>. The lock holds <code>c471c2ac…</code>.','OP_EQUALVERIFY compares those two hashes.','<b>Show me:</b> the right answer is highlighted.'],
+ 3:['OP_DUP copies whatever is on top — here, the signature. OP_HASH160 then hashes a signature, not a public key.','A signature\'s HASH160 is <code>9f716ef9…</code>, not <code>c471c2ac…</code>.','<b>Show me:</b> the right answer is highlighted.'],
+ 4:['The public key is the owner\'s, so its hash matches; the first five steps are the honest ones.','OP_CHECKSIG checks the signature against <i>this payment\'s bytes</i>. The bytes changed. Measured 12 Oct 2026: it fails.','<b>Show me:</b> the right answer is highlighted.'],
+ 5:['First the P2SH lock: hash the top item (the script) and compare with the 20 bytes in the lock. OP_EQUAL pushes TRUE or FALSE; it does not stop.','Then the script itself runs on what is left: OP_0, two signatures — "2 of 3" is satisfied.','<b>Show me:</b> the right answer is highlighted.'],
+ 6:['Order: the signature goes first (bottom), the public key on top.','Only the owner\'s public key hashes to the lock\'s 20 bytes; only the unchanged signature fits.','<b>Show me:</b> signature → public key, both the owner\'s.'],
+};
+
+/* ---------- progress ---------- */
+const KEY='soc4190-stackmachine-v1'; let mem={};
+function loadP(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return mem; } }
+function saveP(p){ mem=p; try{ localStorage.setItem(KEY,JSON.stringify(p)); }catch(e){} }
+let prog=loadP();
+const $=s=>document.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
+let cur=1, hintIx=0, hintsUsed=0, showMe=false, S=null;
+
+function drawBar(){
+  const bar=$('#mbar'); bar.innerHTML='';
+  MISSIONS.forEach(m=>{ const b=el('button','mchip'+(m.n===cur?' cur':'')); const st=prog[m.n];
+    b.innerHTML=`<span class="no">${st?`<span class="ck${st==='help'?' hp':''}">✓</span>`:''}Mission ${m.n}</span><span class="tt">${m.title}</span>`; b.onclick=()=>open(m.n); bar.appendChild(b); });
+  const done=MISSIONS.filter(m=>prog[m.n]).length;
+  $('#progtxt').textContent=`${done} of ${MISSIONS.length} missions cleared`+(done===MISSIONS.length?' — you are a full node now (for one opcode set).':'');
+}
+function head(m){ const st=prog[m.n];
+  return `<div class="mhead"><span class="kind">Mission ${m.n} · ${m.kind}</span><h2>${m.title}</h2><span class="goal"><i>goal</i>${m.goal}</span>${st?`<span class="clr${st==='help'?' hp':''}">cleared${st==='help'?' with help':''}</span>`:''}<p class="desc">${m.desc}</p></div>`; }
+function ctl(){ return `<div class="ctl"><button id="hintB"> Hint</button><button id="restartB">↺ Restart</button><button id="nextB" class="key" ${prog[cur]?'':'disabled'}>Next mission ▶</button></div><div class="hintbox" id="hintbox"></div><div class="banner" id="banner"></div>`; }
+function wire(){ $('#hintB').onclick=hint; $('#restartB').onclick=()=>open(cur); $('#nextB').onclick=()=>{ if(cur<6) open(cur+1); }; }
+function hint(){ const hs=HINTS[cur]; if(hintIx>=hs.length) return; $('#hintbox').appendChild(el('p',null,hs[hintIx])); hintIx++; hintsUsed++; if(hintIx===hs.length){ showMe=true; if(cur<=5) drawStep(); else sbShow(); } }
+function banner(kind,hd,txt,joke){ const b=$('#banner'); b.className='banner show '+kind; b.innerHTML=`<span class="hd">${hd}</span>${txt}${joke?`<span class="joke">${joke}</span>`:''}`; }
+function won(txt,joke){ prog[cur]=hintsUsed>0?(prog[cur]||'help'):'ok'; saveP(prog); banner('win','Mission cleared',txt,joke); $('#nextB').disabled=cur>=6; drawBar(); }
+function open(n){ cur=n; hintIx=0; hintsUsed=0; showMe=false; drawBar(); window.scrollTo({top:0}); if(n<=5) startRun(MISSIONS[n-1]); else sandbox(); }
+
+/* ---------- lock/key cards ---------- */
+function lockCard(kind){
+  if(kind==='p2pkh') return `<div class="card lock"><p class="lab">the lock · in the output being spent (output #1 of c9dd84…9bb2, 1,799,096 sat)</p>
+  <div class="prog" id="lockprog"><span data-i="0">76 OP_DUP</span><span data-i="1">a9 OP_HASH160</span><span data-i="2">14 c471c2ac…81d7</span><span data-i="3">88 OP_EQUALVERIFY</span><span data-i="4">ac OP_CHECKSIG</span></div>
+  <p class="small">P2PKH — pay to public key hash: "show a public key that hashes to these 20 bytes, and a signature made with its private key".</p></div>`;
+  return `<div class="card lock"><p class="lab">the lock · P2SH, address 3CTkLec3…fJLG (block 968,389)</p>
+  <div class="prog" id="lockprog"><span data-i="0">a9 OP_HASH160</span><span data-i="1">14 7626f788…10bc</span><span data-i="2">87 OP_EQUAL</span><span data-i="3">▶ run the script</span></div>
+  <p class="small">P2SH — pay to script hash: the lock holds only the HASH160 of a longer script. The payer needs only a short address; the long conditions are revealed, and paid for, by whoever spends.</p></div>`;
+}
+function keyCard(keys){
+  return `<div class="card keyc"><p class="lab">the key · in the input (pushed bottom → top)</p><div class="prog">${keys.map(k=>`<span>${ITEMS[k].k}: ${ITEMS[k].v}</span>`).join('')}</div>
+  <p class="small">${keys.map(k=>`<b>${ITEMS[k].k}</b> — ${ITEMS[k].s}`).join('<br>')}</p></div>`;
+}
+function itemHTML(it,small){ return `<div class="item ${it.t}${it.f?' f':''}">${it.k?`<span class="k">${it.k}</span>`:''}${it.v}</div>`; }
+function stackHTML(st){ if(!st.length) return '<div class="empty">(empty stack)</div>'; return '<div class="top">top of the stack</div>'+st.slice().reverse().map(itemHTML).join(''); }
+
+/* ---------- step-by-step play ---------- */
+function planFor(m){ // list of steps {op, ctx, label, desc}
+  const steps=m.key.map(k=>({op:'push',item:ITEMS[k],label:'push '+ITEMS[k].k,desc:'the key\'s next item goes on top of the stack'}));
+  if(m.lock==='p2pkh') steps.push({op:'DUP',...OPS.DUP,label:OPS.DUP.name,desc:OPS.DUP.d,li:0},{op:'HASH160',label:OPS.HASH160.name,desc:OPS.HASH160.d,li:1},{op:'push',item:ITEMS.hOwner,label:'push the hash in the lock',desc:'the 20 data bytes of the lock go on top',li:2},{op:'EQUALVERIFY',label:OPS.EQUALVERIFY.name,desc:OPS.EQUALVERIFY.d,li:3},{op:'CHECKSIG',label:OPS.CHECKSIG.name,desc:OPS.CHECKSIG.d,li:4});
+  else steps.push({op:'HASH160',label:OPS.HASH160.name,desc:OPS.HASH160.d,li:0},{op:'push',item:{t:'hash',k:'hash in the lock',v:'7626f788…10bc',h:H_SCRIPT},label:'push the hash in the lock',desc:'the 20 data bytes of the lock go on top',li:1},{op:'EQUAL',label:OPS.EQUAL.name,desc:OPS.EQUAL.d,li:2},{op:'RUNSCRIPT',label:OPS.RUNSCRIPT.name,desc:OPS.RUNSCRIPT.d,li:3});
+  return steps;
+}
+function startRun(m){
+  S={m,steps:planFor(m),i:0,stack:[],hist:[],stopped:false,wrong:0};
+  $('#stage').innerHTML=head(m)+`<div class="lk">${lockCard(m.lock)}${keyCard(m.key)}</div>
+  <div class="stage"><div><p class="lab">the stack now · step <span id="stepno">0</span> of ${S.steps.length}</p><div class="stackbox" id="stack"></div></div>
+  <div id="stepbox"></div></div>
+  <div class="trace" id="trace"></div>${ctl()}`;
+  wire(); drawStep();
+}
+function distractors(before, after, fail){
+  const cands=[];
+  const push=(label,st,stop)=>{ if(cands.some(c=>c.stop===stop && !stop && c.st.length===st.length && c.st.every((x,i)=>same(x,st[i])))) return; if(!stop && after && !fail && st.length===after.length && st.every((x,i)=>same(x,after[i]))) return; if(stop&&fail) return; cands.push({label,st,stop}); };
+  push('unchanged',before.slice(),false);
+  if(before.length) push('top removed',before.slice(0,-1),false);
+  if(before.length) push('top copied',before.concat([before[before.length-1]]),false);
+  if(before.length>=2) push('two removed',before.slice(0,-2),false);
+  push('TRUE pushed',before.concat([ITEMS.T]),false);
+  if(before.length) push('top hashed',before.slice(0,-1).concat([{t:'hash',k:'HASH160',v:'(some hash)'}]),false);
+  push('stop: FALSE',[],true);
+  return cands;
+}
+function drawStep(){
+  $('#stack').innerHTML=stackHTML(S.stack); $('#stepno').textContent=S.i;
+  document.querySelectorAll('#lockprog span').forEach(sp=>{ sp.className=''; });
+  const box=$('#stepbox');
+  if(S.stopped||S.i>=S.steps.length){ box.innerHTML=''; return; }
+  const st=S.steps[S.i];
+  if(st.li!=null){ const sp=document.querySelector(`#lockprog span[data-i="${st.li}"]`); if(sp) sp.className='cur'; S.steps.forEach((x,j)=>{ if(j<S.i&&x.li!=null){ const q=document.querySelector(`#lockprog span[data-i="${x.li}"]`); if(q) q.className='done'; } }); }
+  const r=step(S.stack,st.op,{item:st.item});
+  const correct={label:'',st:r.stack,stop:!!r.fail};
+  const ds=distractors(S.stack,r.stack,!!r.fail).filter(d=>!(d.stop&&correct.stop));
+  // choose 2 distractors, deterministic by step
+  const pick=[ds[(S.i*2)%ds.length], ds[(S.i*2+3)%ds.length]]; if(pick[0]===pick[1]) pick[1]=ds[(S.i*2+1)%ds.length];
+  const opts=[correct,...pick]; const order=[0,1,2].sort((a,b)=>((a*7+S.i*3)%5)-((b*7+S.i*3)%5)); const shown=order.map(i=>opts[i]);
+  box.innerHTML=`<div class="step"><p class="lab">next: step ${S.i+1}</p><div class="op">${st.label}</div><div class="opd">${st.desc}${st.op==='CHECKSIG'?' <i>(the answer is the measured one, 12 Oct 2026)</i>':''}</div>
+  <p class="lab">what does the stack look like after it?</p><div class="opts" id="opts"></div><p class="why" id="why"></p></div>`;
+  const ob=$('#opts');
+  shown.forEach((o,k)=>{ const b=el('button','opt'+(showMe&&o===correct?' right':'')); b.innerHTML=`<span class="ol">${['A','S','D'][k]}</span>`+(o.stop?'<div class="stop">⛔ the program stops: FALSE</div>':(o.st.length?o.st.slice().reverse().map(itemHTML).join(''):'<div class="empty">(empty)</div>')); b.onclick=()=>answer(o===correct,b,r,st); ob.appendChild(b); });
+  S.cur={correct,shown};
+}
+function answer(ok,btn,r,st){
+  const why=$('#why');
+  if(!ok){ btn.classList.add('wrong'); btn.disabled=true; S.wrong++; why.className='why show'; why.textContent=explainWrong(st,r); return; }
+  document.querySelectorAll('#opts .opt').forEach(b=>{ b.disabled=true; }); btn.classList.add('right');
+  S.hist.push({label:st.label,stack:r.stack,fail:r.fail}); S.stack=r.stack; S.i++; if(r.fail) S.stopped=true;
+  drawTrace();
+  setTimeout(()=>{ if(cur!==S.m.n) return; drawStep(); if(S.stopped||S.i>=S.steps.length) finish(r); },350);
+}
+function explainWrong(st,r){
+  if(st.op==='push') return 'A push only adds one item on top. Nothing else moves.';
+  if(st.op==='DUP') return 'OP_DUP copies the top item, whatever it is: the stack grows by one.';
+  if(st.op==='HASH160') return 'OP_HASH160 removes the top item and puts its 20-byte hash in its place. The stack size does not change.';
+  if(st.op==='EQUALVERIFY') return r.fail?'The two top items are not equal, so OP_EQUALVERIFY stops the program with FALSE.':'The two top items are equal: OP_EQUALVERIFY removes both and the program goes on — it pushes nothing.';
+  if(st.op==='EQUAL') return 'OP_EQUAL removes the two top items and pushes TRUE or FALSE. Unlike OP_EQUALVERIFY it never stops the program.';
+  if(st.op==='CHECKSIG') return 'OP_CHECKSIG removes the public key and the signature and pushes one item: TRUE if the signature fits this public key and these payment bytes, else FALSE.';
+  if(st.op==='RUNSCRIPT') return 'The revealed script uses the remaining items: the two signatures (and the empty OP_0 item). Two of three owners signed, so it ends with TRUE.';
+  return '';
+}
+function drawTrace(){
+  const t=$('#trace'); if(!S.hist.length){ t.innerHTML=''; return; }
+  t.innerHTML=`<p class="lab">history · bottom → top</p><table><tr><th>#</th><th>step</th><th>stack after</th></tr>${S.hist.map((h,i)=>`<tr><td>${i+1}</td><td>${h.label}${h.fail?' <b style="color:var(--red)">⛔ stop</b>':''}</td><td class="st">${h.stack.map(x=>x.v).join(' · ')||'(empty)'}</td></tr>`).join('')}</table>`;
+}
+function finish(r){
+  const m=S.m; const top=S.stack[S.stack.length-1]; const ok=!S.stopped && top && top.t==='bool' && !top.f;
+  const lines={
+   1:['TRUE on the stack: the coins may move. Seven steps, no account, no name — just a program that ended well.','<i>Nobody checked who you are. The stack does not care; it only cares whether TRUE is left.</i>'],
+   2:['Stopped at OP_EQUALVERIFY: the stranger\'s public key hashes to 4ad6d25d…, the lock wants c471c2ac…. Your signature never even got looked at.','<i>Bring the wrong public key and the lock does not insult you — it simply ends the conversation.</i>'],
+   3:['Stopped at OP_EQUALVERIFY: OP_DUP copied the signature, OP_HASH160 hashed a signature, and 9f716ef9… is not c471c2ac…. Right parts, wrong order, no coins.','<i>Script has no idea what a "signature" is. It hashes whatever is on top. Order is part of the key.</i>'],
+   4:['FALSE at the very last step: the hash matched, so the first five steps passed — but the signature was made for the old bytes, and OP_CHECKSIG checks it against the payment as it is now. One satoshi was enough.','<i>A signature is not a stamp on a person. It is a stamp on these exact bytes.</i>'],
+   5:['Two halves, both TRUE. First the P2SH lock: the shown script hashes to 7626f788…, so it is the real one. Then the script itself: 2 of 3 signed. The payer only ever needed the short 3… address.','<i>P2SH: pay to a promise, reveal the fine print when you spend — and pay for its bytes then.</i>'],
+  }[m.n];
+  if(m.n===1||m.n===5){ if(ok) won(lines[0],lines[1]); else banner('warn','Something went wrong','The run ended without TRUE. Restart (R).'); }
+  else won(lines[0],lines[1]);
+}
+
+/* ---------- mission 6: sandbox ---------- */
+let SB;
+function sandbox(){
+  SB={slots:[null,null],tries:[]};
+  const m=MISSIONS[5];
+  $('#stage').innerHTML=head(m)+`<div class="lk">${lockCard('p2pkh')}
+  <div class="card keyc"><p class="lab">the parts (click to place; first click = bottom of the stack)</p><div class="parts" id="parts"></div>
+  <div class="keyslots"><div class="ks" id="ks0">1st pushed (bottom)</div><div class="ks" id="ks1">2nd pushed (top)</div></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn key" id="runB">▶ Run the lock</button><button class="btn" id="clrB">Clear</button></div></div></div>
+  <div class="stage"><div><p class="lab">final stack</p><div class="stackbox" id="stack"><div class="empty">run a key to see</div></div></div>
+  <div><div class="trace" id="trace"></div><div class="tries" id="tries"></div></div></div>${ctl()}`;
+  wire(); sbDraw();
+  $('#runB').onclick=sbRun; $('#clrB').onclick=()=>{SB.slots=[null,null]; sbDraw();};
+}
+const SB_PARTS=['sigA','sigX','pubA','pubB'];
+function sbDraw(){
+  const p=$('#parts'); p.innerHTML='';
+  SB_PARTS.forEach(k=>{ const it=ITEMS[k]; const b=el('button','part'+(SB.slots.includes(k)?' used':''),`<span class="k">${it.k}</span>${it.v}`); b.title=it.s; b.onclick=()=>{ if(SB.slots.includes(k)) return; const i=SB.slots.indexOf(null); if(i<0) return; SB.slots[i]=k; sbDraw(); }; p.appendChild(b); });
+  [0,1].forEach(i=>{ const s=$('#ks'+i); const k=SB.slots[i]; s.className='ks'+(k?' f':''); s.textContent=k?ITEMS[k].k+': '+ITEMS[k].v+(ITEMS[k]===ITEMS.sigX?' ✱':''):(i?'2nd pushed (top)':'1st pushed (bottom)'); });
+  const tr=$('#tries'); tr.innerHTML=SB.tries.length?`<p class="lab">tried keys</p><ul>${SB.tries.map(t=>`<li><code>${t.k.join(' → ')}</code> ${t.ok?'<span class="ok">✓ TRUE</span>':`<span class="no">⛔ ${t.where}</span>`}</li>`).join('')}</ul>`:'';
+}
+function sbRun(){
+  if(SB.slots.some(x=>!x)) return;
+  const items=SB.slots.map(k=>ITEMS[k]);
+  let st=[]; const hist=[];
+  items.forEach(it=>{ st=step(st,'push',{item:it}).stack; hist.push({label:'push '+it.k,stack:st}); });
+  let fail=null; for(const [op,ctx] of [['DUP',{}],['HASH160',{}],['push',{item:ITEMS.hOwner}],['EQUALVERIFY',{}],['CHECKSIG',{}]]){ const q=step(st,op,ctx); st=q.stack; hist.push({label:op==='push'?'push the hash in the lock':OPS[op].name,stack:st,fail:q.fail}); if(q.fail){ fail=OPS[op].name; break; } }
+  const top=st[st.length-1]; const ok=!fail&&top&&top.t==='bool'&&!top.f; const where=fail||(top&&top.f?'OP_CHECKSIG → FALSE':'?');
+  const kdesc=SB.slots.map(k=>ITEMS[k].k+(k==='sigX'?' ✱':'')+(k==='pubB'?' (stranger)':''));
+  if(!SB.tries.some(t=>t.k.join()===kdesc.join())) SB.tries.push({k:kdesc,ok,where});
+  S={hist}; $('#stack').innerHTML=stackHTML(st); drawTrace(); sbDraw();
+  if(ok) won('Signature first, the owner\'s public key on top, the payment unchanged: the only key of the four-part box that leaves TRUE. Every other order or part stops somewhere — and you saw exactly where.','<i>There are 12 ways to pick and order two of four parts. Bitcoin accepts one. That is what "ownership" means here.</i>');
+  else banner('warn','Not this key',`The run ended at <b>${where}</b>. ${SB.tries.length<12?'Try another combination — the list on the right remembers every attempt.':'You have tried them all.'}`);
+}
+function sbShow(){ SB.slots=['sigA','pubA']; sbDraw(); }
+
+/* ---------- keys, boot ---------- */
+document.addEventListener('keydown',e=>{
+  if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+  const k=e.key.toLowerCase();
+  if(e.key>='1'&&e.key<='6') open(+e.key);
+  else if('asd'.includes(k)&&k){ const b=document.querySelectorAll('#opts .opt')['asd'.indexOf(k)]; if(b&&!b.disabled) b.click(); }
+  else if(k==='h') hint(); else if(k==='r') open(cur); else if(k==='n'&&prog[cur]&&cur<6) open(cur+1);
+});
+$('#resetAll').onclick=()=>{ prog={}; saveP(prog); open(1); };
+function qp(k){ try{ return new URLSearchParams(location.search).get(k); }catch(e){ return null; } }
+open(+(qp('mission')||1)||1);
+
+/* ---------- selftest ---------- */
+function selftest(){
+  const out=[]; const ok=(n,c,d)=>out.push((c?'PASS ':'FAIL ')+n+(c?'':' — '+(d||'')));
+  const real=prog; prog={};
+  try{
+    const runP=(keys)=>{ let st=[]; keys.forEach(k=>{st=step(st,'push',{item:ITEMS[k]}).stack;}); let fail=null; for(const [op,ctx] of [['DUP',{}],['HASH160',{}],['push',{item:ITEMS.hOwner}],['EQUALVERIFY',{}],['CHECKSIG',{}]]){ const q=step(st,op,ctx); st=q.stack; if(q.fail){fail=op;break;} } const top=st[st.length-1]; return {fail,ok:!fail&&top&&top.t==='bool'&&!top.f}; };
+    ok('honest key → TRUE', runP(['sigA','pubA']).ok);
+    ok('stranger pub stops at EQUALVERIFY', runP(['sigA','pubB']).fail==='EQUALVERIFY');
+    ok('wrong order stops at EQUALVERIFY', runP(['pubA','sigA']).fail==='EQUALVERIFY');
+    const r4=runP(['sigX','pubA']); ok('changed payment → CHECKSIG FALSE', !r4.fail && !r4.ok);
+    let n=0; for(const a of SB_PARTS) for(const b of SB_PARTS) if(a!==b && runP([a,b]).ok) n++; ok('exactly one of 12 sandbox keys works', n===1, n);
+    for(let m=1;m<=5;m++){ open(m); let guard=0; while(!S.stopped && S.i<S.steps.length && guard++<20){ const k=S.cur.shown.indexOf(S.cur.correct); const btn=document.querySelectorAll('#opts .opt')[k]; const st=S.steps[S.i]; const r=step(S.stack,st.op,{item:st.item}); answer(true,btn,r,st); drawStep(); } if(S.stopped||S.i>=S.steps.length) finish(); ok('M'+m+' clears via UI', !!prog[m], JSON.stringify({i:S.i,stopped:S.stopped})); }
+    open(6); SB.slots=['sigX','pubA']; sbRun(); ok('sandbox wrong key not cleared', !prog[6]); SB.slots=['sigA','pubA']; sbRun(); ok('M6 clears via UI', !!prog[6]);
+  }catch(e){ out.push('FAIL exception — '+e.message+' '+(e.stack||'').split('\n')[1]); }
+  prog=real; saveP(prog); open(1);
+  const fails=out.filter(l=>l.startsWith('FAIL')).length; out.push(fails?`SELFTEST: ${fails} FAILED`:'SELFTEST: ALL PASS');
+  const r=$('#selftest-report'); r.style.display='block'; r.textContent=out.join('\n');
+}
+if(qp('selftest')==='1'){ window.onerror=(m)=>{ const r=$('#selftest-report'); r.style.display='block'; r.textContent+='\nFAIL script error — '+m; }; setTimeout(selftest,50); }
+</script>
+</body>
+</html>

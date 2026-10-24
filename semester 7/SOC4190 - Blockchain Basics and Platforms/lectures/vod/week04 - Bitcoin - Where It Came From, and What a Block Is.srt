@@ -1,0 +1,3963 @@
+1
+00:00:01,208 --> 00:00:01,448
+okay
+
+2
+00:00:02,568 --> 00:00:07,210
+good day everyone so today we will start something already some interesting
+
+3
+00:00:07,970 --> 00:00:12,651
+little bit boring will be with some history but still it's a very important
+
+4
+00:00:14,212 --> 00:00:15,312
+to cover all of this
+
+5
+00:00:17,072 --> 00:00:18,813
+so let me open up my slides so
+
+6
+00:00:19,613 --> 00:00:25,555
+we'll be speaking about the Bitcoin now so we saw what is the the general picture now we'll
+
+7
+00:00:25,595 --> 00:00:25,855
+be
+
+8
+00:00:26,575 --> 00:00:27,035
+looking at
+
+9
+00:00:27,755 --> 00:00:32,757
+where the bitcoin came from and what the block actually is okay
+
+10
+00:00:33,477 --> 00:00:36,838
+so uh if you remember we said that um
+
+11
+00:00:37,618 --> 00:00:38,458
+everything
+
+12
+00:00:39,159 --> 00:00:45,781
+is in the ledger ledger is just a notebook with some pages and the page has a seal and
+
+13
+00:00:46,121 --> 00:00:49,942
+page 40 for instance in this case uh has some number
+
+14
+00:00:50,642 --> 00:00:54,803
+and below we had some some data if you remember i'm just doing the revision for now okay so
+
+15
+00:00:57,637 --> 00:01:01,081
+and the the first one the the first seal
+
+16
+00:01:02,182 --> 00:01:04,124
+if you remember it was the seal of the
+
+17
+00:01:05,846 --> 00:01:10,171
+previous page and this was the seal of the current page meaning that
+
+18
+00:01:11,091 --> 00:01:13,494
+we had to have some change so we said that
+
+19
+00:01:14,395 --> 00:01:20,781
+records are collected into pages and each page has a seal okay some kind of code It was just
+
+20
+00:01:20,801 --> 00:01:21,862
+a drawing. Now we
+
+21
+00:01:22,643 --> 00:01:23,504
+will be looking at
+
+22
+00:01:24,645 --> 00:01:25,145
+what
+
+23
+00:01:26,046 --> 00:01:28,828
+the real thing is and we will be looking at the real pages.
+
+24
+00:01:28,848 --> 00:01:29,008
+So
+
+25
+00:01:29,949 --> 00:01:33,371
+let's open the real block and see.
+
+26
+00:01:33,592 --> 00:01:33,892
+Okay.
+
+27
+00:01:36,096 --> 00:01:41,180
+uh so for that we need a blockchain so we'll start first the bitcoin for this so bitcoin is
+
+28
+00:01:41,221 --> 00:01:46,244
+a very nice example it's not complicated because the others you will see they have so many
+
+29
+00:01:46,305 --> 00:01:46,645
+things
+
+30
+00:01:48,366 --> 00:01:48,626
+and
+
+31
+00:01:51,369 --> 00:01:53,130
+bitcoin is the best one to explain so
+
+32
+00:01:54,611 --> 00:01:56,753
+Today we'll see a real Bitcoin.
+
+33
+00:01:56,773 --> 00:01:59,996
+So as I told you in 2008 there
+
+34
+00:02:01,778 --> 00:02:06,262
+was a big crisis and right after the Lehman Brothers failed,
+
+35
+00:02:07,583 --> 00:02:13,429
+a story that we saw last time in 15th of September, after six weeks a very
+
+36
+00:02:14,570 --> 00:02:15,431
+interesting thing
+
+37
+00:02:16,852 --> 00:02:17,252
+happened.
+
+38
+00:02:19,298 --> 00:02:23,181
+First, in 31st of October, some kind of paper published.
+
+39
+00:02:23,901 --> 00:02:24,182
+So
+
+40
+00:02:25,282 --> 00:02:28,925
+paper is a kind of research document.
+
+41
+00:02:28,945 --> 00:02:32,327
+You can call it a referat, but more than a referat you used to see.
+
+42
+00:02:33,468 --> 00:02:34,268
+It's a document
+
+43
+00:02:35,169 --> 00:02:37,530
+where the researchers, when they do research,
+
+44
+00:02:38,251 --> 00:02:38,971
+research means
+
+45
+00:02:39,872 --> 00:02:40,512
+when you
+
+46
+00:02:41,913 --> 00:02:46,376
+work on some idea and then you publish it to the world.
+
+47
+00:02:46,456 --> 00:02:48,638
+Actually, it's a very interesting idea because...
+
+48
+00:02:50,399 --> 00:02:54,602
+When you study the PhD after the master's degree,
+
+49
+00:02:55,983 --> 00:02:59,585
+what you deal with is that in the PhD, you have to get some topic
+
+50
+00:03:00,465 --> 00:03:02,507
+and you start working on it.
+
+51
+00:03:03,487 --> 00:03:04,308
+Of course, it depends
+
+52
+00:03:05,409 --> 00:03:10,592
+on your supervisor or your professor, but once you do, you will be involved
+
+53
+00:03:11,512 --> 00:03:12,353
+in some works.
+
+54
+00:03:14,214 --> 00:03:15,856
+and you will be
+
+55
+00:03:16,818 --> 00:03:17,799
+working on some
+
+56
+00:03:18,680 --> 00:03:24,907
+ideas in your PhD you build up from idea here I can show you my first idea
+
+57
+00:03:26,355 --> 00:03:30,297
+And you build up on that idea and then you slowly move on
+
+58
+00:03:32,518 --> 00:03:34,960
+to improve that idea, okay?
+
+59
+00:03:35,520 --> 00:03:40,883
+Or you find some very interesting topic, you implement it and share it with the world.
+
+60
+00:03:41,043 --> 00:03:42,244
+How do you share it? It's not
+
+61
+00:03:43,524 --> 00:03:46,826
+in the field of the researchers, we don't have Instagram, okay?
+
+62
+00:03:46,846 --> 00:03:50,708
+So we just share it on this kind of boring journals.
+
+63
+00:03:50,908 --> 00:03:54,150
+So these are journal, that is a very famous journal, important journal.
+
+64
+00:03:54,590 --> 00:03:56,712
+In those journals, we share our work.
+
+65
+00:03:57,012 --> 00:04:00,554
+So if you go there, you will see the PDF file.
+
+66
+00:04:00,594 --> 00:04:01,555
+Some of them you should see.
+
+67
+00:04:02,295 --> 00:04:04,156
+I don't remember. Maybe this one is available.
+
+68
+00:04:05,357 --> 00:04:09,520
+Okay, here. So if you go there, of course, it's not a free book.
+
+69
+00:04:09,840 --> 00:04:12,182
+You should pay to read it because that's how the
+
+70
+00:04:14,023 --> 00:04:15,744
+public... No, it's free.
+
+71
+00:04:15,764 --> 00:04:21,388
+So you can go there. We write in a very boring way what we found, what we invented.
+
+72
+00:04:22,148 --> 00:04:23,149
+And the people read it.
+
+73
+00:04:24,005 --> 00:04:26,487
+and then they give the citations.
+
+74
+00:04:26,527 --> 00:04:30,330
+So if your paper is nice, people read it, they build on
+
+75
+00:04:31,071 --> 00:04:35,554
+it, they build something on top of your idea, and this idea becomes
+
+76
+00:04:37,116 --> 00:04:40,478
+very famous, okay? I have a lot of things to tell you about PhD.
+
+77
+00:04:40,518 --> 00:04:46,203
+PhD is the best part of your life after the master degree, because when you do the bachelor
+
+78
+00:04:46,243 --> 00:04:48,284
+degree, it's already...
+
+79
+00:04:49,826 --> 00:04:55,770
+tedious is difficult the master degree will be even more difficult but if you stay enough time
+
+80
+00:04:56,391 --> 00:05:00,794
+if you are alive if you reach this point believe me it's the the most amazing part because
+
+81
+00:05:01,274 --> 00:05:02,515
+here you will have fun and
+
+82
+00:05:03,556 --> 00:05:07,199
+if there will be a request i will tell you about this fun a bit later okay but
+
+83
+00:05:08,361 --> 00:05:12,384
+that's it for now let's talk about the paper what's the paper you understood the paper now
+
+84
+00:05:12,444 --> 00:05:17,347
+right so you work on some document and then you share it with the world not on the instagram
+
+85
+00:05:17,548 --> 00:05:19,069
+not on the link team but on this
+
+86
+00:05:20,069 --> 00:05:24,671
+very boring journals and people actually read it okay and then when read it They cite your
+
+87
+00:05:24,711 --> 00:05:26,052
+work. I
+
+88
+00:05:27,373 --> 00:05:28,873
+didn't know it was cited this much.
+
+89
+00:05:30,214 --> 00:05:30,654
+And
+
+90
+00:05:31,695 --> 00:05:32,115
+we
+
+91
+00:05:32,855 --> 00:05:33,916
+have the
+
+92
+00:05:36,117 --> 00:05:38,518
+ranking system of professors based on this number.
+
+93
+00:05:38,598 --> 00:05:38,778
+I'm
+
+94
+00:05:40,139 --> 00:05:40,399
+quite
+
+95
+00:05:41,159 --> 00:05:43,620
+known in the research field because this number
+
+96
+00:05:44,741 --> 00:05:47,182
+is very low. But if you check
+
+97
+00:05:48,583 --> 00:05:49,623
+the professor,
+
+98
+00:05:52,144 --> 00:05:52,845
+just a second.
+
+99
+00:05:54,250 --> 00:05:56,392
+If you checked Farukh Atamuratov,
+
+100
+00:05:58,293 --> 00:05:59,774
+you should see the numbers, okay?
+
+101
+00:05:59,814 --> 00:06:03,317
+That's our, again, grading system, as I told you.
+
+102
+00:06:03,897 --> 00:06:07,660
+And he's a general in our terms, okay?
+
+103
+00:06:07,700 --> 00:06:08,180
+He's
+
+104
+00:06:09,361 --> 00:06:14,605
+one of the famous person in Uzbekistan, maybe not to you, but in the research field, this number
+
+105
+00:06:14,665 --> 00:06:16,326
+tells so many things. And
+
+106
+00:06:17,047 --> 00:06:19,709
+when you see this number, you should bow your heads
+
+107
+00:06:20,669 --> 00:06:23,632
+when you see this professor, because believe me, reaching this,
+
+108
+00:06:24,763 --> 00:06:26,203
+is almost impossible, okay?
+
+109
+00:06:26,223 --> 00:06:26,783
+So he's the
+
+110
+00:06:27,964 --> 00:06:32,705
+second or the third important researcher, alum in our
+
+111
+00:06:33,545 --> 00:06:35,726
+era, and he works at INHA.
+
+112
+00:06:35,906 --> 00:06:38,706
+It's amazing. So these are the numbers.
+
+113
+00:06:38,746 --> 00:06:39,647
+So the people,
+
+114
+00:06:40,847 --> 00:06:41,527
+not only
+
+115
+00:06:42,247 --> 00:06:43,687
+the professors today
+
+116
+00:06:45,348 --> 00:06:49,669
+in Uzbekistan, they said even anyone can publish a paper, okay?
+
+117
+00:06:49,689 --> 00:06:51,489
+So it started from a paper.
+
+118
+00:06:51,849 --> 00:06:54,130
+It's a nine-page paper, and this paper
+
+119
+00:06:55,860 --> 00:06:56,940
+It got written.
+
+120
+00:06:57,721 --> 00:07:04,423
+So in October 31, 2008, the message
+
+121
+00:07:04,463 --> 00:07:06,203
+appeared on the mailing list.
+
+122
+00:07:06,443 --> 00:07:08,824
+It's again kind of Telegram group back then.
+
+123
+00:07:08,964 --> 00:07:09,904
+We didn't have Telegram.
+
+124
+00:07:09,924 --> 00:07:12,525
+So in Telegram group, this guy, someone,
+
+125
+00:07:14,026 --> 00:07:17,587
+sent the mail saying, hi guys, I have a paper.
+
+126
+00:07:18,540 --> 00:07:24,084
+I published the thing, he invented something into the researchers and he announced as a new
+
+127
+00:07:24,144 --> 00:07:24,424
+paper.
+
+128
+00:07:25,124 --> 00:07:30,008
+And probably you will be writing a paper at the end of the course, so at least some paper.
+
+129
+00:07:30,628 --> 00:07:30,788
+So
+
+130
+00:07:31,749 --> 00:07:37,673
+he named the paper, very basic, he said, Bitcoin, a peer-to-peer electronic cash system.
+
+131
+00:07:38,368 --> 00:07:39,949
+It was just a paper he published.
+
+132
+00:07:40,489 --> 00:07:41,330
+It was nine pages.
+
+133
+00:07:42,130 --> 00:07:43,511
+There were no company written.
+
+134
+00:07:43,751 --> 00:07:45,712
+There was no university, no funding.
+
+135
+00:07:46,352 --> 00:07:48,073
+Usually when we write a paper,
+
+136
+00:07:48,814 --> 00:07:53,836
+as you saw in my PDF file, we put where are we from, who are the...
+
+137
+00:07:57,621 --> 00:08:02,168
+where you work for instance university and where you get the funding because when you do research
+
+138
+00:08:02,188 --> 00:08:05,413
+you get funding some companies pay for your research sometimes
+
+139
+00:08:06,174 --> 00:08:08,637
+and this guy didn't have anything and
+
+140
+00:08:10,327 --> 00:08:12,808
+The idea in the first line was
+
+141
+00:08:15,069 --> 00:08:21,891
+sending the electronic cash directly from one person to another without any financial institution
+
+142
+00:08:21,951 --> 00:08:24,552
+in between. That was the idea.
+
+143
+00:08:24,592 --> 00:08:25,553
+From now on, when you
+
+144
+00:08:26,593 --> 00:08:33,175
+also read the word white paper, remember it's just a small document that describes the system
+
+145
+00:08:33,716 --> 00:08:37,057
+and how it works. This is also in general is called paper.
+
+146
+00:08:38,725 --> 00:08:43,710
+the white paper of a bitcoin is available on the internet you can just go to bitcoin.org i
+
+147
+00:08:43,750 --> 00:08:45,952
+don't think you can go there because the website is
+
+148
+00:08:48,214 --> 00:08:49,675
+disabled in uzbekistan but still
+
+149
+00:08:50,396 --> 00:08:54,419
+when you go there if you read the pdf is available okay he just announced this
+
+150
+00:08:56,181 --> 00:09:02,086
+and he promised this but in the first lecture what we said in the first lecture we said that
+
+151
+00:09:04,827 --> 00:09:10,293
+Can the strangers have the same digital money with nobody in the middle
+
+152
+00:09:12,295 --> 00:09:13,736
+to send the money?
+
+153
+00:09:15,010 --> 00:09:18,231
+And this was the first answer for that question.
+
+154
+00:09:18,452 --> 00:09:25,255
+2008 was really, really the very important date in our history, even if you don't know about
+
+155
+00:09:25,295 --> 00:09:27,335
+it, but at least you heard about the Bitcoin.
+
+156
+00:09:27,355 --> 00:09:27,516
+So
+
+157
+00:09:28,696 --> 00:09:33,758
+who wrote this paper? It has a lot of conspiracy behind it.
+
+158
+00:09:36,320 --> 00:09:42,546
+They do a lot of rumors and very strange things behind this and we don't know actually who
+
+159
+00:09:42,566 --> 00:09:43,407
+wrote this.
+
+160
+00:09:44,528 --> 00:09:46,089
+The name is not written in the paper.
+
+161
+00:09:46,109 --> 00:09:49,993
+If you open up the paper, I can find it for you in just a second.
+
+162
+00:09:51,419 --> 00:09:55,761
+Sorry, yes, there is a name actually, but this name,
+
+163
+00:09:56,821 --> 00:10:00,603
+we don't know that it's a real person because
+
+164
+00:10:01,823 --> 00:10:04,204
+we see it as a pseudonym, okay?
+
+165
+00:10:04,304 --> 00:10:07,005
+Pseudonym is also in English, it's a pseudonym.
+
+166
+00:10:07,025 --> 00:10:07,166
+So
+
+167
+00:10:08,186 --> 00:10:12,348
+we think he's some guy and he produced just nine pages,
+
+168
+00:10:13,228 --> 00:10:14,849
+but this thing costs today
+
+169
+00:10:15,789 --> 00:10:17,190
+billions of dollars, okay?
+
+170
+00:10:17,490 --> 00:10:17,690
+So...
+
+171
+00:10:18,512 --> 00:10:20,473
+Look where the research can get you.
+
+172
+00:10:20,733 --> 00:10:21,553
+Really, the people
+
+173
+00:10:22,293 --> 00:10:25,594
+in the research field, they do very, very interesting things.
+
+174
+00:10:25,714 --> 00:10:27,995
+In nine pages, he did everything.
+
+175
+00:10:28,555 --> 00:10:32,156
+So he invented this. So he wrote Satoshi Nakamoto.
+
+176
+00:10:32,276 --> 00:10:35,437
+He wrote Satoshi Nakamoto in the first page, but
+
+177
+00:10:36,677 --> 00:10:39,098
+it's a pseudonym. It's something invented.
+
+178
+00:10:40,278 --> 00:10:45,561
+today's day we don't know who is this guy and which group is behind it if there is a group
+
+179
+00:10:45,641 --> 00:10:46,822
+actually the paperwork or
+
+180
+00:10:47,523 --> 00:10:49,984
+the idea sometimes comes from a group and
+
+181
+00:10:51,065 --> 00:10:53,226
+we don't know which group is this some people
+
+182
+00:10:57,208 --> 00:10:58,149
+go to this guy he
+
+183
+00:10:59,009 --> 00:11:00,410
+lives in the United States if I'm not wrong
+
+184
+00:11:01,130 --> 00:11:04,552
+he is a Satoshi Nakamoto but his name apparently is like this so
+
+185
+00:11:06,672 --> 00:11:12,854
+He himself, he's not an engineer, he's not a software guy, and people approached him a lot
+
+186
+00:11:12,914 --> 00:11:16,055
+of times in this life, and he always
+
+187
+00:11:18,936 --> 00:11:21,797
+contracted this idea, so he says he's not.
+
+188
+00:11:23,617 --> 00:11:28,939
+We don't trust that he's the guy, because behind this, there is someone else, and the history
+
+189
+00:11:28,979 --> 00:11:29,839
+gets really interesting.
+
+190
+00:11:29,999 --> 00:11:34,821
+Let's have a look first. In 2008, this guy published a paper,
+
+191
+00:11:36,414 --> 00:11:40,499
+He wrote the first program that runs the Bitcoin.
+
+192
+00:11:40,599 --> 00:11:42,261
+It's a program. It's a software.
+
+193
+00:11:43,342 --> 00:11:45,645
+He started the network. So it's a network.
+
+194
+00:11:45,705 --> 00:11:46,506
+It's like a torrent
+
+195
+00:11:47,468 --> 00:11:52,053
+network. He started it and he created the first block, the block zero.
+
+196
+00:11:52,093 --> 00:11:53,575
+We call it block zero. He has a name.
+
+197
+00:11:53,615 --> 00:11:54,577
+We'll speak about this.
+
+198
+00:11:56,104 --> 00:11:58,926
+2009 and 10 he was again um a
+
+199
+00:11:59,727 --> 00:12:06,132
+very hidden guy uh nobody know who he is but but back then he wasn't famous that famous so
+
+200
+00:12:06,172 --> 00:12:10,896
+nobody was looking for him okay he improved the program together with some volunteers because
+
+201
+00:12:10,936 --> 00:12:12,597
+volunteers can join the
+
+202
+00:12:13,298 --> 00:12:18,942
+github project for instance they can help and in 2011 almost back then uh
+
+203
+00:12:20,423 --> 00:12:22,005
+he stopped writing okay
+
+204
+00:12:23,065 --> 00:12:29,148
+he just disappeared and volunteers kept working on it because in github community when you
+
+205
+00:12:29,168 --> 00:12:31,369
+have a project people can contribute so
+
+206
+00:12:32,269 --> 00:12:34,430
+he made it public everyone using it
+
+207
+00:12:35,510 --> 00:12:38,891
+and then after that we never heard from it okay we see some
+
+208
+00:12:39,972 --> 00:12:42,113
+actions by him in his account because
+
+209
+00:12:42,996 --> 00:12:47,518
+In Bitcoin you can see the wallet of the first guy who invented, so you can check, we'll do
+
+210
+00:12:47,538 --> 00:12:49,740
+it together today. And then he's been
+
+211
+00:12:52,021 --> 00:12:53,822
+very silent, he's gone silent, okay?
+
+212
+00:12:54,042 --> 00:12:59,665
+He took some part of the money, he has a lot of portion of the money with him now, he's a billionaire
+
+213
+00:12:59,705 --> 00:13:00,185
+I guess now,
+
+214
+00:13:01,306 --> 00:13:05,868
+not I guess, I mean he is the billionaire because he has a lot of number of Bitcoins for him,
+
+215
+00:13:05,928 --> 00:13:07,909
+he took some of them, he left, okay?
+
+216
+00:13:07,970 --> 00:13:08,330
+He left.
+
+217
+00:13:09,118 --> 00:13:11,959
+So why this is important for us?
+
+218
+00:13:11,979 --> 00:13:12,399
+So because
+
+219
+00:13:14,539 --> 00:13:17,100
+Bitcoin has been running for 17 years
+
+220
+00:13:18,100 --> 00:13:19,640
+now without the inventor.
+
+221
+00:13:20,260 --> 00:13:26,281
+Inventor doing nothing, he's not running the PC, he's not updating the algorithm.
+
+222
+00:13:26,721 --> 00:13:32,982
+Algorithm is actually being a bit updated during these past days, but not him, by him, okay?
+
+223
+00:13:33,403 --> 00:13:35,623
+It's the community is improving the Bitcoin, okay?
+
+224
+00:13:36,163 --> 00:13:42,006
+nobody can tell the founder and the system doesn't need them that's the idea okay that's the
+
+225
+00:13:42,066 --> 00:13:48,269
+idea of no single owner with an example this is the very clear example okay so he left the
+
+226
+00:13:48,289 --> 00:13:54,373
+system is running so he has no owner to ask if you have some question you can ask no one okay
+
+227
+00:13:54,573 --> 00:13:56,537
+you can ask some people like us uh
+
+228
+00:13:57,578 --> 00:13:59,499
+i am the teacher i can answer your questions but
+
+229
+00:14:00,499 --> 00:14:06,902
+uh the original idea why he did it uh what was his reason did he know that it grows this this
+
+230
+00:14:07,062 --> 00:14:13,926
+big but we cannot ask him okay so uh what else we can do is to study
+
+231
+00:14:13,986 --> 00:14:15,707
+the actual thing that we know okay
+
+232
+00:14:16,447 --> 00:14:16,587
+just
+
+233
+00:14:17,439 --> 00:14:19,542
+Keep this in your mind, something to
+
+234
+00:14:21,225 --> 00:14:22,807
+think about when you sleep now.
+
+235
+00:14:23,488 --> 00:14:28,716
+We will start to talk about Bitcoin itself.
+
+236
+00:14:31,705 --> 00:14:33,986
+And I said that he invented, okay?
+
+237
+00:14:34,106 --> 00:14:37,848
+But he didn't actually invent very too much, okay?
+
+238
+00:14:38,148 --> 00:14:44,871
+What he did is that he combined ideas because guys, when something is invented today, we don't
+
+239
+00:14:45,091 --> 00:14:45,571
+actually
+
+240
+00:14:46,632 --> 00:14:51,074
+invent everything from scratch because the mathematicians almost did the most of the things
+
+241
+00:14:51,114 --> 00:14:51,474
+for us.
+
+242
+00:14:52,294 --> 00:14:56,255
+in the 80s in the 70s and when you combine these ideas
+
+243
+00:14:56,995 --> 00:15:01,117
+uh uh you can build up some system so bitcoin is built like this so
+
+244
+00:15:01,837 --> 00:15:03,977
+bitcoin is just the
+
+245
+00:15:04,978 --> 00:15:10,579
+six ideas roughly okay but there are other ideas roughly six ideas the one coming from uh
+
+246
+00:15:11,580 --> 00:15:11,720
+1980s
+
+247
+00:15:13,080 --> 00:15:17,244
+In the next lecture, we'll study these Merkle trees.
+
+248
+00:15:17,304 --> 00:15:18,084
+Time stamping,
+
+249
+00:15:18,945 --> 00:15:20,887
+91 it was invented. B money,
+
+250
+00:15:21,888 --> 00:15:25,571
+money kept by everyone, but no bank is a shared ledger idea.
+
+251
+00:15:25,691 --> 00:15:29,954
+Actually, it's not new. It's 98, someone already published this.
+
+252
+00:15:30,655 --> 00:15:36,500
+Hash, what is the hash? Hash cash in 2002, what is the digital signature?
+
+253
+00:15:37,020 --> 00:15:38,261
+Okay, the key.
+
+254
+00:15:39,114 --> 00:15:44,138
+like private key, public key, the peer-to-peer networks in 2000.
+
+255
+00:15:44,178 --> 00:15:48,061
+You see, before the 2008, all these ideas were there, okay?
+
+256
+00:15:48,101 --> 00:15:52,464
+Nobody invented this. The Satoshi Nakamoto, in this case, he didn't invent.
+
+257
+00:15:52,484 --> 00:15:54,626
+What he did is that he put them together,
+
+258
+00:15:55,346 --> 00:15:56,867
+he built up a system, okay?
+
+259
+00:15:58,629 --> 00:16:00,170
+Almost nothing was there new.
+
+260
+00:16:00,930 --> 00:16:02,352
+It's just a reference
+
+261
+00:16:03,437 --> 00:16:09,138
+of the old work so when you write the paper you just do the reference like we can go back and
+
+262
+00:16:09,799 --> 00:16:14,960
+you have to reference okay this is our main rule for this project when you get the idea from
+
+263
+00:16:15,020 --> 00:16:19,941
+somewhere you have to please mention it okay how the timestamp works what is the
+
+264
+00:16:22,181 --> 00:16:23,902
+digital time stamping and
+
+265
+00:16:24,882 --> 00:16:28,543
+What is the hash cash? What is the public crypto system?
+
+266
+00:16:28,683 --> 00:16:30,163
+Everything was there, okay?
+
+267
+00:16:30,363 --> 00:16:32,724
+It's a very old idea in 1918.
+
+268
+00:16:32,824 --> 00:16:35,264
+He just put them together, he built the system.
+
+269
+00:16:35,384 --> 00:16:40,065
+And Bitcoin's contribution was just to put them together, okay?
+
+270
+00:16:40,685 --> 00:16:43,246
+So that the system would work without the middleman.
+
+271
+00:16:43,886 --> 00:16:46,486
+So Bitcoin actually invented very little.
+
+272
+00:16:46,526 --> 00:16:48,887
+It just combined many, many things together.
+
+273
+00:16:48,967 --> 00:16:50,407
+That's the amazing part of it.
+
+274
+00:16:52,003 --> 00:16:54,864
+Maybe sometimes I'm quite fast, maybe I'm loud, but
+
+275
+00:16:57,484 --> 00:16:59,065
+share your comments if you have.
+
+276
+00:16:59,625 --> 00:17:04,626
+I'm just too excited about this topic because I told you I live every day with this and then
+
+277
+00:17:05,127 --> 00:17:08,367
+I really want to share. I already started the lecture, but
+
+278
+00:17:09,948 --> 00:17:15,489
+I'm eager to see the rest of the topics because it's so much fun.
+
+279
+00:17:16,029 --> 00:17:18,010
+I really want to dive into the Ethereum.
+
+280
+00:17:19,190 --> 00:17:19,891
+The idea is fun.
+
+281
+00:17:23,311 --> 00:17:28,435
+If you survive the boring part, then it should become very, very interesting, but still the
+
+282
+00:17:28,495 --> 00:17:30,917
+history of Bitcoin is also very interesting.
+
+283
+00:17:31,738 --> 00:17:38,364
+What happened then? Invented and in January 3, 2009, the first block
+
+284
+00:17:38,424 --> 00:17:38,765
+was
+
+285
+00:17:40,486 --> 00:17:43,008
+minted. We call it minted, but the first block was
+
+286
+00:17:44,950 --> 00:17:47,593
+put into the network of blockchain, first one.
+
+287
+00:17:48,113 --> 00:17:49,716
+And this third one, you know what we call it?
+
+288
+00:17:49,936 --> 00:17:51,179
+We call it genesis block.
+
+289
+00:17:51,719 --> 00:17:53,022
+So what is a genesis block?
+
+290
+00:17:53,422 --> 00:17:56,027
+It's the very first block in a blockchain.
+
+291
+00:17:56,972 --> 00:17:59,114
+If it is the Ethereum blockchain, if it is
+
+292
+00:17:59,975 --> 00:18:00,856
+other blockchains,
+
+293
+00:18:01,857 --> 00:18:04,279
+every time blockchain consists of what?
+
+294
+00:18:04,559 --> 00:18:07,141
+It consists of blocks, okay?
+
+295
+00:18:07,161 --> 00:18:11,025
+And Bitcoin has a separate blockchain, Ethereum has a separate blockchain.
+
+296
+00:18:11,125 --> 00:18:15,789
+And every blockchain has the first block, we call it blockchain, the Genesis block.
+
+297
+00:18:16,250 --> 00:18:18,232
+It's the block with the number zero, okay?
+
+298
+00:18:18,892 --> 00:18:22,636
+Every other block is linked to that number, step by step.
+
+299
+00:18:23,280 --> 00:18:25,022
+Okay, so if you look at the
+
+300
+00:18:26,224 --> 00:18:30,449
+genesis block of the Bitcoin, you will see very interesting ideas.
+
+301
+00:18:30,489 --> 00:18:31,110
+The height is
+
+302
+00:18:31,991 --> 00:18:33,313
+zero for the genesis block.
+
+303
+00:18:34,229 --> 00:18:40,274
+now it's uh it's zero because it is the first one uh you will see when it was created it was
+
+304
+00:18:40,354 --> 00:18:47,160
+created in the first of i mean third of the january 2009 okay you see he published the paper
+
+305
+00:18:47,200 --> 00:18:52,484
+but he kept working on it he implemented the system and the first thing was published in 2009
+
+306
+00:18:52,985 --> 00:18:57,248
+so he created the first 50 bitcoins okay
+
+307
+00:18:58,400 --> 00:19:03,764
+in the first transaction what he did he created 50 bitcoins
+
+308
+00:19:04,465 --> 00:19:10,089
+so bitcoins are not simply there okay you have to create them you have to mine them we'll study
+
+309
+00:19:10,149 --> 00:19:16,073
+this okay it doesn't come from nowhere you have to first mine them and we'll study them okay
+
+310
+00:19:16,093 --> 00:19:21,157
+so what he did he did just 50 bitcoins i will show you okay in the in the slides then the size
+
+311
+00:19:21,217 --> 00:19:25,080
+of it was 285 bytes because every block has a
+
+312
+00:19:26,116 --> 00:19:32,960
+certain size and there was a very interesting actually a message by the Satoshi Nakamoto so
+
+313
+00:19:33,040 --> 00:19:34,041
+he left
+
+314
+00:19:35,222 --> 00:19:36,462
+there some kind of message
+
+315
+00:19:37,683 --> 00:19:41,685
+and it was the headline of that day on the
+
+316
+00:19:42,686 --> 00:19:46,128
+Times London about the bailout for the banks
+
+317
+00:19:46,948 --> 00:19:53,912
+so you can open up the meme space and type zero we'll be doing this
+
+318
+00:19:53,992 --> 00:19:54,873
+now okay
+
+319
+00:19:59,354 --> 00:20:00,535
+well when you are here if
+
+320
+00:20:01,957 --> 00:20:04,660
+you type zero you can go to that
+
+321
+00:20:05,361 --> 00:20:05,641
+block
+
+322
+00:20:06,582 --> 00:20:07,263
+very interesting
+
+323
+00:20:08,284 --> 00:20:10,166
+so it's the 18 years ago
+
+324
+00:20:11,407 --> 00:20:13,109
+almost when you click on it
+
+325
+00:20:14,230 --> 00:20:17,494
+you will get some ideas you get the timestamp when it was
+
+326
+00:20:18,195 --> 00:20:18,495
+even the
+
+327
+00:20:19,681 --> 00:20:21,342
+the minutes and seconds but this is
+
+328
+00:20:22,202 --> 00:20:23,343
+not exact timing but
+
+329
+00:20:24,663 --> 00:20:29,985
+we will talk about this some very strange stuff we'll be doing a lot of exercises on this also
+
+330
+00:20:30,045 --> 00:20:33,466
+this don't care about this for now just look at the bytes
+
+331
+00:20:34,207 --> 00:20:40,549
+and look below in below you see the transactions how many transactions you see only one
+
+332
+00:20:41,390 --> 00:20:44,951
+and this transaction has this strange number if you remember it is the
+
+333
+00:20:48,184 --> 00:20:51,374
+We call it hash, but let's call it seal for now.
+
+334
+00:20:53,133 --> 00:20:59,455
+always the first transaction is the Bitcoin generation.
+
+335
+00:20:59,475 --> 00:21:01,736
+So he minted 50 Bitcoins.
+
+336
+00:21:01,776 --> 00:21:04,717
+He didn't send them, he just built the Bitcoins.
+
+337
+00:21:04,777 --> 00:21:04,977
+He
+
+338
+00:21:05,717 --> 00:21:08,698
+found the Bitcoins. So he founded 50 Bitcoins.
+
+339
+00:21:08,718 --> 00:21:10,579
+So first transaction was 50 Bitcoins.
+
+340
+00:21:10,919 --> 00:21:15,361
+What is founding? How it was minted?
+
+341
+00:21:15,821 --> 00:21:17,801
+What is the mining? We'll study, okay?
+
+342
+00:21:17,821 --> 00:21:18,522
+We'll study. But
+
+343
+00:21:19,322 --> 00:21:22,183
+when you go there, so when you go to that transaction,
+
+344
+00:21:23,465 --> 00:21:24,746
+you can even see
+
+345
+00:21:25,466 --> 00:21:27,647
+the content of a transaction.
+
+346
+00:21:28,167 --> 00:21:32,129
+So when you open up, you will see very strange bytes.
+
+347
+00:21:32,409 --> 00:21:32,769
+Okay.
+
+348
+00:21:34,110 --> 00:21:35,630
+And I want to, okay. So
+
+349
+00:21:36,491 --> 00:21:38,131
+here you can even see some
+
+350
+00:21:39,952 --> 00:21:43,835
+the data of that bytes in some strings so you can convert them into strings and
+
+351
+00:21:44,575 --> 00:21:50,999
+this string was hidden there okay it says the times sort of January Chancellor on brink of
+
+352
+00:21:51,059 --> 00:21:54,801
+the second bailout for bank so if you do this you will find the same
+
+353
+00:21:56,642 --> 00:22:03,207
+newspaper that I told you earlier so that's the newspaper why he put it there there are so
+
+354
+00:22:03,267 --> 00:22:06,289
+many so many again conspiracies behind it but
+
+355
+00:22:07,970 --> 00:22:09,071
+two reasons we
+
+356
+00:22:09,911 --> 00:22:16,095
+usually agree on the first one is that he proved that block was made before the 3rd January
+
+357
+00:22:16,155 --> 00:22:18,617
+just he took the paper and then he
+
+358
+00:22:19,618 --> 00:22:19,938
+put it
+
+359
+00:22:20,798 --> 00:22:22,460
+inside the block meaning that
+
+360
+00:22:23,809 --> 00:22:26,933
+if you think it was prepared by the
+
+361
+00:22:27,674 --> 00:22:33,220
+military guys like 10 years ago how do they know about the news okay so you cannot
+
+362
+00:22:34,902 --> 00:22:41,769
+predict the news and so he wanted to show that he was it was done on that day and it says
+
+363
+00:22:42,825 --> 00:22:45,868
+without a word of comment why the system was built.
+
+364
+00:22:46,069 --> 00:22:48,031
+So he didn't want to leave other
+
+365
+00:22:50,113 --> 00:22:53,437
+notes, he just put there why he built the system.
+
+366
+00:22:53,537 --> 00:22:56,901
+In his first message, I guess this is more appropriate.
+
+367
+00:22:58,634 --> 00:23:04,298
+Block zero, January 3, the first page of the ledger has never been closed since because
+
+368
+00:23:05,779 --> 00:23:09,242
+we still have it. So everything is built on it, okay?
+
+369
+00:23:09,722 --> 00:23:09,983
+So
+
+370
+00:23:11,344 --> 00:23:12,324
+we cannot change
+
+371
+00:23:13,045 --> 00:23:15,667
+the data. Why? We talked about this.
+
+372
+00:23:16,107 --> 00:23:17,149
+But I will repeat that. Okay.
+
+373
+00:23:17,709 --> 00:23:17,869
+So
+
+374
+00:23:18,690 --> 00:23:19,792
+and then what happened? So
+
+375
+00:23:20,853 --> 00:23:23,216
+he minted this, but he didn't pay yet.
+
+376
+00:23:23,256 --> 00:23:23,456
+So
+
+377
+00:23:24,417 --> 00:23:26,079
+in January 12,
+
+378
+00:23:27,080 --> 00:23:28,662
+after one week or nine days,
+
+379
+00:23:29,363 --> 00:23:32,307
+after the first block, the Satoshi sent 10 bitcoins.
+
+380
+00:23:34,274 --> 00:23:38,858
+to the person called Hal Finney, the programmer who had answered the mailing list.
+
+381
+00:23:38,878 --> 00:23:41,060
+So you remember he sent the mailing list to the guys.
+
+382
+00:23:41,480 --> 00:23:42,581
+He maybe agreed
+
+383
+00:23:43,722 --> 00:23:44,643
+on trying the system
+
+384
+00:23:45,644 --> 00:23:48,026
+and he did the first payment for that guy.
+
+385
+00:23:48,206 --> 00:23:50,509
+So he did, he sent it, okay?
+
+386
+00:23:50,629 --> 00:23:52,510
+You can again open up that data.
+
+387
+00:23:52,871 --> 00:23:53,531
+Let's open it.
+
+388
+00:23:57,295 --> 00:23:58,896
+Let's go to the
+
+389
+00:24:00,057 --> 00:24:00,157
+107.
+
+390
+00:24:03,203 --> 00:24:08,365
+you go you will see that this time is the the size is bigger
+
+391
+00:24:09,225 --> 00:24:13,986
+and if you look at the transactions always the first one is the the the minted
+
+392
+00:24:15,227 --> 00:24:17,167
+uh coins where they come from so
+
+393
+00:24:17,968 --> 00:24:24,510
+look below you see he sent 10 bitcoins what is this we'll discuss okay but he sent
+
+394
+00:24:25,010 --> 00:24:26,550
+10 bitcoins he and uh
+
+395
+00:24:27,391 --> 00:24:33,736
+got the exchange of 40 but i will i will explain you what is this so He sent 10 bitcoins to
+
+396
+00:24:33,776 --> 00:24:37,137
+this guy and we know the guy because we see his
+
+397
+00:24:38,617 --> 00:24:39,537
+address, okay?
+
+398
+00:24:40,378 --> 00:24:43,759
+How I know is the Hal Finney, okay?
+
+399
+00:24:43,839 --> 00:24:49,480
+How do I know him? It's just because he was back then not that important.
+
+400
+00:24:49,500 --> 00:24:54,602
+So the guy announced himself and he told that in the internet, in some forums, he said, that's
+
+401
+00:24:54,662 --> 00:25:00,303
+my friend. address home address so when you got the home address and you can always track the
+
+402
+00:25:00,544 --> 00:25:06,226
+number of parcels coming to that house so you know that and we know the address of the address
+
+403
+00:25:06,346 --> 00:25:06,846
+of the
+
+404
+00:25:07,846 --> 00:25:13,848
+satoshi nakamoto and then we can also look at his wallet let's look at his address so that's
+
+405
+00:25:13,888 --> 00:25:14,448
+his address
+
+406
+00:25:15,169 --> 00:25:16,629
+and he has how much
+
+407
+00:25:17,849 --> 00:25:18,770
+one billion something
+
+408
+00:25:19,772 --> 00:25:24,577
+balance but he changed a lot of money he he spent actually some money
+
+409
+00:25:25,417 --> 00:25:30,302
+so here the transactions so you can try and see the transaction where he's sending where he's
+
+410
+00:25:30,422 --> 00:25:35,207
+getting them uh is he is it his account but
+
+411
+00:25:36,208 --> 00:25:39,211
+we'll come to this point okay so that's the idea so you can see
+
+412
+00:25:40,011 --> 00:25:40,372
+and when i
+
+413
+00:25:41,743 --> 00:25:43,565
+ask very difficult questions like this.
+
+414
+00:25:44,005 --> 00:25:44,686
+How do you know
+
+415
+00:25:45,566 --> 00:25:48,229
+the hell Fini, but the blockchain should supposed to be a
+
+416
+00:25:50,411 --> 00:25:52,593
+private app, privacy should be
+
+417
+00:25:54,532 --> 00:25:59,754
+hidden of the person so actually if I have a wallet you cannot find that I am the person the
+
+418
+00:25:59,774 --> 00:26:04,455
+government cannot track it but and then I will ask you how did you know the health and you
+
+419
+00:26:04,475 --> 00:26:10,697
+have to say me tell me that this was shared on some kind of forum that's why we know him okay
+
+420
+00:26:10,737 --> 00:26:17,019
+if you don't share unless you share nobody knows your address so history he did that and then
+
+421
+00:26:19,380 --> 00:26:20,681
+the programmer in Florida
+
+422
+00:26:23,003 --> 00:26:25,004
+and after many, many blocks, okay?
+
+423
+00:26:25,024 --> 00:26:31,265
+People started working on that and it got famous, but back then the one Bitcoin cost almost
+
+424
+00:26:31,326 --> 00:26:31,646
+nothing.
+
+425
+00:26:32,446 --> 00:26:32,606
+And
+
+426
+00:26:33,826 --> 00:26:40,428
+this guy, I don't know his name, Laszlo Hinczyk, so he offered 10,000 Bitcoins on a
+
+427
+00:26:40,468 --> 00:26:43,949
+forum because you share it on a, they used to work on a forum.
+
+428
+00:26:44,329 --> 00:26:49,531
+In a forum, he offered 10,000 Bitcoins
+
+429
+00:26:50,812 --> 00:26:52,835
+10 000 bitcoins for the person
+
+430
+00:26:53,555 --> 00:26:54,636
+who will buy for him
+
+431
+00:26:56,038 --> 00:26:57,059
+two pizzas okay
+
+432
+00:26:58,180 --> 00:27:02,565
+and someone did actually and someone ordered two pizza for him and then uh
+
+433
+00:27:04,106 --> 00:27:07,490
+this was the in the history the first thing bought by bitcoin
+
+434
+00:27:08,271 --> 00:27:11,314
+and it is the day of 2000 uh uh may of
+
+435
+00:27:13,802 --> 00:27:17,806
+And today, if you heard of this word, we celebrate this day.
+
+436
+00:27:18,087 --> 00:27:18,988
+I don't celebrate, but
+
+437
+00:27:19,748 --> 00:27:20,669
+the people celebrate it.
+
+438
+00:27:20,729 --> 00:27:22,411
+It's called Bitcoin pizza day.
+
+439
+00:27:22,451 --> 00:27:24,093
+Why? Because this poor guy
+
+440
+00:27:26,575 --> 00:27:27,456
+ordered the pizza.
+
+441
+00:27:28,277 --> 00:27:30,439
+He's the actual guy, two pizzas
+
+442
+00:27:31,741 --> 00:27:33,543
+for the Bitcoin. Okay.
+
+443
+00:27:37,446 --> 00:27:39,747
+two pizzas for the Bitcoin, okay?
+
+444
+00:27:40,268 --> 00:27:44,830
+So you can actually, again, look up the IDs of these transactions.
+
+445
+00:27:44,850 --> 00:27:45,450
+Let's look up
+
+446
+00:27:46,771 --> 00:27:47,391
+the ID.
+
+447
+00:27:50,750 --> 00:27:53,931
+so after many many blocks
+
+448
+00:27:54,832 --> 00:27:56,092
+people started exchange
+
+449
+00:27:56,953 --> 00:28:03,536
+for some testing okay for doing other stuff but this was the first thing we remember it bought
+
+450
+00:28:03,776 --> 00:28:06,217
+by the block bitcoin so
+
+451
+00:28:07,397 --> 00:28:12,360
+if you look 16 years ago if you go there so this is the transaction so
+
+452
+00:28:13,598 --> 00:28:20,362
+he spent he sent 10 000 bitcoins okay he sent to this address to this guy and this
+
+453
+00:28:20,402 --> 00:28:21,703
+guy got 10 000
+
+454
+00:28:22,724 --> 00:28:27,927
+uh bitcoins and then he bought two pizza for him okay but this was 2010 today is 2027 and one
+
+455
+00:28:27,947 --> 00:28:29,448
+bitcoin costs 66 000 almost okay
+
+456
+00:28:39,897 --> 00:28:41,378
+Okay, I have good news.
+
+457
+00:28:42,219 --> 00:28:43,981
+The price is going up. And
+
+458
+00:28:45,122 --> 00:28:48,065
+if you multiply this by 1000,
+
+459
+00:28:49,206 --> 00:28:55,412
+it's $66 million. Actually, one more zero, 600, almost a half million.
+
+460
+00:28:56,393 --> 00:28:59,677
+billion dollars he spent for pizza okay it's
+
+461
+00:29:00,518 --> 00:29:04,783
+a very good very interesting news so every payment ever made bitcoin is still there
+
+462
+00:29:05,504 --> 00:29:12,492
+and anyone can read it as you saw that i can read what happened in 2010 only because this guy
+
+463
+00:29:12,512 --> 00:29:13,193
+shared his
+
+464
+00:29:14,134 --> 00:29:16,376
+address okay that's why how we can track him
+
+465
+00:29:17,492 --> 00:29:18,313
+please don't share your uh
+
+466
+00:29:20,255 --> 00:29:20,836
+addresses
+
+467
+00:29:21,817 --> 00:29:26,161
+with anyone with everyone okay so yeah we can track you so
+
+468
+00:29:27,422 --> 00:29:29,063
+and then never stopped, okay?
+
+469
+00:29:29,083 --> 00:29:32,744
+The first block came 2009, as I said, and
+
+470
+00:29:33,825 --> 00:29:34,565
+I just checked
+
+471
+00:29:35,525 --> 00:29:36,866
+before updating my slides,
+
+472
+00:29:37,986 --> 00:29:39,727
+this block we have currently.
+
+473
+00:29:40,407 --> 00:29:46,010
+And since then, if you calculate from the first block, how
+
+474
+00:29:47,470 --> 00:29:50,751
+often the money been transacted during these days,
+
+475
+00:29:51,552 --> 00:29:57,774
+how you can do, you just subtract the timing, you get this much seconds and if you divide it
+
+476
+00:29:57,874 --> 00:29:58,354
+is almost
+
+477
+00:29:59,955 --> 00:30:05,736
+18 years by then and if you divide by the blocks this years so
+
+478
+00:30:06,056 --> 00:30:12,278
+969 432 you will get what you will get seconds okay
+
+479
+00:30:12,858 --> 00:30:13,579
+every block
+
+480
+00:30:14,479 --> 00:30:20,461
+yeah every 577 seconds one block is generated so approximately
+
+481
+00:30:22,221 --> 00:30:23,882
+one block every 10 minute
+
+482
+00:30:24,763 --> 00:30:30,829
+day and night every minute every 10 minutes day and night for almost 18 years
+
+483
+00:30:31,410 --> 00:30:32,671
+without non-stop
+
+484
+00:30:33,432 --> 00:30:38,077
+no official hour no weekend no maintenance window like in the
+
+485
+00:30:38,918 --> 00:30:43,442
+the banks if you remember bank transfer has to wait for monday but blockchain doesn't do it
+
+486
+00:30:44,283 --> 00:30:47,966
+it's been going on since since then it started from uh
+
+487
+00:30:49,968 --> 00:30:51,329
+some sense okay uh
+
+488
+00:30:52,710 --> 00:30:53,730
+some sense and then
+
+489
+00:30:55,932 --> 00:30:59,835
+he started going up okay maybe at this point
+
+490
+00:31:00,696 --> 00:31:07,461
+if you still don't know why this costs so much i will do my best to explain in a very very
+
+491
+00:31:07,601 --> 00:31:10,864
+easy way okay so assume assume
+
+492
+00:31:12,067 --> 00:31:13,948
+i have okay
+
+493
+00:31:14,828 --> 00:31:21,210
+this is the very uh how it's called uh jidar way to explain the bitcoin okay so i have three
+
+494
+00:31:21,290 --> 00:31:21,650
+usb
+
+495
+00:31:22,430 --> 00:31:22,710
+okay
+
+496
+00:31:24,131 --> 00:31:28,352
+in one minute you will understand why it costs so much so this is three usb
+
+497
+00:31:29,352 --> 00:31:29,512
+so
+
+498
+00:31:30,853 --> 00:31:34,774
+initially it cost nothing zero zero zero zero okay
+
+499
+00:31:37,165 --> 00:31:39,747
+And it starts from zero in the image, if you see it's zero.
+
+500
+00:31:39,968 --> 00:31:44,371
+And someone, someone, he comes, like me, as a teacher, I say to my students,
+
+501
+00:31:45,372 --> 00:31:48,075
+I tell my two students, guys, I have three
+
+502
+00:31:48,815 --> 00:31:53,520
+USBs, but USB has a cost. I will bring my daughter's pens, just to wait, just to wait.
+
+503
+00:31:55,181 --> 00:31:58,044
+So here we go. So, Jai Dara way of blockchain.
+
+504
+00:31:58,744 --> 00:32:01,126
+I have five pencils, okay?
+
+505
+00:32:02,117 --> 00:32:07,061
+cost nothing assume is something always free it costs nothing
+
+506
+00:32:07,882 --> 00:32:13,527
+and then what happened satoshi nakamoto said i've been building this very important thing i'm
+
+507
+00:32:13,547 --> 00:32:16,349
+as a teacher i can tell you that's a very important thing
+
+508
+00:32:17,130 --> 00:32:22,875
+after 10 years it can cost 10 each okay
+
+509
+00:32:23,595 --> 00:32:25,537
+i try to convince you okay
+
+510
+00:32:26,409 --> 00:32:30,951
+If you trust the teacher, you understand, and then you say, professor, if it costs 10 days
+
+511
+00:32:31,031 --> 00:32:33,292
+after one year, it's okay, I trust you.
+
+512
+00:32:33,752 --> 00:32:37,733
+I can buy one for one cent, one cent, okay?
+
+513
+00:32:38,454 --> 00:32:42,935
+It's okay, I say, okay, one cent, I have too many of them, I can sell you.
+
+514
+00:32:43,655 --> 00:32:47,957
+One cent for you, one cent for the other student, one cent for the other student, et cetera,
+
+515
+00:32:48,357 --> 00:32:50,618
+okay? I sold everything, I have 10 cents.
+
+516
+00:32:51,558 --> 00:32:52,859
+Where did I get money from?
+
+517
+00:32:53,539 --> 00:32:55,560
+From you guys, and did it cost any?
+
+518
+00:32:57,372 --> 00:32:58,533
+did it have any
+
+519
+00:33:00,594 --> 00:33:05,017
+initial value no initially it didn't have any value now it costs one cent
+
+520
+00:33:06,017 --> 00:33:09,279
+you got something for one cent just because you
+
+521
+00:33:10,140 --> 00:33:12,721
+trust teacher okay you got it
+
+522
+00:33:13,882 --> 00:33:19,325
+and ten it was only ten number of pen five number of pens pencils
+
+523
+00:33:20,406 --> 00:33:21,707
+and everybody in the group
+
+524
+00:33:22,442 --> 00:33:24,583
+You are, I don't know, you are 300 students.
+
+525
+00:33:24,923 --> 00:33:28,444
+You see that five guys bought this for some reason, okay?
+
+526
+00:33:28,484 --> 00:33:34,405
+The speculation will go on and there is thing called FOMO in our field of blockchain.
+
+527
+00:33:34,825 --> 00:33:37,306
+It's called the feeling of missing out.
+
+528
+00:33:37,806 --> 00:33:42,408
+So you don't wanna miss out and you want to be that five guys, okay?
+
+529
+00:33:42,428 --> 00:33:43,968
+And then you come to your friend.
+
+530
+00:33:43,988 --> 00:33:46,029
+You say, you got one for one cent
+
+531
+00:33:46,889 --> 00:33:52,491
+and it's now very trendy to buy this from the professor I'm not telling you to buy something
+
+532
+00:33:52,511 --> 00:33:52,951
+from me, but
+
+533
+00:33:54,032 --> 00:33:56,513
+you want to buy this. And you offer what to your student?
+
+534
+00:33:56,653 --> 00:33:59,495
+Do you offer one cent? If you offer one cent, he doesn't want to sell.
+
+535
+00:33:59,976 --> 00:34:01,416
+You try to offer him two cents.
+
+536
+00:34:02,477 --> 00:34:04,558
+No, he will not give it to you for two cents.
+
+537
+00:34:04,638 --> 00:34:06,760
+But you offer ten cents to this guy,
+
+538
+00:34:07,840 --> 00:34:10,702
+to your friend. Will he sell it to you?
+
+539
+00:34:12,463 --> 00:34:12,723
+Yes.
+
+540
+00:34:13,524 --> 00:34:16,986
+So he's earning ten times what he spent.
+
+541
+00:34:17,266 --> 00:34:18,267
+So this guy can sell it.
+
+542
+00:34:20,498 --> 00:34:26,860
+eventually the the the the pencil become 10 cents you got the idea that's how the how the price
+
+543
+00:34:26,880 --> 00:34:31,482
+will builds up okay because of fomo feeling of missing out actually it doesn't have any value
+
+544
+00:34:31,762 --> 00:34:33,483
+bitcoin has no value okay
+
+545
+00:34:34,243 --> 00:34:36,684
+it doesn't grow on trees okay
+
+546
+00:34:37,604 --> 00:34:44,006
+it's just a file just a file some mp3 file everyone can i cannot copy but we'll speak about
+
+547
+00:34:44,026 --> 00:34:44,326
+this so
+
+548
+00:34:45,287 --> 00:34:45,707
+10 cents
+
+549
+00:34:47,087 --> 00:34:48,768
+how it got this high
+
+550
+00:34:50,236 --> 00:34:52,517
+86,000 today. 86,000. How?
+
+551
+00:34:53,858 --> 00:34:54,818
+This Tencent guy
+
+552
+00:34:55,739 --> 00:34:55,959
+said,
+
+553
+00:34:57,259 --> 00:34:58,980
+I bought this from the guy.
+
+554
+00:35:00,041 --> 00:35:03,482
+If you want to buy, this is the very future of the world.
+
+555
+00:35:03,522 --> 00:35:05,343
+So news speak about this.
+
+556
+00:35:05,563 --> 00:35:06,844
+Everyone is speaking about this.
+
+557
+00:35:07,284 --> 00:35:08,064
+And someone comes.
+
+558
+00:35:09,225 --> 00:35:10,686
+There are many crazy people in the world.
+
+559
+00:35:10,746 --> 00:35:12,626
+They say, I will buy it for $400.
+
+560
+00:35:14,205 --> 00:35:14,485
+Okay.
+
+561
+00:35:15,226 --> 00:35:18,189
+And then the cost of this becomes 100 from nothing.
+
+562
+00:35:18,409 --> 00:35:20,190
+Okay. That's the idea. Okay.
+
+563
+00:35:20,210 --> 00:35:22,152
+That's the very general way of explanation.
+
+564
+00:35:22,192 --> 00:35:28,998
+But throughout the course, I will explain this in more technical and in more academic way.
+
+565
+00:35:29,018 --> 00:35:32,922
+Okay. But I hope you got the idea where the price comes from.
+
+566
+00:35:33,142 --> 00:35:33,903
+Okay. From nowhere.
+
+567
+00:35:35,262 --> 00:35:36,463
+You may not trust me
+
+568
+00:35:38,164 --> 00:35:44,930
+and of course I don't blame you because it's very strange and how the nothing becomes 86,000
+
+569
+00:35:45,030 --> 00:35:47,312
+is amazing, but that's the idea, okay?
+
+570
+00:35:47,852 --> 00:35:52,996
+So it's the FOMO. But today is actually cost this much and the industry already spent this
+
+571
+00:35:53,056 --> 00:35:54,718
+much money on this thing
+
+572
+00:35:55,539 --> 00:35:55,719
+and
+
+573
+00:35:57,940 --> 00:36:00,443
+we trust on the system, only the trust, okay?
+
+574
+00:36:02,084 --> 00:36:07,688
+many of my savings on this just because I trust Satoshi Nakamoto that we never met so
+
+575
+00:36:08,749 --> 00:36:08,949
+so
+
+576
+00:36:10,390 --> 00:36:17,195
+that's the block in 18 years and one about 10 minutes without the post system is working okay
+
+577
+00:36:18,776 --> 00:36:21,138
+so what is it inside the Bitcoin okay
+
+578
+00:36:22,180 --> 00:36:26,926
+What's a Bitcoin? So Bitcoin has a very different name.
+
+579
+00:36:26,986 --> 00:36:28,408
+Some people call it network.
+
+580
+00:36:28,488 --> 00:36:31,592
+It's just thousands of nodes connected as equals.
+
+581
+00:36:31,953 --> 00:36:35,518
+Someone calls it a ledger, the Bitcoin blockchain.
+
+582
+00:36:36,018 --> 00:36:38,121
+Every payment is stored in that ledger.
+
+583
+00:36:39,743 --> 00:36:45,769
+Someone calls it a coin, like a Bitcoin, BTC, sometimes we write it, it's a unit of the ledger
+
+584
+00:36:45,869 --> 00:36:46,550
+that counts it.
+
+585
+00:36:47,331 --> 00:36:50,174
+And someone even calls it as a rule, set of rules.
+
+586
+00:36:50,274 --> 00:36:52,677
+Bitcoin is the rules, is a protocol, someone says.
+
+587
+00:36:52,777 --> 00:36:52,897
+And
+
+588
+00:36:53,658 --> 00:36:58,923
+everyone is right. People say Bitcoin and they mean the four different things and all are correct.
+
+589
+00:37:01,431 --> 00:37:08,196
+These rules live in a free, what is important, open program that anyone
+
+590
+00:37:08,316 --> 00:37:14,300
+can read and run and the computer running it is called a node.
+
+591
+00:37:14,760 --> 00:37:19,304
+So if you're in your computer, if you are a member of the Bitcoin blockchain, you run some
+
+592
+00:37:19,344 --> 00:37:21,905
+kind of software and you become a node.
+
+593
+00:37:22,226 --> 00:37:23,607
+That's what we used last week.
+
+594
+00:37:24,607 --> 00:37:30,428
+and by habit when you call bitcoin with capital letter which it we call we refer to the system
+
+595
+00:37:30,628 --> 00:37:30,928
+okay
+
+596
+00:37:31,708 --> 00:37:32,368
+and when we see
+
+597
+00:37:33,229 --> 00:37:39,970
+uh bitcoin with small uh lowercase we mostly refer to the coin itself or the
+
+598
+00:37:39,990 --> 00:37:41,470
+btc with the coin itself so
+
+599
+00:37:42,470 --> 00:37:42,870
+and
+
+600
+00:37:43,830 --> 00:37:49,411
+you might ask what the protocol is the protocol is just the rules in the computers that has
+
+601
+00:37:49,451 --> 00:37:52,492
+to follow they can work together to share this
+
+602
+00:37:53,572 --> 00:37:54,153
+Bitcoin
+
+603
+00:37:54,973 --> 00:38:00,277
+and it tells what is valid for the transaction so the set of rules set of rules is called the
+
+604
+00:38:00,297 --> 00:38:03,959
+protocol and we'll be studying this protocol in detail very soon
+
+605
+00:38:04,679 --> 00:38:04,859
+so
+
+606
+00:38:05,740 --> 00:38:06,300
+Bitcoin
+
+607
+00:38:07,781 --> 00:38:10,223
+is the network it is the ledger
+
+608
+00:38:11,043 --> 00:38:12,324
+and it is the
+
+609
+00:38:13,064 --> 00:38:16,847
+coin and set of rules okay and nobody owns it any of it
+
+610
+00:38:18,300 --> 00:38:19,421
+Everyone has the ledger,
+
+611
+00:38:20,601 --> 00:38:21,902
+everyone can see it.
+
+612
+00:38:22,903 --> 00:38:24,724
+The system has it, you don't own nothing.
+
+613
+00:38:24,884 --> 00:38:31,828
+The system simply writes in the blockchain that you own something, but the system has the info
+
+614
+00:38:31,848 --> 00:38:34,510
+about you. You don't own nothing, we will see.
+
+615
+00:38:36,283 --> 00:38:38,105
+So who does what in this case?
+
+616
+00:38:38,165 --> 00:38:44,633
+So we have users. Users are the guys who does the transactions, okay?
+
+617
+00:38:44,653 --> 00:38:46,375
+So we have three roles. So,
+
+618
+00:38:47,596 --> 00:38:49,939
+and one computer can play more than one
+
+619
+00:38:50,720 --> 00:38:56,905
+computer. one users in one computer you can run more than one user so users create the transactions
+
+620
+00:38:57,425 --> 00:39:03,990
+nodes check everything and keep the full ledger and the miners they pack the transactions into
+
+621
+00:39:04,030 --> 00:39:07,213
+blocks so usually it's three roles we have okay so
+
+622
+00:39:08,574 --> 00:39:15,439
+uh look at here so who has the last word so every node checks every block again and the miner
+
+623
+00:39:15,979 --> 00:39:19,021
+cannot force the bad block on anyone
+
+624
+00:39:20,623 --> 00:39:20,743
+so
+
+625
+00:39:21,807 --> 00:39:23,809
+the miner has the much much
+
+626
+00:39:27,271 --> 00:39:32,215
+precedence in this system because miner is the node that collects everything the last word
+
+627
+00:39:33,536 --> 00:39:39,561
+waiting transaction and he puts them together into the next block and they put this block into
+
+628
+00:39:39,621 --> 00:39:43,876
+the into the ledger and they cannot put whatever they want.
+
+629
+00:39:44,016 --> 00:39:46,157
+It's a very, very interesting algorithm.
+
+630
+00:39:46,678 --> 00:39:49,839
+We'll be discussing this and this forms the chain.
+
+631
+00:39:50,380 --> 00:39:52,321
+The chain is when the block is added,
+
+632
+00:39:53,422 --> 00:39:57,384
+you have the blockchain and the miners actually do it.
+
+633
+00:39:57,864 --> 00:39:59,585
+Who are the miners? How they do it?
+
+634
+00:39:59,665 --> 00:40:02,507
+We'll study. It's not this mining actually.
+
+635
+00:40:03,107 --> 00:40:03,407
+It's not
+
+636
+00:40:04,388 --> 00:40:08,010
+the mining used to be. It's a different thing and we'll study.
+
+637
+00:40:10,607 --> 00:40:17,476
+Okay, blocks. So let's see the blocks in
+
+638
+00:40:17,536 --> 00:40:19,338
+more detail. You've seen them
+
+639
+00:40:20,059 --> 00:40:21,822
+in the mempool in the front page.
+
+640
+00:40:22,503 --> 00:40:25,206
+There were some square blocks and these are called blocks.
+
+641
+00:40:25,326 --> 00:40:26,928
+Okay, newest one is on the left.
+
+642
+00:40:27,988 --> 00:40:34,533
+and this is the block so try to open by yourself click on in any square read the height timestamp
+
+643
+00:40:34,573 --> 00:40:41,237
+the size and some details we have seen and if you look block has a header so block is
+
+644
+00:40:41,257 --> 00:40:47,482
+divided into two sections he has a header and he has a body okay the header is just small
+
+645
+00:40:48,927 --> 00:40:51,228
+Fixed size. So it's fixed.
+
+646
+00:40:51,428 --> 00:40:54,089
+You cannot go beyond the 80 bytes.
+
+647
+00:40:55,269 --> 00:40:55,930
+Summary.
+
+648
+00:40:56,730 --> 00:40:58,771
+At the top of every block.
+
+649
+00:40:59,051 --> 00:41:00,511
+Every block has this data.
+
+650
+00:41:01,572 --> 00:41:05,113
+80 bytes. Fixed. And it consists of six fields.
+
+651
+00:41:06,139 --> 00:41:08,381
+It's what links the blocks together.
+
+652
+00:41:08,601 --> 00:41:09,802
+It's a very important part.
+
+653
+00:41:10,082 --> 00:41:12,283
+Also the below the body is important.
+
+654
+00:41:12,704 --> 00:41:16,807
+The transactions contain who sent what to whom, but these are
+
+655
+00:41:18,107 --> 00:41:19,749
+also equally important.
+
+656
+00:41:19,789 --> 00:41:25,072
+Block is the small header on top and the long list of transactions goes below.
+
+657
+00:41:25,092 --> 00:41:26,033
+We'll be studying
+
+658
+00:41:26,834 --> 00:41:27,934
+what is actually inside.
+
+659
+00:41:31,343 --> 00:41:36,831
+The body actually consists of transactions and think it as a page in a paper of a ledger, a
+
+660
+00:41:36,911 --> 00:41:42,960
+few lines at the top of the page, number, date, reference to the page and then here comes the
+
+661
+00:41:42,980 --> 00:41:43,140
+data.
+
+662
+00:41:47,027 --> 00:41:51,329
+So we will be briefly, not briefly, I mean in detail
+
+663
+00:41:52,970 --> 00:41:57,673
+visiting these ideas and I will be explaining the details of each, okay?
+
+664
+00:41:57,693 --> 00:41:57,933
+So
+
+665
+00:41:58,753 --> 00:42:01,555
+let's start from the easy part, the body.
+
+666
+00:42:02,255 --> 00:42:02,775
+the body
+
+667
+00:42:03,655 --> 00:42:04,756
+is just the lines of
+
+668
+00:42:07,557 --> 00:42:09,397
+lines in your ledger if you remember
+
+669
+00:42:10,617 --> 00:42:12,398
+botter send so much to someone
+
+670
+00:42:14,759 --> 00:42:18,980
+this much and the server send another much to another guy
+
+671
+00:42:19,820 --> 00:42:22,761
+and in that block I'm showing you now
+
+672
+00:42:25,613 --> 00:42:26,214
+It has a
+
+673
+00:42:26,915 --> 00:42:33,102
+whopping 7,000 lines of transactions in one block because it can fit this
+
+674
+00:42:33,163 --> 00:42:38,870
+much. This block's body is the list of 6,000 transactions.
+
+675
+00:42:41,708 --> 00:42:42,589
+and one
+
+676
+00:42:43,390 --> 00:42:47,213
+million bytes in total okay each line is a
+
+677
+00:42:48,454 --> 00:42:55,241
+line in your ledger and coins move from one someone to another one okay each of the transaction
+
+678
+00:42:55,561 --> 00:42:56,982
+has its own id
+
+679
+00:42:57,763 --> 00:43:00,425
+we don't call it i mean it's it's the
+
+680
+00:43:02,848 --> 00:43:07,746
+id of a transaction if you saw in the pizza slide we had the transaction id so every transaction
+
+681
+00:43:07,786 --> 00:43:13,396
+has its own id okay so the first transaction in every block i told you is before it
+
+682
+00:43:14,538 --> 00:43:14,799
+is the
+
+683
+00:43:17,348 --> 00:43:23,712
+how the new coin appears okay so it tells us how this coin appeared is it from
+
+684
+00:43:24,392 --> 00:43:30,216
+mining is it coming from someone else so we will study this part but it's the first transaction
+
+685
+00:43:30,236 --> 00:43:32,237
+so I just using this
+
+686
+00:43:33,518 --> 00:43:33,898
+block
+
+687
+00:43:34,879 --> 00:43:40,882
+in the blockchain because when as soon as you do the transaction you see it in the blockchain
+
+688
+00:43:40,922 --> 00:43:46,666
+but not immediately okay because sometimes when I do the transaction Sometimes, if I don't
+
+689
+00:43:46,747 --> 00:43:48,168
+see it in the blockchain, I get
+
+690
+00:43:51,912 --> 00:43:53,594
+nervous, just like him, and
+
+691
+00:43:54,695 --> 00:43:59,280
+it will take time. It will take some time and it will appear in the list eventually, eventually,
+
+692
+00:43:59,320 --> 00:44:00,422
+if you are not
+
+693
+00:44:03,845 --> 00:44:05,007
+cheating in the system.
+
+694
+00:44:06,738 --> 00:44:09,659
+The body is simply the list of payments in the page record.
+
+695
+00:44:09,679 --> 00:44:11,960
+So this is the body. But what about the header?
+
+696
+00:44:12,040 --> 00:44:13,441
+Header is more complicated.
+
+697
+00:44:13,521 --> 00:44:18,803
+So header is 80 bytes, takes fields, it consists of version,
+
+698
+00:44:19,821 --> 00:44:24,383
+previous block hash, Merkle rule, timestamp, bits, nonce.
+
+699
+00:44:25,244 --> 00:44:29,846
+Oh, I have a lot of exercise on the nonce, so you'll be doing, we'll be doing much of fun very
+
+700
+00:44:29,886 --> 00:44:36,590
+soon. So version, version is the set of rules the block follows, okay?
+
+701
+00:44:39,932 --> 00:44:41,893
+Is the versioning, versioning system, okay?
+
+702
+00:44:41,913 --> 00:44:45,315
+Like Python version two, Python version three, just like this.
+
+703
+00:44:46,292 --> 00:44:52,035
+and the previous block hash is the fingerprint of the block before so if you remember the seal
+
+704
+00:44:52,916 --> 00:44:58,178
+and mercury root is one fingerprint for all the transaction in the body is too complicated
+
+705
+00:44:58,218 --> 00:45:03,881
+we'll study in the next lecture and timestamp is the when the block was made and the bits is
+
+706
+00:45:04,141 --> 00:45:04,421
+how
+
+707
+00:45:05,902 --> 00:45:06,863
+hard it is
+
+708
+00:45:07,873 --> 00:45:14,475
+It was to make this block because we write this into the system, we put how much energy
+
+709
+00:45:15,296 --> 00:45:16,456
+we spent on this
+
+710
+00:45:17,556 --> 00:45:19,497
+and the nonce is just a counter wolf.
+
+711
+00:45:19,537 --> 00:45:25,199
+When you add them up, you will eventually get 80, please check, I hope you get this.
+
+712
+00:45:26,279 --> 00:45:33,262
+In that block, we had this 6,816 transactions and its header is always
+
+713
+00:45:33,282 --> 00:45:35,402
+80 bytes. It's always the same.
+
+714
+00:45:37,817 --> 00:45:44,743
+And from the next slides, I will be taking each field one
+
+715
+00:45:44,763 --> 00:45:50,267
+at a time and I will explain some of them today because I don't want to bore you with too much
+
+716
+00:45:50,307 --> 00:45:50,688
+details.
+
+717
+00:45:51,674 --> 00:45:56,838
+eventually we have to study all of them because they are very important is the building blocks
+
+718
+00:45:56,898 --> 00:45:58,619
+of the algorithm for the Bitcoin okay
+
+719
+00:45:59,360 --> 00:45:59,580
+so
+
+720
+00:46:00,641 --> 00:46:05,965
+guys I've been speaking too much maybe you get too fast I mean you can maybe either slow it
+
+721
+00:46:06,025 --> 00:46:07,506
+down if you want or
+
+722
+00:46:08,767 --> 00:46:13,650
+pause from time to time because I am pausing the video maybe if you don't feel it sometimes
+
+723
+00:46:13,670 --> 00:46:14,511
+my clothes change
+
+724
+00:46:16,232 --> 00:46:22,258
+when I teach because I just pause the video I do my job and then come back and keep speaking
+
+725
+00:46:22,318 --> 00:46:24,018
+okay that's why i speak non-stop so
+
+726
+00:46:25,239 --> 00:46:25,419
+uh
+
+727
+00:46:26,919 --> 00:46:27,800
+that's why the
+
+728
+00:46:28,600 --> 00:46:33,782
+i don't want to teach one hour and 20 minutes just like in lectures because in lectures i take
+
+729
+00:46:33,822 --> 00:46:39,825
+time to clean the blackboard i take time to answer your questions so with video uh
+
+730
+00:46:41,045 --> 00:46:44,847
+almost half of the the timing is considered as a i
+
+731
+00:46:46,727 --> 00:46:47,788
+have to turn on the lights
+
+732
+00:46:50,720 --> 00:46:53,261
+my lights when there is no movement it goes off
+
+733
+00:46:55,522 --> 00:46:55,682
+okay
+
+734
+00:46:56,402 --> 00:46:56,602
+so
+
+735
+00:46:58,383 --> 00:46:59,063
+not this one
+
+736
+00:47:01,264 --> 00:47:02,265
+okay so
+
+737
+00:47:03,645 --> 00:47:09,447
+suppose the timing if you are on a bus if you're on a car at home just pause
+
+738
+00:47:10,208 --> 00:47:12,549
+try to digest the information it's not easy to
+
+739
+00:47:13,309 --> 00:47:16,750
+listen this non-stop but I'm not explaining something
+
+740
+00:47:19,572 --> 00:47:24,175
+too complex for now okay but eventually you will see something very complex so let's move on
+
+741
+00:47:24,215 --> 00:47:28,919
+if you have questions please leave them in the question answers section of the course okay
+
+742
+00:47:29,419 --> 00:47:35,244
+don't send me emails yet don't send me direct messages batteries to share it in the question
+
+743
+00:47:35,284 --> 00:47:35,784
+and answers
+
+744
+00:47:36,645 --> 00:47:36,765
+so
+
+745
+00:47:38,467 --> 00:47:43,711
+uh what we were speaking ah okay let's let's visit them step by step so let's start from the
+
+746
+00:47:43,751 --> 00:47:48,555
+version which is the easiest one so the header has the version it's four bytes and the number
+
+747
+00:47:48,615 --> 00:47:49,516
+says that
+
+748
+00:47:50,317 --> 00:47:54,059
+which set of rules of that block he has to follow so bitcoin's program
+
+749
+00:47:55,040 --> 00:47:59,183
+uh starting from the version one because it started from version one uh
+
+750
+00:48:00,624 --> 00:48:04,287
+or z i don't remember it was zero so i should have it somewhere
+
+751
+00:48:05,468 --> 00:48:10,153
+started from version one yes it starts from version one then if you open up the today's
+
+752
+00:48:11,174 --> 00:48:11,754
+bitcoin
+
+753
+00:48:12,715 --> 00:48:18,601
+block you will see a different version because since 2009 many things improved and the developers
+
+754
+00:48:19,624 --> 00:48:26,169
+when they put the block into the blockchain they attach this version just to show to the
+
+755
+00:48:26,209 --> 00:48:27,009
+community that
+
+756
+00:48:28,150 --> 00:48:33,374
+it ties to the specific version of the blockchain so that you understand if something has changed
+
+757
+00:48:33,454 --> 00:48:38,318
+okay so when the rules again new feature the block announces
+
+758
+00:48:39,438 --> 00:48:43,179
+through this field that they are ready for it okay so
+
+759
+00:48:44,139 --> 00:48:47,500
+they will be using it so these numbers are quite complicated
+
+760
+00:48:48,260 --> 00:48:54,702
+not that as much in Java in Java you know I use Java version 8 still in some my
+
+761
+00:48:54,742 --> 00:48:56,062
+projects and
+
+762
+00:48:56,962 --> 00:49:03,686
+there is also 17 I heard that there is a 23 is even 24 the newer versions with java is
+
+763
+00:49:03,806 --> 00:49:08,529
+really crazy but the versioning is just like this okay it's the the block that follows the
+
+764
+00:49:08,549 --> 00:49:09,871
+rules for that specific
+
+765
+00:49:11,272 --> 00:49:11,832
+uh version
+
+766
+00:49:17,677 --> 00:49:19,318
+next foot is the timestamp
+
+767
+00:49:20,139 --> 00:49:25,243
+so time is the the field inside the block again is in the header and
+
+768
+00:49:26,172 --> 00:49:27,172
+It's consists of
+
+769
+00:49:27,952 --> 00:49:34,434
+four bytes. Okay. So when the block is, this data shows when the block was made as one number,
+
+770
+00:49:34,874 --> 00:49:37,255
+it's very strange. This number is called Unix time.
+
+771
+00:49:37,955 --> 00:49:44,637
+If you haven't heard of it, it's just a number in seconds since the January 97.
+
+772
+00:49:44,877 --> 00:49:47,437
+Okay. So this value is used
+
+773
+00:49:48,158 --> 00:49:50,918
+for the Linux is the beginning of the time.
+
+774
+00:49:51,178 --> 00:49:53,779
+So beginning of the time is not actually the year one.
+
+775
+00:49:55,231 --> 00:50:00,153
+for linux we use this one and we call it epoch time unix time let's call it unix time
+
+776
+00:50:01,034 --> 00:50:02,514
+computer stores the data
+
+777
+00:50:03,795 --> 00:50:05,856
+date since this day it's very strange
+
+778
+00:50:06,736 --> 00:50:08,237
+and there are many
+
+779
+00:50:12,258 --> 00:50:19,061
+standardizations like there is a rfc and we represent the time there is a iso the one we
+
+780
+00:50:19,181 --> 00:50:25,018
+used to to see and then there is it comes to unix time unix time is very strange number and
+
+781
+00:50:25,078 --> 00:50:28,579
+this number is seconds starting from this date.
+
+782
+00:50:29,159 --> 00:50:31,600
+For instance, this block zero was
+
+783
+00:50:33,721 --> 00:50:35,262
+minted, I mean created
+
+784
+00:50:36,043 --> 00:50:40,846
+uh on that number this number if you convert for example
+
+785
+00:50:41,647 --> 00:50:46,951
+today's number if you convert i guess is it yesterday yes no i mean it's yesterday i mean in
+
+786
+00:50:47,051 --> 00:50:49,452
+utc it's a different date so it's a today
+
+787
+00:50:50,233 --> 00:50:55,917
+if you convert you get you can get this time we will do this exercise okay so time is set by
+
+788
+00:50:55,977 --> 00:51:00,920
+the miners own clock so if i'm mining this block into the blockchain it will be my time so
+
+789
+00:51:00,980 --> 00:51:02,181
+it's approximate of course
+
+790
+00:51:04,599 --> 00:51:06,020
+It's not that approximate.
+
+791
+00:51:06,060 --> 00:51:10,861
+So if it is like 10 days later than this date, it cannot be accepted.
+
+792
+00:51:10,881 --> 00:51:11,021
+But
+
+793
+00:51:11,862 --> 00:51:14,503
+more or less like in terms of hours and minutes,
+
+794
+00:51:16,143 --> 00:51:17,264
+it can be off. I mean,
+
+795
+00:51:18,304 --> 00:51:21,345
+it may not be the exact timing, but this is 80.
+
+796
+00:51:21,425 --> 00:51:23,566
+Okay. So we use the timing.
+
+797
+00:51:23,606 --> 00:51:27,307
+So timestamp in seconds since 1970,
+
+798
+00:51:28,248 --> 00:51:31,578
+which block was made. So we start from this date.
+
+799
+00:51:31,618 --> 00:51:33,480
+So how do you calculate it?
+
+800
+00:51:33,500 --> 00:51:36,001
+So when was the block zero made for instance?
+
+801
+00:51:36,041 --> 00:51:39,484
+So let's calculate the first block timestamp, which is this number
+
+802
+00:51:40,304 --> 00:51:43,126
+and let's turn it into the date by hand.
+
+803
+00:51:46,609 --> 00:51:48,770
+How do we do it? So you get the seconds.
+
+804
+00:51:49,251 --> 00:51:49,651
+So
+
+805
+00:51:50,912 --> 00:51:53,834
+in a day, so in a day it is this much
+
+806
+00:51:54,594 --> 00:51:59,578
+and let's divide the dates by the day seconds you get.
+
+807
+00:52:00,116 --> 00:52:05,881
+approximately this much days and remainder is just in seconds so if you check the
+
+808
+00:52:07,911 --> 00:52:13,956
+uh how much how many years passed since the 70s it's
+
+809
+00:52:14,997 --> 00:52:21,162
+39 years you have to also consider the deep days and it would be this many days so if you subtract
+
+810
+00:52:21,803 --> 00:52:27,327
+from what has passed and what the calculation is giving us you get the
+
+811
+00:52:28,108 --> 00:52:29,449
+two which is uh
+
+812
+00:52:32,243 --> 00:52:37,045
+two days after after the January 2009 okay so
+
+813
+00:52:37,865 --> 00:52:40,106
+this is the the first January
+
+814
+00:52:40,846 --> 00:52:47,288
+the between the 1970 and you get just add two you would get the certain and the timing
+
+815
+00:52:49,049 --> 00:52:53,511
+you take based on the remainder so you can create the remainder you will find the time in UTC
+
+816
+00:52:53,531 --> 00:52:58,852
+starting from zero zero so that's how you can create it okay on Linux you can actually do this
+
+817
+00:52:59,073 --> 00:52:59,733
+let's try
+
+818
+00:53:01,028 --> 00:53:01,348
+i've never
+
+819
+00:53:02,188 --> 00:53:02,629
+done it
+
+820
+00:53:04,129 --> 00:53:09,651
+i've done it i've done it i teach operating systems we do it all the time the students
+
+821
+00:53:10,352 --> 00:53:11,372
+so we do a date
+
+822
+00:53:17,854 --> 00:53:18,355
+not fade
+
+823
+00:53:19,315 --> 00:53:19,575
+date
+
+824
+00:53:24,078 --> 00:53:24,578
+convert
+
+825
+00:53:25,459 --> 00:53:26,240
+one two three
+
+826
+00:53:27,100 --> 00:53:27,941
+one zero zero
+
+827
+00:53:28,941 --> 00:53:35,886
+sixty five zero five and it gives me the exact conversion of that number in
+
+828
+00:53:36,446 --> 00:53:37,947
+in mac you can try in this way in
+
+829
+00:53:39,048 --> 00:53:43,553
+python you can you can do this okay so you can calculate Maybe I will give you some number
+
+830
+00:53:43,573 --> 00:53:46,214
+to forget because I don't have enough exercise for you to give yet.
+
+831
+00:53:46,254 --> 00:53:46,394
+But
+
+832
+00:53:47,355 --> 00:53:53,016
+if I don't have. Okay. So image the date on the Explorer exactly and the date
+
+833
+00:53:54,076 --> 00:53:56,217
+of the newspaper hidden inside that block.
+
+834
+00:53:56,237 --> 00:53:56,437
+So
+
+835
+00:53:57,297 --> 00:53:59,098
+at home you can convert this number.
+
+836
+00:53:59,118 --> 00:53:59,538
+Okay.
+
+837
+00:54:00,246 --> 00:54:06,768
+So the timestamp is just count of seconds and we just do some division and we can get the date.
+
+838
+00:54:06,828 --> 00:54:09,890
+So two fields for now, the version
+
+839
+00:54:10,630 --> 00:54:11,290
+and the
+
+840
+00:54:12,370 --> 00:54:13,691
+timestamp we started, okay?
+
+841
+00:54:14,891 --> 00:54:19,773
+But there are other stuff like we have to cover four more, four more missing, okay?
+
+842
+00:54:19,793 --> 00:54:22,034
+We'll be explaining them step by step.
+
+843
+00:54:22,214 --> 00:54:26,956
+Maybe I will divide it into different lectures because in the next lecture we'll study most
+
+844
+00:54:27,016 --> 00:54:27,276
+of them.
+
+845
+00:54:29,350 --> 00:54:29,551
+and
+
+846
+00:54:31,113 --> 00:54:35,619
+they are the largest part of the header, so 64 bits of 80 bytes, and
+
+847
+00:54:36,581 --> 00:54:39,805
+both of them have the word
+
+848
+00:54:41,828 --> 00:54:44,793
+that we met last time, it's the seal, okay?
+
+849
+00:54:46,094 --> 00:54:47,375
+And these are the biggest ones.
+
+850
+00:54:47,395 --> 00:54:51,978
+So what are these 32-byte things?
+
+851
+00:54:52,838 --> 00:54:57,041
+In the next slides, we'll be speaking about them because let's start from
+
+852
+00:54:58,602 --> 00:55:00,903
+the previous hash block.
+
+853
+00:55:01,363 --> 00:55:05,226
+And before explaining the previous hash block, I have to explain you what is a hash.
+
+854
+00:55:05,766 --> 00:55:06,567
+Hopefully, you know it.
+
+855
+00:55:07,447 --> 00:55:12,409
+Just for the uniformity, I have to explain what is the hash, especially the block hash.
+
+856
+00:55:13,009 --> 00:55:14,450
+It's the name of the seal.
+
+857
+00:55:14,530 --> 00:55:16,110
+It's the real name for our seal.
+
+858
+00:55:16,170 --> 00:55:21,152
+The block hash means 32 byte fingerprint computer from 80
+
+859
+00:55:22,212 --> 00:55:24,073
+bytes of the block's header.
+
+860
+00:55:24,093 --> 00:55:29,355
+So you take the header of the block, you put it into some kind of grinder, some function.
+
+861
+00:55:30,015 --> 00:55:33,897
+It computes. We'll study this in the next lecture.
+
+862
+00:55:34,277 --> 00:55:34,917
+And you get some
+
+863
+00:55:36,076 --> 00:55:40,057
+value the number which is the 32 bytes okay so
+
+864
+00:55:40,978 --> 00:55:41,978
+if you look at the
+
+865
+00:55:42,859 --> 00:55:46,800
+the hash of the block zero you get this and if you get look at the hash of the
+
+866
+00:55:47,640 --> 00:55:51,082
+the current today's block you get this value okay so
+
+867
+00:55:51,922 --> 00:55:53,623
+is written in hexadecimal value
+
+868
+00:55:55,063 --> 00:55:59,465
+of 64 characters i hope i don't have to teach you what's hexadecimal but
+
+869
+00:56:01,923 --> 00:56:06,446
+we'll see we'll see okay because in the in the previous syllabus I had it
+
+870
+00:56:09,968 --> 00:56:16,652
+so it's not stored inside the blocks own header anyone can compute it from the
+
+871
+00:56:16,672 --> 00:56:19,194
+header that's why we don't store it okay this number
+
+872
+00:56:20,895 --> 00:56:24,077
+it change anything in the header the hash of the
+
+873
+00:56:25,100 --> 00:56:29,503
+data comes out in a different way of course if something is changed here this function will
+
+874
+00:56:29,523 --> 00:56:34,905
+generate completely different and I want to show you this today okay so the real Bitcoin hashes
+
+875
+00:56:34,945 --> 00:56:37,807
+start with many many zeros just like this okay
+
+876
+00:56:38,868 --> 00:56:45,391
+and that's not by accident you will see why okay so let's open up my favorite website by Anders
+
+877
+00:56:45,451 --> 00:56:48,393
+Brown Wars so if you go into this link
+
+878
+00:56:50,579 --> 00:56:50,859
+Browse
+
+879
+00:56:53,063 --> 00:56:53,704
+and there's
+
+880
+00:56:55,766 --> 00:56:56,066
+course
+
+881
+00:56:56,766 --> 00:57:01,549
+so if you go this website it will be a very important website for this course
+
+882
+00:57:02,609 --> 00:57:07,371
+uh this is the the function that i was telling you but we'll study it in the next lecture it's
+
+883
+00:57:07,431 --> 00:57:09,812
+just i want to give you the idea so
+
+884
+00:57:10,652 --> 00:57:17,475
+it takes your block header and generates some strange number okay of 32 bytes and if we have
+
+885
+00:57:17,535 --> 00:57:20,017
+transactions like aziz is sending
+
+886
+00:57:21,997 --> 00:57:23,038
+to babur
+
+887
+00:57:26,247 --> 00:57:26,787
+ten dollars
+
+888
+00:57:27,768 --> 00:57:28,628
+and Bobo
+
+889
+00:57:29,448 --> 00:57:30,188
+sending
+
+890
+00:57:31,129 --> 00:57:36,491
+five dollars to both okay
+
+891
+00:57:38,692 --> 00:57:42,673
+what's going on is here is that we have some transaction and
+
+892
+00:57:43,993 --> 00:57:47,315
+whatever we change here like look at the number it's 2 DC
+
+893
+00:57:48,703 --> 00:57:54,626
+cb and ee1e sometimes i just look at these last four numbers and check the difference look
+
+894
+00:57:55,187 --> 00:58:02,050
+if i put here six just very small number everything changed okay so that's
+
+895
+00:58:02,150 --> 00:58:03,971
+the the very
+
+896
+00:58:04,852 --> 00:58:05,292
+uh
+
+897
+00:58:10,775 --> 00:58:11,656
+magic number
+
+898
+00:58:13,197 --> 00:58:13,797
+that we have
+
+899
+00:58:17,010 --> 00:58:18,411
+Look, we have too many transactions.
+
+900
+00:58:19,172 --> 00:58:23,435
+Even in smallest case, if you change it to five, everything changed.
+
+901
+00:58:23,515 --> 00:58:25,356
+Okay, that's the beauty of the hash.
+
+902
+00:58:25,376 --> 00:58:28,058
+So this hash value is built on that.
+
+903
+00:58:28,258 --> 00:58:30,220
+And if somebody tries to change it,
+
+904
+00:58:31,025 --> 00:58:33,586
+it changes, okay, the eventual value changes.
+
+905
+00:58:33,646 --> 00:58:36,426
+So we'll be studying this in more detail very soon.
+
+906
+00:58:36,446 --> 00:58:37,726
+So that's the hash.
+
+907
+00:58:38,567 --> 00:58:41,687
+And this is the hash, but what is the previous block hash?
+
+908
+00:58:42,368 --> 00:58:43,108
+If you remember,
+
+909
+00:58:44,268 --> 00:58:50,709
+we said that every block contains the seal of the previous one, so it's a 32 bytes, the block
+
+910
+00:58:50,769 --> 00:58:53,050
+hash of the block that came just before
+
+911
+00:58:53,790 --> 00:58:59,656
+the the current block and this single field is the chain in the blockchain it's a very important
+
+912
+00:58:59,696 --> 00:59:06,622
+field okay every block names its parent by the fingerprint by its fingerprint okay so
+
+913
+00:59:06,702 --> 00:59:13,409
+if you have a hash of uh block of this is this number remember the next guy next
+
+914
+00:59:13,549 --> 00:59:14,650
+guy 31 will have this
+
+915
+00:59:17,642 --> 00:59:23,530
+field previous log hash equal to this okay that's the idea why
+
+916
+00:59:24,231 --> 00:59:30,540
+because if you change something here it will impact it here i won't i will show you in a demo
+
+917
+00:59:30,580 --> 00:59:31,161
+very soon so
+
+918
+00:59:32,455 --> 00:59:38,740
+uh in the the first block this field is all zeros and there was no block before it so
+
+919
+00:59:39,201 --> 00:59:44,005
+previous block each block here is the fingerprint of its parents if you remember my drawing
+
+920
+00:59:44,105 --> 00:59:44,765
+earlier so
+
+921
+00:59:45,666 --> 00:59:49,149
+if you draw this you can see here that the this
+
+922
+00:59:52,349 --> 00:59:57,794
+filled previous block hash it contains the hash of this guy this one contains the hash of this
+
+923
+00:59:57,874 --> 01:00:02,879
+guy so uh three real blocks made within four minutes of each other
+
+924
+01:00:03,659 --> 01:00:07,923
+and if you look at the timing it's four minutes okay and the hashes
+
+925
+01:00:08,664 --> 01:00:10,766
+reappear at the top of the next block
+
+926
+01:00:11,687 --> 01:00:11,907
+so
+
+927
+01:00:12,848 --> 01:00:12,908
+uh
+
+928
+01:00:14,118 --> 01:00:19,440
+have to draw these three boxes on a paper with only two hash lines in each and the arrows and
+
+929
+01:00:19,460 --> 01:00:25,581
+this is the picture of the lecture one uh we already saw it but now this is just a real number
+
+930
+01:00:25,641 --> 01:00:25,821
+so
+
+931
+01:00:27,242 --> 01:00:33,724
+if you see the two numbers 31 and 32 31 and 32 the timing
+
+932
+01:00:34,184 --> 01:00:34,364
+is uh
+
+933
+01:00:35,664 --> 01:00:36,644
+three seconds apart
+
+934
+01:00:37,365 --> 01:00:42,605
+but later on earlier i said you it is 10 minutes an average between the blocks but It's not
+
+935
+01:00:42,685 --> 01:00:46,508
+something as a timetable, not every 10 minutes there will be news.
+
+936
+01:00:46,528 --> 01:00:52,411
+Sometimes it will be after 30 seconds, maybe sometimes after 10 days, nobody does the transaction.
+
+937
+01:00:52,431 --> 01:00:56,554
+So it's average. In average is 10 minutes block.
+
+938
+01:00:56,574 --> 01:00:59,516
+So chain is nothing more than this, okay?
+
+939
+01:00:59,656 --> 01:01:00,676
+Every block names
+
+940
+01:01:01,397 --> 01:01:03,738
+the one before it, that's the chain.
+
+941
+01:01:05,960 --> 01:01:11,043
+If you change any transaction in that previous block, let's assume that
+
+942
+01:01:11,835 --> 01:01:15,576
+the ledger is written, I gave money to Aziz $10.
+
+943
+01:01:15,716 --> 01:01:16,236
+And you say,
+
+944
+01:01:16,936 --> 01:01:18,977
+no, no, no, no, can we change that block?
+
+945
+01:01:19,317 --> 01:01:21,998
+And I didn't give to Aziz $10, but $9.
+
+946
+01:01:22,158 --> 01:01:24,138
+Can we at least insert this data?
+
+947
+01:01:24,458 --> 01:01:29,260
+When you insert, even if you succeed to insert, you cannot insert of course, but if you succeed,
+
+948
+01:01:29,960 --> 01:01:30,460
+insert
+
+949
+01:01:31,780 --> 01:01:38,062
+this transaction in red line on that block, then the header of that block also changes, right?
+
+950
+01:01:38,602 --> 01:01:41,343
+So of course it changes because if you change any number,
+
+951
+01:01:43,053 --> 01:01:44,534
+Here, it changed the hash.
+
+952
+01:01:45,355 --> 01:01:52,061
+But not only that, if it changes, since the 43 contains the hash of the previous block, it
+
+953
+01:01:52,081 --> 01:01:53,402
+doesn't match anymore, okay?
+
+954
+01:01:53,422 --> 01:01:54,863
+So the link is already blocked.
+
+955
+01:01:55,304 --> 01:01:57,425
+That's the idea of a blockchain, okay?
+
+956
+01:01:57,445 --> 01:02:01,028
+You should be explaining it just like this, in very simple terms, okay?
+
+957
+01:02:01,469 --> 01:02:04,171
+Change one line, everything changes, okay?
+
+958
+01:02:04,511 --> 01:02:08,455
+In my famous website, we can actually try this, okay?
+
+959
+01:02:08,475 --> 01:02:10,557
+So let's open up the slide.
+
+960
+01:02:11,808 --> 01:02:16,935
+go to the blockchain we'll study this website in more detail but i just want to show you
+
+961
+01:02:17,936 --> 01:02:18,717
+already now
+
+962
+01:02:20,119 --> 01:02:26,406
+there are very strange numbers okay nonce we'll study but you know what is data so data is
+
+963
+01:02:27,007 --> 01:02:27,387
+as is
+
+964
+01:02:28,208 --> 01:02:30,912
+send so much to someone here we have
+
+965
+01:02:31,822 --> 01:02:32,323
+maybe he
+
+966
+01:02:33,163 --> 01:02:36,765
+send again 100 dollars maybe here he send 60
+
+967
+01:02:38,046 --> 01:02:44,010
+and one more data here names should have been different but i don't have time to show this
+
+968
+01:02:44,050 --> 01:02:45,951
+but assume it's like this okay
+
+969
+01:02:47,052 --> 01:02:47,452
+like this
+
+970
+01:02:49,073 --> 01:02:50,454
+assume everything is green
+
+971
+01:02:51,195 --> 01:02:54,237
+i will teach you what is this mining okay so look at this
+
+972
+01:02:55,651 --> 01:02:56,912
+This is the transaction.
+
+973
+01:02:56,992 --> 01:02:58,513
+What is the hash of the transaction?
+
+974
+01:02:58,613 --> 01:02:59,674
+It is
+
+975
+01:03:00,595 --> 01:03:02,377
+00E04.
+
+976
+01:03:03,177 --> 01:03:09,123
+And if you look at here, the previous field of that hash is the same of the previous one.
+
+977
+01:03:09,503 --> 01:03:15,649
+Also here, 000575, meaning that it is the hash of the previous block.
+
+978
+01:03:15,889 --> 01:03:18,932
+So that's the idea. That's what we have, okay?
+
+979
+01:03:20,233 --> 01:03:20,473
+So
+
+980
+01:03:21,234 --> 01:03:23,936
+let's assume I want to change
+
+981
+01:03:25,037 --> 01:03:27,639
+this block. I say, no, I didn't send
+
+982
+01:03:28,619 --> 01:03:31,822
+from bobble to butter, not six, but let's do five.
+
+983
+01:03:33,423 --> 01:03:34,504
+What changed? What do you think?
+
+984
+01:03:35,443 --> 01:03:41,626
+course this block hash will change but everything breaks okay that's the the beauty of the
+
+985
+01:03:41,686 --> 01:03:47,610
+bitcoin okay blockchain so if you change something everything change everyone knows okay if
+
+986
+01:03:47,630 --> 01:03:53,213
+you put six back everything is green that's what i want to what i want to teach you today okay
+
+987
+01:03:53,713 --> 01:03:58,876
+so later on i will explain in more detail what's a hash so
+
+988
+01:03:59,736 --> 01:04:02,958
+uh hopefully this week i will give you homework not the
+
+989
+01:04:05,077 --> 01:04:11,876
+quiz but the homework but let's see the where it goes okay so here I will stop and I will share
+
+990
+01:04:11,916 --> 01:04:13,139
+the next video in the next
+
+991
+01:04:14,363 --> 01:04:14,864
+I get more

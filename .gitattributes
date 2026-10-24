@@ -1,0 +1,17 @@
+# Normalize text files, leave binaries alone
+* text=auto
+
+*.md       text eol=lf
+*.json     text eol=lf
+*.ipynb    text eol=lf
+
+# Course materials — binary, never diff or merge these
+*.pdf      binary
+*.pptx     binary
+*.pps      binary
+*.ppt      binary
+*.docx     binary
+*.rar      binary
+*.zip      binary
+*.png      binary
+*.jpg      binary

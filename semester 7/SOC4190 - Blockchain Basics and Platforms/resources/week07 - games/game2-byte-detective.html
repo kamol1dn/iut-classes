@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Byte Detective — read a real Bitcoin payment, byte by byte</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#FFC907; --gold-d:#a9800a; --gold-bg:#FFFAE6;
+  --red:#c0392b; --red-bg:#fdecea; --red-d:#7b241c;
+  --grn:#1e8449; --grn-bg:#eafaf1;
+  --blu:#1f6fb2; --blu-bg:#eaf3fb;
+  --ink:#333; --dim:#777; --dim2:#999; --line:#ddd; --line2:#ccc;
+  --panel:#fafafa; --head-bg:#f3f3f3; --navy:#1B3A6B; --lab:#666;
+  --mono:'JetBrains Mono','SFMono-Regular',Consolas,Menlo,monospace;
+  --sans:'Source Sans 3','Helvetica Neue',Arial,system-ui,sans-serif;
+  --head:'Oswald','Arial Narrow',Impact,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+body{padding:0 14px 50px}
+.wrap{max-width:980px;margin:0 auto}
+button{font-family:var(--sans)}
+button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+code{font-family:var(--mono);font-size:.86em;background:#edf1f7;color:var(--navy);padding:0 4px;border-radius:4px;white-space:nowrap}
+kbd{font-family:var(--mono);font-size:11px;font-weight:700;border:1px solid var(--line2);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:#fff;color:var(--ink);margin-left:6px;vertical-align:1px}
+.masthead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:20px 0 12px;border-bottom:4px solid var(--gold)}
+.masthead h1{font-family:var(--head);font-weight:600;font-size:30px;margin:0;color:var(--navy)}
+.masthead .sub{color:var(--dim);font-size:14px}
+.masthead .course{margin-left:auto;font-size:11px;letter-spacing:1.2px;color:var(--gold-d);border:1px solid var(--gold);background:var(--gold-bg);padding:3px 10px;border-radius:20px;font-weight:700}
+.lede{background:var(--gold-bg);border-left:4px solid var(--gold);padding:11px 15px;margin:16px 0;border-radius:0 6px 6px 0}
+.lede b{color:var(--gold-d)}
+.ctl{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0;padding:12px;background:var(--panel);border:1px solid var(--line2);border-radius:9px}
+.ctl button,.btn{background:#fff;border:1px solid var(--line2);border-radius:7px;padding:7px 15px;font-family:var(--sans);font-size:14px;cursor:pointer;color:var(--ink);font-weight:600;min-height:38px}
+.ctl button:hover,.btn:hover{background:var(--gold-bg);border-color:var(--gold)}
+.ctl button.key,.btn.key{background:var(--gold);border-color:var(--gold);color:#4a3800;min-width:92px}
+.ctl button:disabled,.btn:disabled{opacity:.45;cursor:default;background:#fff;border-color:var(--line2)}
+.ctl .who{margin-left:auto;font-size:14px;color:var(--lab)}
+.log{border:1px solid var(--line2);border-radius:9px;background:#1E222A;color:#E6E9EE;font-family:var(--mono);font-size:12.5px;line-height:1.75;padding:11px 13px;overflow-x:auto;white-space:pre-wrap;word-break:break-all}
+.log .t{color:#6ec1ff} .log .hi{color:#ffd45e} .log .bad{color:#ff8b7d} .log .ok{color:#8fe3a8} .log .dm{color:#8a8a8a}
+.banner{margin-top:14px;padding:12px 16px;border-radius:8px;font-size:15px;display:none}
+.banner.show{display:block}
+.banner.warn{background:var(--red);color:#fff}
+.banner.win{background:#b8ecc8;color:#153d22}
+.banner .hd{font-family:var(--head);letter-spacing:1px;text-transform:uppercase;display:block;font-size:16px;margin-bottom:3px}
+.banner code{background:rgba(255,255,255,.6);color:inherit}
+.banner .joke{display:block;margin-top:6px;font-style:italic}
+.note{border-left:4px solid var(--blu);background:var(--blu-bg);padding:10px 14px;margin:18px 0 0;border-radius:0 6px 6px 0;font-size:14px}
+.note b{color:var(--blu)}
+footer{color:var(--dim);font-size:13px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
+footer p{margin:0 0 7px}
+footer code{font-family:var(--mono);color:var(--blu);font-size:12.5px;background:none;padding:0}
+footer .reset{background:#fff;border:1px solid var(--line2);border-radius:7px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;min-height:36px;margin-right:10px}
+footer .reset:hover{border-color:var(--red);color:var(--red)}
+.lab{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--lab);font-weight:700;margin:0 0 7px}
+.panel{border:1px solid var(--line2);border-radius:9px;background:#fff;padding:11px 13px}
+.small{font-size:13px;color:var(--lab);margin:8px 0 0;line-height:1.4}
+.gloss{border:1px solid var(--gold);background:var(--gold-bg);border-radius:8px;padding:8px 12px;font-size:13.5px;margin:10px 0}
+.gloss b{color:var(--gold-d)}
+/* mission bar */
+.mbar{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 18px}
+.mchip{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-height:58px;border:1px solid var(--line2);background:#fff;border-radius:9px;padding:7px 10px 8px;cursor:pointer;color:var(--ink)}
+.mchip:hover{border-color:var(--gold);background:var(--gold-bg)}
+.mchip .no{display:flex;align-items:center;gap:6px;font-family:var(--head);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--lab)}
+.mchip .tt{font-weight:700;font-size:13.5px;line-height:1.25}
+.mchip .ck{width:17px;height:17px;border-radius:50%;background:var(--grn);color:#fff;font-family:var(--sans);font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.mchip .ck.hp{background:var(--gold);color:#4a3800}
+.mchip.cur{border-color:var(--gold);box-shadow:inset 0 0 0 2px var(--gold);background:var(--gold-bg)}
+.mchip.cur .no{color:var(--navy)}
+.mhead{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 12px}
+.mhead .kind{flex-basis:100%;font-family:var(--head);font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--lab)}
+.mhead h2{font-family:var(--head);font-weight:600;font-size:25px;line-height:1.15;margin:0;color:var(--navy)}
+.mhead .goal{border:2px solid var(--navy);border-radius:20px;padding:1px 12px;font-size:14px;font-weight:700;color:var(--navy)}
+.mhead .goal i{font-style:normal;color:var(--lab);margin-right:7px;font-size:11px;text-transform:uppercase;letter-spacing:1.1px}
+.mhead .clr{background:var(--grn);color:#fff;border-radius:20px;padding:2px 12px;font-size:13px;font-weight:700}
+.mhead .clr.hp{background:var(--gold);color:#4a3800}
+.mhead .desc{flex-basis:100%;margin:2px 0 0;font-size:15.5px}
+/* bytes */
+.bytes{display:flex;flex-wrap:wrap;gap:6px;font-family:var(--mono);font-size:15px}
+.byte{border:1px solid var(--line2);border-radius:6px;padding:5px 8px;background:#fff;min-width:38px;text-align:center;cursor:pointer;position:relative}
+.byte:hover{border-color:var(--gold);background:var(--gold-bg)}
+.byte.pick{background:var(--navy);color:#fff;border-color:var(--navy)}
+.byte.dis{opacity:.35;cursor:default}
+.byte .ix{position:absolute;top:-9px;right:-4px;font-size:9px;color:var(--dim2);background:#fff;padding:0 2px;font-family:var(--sans)}
+.slots{display:flex;flex-wrap:wrap;gap:6px;font-family:var(--mono);font-size:15px;margin-top:8px}
+.slot{border:2px dashed var(--line2);border-radius:6px;min-width:38px;min-height:34px;padding:4px 8px;text-align:center;color:var(--navy);font-weight:700}
+.slot.f{border-style:solid;border-color:var(--navy);background:var(--blu-bg)}
+.calc{font-family:var(--mono);font-size:14px;background:#f6f8fb;border:1px solid var(--line2);border-radius:8px;padding:9px 12px;margin-top:10px;line-height:1.8}
+.calc b{color:var(--navy)}
+input[type=text],input[type=number]{font-family:var(--mono);font-size:15px;padding:7px 10px;border:1px solid var(--line2);border-radius:7px;min-height:38px;width:170px}
+input:focus{outline:3px solid var(--gold);border-color:var(--gold)}
+/* the hex map */
+.hexmap{font-family:var(--mono);font-size:13.5px;line-height:2;word-break:break-all;background:#f6f8fb;border:1px solid var(--line2);border-radius:9px;padding:10px 12px;user-select:none}
+.hexmap span.b{padding:2px 1px;margin-right:4px;cursor:pointer;border-bottom:3px solid transparent}
+.hexmap span.b:hover{background:var(--gold-bg)}
+.hexmap span.b.sel{background:var(--navy);color:#fff}
+.hexmap span.b.c0{border-color:#9bb}
+.hexmap span.b.c1{border-color:#1f6fb2}
+.hexmap span.b.c2{border-color:#7a5ea8}
+.hexmap span.b.c3{border-color:#1e8449}
+.hexmap span.b.c4{border-color:#c0392b}
+.hexmap span.b.c5{border-color:#FFC907}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;margin-top:8px}
+.legend i{display:inline-block;width:14px;height:4px;vertical-align:middle;margin-right:5px;border-radius:2px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.two>*{min-width:0}
+/* quiz */
+.q{border:1px solid var(--line2);border-radius:9px;padding:11px 13px;margin:10px 0;background:#fff}
+.q .qt{font-weight:700;margin:0 0 8px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{text-align:left;border:1px solid var(--line2);border-radius:7px;padding:8px 12px;background:#fff;cursor:pointer;font-size:14.5px;min-height:38px;font-family:var(--sans)}
+.opt:hover{border-color:var(--gold);background:var(--gold-bg)}
+.opt.right{border-color:var(--grn);background:var(--grn-bg)}
+.opt.wrong{border-color:var(--red);background:var(--red-bg)}
+.opt code{white-space:normal}
+.why{font-size:13.5px;color:var(--lab);margin:7px 0 0;display:none}
+.why.show{display:block}
+.hintbox{margin-top:10px;font-size:14px;color:var(--lab)}
+.hintbox p{margin:4px 0;padding:6px 10px;background:var(--blu-bg);border-radius:6px;border-left:3px solid var(--blu);color:var(--ink)}
+textarea.hex{width:100%;font-family:var(--mono);font-size:13.5px;line-height:1.7;min-height:150px;border:1px solid var(--line2);border-radius:9px;padding:10px;word-break:break-all;resize:vertical}
+textarea.hex:focus{outline:3px solid var(--gold);border-color:var(--gold)}
+.idrow{font-family:var(--mono);font-size:13px;word-break:break-all;margin:6px 0}
+.idrow .m{color:var(--grn);font-weight:700}
+.idrow .x{color:var(--red)}
+.tag{display:inline-block;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:1px 8px;border-radius:12px;background:var(--blu-bg);color:var(--blu);margin-left:6px;vertical-align:middle}
+.tag.ok{background:var(--grn-bg);color:var(--grn)}
+.tag.bad{background:var(--red-bg);color:var(--red)}
+@media (max-width:720px){.mbar{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.masthead .course{margin-left:0}}
+#selftest-report{white-space:pre-wrap;font-family:var(--mono);font-size:12px;background:#f6f8fb;border:1px solid var(--line2);padding:8px;display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<pre id="selftest-report"></pre>
+<div class="masthead">
+  <h1>THE BYTE DETECTIVE</h1>
+  <span class="sub">one real payment · 225 bytes · you read every one of them</span>
+  <span class="course">SOC4190 · LECTURE 6</span>
+</div>
+<div class="lede">
+  The payment below is real. It sits in Bitcoin block <b>968,391</b> (24 Sep 2026) and moved 1,000,000 satoshi.
+  Nodes never see a picture of it, only its <b>225 bytes</b>. In five missions you read those bytes the way a node does:
+  backwards where needed, field by field, and at the end you compute its <b>transaction ID</b> yourself.
+</div>
+
+<div class="mbar" id="mbar"></div>
+<div id="stage"></div>
+
+<div class="note"><b>The lesson.</b> A transaction is not a form with names on it. It is a row of bytes: a version, one input
+(which old output it spends, and the key that opens it), outputs (an amount and a lock each) and four closing bytes. Numbers are
+stored smallest byte first. The transaction ID is nothing but SHA-256 of those bytes, twice (for a SegWit payment: the bytes without the witness). Nobody assigns it.</div>
+
+<footer>
+  <p>Everything in this game comes from Slide 6 (Bitcoin Transactions). Payment <code>d9f91d3f…6dd6</code>, block 968,391; raw bytes
+  fetched from mempool.space on 12 Oct 2026. The IDs shown are computed live in your browser with SHA-256; they equal the explorer's.</p>
+  <p>Keys: <kbd>1</kbd>…<kbd>5</kbd> open a mission · <kbd>H</kbd> hint · <kbd>R</kbd> restart the mission · <kbd>N</kbd> next mission</p>
+  <p><button class="reset" id="resetAll">Reset progress</button> <span id="progtxt"></span></p>
+</footer>
+</div>
+
+<script>
+/* ---------- crypto: SHA-256 (plain JS, no library) ---------- */
+function sha256(bytes){
+  const K=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  let H=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+  const l=bytes.length, bl=l*8, padLen=((l+9+63)>>6)<<6, m=new Uint8Array(padLen);
+  m.set(bytes); m[l]=0x80; for(let i=0;i<8;i++) m[padLen-1-i]=(bl/Math.pow(2,8*i))&0xff;
+  const w=new Uint32Array(64), rotr=(x,n)=>(x>>>n)|(x<<(32-n));
+  for(let off=0;off<padLen;off+=64){
+    for(let i=0;i<16;i++) w[i]=(m[off+i*4]<<24)|(m[off+i*4+1]<<16)|(m[off+i*4+2]<<8)|m[off+i*4+3];
+    for(let i=16;i<64;i++){const s0=rotr(w[i-15],7)^rotr(w[i-15],18)^(w[i-15]>>>3), s1=rotr(w[i-2],17)^rotr(w[i-2],19)^(w[i-2]>>>10); w[i]=(w[i-16]+s0+w[i-7]+s1)|0;}
+    let [a,b,c,d,e,f,g,h]=H;
+    for(let i=0;i<64;i++){const S1=rotr(e,6)^rotr(e,11)^rotr(e,25), ch=(e&f)^(~e&g), t1=(h+S1+ch+K[i]+w[i])|0, S0=rotr(a,2)^rotr(a,13)^rotr(a,22), mj=(a&b)^(a&c)^(b&c), t2=(S0+mj)|0; h=g;g=f;f=e;e=(d+t1)|0;d=c;c=b;b=a;a=(t1+t2)|0;}
+    H=[(H[0]+a)|0,(H[1]+b)|0,(H[2]+c)|0,(H[3]+d)|0,(H[4]+e)|0,(H[5]+f)|0,(H[6]+g)|0,(H[7]+h)|0];
+  }
+  const out=new Uint8Array(32); H.forEach((v,i)=>{out[i*4]=v>>>24;out[i*4+1]=(v>>>16)&255;out[i*4+2]=(v>>>8)&255;out[i*4+3]=v&255;}); return out;
+}
+const hex2b=h=>Uint8Array.from(h.match(/../g)||[],x=>parseInt(x,16));
+const b2hex=b=>Array.from(b,x=>x.toString(16).padStart(2,'0')).join('');
+function txid(hex){ if(!/^([0-9a-f]{2})+$/.test(hex)) return null; const h=sha256(sha256(hex2b(hex))); return b2hex(Array.from(h).reverse()); }
+
+/* ---------- the real payment ---------- */
+const RAW='0200000001b29b2f64d67b4a0da277ca2ef50e3847c28cd4023ca8933d8fc0ae25b184ddc9010000006a47304402207c58a73023515ce7e760843e4eba95f305bd3a3209a119e5f08dfca55514b3dd022038c29f020e6330195f788c58ec1975350338fe75b04e4f737e242e2adb79cb9a0121026c22163f202760a7189cac51704b6f21149c208a7a258b752ff24b28b0a8f405ffffffff0240420f00000000001976a914b2c670c276afb59fd446710cb6f6c98202249e5c88ac2c2c0c00000000001976a914c471c2ac102c39809c341a1a71b1c7b0dd6681d788ac00000000';
+const TXID='d9f91d3f4d39a09f91c47070631382df3c3c9808380be5aff4b8dc6211706dd6';
+const TXID_PLUS1='3babb094ea8d6aae86353b91038c92182edb8a34527c41f3ea6bab41fc1fed1e';
+// byte spans [from, to) with a colour class and a name
+const SPANS=[
+  [0,4,'version','c0'],[4,5,'input count','c0'],
+  [5,37,"previous payment's ID (stored backwards)",'c1'],[37,41,'output index','c1'],[41,42,'length byte of the key','c1'],
+  [42,148,'the key: signature + public key','c2'],[148,152,'4 extra bytes','c1'],
+  [152,153,'output count','c0'],
+  [153,161,'output #0 amount','c3'],[161,162,'output #0 lock length','c3'],[162,187,'output #0 lock','c4'],
+  [187,195,'output #1 amount','c3'],[195,196,'output #1 lock length','c3'],[196,221,'output #1 lock','c4'],
+  [221,225,'last 4 bytes','c0']];
+const spanOf=i=>SPANS.find(s=>i>=s[0]&&i<s[1]);
+
+/* ---------- progress (srcdoc-safe) ---------- */
+const KEY='soc4190-bytedetective-v1';
+let mem={};
+function loadP(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return mem; } }
+function saveP(p){ mem=p; try{ localStorage.setItem(KEY,JSON.stringify(p)); }catch(e){} }
+let prog=loadP();
+function clear(m,help){ prog[m]=help?(prog[m]||'help'):'ok'; saveP(prog); drawBar(); }
+
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
+const fmt=n=>n.toLocaleString('en-US');
+function leBytes(n){ const b=[]; let v=BigInt(n); for(let i=0;i<8;i++){ b.push(Number(v&255n).toString(16).padStart(2,'0')); v>>=8n; } return b; }
+function leToNum(bytes){ return Number(BigInt('0x'+bytes.slice().reverse().join(''))); }
+let cur=1, hintsUsed=0, hintIx=0;
+
+const MISSIONS=[
+ {n:1,title:'Read it backwards',kind:'little-endian',goal:'4 amounts read right',
+  desc:'Bitcoin stores a number <b>smallest byte first</b> (little-endian). Click the 8 bytes in the order you must <i>read</i> them, then type the number in satoshi.'},
+ {n:2,title:'The map',kind:'the raw transaction',goal:'5 fields found',
+  desc:'Here are the 225 bytes exactly as nodes send them (450 hexadecimal characters). Click the bytes that hold the field asked for. Drag or click first and last byte.'},
+ {n:3,title:'Decode the input',kind:'the input',goal:'4 answers right',
+  desc:'An input says <b>which old output it spends</b> and brings <b>the key</b> that opens it. Read ours.'},
+ {n:4,title:'Where is the fee?',kind:'inputs − outputs',goal:'3 fees right',
+  desc:'A fee is never written. It is what the inputs bring minus what the outputs take. Compute it for three real payments.'},
+ {n:5,title:'Name it',kind:'transaction ID',goal:'reach the +1 satoshi ID',
+  desc:'The ID is SHA-256 of the bytes, then SHA-256 again, written backwards. Your browser computes it live. Change <b>one byte</b> so that output #0 is one satoshi larger, and watch the name of the payment change.'},
+];
+const HINTS={
+ 1:['Read from the right end to the left end. The last byte you click is the smallest one.','Write the reversed bytes as one hexadecimal number: 0x… — then convert. <code>2c2c0c</code> read backwards is <code>0c2c2c</code>.','<b>Show me:</b> for <code>2c 2c 0c 00 00 00 00 00</code> the reversed bytes are <code>00 00 00 00 00 0c 2c 2c</code> = 0xc2c2c = 797,740 sat.'],
+ 2:['The map of the slide: version (4) · input count (1) · input · output count (1) · outputs · last 4 bytes.','An input is 32 + 4 + 1 + (key) + 4 bytes. An output is 8 + 1 + 25 bytes. Count from the end for the outputs: the last 4 bytes come after output #1.','<b>Show me:</b> the answer is highlighted now.'],
+ 3:['The 32 ID bytes are stored backwards, like an amount. Read the bytes from the end.','<code>01 00 00 00</code> is a 4-byte little-endian number. <code>6a</code> in hexadecimal is 6×16 + 10.','The key is 1 + 71 + 1 + 33 bytes: a length byte before the signature and one before the public key.'],
+ 4:['Add every input amount, add every output amount, subtract.','Ours: 1,799,096 − (1,000,000 + 797,740).','The 83-BTC story: 139.42495946 BTC in, 55.76998378 BTC out — in satoshi that is 13,942,495,946 − 5,576,998,378.'],
+ 5:['Output #0\'s amount is the 8 bytes <code>40 42 0f 00 00 00 00 00</code>. Its smallest byte is the first one.','0x40 + 1 = 0x41. Replace the first <code>40</code> of the amount — it starts at byte 153, hexadecimal character 306.','<b>Show me:</b> the byte is replaced for you.'],
+};
+
+/* ---------- mission bar ---------- */
+function drawBar(){
+  const bar=$('#mbar'); bar.innerHTML='';
+  MISSIONS.forEach(m=>{
+    const b=el('button','mchip'+(m.n===cur?' cur':''));
+    const st=prog[m.n];
+    b.innerHTML=`<span class="no">${st?`<span class="ck${st==='help'?' hp':''}">✓</span>`:''}Mission ${m.n}</span><span class="tt">${m.title}</span>`;
+    b.onclick=()=>open(m.n); bar.appendChild(b);
+  });
+  const done=MISSIONS.filter(m=>prog[m.n]).length;
+  $('#progtxt').textContent=`${done} of ${MISSIONS.length} missions cleared`+(done===MISSIONS.length?' — you read a real payment byte by byte.':'');
+}
+function head(m){
+  const st=prog[m.n];
+  return `<div class="mhead"><span class="kind">Mission ${m.n} · ${m.kind}</span><h2>${m.title}</h2>
+  <span class="goal"><i>goal</i>${m.goal}</span>${st?`<span class="clr${st==='help'?' hp':''}">cleared${st==='help'?' with help':''}</span>`:''}
+  <p class="desc">${m.desc}</p></div>`;
+}
+function ctl(extra){
+  return `<div class="ctl">${extra||''}<button id="hintB"> Hint</button><button id="restartB">↺ Restart</button>
+  <button id="nextB" class="key" ${prog[cur]?'':'disabled'}>Next mission ▶</button><span class="who" id="who"></span></div><div class="hintbox" id="hintbox"></div>`;
+}
+function wireCtl(onRestart){
+  $('#hintB').onclick=()=>hint();
+  $('#restartB').onclick=()=>{ onRestart(); };
+  $('#nextB').onclick=()=>{ if(cur<5) open(cur+1); };
+}
+function hint(){
+  const hs=HINTS[cur]; if(hintIx>=hs.length) return;
+  const box=$('#hintbox'); box.appendChild(el('p',null,hs[hintIx])); hintIx++; hintsUsed++;
+  if(hintIx===hs.length && SHOW[cur]) SHOW[cur]();
+}
+function banner(kind,hd,txt,joke){
+  const b=$('#banner'); b.className='banner show '+kind; b.innerHTML=`<span class="hd">${hd}</span>${txt}${joke?`<span class="joke">${joke}</span>`:''}`;
+}
+function won(txt,joke){ clear(cur,hintsUsed>0); banner('win','Mission cleared',txt,joke); $('#nextB').disabled=cur>=5; drawBar(); }
+const SHOW={};
+
+/* ---------- open ---------- */
+function open(n){ cur=n; hintIx=0; hintsUsed=0; drawBar(); window.scrollTo({top:0}); ({1:m1,2:m2,3:m3,4:m4,5:m5})[n](); }
+
+/* ================= MISSION 1: little-endian ================= */
+const M1R=[
+  {bytes:'2c2c0c0000000000', what:"output #1's amount in our payment", ans:797740, note:'the change, back to the sender'},
+  {bytes:'07f5010000000000', what:"output #0's amount in a SegWit payment of the next block (968,392)", ans:128263, note:'a real amount, read from block 968,392'},
+  {bytes:'1ab30d0000000000', what:"output #1's amount in the same SegWit payment", ans:897818, note:'its change'},
+  {bytes:'ea3d6a4c01000000', what:"the only output of the famous 83-BTC-fee payment (block 818,087)", ans:5576998378, note:'55.76998378 BTC came out; 139.42495946 BTC went in'},
+];
+let m1s;
+function m1(){
+  m1s={round:0,picked:[],done:false};
+  $('#stage').innerHTML=head(MISSIONS[0])+`
+  <div class="gloss"><b>Little-endian</b> — "little end first": the byte worth the least is written first. To read the number, read the bytes backwards.
+  Worked example from the slide: <code>40 42 0f 00 00 00 00 00</code> → backwards <code>00 00 00 00 00 0f 42 40</code> → 0xf4240 → <b>1,000,000</b> sat.</div>
+  <div class="panel"><p class="lab">Round <span id="m1round">1</span> of ${M1R.length} · <span id="m1what"></span></p>
+    <p class="lab" style="margin-top:8px">as stored (click in reading order)</p><div class="bytes" id="m1bytes"></div>
+    <p class="lab" style="margin-top:10px">your reading order</p><div class="slots" id="m1slots"></div>
+    <div class="calc" id="m1calc"></div>
+    <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><label>decimal, in satoshi: <input type="text" id="m1in" placeholder="e.g. 797740" inputmode="numeric"></label>
+    <button class="btn key" id="m1check">Check</button><button class="btn" id="m1undo">Undo byte</button></div>
+    <div class="small" id="m1fb"></div></div>
+  ${ctl()}<div class="banner" id="banner"></div>`;
+  wireCtl(()=>m1());
+  $('#m1check').onclick=m1check; $('#m1undo').onclick=()=>{m1s.picked.pop(); m1draw();};
+  $('#m1in').addEventListener('keydown',e=>{ if(e.key==='Enter') m1check(); });
+  m1draw();
+}
+function m1draw(){
+  if(cur!==1||m1s.round>=M1R.length||!$('#m1bytes')) return;
+  const r=M1R[m1s.round]; const bytes=r.bytes.match(/../g);
+  $('#m1round').textContent=m1s.round+1; $('#m1what').textContent=r.what;
+  const bb=$('#m1bytes'); bb.innerHTML='';
+  bytes.forEach((b,i)=>{ const d=el('div','byte'+(m1s.picked.includes(i)?' pick':''),b+`<span class="ix">${i}</span>`); d.onclick=()=>{ if(!m1s.picked.includes(i)){ m1s.picked.push(i); m1draw(); } }; bb.appendChild(d); });
+  const ss=$('#m1slots'); ss.innerHTML='';
+  for(let i=0;i<8;i++){ const p=m1s.picked[i]; ss.appendChild(el('div','slot'+(p!=null?' f':''),p!=null?bytes[p]:'')); }
+  const rev=m1s.picked.map(i=>bytes[i]).join('');
+  const hex=rev.replace(/^0+/,'')||'0';
+  $('#m1calc').innerHTML=m1s.picked.length===8?`backwards <b>${m1s.picked.map(i=>bytes[i]).join(' ')}</b><br>hexadecimal <b>0x${hex}</b> — now type its decimal value`:`<span style="color:var(--lab)">click all 8 bytes in reading order…</span>`;
+  $('#m1fb').textContent='';
+}
+function m1check(){
+  const r=M1R[m1s.round]; const bytes=r.bytes.match(/../g);
+  const orderOK=m1s.picked.length===8 && m1s.picked.every((p,i)=>p===7-i);
+  const v=parseInt(($('#m1in').value||'').replace(/[,\s_]/g,''),10);
+  if(!orderOK){ $('#m1fb').innerHTML='<span style="color:var(--red)">The reading order is not right. Start with the <b>last</b> byte and go left.</span>'; return; }
+  if(v!==r.ans){ $('#m1fb').innerHTML=`<span style="color:var(--red)">0x${bytes.slice().reverse().join('').replace(/^0+/,'')} is not ${isNaN(v)?'empty':fmt(v)}. Convert the hexadecimal number again.</span>`; return; }
+  $('#m1fb').innerHTML=`<span style="color:var(--grn)">✓ ${fmt(r.ans)} sat — ${r.note}.</span>`;
+  m1s.round++; m1s.picked=[]; $('#m1in').value='';
+  if(m1s.round>=M1R.length){ won('Four real amounts, read backwards without a parser. The explorer does exactly this for you — now you know what it hides.','<i>Little-endian: the one time in computing where reading from the end is not cheating.</i>'); $('#m1round').textContent=M1R.length; return; }
+  setTimeout(m1draw,900);
+}
+SHOW[1]=()=>{ m1s.picked=[7,6,5,4,3,2,1,0]; m1draw(); $('#m1in').value=String(M1R[m1s.round].ans); };
+
+/* ================= MISSION 2: the map ================= */
+const M2Q=[
+  {ask:"the amount of output #1 (8 bytes)",span:[187,195]},
+  {ask:"the version (first field, 4 bytes)",span:[0,4]},
+  {ask:"the previous payment's ID the input spends (32 bytes)",span:[5,37]},
+  {ask:"the length byte of the key (how many bytes of key follow)",span:[41,42]},
+  {ask:"the lock of output #0 (25 bytes)",span:[162,187]},
+];
+let m2s;
+function m2(){
+  m2s={q:0,a:null,b:null,showAll:false};
+  $('#stage').innerHTML=head(MISSIONS[1])+`
+  <div class="gloss"><b>Raw transaction</b> — the payment exactly as nodes send it and blocks store it: a row of bytes. One byte = two hexadecimal characters. <b>Map:</b>
+  version (4) · input count (1) · input [previous ID 32 · output index 4 · length 1 · key · 4 extra] · output count (1) · outputs [amount 8 · length 1 · lock 25] · last 4 bytes.</div>
+  <div class="panel"><p class="lab">Question <span id="m2n">1</span> of ${M2Q.length}</p><p class="qt" id="m2ask" style="font-weight:700;margin:0 0 8px"></p>
+  <div class="hexmap" id="hexmap"></div>
+  <div class="legend" id="legend"></div>
+  <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span class="small" id="m2sel" style="margin:0">selected: nothing</span>
+  <button class="btn key" id="m2check">Check selection</button><button class="btn" id="m2clear">Clear</button><button class="btn" id="m2map">Show the whole map</button></div>
+  <div class="small" id="m2fb"></div></div>
+  ${ctl()}<div class="banner" id="banner"></div>`;
+  wireCtl(()=>m2());
+  $('#m2check').onclick=m2check; $('#m2clear').onclick=()=>{m2s.a=m2s.b=null;m2draw();}; $('#m2map').onclick=()=>{m2s.showAll=!m2s.showAll;m2draw();};
+  m2draw();
+}
+function m2draw(){
+  if(cur!==2||!$('#hexmap')) return;
+  const q=M2Q[m2s.q]; $('#m2n').textContent=Math.min(m2s.q+1,M2Q.length); $('#m2ask').textContent=q?'Click the bytes that hold '+q.ask+'.':'All five fields found — the whole map is coloured below.';
+  const hm=$('#hexmap'); hm.innerHTML='';
+  const bytes=RAW.match(/../g);
+  const lo=Math.min(m2s.a??-1,m2s.b??-1), hi=Math.max(m2s.a??-1,m2s.b??-1);
+  bytes.forEach((b,i)=>{
+    const sp=spanOf(i); const s=el('span','b'+(m2s.showAll?' '+sp[3]:'')+((m2s.a!=null&&i>=lo&&i<=hi)?' sel':''),b);
+    s.title=m2s.showAll?`byte ${i}: ${sp[2]}`:`byte ${i}`;
+    s.onmousedown=e=>{e.preventDefault(); m2s.a=i; m2s.b=i; m2draw();};
+    s.onmouseenter=e=>{ if(e.buttons===1&&m2s.a!=null){ m2s.b=i; m2draw(); } };
+    s.onclick=()=>{ if(m2s.a!=null&&m2s.a===m2s.b&&i!==m2s.a){ m2s.b=i; m2draw(); } };
+    hm.appendChild(s); if(i%32===31) hm.appendChild(el('br'));
+  });
+  const lg=$('#legend'); lg.innerHTML=m2s.showAll?`<span><i style="background:#9bb"></i>counts, version, last 4</span><span><i style="background:#1f6fb2"></i>input fields</span><span><i style="background:#7a5ea8"></i>the key (signature + public key)</span><span><i style="background:#1e8449"></i>amounts</span><span><i style="background:#c0392b"></i>locks</span>`:'';
+  $('#m2sel').textContent=m2s.a==null?'selected: nothing':`selected: bytes ${lo}–${hi} (${hi-lo+1} byte${hi-lo?'s':''})`;
+}
+function m2check(){
+  const q=M2Q[m2s.q]; if(!q) return; if(m2s.a==null){ $('#m2fb').textContent='Select some bytes first: click the first byte, then the last.'; return; }
+  const lo=Math.min(m2s.a,m2s.b), hi=Math.max(m2s.a,m2s.b)+1;
+  if(lo===q.span[0]&&hi===q.span[1]){
+    $('#m2fb').innerHTML=`<span style="color:var(--grn)">✓ bytes ${lo}–${hi-1}: <code>${RAW.slice(lo*2,hi*2).slice(0,40)}${hi-lo>20?'…':''}</code></span>`;
+    m2s.q++; m2s.a=m2s.b=null;
+    if(m2s.q>=M2Q.length){ m2s.showAll=true; m2draw(); won('Five fields found in 450 characters. Every explorer page you have ever seen is this map, coloured in.','<i>The payment never writes an address. It writes 25 bytes of lock, and the explorer paints a 1… over them for you.</i>'); return; }
+    setTimeout(m2draw,700);
+  } else {
+    const got=hi-lo, want=q.span[1]-q.span[0];
+    $('#m2fb').innerHTML=`<span style="color:var(--red)">Not those. You chose ${got} byte${got>1?'s':''} (${lo}–${hi-1}); the field has ${want}. ${lo<q.span[0]?'Move right.':lo>q.span[0]?'Move left.':'Fix the end.'}</span>`;
+  }
+}
+SHOW[2]=()=>{ const q=M2Q[m2s.q]; m2s.a=q.span[0]; m2s.b=q.span[1]-1; m2s.showAll=true; m2draw(); };
+
+/* ================= MISSION 3: decode the input ================= */
+const M3Q=[
+  {q:'The input stores 32 bytes starting <code>b2 9b 2f 64 d6 7b 4a 0d …</code> and ending <code>… 25 b1 84 dd c9</code>. Which ID does the explorer show as "the payment this input spends"?',
+   opts:['<code>c9dd84b125aec08f…2f9bb2</code> — the bytes read backwards','<code>b29b2f64d67b4a0d…84ddc9</code> — the bytes as stored','<code>9bb2f264…</code> — each byte\'s two characters swapped'],
+   ans:0, why:'IDs are stored backwards, exactly like amounts. Read the 32 bytes from the end and you get the ID the explorer prints.'},
+  {q:'Right after the ID come 4 bytes: <code>01 00 00 00</code>. What do they say?',
+   opts:['"spend output number 1 of that payment" — little-endian 1','"spend output number 16,777,216" — read as written','"there is 1 input" — the input count'],
+   ans:0, why:'<code>01 00 00 00</code> backwards is <code>00 00 00 01</code> = 1: the output <i>numbered</i> 1, i.e. the second output of the previous payment (numbering starts at 0).'},
+  {q:'Next is one length byte: <code>6a</code>. How many bytes of key follow?',
+   opts:['106 — 6 × 16 + 10','6 — only the first digit counts','0x6a = 10 bytes'],
+   ans:0, why:'<code>6a</code> is hexadecimal: 6 × 16 + 10 = 106. The key is 106 bytes long.'},
+  {q:'Inside those 106 bytes: a 71-byte signature and a 33-byte public key. 71 + 33 = 104. Where are the other 2 bytes?',
+   opts:['one length byte before the signature (<code>47</code> = 71) and one before the public key (<code>21</code> = 33)','they are padding: two zero bytes at the end','the signature is really 73 bytes; the slide rounded'],
+   ans:0, why:'Script data always comes with a length byte in front: <code>47</code> (71) then the signature, <code>21</code> (33) then the public key. 1 + 71 + 1 + 33 = 106 = <code>6a</code>.'},
+];
+let m3s;
+function m3(){
+  m3s={i:0,right:0};
+  $('#stage').innerHTML=head(MISSIONS[2])+`
+  <div class="two"><div class="panel"><p class="lab">the input, bytes 5–152 of our payment</p>
+  <div class="log"><span class="dm">previous ID (32)  </span><span class="t">b29b2f64d67b4a0da277ca2ef50e3847c28cd4023ca8933d8fc0ae25b184ddc9</span>
+<span class="dm">output index (4)  </span><span class="t">01000000</span>
+<span class="dm">length byte (1)   </span><span class="hi">6a</span>
+<span class="dm">the key (106)     </span><span class="ok">47</span> 3044…9a01 <span class="dm">(71 bytes)</span> <span class="ok">21</span> 026c…f405 <span class="dm">(33 bytes)</span>
+<span class="dm">4 extra bytes     </span><span class="t">ffffffff</span></div>
+  <p class="small">Read from mempool.space, 12 Oct 2026. Every field equals the explorer's decoded fields.</p><div class="gloss"><b>"The key"</b> — the slide's name for the unlocking data: a signature plus a public key. The signature proves the owner agreed to these bytes; the public key lets every node check that signature. Neither is the private key, which never leaves the wallet.</div></div>
+  <div id="m3q"></div></div>
+  ${ctl()}<div class="banner" id="banner"></div>`;
+  wireCtl(()=>m3()); m3draw();
+}
+function m3draw(){
+  const box=$('#m3q'); if(cur!==3||!box) return; box.innerHTML='';
+  M3Q.forEach((q,i)=>{ if(i>m3s.i) return;
+    const d=el('div','q',`<p class="qt">${i+1}. ${q.q}</p><div class="opts"></div><p class="why"></p>`);
+    const o=d.querySelector('.opts');
+    q.opts.forEach((t,k)=>{ const b=el('button','opt',t); b.onclick=()=>m3ans(i,k,d); if(i<m3s.i){ b.disabled=true; if(k===q.ans) b.classList.add('right'); } o.appendChild(b); });
+    if(i<m3s.i){ d.querySelector('.why').className='why show'; d.querySelector('.why').innerHTML=q.why; }
+    box.appendChild(d); });
+}
+function m3ans(i,k,d){
+  const q=M3Q[i]; const btns=d.querySelectorAll('.opt');
+  if(k===q.ans){ btns.forEach((b,j)=>{b.disabled=true; if(j===k) b.classList.add('right');}); d.querySelector('.why').className='why show'; d.querySelector('.why').innerHTML='✓ '+q.why;
+    m3s.i++; if(m3s.i>=M3Q.length){ won('An input = which output it spends (ID backwards + number) + the key that opens it (length-prefixed signature and public key).','<i>Two old friends live inside the input: the 71-byte signature and the 33-byte public key Lecture 4 checked. They were in the bytes all along.</i>'); } else setTimeout(m3draw,500); }
+  else { btns[k].classList.add('wrong'); btns[k].disabled=true; }
+}
+
+/* ================= MISSION 4: where is the fee ================= */
+const M4R=[
+  {name:'our payment · d9f91d3f…6dd6 (block 968,391)', ins:[1799096], outs:[1000000,797740], ans:1356},
+  {name:'a SegWit payment · 0db3220c…d854 (block 968,392)', ins:[1027061], outs:[128263,897818], ans:980},
+  {name:'the 83-BTC fee · b5a2af58…f9aa (block 818,087, 23 Nov 2023)', ins:[13942495946], outs:[5576998378], ans:8365497568},
+];
+let m4s;
+function m4(){
+  m4s={i:0};
+  $('#stage').innerHTML=head(MISSIONS[3])+`
+  <div class="gloss"><b>Transaction fee</b> — inputs − outputs, in satoshi. The 225 bytes contain the input (which coin) and two output amounts; the fee is the gap. The miner who writes the block keeps it.</div>
+  <div id="m4box"></div>
+  <div class="q"><p class="qt">Last question: in which bytes of our payment is the fee 1,356 written?</p><div class="opts" id="m4last"></div><p class="why" id="m4why"></p></div>
+  ${ctl()}<div class="banner" id="banner"></div>`;
+  wireCtl(()=>m4()); m4draw();
+  const last=[['bytes 221–225, the last 4 bytes',false],['nowhere — it is the difference the outputs leave',true],['inside output #1, after the amount',false]];
+  const lb=$('#m4last');
+  last.forEach(([t,ok])=>{ const b=el('button','opt',t); b.onclick=()=>{ if(m4s.i<M4R.length){ $('#m4why').className='why show'; $('#m4why').textContent='Compute the three fees first.'; return; } if(ok){ lb.querySelectorAll('.opt').forEach(x=>x.disabled=true); b.classList.add('right'); $('#m4why').className='why show'; $('#m4why').innerHTML='✓ Nowhere. Two amounts here, one amount in the earlier output; the difference belongs to the miner. A wallet that forgets this is how 83 BTC became a fee.'; won('Three fees computed from amounts alone — and the fourth answer is the one that matters: the fee has no field.','<i>The most expensive line in Bitcoin history was a line that does not exist.</i>'); } else { b.classList.add("wrong"); b.disabled=true; } }; lb.appendChild(b); });
+}
+function m4draw(){
+  const box=$('#m4box'); if(cur!==4||!box) return; box.innerHTML='';
+  M4R.forEach((r,i)=>{ if(i>m4s.i) return; const done=i<m4s.i;
+    const d=el('div','panel',`<p class="lab">${i+1} of 3 · ${r.name}</p>
+    <div class="calc">inputs bring   <b>${r.ins.map(fmt).join(' + ')}</b> sat<br>outputs take   <b>${r.outs.map(fmt).join(' + ')}</b> sat<br>fee = inputs − outputs = <b>${done?fmt(r.ans):'?'}</b> sat${done&&i===2?' <span class="tag bad">83.65 BTC</span>':''}</div>
+    ${done?'':`<div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><input type="text" class="m4in" placeholder="fee in satoshi" inputmode="numeric"><button class="btn key m4go">Check</button><span class="small m4fb" style="margin:0"></span></div>`}`);
+    d.style.marginBottom='10px'; box.appendChild(d);
+    if(!done){ const go=d.querySelector('.m4go'), inp=d.querySelector('.m4in');
+      const chk=()=>{ const v=parseInt((inp.value||'').replace(/[,\s_]/g,''),10); if(v===r.ans){ m4s.i++; m4draw(); } else d.querySelector('.m4fb').innerHTML=`<span style="color:var(--red)">${isNaN(v)?'Type a number.':fmt(v)+' is not it. Sum the inputs, sum the outputs, subtract.'}</span>`; };
+      go.onclick=chk; inp.addEventListener('keydown',e=>{ if(e.key==='Enter') chk(); }); if(i===m4s.i) inp.focus(); }
+  });
+  if(m4s.i>=M4R.length) box.appendChild(el('p','small','All three computed. Now the last question below.'));
+}
+SHOW[4]=()=>{ const inp=document.querySelector('.m4in'); if(inp){ inp.value=String(M4R[m4s.i].ans); } };
+
+/* ================= MISSION 5: name it ================= */
+let m5s;
+function m5(){
+  m5s={};
+  $('#stage').innerHTML=head(MISSIONS[4])+`
+  <div class="gloss"><b>Transaction ID (TXID)</b> — SHA-256 of the raw bytes, then SHA-256 again, written backwards: 64 hexadecimal characters. The machine of Lecture 4's block hash, pointed at a payment. Every node computes it; nobody assigns it. <i>Ours is an old-style payment with no witness; for a SegWit payment the ID is the hash of the bytes without the witness section — see The Shapeshifter.</i></div>
+  <div class="panel"><p class="lab">the raw bytes — edit them (this box is your <code>payment.hex</code>)</p>
+  <textarea class="hex" id="m5hex" spellcheck="false"></textarea>
+  <div class="idrow">bytes: <b id="m5len"></b> · ID now: <span id="m5id"></span></div>
+  <div class="idrow">explorer's ID: <span>${TXID}</span> <span class="tag ok" id="m5same">same</span></div>
+  <div class="idrow">target (+1 satoshi, measured 12 Oct 2026): <span>${TXID_PLUS1}</span></div>
+  <div class="idrow" id="m5match"></div>
+  <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="m5orig">Put the original back</button><button class="btn" id="m5rand">Change any one character</button></div>
+  <p class="small">What you see is the same computation as <code>txid.py</code>: <code>sha256(sha256(bytes))[::-1]</code>, only in your browser.</p></div>
+  ${ctl()}<div class="banner" id="banner"></div>`;
+  wireCtl(()=>m5());
+  const ta=$('#m5hex'); ta.value=RAW; ta.addEventListener('input',m5upd);
+  $('#m5orig').onclick=()=>{ ta.value=RAW; m5upd(); };
+  $('#m5rand').onclick=()=>{ const i=Math.floor(Math.random()*RAW.length); const c=RAW[i]; const alt='0123456789abcdef'.replace(c,''); ta.value=RAW.slice(0,i)+alt[Math.floor(Math.random()*15)]+RAW.slice(i+1); m5upd(); };
+  m5upd();
+}
+function m5upd(){
+  const hex=$('#m5hex').value.replace(/\s+/g,'').toLowerCase(); const id=txid(hex);
+  $('#m5len').textContent=id?hex.length/2:'(not a whole number of bytes)';
+  $('#m5id').innerHTML=id?id.split('').map((c,i)=>`<span class="${c===TXID[i]?'m':'x'}">${c}</span>`).join(''):'—';
+  const same=id===TXID; $('#m5same').className='tag '+(same?'ok':'bad'); $('#m5same').textContent=same?'same':'different';
+  if(id&&!same){ const n=id.split('').filter((c,i)=>c===TXID[i]).length; $('#m5match').innerHTML=`${n} of 64 characters still match the original. <span class="tag">${hex.length===RAW.length?[...hex].filter((c,i)=>c!==RAW[i]).length+' character(s) changed':'length changed'}</span>`; }
+  else $('#m5match').innerHTML='';
+  if(id===TXID_PLUS1 && !prog[5]) won('You changed one byte (40 → 41 at byte 153) and the copy got a new name: only 3 of 64 characters survived. The real payment in block 968,391 is untouched — but if a payment is changed <i>before</i> it is in a block, any later payment that already named its old ID and output number would point to nothing.','<i>One satoshi more, and the payment is a stranger to its own children.</i>');
+  else if(id===TXID_PLUS1) banner('win','Mission cleared','That is the +1 satoshi ID.');
+}
+SHOW[5]=()=>{ $('#m5hex').value=RAW.slice(0,306)+'41'+RAW.slice(308); m5upd(); };
+
+/* ---------- keys, reset, boot ---------- */
+document.addEventListener('keydown',e=>{
+  if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+  if(e.key>='1'&&e.key<='5') open(+e.key);
+  else if(e.key==='h'||e.key==='H') hint();
+  else if(e.key==='r'||e.key==='R') open(cur);
+  else if((e.key==='n'||e.key==='N')&&prog[cur]&&cur<5) open(cur+1);
+});
+$('#resetAll').onclick=()=>{ prog={}; saveP(prog); open(1); };
+function qp(k){ try{ return new URLSearchParams(location.search).get(k); }catch(e){ return null; } }
+open(+(qp('mission')||1)||1);
+
+/* ---------- selftest (dev: ?selftest=1) ---------- */
+function selftest(){
+  const out=[]; const ok=(n,c,d)=>out.push((c?'PASS ':'FAIL ')+n+(c?'':' — '+d));
+  const real=prog; prog={};
+  try{
+  ok('sha256 double of RAW = explorer ID', txid(RAW)===TXID, txid(RAW));
+  ok('+1 sat ID', txid(RAW.slice(0,306)+'41'+RAW.slice(308))===TXID_PLUS1);
+  ok('spans cover 225 bytes', SPANS.every((s,i)=>i===0||s[0]===SPANS[i-1][1]) && SPANS[SPANS.length-1][1]===225);
+  M1R.forEach(r=>ok('LE '+r.bytes, leToNum(r.bytes.match(/../g))===r.ans, leToNum(r.bytes.match(/../g))));
+  M4R.forEach(r=>ok('fee '+r.name, r.ins.reduce((a,b)=>a+b)-r.outs.reduce((a,b)=>a+b)===r.ans));
+  // UI drives
+  open(1); for(let k=0;k<M1R.length;k++){ m1s.picked=[7,6,5,4,3,2,1,0]; m1draw(); $('#m1in').value=String(M1R[k].ans); m1check(); } ok('M1 clears via UI', !!prog[1]);
+  open(2); M2Q.forEach(q=>{ m2s.a=q.span[0]; m2s.b=q.span[1]-1; m2check(); }); ok('M2 clears via UI', !!prog[2]);
+  open(3); M3Q.forEach((q,i)=>{ m3draw(); const d=document.querySelectorAll('#m3q .q')[i]; m3ans(i,q.ans,d); }); ok('M3 clears via UI', !!prog[3]);
+  open(4); M4R.forEach(r=>{ const inp=document.querySelector('.m4in'); inp.value=String(r.ans); document.querySelector('.m4go').click(); }); document.querySelectorAll('#m4last .opt')[1].click(); ok('M4 clears via UI', !!prog[4]);
+  open(5); SHOW[5](); ok('M5 clears via UI', !!prog[5]);
+  }catch(e){ out.push('FAIL exception — '+e.message); }
+  prog=real; saveP(prog); open(1);
+  const fails=out.filter(l=>l.startsWith('FAIL')).length; out.push(fails?`SELFTEST: ${fails} FAILED`:'SELFTEST: ALL PASS');
+  const r=$('#selftest-report'); r.style.display='block'; r.textContent=out.join('\n');
+}
+if(qp('selftest')==='1'){ window.onerror=(m)=>{ const r=$('#selftest-report'); r.style.display='block'; r.textContent+='\nFAIL script error — '+m; }; setTimeout(selftest,50); }
+</script>
+</body>
+</html>
