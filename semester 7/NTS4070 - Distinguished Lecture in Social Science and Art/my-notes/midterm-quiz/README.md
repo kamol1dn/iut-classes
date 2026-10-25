@@ -1,5 +1,7 @@
 # Midterm flashcards
 
+> *Ad hominem: attacking the person instead of the argument. Example: "whoever wrote this exam hates us."*
+
 A terminal flashcard game for the Distinguished Lecture midterm (30 MCQ, 1 hour). It has **696 cards**
 covering every examinable chapter. There's no 30-question cap: it keeps going until you quit.
 

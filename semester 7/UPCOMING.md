@@ -25,6 +25,8 @@ are in [timetable.md](timetable.md).
 
 ## 📝 Midterm week (Mon 10-26 → Fri 10-30)
 
+> *I'm cooked, good luck guys*
+
 From the Academic Affairs timetable (Telegram, 10-22). **Rooms will be announced later.**
 
 | When | Exam | Format and scope | Study from |
@@ -38,6 +40,8 @@ From the Academic Affairs timetable (Telegram, 10-22). **Rooms will be announced
 Blockchain has **no midterm**. Term Project I (individual, 25%) is announced in week 8 instead.
 
 ### Exam-day rules
+
+> *You cant wipe your tears at exam papers btw*
 
 - **Bring your student ID card**, or you won't be let in. Bring your own blue or black pens.
 - **Be in the room 10 min early. 10+ min late = no entry**, and no extra time. No leaving in the first 30 or

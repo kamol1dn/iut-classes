@@ -48,6 +48,8 @@ or check Telegram before assuming they're ungraded.
 
 ## 📝 Midterm (30%, week 8, 26–30 Oct): study guide posted 10-19
 
+> *ctrl = 0 is a command. So is "please let me pass".*
+
 The professor pushed a **student study guide** at 00:03 on 10-19:
 [`course-repo/weeks/exam_midterm/overview.md`](course-repo/weeks/exam_midterm/overview.md) (1,148 lines).
 

@@ -35,6 +35,8 @@ those code paths under GDB (updated 10-02).
 
 ## 📝 Midterm (30%, week 8, 26–30 Oct)
 
+> *Closed book, no calculator. The only interrupt allowed is a nervous breakdown.*
+
 Study guide added to the repo on 2026-10-18:
 [`projects2026_arm/exam_midterm/overview.md`](course-repo/projects2026_arm/exam_midterm/overview.md).
 

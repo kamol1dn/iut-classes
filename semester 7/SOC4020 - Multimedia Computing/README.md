@@ -17,6 +17,8 @@ both posted in week 1, and L3, L3-practice-code and L4 all in week 2.
 
 ## Grading — the week-1 deck adds an item eClass omits
 
+> *My GPA after this course: lossy compression.*
+
 | Item | Weight |
 |---|---|
 | Mid-term | 30% |

@@ -20,6 +20,8 @@ A weekly rhythm on eClass: one **slide deck** (`.pptx`), one or two **VODs**
 
 ## Grading — no final exam
 
+> *No final exam. Just a midterm, a debate, and the slow realisation that every argument I've ever made was a fallacy.*
+
 | Attendance | Quiz | Midterm | Debate | Total |
 |---|---|---|---|---|
 | 20% | 20% | 30% | 30% | 100% |

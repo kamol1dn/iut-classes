@@ -37,6 +37,8 @@ Exams are only 50% here — the lowest of any course this semester.
 
 ## 📝 Mid-term scope: weeks 1–6
 
+> *My study plan has converged. To a local minimum.*
+
 The professor said in class on **Thu 2026-10-22** (week 7): the midterm covers material **up to week 7**,
 and **this week's (week 7) topics go to the final**. So study lectures 1.1 through the week-6 lecture, and
 skip anything from the 10-19 and 10-22 classes.

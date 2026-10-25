@@ -84,6 +84,8 @@ so the videos were mirrored and transcribed instead.
 
 ## How this course works, and what can fail you
 
+> *No midterm here. He just mines your free time with proof of work instead.*
+
 - **A new module each Friday evening** on eClass. The first one should
   arrive around **Fri 2026-09-25**.
 - **Attendance = submitting that week's quiz.** Missing more than **25% of weeks**

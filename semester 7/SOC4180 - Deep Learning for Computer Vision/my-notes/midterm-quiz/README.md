@@ -1,5 +1,7 @@
 # Midterm flashcards
 
+> *If the residual doesn't shrink with more iterations, it's a geometry problem. Same goes for my grades.*
+
 A terminal flashcard game for the Deep Learning for Computer Vision midterm ("Robot and AI", 33 MCQ, 60 min, no
 calculator). It has **600 cards** covering weeks 0–6. There's no 33-question cap: it keeps going until you quit.
 

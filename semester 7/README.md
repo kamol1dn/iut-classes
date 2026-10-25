@@ -102,6 +102,8 @@ team early matters.
 
 ## Grading weights at a glance
 
+> *Every weight below adds up to 100%. My confidence does not.*
+
 | Course | Mid | Final | Attend. | Assign. | Quiz | Other |
 |---|---|---|---|---|---|---|
 | Distinguished Lecture | 30% | — | 20% | — | 20% | Debate 30% |
