@@ -11,12 +11,14 @@ Every week's VODs and slides are summarised in `lectures/`. The `.mp4` files are
 transcripts (`.txt`/`.srt`) and summaries (`.md`) are tracked. The course has **no progress-tracked
 activities**, so VOD windows don't affect attendance. The **weekly quiz** does.
 
-### Week 7: mining, plus four practice games
+### Week 7: mining, plus four practice games · Homework 2 (5%)
 
 | Item | Length | Notes |
 |---|---|---|
 | [SLIDE] Mining: Who Writes the Block (ubfile 72902) | 28 pp | **Downloadable**: [pdf](lectures/slides/week07%20-%20Mining%20-%20Who%20Writes%20the%20Block%20(slides).pdf) · [summary](lectures/summaries/week07%20-%20Mining%20-%20Who%20Writes%20the%20Block%20(slides).md). Proof of work, target and bits, nonce, difficulty, hashrate, coinbase, subsidy and halving, difficulty adjustment, pools, orphans, confirmations, 51% attack |
 | [VIDEO] Mining: Who Writes the Block, Parts 1 and 2 (VOD 72903, 72908) | — | Not mirrored or transcribed yet |
+| [SOURCE FILES] Mining (ubfile 72937) | 1 KB | 🆕 10-25. [`resources/week07 - Mining source/`](resources/week07%20-%20Mining%20source/README.md): `pow.py` (find a nonce by brute force) and `blockhash.py` on a real header |
+| [HOMEWORK] Assignment 2 (assign 72938) | 5% | 🆕 10-25, **due Mon 11-09 23:55**. Brief: [homework/hw2](homework/hw2/README.md). Sepolia transactions, reading and hand-decoding Bitcoin transactions, mining by hand. **Task 2.6 needs screenshots at three times of one day, and 3.5 needs two looks 30 min apart**, so start those early |
 
 The **HTML practice games** he promised in the week-6 Part 2 video. Each is an eClass page with the game embedded
 inline; saved here, they run offline in any browser. There's no score submission, so they're **practice, not

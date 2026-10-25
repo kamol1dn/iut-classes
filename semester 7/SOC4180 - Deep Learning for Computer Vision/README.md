@@ -58,6 +58,8 @@ The professor pushed a **student study guide** at 00:03 on 10-19:
   The guide says the distractors are built from the traps.
 - At the end there's a formula sheet ("memorise these"), a glossary and practice questions with answers.
 - Same format as the Embedded Software guide. The exam paper and key are gitignored in the repo.
+- **Drill it:** [`my-notes/midterm-quiz/`](my-notes/midterm-quiz/README.md) is a terminal flashcard game with
+  600 cards written from the guide and the decks (hand calculations, traps, numbers). Run `python quiz.py` there.
 
 Also new on 10-19: **week 16, the cerebellum in a walking robot** (HTML deck in `weeks/16-cerebellum/`), linked from eClass
 as URL 72641 *Cerebellum Robot*. That's after the midterm, so it isn't exam material.

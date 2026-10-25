@@ -1,6 +1,6 @@
 # Upcoming: deadlines, quizzes, exams
 
-The same for everyone in ICE23-1 · last checked on eClass **Sat 2026-10-24, 21:50**.
+The same for everyone in ICE23-1 · last checked on eClass **Sun 2026-10-25, 21:35**.
 **eClass is the authority**: check the deadline there before relying on this page. Class times and rooms
 are in [timetable.md](timetable.md).
 
@@ -17,13 +17,19 @@ are in [timetable.md](timetable.md).
 | **Sun 2026-10-25 23:59** | Distinguished Lecture | **Week-7 videos, both attendance-tracked**: [Video 7](https://eclass.inha.ac.kr/mod/vod/view.php?id=72441) (55:33) and [Midterm info](https://eclass.inha.ac.kr/mod/vod/view.php?id=72743) (3:19). Watch them to 100% inside the eClass player |
 | **Sun 2026-10-25 23:59** | Blockchain | [Quiz 2, Week 6](https://eclass.inha.ac.kr/mod/quiz/view.php?id=72454) (2%, **1 attempt, 1 h timer from when you start**). It's week 6's attendance. **Have a calculator ready.** Practise first with the [4 week-7 games](SOC4190%20-%20Blockchain%20Basics%20and%20Platforms/README.md#week-7-mining-plus-four-practice-games) |
 
+## 🟡 Open, later
+
+| Deadline | Course | Item |
+|---|---|---|
+| **Mon 2026-11-09 23:55** | Blockchain | 🆕 [Homework 2](https://eclass.inha.ac.kr/mod/assign/view.php?id=72938) (5%, posted 10-25): one ZIP with `report.pdf` + `src/txid.py`. Sepolia transactions, reading and hand-decoding Bitcoin transactions, mining by hand. **2.6 needs mempool.space screenshots at three times of one day**, 3.5 two Etherscan looks 30 min apart. The PDF says 23:59, eClass 23:55. Brief: [homework/hw2](SOC4190%20-%20Blockchain%20Basics%20and%20Platforms/homework/hw2/README.md) |
+
 ## 📝 Midterm week (Mon 10-26 → Fri 10-30)
 
 From the Academic Affairs timetable (Telegram, 10-22). **Rooms will be announced later.**
 
 | When | Exam | Format and scope | Study from |
 |---|---|---|---|
-| **Mon 10-26 11:30–12:30** | **Deep Learning for CV** (30%) | 60 min, **33 MCQ**, no notes, no calculator. Weeks **0–6** of the Robot & AI repo | The professor's [study guide](https://github.com/gnoejh/soc4180/blob/main/weeks/exam_midterm/overview.md) (ideas, maths, traps, formula sheet, practice questions) |
+| **Mon 10-26 11:30–12:30** | **Deep Learning for CV** (30%) | 60 min, **33 MCQ**, no notes, no calculator. Weeks **0–6** of the Robot & AI repo | The professor's [study guide](https://github.com/gnoejh/soc4180/blob/main/weeks/exam_midterm/overview.md) (ideas, maths, traps, formula sheet, practice questions) · 🆕 [flashcard drill](SOC4180%20-%20Deep%20Learning%20for%20Computer%20Vision/my-notes/midterm-quiz/README.md), 600 cards |
 | **Tue 10-27 14:00–15:00** | **Artificial Intelligence** (Mid-Exam) | **Weeks 1–6**; week 7 goes to the final (professor, 10-22). Group chat: **open questions worth ~6 points**, e.g. *k-means vs k-means++*, and decision trees for sure. **He checks your handwritten notes before the exam** | [Lecture summaries 1.1 → 6.2](SOC4040%20-%20Artificial%20Intelligence/README.md#materials-on-hand), including the new week-6 K-Means and PCA decks |
 | **Wed 10-28 09:30–10:30** | **Embedded Software** (30%) | 60 min, **33 MCQ**, closed book, no calculator. Lessons **00–08** | The professor's [study guide](https://github.com/gnoejh/soc3050code/blob/main/projects2026_arm/exam_midterm/overview.md), with practice problems and answers · [course README](SOC3050%20-%20Embedded%20Software%20and%20Design/README.md) |
 | **Wed 10-28 12:30–13:30** | **Multimedia Computing** | **L1–L12** (L13, image compression, started a new topic in week 7). L2 and L4 are the formula-dense ones (Huffman) | [Lecture summaries](SOC4020%20-%20Multimedia%20Computing/README.md) |

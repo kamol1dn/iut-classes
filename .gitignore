@@ -16,6 +16,7 @@ desktop.ini
 # ...except small course-made folders that classmates study from directly
 !semester 7/SOC4190 - Blockchain Basics and Platforms/resources/week06 - Bitcoin Transactions source/
 !semester 7/SOC4190 - Blockchain Basics and Platforms/resources/week07 - games/
+!semester 7/SOC4190 - Blockchain Basics and Platforms/resources/week07 - Mining source/
 
 # Lecture videos and extracted audio — downloaded from eClass for offline
 # study, never committed. Re-fetch with: python scripts/pull_vods.py
