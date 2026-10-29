@@ -31,6 +31,8 @@ A weekly rhythm on eClass: one **slide deck** (`.pptx`), one or two **VODs**
   [Midterm info summary](lectures/summaries/vod/week07%20-%20Midterm%20info.md).
   **Drill it with the flashcard game:** `python my-notes/midterm-quiz/quiz.py` (696 cards, all chapters,
   saves progress). See its [README](my-notes/midterm-quiz/README.md).
+  **Cram version (Fri 30 Oct, 09:30):** a 204-card short deck with ★ on the points he stressed, on the web
+  and in `--deck distinguished` of the shared quiz repo, plus [what he'll probably ask](my-notes/midterm-likely-questions.md).
 - **Debate (weeks 12–14, offline, on Saturdays)** is a group project worth 30%. Details to follow.
 - Week 15 is a final week with **no exam**.
 
