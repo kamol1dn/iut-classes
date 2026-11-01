@@ -161,6 +161,46 @@
       "title": "Midterm info",
       "duration": "03:19",
       "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/20/68b78958-8a81-4c39-b178-f0158558b8b9/ce1820e9-465c-41f6-b055-0e9bfebc6368.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72903,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 7,
+      "title": "Mining - Who Writes the Block (Part 1)",
+      "duration": "54:53",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/23/32295d08-7aa2-4040-9e03-0cd6064c37a4/d9f17f8e-6c8b-4d75-ac92-f592db03f134.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72908,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 7,
+      "title": "Mining - Who Writes the Block (Part 2)",
+      "duration": "52:19",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/24/0a1a76ac-1ca8-4dfa-8c09-728df9437c88/2853a8db-0e1d-49d0-a095-10600a65dffb.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72985,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 8,
+      "title": "Wallets, Forks and Types of Blockchain (Part 1)",
+      "duration": "1:00:05",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/31/e20a1434-a953-4968-9eca-70abe68b76ec/8ef0661c-8685-498e-8a57-90f0c141ff57.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 72990,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 8,
+      "title": "Wallets, Forks and Types of Blockchain (Part 2)",
+      "duration": "36:21",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/10/31/e30258b7-6792-461d-be35-6ebaf2c0b21d/e683dc05-b87b-4daf-9fdf-e877390cc2bd.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73000,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 9,
+      "title": "Social Science Lecture 1 - Technology Philosophy",
+      "duration": "1:00:46",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/01/88455d02-8e15-433d-85db-6ff977c22bcc/83a8c6f9-ffb5-42a6-86dd-655e29fd19a7.mp4/playlist.m3u8"
     }
   ]
 }

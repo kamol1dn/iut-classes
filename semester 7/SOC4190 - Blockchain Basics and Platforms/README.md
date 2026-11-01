@@ -11,6 +11,16 @@ Every week's VODs and slides are summarised in `lectures/`. The `.mp4` files are
 transcripts (`.txt`/`.srt`) and summaries (`.md`) are tracked. The course has **no progress-tracked
 activities**, so VOD windows don't affect attendance. The **weekly quiz** does.
 
+### Week 8: wallets, forks and types of blockchain
+
+The last lecture of the Bitcoin half: smart contracts are weeks 9–11. There's no quiz in this section so far, and
+**Term Project I hasn't been posted** (the syllabus says it's announced in week 8; eClass has only its grade item).
+
+| Item | Length | Notes |
+|---|---|---|
+| [SLIDE] Wallets, Forks and Types of Blockchain v2.0 (ubfile 72984) | 28 pp | 🆕 10-31. **Downloadable**: [pdf](lectures/slides/week08%20-%20Wallets,%20Forks%20and%20Types%20of%20Blockchain%20(slides).pdf) · [summary](lectures/summaries/week08%20-%20Wallets,%20Forks%20and%20Types%20of%20Blockchain%20(slides).md). Hot/cold, custodial, multisig, soft and hard forks, Bitcoin Cash, the DAO, replay attacks and chain ID, public/private/permissioned, proof of stake, finality. Demo: [sandbox.eth.build](https://sandbox.eth.build) |
+| [VIDEO] Wallets, Forks and Types of Blockchain, Parts 1 and 2 (VOD 72985, 72990) | 1:00:05 + 36:21 | 🆕 10-31. Not transcribed yet |
+
 ### Week 7: mining, plus four practice games · Homework 2 (5%)
 
 | Item | Length | Notes |

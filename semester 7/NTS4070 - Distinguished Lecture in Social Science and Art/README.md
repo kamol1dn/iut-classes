@@ -26,13 +26,11 @@ A weekly rhythm on eClass: one **slide deck** (`.pptx`), one or two **VODs**
 |---|---|---|---|---|
 | 20% | 20% | 30% | 30% | 100% |
 
-- **Midterm (week 8, offline)** covers the *Critical Thinking* chapters, weeks 1–7. **30 MCQ, 1% each, 1 hour**;
-  ~30% fallacies (ch.5), ~60% ch.1/6/10/12, ~10% ch.2/4/11. Date not announced yet. See the
-  [Midterm info summary](lectures/summaries/vod/week07%20-%20Midterm%20info.md).
-  **Drill it with the flashcard game:** `python my-notes/midterm-quiz/quiz.py` (696 cards, all chapters,
-  saves progress). See its [README](my-notes/midterm-quiz/README.md).
-  **Cram version (Fri 30 Oct, 09:30):** a 204-card short deck with ★ on the points he stressed, on the web
-  and in `--deck distinguished` of the shared quiz repo, plus [what he'll probably ask](my-notes/midterm-likely-questions.md).
+- **Midterm (week 8, offline, sat Fri 10-30)**: 30 MCQ, 1 point each, 1 hour. **Results are on eClass** (grade report),
+  and the **[answer key](https://eclass.inha.ac.kr/mod/ubfile/view.php?id=72998)** is in week 9 (posted around 11-01). It stays on
+  eClass rather than in this public repo. Before the exam: [Midterm info summary](lectures/summaries/vod/week07%20-%20Midterm%20info.md) ·
+  flashcard game `python my-notes/midterm-quiz/quiz.py` ([README](my-notes/midterm-quiz/README.md)) ·
+  [what he'll probably ask](my-notes/midterm-likely-questions.md).
 - **Debate (weeks 12–14, offline, on Saturdays)** is a group project worth 30%. Details to follow.
 - Week 15 is a final week with **no exam**.
 
@@ -116,7 +114,8 @@ None of these appear in the syllabus PDF or anywhere on eClass:
 | Lecture 4 VOD | 4 | → 10-04 | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=71475) |
 | Lecture 5 VOD · Quiz 3 | 5 | quiz → 10-11 23:59 | [VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=71777) · [quiz](https://eclass.inha.ac.kr/mod/quiz/view.php?id=71773) |
 | Debate survey 8:11 · Lecture 6-1 29:06 · Lecture 6-2 26:43 · Quiz 4 | 6 | VODs 10-10 → 10-18 · quiz → 10-19 23:59 | [6-1](https://eclass.inha.ac.kr/mod/vod/view.php?id=72217) · [6-2](https://eclass.inha.ac.kr/mod/vod/view.php?id=72220) · [quiz](https://eclass.inha.ac.kr/mod/quiz/view.php?id=72222) |
-| Video 7 55:33 · Midterm info 3:19 | 7 | 10-17 → **10-25 23:59** | [Video 7](https://eclass.inha.ac.kr/mod/vod/view.php?id=72441) · [Midterm info](https://eclass.inha.ac.kr/mod/vod/view.php?id=72743) |
+| Video 7 55:33 · Midterm info 3:19 | 7 | 10-17 → 10-25 23:59 | [Video 7](https://eclass.inha.ac.kr/mod/vod/view.php?id=72441) · [Midterm info](https://eclass.inha.ac.kr/mod/vod/view.php?id=72743) |
+| 🆕 Social Science Lecture 1: Technology Philosophy 1:00:46 | 9 | 10-31 → **11-07 23:59** | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=73000) |
 
 Every VOD here is progress-tracked: watching it inside its window is that week's attendance.
 Quizzes are 20% of this course, with one attempt each.

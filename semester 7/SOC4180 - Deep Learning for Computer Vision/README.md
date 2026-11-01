@@ -24,9 +24,12 @@ runs both the same way: eClass holds only the syllabus and a timetable image.
 | What | Where | Notes |
 |---|---|---|
 | **All lecture slides**, weeks 00–16 | [`lectures/slides/`](lectures/slides/) | Downloaded from the slides site. Each deck is **one self-contained HTML file**: download it and open it in a browser, offline. GitHub only shows the source |
-| **The whole course repo** (code, labs, notebooks, midterm guide) | [`course-repo/`](course-repo/) | A read-only snapshot of `gnoejh/soc4180` at commit `2cfc22f` (2026-10-24), refreshed every sync. The encrypted instructor archive is left out. Labs ship with their **blanks unfilled**, as the professor published them |
+| **The whole course repo** (code, labs, notebooks, midterm guide) | [`course-repo/`](course-repo/) | A read-only snapshot of `gnoejh/soc4180` at commit `1577ba7` (2026-10-25), refreshed every sync. The encrypted instructor archive is left out. Labs ship with their **blanks unfilled**, as the professor published them |
 
 To run the labs or do your own graded work, clone the real repo instead (below) so `git pull` keeps it current.
+
+**Part II is in the repo (10-25):** weeks 17–27 (`course-repo/weeks/`), on the `ubrain` library, with decks in each week's `slides/` folder. Each
+week is one lab, and the slides site still stops at week 16. The professor posts midterm results on the course's Telegram channel.
 
 **To work on labs:** clone the repo into `labs/` so lectures, labs and your work sit
 together:

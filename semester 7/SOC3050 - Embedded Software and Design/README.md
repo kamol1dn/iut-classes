@@ -24,7 +24,7 @@ image and one intro deck. **The working material is on GitHub and Telegram.**
 | What | Where | Notes |
 |---|---|---|
 | **All lecture decks**, lessons 00–19 + board pin map | [`lectures/slides/`](lectures/slides/) | Downloaded from the live slides site (rendered from the lesson sources on every push, so newer than the repo's committed `_slides/`). Download a file and open it in a browser |
-| **The course repo** (ARM + AVR projects, docs, shared libs, midterm guide) | [`course-repo/`](course-repo/) | A read-only snapshot of `gnoejh/soc3050code` at commit `7906b2f` (2026-10-24), refreshed every sync. **`tools/` is left out**: it's ~1 GB of bundled compilers and simulators. Clone the real repo to build and simulate |
+| **The course repo** (ARM + AVR projects, docs, shared libs, midterm guide) | [`course-repo/`](course-repo/) | A read-only snapshot of `gnoejh/soc3050code` at commit `ea8cfb4` (2026-11-01), refreshed every sync. **`tools/` is left out**: it's ~1 GB of bundled compilers and simulators. Clone the real repo to build and simulate |
 
 To build, flash or simulate, clone it: `git clone https://github.com/gnoejh/soc3050code labs/soc3050code`,
 then `git -C labs/soc3050code pull` to refresh.

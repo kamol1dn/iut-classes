@@ -48,11 +48,10 @@ deck. Assignment 1's doc softens that to a sliding penalty for up to 24 h; see i
 Per the syllabus, homework falls in **weeks 2, 9, 10 and 12**. In practice the
 first one arrived on eClass in week 5:
 
-> 📝 **[Assignment 1](homework/assignment1/) is due Sun 2026-10-25 23:55** (15 points).
-> It's six Python scripts (audio waveform + compression, log transform + Sobel, video
-> downscale + blur) plus `requirements.txt`, auto-graded against reference
-> outputs with a strict library whitelist. The doc contradicts itself in a few
-> places, so read the brief and email the TA before writing the image tasks.
+> 📝 **[Assignment 1](homework/assignment1/)** (15 points) closed Sun 2026-10-25. Its [brief](homework/assignment1/README.md) stays for reference.
+>
+> 🆕 **[Quiz-1](https://eclass.inha.ac.kr/mod/assign/view.php?id=72971)** appeared on eClass (week-7 section) with an upload button, but no
+> instructions or due date. Possibly just a grade slot for the in-class quiz, so check with the professor.
 
 ## Materials on hand
 

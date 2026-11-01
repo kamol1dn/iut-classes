@@ -39,6 +39,8 @@ Exams are only 50% here — the lowest of any course this semester.
 
 > *My study plan has converged. To a local minimum.*
 
+**The midterm was on Tue 10-27.** The [result slot](https://eclass.inha.ac.kr/mod/assign/view.php?id=72987) is on eClass (25 points); no marks had been posted as of 11-01. What was announced beforehand:
+
 The professor said in class on **Thu 2026-10-22** (week 7): the midterm covers material **up to week 7**,
 and **this week's (week 7) topics go to the final**. So study lectures 1.1 through the week-6 lecture, and
 skip anything from the 10-19 and 10-22 classes.

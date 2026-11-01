@@ -16,8 +16,9 @@ want to show people: an arcade with SNAKE, BREAKOUT and FLAP.
 
 Figures marked **measured on the host** come from `host/test_games.c`, which
 compiles the *real* game files and the *real* display driver with plain gcc and
-plays them with scripted joysticks. Nothing in this deck was watched in Wokwi;
-the last two slides say what that leaves open.
+plays them with scripted joysticks. The game was **watched running in Wokwi**
+on 2026-11-01 (menu, start, stick, sound), but its timing was not measured
+there; the last two slides say what that leaves open.
 
 ---
 
@@ -338,7 +339,7 @@ exactly as `oled.c`'s framebuffer held them (`host/out/*.svg`).
 |---|---|---|
 | **SNAKE** | stick steers | you hit the wall or yourself |
 | **BREAKOUT** | stick moves the paddle, A serves | three balls are lost |
-| **FLAP** | A (or B, or stick up) flaps | you touch a pipe or the ground |
+| **FLAP** | A (or stick up) flaps | you touch a pipe or the ground |
 
 The **knob** sets the speed, 1–5, in the menu. **B** pauses. Every finished game
 prints a checksummed `$SCORE` line, so the class can keep a leaderboard (Lab
@@ -435,6 +436,61 @@ the MCU only writes into that RAM.
 Not rows of pixels, as on a PC — **vertical strips of eight**. That one fact
 shapes everything below: the unit of transfer is a byte that is a column, and
 the natural unit of "this part changed" is a **page**, 8 rows deep.
+
+---
+
+## Slide 3b: I²C — Two Wires, One Byte at a Time
+
+Everything the MCU tells the panel travels over **I²C**: two wires shared by
+every chip on the bus. On the app board the same pair also reaches the
+MPU6050 motion sensor that the drone and robot lessons read.
+
+```svg
+<svg viewBox="0 0 580 190" role="img" aria-label="I2C bus: SCL and SDA with pull-up resistors, the STM32 controller, the SSD1306 at 0x3C and the MPU6050 at 0x68">
+  <text x="20" y="40" class="mono">SDA</text>
+  <text x="20" y="80" class="mono">SCL</text>
+  <path class="wire" d="M60 36 H560"/>
+  <path class="wire" d="M60 76 H560"/>
+  <rect class="reg" x="80" y="4" width="20" height="26"/>
+  <rect class="reg" x="110" y="4" width="20" height="26"/>
+  <text x="130" y="0" class="lbl">pull-ups</text>
+  <rect class="hifill" x="60" y="110" width="110" height="46" rx="5"/>
+  <text x="115" y="130" text-anchor="middle" class="mono">STM32</text>
+  <text x="115" y="146" text-anchor="middle" class="lbl">controller, PB8/PB9</text>
+  <rect class="box" x="230" y="110" width="110" height="46" rx="5"/>
+  <text x="285" y="130" text-anchor="middle" class="mono">SSD1306</text>
+  <text x="285" y="146" text-anchor="middle" class="lbl">0x3C</text>
+  <rect class="box" x="400" y="110" width="110" height="46" rx="5"/>
+  <text x="455" y="130" text-anchor="middle" class="mono">MPU6050</text>
+  <text x="455" y="146" text-anchor="middle" class="lbl">0x68</text>
+  <path class="wire" d="M100 110 V36 M130 110 V76 M270 110 V36 M300 110 V76 M440 110 V36 M470 110 V76"/>
+  <text x="290" y="182" text-anchor="middle" class="lbl">Every device sees every byte; each answers only to its own 7-bit address.</text>
+</svg>
+```
+
+| Word | Meaning |
+|---|---|
+| **SCL, SDA** | clock and data. The controller (the STM32) drives the clock; data goes either way |
+| **open drain** | a chip can only pull a line **low**; resistors pull it high. Two chips can never fight — a low always wins, harmlessly |
+| **START, STOP** (`S`, `P`) | SDA falling, then rising, while SCL is high: "a transfer begins" / "the bus is free again" |
+| **address byte** | 7-bit address, then one direction bit: 0 = write, 1 = read. `0x3C` + write goes out as `0x78` |
+| **ACK / NACK** (`A`, `N`) | after every byte the receiver pulls SDA low for one clock — "got it". **No ACK after the address means nobody is there** |
+
+One command to the panel — "display on", `AF` — is one write transfer:
+
+```
+S | 0x3C+W | A | 0x00 | A | 0xAF | A | P
+    address       control  command      stop
+                  (slide 5b)
+```
+
+Each byte costs **9 clocks** — 8 data bits and the ACK. That one number is the
+whole of slide 8's bus budget.
+
+The driver, `_lib/i2c.c`, reports three outcomes, and `Main.c` prints them at
+boot: **OK**; **NACK** — nobody answered at `0x3C` (wrong address, or SCL/SDA
+miswired); **timeout** — no answer of any kind, the bus is stuck. Slides 7 and
+7b show how the STM32's I²C block runs all of this in hardware.
 
 ---
 
@@ -584,26 +640,29 @@ transfers, 1 161 bytes** — 16 commands, then a cleared screen, all 8 pages.
 
 `8D 14` is the classic silent failure: every command ACKs, the RAM fills
 perfectly, and the glass stays black because nothing generates its drive
-voltage. It is lesson 09's MPU6050 sleep bit, in a display.
+voltage. The bus can be perfect and the device still do nothing until one bit
+is set — the same trap as a sensor that powers up asleep.
 
 ---
 
 ## Slide 7: I2C1 — the MCU's Side of the Wire, on One Page
 
 Every byte above leaves through **I2C1** at **0x40005400** (`I2C_TypeDef` in
-`stm32c031xx.h`), driven by `_lib/i2c.c` exactly as in lesson 09:
+`stm32c031xx.h`), driven by `_lib/i2c.c`. Software never toggles SCL itself:
+it tells the block *what* to send, and the block makes the START, address,
+ACKs and STOP of slide 3b.
 
 | Offset | Register | Its job | `i2c.c` here | Slide |
 |---|---|---|---|---|
-| 0x00 | **`CR1`** | enable, interrupts, filters | `PE` = 0, then 1 around `TIMINGR` | lesson 09 |
+| 0x00 | **`CR1`** | enable, interrupts, filters | `PE` = 0, then 1 around `TIMINGR`; also toggled before every transfer (Wokwi) | |
 | 0x04 | **`CR2`** | one transfer: address, direction, count, start / stop | `SADD`, `RD_WRN`, `NBYTES`, `AUTOEND`, `START`, `STOP` | 7b |
 | 0x08, 0x0C | `OAR1`, `OAR2` | the MCU's own address, as a target | — | |
 | 0x10 | **`TIMINGR`** | SCL high / low times: the bus speed | `0x0090273D` once | 8 |
 | 0x14 | `TIMEOUTR` | SMBus timeouts | — | |
 | 0x18 | **`ISR`** | status flags, polled | `TXIS`, `RXNE`, `TC`, `STOPF`, `NACKF` | 8 |
-| 0x1C | **`ICR`** | write 1 to clear a flag | `STOPCF`, `NACKCF` | lesson 09 |
+| 0x1C | **`ICR`** | write 1 to clear a flag | `STOPCF`, `NACKCF` | |
 | 0x20 | `PECR` | SMBus packet error check | — | |
-| 0x24 | **`RXDR`** | the byte received | read (MPU6050, not the panel) | lesson 09 |
+| 0x24 | **`RXDR`** | the byte received | read (MPU6050, not the panel) | — |
 | 0x28 | **`TXDR`** | the next byte to send | each of the 7 + 129 bytes | 7b, 8 |
 
 ```regs
@@ -638,8 +697,11 @@ if (rc == 0) { rc = i2c_write_read(OLED_ADDR, fb[p], 1u + OLED_W, 0, 0); }
 mode the SSD1306 advances its own pointer after every data byte, so 128 bytes
 land in 128 columns without another address.
 
-The two `I2C1->CR2` values that carry it (lesson 09, slide 8) — 7 command
-bytes, then 129 data bytes, each with `AUTOEND`:
+One write to `CR2` describes a whole transfer — address, byte count, START,
+and `AUTOEND` (send the STOP by itself after the last byte). Then software
+writes each byte to `TXDR` whenever `ISR.TXIS` says the block is ready for it.
+The two `CR2` values that carry one page — 7 command bytes, then 129 data
+bytes:
 
 ```regs
 I2C1->CR2 ; the window: 0x00 + 6 command bytes | 32 = 0x02072078 | 26, !25 AUTOEND, 24, !23:16 NBYTES, 15, 14, !13 START, 12, 11, 10 RD_WRN, 9:8, !7:1 SADD, 0
@@ -674,7 +736,9 @@ send what did not change.**
 
 These numbers are a model; the board measures the real one. `$PERF`'s
 `flush_us` field is that measurement (slide 14), and the real `TIMINGR` clock
-is not exactly 400 kHz.
+is not exactly 400 kHz. **In Wokwi the bus is slower still:** its I²C runs at
+about 100 kHz whatever `TIMINGR` says, and a full repaint measured 106 ms there
+(2026-11-01). Dirty pages matter even more in the simulator.
 
 ---
 
@@ -832,6 +896,11 @@ A slow frame does not slow the game; it makes the *next* frame run two updates.
 **Game speed is set by `next += TICK_MS`, picture smoothness by how long a
 render takes** — two different numbers, deliberately decoupled.
 
+**In Wokwi, `Main.c` spins instead of `__WFI()`** (`SLEEP_WFI 0`): with no
+timer running, Wokwi's `WFI` never woke and the board froze after the banner.
+The game behaves the same either way; on silicon `WFI` stops the core clock
+between ticks and saves current (lesson 11).
+
 ---
 
 ## Slide 13: Why a Fixed Step — and the Spiral of Death
@@ -924,8 +993,8 @@ tasks buys locking and no parallelism.
 **The RTOS earns its place when deadlines differ.** A drone reads its IMU and
 runs its attitude loop hundreds of times a second, and might show status on
 this same OLED a few times a second — and a 25 ms flush must not delay the
-motors. There the display belongs in a low-priority task, exactly as lesson 09
-put its shell at the bottom.
+motors. There the display belongs in a low-priority task, below the control
+loop.
 
 ---
 
@@ -1299,13 +1368,13 @@ From this build (`arm-none-eabi-size -A Main.elf`):
 
 | Section | Bytes | What |
 |---|---:|---|
-| `.text` | 14 092 | code: three games, menu, engine, oled, i2c, pad, adc, beep, printf |
+| `.text` | 14 168 | code: three games, menu, engine, oled, i2c, pad, adc, beep, printf |
 | `.rodata` | 1 568 | the font (475 B), sprites, note tables, strings |
 | `.data` | 132 | initialised variables |
 | `.bss` | 2 580 | framebuffer 1 032, snake ring 806, the rest |
 | stack + heap | 1 536 | reserved by the linker script |
 
-**FLASH 15 980 B of 32 KB (48.8 %), RAM 4 248 B of 12 KB (34.6 %).** Room for
+**FLASH 16 056 B of 32 KB (49.0 %), RAM 4 248 B of 12 KB (34.6 %).** Room for
 a fourth game — Lab Part 8.
 
 The largest piece of code is not a game: newlib-nano's `printf` machinery
@@ -1328,13 +1397,16 @@ HUD's `snprintf` and the serial frames — twice the largest game function,
   every frame is a full repaint;
 - the `$SCORE` frame's checksum, the high score, the screenshots.
 
-**Not measured, because nothing here ran in Wokwi:**
+**Watched in Wokwi (2026-11-01):** the SSD1306 accepts the init sequence and
+the page writes, A starts a game, the stick moves the menu, the buzzer plays.
+It took three Wokwi-only fixes (stale I²C `TXIS`, a timer left counting, a
+`WFI` that never woke) — see the lesson README.
 
-- the real flush time — `i2c.c` is polled and its `TIMINGR` is not exactly
-  400 kHz; `$PERF`'s `flush_us` will say;
-- whether Wokwi's SSD1306 accepts the init sequence and the 129-byte page
-  writes (it documents support for Adafruit's library, which sends the same
-  commands);
+**Not measured yet:**
+
+- the real flush time on silicon — `i2c.c` is polled and its `TIMINGR` is not
+  exactly 400 kHz; `$PERF`'s `flush_us` will say. Wokwi's I²C runs at about
+  100 kHz (a full repaint: 106 ms), so its figures are not silicon's;
 - CPU time of update and draw (`busy %` minus the flush);
 - whether the keys `a` and `b` reach the buttons while the joystick has focus;
 - whether it is fun at level 3.
