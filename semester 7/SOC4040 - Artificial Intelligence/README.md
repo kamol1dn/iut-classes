@@ -34,12 +34,17 @@ Exams are only 50% here — the lowest of any course this semester.
 > 🔴 **"Taking note — checking before mid exam and final exam."** He inspects
 > your notes before each exam. Keeping a written notebook is a requirement, not
 > a suggestion.
+>
+> It's graded: eClass added **[Notebook scoring (Part 1)](https://eclass.inha.ac.kr/mod/assign/view.php?id=73013)**
+> (week-8 section, seen 11-03), a **0–5** grade item in the gradebook's *Midterm exam* category next to the
+> 25-point result. Nothing to submit online; it's the score from the pre-midterm notes check. Expect a
+> Part 2 before the final.
 
 ## 📝 Mid-term scope: weeks 1–6
 
 > *My study plan has converged. To a local minimum.*
 
-**The midterm was on Tue 10-27.** The [result slot](https://eclass.inha.ac.kr/mod/assign/view.php?id=72987) is on eClass (25 points); no marks had been posted as of 11-01. What was announced beforehand:
+**The midterm was on Tue 10-27.** The [result slot](https://eclass.inha.ac.kr/mod/assign/view.php?id=72987) is on eClass (25 points); no marks had been posted as of 11-03, nor for the notebook check (5 points). What was announced beforehand:
 
 The professor said in class on **Thu 2026-10-22** (week 7): the midterm covers material **up to week 7**,
 and **this week's (week 7) topics go to the final**. So study lectures 1.1 through the week-6 lecture, and

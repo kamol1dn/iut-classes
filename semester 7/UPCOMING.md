@@ -1,6 +1,6 @@
 # Upcoming: deadlines, quizzes, exams
 
-The same for everyone in ICE23-1 · last checked on eClass **Sun 2026-11-01, 21:15**.
+The same for everyone in ICE23-1 · last checked on eClass **Tue 2026-11-03, 09:50** (Artificial Intelligence only; other courses as of Sun 11-01, 21:15).
 **eClass is the authority**: check the deadline there before relying on this page. Class times and rooms
 are in [timetable.md](timetable.md).
 
@@ -24,7 +24,7 @@ are in [timetable.md](timetable.md).
 | Exam | Sat | Results as of 11-01 |
 |---|---|---|
 | Deep Learning for CV | Mon 10-26 | **Out**, on the course Telegram channel (pinned on eClass) |
-| Artificial Intelligence | Tue 10-27 | **Not posted**. [The result slot](https://eclass.inha.ac.kr/mod/assign/view.php?id=72987) is on eClass, still ungraded |
+| Artificial Intelligence | Tue 10-27 | **Not posted** (11-03). [The result slot](https://eclass.inha.ac.kr/mod/assign/view.php?id=72987) (25) is on eClass, still ungraded. 🆕 So is **[Notebook scoring (Part 1)](https://eclass.inha.ac.kr/mod/assign/view.php?id=73013)** (5): the pre-midterm check of your written notes is graded |
 | Embedded Software | Wed 10-28 | **Out** (group chat, 11-01) |
 | Multimedia Computing | Wed 10-28 | No word yet |
 | Distinguished Lecture | Fri 10-30 | **Out**, in your eClass grade report. **[Answer key](https://eclass.inha.ac.kr/mod/ubfile/view.php?id=72998)** on eClass, week 9 |
