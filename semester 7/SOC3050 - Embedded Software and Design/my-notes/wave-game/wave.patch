@@ -1,0 +1,433 @@
+diff --git a/projects2026_arm/12_Game/arcade.c b/projects2026_arm/12_Game/arcade.c
+index 3d63aa0..a2576a2 100644
+--- a/projects2026_arm/12_Game/arcade.c
++++ b/projects2026_arm/12_Game/arcade.c
+@@ -14,7 +14,7 @@
+ #include "arcade.h"
+ #include "proto.h"
+ 
+-static const game_t *const games[] = { &game_snake, &game_breakout, &game_flap };
++static const game_t *const games[] = { &game_snake, &game_breakout, &game_flap, &game_wave };
+ #define NGAMES ((int)(sizeof games / sizeof games[0]))
+ 
+ #define OVER_HOLD  (TICK_HZ * 3 / 4)    /* ignore buttons for 0.75 s after death */
+@@ -104,20 +104,20 @@ static void draw_menu(void)
+     text_center(0, "SOC3050 ARCADE", OLED_ON);
+     oled_hline(0, 8, OLED_W, OLED_ON);
+     for (int g = 0; g < NGAMES; g++) {
+-        int y = 12 + g * 11;
++        int y = 11 + g * 9;                           /* four rows of 9 px    */
+         char hi[16];
+         snprintf(hi, sizeof hi, "HI %ld", (long)high[g]);
+-        if (g == sel) { oled_fill_rect(2, y - 2, OLED_W - 4, 11, OLED_ON); }
++        if (g == sel) { oled_fill_rect(2, y - 1, OLED_W - 4, 9, OLED_ON); }
+         int c = (g == sel) ? OLED_XOR : OLED_ON;       /* inverted when chosen */
+         oled_text(8, y, games[g]->name, c);
+         oled_text(OLED_W - 8 - 6 * (int)strlen(hi), y, hi, c);
+     }
+-    oled_text(8, 46, "SPEED", OLED_ON);
++    oled_text(8, 48, "SPEED", OLED_ON);
+     for (int i = 0; i < 5; i++) {                     /* the knob, as 5 boxes */
+-        if (i < level) { oled_fill_rect(44 + i * 9, 46, 7, 7, OLED_ON); }
+-        else           { oled_rect(44 + i * 9, 46, 7, 7, OLED_ON); }
++        if (i < level) { oled_fill_rect(44 + i * 9, 48, 7, 7, OLED_ON); }
++        else           { oled_rect(44 + i * 9, 48, 7, 7, OLED_ON); }
+     }
+-    text_center(56, "A:PLAY  STICK:PICK", OLED_ON);
++    text_center(57, "A:PLAY  STICK:PICK", OLED_ON);
+ }
+ 
+ int score_frame(char *out, size_t n, const char *game, int32_t score)
+diff --git a/projects2026_arm/12_Game/engine.h b/projects2026_arm/12_Game/engine.h
+index 5db1abd..bd3c42a 100644
+--- a/projects2026_arm/12_Game/engine.h
++++ b/projects2026_arm/12_Game/engine.h
+@@ -38,7 +38,7 @@ typedef struct {
+     int32_t (*score)(void);
+ } game_t;
+ 
+-extern const game_t game_snake, game_breakout, game_flap;
++extern const game_t game_snake, game_breakout, game_flap, game_wave;
+ 
+ /* ---- sound: the one hook to the platform -------------------------------- */
+ enum { SFX_MOVE, SFX_SELECT, SFX_START, SFX_EAT, SFX_BOUNCE, SFX_BRICK,
+@@ -77,5 +77,8 @@ void snake_peek(peek_t *p);
+ int  snake_cell_free(int cx, int cy);     /* inside the walls and not snake */
+ void breakout_peek(peek_t *p);
+ void flap_peek(peek_t *p);
++void wave_peek(peek_t *p);
++void wave_state(int32_t *cam_fp, int32_t *y_fp, int *pace);  /* WAVE's exact state */
++int  wave_hits(int32_t wx, int y);                            /* 1 = touches rock    */
+ 
+ #endif
+diff --git a/projects2026_arm/12_Game/host/run.bat b/projects2026_arm/12_Game/host/run.bat
+index ec18818..91777be 100644
+--- a/projects2026_arm/12_Game/host/run.bat
++++ b/projects2026_arm/12_Game/host/run.bat
+@@ -4,7 +4,7 @@ REM The real game files and the real oled.c; only the I2C bus is a stub.
+ REM Then, to refresh the deck's screenshots:  python embed_shots.py
+ pushd "%~dp0"
+ if not exist out mkdir out
+-gcc -std=c11 -O2 -Wall -Wextra -I.. -I..\..\_lib -o out\test_games.exe test_games.c ..\engine.c ..\arcade.c ..\snake.c ..\breakout.c ..\flappy.c ..\..\_lib\oled.c ..\..\_lib\proto.c ..\..\_lib\keys.c ..\..\_lib\kbd.c ..\..\_lib\mirror.c
++gcc -std=c11 -O2 -Wall -Wextra -I.. -I..\..\_lib -o out\test_games.exe test_games.c ..\engine.c ..\arcade.c ..\snake.c ..\breakout.c ..\flappy.c ..\wave.c ..\..\_lib\oled.c ..\..\_lib\proto.c ..\..\_lib\keys.c ..\..\_lib\kbd.c ..\..\_lib\mirror.c
+ if errorlevel 1 (popd & exit /b 1)
+ out\test_games.exe
+ set RC=%ERRORLEVEL%
+diff --git a/projects2026_arm/12_Game/host/run.sh b/projects2026_arm/12_Game/host/run.sh
+index d05a4bd..4b015b6 100644
+--- a/projects2026_arm/12_Game/host/run.sh
++++ b/projects2026_arm/12_Game/host/run.sh
+@@ -6,6 +6,6 @@ set -e
+ cd "$(dirname "$0")"
+ mkdir -p out
+ gcc -std=c11 -O2 -Wall -Wextra -I.. -I../../_lib -o out/test_games \
+-    test_games.c ../engine.c ../arcade.c ../snake.c ../breakout.c ../flappy.c \
++    test_games.c ../engine.c ../arcade.c ../snake.c ../breakout.c ../flappy.c ../wave.c \
+     ../../_lib/oled.c ../../_lib/proto.c ../../_lib/keys.c ../../_lib/kbd.c ../../_lib/mirror.c
+ ./out/test_games
+diff --git a/projects2026_arm/12_Game/host/test_games.c b/projects2026_arm/12_Game/host/test_games.c
+index 651ab3b..a02a060 100644
+--- a/projects2026_arm/12_Game/host/test_games.c
++++ b/projects2026_arm/12_Game/host/test_games.c
+@@ -228,6 +228,39 @@ static pad_t flap_pilot(int t)
+     return p;
+ }
+ 
++/* WAVE: look ahead.  After k ticks the dart has made some number of climbs
++ * and dives, and only their difference matters for its height - so the
++ * future is a triangle of (k, height) states, not a tree.  Mark which states
++ * can still survive WAVE_LOOK ticks (backwards, with the game's own
++ * arithmetic and wave_hits()), then take the first move that keeps a
++ * survivor, preferring the one towards the middle of the cave ahead.
++ * If neither survives, the cave is impossible - the check below counts that. */
++#define WAVE_LOOK 60
++static int wave_doomed;                       /* ticks with no surviving path  */
++static pad_t wave_hold(int t) { pad_t p = no_input(t); p.down = PAD_A; return p; }
++static pad_t wave_pilot(int t)
++{
++    pad_t p = no_input(t);
++    peek_t w;  wave_peek(&w);
++    int32_t cam, y;  int pace;
++    wave_state(&cam, &y, &pace);
++    static uint8_t ok[WAVE_LOOK + 2][2 * WAVE_LOOK + 3];   /* [k][dives - climbs + LOOK + 1] */
++    for (int k = WAVE_LOOK; k >= 1; k--) {
++        int32_t wx = ((cam + (int32_t)k * pace) >> FP) + 24;
++        for (int j = -k; j <= k; j += 2) {
++            int yy = (int)((y + (int32_t)j * pace) >> FP);
++            int safe = !wave_hits(wx, yy);
++            int next = (k == WAVE_LOOK) || ok[k + 1][j + 2 + WAVE_LOOK] || ok[k + 1][j + WAVE_LOOK];
++            ok[k][j + 1 + WAVE_LOOK] = (uint8_t)(safe && next);
++        }
++    }
++    int up_ok = ok[1][WAVE_LOOK], down_ok = ok[1][WAVE_LOOK + 2];
++    int want_up = (int)(y >> FP) > w.ty;
++    if (!up_ok && !down_ok) { wave_doomed++; }
++    if (up_ok && (want_up || !down_ok)) { p.down = PAD_A; }
++    return p;
++}
++
+ /* ============================================================================
+  *  One run: start, then step + draw + flush every tick, measuring the bus
+  * ============================================================================ */
+@@ -402,6 +435,33 @@ int main(int argc, char **argv)
+     CHECK(f0.over && f0.ticks == 193, "no input: hovers 3 s then falls to the ground on tick %d (predicted 149 + 44 = 193)", f0.ticks);
+     run_t fd = run(&game_flap, 3, 99u, flap_pilot, 6000, 1, 0, 0);
+ 
++    /* ---- WAVE ----------------------------------------------------------- */
++    printf("\nWAVE\n");
++    run_t w = run(&game_wave, 3, 31337u, wave_pilot, 6000, 0, "wave", 900);
++    printf("        autopilot, level 3: %d ticks (%.1f s), score %ld, %s\n",
++           w.ticks, w.ticks / 50.0, (long)w.score, w.over ? "crashed" : "still flying");
++    CHECK(!w.over && w.score >= 300, "the autopilot flies the cave for 2 minutes: score %ld (need >= 300)", (long)w.score);
++    run_t w0 = run(&game_wave, 3, 31337u, no_input, 2000, 0, 0, 0);
++    /* Hovers 150 ticks at y = 36 in a run-up whose floor is at 52.  Released,
++     * it dives 1 px per tick (level 3: 256/256): its hitbox's bottom row
++     * y + 1 reaches 52 when y = 51, after 15 ticks - tick 150 + 14 = 164. */
++    CHECK(w0.over && w0.ticks == 164, "no input: hovers 3 s, then dives into the floor on tick %d (predicted 164)", w0.ticks);
++    run_t wh = run(&game_wave, 3, 31337u, wave_hold, 2000, 0, 0, 0);
++    CHECK(wh.over && wh.ticks == 15, "A held from the start: climbs into the ceiling on tick %d (predicted 15)", wh.ticks);
++    run_t wa = run(&game_wave, 3, 31337u, wave_pilot, 6000, 0, 0, 0);
++    CHECK(wa.hash == w.hash && wa.ticks == w.ticks, "deterministic: same seed -> same %d ticks and framebuffer", wa.ticks);
++    run_t wb = run(&game_wave, 3, 4242u, wave_pilot, 600, 0, 0, 0);
++    run_t wc = run(&game_wave, 3, 31337u, wave_pilot, 600, 0, 0, 0);
++    CHECK(wb.hash != wc.hash, "a different seed digs a different cave");
++    int ok_levels = 1;
++    for (int lv = 1; lv <= 5; lv++) {
++        wave_doomed = 0;
++        run_t r = run(&game_wave, lv, 7u * (uint32_t)lv, wave_pilot, 15000, 0, 0, 0);
++        printf("        level %d: score %ld in %.1f s%s, %d doomed ticks\n", lv, (long)r.score, r.ticks / 50.0, r.over ? ", crashed" : "", wave_doomed);
++        if (r.over || wave_doomed) { ok_levels = 0; }
++    }
++    CHECK(ok_levels, "every level is passable: 5 minutes at each of levels 1-5, never a tick with no way through");
++
+     /* ---- the bus budget --------------------------------------------------- */
+     printf("\nTHE BUS BUDGET, per frame (one frame per 20 ms tick), modelled at 400 kHz\n");
+     printf("            ------- dirty pages --------------- | --- full repaint ---- | dirty/full  frames\n");
+@@ -420,6 +480,7 @@ int main(int argc, char **argv)
+     loop_row("BREAKOUT", &game_breakout, 4242u, breakout_pilot, 1);
+     loop_row("FLAP", &game_flap, 99u, flap_pilot, 0);
+     loop_row("FLAP", &game_flap, 99u, flap_pilot, 1);
++    loop_row("WAVE", &game_wave, 31337u, wave_pilot, 0);
+ 
+     /* ---- the arcade: menu, play, game over, $SCORE, high score ------------ */
+     printf("\nARCADE\n");
+@@ -429,7 +490,7 @@ int main(int argc, char **argv)
+     for (int t = 0; t < 10; t++) { arcade_step(&in); arcade_draw(); }
+     in.knob = 650;                                    /* level 4 */
+     arcade_step(&in); arcade_draw();
+-    in.y = 100; arcade_step(&in); in.y = 0; arcade_step(&in);      /* up: wraps to FLAP */
++    in.y = 100; arcade_step(&in); in.y = 0; arcade_step(&in);      /* up: wraps to WAVE */
+     in.y = -100; arcade_step(&in); in.y = 0; arcade_step(&in);     /* down: back to SNAKE */
+     arcade_draw();
+     shot("menu");
+@@ -575,13 +636,13 @@ int main(int argc, char **argv)
+     kbd_init(&kb);
+     now = 5000;
+     for (int i = 0; i < 10; i++) { kp = no_input(0); kbd_apply(&kb, &kp, now); arcade_step(&kp); now += TICK_MS; }
+-    kbd_type(&kb, "\x1b[A", now);                         /* one tap: wraps to FLAP */
++    kbd_type(&kb, "\x1b[A", now);                         /* one tap: wraps to WAVE */
+     for (int i = 0; i < 20; i++) { kp = no_input(0); kbd_apply(&kb, &kp, now); arcade_step(&kp); now += TICK_MS; }
+     kbd_type(&kb, "a", now);
+     kp = no_input(0); kbd_apply(&kb, &kp, now); arcade_step(&kp);
+-    CHECK(arcade_game() == 2 && arcade_state() == ARC_PLAY, "the arcade by keys: one Up tap selects FLAP, a starts it");
++    CHECK(arcade_game() == 3 && arcade_state() == ARC_PLAY, "the arcade by keys: one Up tap wraps to WAVE, a starts it");
+ 
+-    printf("\nscreenshots written to host/out/: snake breakout flap menu gameover (.txt and .svg)\n");
++    printf("\nscreenshots written to host/out/: snake breakout flap wave menu gameover (.txt and .svg)\n");
+     printf("%s: %d check(s) failed\n", failures ? "FAILED" : "PASSED", failures);
+     return failures ? 1 : 0;
+ }
+diff --git a/projects2026_arm/12_Game/wave.c b/projects2026_arm/12_Game/wave.c
+new file mode 100644
+index 0000000..256a2d0
+--- /dev/null
++++ b/projects2026_arm/12_Game/wave.c
+@@ -0,0 +1,228 @@
++/*
++ * wave.c - WAVE.  Hold to climb, let go to dive, both at 45 degrees.   PURE C.
++ *
++ * A dart flies right through a cave that scrolls past it.  It never moves
++ * straight: while A (or the stick up) is HELD it climbs at 45 degrees, and
++ * the moment it is released it dives at 45 degrees.  So the whole game is
++ * one bit of input per tick, and the dart's path is a zig-zag - drawn behind
++ * it as a trail.
++ *
++ * 45 degrees means the vertical speed IS the horizontal speed:
++ *
++ *     cam += speed;                       the cave scrolls left by speed
++ *     y   += held ? -speed : +speed;      the dart climbs or dives as much
++ *
++ * Both in fixed point (1/256 px), so a speed of 1.25 px per tick is exact.
++ *
++ * The cave is a ring buffer of columns, one per world pixel: top[c] is the
++ * last row of the ceiling, bot[c] the first row of the floor.  New columns
++ * are generated ahead of the screen in SEGMENTS: for 8..39 columns the
++ * ceiling and floor each slope by -1, 0 or +1 px per column - flat or 45
++ * degrees, the same angles the dart flies, so a skilled player can skim a
++ * slope.  The gap is never allowed below `gmin`, which shrinks as the score
++ * rises, so the cave is always passable and always getting tighter.
++ *
++ * Touching the ceiling or the floor ends the game.  Score = distance flown,
++ * one point per 8 px.
++ */
++#include "engine.h"
++
++#define WAVE_X     24                   /* the dart's screen column           */
++#define RING       256                  /* cave columns kept: > 128 + WAVE_X  */
++#define RMASK      (RING - 1)
++#define TOP_MIN    (FIELD_Y + 1)        /* the ceiling is at least 2 rows     */
++#define BOT_MAX    (OLED_H - 2)         /* the floor is at least 2 rows       */
++#define GAP_MAX    40
++#define FLAT_START 96                   /* a straight run-up before the cave  */
++#define WAIT_AUTO  (3 * TICK_HZ)        /* starts by itself after 3 s         */
++#define PX_PER_PT  8                    /* score: one point per 8 px          */
++
++static int8_t  top[RING], bot[RING];    /* the cave, by world column & RMASK  */
++static int8_t  trail[RING];             /* the dart's y at each world column  */
++static int32_t gen_x;                   /* next world column to generate      */
++static int     seg_left, ts, bs;        /* the current segment: slopes, length */
++
++static int32_t cam;                     /* world x of screen column 0, 1/256 px */
++static int32_t wy;                      /* the dart's y, 1/256 px             */
++static int32_t start_x;                 /* world column where the trail begins */
++static int     level, speed, gmin0, waiting, wait_ticks, going_up, milestone;
++static int32_t score;
++
++static int shown_cam = -1, shown_y = -1, shown_up = -1, shown_prompt, need_full;
++
++/* ---- the cave ------------------------------------------------------------- */
++static int gmin_now(void)
++{
++    int g = gmin0 - (int)(score / 40);   /* one pixel tighter every 40 points  */
++    return g < 12 ? 12 : g;
++}
++
++static void new_segment(void)
++{
++    seg_left = 8 + (int)rng_below(32);
++    ts = (int)rng_below(3) - 1;         /* -1 up, 0 flat, +1 down             */
++    bs = (int)rng_below(3) - 1;
++}
++
++/* One more column on the right of the cave. */
++static void gen_column(void)
++{
++    int32_t c = gen_x;
++    int t = top[(c - 1) & RMASK], b = bot[(c - 1) & RMASK];
++    if (c - start_x < FLAT_START) {                         /* the run-up     */
++        top[c & RMASK] = (int8_t)t;  bot[c & RMASK] = (int8_t)b;
++        gen_x++;
++        return;
++    }
++    if (--seg_left <= 0) { new_segment(); }
++    int g = gmin_now();
++    int nt = t + ts, nb = b + bs;
++    if (nt < TOP_MIN) { nt = TOP_MIN; ts = 0; }
++    if (nb > BOT_MAX) { nb = BOT_MAX; bs = 0; }
++    if (nb - nt < g) {                  /* too tight: undo the narrowing      */
++        if (nt > t) { nt = t; ts = 0; }
++        if (nb < b) { nb = b; bs = 0; }
++        if (nb - nt < g) { nb = nt + g; if (nb > BOT_MAX) { nb = BOT_MAX; nt = nb - g; } }
++    }
++    if (nb - nt > GAP_MAX) {            /* too wide: undo the widening        */
++        if (nt < t) { nt = t; ts = 0; }
++        if (nb > b) { nb = b; bs = 0; }
++    }
++    top[c & RMASK] = (int8_t)nt;  bot[c & RMASK] = (int8_t)nb;
++    gen_x++;
++}
++
++/* The dart's hitbox is 3 x 3 around its centre - small, like the real
++ * thing: a hit the player can see is fair.  1 if it touches rock. */
++int wave_hits(int32_t wx, int y)
++{
++    for (int32_t c = wx - 1; c <= wx + 1; c++) {
++        if (y - 1 <= top[c & RMASK] || y + 1 >= bot[c & RMASK]) { return 1; }
++    }
++    return 0;
++}
++
++/* a little faster every 50 points, at most 1/4 px per tick faster */
++static int pace_now(void) { int up = 8 * (int)(score / 50); return speed + (up > 64 ? 64 : up); }
++
++/* ---- the game --------------------------------------------------------------- */
++static void wave_start(int lvl)
++{
++    level = lvl;  score = 0;  milestone = 0;
++    speed = 192 + 32 * (lvl - 1);       /* 0.75 .. 1.25 px per tick           */
++    gmin0 = 30 - 3 * lvl;               /* 27 px at level 1 .. 15 at level 5  */
++    cam = 0;  start_x = 0;
++    int mid = (FIELD_Y + OLED_H) / 2;
++    wy = (int32_t)mid << FP;
++    waiting = 1;  wait_ticks = 0;  going_up = 0;
++    /* a wide straight tunnel to start in */
++    top[RMASK] = (int8_t)(mid - 16);  bot[RMASK] = (int8_t)(mid + 16);
++    gen_x = 0;
++    new_segment();
++    for (int i = 0; i < RING; i++) { trail[i] = (int8_t)mid; }
++    while (gen_x < OLED_W + 1) { gen_column(); }
++    need_full = 1;  shown_cam = -1;
++}
++
++static int wave_step(const pad_t *in)
++{
++    /* HELD, not pressed: the wave climbs for as long as the button is down. */
++    int held = (in->down & PAD_A) || in->y > 50;
++
++    if (waiting) {
++        if (held || ++wait_ticks >= WAIT_AUTO) { waiting = 0; }
++        else { return 0; }
++    }
++    going_up = held;
++
++    int pace = pace_now();
++    int32_t x0 = (cam >> FP) + WAVE_X, y0 = wy >> FP;
++    cam += pace;
++    wy  += held ? -pace : pace;
++    int32_t x1 = (cam >> FP) + WAVE_X, y1 = wy >> FP;
++
++    while (gen_x <= (cam >> FP) + OLED_W) { gen_column(); }
++
++    /* the trail: every column crossed this tick, its y on the straight line */
++    for (int32_t c = x0 + 1; c <= x1; c++) {
++        int y = (int)(y0 + (y1 - y0) * (c - x0) / (x1 - x0));
++        trail[c & RMASK] = (int8_t)y;
++    }
++
++    int32_t s = ((cam >> FP) + WAVE_X - start_x) / PX_PER_PT;
++    if (s > score) {
++        score = s;
++        if (score / 100 > milestone) { milestone = (int)(score / 100); sfx(SFX_LEVEL); }
++        else if (score % 25 == 0)    { sfx(SFX_POINT); }
++    }
++
++    return wave_hits(x1, (int)y1);
++}
++
++/* ---- drawing ---------------------------------------------------------------- */
++static void dart(int x, int y, int up, int colour)
++{
++    /* a little arrowhead pointing along the 45-degree path */
++    int d = up ? -1 : 1;
++    oled_line(x - 2, y - 2 * d, x + 2, y + 2 * d, colour);   /* the shaft      */
++    oled_line(x + 2, y + 2 * d, x - 1, y + 2 * d, colour);   /* the head ...   */
++    oled_line(x + 2, y + 2 * d, x + 2, y - d, colour);       /* ... both sides */
++}
++
++static void wave_draw(int full)
++{
++    int cx = (int)(cam >> FP), y = (int)(wy >> FP);
++    if (!full && !need_full && cx == shown_cam && y == shown_y && going_up == shown_up
++        && shown_prompt == waiting) {
++        return;                                              /* nothing moved */
++    }
++    if (full || need_full) { oled_clear(); need_full = 0; }
++    else { oled_fill_rect(0, FIELD_Y, OLED_W, OLED_H - FIELD_Y, OLED_OFF); }
++
++    for (int x = 0; x < OLED_W; x++) {
++        int32_t c = cx + x;
++        int t = top[c & RMASK], b = bot[c & RMASK];
++        oled_vline(x, t - 1, 2, OLED_ON);                    /* the edges, 2 px */
++        oled_vline(x, b, 2, OLED_ON);
++        /* the rock: staggered dots, fixed to the world so they scroll with it
++         * - dots, not lines, so they never look like the dart's trail */
++        for (int r = FIELD_Y; r < OLED_H; r += 2) {
++            if (r > t - 3 && r < b + 3) { continue; }
++            if (((c + ((r >> 1) & 1) * 2) & 3) == 0) { oled_pixel(x, r, OLED_ON); }
++        }
++        if (x < WAVE_X && c > start_x) {                     /* the zig-zag    */
++            oled_pixel(x, trail[c & RMASK], OLED_ON);
++        }
++    }
++    dart(WAVE_X, y, going_up, OLED_ON);
++    if (waiting) {
++        oled_fill_rect(37, 49, 55, 9, OLED_OFF);
++        oled_text(40, 50, "HOLD A", OLED_ON);
++    }
++    shown_cam = cx;  shown_y = y;  shown_up = going_up;  shown_prompt = waiting;
++    hud("WAVE", score, -1, full);
++}
++
++static int32_t wave_score(void) { return score; }
++
++const game_t game_wave = { "WAVE", wave_start, wave_step, wave_draw, wave_score };
++
++/* ---- for the host test ---------------------------------------------------- */
++void wave_peek(peek_t *p)
++{
++    /* tx/ty: the middle of the cave a few columns ahead of the dart */
++    int32_t c = (cam >> FP) + WAVE_X + 6;
++    p->x = WAVE_X;  p->y = (int)(wy >> FP);  p->w = 3;  p->h = 3;
++    p->tx = (int)c;
++    p->ty = (top[c & RMASK] + bot[c & RMASK]) / 2;
++    p->gap = bot[c & RMASK] - top[c & RMASK];
++    p->vx = speed;  p->vy = going_up ? -speed : speed;
++    p->count = (int)score;  p->lives = waiting;
++}
++
++/* The exact state, so the host test's autopilot can look ahead with the
++ * game's own arithmetic and wave_hits(). */
++void wave_state(int32_t *cam_fp, int32_t *y_fp, int *pace)
++{
++    *cam_fp = cam;  *y_fp = wy;  *pace = pace_now();
++}
