@@ -2,3 +2,4 @@ progress.json
 progress.tmp
 progress.broken.json
 __pycache__/
+answers.jsonl

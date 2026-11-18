@@ -48,12 +48,20 @@ type the key and press Enter.
 ```bash
 python quiz.py 4
 ```
-Only week 4, walking. `2` gives weeks 2 and 2b together.
+Only week 4, walking. `2` gives weeks 2 and 2b together; `2b` gives only 2b.
 
 ```bash
 python quiz.py 5 6
 ```
 Several weeks.
+
+New cards come **in course order** by default: week 0 from its first idea to its last, then week 1, and so on,
+so you can learn from the questions and their explanations. Missed cards still come back a few cards later.
+For random order weighted by exam share (better for a final mixed drill), add `--mix`:
+
+```bash
+python quiz.py --mix
+```
 
 ```bash
 python quiz.py --missed

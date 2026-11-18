@@ -2,9 +2,11 @@
 """Midterm flashcards for Deep Learning for Computer Vision ("Robot and AI", weeks 0-6).
 
     python quiz.py              all weeks
-    python quiz.py 4            only week 4, walking  (any of 0-6; 2 includes 2b)
+    python quiz.py 4            only week 4, walking  (any of 0-6; 2 includes 2b, 2b alone is 2b)
     python quiz.py 5 6          several weeks
     python quiz.py --missed     only cards you got wrong and haven't fixed yet
+    python quiz.py --mix        new cards in random order, weighted by exam share
+                                (default: course order, week 0 first, as the guide teaches it)
     python quiz.py stats        progress per week + weakest topics
     python quiz.py reset        wipe all progress
 
@@ -46,6 +48,7 @@ for _stream in (sys.stdout, sys.stderr):
 HERE = Path(__file__).resolve().parent
 BANK = HERE / "questions"
 PROGRESS = HERE / "progress.json"
+ANSWER_LOG = HERE / "answers.jsonl"  # one line per answered card, so mistakes can be reviewed later
 
 BASE = [8.0, 4.0, 2.0, 1.0, 0.5, 0.25]  # pull of each box
 GAP = [4, 10, 25, 60, 150, 400]         # cards shown before a box is "ready" again
@@ -77,6 +80,7 @@ def load_cards() -> list[dict]:
                 continue
             seen.add(c["id"])
             c["chnum"] = int(c["id"].split("-")[0][2:])
+            c["week"] = f"{c['chnum']}b" if c["id"].split("-")[1].startswith("b") else str(c["chnum"])
             cards.append(c)
     return cards
 
@@ -90,6 +94,55 @@ def load_progress() -> dict:
             PROGRESS.replace(backup)
             print(f"{YELLOW}progress.json was unreadable; moved it to {backup.name}{RESET}")
     return {"version": 1, "turn": 0, "recent": [], "cards": {}}
+
+
+def log_answer(card: dict, chosen_text: str | None, right: bool, typo: bool = False) -> None:
+    import datetime
+    entry = {"time": datetime.datetime.now().isoformat(timespec="seconds"), "id": card["id"],
+             "week": card.get("week", card["chnum"]), "topic": card["topic"], "kind": card.get("kind"),
+             "q": card["q"], "picked": chosen_text, "answer": card["choices"][0],
+             "result": "typo-knew-it" if typo else "right" if right else "shown" if chosen_text is None else "wrong"}
+    with ANSWER_LOG.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+
+
+# ---------------------------------------------------------------- sync between devices
+# Only when this folder is its own git repo (the phone/PC sync repo). Pull on start, push on quit,
+# so progress.json and answers.jsonl follow you between the laptop and Termux.
+
+SYNC_FILES = ["progress.json", "answers.jsonl"]
+
+
+def git(*args: str, timeout: int = 30) -> bool:
+    import subprocess
+    try:
+        r = subprocess.run(["git", "-C", str(HERE), *args], capture_output=True, text=True, timeout=timeout)
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+    return r.returncode == 0
+
+
+def sync_pull() -> None:
+    if not (HERE / ".git").exists():
+        return
+    print(f"{DIM}Pulling progress from GitHub…{RESET}", flush=True)
+    if not git("pull", "--rebase", "--autostash", "-q"):
+        print(f"{YELLOW}Couldn't pull (offline?). Using the progress on this device.{RESET}")
+
+
+def sync_push() -> None:
+    if not (HERE / ".git").exists():
+        return
+    import datetime
+    git("add", *[f for f in SYNC_FILES if (HERE / f).exists()])
+    if git("diff", "--cached", "--quiet"):
+        return  # nothing new to push
+    git("commit", "-q", "-m", f"progress {datetime.datetime.now():%Y-%m-%d %H:%M}")
+    print(f"{DIM}Pushing progress to GitHub…{RESET}", flush=True)
+    if git("push", "-q") or (git("pull", "--rebase", "-q") and git("push", "-q")):
+        print(f"{GREEN}Progress pushed.{RESET}")
+    else:
+        print(f"{YELLOW}Couldn't push (offline?). It's committed here; it goes up next time you quit online.{RESET}")
 
 
 def save_progress(prog: dict) -> None:
@@ -127,7 +180,13 @@ def weighted_choice(items: list[dict], weights: list[float]) -> dict:
     return random.choices(items, weights=weights, k=1)[0]
 
 
-def pick(cards: list[dict], prog: dict) -> dict:
+def course_order(c: dict) -> tuple:
+    """Week 0 → 6 (2b after 2), and within a week the order the guide teaches it."""
+    tail = c["id"].split("-")[1]
+    return (c["chnum"], tail.startswith("b"), int(tail.lstrip("b")))
+
+
+def pick(cards: list[dict], prog: dict, in_order: bool = True) -> dict:
     turn, states = prog["turn"], prog["cards"]
     tw = topic_weights(cards, prog)
     cw = chapter_weights(cards)
@@ -147,6 +206,8 @@ def pick(cards: list[dict], prog: dict) -> dict:
     learning = sum(1 for c in cards if c["id"] in states and states[c["id"]]["box"] <= 1)
     p_new = 0.6 if learning < 15 else 0.4 if learning < 30 else 0.2
     if new and (not review or random.random() < p_new):
+        if in_order:
+            return min(new, key=course_order)
         return weighted_choice(new, [cw.get(c["chnum"], 1.0) * tw.get(c["topic"], 1.0)
                                      for c in new])
 
@@ -173,9 +234,34 @@ def record(prog: dict, card: dict, right: bool) -> None:
 
 # ---------------------------------------------------------------- terminal
 
-def single_key_reader():
-    if os.name != "nt" or not sys.stdin.isatty():
+def posix_key_reader():
+    """One keypress without Enter on Linux / Termux / macOS."""
+    try:
+        import termios
+        import tty
+    except ImportError:
         return None
+    fd = sys.stdin.fileno()
+
+    def read() -> str:
+        old = termios.tcgetattr(fd)
+        try:
+            tty.setcbreak(fd)  # keeps Ctrl+C working
+            ch = sys.stdin.read(1)
+            if ch == "\x1b":  # arrow keys etc.: swallow the rest of the sequence
+                sys.stdin.read(2)
+                return ""
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old)
+        return "enter" if ch in ("\r", "\n") else ch.lower()
+    return read
+
+
+def single_key_reader():
+    if not sys.stdin.isatty():
+        return None
+    if os.name != "nt":
+        return posix_key_reader()
     try:
         import msvcrt
     except ImportError:
@@ -258,13 +344,13 @@ def draw(card: dict, order: list[int], prog: dict, cards: list[dict], session: d
 
 # ---------------------------------------------------------------- game
 
-def play(cards: list[dict], prog: dict) -> None:
+def play(cards: list[dict], prog: dict, in_order: bool = True) -> None:
     session = {"n": 0, "right": 0, "new": 0,
                "mastered_before": sum(1 for c in cards
                                       if prog["cards"].get(c["id"], {}).get("box", 0) >= MASTERED)}
     try:
         while True:
-            card = pick(cards, prog)
+            card = pick(cards, prog, in_order)
             order = [0, 1, 2, 3]
             random.shuffle(order)
             tag = status_tag(prog["cards"].get(card["id"]))
@@ -282,6 +368,7 @@ def play(cards: list[dict], prog: dict) -> None:
             prog["recent"] = (prog["recent"] + [card["id"]])[-50:]
             record(prog, card, right)
             save_progress(prog)
+            log_answer(card, None if chosen is None else card["choices"][order[chosen]], right)
             session["n"] += 1
             session["right"] += right
             session["new"] += before is None
@@ -309,6 +396,7 @@ def play(cards: list[dict], prog: dict) -> None:
                     prog["cards"][card["id"]] = before
                 record(prog, card, True)
                 save_progress(prog)
+                log_answer(card, None if chosen is None else card["choices"][order[chosen]], True, typo=True)
                 session["right"] += 1
             elif k == "q":
                 break
@@ -356,6 +444,8 @@ def main(argv: list[str]) -> None:
     cards = load_cards()
     if not cards:
         sys.exit(f"No questions found in {BANK}")
+    if not (argv and argv[0] == "reset"):
+        sync_pull()
     prog = load_progress()
 
     if argv and argv[0] == "stats":
@@ -366,14 +456,15 @@ def main(argv: list[str]) -> None:
             print("Progress wiped.")
         return
 
-    chapters = {int(a) for a in argv if a.isdigit()}
-    if chapters:
-        cards = [c for c in cards if c["chnum"] in chapters]
+    weeks = {a.lower() for a in argv if a.isdigit() or a.lower() in ("2b",)}
+    if weeks:
+        cards = [c for c in cards if str(c["chnum"]) in weeks or c["week"] in weeks]
     if "--missed" in argv:
         cards = [c for c in cards if prog["cards"].get(c["id"], {}).get("box", 99) <= 1]
     if not cards:
         sys.exit("Nothing to ask with those filters.")
-    play(cards, prog)
+    play(cards, prog, in_order="--mix" not in argv)
+    sync_push()
 
 
 if __name__ == "__main__":
