@@ -46,3 +46,10 @@ semester */STUDY-PLAN.md
 semester */_meta/
 #   PRIVATE.md              — per-folder notes on my own status, ID numbers, attempts
 **/PRIVATE.md
+#   homework/*/work/        — my own graded solutions; a classmate copying them zeroes us both
+**/homework/*/work/
+#   class-code/captures/    — webcam photos taken in class; they show me and classmates
+**/my-notes/class-code/captures/
+
+# Too big for the shared repo (77 MB); classmates get it from eClass (ubfile 73164)
+semester 7/SOC4040 - Artificial Intelligence/lectures/slides/week09 - 9.2. Lightweight CNN.pptx
