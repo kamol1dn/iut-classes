@@ -79,19 +79,25 @@ This is the first of the two 10% homeworks.
 ## 🔴 Term project — dates that are not on eClass
 
 - **Teams of 4-6 students**, end-to-end AI project.
-- **Week 5 (3-9 Oct)** — choose a topic. Free choice but **must not duplicate another team's**. Fields: computer vision, NLP, generative AI.
-- **Week 6 (10-16 Oct)** — submit the proposal.
+- **Topic**: week 5 (3-9 Oct) in the week-1 deck, **week 9 (31 Oct-6 Nov)** on 10.1 slide 70. Free choice but **must not duplicate another team's**. Fields: computer vision, NLP, generative AI.
+- **Proposal**: week 6 (10-16 Oct) in the week-1 deck, **week 10 (7-13 Nov)** on 10.1 slide 70. Both weeks have passed, so check Discord for where it stands.
 - Prepare a report.
 - **Week 14 (5-11 Dec)** — presentation, possibly moved to week 16.
 
 Topic uniqueness is first-come, so forming a team early matters more than it looks.
 
+**Team project guidelines are out** (eClass [assignment 73304](https://eclass.inha.ac.kr/mod/assign/view.php?id=73304),
+week 10): open topic, data → trained model → working app, graded out of 100 on a presentation and live demo,
+with 20 points of individual Q&A. The PDF gives no dates; deadlines come on Discord. 10.1 slide 70 had moved the
+topic to week 9 and the proposal to week 10. **Full brief, grading table and checklist:
+[homework/team-project](homework/team-project/README.md).**
+
 **Office hours: Tuesday & Thursday, 14:00-15:30.** EA: Jasurbek Mamurov.
 
 > ⚠️ His weekly plan in the deck **differs from the eClass syllabus** from week 4
 > onward — he goes Clustering → Deep Learning → CNNs → Advanced CV, then NLP,
-> Transformers, Generative Models, RL and Deep RL. SVM and object detection are
-> not in his version. Full comparison in
+> Transformers, Generative Models, RL and Deep RL. SVM and object detection were
+> not in that plan, but both have since been taught (4.2 in week 4, 10.1 in week 10). Full comparison in
 > [the 1.1 summary](lectures/summaries/week01%20-%201.1.%20Intro%20to%20AI.md).
 
 ## Materials on hand
@@ -113,12 +119,21 @@ for the diagrams.
 | 6 | 6.1 | **K-Means**: steps, sum-of-squared-distances objective, **K-Means++** (5-point worked example), elbow method, pitfalls | [md](lectures/summaries/week06%20-%206.1.%20Unsupervised%20Learning%201.md) | [pdf](lectures/slides/week06%20-%206.1.%20Unsupervised%20Learning%201.pdf) |
 | 6 | 6.2 | **PCA**: definitions, the 5 steps, covariance → eigenvectors → projection, slide-17 example worked in full | [md](lectures/summaries/week06%20-%206.2.%20Unsupervised%20Learning%202.md) | [pdf](lectures/slides/week06%20-%206.2.%20Unsupervised%20Learning%202.pdf) |
 | 7 | 7.1 | **Deep learning (DNN)**: perceptron, losses, gradient descent, backprop by hand on a 2-2-1 net, activations. **Final, not midterm** | [md](lectures/summaries/week07%20-%207.1.%20Deep%20Learning%20(DNN).md) | [pdf](lectures/slides/week07%20-%207.1.%20Deep%20Learning%20(DNN).pdf) |
+| 9 | 9.1 | **CNN**: conv layer, output-size `(W − F + 2P)/S + 1` and parameter `F²CK + K` formulas, stride/padding, a 7×7 convolution by hand, max/average pooling. **Final** | [md](lectures/summaries/week09%20-%209.1.%20Deep%20Learning%20(CNN).md) | [pdf](lectures/slides/week09%20-%209.1.%20Deep%20Learning%20(CNN).pdf) |
+| 9 | 9.2 | **Lightweight CNN**: standard vs grouped vs depthwise separable conv (animated), parameter savings, BatchNorm. **Final** | [md](lectures/summaries/week09%20-%209.2.%20Lightweight%20CNN.md) | 77 MB pptx, not in the repo: [eClass](https://eclass.inha.ac.kr/mod/ubfile/view.php?id=73164) |
+| 10 | 10.1 | **Object detection (Part 1)**: localisation target `y`, sliding windows, IoU, NMS, anchor boxes + YOLO output, R-CNN family, one- vs two-stage, segmentation types. **Final** | [md](lectures/summaries/week10%20-%2010.1.%20Object%20Detection.md) | [pdf](lectures/slides/week10%20-%2010.1.%20Object%20Detection.pdf) |
 
 > ⚠️ **6.1 slide 23 has two wrong distances** in the K-Means++ example: B→E is 98 (not 85) and C→E is 32
 > (not 25). The conclusion (C or D next) still holds.
 
 > ⚠️ **3.1 slide 13 has the R² formula wrong**: the denominator should be
 > `Σ(y − ȳ)²`, not `Σ(h(x) − ȳ)²`. The notebook uses the correct one.
+
+> ⚠️ **9.1 page 54's convolution output has seven wrong cells** (e.g. row 2 starts 8, 10, not 6, 12). The
+> corrected grid is in the [9.1 summary](lectures/summaries/week09%20-%209.1.%20Deep%20Learning%20(CNN).md).
+
+> ⚠️ **10.1 page 24's NMS rule is backwards**: discard the remaining boxes with **IoU ≥ 0.5** against the box
+> you kept, not IoU ≤ 0.5.
 
 The 1.2 deck was also re-posted as an editable
 [pptx](lectures/slides/week01%20-%201.2.%20Intro%20to%20Machine%20Learning.pptx). Same content as the PDF.
@@ -128,6 +143,8 @@ Notebooks:
 - [K-Means.ipynb](resources/K-Means.ipynb) (week 6, for 6.1): from-scratch K-Means, K-Means++ and an elbow plot
 - [PCA.ipynb](resources/PCA.ipynb) (week 6, for 6.2): the slide example in NumPy, then 800 → 50 features before an SVM
 - [Neural_Network.ipynb](resources/Neural_Network.ipynb) (week 7, for 7.1): the 2-2-1 network by hand, then PyTorch
+- [CNN.ipynb](resources/CNN.ipynb) (week 9, for 9.1 and 9.2): `Conv2d` shapes and parameter counts, LeNet-5 on Fashion-MNIST (86.7%), grouped/separable layers, AlexNet. Needs `torch torchvision`
+- [object_detection.ipynb](resources/object_detection.ipynb) (week 10, for 10.1): pretrained YOLOv8 on an image and a webcam, then fine-tuning on a fruit dataset. Needs `ultralytics`
 - [SVM.ipynb](resources/SVM.ipynb), [kernel_svm_from_scratch.ipynb](resources/kernel_svm_from_scratch.ipynb) (week 5, for 4.2)
 - [titanic_data_preparation.ipynb](resources/titanic_data_preparation.ipynb) (week 5, for 5.2)
 - [linear_regression.ipynb](resources/linear_regression.ipynb) (week 2)
