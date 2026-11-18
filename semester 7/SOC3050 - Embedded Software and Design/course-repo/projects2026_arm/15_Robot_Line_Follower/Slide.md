@@ -392,9 +392,9 @@ soft-float operation costs on this core).
 |---|---|---|---|---|
 | `world` | 5 | 5 ms | `world_step()` + `world_sense()` | 160 |
 | `control` | 4 | 10 ms | `control_step()`, or the joystick in manual | 160 |
-| `ui` | 3 | 20 ms | `pad_read()`, buttons, beeps, `$LINE` at 10 Hz, `$LAP` | 256 |
-| `shell` | 2 | on input | `kp ki kd df slow thr`, `noise ambient fail`, `gains`, `stats` | 224 |
-| `display` | 1 | 100 ms | the OLED: robot, laps, sensor bar | 256 |
+| `ui` | 3 | 20 ms | `pad_read()` + the station's keys, buttons, beeps, `$LINE` at 10 Hz, `$LAP` | 288 |
+| `shell` | 2 | on input | `kp ki kd df slow thr`, `noise ambient fail`, `gains`, `stats`, `quiet loud`; `$KEY` / `$MIRROR` | 224 |
+| `display` | 1 | 100 ms | the OLED: robot, laps, sensor bar; `$FB` copies for the station | 256 |
 
 **Rate-monotonic**: the shorter the period, the higher the priority (lesson
 07). The world must never be late — a late physics step is a robot that
@@ -402,8 +402,8 @@ teleports. The display is the opposite: it gets whatever time is left, and
 the I²C driver is polled, so its flush *is* CPU time.
 
 Stacks are sized from `gcc -fstack-usage` plus newlib's printf frames (the
-deepest chain is `send_frame()` → `vsnprintf()` → `_svfprintf_r`, ~460 bytes),
-then checked live with `stats`. The build: **FLASH 26 988 B, RAM 9 352 B**.
+deepest chain is `send_frame()` → `vsnprintf()` → `_svfprintf_r`, ~510 bytes),
+then checked live with `stats`. The build: **FLASH 29 968 B, RAM 9 832 B**.
 
 ---
 
@@ -866,15 +866,23 @@ VAL ; SYST_CVR, counts DOWN | 32 | !23:0 CURRENT
 The kernel's millisecond count plus how far `VAL` has counted down gives a
 cycle-accurate clock with no extra timer. The loop re-reads if a tick lands
 between the two reads. **Budget:** the world step must fit in 240 000 cycles
-(5 ms); the expectation is a few percent of that. The number itself has
-**not yet been measured** — it is the first thing to read in Wokwi.
+(5 ms); the expectation was a few percent of that. **It is not**: lesson
+10's instruction-level M0+ model, running this `Main.elf` on the OVAL track,
+puts `world_step` + `world_sense` at **~4.2 ms - about 200 000 cycles, 84 %
+of the budget** - and `control_step` at ~130 µs. It fits on silicon, just.
+In Wokwi, whose CPU runs ~5x slower than its SysTick, it cannot: the world
+task has lesson 13's **overrun guard** (a cycle that ran late sleeps as long
+as it took - slow motion, not a frozen board), and `control` runs in
+**lock-step**, once per two world steps, as `host/sitl.c` calls it. `stats`
+prints the cycles and the `world overruns`.
 
 ---
 
 ## Slide 25: Telemetry and the Leaderboard
 
 ```
-$LINE,<ms>,<est x10>,<true x10>,<cmd L>,<cmd R>,<speed>,<s>,<slip>*CS     10 Hz
+$LINE,<ms>,<est x10>,<true x10>,<cmd L>,<cmd R>,<speed>,<s>,<slip>,
+      <x>,<y>,<heading>,<track>,<line 0>..<line 6>*CS                   10 Hz
 $LAP,<track>,<ms>*CS                                                      every auto lap
 ```
 
@@ -882,13 +890,20 @@ $LAP,<track>,<ms>*CS                                                      every 
 world *knows*. Plot both and the gap between them is your sensor model:
 
 ```
-python ..\08_UART_And_Python_Host\host.py --file capture.txt --chart LINE,3,-400,400
-python host\leaderboard.py captures\*.txt
+uv run ..\08_UART_And_Python_Host\host.py --file capture.txt --chart LINE,3,-400,400
+uv run host\leaderboard.py captures\*.txt
 ```
 
 `leaderboard.py` checks every `$LAP` checksum, keeps each student's best lap
 per track, and ranks them. Manual laps are printed but never framed: the
 leaderboard ranks **controllers**, not thumbs.
+
+The fields after `<slip>` are for the **station**
+(`uv run tools/station/station.py`): true position and heading, the track
+and the seven readings draw the race from above, beside the OLED drawn
+large; the keyboard is the app board (arrows, `a`, `b`, `s`, `1`-`5`,
+`-`/`+`), and `quiet` / `loud` stop and restart `$LINE`. Appended at the
+end, so field 3 is still field 3. **Not yet watched in Wokwi.**
 
 ---
 
@@ -918,7 +933,7 @@ sweep, P vs PD vs PID, noise vs filter, dead sensors, ambient light; two
 identical runs give identical results; the OLED frame drawn by the real
 `view.c`.
 
-**Built for the chip**: zero warnings, FLASH 26 988 B, RAM 9 352 B.
+**Built for the chip**: zero warnings, FLASH 29 968 B, RAM 9 832 B.
 
 **Not yet watched running in Wokwi.** What that leaves open:
 

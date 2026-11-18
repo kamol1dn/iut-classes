@@ -32,47 +32,101 @@ artifact students can edit and run locally — week 2's `lab_viewer.py` and week
 **Week 0 is the day-one stack/vocabulary lecture, taught before Week 1.** Every
 week names which of its five layers it belongs to.
 
-## Part II: ubrain, from week 16 on (user, 2026-10-25)
+## Part II: the whole brain in the G1, weeks 16-18 (user, 2026-11-15)
 
-**The course teaches and tests ubrain.** The Part I scope statement in the syllabus
-below ("computational neuroscience is out of scope") holds for weeks 0-15 only; the
-brain enters through ubrain in Part II. Decisions, from the papercode session of
-2026-10-25:
+**DELETED 2026-11-15 (user: "Delete 16~19 in weeks").** `weeks/16-program`, `17-senses`,
+`18-build` and `19-project` were removed, with their README rows and `check_labs.py`
+entries; `vendor/ubrain/` was kept. The last commit holding them is 7e79ce0
+(`git checkout 7e79ce0 -- weeks/16-program` brings one back). The notes below describe
+them as they were.
 
-- **Weeks 0-15 stay as they are; a second part starts at week 16 and runs on
-  indefinitely**, one week per ubrain lab. Labs are developed HERE from now on (user:
-  "From next time, I'll develop lab there"); ubrain itself keeps only its examples.
-- **The lab sources moved here**: `docs/ubrain_labs/` (lab1 striatum, lab2
-  hippocampus, lab3 codecs, lab4 walker = week 16, lab5 explorer, lab6 working memory,
-  lab7 consolidation, lab8 attention, lab9 memory and habit, lab10 neuromodulators,
-  lab11 a brain's life; `teachers.md`; `lab4_slides.html`). Each becomes a week in
-  week 16's form: README, `deck.json` + `slides/*.html` + `build.py` (all slides
-  needed), lab scripts with `--help` and `results.csv`, `worksheet.md`, a gitignored
-  `instructor/reference.md` with measured answers, and a `check_labs.py` entry.
-  Every number in a slide or worksheet comes from a run of the lab.
-- **G1 first (user, 2026-10-25):** "Consider ubrain capabilities in teaching G1 robot."
-  The order below puts the weeks whose region runs ON the G1 first; laptop-only regions
-  follow. Week 17 is walking adaptation (built); the striatum pilot moved to **week 18**
-  (`weeks/18-striatum/`, `lab_striatum.py` from `01_bandit.py`, runs on 0.14; deck,
-  README, worksheet, reference still to do, and a G1 task for the striatum to design and
-  measure). **Measured on the pilot, for the slides:** with one action clearly
-  best (`--world easy`), choice is MORE exclusive than matching (0.93 against 0.82):
-  rarely chosen actions get few outcomes, so their values stay low; the default world
-  earns 0.624 (+-0.011) against matching's 0.600. Do not teach plain matching without
-  that (lab1's exercise 2 points at it).
-- **One shared ubrain copy, done 2026-10-25:** `vendor/ubrain/` holds the 0.14.0.dev1
-  cp312 wheels (from `papercode/ubrain/dist`), the G1 body (`g1_body/`, from
-  `papercode/bodies/mujoco`, byte-identical to the old copy) and the loader
-  `ubrain_vendor.py`; each week has a 3-line `ubrain_local.py` stub that imports it.
-  `weeks/16-cerebellum/vendor/` is gone (staged as deleted). Week 16 re-measured on 0.14:
-  every number identical (error curve, all 14 push records, digest `4815eedf56d0`).
-  ubrain is not public: the wheels are a local copy.
-- **Pushed 2026-10-25 at the author's instruction** ("update MD, commit/push"): weeks
-  17-27, `vendor/ubrain/`, `docs/ubrain_labs/` and the Part II references. **The
-  classes are not paper content** (user, 2026-10-25: "This classes are not related with
-  paper"): an earlier note here said some labs taught papers under double-blind review;
-  that was wrong and is withdrawn. Part II weeks are pushed like any other week, when
-  the user asks.
+**Part II is three weeks and one capstone project on ubrain's whole brain, `Brain()`.** It is
+taught and tested here (the user, 2026-10-25: "the course teaches and tests ubrain"; labs are
+developed in this repository).
+
+**Reshaped 2026-11-15 by the user.**
+- **"Only whole brain must be used."** ubrain's examples are whole-brain only.
+- **"From 16 to 27 do not deal with whole brain and thus must be deleted."** The twelve
+  profile-based weeks were deleted outright, with `docs/ubrain_labs/`: the cerebellum, adaptation,
+  striatum, a brain's life, hippocampus, working memory, consolidation, attention, memory and
+  habit, neuromodulators, codecs and explorer. Git history holds them: the last commit holding them
+  is 080e3a9 (`git checkout 080e3a9 -- weeks/16-cerebellum` brings one back).
+- **The new weeks were renumbered 28-30 to 16-18.**
+- **One release:** the course runs on ubrain 0.46.
+
+- **The calendar.** The projects start on Mon 2026-11-17 and run three weeks; presentations are
+  in the final-exam slot. Week 16 opens the project (a one-page proposal), week 17 is the body,
+  week 18 is building and measuring.
+- **The brain.** ubrain 0.46.0.dev2, the cp312 wheels in `vendor/ubrain/wheels/`, loaded by
+  `vendor/ubrain/ubrain_vendor.py` (`load()` names the release, default 0.46.0.dev2). Each week
+  has a small `ubrain_local.py`.
+  - The G1 body is `vendor/ubrain/g1_body`, digest 4815eedf56d0, with the same pins as
+    `uv.lock`.
+  - ubrain itself is public at github.com/untrained-brain/ubrain (since 2026-11-15). Its
+    examples `00_check_setup` .. `08_g1_vision` are the whole-brain programs this course draws
+    on. Week 18's three labs are its examples 05-07 on the course's copy.
+- **The body in the whole brain (0.46, a preview):**
+  - `ubrain.bodies.g1.G1` attaches `body.proprio`, `cue.tone`, `goal` and `command`.
+  - Inside is a certified cerebellum, held bit for bit to the circuit it was certified in.
+  - Not yet in the whole: walking adaptation, and a motor readout. The program maps a chosen
+    action to the goal.
+- **Two rules students meet** (found while building the labs; papercode register FB-0122,
+  FB-0123):
+  - a sense that never changes never engages the brain;
+  - the whole brain explores only while its values are near zero, so a wrong choice must pay
+    nothing.
+- **Each week's form:** README, `deck.json` + `slides/*.html` + `build.py`, the lab scripts
+  (headless by default, a `results.csv`), `worksheet.md`, `instructor/reference.md` (answers
+  published, user 2026-11-08) and `check_labs.py` entries. Every number on a slide comes from
+  a run of the lab. The slides are generated by scripts kept in papercode's session scratch
+  (gen_w16/17/18.py); the `slides/*.html` files are the source of record.
+
+## Lectures 08-11 and the term project (user, 2026-11-15)
+
+**"The lectures 08~15 must be adjusted to the projects and shortened into 4"**, then **"Make
+08~11 simple: simple task and one code file for each. Too many codes too complicated to
+follow."** The eight AI lectures became four (old 08+09, 10+12, 11+13, 14+15), each with ONE
+task and ONE file, `lab.py`, and a short deck written around it (code on the slides is
+printed from `lab.py` with `inspect.getsource`, so it cannot drift; on Colab the setup cell
+downloads `lab.py`). Every other script, graded game, `instructor/` answer file and
+`heatnet.pt` of those weeks was deleted (git 7e79ce0 has the old eight folders); only week
+9's `checkpoints/push_*.zip|csv` remain. Weeks 12-15 are the term project (`weeks/projects/`),
+course package only, no ubrain, no GPU needed. Old week numbers in the 00-07b decks and
+`src/` docstrings were renumbered (old 8,9->8; 10,12->9; 11,13->10; 14,15->11).
+
+**The RL map (user, 2026-11-15: "summary of overall RL methods must appear with tables" at the
+start of 08).** Week 8 opens with five map slides before its task: the RL problem and vocabulary,
+four sorting questions (value/policy/actor-critic, model-based/free, on/off-policy, table/function),
+"The methods, sorted" (value iteration ... behaviour cloning, each with its week), then (user,
+2026-11-15: "RL tables exists but no algorithms") 12 algorithm slides: "Every algorithm is one loop",
+"The three lines, for each method", and "Algorithm 1..10" (pseudocode in a ```text block, the update
+equation, course numbers), then why the G1 pushes
+toward policy methods, and the route through weeks 7-11. Weeks 9-11 each open with "Where this week
+sits on the map" (the route table, that week's row bold). Each deck also has line-by-line slides
+(`| code | what it does | why |`) for every major function of its `lab.py`; tables too tall for one
+slide continue on a "(cont.)" slide.
+
+Measured while building the four labs, so do not repeat the mistakes:
+- **Week 8.** Forward/back pushes on the crouch are knife-edge (hold survives 45 N and falls
+  at 40), so the task uses sideways pushes only. Under a sideways shove **the ankle PITCH gain
+  on g_x does all the work; the roll gain on g_y changes nothing** (grid over both). Pitch gain
+  0 falls at 70 N; 0.6-4 stand at 75; 8 falls at 75; all fall at 80; negative falls at 60.
+  **REINFORCE with action noise fails here**: sigma 0.3 makes every exploring episode fall
+  (8/8) and theta diverged (to -5); sigma 0.05 with normalised advantages crawled (0.6-1.3
+  after 30 updates). Antithetic parameter-space exploration (theta +- 0.5 eps on the same
+  push, lr 0.01) reached ~2 in every seed. Episodes must be 4 s: hold's fall takes ~3 s.
+- **Week 9** (10 episodes): nominal world hold 60 / ankle 60 / PPO nominal 80 / PPO random
+  100 (9/10) N; +15 kg hold falls with no push, PPO random survives all to 120 N.
+- **Week 10.** A least-squares copy needs a floor on the input scale (inputs that never moved
+  in the recordings otherwise explode). Copy table: planner/29 inputs falls at 60-150 N
+  (fit error 0.188 of 0.202 rad spread: MPPI's action is mostly its samples); planner/tilt
+  stands 60, 75; ankle/29 inputs falls at 60 despite a 0.003 rad fit; ankle/tilt = expert.
+- **Week 11.** Loose threshold (0.6) or `--dim 0.3`: "done" while 39-41 deg off and "sees" a
+  hidden ball -- the check uses the same sense that failed. GAIN 2.5 loses the ball 4 of 8.
+
+Found earlier while merging: week 8's old "valley" claim was false by a hair (amplitude 0.1
+scores 774.12 vs standing's 774.09); the old 13 deck pointed at `robust.py --privileged`,
+which was never shipped.
 
 ## Syllabus
 
@@ -96,183 +150,22 @@ training; an LLM planner appears only as a non-executed code block).
 | 04 | Contact, balance, analytic walking (LIPM/ZMP) | `04` | built; `lab_walk.py` + `walk.py`; **not re-tested on Colab since 2026-09-20** |
 | 05 | Actuation, PD control, and CPG gaits | `05` | built; P/PD/PI/PID comparison slides added 2026-10-04; `lab_servo.py` + `servo.py`; **not re-tested on Colab since 2026-09-20** |
 | 06 | Sensing, state estimation, observation design | `06` | built; `lab_imu.py` + `imu.py`; **not re-tested on Colab since 2026-09-20** |
-| 07 | From control to learning: MDPs and environment design | `07` | built; `lab_env.py` (ankle strategy, push-measured) + `env_run.py`; **not re-tested on Colab since 2026-09-20** |
-| 08 | Policy gradients and PPO | `08` | built; `lab_train.py` + `train.py`; Pages-green since the OSMesa/triton fix (below); **not re-tested on Colab since 2026-09-20** |
-| 09 | Reward shaping and diagnosing failed runs | `09` | built; `lab_reward.py` + `shape.py`; Pages-green, same history as 08; **not re-tested on Colab since 2026-09-20** |
-| 10 | Scaling: GPU-parallel locomotion training | `10` | built; GPU training **runs on A100, untimed**; `lab_many.py` + `many.py`; renders locally only with `--extra gpu` synced and the machine quiet |
-| 11 | Planning at run time: MPC by sampling (MPPI), MuJoCo as the model | `11` | built 2026-09-27; game `lab_plan.py` + `costs.py` (ref 6/6), `plan.py`; package `planning.py`; **not Pages- or Colab-tested** |
-| 12 | Robustness: PPO push recovery, domain randomisation, sim-to-real gap measured in sim | `12` | built 2026-09-27; game `lab_robust.py` + `audit.py` (ref 5/5), `robust.py`; checkpoints shipped; **not Pages- or Colab-tested** |
-| 13 | Imitation: behaviour cloning, DAgger, distillation | `13` | built 2026-09-27; game `lab_imitate.py` + `students.py` (ref 4/4), `imitate.py`; package `imitation.py`; **not Pages- or Colab-tested** |
-| 14 | Learning from pixels: a head camera, a CNN, visual randomisation | `14` | built 2026-09-27; game `lab_look.py` + `eyes.py` (ref 5/5), `look.py`; package `vision.py`; **not Pages- or Colab-tested** |
-| 15 | Language: grounding words in pixels, a tiny VLA, an agent that verifies | `15` | built 2026-09-27; game `lab_agent.py` + `instructions.py` (ref 5/5), `ground.py`; package `agent.py`; **not Pages- or Colab-tested** |
-| 16 | The cerebellum in a walking robot (ubrain) | `16` | added 2026-10-19; **HTML deck, not Quarto**: `deck.json` + `slides/*.html`, copied from `papercode/teaching/lecture_robot/cerebellum_g1`, assembled by `build.py`; on Pages via `scripts/build_site.py`, which runs `build.py` and publishes `slides_students.html` (no notes); labs `lab_cerebellum_walk.py` (keys steer the goal; from ubrain's `g1_walker.py`) and `lab_cerebellum.py` (measured runs), copied here 2026-10-22 and run on this repo's `uv sync` via `ubrain_local.py`: it unpacks the cp312 wheel for the platform from the gitignored `vendor/` and starts the body (`vendor/g1_body`, from `papercode/robot_mujoco`) with `sys.executable`, since the body's pins equal `uv.lock`'s (mujoco 3.12.0, numpy 2.5.2, menagerie 2026.9.0); body digest `4815eedf56d0`, numbers identical to papercode's; `check_labs.py --only 16` 2 of 2; `vendor/` (wheels + body) is committed since 2026-10-22, at the user's instruction ("no need for concern of open"); the ubrain *repository* (github.com/untrained-brain) is still closed, so never link a clone URL students cannot reach — the course repo's `vendor/` is how students get it |
+| 07 | From control to learning: MDPs and environment design | `07` | built; `lab_env.py` (ankle strategy, push-measured) + `env_run.py` + `mdp.py` (an explicit MDP solved by value iteration, 2026-11-08); deck shows its computing code and the equation beside it since 2026-11-02 (50 slides, all fit 1280 x 800; equations render offline, MathJax embedded); **not re-tested on Colab since 2026-09-20** |
+| 07b | Learning a table from experience: Q-learning, SARSA, binning, why tables stop | `07b` | built 2026-11-08 (user: students not ready for 08; Atari proposed, tabular RL + inverted pendulum chosen); game `lab_tables.py` + `tables.py` (ref 6/6, wrong answers 0/6, scorer code 119A; reference in `instructor/tables_solution.py`, published; **`tables.py` ships filled with the reference answers, 6/6**, user 2026-11-08), `qlearn.py`; package `tabular.py`; deck ~34 slides (2026-11-08, user: "07b slides need use of P, on-off policy": *On-policy or off-policy: who picks a′?* after SARSA, *Who needs P? Three rules for one table* after acting at random; on/off is taught as "is the a′ in the target chosen by the policy that chose a", not the pasted π(a)=π(a′) shorthand; the Q-learning cell's `win` overwrote π\*'s, now `pi_win`/`ql_win`); **not Pages- or Colab-tested** |
+| 08 | Learning to act: a policy gradient on the G1 | `08-learning-to-act` | opens with the RL map (5 slides of tables); **one `lab.py`** (2026-11-15): learn the ankle-pitch gain theta (ankle pitch = theta g_x) from reward by antithetic parameter-space policy gradient on shared sideways pushes 60-80 N; 0 -> 1.82 / 2.00 / 1.53 (seeds 0-2, 20 updates, ~50 s); CPU |
+| 09 | Scale and robustness | `09-scale-and-robustness` | **one `lab.py`**: test hold / week 8 ankle / PPO nominal / PPO random (shipped `checkpoints/push_*.zip`) across editable WORLDS at exact sideways pushes; ~3.5 min; CPU; GPU training taught as a concept only |
+| 10 | Planning and imitation | `10-planning-and-imitation` | **one `lab.py`**: MPPI with an editable `cost()` survives 150 N (feet move 3.04 m), then a least-squares linear copy of an EXPERT (planner or ankle) from chosen INPUTS; ~4 min; CPU |
+| 11 | Pixels and language | `11-pixels-and-language` | **one `lab.py`**: "look at the <colour> ball": colour_of, find_ball (colour distance + centroid), atan(-u), P control on the waist, a check from the picture; 8/8 within 0.3 deg, refuses hidden ball and "crimson"; CPU |
+| 12-15 | **Term project** on the G1 | `weeks/projects/` | written 2026-11-15: README (deliverables, calendar, method, rules, grading), `catalogue.md` (P1-P14 with measured baselines), `templates/` (proposal, report, presentation, checklist, `project_template.py`: ankle strategy vs hold, hold falls from 70 N, ankle from 80 N, CHECK PASS, 20 runs in 5 s), `teams/` |
 
-### Part II, week 16 on: ubrain (open-ended)
+### Part II, weeks 16-18: the whole brain in the G1 (one project)
 
-Week 16 is in the table above (built). The planned weeks, one per lab in
-`docs/ubrain_labs/`; the order is a proposal (each needs only labs before it, as
-`docs/ubrain_labs/README.md` says: labs 6-11 follow lab 2 in any order, lab 9 also
-uses lab 1), and weeks past these are added as labs are written.
+| week | topic | lab | needs | state |
+|---|---|---|---|---|
+| 16 | Programming the whole brain: `Brain()`, port classes, ticks, describe/read/datasheet/health, save/load; the same brain walks the G1; **the project starts (2026-11-17)** | `lab_program.py` (steps whole / ask / keep / g1) | the body (step g1) | built 2026-11-15 (as week 28, renumbered the same day) on 0.46.0.dev2: deck 14 slides, README, worksheet, reference, check_labs 4. Measured: whole 0.976 -> 0.998 (chance 0.25), reversal 0.896 -> 1.000; 9 classes; keep 10.1 MB, 0 of 500 differ; g1 error 96.9% -> 17.2%, no falls |
+| 17 | Senses and the body: `body`, `cue`, `goal`, `command` through `ubrain.bodies.g1.G1`; the twin (hears the tone / does not); sense, detector, privilege; the eye | `lab_sense.py` (steps brace / push / contact / vision) | the body; step vision the gallery body + CLIP | built 2026-11-15 on 0.46.0.dev2: deck 14, README, worksheet, reference, check_labs 3 (vision run by hand). Measured: twin falls 3 vs 14; push 15/16; double support 0.12; 199 glances, 22 new |
+| 18 | Build and measure: the method (question, prediction first, twin, measurement, check), three project starts, two rules, a failed prediction reported, the report and presentation | `lab_choose.py`, `lab_keep.py`, `lab_brace.py` (ubrain examples 05-07) | the body | built 2026-11-15 on 0.46.0.dev2: deck 12, README, worksheet (the project checklist), reference, check_labs 3. Measured: choose 1.00 vs 0.35 (twin on unrelated pictures, chance 0.5); keep loaded 0 vs fresh 3 falls; brace lead 5/10/20/40 -> 7/3/4/4, none 14 (the trace-law prediction failed) |
 
-| Wk | Topic | Source lab | ubrain example | Needs | Status |
-| --- | --- | --- | --- | --- | --- |
-| 16 | The cerebellum in a walking robot | `lab4_walker.md` | `lab_cerebellum.py`, `g1_walker.py` | the body | **built** (above) |
-| 17 | Walking in a side wind: the cerebellum adapts | (new; `adapter` profile, no ubrain lab) | written here: `lab_adapt.py`, `lab_adapt_walk.py` | the body | **built 2026-10-25**: deck (22 slides, `figures.py` draws 2 from `traces/`), README, worksheet, `instructor/reference.md`, check_labs; pushed 2026-10-25 |
-| 18 | Learning from reward: the striatum | `lab1_striatum.md` | `01_bandit.py` as warm-up; the G1 task written here: `lab_choose.py` | the body | **built 2026-10-25**: deck (21 slides, `figures.py` draws 2 from `traces/`), README, worksheet, `instructor/reference.md`, check_labs; pushed 2026-10-25 |
-| 19 | A brain's life: save, load, datasheet, health, monitor (on the G1) | `lab11_a_brains_life.md` | written here: `lab_life.py` (steps train/test/identical/refuse/sheet/watch) | the body, the 0.14 wheels | **built 2026-10-25**: deck (18 slides), README, worksheet, reference, check_labs; pushed 2026-10-25 |
-| 20 | One-shot memory: the hippocampus remembers which way the G1 was pushed | `lab2_hippocampus.md` | written here: `lab_remember.py` (push sense from the pelvis accelerometer; `observer` profile) | the body | **built 2026-10-25**: deck (19 slides, `figures.py` draws the certificate figure), README, worksheet, reference, check_labs; pushed 2026-10-25 |
-| 21 | Holding a list: working memory, the G1's last few pushes | `lab6_working_memory.md` | written here: `lab_hold.py` (week 20's push sense, `holder` profile) | the body | **built 2026-10-25**: deck (18 slides, `figures.py`), README, worksheet, reference, check_labs; pushed 2026-10-25 |
-| 22 | From hippocampus to cortex: consolidation of the G1's push episodes | `lab7_consolidation.md` | written here: `lab_consolidate.py` (`rememberer` profile; `--distinct` laptop control) | the body | **built 2026-10-25**: deck (17 slides, `figures.py`), README, worksheet, reference, check_labs; pushed 2026-10-25 |
-| 23 | Noticing: a salience gate in front of the G1's memory, and rest | `lab8_attention.md` | written here: `lab_notice.py` (`attender` profile; random/gusty worlds) | the body | **built 2026-10-25**: deck (17 slides, `figures.py`), README, worksheet, reference, check_labs; pushed 2026-10-25 |
-| 24 | Memory first, habit later, on the G1's braking task | `lab9_memory_and_habit.md` | written here: `lab_habit.py` (`chooser`/memory/`player` on the cached world `traces/world.json`; `--bandit S`; `--live`) | the body (once) | **built 2026-10-25**: deck (16 slides, `figures.py`), README, worksheet, reference, check_labs; pushed 2026-10-25 |
-| 25 | One number each: serotonin's patience on the G1, noradrenaline's criterion | `lab10_neuromodulators.md` | written here: `lab_patience.py` (serotonin on week 24's world; noradrenaline ported from example 10, laptop) | nothing (the cached world) | **built 2026-10-25**: deck (16 slides, `figures.py`), README, worksheet, reference, check_labs; pushed 2026-10-25 |
-| 26 | Plugging in a trained model: CLIP, the cone, the certificate | `lab3_codecs.md` | written here from `03_clip_words.py`: `lab_codecs.py` (words / pictures / compare / capacity / name) | CLIP: the `vision` extra (added to `uv.lock` 2026-10-25) + the weights from the HF cache | **built 2026-10-25**: deck (16 slides, `figures.py`), README, worksheet, reference, check_labs; pushed 2026-10-25 |
-| 27 | The explorer: the G1 walks a gallery with CLIP as its eye | `lab5_explorer.md` | ported from `g1_explorer.py`: `lab_explore.py` (no video; `--steer` heading hold added) | the body with `--gallery --head-camera`, CLIP | **built 2026-10-25**: deck (15 slides, `figures.py`), README, worksheet, reference, check_labs; pushed 2026-10-25 |
-
-**Week 17 facts, measured with `lab_adapt.py` (15 N, 0.5 m/s, 200-tick settle):** no
-learning turns 230° in 30 strides (0.173 rad/s at the end); single rate +44° then −43°
-after (an integrator, week 5's I term: turn 0.001 at the end); dual +70° then −25° (leaky:
-leftover turn 0.036 at 15 N, 0.018 at 10 N, proportional to the wind like a P sag). The
-turn peaks in stride 2 and halves 3–4 strides later at 10 and 15 N alike. Savings only
-dual, small (34.0° → 31.4° in the first 10 strides after a 30-stride wash-out); a 6-stride
-break LOOKS like savings but is leftover (single's counter-turn still −0.114) -- the
-worksheet's trap. **The research recovery schedule's 3 counter-wind strides do not
-de-adapt here** (dual still −0.088): the lab's `u` block runs counter-wind until the
-counter-turn crosses zero (dual 4, single 6 strides); then clamped, dual drifts back to
-−0.027 (spontaneous recovery), single stays +0.015. 20 N falls in stride 8 (off) / 11
-(dual), 25 N in 5: adaptation corrects heading, not balance. The robot is asymmetric
-(−15 N: −181° without learning). A body reset also clears the field, so re-send it.
-
-**Week 18 facts, measured with `lab_choose.py`:** sidesteps (vy ±0.3) and plain speed
-changes barely change survival (about 1 in 8 phases): no task there. Week 16's trained
-brace, logged, BRAKES hard (vx −0.39) exactly while the push lands, then speeds up -- so
-the moves are timed brakes. 250 N from behind, 40 phases: soon (push 10 ticks after the
-cue) 0.85 / 0.25 / 0.55 for brake early (ticks 3-15) / brake late (18-30) / keep walking;
-late (25 ticks) 0.475 / 0.85 / 0.55. Front pushes give no opposite best move (speeding up
-= nothing, braking worse). The striatum's values track the payoffs (eta 0.05: mean error
-0.06) and its choices sit at matching (eta 0.2, 300 trials, 4 seeds: right brake 0.48,
-matching 0.48; stayed up 0.65, matching 0.663). **The learning rate is an inverted U:**
-stayed up 0.645 / 0.647 / 0.745 / 0.788 / 0.680 at eta 0.05 / 0.2 / 0.5 / 0.8 / 1.0,
-right brake 0.46 / 0.48 / 0.72 / 0.87 / 0.57, while |Q - world| grows 0.06 -> 0.44: fast
-values sit far apart, so the race is nearly exclusive (win-stay, lose-shift). Blind to the
-cue 0.60 (matching 0.59). 230 N: everything survives, nothing to learn. A final Q snapshot
-at eta 0.2 is noisy (+-0.15): do not claim "Q equals the world" from one run. About 0.5 s
-a trial headless, 6 s with the viewer.
-
-**Week 19 facts, measured with `lab_life.py`:** a brace trained on 12 pushes and saved
-(1.8 MB; header names wiring and body digest) loads in a new process and goes `.X..X.`
-against a fresh brain's `XXXXX.`; `identical` (two bodies, one brain each): 500 of 500
-commands identical, `snapshot_bytes` equal at the save and the end; loading into another
-body name raises StateError. The datasheet's brace lead is 1/(1−τ) (2 / 10 / 33.3 at τ
-0.5 / 0.9 / 0.97); pushes at 10 ticks fall 12 / 7 / 2 of 12, at 25 ticks 9 / 3 / 2. The
-learned peak sits at the push for τ 0.9 (tick 9, 24) but drifts late at 0.97 (38): do not
-claim the peak is always at the push. `health()` returns no forward-model row until the
-first stride; fresh: 0.89 False at 2 s, True from 3 s; a turn lifts 0.06 to 0.57. A loaded
-brain's forward model starts ahead (0.49 vs 0.89 at 2 s) but meets a turn worse (0.98 vs
-0.57). A fall with no push watched is counted apart (the first version mixed them in).
-
-**Week 20 facts, measured with `lab_remember.py`:** pushes in the WORLD frame read with a
-constant +45° bias (heading drifts with each push and is unobservable); pushes as a 5-tick
-heading-frame field read with offset 0. Pelvis accelerometer during the push minus the
-stride before: 8 directions 0.90-0.97 at 100 N (no falls), 0.57 at 60 N, 1.00 at 60 N with
-4 directions; torso 0.83 vs pelvis 0.92 (pilot). The `observer` profile's 64 slots cannot
-be encoded at small D (D 16 refuses 64 positions, D 8 refuses 24): the lab sets 32 slots.
-Memory matches the certificate (D 64, K 8/16/24: 0.94/0.79/0.67 vs 0.94/0.76/0.64; D 32:
-0.71/0.53/0.46 vs 0.76/0.56/0.46); recall is uniform across slots; both ≈ perception ×
-memory; 3 episodes of 8 beat one of 24 (0.94 vs 0.67). About 2 s per episode of 8.
-
-**Week 21 facts, measured with `lab_hold.py` (20 lists of 16):** held 7.30 / 10.75 / 4.80 at
-γ 0.75 / 0.9 / 0.5 (law 6.83 / 9.87 / 4.62), d 128 7.95 (7.86), a list of 7 5.10 (5.17).
-The law is slightly conservative at V = 8 (laptop, 300 lists: 6.96 vs 6.83; 8 DISTINCT
-items too, 5.60 vs 5.45 -- not caused by repeats). A full rehearsal cycle leaves recall
-by age bit-identical over all 20 lists; rehearsing the newest or oldest 3 (16 times) makes
-them certain and drops the count to 4.95 / 5.05; half a cycle (8) moves the strong ages
-to the oldest half (7.65). The random schedule rehearsed the same positions in every list
-of a run. About 3 s per list.
-
-**Week 22 facts, measured with `lab_consolidate.py` (d 64, episodes of 8):** the
-hippocampus is flat at 0.90-0.94 (law 0.90) whatever the number of episodes; after a
-boundary its recall returns None. The cortex's law counts DIFFERENT pairs and the robot's
-world repeats 8 kinds of push: robot cortex 0.95 / 0.86 / 0.62 / 0.41 at 40 / 80 / 160 /
-320 pushes against law 1.00 / 1.00 / 1.00 / 0.96, while `--distinct` (512 symbols, no
-robot) follows it (1.00 / 1.00 / 0.94 / 0.56 against 1.00 / 1.00 / 0.91 / 0.59) -- ubrain's
-lab 7 exercise 3, on the robot. d 128 lifts the robot's cortex only to 0.83 at 160. A
-forgetting cortex (γ 0.97 per write) keeps the last 2-3 of 20 episodes. End to end ≈ the
-product of the stages.
-
-**Week 23 facts, measured with `lab_notice.py` (20 bursts of 6, d 64, window 8, α 0.05):**
-recent repeats are skipped every time; fresh directions are judged familiar at 0.00 against
-a predicted 0.03 -- the prediction averages over random codes, and with 8 FIXED codes no pair
-crosses θ 0.693 -- while at α 0.3 the robot meets it (0.18 vs 0.19). Written: 45 of 120
-(random), 29 (gusty: L/R 80 %); window 2 / 4 / 8 / 16 write 0.73 / 0.58 / 0.38 / 0.16 with
-the cortex at 0.77 / 0.81 / 0.98 / 0.95. **Rest decides consolidation:** with 4 quiet moments
-(1 s each) the brain is executive 0.89 of the time and only 23 of 46 written pushes reach the
-cortex (the rest are still in the episode at the end); 8 quiet moments (the default) replay
-after every burst (45 of 45). The first version scored the cortex against everything written
-and over-reported; it now counts only what was replayed.
-
-**Week 24 facts, measured with `lab_habit.py`:** the G1's world is deterministic, so all
-2 x 3 x 40 trials are measured once (traces/world.json, identical to week 18's 40-phase map)
-and brains play against it. On the robot memory wins early AND late (late 0.81 vs the
-striatum's 0.66 = matching; chooser 0.82, 95 % to memory); forgetting (γ 0.8) or a small
-store barely hurt memory. ubrain's lab 9 crossover needs many situations: on the laptop
-bandit (0.7/0.3) memory's late reward is 0.70 / 0.68 / 0.61 / 0.54 at 2 / 16 / 64 / 256
-situations against the striatum's 0.58; at 256 habit overtakes from visit 11-30. **The
-hand-over measures separability, not reliability:** at d 8 the chooser hands only 61 % to
-memory and earns 0.73 while memory alone earns 0.79.
-
-**Week 25 facts, measured with `lab_patience.py`:** serotonin on the G1's world (stop: 0.4
-after 2 moments; walk on: the G1's 0/1 after 8, p 0.55): P(walk) 0.068 / 0.392 at τ 2 / 10
-against law 0.064 / 0.430 -- **high τ sits below the law** (also 0.530 vs 0.601, 0.705 vs
-0.751 at other deals): the 0/1 reward makes the walk value noisy and a proportional race
-picks a noisy value less than its mean (Jensen). Adaptive τ 5.85 (fixed point 6.02).
-Serotonin's law on the robot: stop pays 0.4 -> the impatient robot earns most per moment
-(0.093 vs 0.072); 0.1 -> the patient one (0.049 vs 0.038). Noradrenaline reproduces
-ubrain's example 10 (wrong fixed criterion 0.051 vs 0.049; adaptive 0.025 vs 0.026; level
-0.501 vs 0.503) and runs away at η 0.1 (criterion 0.995, error 0.49). Noradrenaline is
-laptop-only: the push sense gives exact codes, so a gate judging noisy repeats has nothing
-to judge on the robot.
-
-**The `vision` extra (2026-10-25, user: "proceed").** `pyproject.toml` gained
-`vision = [torch, transformers, pillow, huggingface-hub]`; `uv lock` only added packages
-(transformers 5.20.2, tokenizers 0.23.3, ...). **Run weeks 26-27 with `uv run --extra
-vision`**: a plain `uv run` re-syncs to the default and removes torch (the same trap as
-week 10's `--extra gpu`), and `uv sync --extra vision` alone drops `rl`/`gpu`/`env`, so
-sync every extra you need in one command. The CLIP weights (openai/clip-vit-base-patch32,
-revision 3d74acf9a28c, ~600 MB) come from the Hugging Face cache; `lab_codecs.py
---download` fetches them. The gallery scene (21 CC0 photographs, `PROVENANCE.json`) is
-vendored at `vendor/ubrain/g1_body/scenes/gallery_cc0`; `ubrain_vendor.start_body` takes
-`head_camera`, `gallery`, `record_chase`. Gallery body digest `f787c763e67a`.
-
-**Week 26 facts, measured with `lab_codecs.py`:** the cone, mean cosine between different
-items: CLIP text (168 words) 0.82 raw, −0.01 centred; the 21 pictures 0.60 / −0.05.
-Centred, the certificate equals white codes' (0.996 at k 16) and recall follows it: the
-10-word sentence 10 of 10, 18 words 18 of 18, 16 pictures 16 of 16. **Not centred (a Sense
-with a zero mean, `--raw`) the sentence comes back 4 of 10** at the full d 512 (20 random
-episodes: k 8 0.69, k 16 0.51, k 32 0.17); the pictures, a shallower cone, lose 1 of 16.
-`certify` assumes centring, so it cannot certify raw codes. Certificate / measured (20
-episodes): d 128 k 8 0.909 / 0.931, k 16 0.555 / 0.522; d 64 k 8 0.583 / 0.512; d 32 k 4
-0.609 / 0.637. The bag-of-letters codec gives anagrams (`eat`/`tea`, `baker`/`break`) one
-code: certificate 0.941 at k 16 against CLIP's 0.995 and random codes' 0.999. `name`: every
-gallery picture's image code is nearest its own name's text code, 21 of 21 (cosines
-0.21-0.31).
-
-**Week 27 facts, measured with `lab_explore.py` (58 s, 0.5 m/s):** as shipped 12 of 21
-written, 12 of 12 recalled, 11 in order; the clock is written as "laptop", shoe/horse/
-butterfly never recognised three glances running, nothing new after 31.6 s. **Cause, by an
-in-process probe of the body's pelvis position (not shipped):** walking "straight" open
-loop the G1 drifts right, y −0.84 m at 30 s (the panels stand 0.65 m off the line),
-−2.77 m at 55 s; heading −8° by the gyro. `--steer 0.5` (yaw-rate goal −0.5 × the
-gyro-integrated heading) stays within 0.5 m: 20 written, 20 of 20, 18 in order (`--steer
-2`: 17 in order). Stages: `--steady 1` 12 / 12 / 8 in order; `--no-snap` 12 written, 6 of
-12 recalled (ubrain's docstring measured the same); `--no-fovea` 8 written; `--steer 0.5
---d 64` 8 of 15 (certificate 0.56 at k 16), `--d 128` 14 of 19 (0.72 at k 21). `--vx
-0.3 --seconds 90` writes only 16, unexplained. A walk is deterministic and takes ~12 s
-headless plus ~20 s to load CLIP.
-
-The ubrain examples named here live in the papercode repository (`ubrain/examples/`)
-and in the ubrain kit; a week copies its example in and adapts it to run on this
-repository's `uv sync` (week 16's `ubrain_local.py` pattern), as `lab_striatum.py` does.
 Commit and push a new week when the user asks.
 
 Capstone presentations occupy the final-exam slot. Weeks 0 and 1 share the first
@@ -311,6 +204,20 @@ week depends on a learned walker: 11 planning, 12 robustness, 13 imitation,
 `soc4180.game` machinery. See *Weeks 11–15* below for what was measured,
 including three designs that failed and why.
 
+**Week 7: the MDP solved, not only simulated (2026-11-08, user: "This project defined reward
+but not used in mdp policy").** `G1WalkEnv` is a simulator (samples, not P and R tables), and
+nothing in weeks 0-7 used R to choose an action -- `my_policy` is hand-designed. `mdp.py` and
+ten deck slides after *Bellman, steps 4-5* close that: the G1's sagittal balance as the
+LIPM (CoM 0.661 m, foot -0.05..+0.12 m about the ankle, measured at the settled crouch; 50 Hz),
+81 x 81 (x, v) grid + FALLEN, 7 CoP actions, P bilinear (4 non-zeros per row), R = alive -
+upright (x/0.1)^2 - effort (p/0.1)^2, value iteration. Measured: 1376 sweeps, error ratio
+0.9900 = gamma; **pi* saves exactly the capture-point set** (32.3 % = 32.3 %, agree 100.0 %;
+pushes -0.19..+0.46 vs -0.193..+0.462); J(pi*) 72.12 by rollouts vs 71.97 on the grid; the
+lean-only rule p = 2x is undamped here (pushes +-0.03-0.04 only; falls at 3.62 s after 0.1 m/s);
+gamma 0.9 / 0.8 / 0.7 / 0.5 save 31.8 / 20.6 / 0.7 / 0.0 %; alive 0 saves 26.1 % (falling ends
+the penalties), effort 3 28.7 %. pi* is optimal for the grid MDP, not exactly the pendulum
+(--upright 0: damped 77.59 vs 77.56). The deck's cells are self-contained (Colab has no `mdp.py`).
+
 **Week 8 facts, measured.** REINFORCE from scratch on CartPole: 60 -> 489 in
 173 s, using a **batch of 8 episodes per update** — with one episode per update
 identical code reached 260 and 88 on two runs, so batching is required for the
@@ -334,7 +241,55 @@ to ~180 and the same 30k run then scores 776 instead of 95.
 Even fixed, it only matches the standing baseline — it has learned not to fall,
 not to walk (which is worth 1250). 30k steps is 0.02% of a real run.
 
-Week 8 is ~6 min; it trains four times.
+**Week 7b: tabular RL (2026-11-08, user: "Students are not ready for 08 ... teach RL with atari
+games"; then "how about including inverted pendulum?").** Atari was rejected (DQN needs hours of GPU,
+pixels/CNN are week 14's, `ale-py` not locked, off the G1 spine); the week is gymnasium toy-text +
+MuJoCo's `InvertedPendulum-v5` + week 7's balance, all on `soc4180.tabular` (no torch, no pygame:
+grids are drawn as MuJoCo tiles with a mocap agent). Measured: FrozenLake (slippery) value iteration
+571 sweeps, pi* 0.737; Q-learning (alpha 0.05, eps 1 -> x0.9995, floor 0.05) 0.737 at 5000 episodes,
+same action as pi* on every reachable tile. gamma: VI 0.465 / 0.442 / 0.730 / 0.730 / 0.737 at 0.5 /
+0.8 / 0.9 / 0.95 / 0.99, Q-learning (3 seeds) ~0.07 at 0.5, noisy at 0.9-0.95 (0.51-0.73), 0.737 at
+0.99 and 1.0 -- samples need the route values far apart. Acting at random (eps 1): Q-learning's greedy
+table 0.730 / 0.747 / 0.646, SARSA's 0.308 / 0.607 / 0.128. Cliff (eps 0.1, alpha 0.5, 500 ep):
+SARSA falls in 11 / 7 / 14 of the last 200 episodes, path 17-19; Q-learning 51 / 49 / 47, path 13.
+Pendulum (forces -3/0/+3, angle + angular velocity, 6 x 6 = 36 rows, 3000 episodes, 25-40 s): **a
+coarse table learns and forgets** (seeds 1 and 2 reach 1000 and lose it by 3000), so `KeepBest`
+checks the greedy table every 250 episodes and keeps the best: 10 of 10 seeds balance 1000 steps from
+10 held-out starts. Angle only: 7-35 steps (not Markov); all four numbers: 43-77 (rows multiply);
+the angle cut only at 0 + 6 velocity bins passes (12 rows); +-3 N with no zero fails (94-120).
+Balance from samples (100k episodes, J over the second half of 8 checks): 5 / 11 / 21 / 41 / 81 bins
+19.1 / 51.1 / 65.5 / 66.1 / 53.3 against VI's 72.12 -- an inverted U. **Open defect (found 2026-11-08,
+not fixed):** `BalanceLearner.advance` updates with `np.add.at`, so the batch's episodes that share a
+(row, action) in one tick each add alpha * delta from the same old Q -- measured up to 31-36 copies
+(median ~25), an effective step of 2.5-3.6 instead of alpha 0.1. Averaging the copies (one alpha step
+per entry per tick, same random draws) gives 20.0 / 54.6 / 63.7 / 66.2 / **63.3**: the coarse end
+holds, but 81 bins' 53.3 is mostly the defect, and 81 would pass problem 6 (>= 60). The deck's "too
+fine: slow and stuck" and the README's "81 bins fails" rest on it. Fixing it means re-measuring
+problem 6, the deck's sweep, both docstrings and the README (and a docstring edit in
+`lab_tables.py` moves the scorer code off 119A). Every graded number repeats
+exactly on one machine (toy-text is pure numpy; MuJoCo stepping is deterministic). **The deck's
+Colab guard is wrapped in try/except**: `importlib.util.find_spec("google.colab")` RAISES
+`ModuleNotFoundError` when no `google` package exists at all (a venv without protobuf, i.e. without
+the gpu/vision extras) -- weeks 2b and 11 use the bare form and would fail locally in a lean env.
+**Never `uv run --extra rl` on this machine**: it re-synced the venv to rl alone and removed gpu and
+vision (jax, transformers, protobuf); restore with `uv sync --extra rl --extra gpu --extra env --extra
+vision`, and call `.venv/Scripts/python.exe` directly.
+
+**Week 8: the policy gradient on week 7's MDP (2026-11-08).** Five slides after CartPole run
+REINFORCE on week 7's balance MDP from episodes only (no P table), so a learner can be checked
+against an exact answer: Gaussian around p = theta . (x/0.1, v/0.5), sigma 0.02 m, gradient
+written out ((a - mu)/sigma^2 = eps/sigma, no autograd), `A = (G - b) * M` named as the one
+line where R reaches theta. Measured (seed 0, 300 updates x 32 episodes): J 12.66 (hold) ->
+**70.84**, rule p = 2.14 x + 0.38 v (week 7's hand rule 2x + 0.5v: 70.80); the best straight
+line on a gain grid 71.04 (3.75 x + 0.70 v), so the last ~1.1 to 72.12 is the policy class
+(pi* is nearly bang-bang), not the optimiser. Five seeds: advantage scaled by its batch std
+(lr 0.01) end 68.5-70.8, slow (J ~12-16 at update 25); raw advantage (lr 0.005) reaches the
+plateau by update 25 in most seeds but one collapses to 13.0 at 300 -- PPO's clip is the
+motivation. The deck now follows week 7's form: `#| echo: true` on computing cells, offline
+MathJax, every slide <= 800 px (the first measurement found 13 over, Steps 4-5 split).
+
+Week 8's render took 24 min with a 32-worker job on the machine (no quiet timing since
+the balance slides were added); it trains four PPO runs plus the balance learner.
 
 **Week 9 facts, measured.** The reward's *ranking* is correct — walking at target
 1250, slow walk 1023, standing 776, lunge-and-fall 51. But the planned six-way
@@ -435,7 +390,7 @@ uv run python -c "import soc4180"              # smoke test
 uv run scripts/view.py --walk                  # interactive viewer (laptop/desktop)
 quarto render weeks/01-intro/slides.qmd        # -> slides.html + lab.ipynb
 uv run python scripts/build_site.py            # rendered decks -> _site/ for Pages
-uv run scripts/instructor.py open|seal         # encrypted answers <-> weeks/*/instructor/
+# (scripts/instructor.py open|seal is no longer used: answers are published in weeks/*/instructor/)
 ```
 
 There is no test suite or linter configured. Add the tooling before inventing
@@ -459,9 +414,8 @@ one-fill-in-returning-`None` convention is gone. What replaced it:
 | 05 | `lab_servo.py` (`torque_from_pd` complete, `H` hands over, `L`/`--law` cycles P/PD/PI/PID/D) | `servo.py --joint --kp-scale --kv-scale --limit --walk` | ζ from `mj_fullM`, rise time, overshoot, peak torque; sag and falls |
 | 06 | `lab_imu.py` (`my_filter` complete) | `imu.py --walk --noise --alpha --sweep` | three estimators' error per second; the α sweep |
 | 07 | `lab_env.py` (`my_policy` = the ankle strategy) | `env_run.py --policy --push --weights --hz --action-scale` | reward per second by term; pushes survived |
-| 08 | `lab_train.py` (`choose_action` complete) | `train.py --log-std --steps` | deterministic vs stochastic, before and after |
-| 09 | `lab_reward.py` (`extra_reward` complete, `EXTRA` picks) | `shape.py --variant --extra` | scored on its reward AND the original |
-| 10 | `lab_many.py` (`predict_rate` complete, `COST_EXPONENT`) | `many.py --robots --procs --randomise` | physics-only vs walking robot-steps/s; processes |
+| 07b | `lab_tables.py` (graded game; students edit `tables.py`) | `qlearn.py --task frozen\|cliff\|pendulum\|balance` | lake success vs value iteration; cliff falls and paths; pendulum kept-table steps; balance J by table size |
+| 08-11 | one `lab.py` each (2026-11-15; see *Lectures 08-11*) | — | 08 learned gain; 09 survival grid; 10 MPPI + copy table; 11 look battery |
 
 Conventions, all followed: numbered sections with the explanation in the
 comments at the point of the call; every experiment in the docstring carries
@@ -487,16 +441,13 @@ own blanks and names their lines. Do not go back to a numeric placeholder:
 360 m IK request. **Any edit to `lab_connected.py` changes the scorer code**
 (a hash of the file) that the instructor writes on the board.
 
-**Instructor answers are pushed only encrypted -- in Part I.** Part II (weeks 16 on) publishes its measured references in plain `weeks/NN-*/instructor/reference.md` (user, 2026-10-25: "no need hide answer"; `.gitignore` re-includes `weeks/1[6-9]-*/instructor/` and `weeks/2[0-9]-*/instructor/`). For Part I: The repo is public, so
-`weeks/*/instructor/` is gitignored and `scripts/instructor.py seal` packs
-every such folder into `instructor.tar.gz.gpg` (gpg symmetric AES-256, the
-gpg that ships with Git for Windows; no new dependency, so `uv.lock` is
-untouched). `open` restores them and refuses to overwrite a local file that
-differs unless `--force` is given. The passphrase lives only with the
-instructor. Never `git add -f` a plain answer file, and re-seal after
-editing one. **The archive is committed** (`53b7eee`, week 3's
-`moves_solution.py`); Claude cannot seal, because it cannot type the
-passphrase, so sealing is always the instructor's step.
+**Every week's answers are published in plain text** (user, 2026-11-08: "No need seal. All
+solutions must visible to students"). `weeks/*/instructor/` is no longer gitignored, for Part I
+as for Part II (whose `reference.md` files were published from 2026-10-25). Commit an answer file
+like any other file; nothing is sealed. `instructor.tar.gz.gpg` and `scripts/instructor.py`
+(seal / open) are left from the encrypted period and are no longer used. The midterm is
+different: `weeks/exam_midterm/*` (exam paper, answer key, cover) stays gitignored -- the
+2026-11-08 instruction was about lab solutions; ask before publishing an exam.
 
 Measured while building the pipeline scripts (2026-09-20), beyond the
 per-week READMEs:
@@ -722,9 +673,9 @@ NAME)` refuses a blank and names its lines, `Problem(title, text, make)`,
 play, `G` grades, the scorer code is a hash of the lab file; the viewer reopens
 when an attempt brings a different model; `set_images` draws a picture in the
 corner). Week 3 keeps its own copy — its scorer code must not move. Reference
-answers live in each week's `instructor/` (gitignored; **the instructor must
-re-seal**: 11 `costs_solution.py`, 12 `audit_solution.py`, 13
-`students_solution.py`, 14 `eyes_solution.py`, 15 `instructions_solution.py`).
+answers live in each week's `instructor/`, published (11 `costs_solution.py`,
+12 `audit_solution.py`, 13 `students_solution.py`, 14 `eyes_solution.py`, 15
+`instructions_solution.py`).
 
 **Grade by margins, never on a knife edge.** Several first-draft problems
 were one weight wide (week 11's hop-free CRANE passed at `plant_right` 1000
@@ -894,6 +845,14 @@ site must be rebuildable from the Actions tab.
 
 Decisions in that workflow, each with a reason:
 
+- **A push renders only the weeks whose `slides.qmd` it changed** (2026-11-08); every
+  other deck is copied from the live site. A full render of ~30 weeks outgrew the
+  120-minute job limit: every run from 2026-11-02 to 2026-11-08 was cancelled, and a
+  cancelled run never saves `_freeze`, so each retry started from zero and nothing
+  deployed (week 7b never appeared). A full render is now manual only (Run workflow,
+  `weeks` empty). After a change to `src/`, `uv.lock` or `assets/` that must reach
+  decks, run it by hand with those weeks named: a push will not re-render them.
+
 - **One `quarto render` per week, in a loop**, not one project-level render. A
   project render is all-or-nothing: week 10 alone failing would publish nothing.
   The loop ships the ten decks that worked; a separate `report` job (which runs
@@ -971,6 +930,32 @@ re-render. In particular do not use Colab's *Save a copy in GitHub* on these
 notebooks; it would commit executed outputs over the generated file.
 
 ### Verified Quarto behaviours (do not re-litigate)
+
+- **revealjs hides code by default (`echo: false`); ipynb shows it.** So a deck
+  prints a cell's output with none of the code behind it, while `lab.ipynb` has
+  everything -- reported for week 7 as "the slide is missing parts of lab.ipynb".
+  Week 7 (2026-11-02) is the pattern: `#| echo: true` on cells that compute a
+  number, drawing code left hidden (a note on the first figure slide says it is
+  in `lab.ipynb`), and a long cell split into "code + output" and "drawn"
+  slides. Showing code makes slides taller: measure every slide's
+  `scrollHeight` in headless Chrome (append a script to a copy of
+  `slides.html`, `--dump-dom`) and split anything over 800 px. Week 8 followed (2026-11-08);
+  other decks still hide their code. Converting a deck pushed 13 of week 8's
+  slides over 800 px, including untouched ones: measure the whole deck.
+- **"Self-contained" decks are not, for maths.** `embed-resources` inlines
+  everything except MathJax: the reveal.js template's math plugin downloads
+  MathJax 2 from cdn.jsdelivr.net when the deck opens, so offline (or in a
+  preview that blocks outside scripts) every equation shows as raw TeX --
+  reported for week 7 as "html file is missing with equations". `mathml` is no
+  way out: pandoc cannot convert `\color{#hex}`, which the colour code needs.
+  The fix (week 7, 2026-11-02): `html-math-method: plain`, the Lua filter
+  `assets/mathjax/offline-math.lua` (writes `\( \)`/`\[ \]` spans, reveal.js
+  only), and `include-after-body: assets/mathjax/mathjax.html`, which inlines the
+  vendored MathJax 3.2.2 SVG build (`tex-svg-full.js`, Apache-2.0, +2.3 MB per
+  deck). Verified with Chrome's network blocked (`--proxy-server=127.0.0.1:9`).
+  MathJax 3 sets equations a little wider than 2 did: check widths on the
+  `mjx-container > svg`, not the container (which is slide-wide). Weeks 7 and 8
+  embed it; other decks still use the CDN.
 
 - `#| eval: false` **does** survive into `lab.ipynb` as a genuine unexecuted code
   cell. No post-render cell injector is needed.
@@ -1637,3 +1622,20 @@ locomotion video needs it — the robot leaves a fixed frame in about two second
 - G1 is a 29-DOF full humanoid. If training proves too slow, `berkeley_humanoid`
   (12 actuated DOF) and `robotis_op3` are the cheaper fallbacks and also have
   tuned `playground` locomotion envs.
+
+<!-- ubrain-feedback: begin -->
+## ubrain: the feedback channel (written by papercode's register_project.py; do not edit between the markers)
+
+This project uses ubrain and is registered as `soc4180code` in papercode's feedback register.
+- **At the start of every session, read the Bulletin**: https://github.com/untrained-brain/ubrain-dev/issues/37
+  (current and candidate ubrain releases, the release reports awaited, what this project is asked to do).
+- **File** every ubrain limitation, defect or missing capability when it happens, with the *Feedback on
+  ubrain* issue template in `untrained-brain/ubrain-dev`; search the issues for related items first.
+- **Reply** on the item's issue (`FB-NNNN: ...`). Never edit papercode's files or ubrain's code.
+- **The rules**: `W:\papercode\devnotes\feedback\PROTOCOL.md` -- evidence that runs on ubrain alone, an
+  acceptance test per item, one release report per wheel, `# ubrain-workaround: FB-NNNN` tags,
+  corrections filed at once.
+- **The token** for the API is `GITHUB_UBRAIN_TOKEN` in `C:\Users\hjeong\OneDrive\.env`; read it into a
+  variable, never print it. On this machine `python W:/papercode/devnotes/feedback/file_item.py --project
+  soc4180code item.json` is the local route.
+<!-- ubrain-feedback: end -->

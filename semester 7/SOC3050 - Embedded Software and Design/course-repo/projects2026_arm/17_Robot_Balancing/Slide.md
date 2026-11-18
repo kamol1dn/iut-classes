@@ -653,11 +653,11 @@ which by itself demands a steady acceleration.
 and prints its eigenvalues — **measured on the host**:
 
 ```
-$ python lqr.py --pid 150,0,4
+$ uv run lqr.py --pid 150,0,4
   +1.00152+0.00000j   |z| = 1.00152   UNSTABLE: grows e-fold every 3.29 s
-$ python lqr.py --pid 25,0,2
+$ uv run lqr.py --pid 25,0,2
   +1.00847-0.00000j   |z| = 1.00847   UNSTABLE: grows e-fold every 0.59 s
-$ python lqr.py --pid 150,50,4
+$ uv run lqr.py --pid 150,50,4
   +1.00000+0.00000j   |z| = 1.00000   = 1: position - nothing pulls it back (drift)
   +0.99992-0.00035j   |z| = 0.99992   slow swing, period 88.9 s
 ```
@@ -797,7 +797,7 @@ two, so every step is readable.
 
 ## Slide 18: The Numbers — and the Proof It Stabilises
 
-**Measured on the host**, `python host/lqr.py`:
+**Measured on the host**, `uv run host/lqr.py`:
 
 ```
 K = [ -5.1239  -15.2554  -21.2619  -2.4627 ]    u = -K x
@@ -858,7 +858,7 @@ contest on exactly this.
 | `world` | 5 | 1 ms | apply requests, `world_step`, `world_sense`, publish | 160 words |
 | `control` | 4 | 5 ms | copy sensors, `control_step`, publish volts | 160 |
 | `ui` | 3 | 20 ms | `pad_read`, buzzer, `$BAL` every 100 ms | 384 |
-| `shell` | 2 | on input | `stats mode noise alpha vbat push k` | 384 |
+| `shell` | 2 | on input | `stats mode noise alpha vbat push k quiet loud`; the station's `$KEY`, `$MIRROR` | 384 |
 | `display` | 1 | 100 ms | `view_draw`, `oled_flush` over I²C | 384 |
 
 **One writer per variable.** `world_t` belongs to the world task alone; the
@@ -909,7 +909,7 @@ the wrap. `stats` prints the results.
 
 ---
 
-## Slide 22: The CPU Budget — Estimated, Not Yet Measured
+## Slide 22: The CPU Budget — Estimated, Then Measured on a Model
 
 Counting the float operations in the source and pricing each at ~70 cycles
 (soft-float on the M0+, lesson 10's order of magnitude):
@@ -920,12 +920,21 @@ Counting the float operations in the source and pricing each at ~70 cycles
 | `control_step` | ~40 + one `f_atan2` divide | ~100 µs | 200/s | ~2 % |
 | `view_draw` + `oled_flush` | integer drawing; I²C ~25 ms for a full frame | ms | 10/s | the rest, at the lowest priority |
 
-**This is an estimate.** Nothing in this repository can time Cortex-M0+
-instructions — the host test runs on an x86. The first thing to do in Wokwi is
-type `stats`, which prints the measured µs per step from TIM14 and the share
-of CPU it adds up to. If the world takes more than a millisecond, the kernel
-cannot keep its 1 kHz and the physics slows down — the robot would fall in
-slow motion, and `stats` would show it.
+**The estimate is three times low.** Lesson 10's instruction-level M0+ model
+(`10_Fixed_Point_And_DMA/host/m0sim.py`), running this very `Main.elf` for 2 s
+of balancing at one flash wait state, measures `world_step` + `world_sense`
+at **~740 µs** of every 1000 - 74 % of the CPU - and `control_step` at ~185 µs
+(all three controllers within 5 µs). The soft-float library calls cost far
+more than 70 cycles each. So on silicon the 1 kHz world just fits, and
+`control` runs in the ~260 µs gaps it leaves.
+
+In Wokwi, whose CPU runs ~5x slower than its SysTick (lesson 14), a world step
+takes several milliseconds. Its task therefore has lesson 13's **overrun
+guard**: a step that ran late sleeps as long as it took, so the physics runs in
+slow motion and the tasks below still get CPU. Control takes a **beat** from
+the world every 5th step, so it keeps its 200 Hz *of simulated time* at any
+CPU speed. `stats` prints the measured µs per step from TIM14 and the
+`overruns`.
 
 The host meanwhile proves the run is **deterministic**: two runs with the same
 seed agree bit for bit (measured on the host).
@@ -974,8 +983,8 @@ controller's estimate go out, so the complementary filter's error can be
 charted directly:
 
 ```
-python ..\08_UART_And_Python_Host\host.py --file capture.txt --chart BAL,3,-30000,30000
-python ..\08_UART_And_Python_Host\host.py --file capture.txt --chart BAL,4,-30000,30000
+uv run ..\08_UART_And_Python_Host\host.py --file capture.txt --chart BAL,3,-30000,30000
+uv run ..\08_UART_And_Python_Host\host.py --file capture.txt --chart BAL,4,-30000,30000
 ```
 
 Field 3 is the truth, field 4 the estimate. Push the robot with `b` and the two
@@ -1019,7 +1028,7 @@ Read honestly:
   `--pid` eigenvalues for tilt-only control.
 - `sitl.c`: every number on slides 9, 12, 14, 19 and 25; determinism; the
   OLED frame drawn pixel by pixel.
-- Firmware: **builds with zero warnings**, FLASH 23 960 B, RAM 10 144 B.
+- Firmware: **builds with zero warnings**, FLASH 26 672 B, RAM 10 488 B.
 
 **Not measured:**
 
@@ -1027,7 +1036,8 @@ Read honestly:
   estimates; `stats` will give the real ones.
 - **Not watched in Wokwi.** The OLED, buttons, knob and buzzer are wired as
   the shared app board is, and `pad.c`/`oled.c` are shared with lessons 12–16,
-  but this lesson's screen has only been drawn on a PC.
+  but this lesson's screen has only been drawn on a PC. Nor has the route
+  to the PC's station (`tools/station/station.py`: `$KEY` in, `$FB` out).
 - **The model is a model.** No slip, no motor inductance, no gear backlash, a
   flat floor. A real robot would need its gains re-checked.
 

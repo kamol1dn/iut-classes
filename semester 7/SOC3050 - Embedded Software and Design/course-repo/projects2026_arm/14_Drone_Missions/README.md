@@ -24,16 +24,16 @@ waypoints, altitude, battery, wind.
 | | |
 |---|---|
 | `Slide.md` | the lecture - 31 pages as rendered: the title, the two pin-map slides, then the numbered slides, each register block's one-page map before its details |
-| `Lab.md` | the lab: Parts 0–8, ~2 hours, three contests, **nothing handed in** |
-| `Main.c` | five RTOS tasks (world, ctl, link, tel, ui), three locks, the shell (`stats params mission tel`), SysTick cycle stamps |
+| `Lab.md` | the lab: Parts 0–9 (9: the station), ~2 hours, three contests, **nothing handed in** |
+| `Main.c` | five RTOS tasks (world, ctl, link, tel, ui), four locks, the shell (`stats params mission tel quiet loud`), the station's keys and OLED mirror, SysTick cycle stamps |
 | `control.h` | the plant/controller contract: `sensors_t`, `actuators_t`, `control_step()` |
 | `world.c`, `world.h` | **pure C.** The simulated drone: tilted thrust, linear drag on airspeed, OU gusts from xorshift32, battery ∝ thrust^1.5, delayed GPS, baro, biased accelerometer |
 | `flight.c`, `flight.h` | **pure C.** Estimator, cascade, modes (DISARMED TAKEOFF HOLD MISSION RTL LAND), line following, mission validation, pre-arm, failsafes, `$PARAM` table |
 | `mavlite.c`, `mavlite.h` | **pure C.** Strict frame parser (`$WP $MISSION $MODE $ARM $DISARM $PARAM $PING`) and telemetry builders (`$POS $TRU $EVT $MIS $ACK`) |
 | `ui.c`, `ui.h` | **pure C.** The OLED map and panel, drawn into `oled.c`'s RAM framebuffer |
 | `fm.c`, `fm.h` | `fmath.h`'s sin/cos/atan2/sqrt/wrap compiled once (saves 720 B of flash — slide 25) |
-| `build.bat` | `LIBS=retarget os uart proto i2c oled adc pad beep` |
-| `simulate.bat`, `diagram.json`, `wokwi.toml` | the app board, unchanged from `_targets/app-board-diagram.json`; `wokwi.toml` adds lesson 08's `rfc2217ServerPort = 4000` |
+| `build.bat` | `LIBS=retarget os uart proto i2c oled adc pad beep keys kbd mirror` - the last three for the station |
+| `simulate.bat`, `diagram.json`, `wokwi.toml` | the app board, unchanged from `_targets/app-board-diagram.json`; `wokwi.toml` adds lesson 08's `rfc2217ServerPort = 4000`, the station's and `mission.py --port`'s route |
 | `host/sitl.c` | software-in-the-loop: flies the four pure-C files on the PC; every test, `--parse`, `--fly`, `--hold` |
 | `host/run.bat`, `host/run.sh` | build and run all host tests; exit non-zero on any failure |
 | `host/mission.py` | the ground station, standard library only: mission file → frames, `--gen`, `--port` (pyserial, as lesson 08), `--score`, `--race`, `--verify-mis` |
@@ -44,17 +44,57 @@ waypoints, altitude, battery, wind.
 ## Build and run
 
 ```
-build.bat        # FLASH 27496 B / 32 KB (83.9 %), RAM 10520 B / 12 KB (85.6 %), zero warnings
+build.bat        # FLASH 30092 B / 32 KB (91.8 %), RAM 10864 B / 12 KB (88.4 %), zero warnings
 simulate.bat     # paste diagram.json, upload Main.elf, press a
 host\run.bat     # the host tests (or: sh host/run.sh)
-python host\mission.py host\default.mission          # frames to type/paste into Wokwi
-python host\mission.py --score capture.txt --race    # score a captured flight
+uv run host\mission.py host\default.mission          # frames to type/paste into Wokwi
+uv run host\mission.py --score capture.txt --race    # score a captured flight
 ```
 
 Task stacks are 160/224/320/288/288 words (world/ctl/link/tel/ui), sized from
 `-fstack-usage` plus the C library's prologues; `stats` prints the measured
 high-water marks. The first build used 384 words each and **did not link**
 (RAM 12 576 B, 102 %); see slide 25.
+
+## Run it from the station
+
+`tools/station/station.py` is the PC side of the app board: the OLED drawn
+large, every control on the keyboard, and this lesson's own picture of its
+telemetry. In VS Code, start the Wokwi simulation (`wokwi.toml` opens
+`rfc2217ServerPort = 4000`), then from the repository root:
+
+```
+uv run tools/station/station.py
+```
+
+The first `$POS` selects the view `tools/station/views/l14_mission.py`: a
+top-down map with the estimated track (`$POS`) and the true one (`$TRU`)
+side by side, the waypoints from `$MIS`, home, the 50 m fence, the drone and
+its heading; beside it the mode, battery and wind, altitude and
+estimate-error strip charts, and the `$EVT` log.
+
+Click the OLED or the view, and the keys are the board's controls:
+
+| Key | Does |
+|---|---|
+| arrows | the joystick - in HOLD, moves the hold point |
+| `a` | button A: fly the mission, or resume it |
+| `b` (or `p`) | button B: return to launch |
+| `s` | SEL: HOLD here |
+| `1` - `5` | the knob in fifths: wind 1, 3, 5, 7, 9 m/s |
+| `-` / `+` | cruise speed, 1 m/s a press (the same `$PARAM,CRUISE`, 0.5-12 m/s) |
+| `?` | prints this list |
+
+Type `quiet` (Enter) in the station's command line to stop `$POS` and `$TRU`
+- the map then stops too - and `loud` to restart them; `$EVT`, `$MIS` and
+`$ACK` always go out. `$KEY` and the station's `$MIRROR` heartbeat are taken
+before `mavlite.c`'s parser, so they are never NAK'd or counted as bad
+frames. `mission.py --port` still works on the same port (one program at a
+time).
+
+**Not yet watched in Wokwi.** The station route was built and the view
+tested on the PC against the SITL's real `$POS`/`$TRU`/`$EVT`/`$MIS` lines;
+nobody has yet flown the lesson from it.
 
 ## Facts checked against sources, not memory
 
@@ -112,12 +152,106 @@ reports `LANDED` — it cannot tell a crash from a landing.
 
 ## Status
 
-- Builds with **zero warnings**: FLASH 27 496 B, RAM 10 520 B.
-- Host tests: **all pass** (above).
-- **Not yet watched running in Wokwi.** Nothing in this lesson has run on the
-  simulated chip. When someone does, look first at:
-  1. **`stats` after a minute of flight** — the per-step cost of `ctl` and
-     `world` (slide 26 predicts a few hundred µs for `ctl`) and every task's
+- Builds with **zero warnings**: FLASH 30 092 B, RAM 10 864 B. The station's
+  keys and OLED mirror (`keys kbd mirror` and their glue in `Main.c`) cost
+  2104 B of flash and 256 B of RAM over the 27 496 / 10 520 before them; the
+  lock-step below another 304 B and 32 B, the Wokwi fixes in `_lib/os.c`
+  and `_lib/uart.c` 188 B and 56 B (a 128-byte RX ring).
+- Host tests: **all pass** (above). They do not link `Main.c` or `os.c`, so
+  they say nothing about either fix below.
+- **Fix 1 - "does not start" in Wokwi (reported 2026-11-16).** This lesson
+  scheduled `world` (10 ms) and `ctl` (20 ms) on independent timers, as
+  lesson 13 did before it froze in Wokwi, where the CPU runs slower than
+  SysTick: the highest-priority task's step outlasts its period,
+  `os_delay_until()` never sleeps, and every task below starves. Lesson 10's
+  M0+ model on this `Main.elf` (10 s mission): `world_step` 0.90 ms,
+  `world_sense` 0.38 ms, `control_step` 0.99 ms mean / 1.38 ms worst -
+  **~16 % of the CPU on silicon**. Lesson 13's fix, ported to `Main.c`:
+  1. **Lock-step.** `ctl` has no timer of its own: every second world step,
+     `world` puts a beat on `beat_q` and waits on `done_q`; `ctl` takes the
+     beat, senses, runs `control_step()` and answers. Exactly 2:1 at any
+     CPU speed, never a stale or a doubled sample.
+  2. **Overrun guard.** If a cycle (world's step plus ctl's) took 10 ms or
+     more, `world` sleeps as long as it took instead of returning at once
+     from `os_delay_until()`: the flight goes into slow motion and the tasks
+     below get about half the CPU. `stats` prints `world overruns`.
+
+  **Seen starting in Wokwi the same day.** `stats` on the ground: `world`
+  step 4.7 ms mean / 13.7 ms worst, `ctl` 0.76 ms mean / 1.76 ms worst,
+  199 world overruns; CPU world 40.5 %, ctl 19.4 %, ui 37.4 %, tel 2.5 %,
+  idle 0 %; deepest stacks link 218/320, ui 216/288, tel 188/288 words (all
+  > 20 words spare); 97 008 OLED bytes sent. Wokwi's `world_step` is ~5x
+  the model's, but `control_step` is not (unexplained - possibly ground vs
+  flight). Most cycles fit their 10 ms; the overruns are the outliers.
+- **Fix 2 - froze mid-mission (2026-11-16, 33 s in, after waypoint 1).**
+  Read with GDB from the frozen Wokwi: `world` BLOCKED on `done_q`; `ctl`
+  BLOCKED with `waiting_on = 0` and its beat unread in `beat_q` (count 1) -
+  a lost wake-up. `ctl` had been switched out at `os_queue_get+78`
+  (0x8003c1a), between `state = OS_BLOCKED` and `waiting_on = q`; `world`
+  and `link` at `schedule+26`, just after the PENDSVSET store. All three
+  addresses lie inside `cpsid i` sections, where a Cortex-M0+ takes no
+  SysTick or PendSV, so **Wokwi took an exception with PRIMASK set**. (A
+  breakpoint on `SysTick_Handler` once reported PRIMASK = 1 on entry; a
+  repeat after an unclean GDB disconnect got no hit, so that check is not
+  settled.) The lock-step makes ~100 queue operations a second, so this
+  lesson meets the window in seconds; any kernel wait in any lesson can.
+  **Fixed in `_lib/os.c`** (lessons 08-19; lesson 07's own copy untouched):
+  blocking writes `waiting_on` before `state`, and every `OS_REWAKE_MS`
+  (10) ticks SysTick wakes every BLOCKED task to re-check its wait - safe
+  because every wait is a `while` loop. A lost wake-up becomes a pause of
+  at most 10 ms. **Not yet re-watched in Wokwi.** Not fixed: the same fault
+  can let the USART ISR race `os_queue_get()` on `rx_queue`, which fits the
+  two `?,ERR,CHECKSUM` refusals seen in that run - a garbled line, not a
+  freeze.
+
+  **Re-watched the same day: the built-in mission flew to the end** (take-off
+  17.5 s, waypoints 0-4 at 25.7 / 31.3 / 38.7 / 45.1 / 51.8 s, RTL, LAND at
+  58.9 s). Still wrong in that run, in **both** directions: five
+  `$ACK,?,ERR,CHECKSUM` (lines in from the station arrive garbled), and
+  lines out are garbled too - `$TRU,3E700,...`, `$DRU,...`, a broken `$FB`,
+  and `$MIS` 3 and 4 missing. Likely the same fault: if SysTick can switch
+  tasks inside `os_mutex_lock()`'s critical section, two tasks can both
+  own `print_lock` and write the TX ring at once.
+- **Fix 3 - Wokwi ignores PRIMASK, measured (2026-11-16).** `_diag_primask/`
+  spends half its time masked and counts exceptions that arrive while
+  masked. Wokwi, one pass of 4000 sections each:
+
+  | masked by | SysTick (10 kHz) | PendSV pended inside | TIM14 pended inside |
+  |---|---|---|---|
+  | `cpsid i` | 44 974 of 89 002 broke in | 4000 of 4000 | 4000 of 4000 |
+  | `msr PRIMASK, 1` | 45 024 of 89 066 | 4000 of 4000 | 4000 of 4000 |
+  | SysTick TICKINT off | **0** of 43 799 | - | - |
+
+  On silicon every figure that broke in is 0. So in Wokwi **no** `cpsid i`
+  section protects anything - the kernel's, `print_lock`'s, or a lesson's.
+  `_lib/os.c` now has `OS_SIM_GATES` (`os.h`, on): a critical section also
+  clears SysTick's TICKINT and restores it on the way out (pending a tick
+  lost meanwhile, from COUNTFLAG), and `PendSV_Handler` reopens it for the
+  incoming task, since Wokwi takes PendSV the moment `schedule()` pends it,
+  still inside the section. Redundant on silicon.
+
+  A first version also cleared every NVIC enable (ICER). The probe's test D
+  showed Wokwi honours that (TIM14 broke in 0 of 4000 times, every one
+  delivered after ISER), and the same run caught a typed character's USART2
+  IRQ breaking into a PRIMASK section. But in lesson 14 it made **every**
+  incoming line fail its checksum: read with GDB, the RX ring held
+  `$MIRROR,104` and `MIRROR1*04`, while the driver counted no overrun.
+  Wokwi drops a received byte when the interrupt is late, without setting
+  ORE, and the gate held USART2 off through every kernel section on a CPU
+  ~5x slow. So peripheral IRQs are not gated; instead **no ISR calls the
+  kernel**: `_lib/uart.c` now receives into a lock-free 128-byte ring (the
+  ISR writes the head, `uart_getc()` the tail and sleeps 1 ms while it is
+  empty). Lesson 08 keeps its own queue-based copy - its subject.
+
+  **Watched in Wokwi the same day: a full mission with no error** - no
+  `CHECKSUM` refusal, and no garbled line out either, so the substituted
+  characters in `$TRU`/`$FB` had the same cause. Lessons' own
+  `__disable_irq()` copies of shared structs (09, 11-19) remain unprotected
+  in Wokwi: a torn sample at worst.
+- **Still to check in Wokwi** (two built-in missions have flown to the end):
+  1. **`stats` after a minute of flight** — `world overruns` (Wokwi's
+     slowdown, directly), the per-step cost of `ctl` and `world` (the M0+
+     model above says ~1 ms each) and every task's
      stack high-water mark; any task within ~20 words of its size needs a
      bigger stack.
   2. **The OLED and the buttons** — does `a` (after the 1 s GPS lock) take

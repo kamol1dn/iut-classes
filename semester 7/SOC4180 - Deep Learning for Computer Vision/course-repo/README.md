@@ -23,31 +23,20 @@ result. Every deck is readable in a browser at
 | [04](weeks/04-walking/) | Making a humanoid walk — LIPM & ZMP | [deck](https://gnoejh.github.io/soc4180/04-walking/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/04-walking/lab.ipynb) | [`lab_walk.py`](weeks/04-walking/lab_walk.py), [`walk.py`](weeks/04-walking/walk.py) | GPU (render) |
 | [05](weeks/05-actuation/) | Actuation, PD control, and rhythm | [deck](https://gnoejh.github.io/soc4180/05-actuation/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/05-actuation/lab.ipynb) | [`lab_servo.py`](weeks/05-actuation/lab_servo.py), [`servo.py`](weeks/05-actuation/servo.py) | GPU (render) |
 | [06](weeks/06-sensing/) | Sensing and state estimation | [deck](https://gnoejh.github.io/soc4180/06-sensing/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/06-sensing/lab.ipynb) | [`lab_imu.py`](weeks/06-sensing/lab_imu.py), [`imu.py`](weeks/06-sensing/imu.py) | GPU (render) |
-| [07](weeks/07-mdp/) | From control to learning: MDPs and env design | [deck](https://gnoejh.github.io/soc4180/07-mdp/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/07-mdp/lab.ipynb) | [`lab_env.py`](weeks/07-mdp/lab_env.py), [`env_run.py`](weeks/07-mdp/env_run.py) | GPU (render) |
-| [08](weeks/08-ppo/) | Policy gradients and PPO | [deck](https://gnoejh.github.io/soc4180/08-ppo/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/08-ppo/lab.ipynb) | [`lab_train.py`](weeks/08-ppo/lab_train.py), [`train.py`](weeks/08-ppo/train.py) | GPU (render) |
-| [09](weeks/09-reward/) | Reward shaping | [deck](https://gnoejh.github.io/soc4180/09-reward/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/09-reward/lab.ipynb) | [`lab_reward.py`](weeks/09-reward/lab_reward.py), [`shape.py`](weeks/09-reward/shape.py) | GPU (render) |
-| [10](weeks/10-scaling/) | Scaling: GPU-parallel training | [deck](https://gnoejh.github.io/soc4180/10-scaling/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/10-scaling/lab.ipynb) | [`lab_many.py`](weeks/10-scaling/lab_many.py), [`many.py`](weeks/10-scaling/many.py) | **GPU (training)** |
-| [11](weeks/11-planning/) | Planning at run time — MPC by sampling (MPPI) | [deck](https://gnoejh.github.io/soc4180/11-planning/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/11-planning/lab.ipynb) | [`lab_plan.py`](weeks/11-planning/lab_plan.py) (graded game, edit [`costs.py`](weeks/11-planning/costs.py)), [`plan.py`](weeks/11-planning/plan.py) | CPU |
-| [12](weeks/12-robustness/) | Robustness — PPO push recovery, domain randomisation | [deck](https://gnoejh.github.io/soc4180/12-robustness/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/12-robustness/lab.ipynb) | [`lab_robust.py`](weeks/12-robustness/lab_robust.py) (graded audit, edit [`audit.py`](weeks/12-robustness/audit.py)), [`robust.py`](weeks/12-robustness/robust.py) | CPU (checkpoints shipped) |
-| [13](weeks/13-imitation/) | Imitation — behaviour cloning, DAgger, distillation | [deck](https://gnoejh.github.io/soc4180/13-imitation/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/13-imitation/lab.ipynb) | [`lab_imitate.py`](weeks/13-imitation/lab_imitate.py) (graded game, edit [`students.py`](weeks/13-imitation/students.py)), [`imitate.py`](weeks/13-imitation/imitate.py) | CPU |
-| [14](weeks/14-vision/) | Learning from pixels — a camera, a CNN, visual randomisation | [deck](https://gnoejh.github.io/soc4180/14-vision/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/14-vision/lab.ipynb) | [`lab_look.py`](weeks/14-vision/lab_look.py) (graded game, edit [`eyes.py`](weeks/14-vision/eyes.py)), [`look.py`](weeks/14-vision/look.py) | GPU (render) |
-| [15](weeks/15-language/) | Language — grounding words in pixels, a tiny VLA, an agent | [deck](https://gnoejh.github.io/soc4180/15-language/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/15-language/lab.ipynb) | [`lab_agent.py`](weeks/15-language/lab_agent.py) (graded game, edit [`instructions.py`](weeks/15-language/instructions.py)), [`ground.py`](weeks/15-language/ground.py) | GPU (render) |
-| [16](weeks/16-cerebellum/) | The cerebellum in a walking robot — ubrain on the G1 | [deck](https://gnoejh.github.io/soc4180/16-cerebellum/slides.html) | — | [`lab_cerebellum.py`](weeks/16-cerebellum/lab_cerebellum.py), [`lab_cerebellum_walk.py`](weeks/16-cerebellum/lab_cerebellum_walk.py) | CPU |
-| [17](weeks/17-adaptation/) | Walking in a side wind — the cerebellum adapts | [deck](https://gnoejh.github.io/soc4180/17-adaptation/slides.html) | — | [`lab_adapt.py`](weeks/17-adaptation/lab_adapt.py), [`lab_adapt_walk.py`](weeks/17-adaptation/lab_adapt_walk.py) | CPU |
-| [18](weeks/18-striatum/) | Learning from reward — the striatum chooses a brake | [deck](https://gnoejh.github.io/soc4180/18-striatum/slides.html) | — | [`lab_striatum.py`](weeks/18-striatum/lab_striatum.py), [`lab_choose.py`](weeks/18-striatum/lab_choose.py) | CPU |
-| [19](weeks/19-brain-life/) | A brain's life — save, load, datasheet, monitor | [deck](https://gnoejh.github.io/soc4180/19-brain-life/slides.html) | — | [`lab_life.py`](weeks/19-brain-life/lab_life.py) | CPU |
-| [20](weeks/20-hippocampus/) | One-shot memory — the hippocampus remembers pushes | [deck](https://gnoejh.github.io/soc4180/20-hippocampus/slides.html) | — | [`lab_remember.py`](weeks/20-hippocampus/lab_remember.py) | CPU |
-| [21](weeks/21-working-memory/) | Holding a list — working memory | [deck](https://gnoejh.github.io/soc4180/21-working-memory/slides.html) | — | [`lab_hold.py`](weeks/21-working-memory/lab_hold.py) | CPU |
-| [22](weeks/22-consolidation/) | From hippocampus to cortex — consolidation | [deck](https://gnoejh.github.io/soc4180/22-consolidation/slides.html) | — | [`lab_consolidate.py`](weeks/22-consolidation/lab_consolidate.py) | CPU |
-| [23](weeks/23-attention/) | Noticing — a salience gate, and rest | [deck](https://gnoejh.github.io/soc4180/23-attention/slides.html) | — | [`lab_notice.py`](weeks/23-attention/lab_notice.py) | CPU |
-| [24](weeks/24-memory-habit/) | Memory first, habit later | [deck](https://gnoejh.github.io/soc4180/24-memory-habit/slides.html) | — | [`lab_habit.py`](weeks/24-memory-habit/lab_habit.py) | CPU |
-| [25](weeks/25-neuromodulators/) | One number each — serotonin and noradrenaline | [deck](https://gnoejh.github.io/soc4180/25-neuromodulators/slides.html) | — | [`lab_patience.py`](weeks/25-neuromodulators/lab_patience.py) | CPU |
-| [26](weeks/26-codecs/) | Plugging in a trained model — CLIP and the certificate | [deck](https://gnoejh.github.io/soc4180/26-codecs/slides.html) | — | [`lab_codecs.py`](weeks/26-codecs/lab_codecs.py) | CPU (`--extra vision`) |
-| [27](weeks/27-explorer/) | The explorer — walking, seeing, remembering | [deck](https://gnoejh.github.io/soc4180/27-explorer/slides.html) | — | [`lab_explore.py`](weeks/27-explorer/lab_explore.py) | CPU (`--extra vision`) |
+| [07](weeks/07-mdp/) | From control to learning: MDPs and env design | [deck](https://gnoejh.github.io/soc4180/07-mdp/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/07-mdp/lab.ipynb) | [`lab_env.py`](weeks/07-mdp/lab_env.py), [`env_run.py`](weeks/07-mdp/env_run.py), [`mdp.py`](weeks/07-mdp/mdp.py) | GPU (render) |
+| [07b](weeks/07b-tabular/) | Learning a table from experience: Q-learning, SARSA | [deck](https://gnoejh.github.io/soc4180/07b-tabular/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/07b-tabular/lab.ipynb) | [`lab_tables.py`](weeks/07b-tabular/lab_tables.py), [`qlearn.py`](weeks/07b-tabular/qlearn.py) | CPU |
+| [08](weeks/08-learning-to-act/) | Learning to act — the map of RL methods and their algorithms, policy gradients, PPO, reward | [deck](https://gnoejh.github.io/soc4180/08-learning-to-act/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/08-learning-to-act/lab.ipynb) | [`lab.py`](weeks/08-learning-to-act/lab.py) — learn the ankle gain from reward | CPU |
+| [09](weeks/09-scale-and-robustness/) | Scale and robustness — parallel training, domain randomisation | [deck](https://gnoejh.github.io/soc4180/09-scale-and-robustness/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/09-scale-and-robustness/lab.ipynb) | [`lab.py`](weeks/09-scale-and-robustness/lab.py) — test PPO push policies across worlds | CPU (checkpoints shipped) |
+| [10](weeks/10-planning-and-imitation/) | Planning and imitation — MPPI, copying an expert | [deck](https://gnoejh.github.io/soc4180/10-planning-and-imitation/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/10-planning-and-imitation/lab.ipynb) | [`lab.py`](weeks/10-planning-and-imitation/lab.py) — survive a shove by planning, then copy it | CPU |
+| [11](weeks/11-pixels-and-language/) | Pixels and language — a camera, words, a check | [deck](https://gnoejh.github.io/soc4180/11-pixels-and-language/slides.html) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gnoejh/soc4180/blob/main/weeks/11-pixels-and-language/lab.ipynb) | [`lab.py`](weeks/11-pixels-and-language/lab.py) — "look at the green ball" | CPU (Colab: GPU to render) |
+| [12–15](weeks/projects/) | **Term project** — one question about the G1, answered by measurement | [intro](weeks/projects/README.md) | — | [`catalogue.md`](weeks/projects/catalogue.md), [`project_template.py`](weeks/projects/templates/project_template.py) | CPU (laptop) |
 
 Every deck derives its equations step by step, defines each symbol, draws each
 concept, and reads its printed numbers aloud; every number on a slide is printed
-by a cell in the deck.
+by a cell in the deck. Week 08 opens with a **map of RL methods** in tables (what is learned, model
+or not, on- or off-policy, table or function; ten methods and where the course meets each) and
+their **algorithms**, one slide each (pseudocode, update rule, course numbers), and 09–11 open with the course's route through it. In 08–11 every major function of the week's
+`lab.py` is printed on a slide and then explained line by line.
 
 00 is the day-one lecture, taught before 01. 02b is 02's
 **lab class** — the same robot read as code — not a separate week.
@@ -62,10 +51,13 @@ program with flags: it computes, prints what it did, then shows it in the
 simulator; read it in class with the slides open. The lab is the second class
 of the week.
 
-Weeks 11–15 are the AI half's second part: planning, robustness, imitation, pixels and
-language. Their labs are graded games like week 3's: students edit one data file,
-`G` grades it to a score, and a scorer code shows the referee is unchanged.
-Capstone presentations take the final-exam slot.
+Weeks 08–11 are the AI half in four short lectures (shortened from eight on 2026-11-15,
+each pointing at the term project): learning to act, scale and robustness, planning and
+imitation, pixels and language. **Each has one task and one file, `lab.py`**, which the
+deck walks through; no week needs a GPU on a laptop.
+**Weeks 12–15 are the term project** ([`weeks/projects/`](weeks/projects/README.md)):
+teams pick a question from the [catalogue](weeks/projects/catalogue.md) or propose one,
+predict, measure against a twin, and present in the final-exam slot.
 
 ## For students
 
@@ -117,14 +109,13 @@ and you end up running last week's code.
 whenever a week is re-rendered, so edits saved into it are lost at the next
 `git pull`. This is the local version of Colab's *Save a copy in Drive*.
 
-Week 10's GPU training section runs through JAX, which has no Windows build —
-**that section is Colab-only**. Everything else, including every laptop lab,
-runs on the laptop.
+No week needs a GPU on the laptop. GPU-parallel training (JAX/MJX) is taught in week 9
+as a concept only.
 
 ### Running a week's laptop lab
 
-Every week 0–10 ships two scripts (week 3 ships one, a graded game); weeks 11–15 ship a
-graded game plus a pipeline script. All are complete and explained line by
+Every week 0–7b ships two scripts (week 3 ships one, a graded game); weeks 08–11 ship
+one `lab.py` each. All are complete and explained line by
 line — nothing is left blank; the exercises are experiments whose expected
 numbers were measured with the scripts themselves:
 
@@ -133,9 +124,8 @@ numbers were measured with the scripts themselves:
   a list at the top to extend and a function to change, and a visible
   difference on screen between right and wrong.
 - **The pipeline script** (`stack.py`, `mjcf_run.py`, `fk.py`, `anatomy.py`,
-  `walk.py`, `servo.py`, `imu.py`, `env_run.py`, `train.py`,
-  `shape.py`, `many.py`, `plan.py`, `robust.py`, `imitate.py`, `look.py`,
-  `ground.py`). Linear, numbered steps, flags on the command line:
+  `walk.py`, `servo.py`, `imu.py`, `env_run.py`, `qlearn.py`; weeks 08–11 have
+  only `lab.py`, which is both). Linear, numbered steps, flags on the command line:
   it computes, **prints** what it did, then **replays or shows** the result in
   the simulator. `--no-viewer` runs it headless. This is the file to read in
   class, with the slides open; [`docs/mujoco-calls.md`](docs/mujoco-calls.md)
@@ -177,18 +167,11 @@ uv run scripts/check_notebook.py images weeks/04-walking/lab.ipynb _figs   # dum
 
 ### Answer files
 
-Reference answers live in `weeks/*/instructor/`, which is gitignored: this
-repository is public. They are pushed only encrypted, as
-`instructor.tar.gz.gpg`:
-
-```bash
-uv run scripts/instructor.py open    # passphrase -> restores weeks/*/instructor/
-uv run scripts/instructor.py seal    # after editing an answer; then commit the .gpg
-```
-
-`open` refuses to overwrite a local answer file that differs from the archive
-(`--force` to override). The passphrase is kept outside the repository; without
-it the archive cannot be opened.
+Reference answers live in `weeks/*/instructor/` and are published in the
+clear, for every week: students may read every solution. Each graded game's
+`--grade --<answers> weeks/NN-*/instructor/<file>` scores the reference.
+`instructor.tar.gz.gpg` and `scripts/instructor.py` (seal / open) are from
+when Part I answers were encrypted; they are no longer used.
 
 ### Prerequisite
 
@@ -294,8 +277,8 @@ src/soc4180/     shared helpers, installed as a package
   checkpoints.py pre-trained policy loading (the RL-week safety net)
 weeks/NN-*/     slides.qmd (source) -> slides.html + lab.ipynb; lab_*.py (laptop lab)
 scripts/         view.py (viewer), check_notebook.py (execute / compile / dump figures), build_site.py,
-                 check_labs.py (run every lab script), instructor.py (seal / open the answers)
-instructor.tar.gz.gpg   the encrypted weeks/*/instructor/ answers
+                 check_labs.py (run every lab script), instructor.py (no longer used: answers are published)
+instructor.tar.gz.gpg   no longer used: an old encrypted copy of weeks/*/instructor/
 _quarto.yml      shared deck theme and execution settings
 ```
 

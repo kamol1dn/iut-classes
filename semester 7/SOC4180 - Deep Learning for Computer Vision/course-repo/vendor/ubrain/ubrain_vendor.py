@@ -1,9 +1,9 @@
 """The course's one copy of ubrain, run inside this repository's environment.
 
-ubrain is not public yet and not on PyPI, so it is not in uv.lock; this folder carries
-a local copy of its wheels, shared by every Part II week:
+ubrain is not on PyPI, so it is not in uv.lock; this folder carries a local copy of its
+wheels (from github.com/untrained-brain/ubrain), shared by every Part II week:
 
-    vendor/ubrain/wheels/ubrain-0.14.0.dev1-cp312-*.whl   (the brain, compiled)
+    vendor/ubrain/wheels/ubrain-0.46.0.dev2-cp312-*.whl   (the whole brain, compiled)
     vendor/ubrain/g1_body/body, robots                    (the G1 body server)
 
 Each week imports it through a three-line `ubrain_local.py` beside its scripts. Two
@@ -45,8 +45,14 @@ def _missing(what: str) -> SystemExit:
         "Pull the repository again: vendor/ubrain/ should hold wheels/ and g1_body/.")
 
 
-def load() -> None:
-    """Make `import ubrain` work: unpack the matching wheel once, add it to sys.path."""
+#: the one release Part II (weeks 16-18) is measured on
+DEFAULT_VERSION = "0.46.0.dev2"
+
+
+def load(version: str = DEFAULT_VERSION) -> None:
+    """Make `import ubrain` work: unpack the matching wheel once, add it to sys.path.
+    `version` names the release (one release is vendored; naming it keeps a later second
+    release from being picked by a plain sort)."""
     if sys.version_info[:2] != (3, 12):
         raise SystemExit(f"ubrain's wheels here are built for Python 3.12; this is "
                          f"{platform.python_version()}. Run it with `uv run` from the repository.")
@@ -54,7 +60,7 @@ def load() -> None:
     if tag is None:
         raise SystemExit(f"no ubrain wheel for {sys.platform} {platform.machine()}; "
                          "tell the instructor")
-    wheels = sorted(WHEELS.glob(f"ubrain-*-cp312-cp312-{tag}*.whl"))
+    wheels = sorted(WHEELS.glob(f"ubrain-{version}-cp312-cp312-{tag}*.whl"))
     if not wheels:
         raise _missing(f"the ubrain wheel for {tag}")
     wheel = wheels[-1]

@@ -11,9 +11,11 @@
  *   task    prio  rate     job
  *   world    5    100 Hz   step the simulated aircraft and the weather
  *   ctl      4     50 Hz   sensors -> control_step() -> actuators
- *   link     3    on byte  $-frames from the host: WP, MISSION, MODE, PARAM
+ *   link     3    on byte  $-frames from the host: WP, MISSION, MODE, PARAM;
+ *                           the station's $KEY and $MIRROR
  *   tel      2      5 Hz   $POS, $TRU, $EVT, $MIS to the host
- *   ui       1     50 Hz   joystick, buttons, knob; the OLED map at 10 Hz
+ *   ui       1     50 Hz   joystick, buttons, knob; the OLED map at 10 Hz,
+ *                           copied to the station as $FB
  *
  * Controls (the app board):
  *   A        on the ground: arm and fly the mission (the default one if none
@@ -23,9 +25,15 @@
  *   joystick in HOLD: move the hold point, up to 3 m/s
  *   knob     wind strength, 0..10 m/s
  *
+ * The same controls from the station on the PC (kbd.h), which also shows the
+ * OLED large (mirror.h): arrows = stick, a = A, b = B, s = SEL, 1-5 = knob,
+ * - / + = cruise speed, ? = the list.  "quiet" / "loud" + Enter stop and
+ * restart $POS and $TRU; events ($EVT, $MIS, $ACK) always go out.
+ *
  * Build:     build.bat          Simulate:  simulate.bat
  * Host:      python host\mission.py host\default.mission     (frames to paste)
  *            python host\mission.py --score capture.txt      (score a flight)
+ * Station:   python tools\station\station.py                 (from the repo root)
  */
 
 #include <stdarg.h>
@@ -40,6 +48,8 @@
 #include "oled.h"
 #include "pad.h"
 #include "beep.h"
+#include "kbd.h"
+#include "mirror.h"
 #include "world.h"
 #include "flight.h"
 #include "mavlite.h"
@@ -58,11 +68,14 @@ STACK(stk_tel, 288);    STACK(stk_ui, 288);
  *                             the truth; link and ui change the weather
  *   flight state fc_lock      ctl runs it; link, ui and tel command and read it
  *   act          a critical section: four words, copied in a few cycles
+ *   kbd          kbd_lock     the station's keys: link feeds them, ui applies
  * Lock order, where one is held inside the other: fc_lock, THEN world_lock
- * (only the link task nests them).  One order, no deadlock - lesson 07. */
+ * (only the link task nests them).  One order, no deadlock - lesson 07.
+ * kbd_lock is never held with another lock, so it needs no place in it. */
 static world_t     world;
 static actuators_t act;
-static os_mutex_t  world_lock, fc_lock, print_lock;
+static kbd_t       kbd;
+static os_mutex_t  world_lock, fc_lock, print_lock, kbd_lock;
 static volatile uint8_t knob_owns_wind = 1, tel_on = 1, oled_ok;
 
 /* Every line out goes through here: format into a buffer on this task's own
@@ -71,6 +84,16 @@ static volatile uint8_t knob_owns_wind = 1, tel_on = 1, oled_ok;
  * a stdio STREAM drags in its buffering, flushing and malloc, about 1.7 KB of
  * flash this chip could not spare (slide 21).  vsnprintf only formats.     */
 int _write(int fd, const char *buf, int len);           /* uart.c */
+
+/* Bytes that are already formatted - an OLED mirror frame - skip vsnprintf
+ * but take the same lock, so no line is ever cut in two by another task's. */
+static void say_raw(const char *buf, int n)
+{
+    int tasks = os_current_task() != 0;                         /* before os_start: no lock */
+    if (tasks) { os_mutex_lock(&print_lock); }
+    (void)_write(1, buf, n);
+    if (tasks) { os_mutex_unlock(&print_lock); }
+}
 
 static void say(const char *fmt, ...)
 {
@@ -81,10 +104,7 @@ static void say(const char *fmt, ...)
     va_end(ap);
     if (n <= 0) { return; }
     if (n > (int)sizeof buf - 1) { n = (int)sizeof buf - 1; }   /* truncated */
-    int tasks = os_current_task() != 0;                         /* before os_start: no lock */
-    if (tasks) { os_mutex_lock(&print_lock); }
-    (void)_write(1, buf, n);
-    if (tasks) { os_mutex_unlock(&print_lock); }
+    say_raw(buf, n);
 }
 
 /* ============================================================================
@@ -117,15 +137,41 @@ static void account(cost_t *c, uint32_t cy)
     c->sum += cy;  c->n++;
 }
 
+/* The beat (lesson 13's fix, README Status).  "world" puts one item on
+ * beat_q every second step and waits on done_q; "ctl" waits for the beat,
+ * runs one control_step() and answers.  So the controller runs exactly once
+ * per two physics steps at ANY CPU speed - 50 Hz on silicon, slower together
+ * with the physics in a simulator slower than real time - and never sees a
+ * stale or a skipped sample. */
+static os_queue_t beat_q, done_q;
+static uint8_t    beat_buf[1], done_buf[1];
+static volatile uint32_t world_overruns;
+
 /* ============================================================================
  *  world - the aircraft, 100 times a second
  * ============================================================================ */
 static void task_world(void *arg)
 {
     (void)arg;
-    uint32_t last = os_ticks();
+    uint32_t last = os_ticks(), beat = 0;
     for (;;) {
-        os_delay_until(&last, 1000u / WORLD_HZ);
+        /* Overrun guard.  os_delay_until() only sleeps when ahead of
+         * schedule, so if a cycle (this step, plus ctl's, which we wait for)
+         * takes longer than the 10 ms period it never sleeps, and as the
+         * highest priority it starves link, tel and ui: no OLED, no buttons,
+         * no shell.  Wokwi does exactly that - its CPU runs slower than its
+         * SysTick.  When the last cycle overran, sleep as long as it took:
+         * the flight goes into slow motion and the tasks below get about
+         * half the CPU.  On silicon a cycle takes ~2.3 ms at worst
+         * (lesson 10's M0+ model), and this never fires. */
+        uint32_t took = os_ticks() - last;
+        if (took >= 1000u / WORLD_HZ) {
+            os_delay(took);
+            last = os_ticks();
+            world_overruns++;
+        } else {
+            os_delay_until(&last, 1000u / WORLD_HZ);
+        }
         actuators_t a;
         __disable_irq(); a = act; __enable_irq();
         os_mutex_lock(&world_lock);
@@ -134,18 +180,24 @@ static void task_world(void *arg)
         stamp_t t1 = stamp();
         os_mutex_unlock(&world_lock);
         account(&cost_world, cycles(t0, t1));
+
+        if ((++beat & 1u) == 0) {                  /* every 2nd step: ctl    */
+            uint8_t b = 0;
+            os_queue_put(&beat_q, &b);
+            os_queue_get(&done_q, &b);             /* wait till it has run   */
+        }
     }
 }
 
 /* ============================================================================
- *  ctl - the flight computer, 50 times a second
+ *  ctl - the flight computer, once every two world steps (50 Hz)
  * ============================================================================ */
 static void task_ctl(void *arg)
 {
     (void)arg;
-    uint32_t last = os_ticks();
     for (;;) {
-        os_delay_until(&last, 1000u / CTRL_HZ);
+        uint8_t b;
+        os_queue_get(&beat_q, &b);                 /* every 2nd world step   */
         sensors_t s;
         os_mutex_lock(&world_lock);
         world_sense(&world, &s);                 /* the ONLY door from the world */
@@ -160,6 +212,7 @@ static void task_ctl(void *arg)
         account(&cost_ctl, cycles(t0, t1));
 
         __disable_irq(); act = a; __enable_irq();
+        os_queue_put(&done_q, &b);                 /* world: go on           */
     }
 }
 
@@ -193,6 +246,8 @@ static void cmd_stats(void)
         (unsigned long)us(cost_world.n ? cost_world.sum / cost_world.n : 0),
         (unsigned long)us(cost_ctl.last), (unsigned long)us(cost_ctl.max),
         (unsigned long)us(cost_ctl.n ? cost_ctl.sum / cost_ctl.n : 0));
+    say("world overruns %lu (each one is a 10 ms step that ran late: slow motion)\n",
+        (unsigned long)world_overruns);
     for (uint32_t i = 0; i < os_task_count(); i++) {
         os_task_t *t = os_task(i);
         say("  %-6s CPU %3lu.%lu%%  stack %lu of %lu words\n", t->name,
@@ -240,7 +295,52 @@ static void shell(const char *line)
     else if (strcmp(line, "params") == 0)  { cmd_params(); }
     else if (strcmp(line, "mission") == 0) { cmd_mission(); }
     else if (strcmp(line, "tel") == 0)     { tel_on = !tel_on; say("telemetry %s\n", tel_on ? "on" : "off"); }
-    else { say("commands: stats  params  mission  tel   - or a $-frame (mission.py prints them)\n"); }
+    else if (strcmp(line, "quiet") == 0)   { tel_on = 0; say("quiet: $POS $TRU off - type loud to resume\n"); }
+    else if (strcmp(line, "loud") == 0)    { tel_on = 1; say("loud: $POS $TRU on\n"); }
+    else { say("commands: stats  params  mission  tel  quiet  loud   - or a $-frame (mission.py prints them)\n"); }
+}
+
+static void print_keys(void)
+{
+    say("  keys     : arrows = stick (HOLD), a = A, b = B, s = SEL, 1-5 = knob (wind)\n");
+    say("             - / + = cruise speed,  ? = this,  quiet / loud + Enter\n");  /* say(): 127 chars a call */
+}
+
+/* - and + from the station: the mission's cruise speed, 1 m/s a press -
+ * the same $PARAM,CRUISE a host could send, clamped to its legal range. */
+static void cruise_step(int dir)
+{
+    int32_t v = 0;
+    os_mutex_lock(&fc_lock);
+    (void)fc_param_get("CRUISE", &v);                   /* cm/s */
+    v += dir * 100;
+    if (v < 50)   { v = 50; }
+    if (v > 1200) { v = 1200; }
+    (void)fc_param_set("CRUISE", v);
+    os_mutex_unlock(&fc_lock);
+    say("cruise %ld.%02ld m/s\n", (long)(v / 100), (long)(v % 100));
+}
+
+/* A line from the station that is not a mission frame: a key ($KEY) or the
+ * mirror's heartbeat ($MIRROR, every second).  Claimed by its NAME, before
+ * mavlite's strict parser sees it - so even a garbled one is never NAK'd and
+ * never counted as a bad frame.  Returns 1 if the line was one of these. */
+static int station_line(const char *line)
+{
+    if (kbd_is_key(line)) {
+        os_mutex_lock(&kbd_lock);
+        int cmd = kbd_frame(&kbd, line, os_ticks());
+        os_mutex_unlock(&kbd_lock);
+        if      (cmd == KBD_HELP)   { print_keys(); }
+        else if (cmd == KBD_SLOWER) { cruise_step(-1); }
+        else if (cmd == KBD_FASTER) { cruise_step(+1); }
+        return 1;
+    }
+    if (strncmp(line, "$MIRROR,", 8) == 0) {
+        (void)mirror_frame(line, os_ticks());         /* a bad checksum: ignored */
+        return 1;
+    }
+    return 0;
 }
 
 static void task_link(void *arg)
@@ -254,6 +354,7 @@ static void task_link(void *arg)
         if (n == 0) { continue; }
         line[n] = '\0';
         n = 0;
+        if (station_line(line)) { continue; }
         os_mutex_lock(&fc_lock);
         int r = ml_handle(line, reply, sizeof reply, sim_param);
         os_mutex_unlock(&fc_lock);
@@ -310,6 +411,23 @@ static void button(const char *what, int rc)
     say("button %s: %s\n", what, fc_error_name(rc));
 }
 
+/* The OLED mirror (mirror.h): up to 2 $FB frames a pass, and only while the
+ * TX ring has room for a whole one - so the mirror never makes this task
+ * wait, and never fills the ring a $POS or an $EVT needs.  Every pass, not
+ * only the 10 Hz drawing ones: between two flushes the framebuffer does not
+ * change, and a moving map changes several of the 32 segments a frame -
+ * 2 a frame would fall behind.  The station asks for frames with $MIRROR; a
+ * terminal never sees one.  The buffer is static: task stacks are small.  */
+static void mirror_send(uint32_t now)
+{
+    static char frame[MIRROR_FRAME_MAX];
+    for (int i = 0; i < 2 && uart_tx_room() >= MIRROR_FRAME_MAX; i++) {
+        size_t n = mirror_next(frame, sizeof frame, now);
+        if (n == 0) { break; }
+        say_raw(frame, (int)n);
+    }
+}
+
 static void task_ui(void *arg)
 {
     (void)arg;
@@ -324,6 +442,9 @@ static void task_ui(void *arg)
         beep_poll(now);
         pad_t p;
         pad_read(&p);
+        os_mutex_lock(&kbd_lock);
+        kbd_apply(&kbd, &p, now);          /* the station's keys, into the same pad */
+        os_mutex_unlock(&kbd_lock);
 
         /* the knob is the weather - until a $PARAM,WIND takes over */
         if (p.adc_ok) {
@@ -375,6 +496,7 @@ static void task_ui(void *arg)
             ui_draw(&v);                 /* RAM: no lock needed, the copy is ours */
             (void)oled_flush();          /* ~25 ms of I2C at worst: lowest priority */
         }
+        mirror_send(now);                /* the station's copy of the screen just flushed */
     }
 }
 
@@ -396,8 +518,12 @@ int main(void)
     say("  drone    : simulated in this chip - world %u Hz, control %u Hz, GPS 10 Hz\n",
         (unsigned)WORLD_HZ, (unsigned)CTRL_HZ);
     say("  press A to fly the built-in mission, or paste mission.py's frames\n");
-    say("  shell    : stats  params  mission  tel\n\n");
+    say("  shell    : stats  params  mission  tel  quiet  loud\n");
+    say("  station  : uv run tools/station/station.py - OLED large; keys arrows a b s 1-5 - + ?\n\n");
+    kbd_init(&kbd);
 
+    os_queue_init(&beat_q, beat_buf, 1, 1);
+    os_queue_init(&done_q, done_buf, 1, 1);
     os_task_create("world", task_world, 0, stk_world, 160, 5);
     os_task_create("ctl",   task_ctl,   0, stk_ctl,   224, 4);
     os_task_create("link",  task_link,  0, stk_link,  320, 3);
