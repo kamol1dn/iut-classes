@@ -11,10 +11,36 @@ Every week's VODs and slides are summarised in `lectures/`. The `.mp4` files are
 transcripts (`.txt`/`.srt`) and summaries (`.md`) are tracked. The course has **no progress-tracked
 activities**, so VOD windows don't affect attendance. The **weekly quiz** does.
 
+### Week 10: validators and tokens
+
+Two decks, each with its own video. The Tokens deck ends by announcing **the security lecture** next: how token
+contracts get robbed, and how to defend them.
+
+| Item | Length | Notes |
+|---|---|---|
+| [SLIDE] Ethereum Validators (ubfile 73658) | 28 pp | Deck dated 11-14; its title page reads "One Transaction, Three Questions". **Downloadable**: [pdf](lectures/slides/week10%20-%20Ethereum%20Validators%20(slides).pdf) · [summary](lectures/summaries/week10%20-%20Ethereum%20Validators%20(slides).md). EVM, opcodes, gas as the alarm clock, memory vs storage; stake, validators, 12 s slots, epochs, votes, slashing, finality, the Merge; EIPs, clients, upgrades (London, Paris, Shanghai, Osaka, Glamsterdam) |
+| [VIDEO] Ethereum Validators (VOD 73659) | — | Not mirrored or transcribed yet |
+| [SLIDE] Tokens: Money Made of Code (ubfile 73706) | 26 pp | Deck dated 11-15. **Downloadable**: [pdf](lectures/slides/week10%20-%20Tokens%20-%20Money%20Made%20of%20Code%20(slides).pdf) · [summary](lectures/summaries/week10%20-%20Tokens%20-%20Money%20Made%20of%20Code%20(slides).md). A token is a mapping in one contract (ClassCoin), `require`, events and log topics, ERC-20's nine names, decimals, OpenZeppelin, `approve`/`transferFrom` and unlimited approvals, stablecoins (USDT, USDC, DAI, UST), what USDT's owner can freeze, real-world assets, ERC-721 and ENS |
+| [VIDEO] Tokens: Money Made of Code (VOD 73709) | — | Not mirrored or transcribed yet |
+
+### Week 9: Ethereum, gas and the Remix demo · Term Project I (25%)
+
+The start of the smart-contract half. **[Term Project I](homework/term-project-1/README.md)** (posted 11-09, due
+**Wed 11-18 23:55**) is built on these three decks: the Gas deck for Part B, the Remix deck for Parts A and C. The Gas and
+Remix summaries point out the pages the project cites.
+
+| Item | Length | Notes |
+|---|---|---|
+| [SLIDE] Ethereum Introduction (ubfile 73239) | 13 pp | Deck dated 11-07; title page "Where It Came From, and What It Is". **Downloadable**: [pdf](lectures/slides/week09%20-%20Ethereum%20Introduction%20(slides).pdf) · [summary](lectures/summaries/week09%20-%20Ethereum%20Introduction%20(slides).md). Why stop at coins, Script's four limits, smart contracts, Vitalik Buterin, block 0 (30 Jul 2015), four things called Ethereum, Bitcoin vs Ethereum |
+| [SLIDE] Ethereum: Gas, Wei, Fees (ubfile 73262) | 25 pp | Deck dated 11-08; title page "Ethereum, Part 2" (Term Project I calls it Lecture 10). **Downloadable**: [pdf](lectures/slides/week09%20-%20Ethereum%20-%20Gas,%20Wei,%20Fees%20(slides).pdf) · [summary](lectures/summaries/week09%20-%20Ethereum%20-%20Gas,%20Wei,%20Fees%20(slides).md). State and accounts (120 bytes), state root and trie, EOA vs contract, the account nonce, stuck transactions, gas, wei and gwei, the 21,000 vs 204,600 puzzle (EIP-8037 on Sepolia), gas limit, base fee, tip, burnt, savings, EIP-1559, issuance |
+| [SLIDE] Demo: Remix (ubfile 73302) | 14 pp | Deck dated 11-08; title page "Ethereum, Part 2: Remix DEMO" (Term Project I's Lecture 11). **Downloadable**: [pdf](lectures/slides/week09%20-%20Demo%20-%20Remix%20(slides).pdf) · [summary](lectures/summaries/week09%20-%20Demo%20-%20Remix%20(slides).md). `Storage.sol` written, compiled, deployed, `store(42)` (a transaction, 43,718 gas) and `retrieve` (a call, free); Remix VM vs Sepolia |
+| [VIDEO] *Ethereum Introduction (PART 1)* (VOD 73240) · *Ethereum: Gas, Wei, Fees (PART 2)* (VOD 73265) · *Remix DEMO* (VOD 73303) | — | Not mirrored or transcribed yet |
+
 ### Week 8: wallets, forks and types of blockchain
 
 The last lecture of the Bitcoin half: smart contracts are weeks 9–11. There's no quiz in this section so far, and
 **Term Project I hasn't been posted** (the syllabus says it's announced in week 8; eClass has only its grade item).
+*(It was posted on 11-09; see week 9.)*
 
 | Item | Length | Notes |
 |---|---|---|

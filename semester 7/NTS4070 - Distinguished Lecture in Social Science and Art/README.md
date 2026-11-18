@@ -31,7 +31,10 @@ A weekly rhythm on eClass: one **slide deck** (`.pptx`), one or two **VODs**
   eClass rather than in this public repo. Before the exam: [Midterm info summary](lectures/summaries/vod/week07%20-%20Midterm%20info.md) ·
   flashcard game `python my-notes/midterm-quiz/quiz.py` ([README](my-notes/midterm-quiz/README.md)) ·
   [what he'll probably ask](my-notes/midterm-likely-questions.md).
-- **Debate (weeks 12–14, offline, on Saturdays)** is a group project worth 30%. Details to follow.
+- **Debate (offline, Saturdays 28 Nov, 5 Dec, 12 Dec and 19 Dec, 10:00–14:00)** is a group project worth 30%. Two teams per
+  30-minute debate, sides drawn on the spot, three speeches + one question + one defence per team, five grading criteria:
+  [Debate info summary](lectures/summaries/week09%20-%20Debate%20info.md). Your team's slot is on the eClass
+  [Debate Schedule](https://eclass.inha.ac.kr/mod/url/view.php?id=73241) sheet.
 - Week 15 is a final week with **no exam**.
 
 ## Main textbook
@@ -52,8 +55,11 @@ midterm. Supplementary readings are listed in [syllabus/syllabus.md](syllabus/sy
 | 6 | Ch.10 Marketing & Advertising | [week06 - DLSSA 6.1](lectures/slides/week06%20-%20DLSSA%206.1.pptx) |
 | 6 | Ch.11 Mass Media | [week06 - DLSSA 6.2](lectures/slides/week06%20-%20DLSSA%206.2.pptx) |
 | 7 | Ch.12 Science | [week07 - DLSSA 7](lectures/slides/week07%20-%20DLSSA%207.pptx) |
+| 9 | Debate information (admin: schedule, format, grading) | [week09 - Debate info](lectures/slides/week09%20-%20Debate%20info.pptx) |
 
 Slide-text summary of weeks 6–7 (and the debate-survey admin): [week06-07 slides md](lectures/summaries/week06-07%20-%20DLSSA%206.1,%206.2,%207%20(slides).md).
+Debate rules from the week-9 deck: [week09 Debate info md](lectures/summaries/week09%20-%20Debate%20info.md). No slides have
+been synced for the Social Science lectures of weeks 9–11; their VODs are listed below.
 
 ## Lecture videos, transcripts & summaries
 
@@ -116,8 +122,12 @@ None of these appear in the syllabus PDF or anywhere on eClass:
 | Debate survey 8:11 · Lecture 6-1 29:06 · Lecture 6-2 26:43 · Quiz 4 | 6 | VODs 10-10 → 10-18 · quiz → 10-19 23:59 | [6-1](https://eclass.inha.ac.kr/mod/vod/view.php?id=72217) · [6-2](https://eclass.inha.ac.kr/mod/vod/view.php?id=72220) · [quiz](https://eclass.inha.ac.kr/mod/quiz/view.php?id=72222) |
 | Video 7 55:33 · Midterm info 3:19 | 7 | 10-17 → 10-25 23:59 | [Video 7](https://eclass.inha.ac.kr/mod/vod/view.php?id=72441) · [Midterm info](https://eclass.inha.ac.kr/mod/vod/view.php?id=72743) |
 | 🆕 Social Science Lecture 1: Technology Philosophy 1:00:46 | 9 | 10-31 → **11-07 23:59** | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=73000) |
+| 🆕 Debate info VOD 11:43, with its deck (eClass 73002) | 9 | window not recorded | [VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=73003) · [deck](lectures/slides/week09%20-%20Debate%20info.pptx) · [summary](lectures/summaries/week09%20-%20Debate%20info.md) |
+| 🆕 Social Science Lecture 2: Orientalism 40:31 · Debate schedule info 3:44 · Debate Schedule (Google Sheet) | 10 | window not recorded | [Lecture 2](https://eclass.inha.ac.kr/mod/vod/view.php?id=73238) · [schedule info](https://eclass.inha.ac.kr/mod/vod/view.php?id=73242) · [sheet](https://eclass.inha.ac.kr/mod/url/view.php?id=73241) |
+| 🆕 Social Science Lecture 3: Propaganda and Art 1:03:00 | 11 | 11-14 00:00 → **11-22 23:59** | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=73615) |
 
-Every VOD here is progress-tracked: watching it inside its window is that week's attendance.
+Every VOD here is progress-tracked: watching it inside its window is that week's attendance. (Confirmed on 11-18
+for every week-9, week-10 and week-11 video; only the week-11 window was recorded.)
 Quizzes are 20% of this course, with one attempt each.
 
 ## Links
