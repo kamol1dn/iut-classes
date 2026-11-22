@@ -1,6 +1,6 @@
 {
   "_comment": "eClass VOD manifest. The stream URLs are extracted from /mod/vod/viewer.php?id=<mod> (which needs a logged-in session); the vod.inha.ac.kr:8443 HLS endpoints themselves are unauthenticated, so downloading needs no credentials. Ask Claude to 'refresh the VOD manifest' when new lectures appear.",
-  "_extracted": "2026-10-18",
+  "_extracted": "2026-11-22",
   "vods": [
     {
       "mod": 70109,
@@ -201,6 +201,46 @@
       "title": "Social Science Lecture 1 - Technology Philosophy",
       "duration": "1:00:46",
       "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/01/88455d02-8e15-433d-85db-6ff977c22bcc/83a8c6f9-ffb5-42a6-86dd-655e29fd19a7.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73003,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 9,
+      "title": "Debate info",
+      "duration": "11:43",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/01/ccbd03b4-fdd3-4668-abb1-e9917d57bf1b/c6d6e57d-d4b1-436b-a14a-a0b48e94cdcd.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73238,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 10,
+      "title": "Social Science Lecture 2 - Orientalism",
+      "duration": "40:31",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2025/10/25/6b3d9bba-613d-4434-8c4a-82696d37a17c/cf38ddef-1b58-481d-b82d-4f5ccbf5bd1f.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73242,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 10,
+      "title": "Debate schedule info",
+      "duration": "3:44",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/07/309c6064-f30a-42d1-a53a-fa01227ca721/a67ec211-cca7-4953-838c-3e962d2386e2.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73615,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 11,
+      "title": "Social Science Lecture 3 - Propaganda and Art",
+      "duration": "1:03:00",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/13/b9034abd-290e-4bf0-a637-909622391ea8/7397909b-e3a6-4ee6-ad03-58ef4d06db10.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73878,
+      "course": "NTS4070 - Distinguished Lecture in Social Science and Art",
+      "week": 12,
+      "title": "Social Science Quiz VOD",
+      "duration": "1:58",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/19/65733bc6-49a5-40ca-889d-1aacb94fcbe0/a2a92bde-c6d5-4142-96db-1d1ab89d9f98.mp4/playlist.m3u8"
     }
   ]
 }

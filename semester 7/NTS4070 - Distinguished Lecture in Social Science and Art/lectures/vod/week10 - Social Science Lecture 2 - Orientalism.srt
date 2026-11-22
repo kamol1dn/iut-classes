@@ -1,0 +1,2351 @@
+1
+00:00:11,861 --> 00:00:11,901
+¶¶
+
+2
+00:00:38,494 --> 00:00:39,335
+so
+
+3
+00:00:40,495 --> 00:00:40,675
+so
+
+4
+00:01:19,769 --> 00:01:23,310
+When future scholars take a look back at the intellectual history of the last quarter of the
+
+5
+00:01:23,330 --> 00:01:24,050
+20th century,
+
+6
+00:01:24,771 --> 00:01:29,692
+the work of Professor Edward Said of Columbia University will be identified as very important
+
+7
+00:01:29,752 --> 00:01:30,352
+and influential.
+
+8
+00:01:31,827 --> 00:01:37,611
+In particular, Said's 1978 book, Orientalism, will be regarded as profoundly significant.
+
+9
+00:01:39,051 --> 00:01:43,954
+Orientalism revolutionized the study of the Middle East and helped to create and shape entire
+
+10
+00:01:44,115 --> 00:01:49,438
+new fields of study, such as post-colonial theory, as well as influencing disciplines as diverse
+
+11
+00:01:49,918 --> 00:01:54,521
+as English, history, anthropology, political science, and cultural studies.
+
+12
+00:01:56,100 --> 00:02:01,503
+The book has now been translated into 26 languages and is required reading at many universities
+
+13
+00:02:01,543 --> 00:02:02,024
+and colleges.
+
+14
+00:02:03,285 --> 00:02:08,388
+It is also one of the most controversial scholarly books of the last 30 years, sparking intense
+
+15
+00:02:08,408 --> 00:02:09,408
+debate and disagreement.
+
+16
+00:02:11,089 --> 00:02:15,512
+Orientalism tries to answer the question of why, when we think of the Middle East, for example,
+
+17
+00:02:16,093 --> 00:02:20,235
+we have a preconceived notion of what kind of people live there, what they believe, how they
+
+18
+00:02:20,355 --> 00:02:20,535
+act,
+
+19
+00:02:21,256 --> 00:02:24,598
+even though we may never have been there or indeed even met anyone from there.
+
+20
+00:02:26,208 --> 00:02:31,632
+More generally, Orientalism asks, how do we come to understand people, strangers, who look
+
+21
+00:02:31,652 --> 00:02:34,374
+different to us by virtue of the color of their skin?
+
+22
+00:02:35,996 --> 00:02:40,679
+The central argument of Orientalism is that the way we acquire this knowledge is not innocent
+
+23
+00:02:40,759 --> 00:02:45,183
+or objective, but the end result of a process that reflects certain interests.
+
+24
+00:02:46,143 --> 00:02:48,005
+That is, it is highly motivated.
+
+25
+00:02:49,350 --> 00:02:51,731
+Specifically, Said argues that the way the West,
+
+26
+00:02:52,491 --> 00:02:57,174
+Europe and the US, looks at the countries and peoples of the Middle East is through a lens
+
+27
+00:02:57,234 --> 00:03:00,655
+that distorts the actual reality of those places and those people.
+
+28
+00:03:02,016 --> 00:03:05,837
+He calls this lens, through which we view that part of the world, Orientalism,
+
+29
+00:03:06,958 --> 00:03:11,380
+a framework that we use to understand the unfamiliar and the strange, to make the peoples of
+
+30
+00:03:11,400 --> 00:03:13,401
+the Middle East appear different and threatening.
+
+31
+00:03:15,463 --> 00:03:20,366
+Professor Said's contribution to how we understand this general process of what we could call
+
+32
+00:03:20,386 --> 00:03:22,528
+stereotyping has been immense.
+
+33
+00:03:23,888 --> 00:03:27,711
+The aim of this program is to explore these issues through an interview with him.
+
+34
+00:03:29,212 --> 00:03:33,815
+He starts by discussing the context within which he conceived Orientalism.
+
+35
+00:03:34,515 --> 00:03:36,237
+Well, my interest in Orientalism began
+
+36
+00:03:38,943 --> 00:03:45,027
+for two reasons. One was an immediate thing, that is to say, the Arab-Israeli War of 1973,
+
+37
+00:03:47,150 --> 00:03:52,051
+which had been preceded by a lot of images and discussions in the media and the popular press
+
+38
+00:03:52,371 --> 00:03:57,472
+about how the Arabs are cowardly and they don't know how to fight and they're always going
+
+39
+00:03:57,492 --> 00:03:59,172
+to be beaten because they're not modern.
+
+40
+00:03:59,773 --> 00:04:04,353
+And then everybody was very surprised when the Egyptian army crossed the canal in early October
+
+41
+00:04:04,373 --> 00:04:08,734
+of 1973 and demonstrated that, like anybody else, they could fight.
+
+42
+00:04:10,475 --> 00:04:12,015
+So that was one immediate.
+
+43
+00:04:14,642 --> 00:04:20,429
+And the second one, which has a much longer history in my own life, was the constant sort of
+
+44
+00:04:20,469 --> 00:04:24,253
+disparity I felt between what my experience of being an Arab was
+
+45
+00:04:25,215 --> 00:04:28,078
+and the representations of that that one saw in art.
+
+46
+00:04:28,979 --> 00:04:32,704
+I mean, I'm talking about very great artists, you know, like Delacroix and...
+
+47
+00:04:33,693 --> 00:04:37,356
+Ingres and Jerome and people like that, novelists
+
+48
+00:04:38,136 --> 00:04:41,699
+who wrote about the Orient, you know, like Disraeli or Flaubert.
+
+49
+00:04:42,199 --> 00:04:45,942
+And, you know, the fact that those representations of the Orient had very little to do with
+
+50
+00:04:46,002 --> 00:04:49,104
+what I knew about my own background in life.
+
+51
+00:04:49,885 --> 00:04:51,486
+So I decided to write the history of that.
+
+52
+00:05:05,748 --> 00:05:08,849
+If somebody, let's say in the 1850s or 60s in
+
+53
+00:05:09,569 --> 00:05:10,469
+Paris or London,
+
+54
+00:05:11,510 --> 00:05:13,030
+wished to talk about
+
+55
+00:05:13,810 --> 00:05:14,510
+or read about
+
+56
+00:05:15,671 --> 00:05:15,971
+India
+
+57
+00:05:16,811 --> 00:05:18,551
+or Egypt or Syria,
+
+58
+00:05:19,792 --> 00:05:22,853
+there would be very little chance for that person to
+
+59
+00:05:24,013 --> 00:05:24,493
+simply
+
+60
+00:05:26,314 --> 00:05:27,314
+address the subject,
+
+61
+00:05:29,294 --> 00:05:31,935
+as we like to think, in a kind of free and creative way.
+
+62
+00:05:33,155 --> 00:05:34,936
+A great deal of writing had gone before.
+
+63
+00:05:36,850 --> 00:05:43,696
+And this writing was an organized form of writing, like an organized science, what I've
+
+64
+00:05:43,736 --> 00:05:44,657
+called Orientalism.
+
+65
+00:05:45,357 --> 00:05:46,218
+And it seemed to me that
+
+66
+00:05:47,059 --> 00:05:51,082
+there was a kind of repertory of images that kept coming up.
+
+67
+00:05:51,583 --> 00:05:56,096
+The sensual woman. who's there to be sort of used by the man.
+
+68
+00:05:57,037 --> 00:06:01,399
+The East is a kind of mysterious place full of secrets and monsters.
+
+69
+00:06:01,819 --> 00:06:04,360
+You know, the marvels of the East was a phrase that was used.
+
+70
+00:06:04,921 --> 00:06:08,602
+And the more I looked, the more I saw that this was really quite consistent with itself.
+
+71
+00:06:09,143 --> 00:06:10,603
+You know, it had very little to do with
+
+72
+00:06:11,724 --> 00:06:12,824
+people who'd actually been there.
+
+73
+00:06:13,785 --> 00:06:16,066
+And even if they had been there, there wasn't much modification.
+
+74
+00:06:16,086 --> 00:06:20,088
+In other words, you didn't get what you could call realistic representations of the Orient,
+
+75
+00:06:20,188 --> 00:06:22,129
+either in literature or in painting or in music
+
+76
+00:06:23,949 --> 00:06:28,055
+any of the arts. And this extended even further into descriptions of the Arabs by
+
+77
+00:06:29,277 --> 00:06:31,020
+experts, you know, people who had
+
+78
+00:06:32,121 --> 00:06:32,642
+studied them.
+
+79
+00:06:33,648 --> 00:06:37,510
+And I noticed that even in the 20th century, some of the same images that you found in the
+
+80
+00:06:37,530 --> 00:06:39,431
+19th century
+
+81
+00:06:40,331 --> 00:06:45,354
+amongst scholars like Edward William Lane, who wrote his book on the modern Egyptians in the
+
+82
+00:06:45,434 --> 00:06:50,837
+early 1830s, and then you read somebody in the 1920s, and they're more or less saying the same
+
+83
+00:06:50,877 --> 00:06:51,117
+thing.
+
+84
+00:06:52,177 --> 00:06:57,780
+One great example that I always give is that the wonderful French poet, Gérard de Nerval, who
+
+85
+00:06:57,820 --> 00:07:00,561
+went on a voyage to the Orient, as he called it.
+
+86
+00:07:00,681 --> 00:07:04,523
+And I was reading this book of his travels in Syria, and there was something very familiar
+
+87
+00:07:04,563 --> 00:07:07,244
+about it. You know, it sounded like something else that I'd read.
+
+88
+00:07:07,924 --> 00:07:11,365
+And then I realized that what he was doing almost unconsciously was quoting Lane
+
+89
+00:07:12,085 --> 00:07:15,947
+on the Egyptians, on the theory that the Orientals are all the same no matter where you find
+
+90
+00:07:15,987 --> 00:07:18,848
+them. I mean, it's in India or in Syria or in Egypt.
+
+91
+00:07:19,145 --> 00:07:20,386
+It's basically the same essence.
+
+92
+00:07:20,806 --> 00:07:24,529
+So it develops a kind of image of the timeless Orient, as if the Orient,
+
+93
+00:07:25,230 --> 00:07:26,570
+unlike the West, doesn't develop.
+
+94
+00:07:26,631 --> 00:07:29,413
+It stays the same. And that's one of the problems with Orientalism is
+
+95
+00:07:30,233 --> 00:07:30,874
+it creates
+
+96
+00:07:32,115 --> 00:07:36,678
+an image outside of history of something that is placid and still and
+
+97
+00:07:37,799 --> 00:07:38,239
+eternal,
+
+98
+00:07:39,240 --> 00:07:41,983
+which is simply contradicted by the fact of history.
+
+99
+00:07:42,603 --> 00:07:46,086
+So in that one sense, it's a creation
+
+100
+00:07:46,987 --> 00:07:49,029
+of, you might say, an ideal other
+
+101
+00:07:50,009 --> 00:07:50,510
+for Europe.
+
+102
+00:08:03,047 --> 00:08:08,231
+Professor Said's analysis of Orientalism isn't just a description of its content, but a sustained
+
+103
+00:08:08,352 --> 00:08:10,313
+argument for why it looks the way it does.
+
+104
+00:08:11,374 --> 00:08:16,559
+It's an examination of the quite concrete historical and institutional context that creates
+
+105
+00:08:16,619 --> 00:08:16,699
+it.
+
+106
+00:08:18,220 --> 00:08:23,905
+Specifically, Said locates the construction of Orientalism within the history of imperial conquest.
+
+107
+00:08:25,315 --> 00:08:26,896
+As empires spread across the globe,
+
+108
+00:08:27,636 --> 00:08:31,257
+historically the British and the French have been the most important in terms of the East.
+
+109
+00:08:32,017 --> 00:08:36,239
+They conquer not only militarily, but also what we could call ideologically.
+
+110
+00:08:37,719 --> 00:08:39,160
+The question for these empires is,
+
+111
+00:08:39,880 --> 00:08:44,321
+how do we understand the natives that we are encountering so we can conquer and subdue them
+
+112
+00:08:44,462 --> 00:08:44,782
+easier?
+
+113
+00:08:46,362 --> 00:08:51,124
+This process of using large abstract categories to explain people who look different, whose
+
+114
+00:08:51,164 --> 00:08:54,005
+skin is a different color, has been going on for a long time.
+
+115
+00:08:54,913 --> 00:08:57,934
+as far back as there has been contact between different cultures and peoples.
+
+116
+00:08:58,674 --> 00:09:04,136
+But Orientalism makes this general process more formal in that it presents itself as objective
+
+117
+00:09:04,216 --> 00:09:04,556
+knowledge.
+
+118
+00:09:06,297 --> 00:09:12,459
+Said identifies Napoleon's conquest of Egypt in 1798 as marking a new kind of imperial and
+
+119
+00:09:12,499 --> 00:09:16,360
+colonial conquest that inaugurates the project of Orientalism.
+
+120
+00:09:16,940 --> 00:09:18,021
+There was a kind of break
+
+121
+00:09:18,761 --> 00:09:20,982
+that occurred after Napoleon came to Egypt in 1798.
+
+122
+00:09:23,435 --> 00:09:26,040
+I think it's the first really important
+
+123
+00:09:26,961 --> 00:09:27,823
+modern imperial
+
+124
+00:09:28,865 --> 00:09:29,486
+expedition.
+
+125
+00:09:30,467 --> 00:09:35,055
+So he invades the place, but he doesn't invade it the way the Spaniards invaded the New World.
+
+126
+00:09:35,937 --> 00:09:42,183
+looking for loot. He comes instead with an enormous army of soldiers, but also scientists,
+
+127
+00:09:43,043 --> 00:09:45,766
+botanists, architects, philologists,
+
+128
+00:09:46,747 --> 00:09:48,709
+biologists, historians,
+
+129
+00:09:49,629 --> 00:09:52,132
+whose job it was to record Egypt
+
+130
+00:09:53,073 --> 00:09:54,294
+in every conceivable way
+
+131
+00:09:55,355 --> 00:10:00,239
+and produce a kind of scientific survey of Egypt, which was designed not for the Egyptian,
+
+132
+00:10:00,800 --> 00:10:01,700
+but for the European.
+
+133
+00:10:02,925 --> 00:10:06,747
+And, of course, what strikes you, first of all, about the volumes that they produced is their
+
+134
+00:10:06,787 --> 00:10:09,068
+enormous size. They're a meter square.
+
+135
+00:10:10,588 --> 00:10:16,591
+And all across them is written the power and prestige of a modern European country that can
+
+136
+00:10:16,671 --> 00:10:17,732
+do to the Egyptians
+
+137
+00:10:18,512 --> 00:10:20,353
+what the Egyptians cannot do to the French.
+
+138
+00:10:20,393 --> 00:10:23,174
+I mean, there's no comparable Egyptian survey of France.
+
+139
+00:10:23,834 --> 00:10:26,455
+To produce knowledge, you have to have a power
+
+140
+00:10:27,216 --> 00:10:27,756
+to be there,
+
+141
+00:10:28,765 --> 00:10:33,286
+and to see in expert ways things that the natives themselves can't see.
+
+142
+00:10:45,088 --> 00:10:45,968
+The differences between
+
+143
+00:10:46,908 --> 00:10:48,348
+different kinds of Orientalisms
+
+144
+00:10:50,049 --> 00:10:52,589
+are, in effect, the differences between different experiences of
+
+145
+00:10:53,369 --> 00:10:54,449
+what is called the Orient.
+
+146
+00:10:54,869 --> 00:10:55,910
+I mean, the difference between
+
+147
+00:10:56,630 --> 00:10:59,836
+Britain and France on the one hand and the united states on the other
+
+148
+00:11:00,677 --> 00:11:07,021
+is that britain and france had colonies in the orient i mean they had a long-standing uh relationship
+
+149
+00:11:07,501 --> 00:11:07,641
+and
+
+150
+00:11:08,682 --> 00:11:15,527
+imperial uh role in a place like india yeah so that there's a kind of a uh
+
+151
+00:11:15,567 --> 00:11:17,228
+there's a kind of a archive
+
+152
+00:11:18,128 --> 00:11:19,469
+of actual experiences
+
+153
+00:11:20,330 --> 00:11:24,913
+of being in india of ruling the country for several hundred years right
+
+154
+00:11:26,563 --> 00:11:32,512
+And the same with the French in North Africa, let's say Algeria or Indochina, direct colonial
+
+155
+00:11:32,572 --> 00:11:35,857
+experience. In the case of the Americans, the experience is
+
+156
+00:11:36,698 --> 00:11:37,940
+much less direct.
+
+157
+00:11:38,952 --> 00:11:44,158
+there's never been an american occupation of the near east so i would say the difference between
+
+158
+00:11:44,178 --> 00:11:45,919
+british and french orientalism on the one hand
+
+159
+00:11:46,700 --> 00:11:51,105
+and the american experience of the orient on the other is that the american one is much more
+
+160
+00:11:51,125 --> 00:11:52,606
+um
+
+161
+00:11:53,567 --> 00:11:56,811
+indirect it's much more based on abstractions
+
+162
+00:11:57,772 --> 00:11:58,232
+the second
+
+163
+00:11:59,654 --> 00:12:05,078
+I think the difference in the American experience from the British and the French of Orientalism
+
+164
+00:12:05,679 --> 00:12:08,702
+is that American Orientalism is very politicized
+
+165
+00:12:09,562 --> 00:12:10,043
+by the
+
+166
+00:12:11,744 --> 00:12:12,625
+presence of Israel,
+
+167
+00:12:13,386 --> 00:12:15,748
+for which America is the main ally.
+
+168
+00:12:16,295 --> 00:12:22,039
+President Clinton and I are proud, as are all Americans, that the United States was the first
+
+169
+00:12:22,099 --> 00:12:29,024
+nation to recognize the state of Israel, 11 minutes after you proclaimed your independence.
+
+170
+00:12:30,405 --> 00:12:34,707
+And what you have, in effect, is the creation of a Jewish state in the middle of the Islamic
+
+171
+00:12:35,048 --> 00:12:35,788
+Oriental world,
+
+172
+00:12:36,849 --> 00:12:40,872
+and the sense that because it's a Jewish state and a Western state,
+
+173
+00:12:41,672 --> 00:12:42,373
+self-declared,
+
+174
+00:12:43,464 --> 00:12:46,448
+There is a greater coincidence between American interests
+
+175
+00:12:47,189 --> 00:12:52,475
+there than there is between American interests, let's say, in places like Iran and Saudi Arabia,
+
+176
+00:12:52,495 --> 00:12:53,796
+which are important because of oil.
+
+177
+00:12:54,617 --> 00:12:55,819
+I think the presence
+
+178
+00:12:56,579 --> 00:12:59,203
+of this other factor, which is very anti-Islamic,
+
+179
+00:12:59,923 --> 00:13:03,808
+where Israel regards the whole Arab world as its enemy, is imported into
+
+180
+00:13:05,052 --> 00:13:06,673
+into American Orientalism.
+
+181
+00:13:06,873 --> 00:13:11,296
+I mean, the idea, for example, that Hamas terrorists on the West Bank are just interested in
+
+182
+00:13:11,336 --> 00:13:12,317
+killing Jewish children
+
+183
+00:13:13,318 --> 00:13:15,779
+is what you derive from looking at this stuff.
+
+184
+00:13:15,819 --> 00:13:19,162
+And very little attention is paid to the fact that the Israeli occupation of the West Bank
+
+185
+00:13:19,202 --> 00:13:21,603
+and Gaza has been going on for 30 years.
+
+186
+00:13:21,643 --> 00:13:23,885
+It's the longest military occupation in this century.
+
+187
+00:13:25,059 --> 00:13:29,384
+And so you get the impression that the only problem is that Israeli security is threatened
+
+188
+00:13:29,404 --> 00:13:32,408
+by Hamas and suicide bombs and all the rest of it.
+
+189
+00:13:32,548 --> 00:13:37,735
+And nothing is said about the hundreds of thousands, millions of Palestinians who are dispossessed
+
+190
+00:13:37,775 --> 00:13:40,999
+and living miserable lives as the direct result of what Israel has done and is doing.
+
+191
+00:13:41,199 --> 00:13:43,082
+So there's a sense in which the Arab
+
+192
+00:13:44,412 --> 00:13:49,034
+struggle for national independence and, in the case of the Palestinians, for national self-determination
+
+193
+00:13:49,094 --> 00:13:53,315
+is looked at with great hostility as upsetting the stability of the status quo.
+
+194
+00:13:53,615 --> 00:13:53,955
+And that
+
+195
+00:13:54,995 --> 00:13:59,057
+makes it virtually impossible, it's a tragedy, virtually impossible for an
+
+196
+00:14:00,157 --> 00:14:02,938
+American to see on television, to read books,
+
+197
+00:14:04,510 --> 00:14:09,292
+to see films about the Middle East that are not colored politically by this conflict in which
+
+198
+00:14:09,332 --> 00:14:11,893
+the Arabs almost always play the role of terrorists and
+
+199
+00:14:12,833 --> 00:14:13,353
+violent
+
+200
+00:14:14,153 --> 00:14:16,034
+people and irrational and so on and
+
+201
+00:14:16,954 --> 00:14:20,156
+so
+
+202
+00:14:21,116 --> 00:14:31,460
+forth.
+
+203
+00:14:31,560 --> 00:14:32,340
+That's another thing.
+
+204
+00:14:33,541 --> 00:14:38,702
+that America really needs to think about is our racism, racism that comes from the United States
+
+205
+00:14:38,742 --> 00:14:41,343
+towards Muslim people and towards Arabic people.
+
+206
+00:14:41,683 --> 00:14:42,943
+And that's something that has to stop.
+
+207
+00:14:43,043 --> 00:14:47,584
+And the United States has to start respecting people from the Middle East in order to find
+
+208
+00:14:47,624 --> 00:14:48,245
+a solution
+
+209
+00:14:48,965 --> 00:14:51,265
+to the problem that's been building up over many years.
+
+210
+00:14:52,246 --> 00:14:56,747
+So I thank everyone for your patience in letting me speak my mind on that.
+
+211
+00:14:57,787 --> 00:15:02,168
+Many people believe the way that Americans understand the Muslim world is very problematic.
+
+212
+00:15:03,423 --> 00:15:06,825
+Indeed, anti-Arab racism seems to be almost officially sanctioned.
+
+213
+00:15:07,586 --> 00:15:12,129
+You can make generalized and racist statements about Arab peoples that would not be tolerated
+
+214
+00:15:12,169 --> 00:15:13,030
+for any other group.
+
+215
+00:15:14,291 --> 00:15:19,354
+At the heart of how this new American Orientalism operates is a threatening and demonized figure
+
+216
+00:15:19,814 --> 00:15:23,417
+of the Islamic terrorist that is emphasized by journalists and Hollywood.
+
+217
+00:15:25,091 --> 00:15:30,059
+Now, Said recognizes that terrorism exists as a result of the violent political situation in
+
+218
+00:15:30,079 --> 00:15:34,807
+the Middle East. But he argues that there is a lot more going on there that is misunderstood
+
+219
+00:15:34,988 --> 00:15:36,711
+or not seen by the peoples of the West.
+
+220
+00:15:38,183 --> 00:15:43,149
+The result of the media's focus on one negative aspect alone means that all the peoples of
+
+221
+00:15:43,189 --> 00:15:47,134
+the Islamic world come to be understood in the same negative and paranoid way.
+
+222
+00:15:47,714 --> 00:15:52,220
+That is as a threat. So that when we think of people who look like that and who come from that
+
+223
+00:15:52,260 --> 00:15:54,803
+part of the world, we think fanatic,
+
+224
+00:15:55,744 --> 00:15:56,224
+extreme,
+
+225
+00:15:57,105 --> 00:15:57,486
+violent.
+
+226
+00:15:59,053 --> 00:16:03,834
+Said argues that understanding a vast and complex region like the Middle East in this narrow
+
+227
+00:16:03,874 --> 00:16:09,216
+way takes away from the humanity and diversity of millions of ordinary people living decent
+
+228
+00:16:09,316 --> 00:16:15,418
+and humane lives there. We asked, would he plant a bomb to blow up the Americans if the Islamic
+
+229
+00:16:15,578 --> 00:16:17,078
+underground asked him to?
+
+230
+00:16:17,758 --> 00:16:22,840
+The answer was yes. After I'd written Orientalism and a book called The Question of Palestine
+
+231
+00:16:22,860 --> 00:16:25,720
+in the early 80s, in the late 70s rather, and
+
+232
+00:16:26,441 --> 00:16:27,901
+beginning of the 80s, I wrote a third book.
+
+233
+00:16:28,487 --> 00:16:31,249
+which is called Covering Islam, and I thought of them as a kind of trilogy.
+
+234
+00:16:31,949 --> 00:16:34,650
+And Covering Islam was an account of the
+
+235
+00:16:36,431 --> 00:16:38,192
+coverage of Islam in the popular media,
+
+236
+00:16:39,213 --> 00:16:45,396
+immediately occasioned by the Iranian Revolution, which described itself, as you recall, as
+
+237
+00:16:45,576 --> 00:16:46,657
+an Islamic revolution.
+
+238
+00:16:47,578 --> 00:16:51,040
+And what I discovered was a huge
+
+239
+00:16:54,061 --> 00:16:54,501
+arsenal
+
+240
+00:16:55,442 --> 00:16:57,123
+of images employed by the media.
+
+241
+00:16:58,304 --> 00:17:01,285
+large masses of people waving their fists,
+
+242
+00:17:02,226 --> 00:17:03,106
+black banners,
+
+243
+00:17:04,327 --> 00:17:06,008
+the stern-faced Khomeini,
+
+244
+00:17:07,228 --> 00:17:11,990
+all of them giving an impression of the utmost negative sort of evil emanation.
+
+245
+00:17:12,451 --> 00:17:17,073
+So the impression you got of Islam was that it was a frightening,
+
+246
+00:17:20,374 --> 00:17:21,095
+mysterious,
+
+247
+00:17:22,415 --> 00:17:26,237
+above all threatening, as if the main business of Muslims was to threaten
+
+248
+00:17:26,998 --> 00:17:28,419
+and try to kill Americans.
+
+249
+00:17:28,779 --> 00:17:29,580
+As recently as
+
+250
+00:17:30,701 --> 00:17:33,103
+last year, 1996, that is to say almost
+
+251
+00:17:34,223 --> 00:17:38,066
+16 or 17 years after I wrote Covering Islam, I did an update of the book,
+
+252
+00:17:38,887 --> 00:17:41,829
+and I wrote a new introduction.
+
+253
+00:17:42,490 --> 00:17:43,190
+And I found,
+
+254
+00:17:44,231 --> 00:17:46,052
+quite to my horror and surprise,
+
+255
+00:17:46,833 --> 00:17:51,656
+that during those 16 or 17 years, with the large number of events in the Islamic world taking
+
+256
+00:17:51,736 --> 00:17:52,057
+place,
+
+257
+00:17:53,200 --> 00:17:58,062
+which you would think would allow for more familiarity with a more refined sense of what was
+
+258
+00:17:58,102 --> 00:18:01,184
+taking place on, let's say, as reflected in television and
+
+259
+00:18:03,285 --> 00:18:04,025
+print journalism,
+
+260
+00:18:04,765 --> 00:18:05,726
+in fact, was the opposite.
+
+261
+00:18:06,566 --> 00:18:07,847
+I think the situation got worse,
+
+262
+00:18:08,907 --> 00:18:14,510
+and that what you had instead now is a much more threatening picture of Islam, represented,
+
+263
+00:18:14,530 --> 00:18:20,453
+for example, by a television film called Jihad in America, based on the bombing of the World
+
+264
+00:18:20,473 --> 00:18:20,973
+Trade Center.
+
+265
+00:18:22,167 --> 00:18:25,348
+I've reported on international terrorism for the past 10 years.
+
+266
+00:18:26,349 --> 00:18:31,230
+And since the World Trade Center bombing, I've been investigating the networks of Islamic extremists
+
+267
+00:18:31,370 --> 00:18:33,231
+committed to jihad in America.
+
+268
+00:18:33,931 --> 00:18:40,594
+For these militants, jihad is a holy war, an armed struggle to defeat non-believers or infidels.
+
+269
+00:18:41,094 --> 00:18:44,195
+And their ultimate goal is to establish an Islamic empire.
+
+270
+00:18:44,555 --> 00:18:47,156
+But this gathering did not take place in the Middle East.
+
+271
+00:18:47,597 --> 00:18:51,278
+It happened in the heartland of America, Kansas City, Missouri.
+
+272
+00:18:53,146 --> 00:18:57,931
+Combating these groups within the boundaries of the Constitution will be the greatest challenge
+
+273
+00:18:57,991 --> 00:19:00,935
+to law enforcement since the war on organized crime.
+
+274
+00:19:01,513 --> 00:19:05,996
+But never the same generalizations were made, let's say, about the Oklahoma
+
+275
+00:19:06,897 --> 00:19:10,099
+City bombing, that this was a Christian fundamentalist, etc., etc.
+
+276
+00:19:10,400 --> 00:19:15,904
+But the Islamic jihad had come to America, and you had these scenes of the most irresponsible
+
+277
+00:19:15,944 --> 00:19:20,087
+journalism, where you'd see people talking in Arabic and in a voiceover saying, and they are
+
+278
+00:19:20,147 --> 00:19:21,768
+discussing the destruction of America.
+
+279
+00:19:22,329 --> 00:19:25,531
+Whereas if you picked up a little of what was being said, if you knew the language, it had
+
+280
+00:19:25,571 --> 00:19:26,312
+nothing to do with that.
+
+281
+00:19:27,295 --> 00:19:32,720
+And that Islam and the teachings of Islam became synonymous with terror and the demonization
+
+282
+00:19:32,740 --> 00:19:33,240
+of Islam
+
+283
+00:19:34,501 --> 00:19:39,305
+allowed for very little distinction between piety, let's say, and violence.
+
+284
+00:19:39,325 --> 00:19:39,485
+The
+
+285
+00:19:40,286 --> 00:19:43,589
+so-called independent media in a liberal society like this,
+
+286
+00:19:44,350 --> 00:19:48,093
+in effect, are so lazy and are controlled by interests that are
+
+287
+00:19:49,002 --> 00:19:53,543
+commercial and political at the same time that there is no investigative reporting it's just
+
+288
+00:19:53,603 --> 00:19:55,504
+basically repeating the
+
+289
+00:19:56,284 --> 00:20:00,786
+line of the government only eight days ago i concluded a broadcast on the world trade center
+
+290
+00:20:00,826 --> 00:20:04,947
+bombing by telling you what senior u.s law enforcement officials were telling us
+
+291
+00:20:05,707 --> 00:20:11,589
+that the threat of muslim extremists operating within the united states is an ongoing danger
+
+292
+00:20:11,669 --> 00:20:13,810
+something we'll have to live with from now on
+
+293
+00:20:14,650 --> 00:20:19,573
+and repeating the lines of the people who have the most influence, for whom Islam is a useful
+
+294
+00:20:21,234 --> 00:20:27,717
+foreign demon to turn attention away from the inequities and problems in our own
+
+295
+00:20:27,777 --> 00:20:28,237
+society.
+
+296
+00:20:29,018 --> 00:20:32,339
+So, as a result, the human side
+
+297
+00:20:33,120 --> 00:20:35,681
+of the Islamic and especially Arabic world
+
+298
+00:20:36,401 --> 00:20:37,442
+are rarely to be found.
+
+299
+00:20:39,327 --> 00:20:40,387
+and the net result is this
+
+300
+00:20:41,107 --> 00:20:42,248
+vacancy on the one hand
+
+301
+00:20:43,108 --> 00:20:44,668
+and these easy, almost
+
+302
+00:20:46,328 --> 00:20:48,469
+automatic images of terror and violence.
+
+303
+00:20:49,789 --> 00:20:51,449
+There is a handy
+
+304
+00:20:52,549 --> 00:20:58,170
+set of images and clichés, you know, not just from the newspapers and the television, but from
+
+305
+00:20:58,190 --> 00:20:58,691
+movies. Oh,
+
+306
+00:21:01,111 --> 00:21:07,072
+I come from a land, from a faraway place Where the caravan camels roam
+
+307
+00:21:08,200 --> 00:21:11,861
+where it's flat and immense and the heat is intense.
+
+308
+00:21:12,021 --> 00:21:14,442
+It's barbaric, but hey, it's home.
+
+309
+00:21:15,623 --> 00:21:21,865
+When the wind's from the east and the sun's from the west and the sand in the glass is bright,
+
+310
+00:21:22,585 --> 00:21:29,108
+come on down, stop on by, hop a carpet and fly to another Arabian
+
+311
+00:21:29,188 --> 00:21:33,069
+night. I mean, I myself,
+
+312
+00:21:34,050 --> 00:21:36,851
+growing up in the Middle East, in Palestine and Cairo, used to delight
+
+313
+00:21:38,331 --> 00:21:43,254
+in films on the arabian nights you know done by hollywood producers you know with john hall
+
+314
+00:21:43,554 --> 00:21:49,078
+and maria montes and sabu i mean they were talking about part of the world that i lived in
+
+315
+00:21:49,518 --> 00:21:56,282
+but it had this kind of exotic uh magical quality which was what we call today hollywood so
+
+316
+00:21:56,322 --> 00:22:00,665
+there was that whole repertory of the sheiks and the desert and the galloping around and the
+
+317
+00:22:00,705 --> 00:22:05,168
+scimitars and the dancing girls and all that that was that's really the material the situation
+
+318
+00:22:05,208 --> 00:22:06,969
+in the popular media is is
+
+319
+00:22:07,981 --> 00:22:10,103
+basically that Muslims are really two things.
+
+320
+00:22:10,303 --> 00:22:13,065
+One, they're villains and fanatics.
+
+321
+00:22:14,005 --> 00:22:17,608
+I will dispatch the American people to the hell they
+
+322
+00:22:17,648 --> 00:22:23,892
+deserve. And B,
+
+323
+00:22:25,092 --> 00:22:29,216
+Many films end up with huge numbers of bodies,
+
+324
+00:22:30,036 --> 00:22:34,681
+Muslim bodies, strewn all over the place, the result of Arnold Schwarzenegger or Demi Moore
+
+325
+00:22:34,701 --> 00:22:35,341
+or Chuck Norris.
+
+326
+00:22:36,382 --> 00:22:38,524
+Lots of films about guerrillas going in to kill
+
+327
+00:22:39,305 --> 00:22:44,009
+Muslim terrorists. So the idea of Islam is something to be stamped out.
+
+328
+00:23:03,054 --> 00:23:05,778
+The whole history of these Orientalist representations, which
+
+329
+00:23:06,819 --> 00:23:07,860
+portrayed the Muslim
+
+330
+00:23:08,782 --> 00:23:11,105
+and the Orientalist as, in effect, a lesser breed.
+
+331
+00:23:11,285 --> 00:23:11,886
+In other words,
+
+332
+00:23:13,027 --> 00:23:15,591
+the only thing they understand is the language of force.
+
+333
+00:23:16,071 --> 00:23:17,253
+This is the principle here.
+
+334
+00:23:17,353 --> 00:23:19,816
+Unless you give them a bloody nose, they won't understand.
+
+335
+00:23:19,836 --> 00:23:20,978
+We can't talk reason with them.
+
+336
+00:23:30,020 --> 00:23:32,002
+Is the Arab world full of terrorists?
+
+337
+00:23:32,142 --> 00:23:38,346
+Well, I mean, all you have to do is break down the question into common sense and say,
+
+338
+00:23:40,628 --> 00:23:42,329
+there are terrorists, as there are everywhere.
+
+339
+00:23:43,050 --> 00:23:43,230
+But,
+
+340
+00:23:44,131 --> 00:23:45,832
+you know, there's a lot more going on there.
+
+341
+00:23:46,232 --> 00:23:49,695
+I mean, we're talking about 250, 300 million people.
+
+342
+00:23:50,856 --> 00:23:54,378
+And one of the great problems with orientalism to begin with is these vast generalizations
+
+343
+00:23:54,438 --> 00:23:55,779
+about Islam and the nature of Islam.
+
+344
+00:23:55,799 --> 00:23:56,520
+I mean, there's very little
+
+345
+00:23:58,150 --> 00:23:59,871
+in common that you can talk about
+
+346
+00:24:01,192 --> 00:24:04,675
+as Islam, let's say, between Indonesia and Saudi Arabia.
+
+347
+00:24:04,775 --> 00:24:06,436
+I mean, they're both Muslim countries, but
+
+348
+00:24:07,717 --> 00:24:10,459
+the differences in history and language and
+
+349
+00:24:11,200 --> 00:24:14,402
+traditions and so on are so vast that the word Islam has,
+
+350
+00:24:15,423 --> 00:24:16,764
+at best, a tenuous meaning.
+
+351
+00:24:18,205 --> 00:24:19,686
+The same is true within the Arab world.
+
+352
+00:24:19,706 --> 00:24:21,988
+I mean, Morocco is very different from Saudi Arabia.
+
+353
+00:24:22,643 --> 00:24:24,844
+Algeria is very different from Egypt.
+
+354
+00:24:25,304 --> 00:24:31,166
+And I would argue, in fact have argued, that the predominant mood of the Arab world is very
+
+355
+00:24:31,206 --> 00:24:31,666
+secular.
+
+356
+00:24:33,547 --> 00:24:37,768
+It's easy to attract attention, and certainly the media's attention, for some of the political
+
+357
+00:24:37,828 --> 00:24:38,768
+reasons that are obvious.
+
+358
+00:24:38,808 --> 00:24:41,609
+I mean, to discredit the Arabs, to make them seem like a threat to the West,
+
+359
+00:24:42,950 --> 00:24:43,350
+to keep
+
+360
+00:24:45,420 --> 00:24:49,044
+the idea around, at the end of the Cold War, that there are
+
+361
+00:24:50,185 --> 00:24:53,409
+foreign devils. Otherwise, what are we doing with this gigantic military,
+
+362
+00:24:54,330 --> 00:24:56,052
+this huge military budget that is
+
+363
+00:24:56,772 --> 00:24:59,876
+twice as much as an entire world's military budget combined?
+
+364
+00:25:01,217 --> 00:25:02,579
+So you have to have threat.
+
+365
+00:25:02,879 --> 00:25:03,680
+And the result is
+
+366
+00:25:05,242 --> 00:25:08,965
+it's very hard to find works that are sympathetic to the Arabs in Islam.
+
+367
+00:25:09,005 --> 00:25:13,730
+Islam is seen as the enemy of Christianity, and the United States sees itself as a Judeo-Christian
+
+368
+00:25:13,770 --> 00:25:18,936
+country in affiliation with Israel, and that Islam is the great enemy, the competitor.
+
+369
+00:25:19,156 --> 00:25:20,277
+There's a history of that.
+
+370
+00:25:20,718 --> 00:25:22,960
+And I give the example of Dodi Fayyad, you know, the...
+
+371
+00:25:23,774 --> 00:25:24,294
+erstwhile
+
+372
+00:25:25,575 --> 00:25:26,835
+suitor of Princess Diana.
+
+373
+00:25:27,596 --> 00:25:33,358
+Well a few days before he died I read through the English press and it was full of the racist
+
+374
+00:25:34,059 --> 00:25:36,580
+cliches of orientalist discourse.
+
+375
+00:25:36,640 --> 00:25:37,300
+I mean that this is
+
+376
+00:25:38,724 --> 00:25:44,286
+The Sunday Times, one of the leading newspapers in England, had a headline to a 15,000-word
+
+377
+00:25:44,326 --> 00:25:47,186
+story entitled A Match Made in Mecca.
+
+378
+00:25:47,986 --> 00:25:53,348
+And the idea of Muslim conspiracies trying to infect, you know, taking over this white woman
+
+379
+00:25:53,428 --> 00:25:54,228
+by these dark
+
+380
+00:25:54,928 --> 00:25:57,069
+people with Muhammad, the Prophet Muhammad, who is
+
+381
+00:25:58,689 --> 00:26:02,370
+a historical personage of the 7th century, somehow stage-managing the whole thing.
+
+382
+00:26:02,730 --> 00:26:04,691
+That's the power of the discourse, you see.
+
+383
+00:26:05,071 --> 00:26:06,471
+If you're thinking about people
+
+384
+00:26:07,237 --> 00:26:11,000
+and Islam and about that part of the world, those are the words you constantly have to use.
+
+385
+00:26:11,681 --> 00:26:12,701
+And you won't get hurt!
+
+386
+00:26:14,243 --> 00:26:15,424
+I give you my word!
+
+387
+00:26:17,285 --> 00:26:18,906
+No way, you wacko!
+
+388
+00:26:21,268 --> 00:26:27,453
+The discourse is a regulated system of producing knowledge within certain constraints whereby
+
+389
+00:26:27,533 --> 00:26:28,994
+certain rules have to be observed.
+
+390
+00:26:29,495 --> 00:26:31,837
+Okay, Libya, exports. Yes, sir.
+
+391
+00:26:31,857 --> 00:26:33,178
+Are you American pig?
+
+392
+00:26:35,043 --> 00:26:39,885
+To think past it, to go beyond it, not to use it, is virtually impossible because there's no
+
+393
+00:26:39,925 --> 00:26:43,767
+knowledge that isn't codified in this way about that part of the world.
+
+394
+00:26:44,547 --> 00:26:45,488
+May I help you?
+
+395
+00:26:47,668 --> 00:26:49,769
+Listen to the sound
+
+396
+00:26:50,830 --> 00:26:52,030
+of Altar!
+
+397
+00:27:02,987 --> 00:27:04,428
+And there's a certain sense in which
+
+398
+00:27:06,029 --> 00:27:06,609
+in
+
+399
+00:27:07,850 --> 00:27:10,752
+not really mounting a serious critique of it,
+
+400
+00:27:12,813 --> 00:27:18,136
+the Arabs have participated and continue to allow themselves to be represented as Orientals
+
+401
+00:27:18,196 --> 00:27:19,617
+in this Orientalist way.
+
+402
+00:27:21,498 --> 00:27:26,861
+There is no, for example, information policy of the 20 Arab countries, 22 Arab countries,
+
+403
+00:27:28,122 --> 00:27:30,704
+to try to give a different picture of what
+
+404
+00:27:32,012 --> 00:27:34,653
+their worlds of life, because most of them are dictatorships.
+
+405
+00:27:35,453 --> 00:27:39,535
+All of them are dictatorships without democracy, who are in desperate need of U.S.
+
+406
+00:27:39,575 --> 00:27:41,215
+patronage, government patronage,
+
+407
+00:27:42,876 --> 00:27:47,758
+to support them. And so they're not about to criticize the United States, not about to engage
+
+408
+00:27:47,818 --> 00:27:49,138
+in a real dialogue.
+
+409
+00:27:50,639 --> 00:27:53,640
+And in that respect, I think the Arabs keep themselves
+
+410
+00:27:54,720 --> 00:27:55,300
+collectively
+
+411
+00:27:56,041 --> 00:27:56,761
+in a way that is
+
+412
+00:27:57,501 --> 00:27:59,762
+subordinate to and inferior to
+
+413
+00:28:01,102 --> 00:28:03,608
+and in fact fulfills the kinds of representations
+
+414
+00:28:04,651 --> 00:28:07,377
+that most Westerners have in their minds about the Arabs.
+
+415
+00:28:22,643 --> 00:28:25,645
+The attack came without warning, and according to a U.S.
+
+416
+00:28:25,665 --> 00:28:30,849
+government source, told CBS News that it has Middle East terrorism written all over it.
+
+417
+00:28:31,110 --> 00:28:34,552
+The attack in Oklahoma City appears to have a familiar mark.
+
+418
+00:28:34,773 --> 00:28:38,255
+This was done with the attempt to inflict as many casualties as possible.
+
+419
+00:28:38,696 --> 00:28:40,337
+That is a Middle Eastern trait.
+
+420
+00:28:40,517 --> 00:28:45,659
+The fact that it was such a powerful bomb in Oklahoma City immediately drew investigators to
+
+421
+00:28:45,699 --> 00:28:49,320
+consider deadly parallels that all have roots in the Middle East.
+
+422
+00:28:49,480 --> 00:28:56,182
+ABC News has learned that the FBI has asked the US military to provide up to 10 Arabic speakers
+
+423
+00:28:56,242 --> 00:28:57,683
+to help in the investigation.
+
+424
+00:28:58,903 --> 00:29:00,304
+Well, one of the interesting things
+
+425
+00:29:01,184 --> 00:29:02,925
+about the persistence of Orientalism
+
+426
+00:29:05,540 --> 00:29:11,063
+I mean, when you think about it, almost astonishing persistence of it was the Oklahoma City
+
+427
+00:29:11,103 --> 00:29:13,104
+bombing in April of 1995.
+
+428
+00:29:13,284 --> 00:29:13,384
+I
+
+429
+00:29:14,225 --> 00:29:15,586
+can give you a personal example.
+
+430
+00:29:16,866 --> 00:29:21,589
+I was in Canada giving some lectures at the actual time of the bombing.
+
+431
+00:29:22,810 --> 00:29:22,970
+And
+
+432
+00:29:24,030 --> 00:29:25,551
+maybe half an hour after the
+
+433
+00:29:26,572 --> 00:29:28,113
+event had occurred in the afternoon,
+
+434
+00:29:29,133 --> 00:29:31,915
+my office was inundated with phone calls from the media.
+
+435
+00:29:33,807 --> 00:29:33,967
+And
+
+436
+00:29:34,808 --> 00:29:40,031
+I rang my office from Canada, as I frequently do, to find out, you know, if there was any message
+
+437
+00:29:40,071 --> 00:29:42,213
+for me that needed attention and so on.
+
+438
+00:29:43,113 --> 00:29:49,738
+And she said every... 25 calls had come in from the major networks, from the cable channels,
+
+439
+00:29:49,798 --> 00:29:53,921
+from the major newspapers, news magazines, and so on and so forth, all of them wanting to talk
+
+440
+00:29:53,941 --> 00:29:54,141
+to you.
+
+441
+00:29:54,921 --> 00:29:57,103
+And I said, what about, about this event in Oklahoma City?
+
+442
+00:29:57,123 --> 00:29:59,144
+And I said, well, what does that have to do with anything?
+
+443
+00:29:59,184 --> 00:29:59,405
+Well,
+
+444
+00:30:00,265 --> 00:30:02,867
+apparently, somebody had volunteered...
+
+445
+00:30:03,893 --> 00:30:05,856
+one of these instant commentators that
+
+446
+00:30:06,658 --> 00:30:10,604
+the notion that this seemed like a Middle East style bombing and that there were a couple of
+
+447
+00:30:10,684 --> 00:30:12,106
+swarthy people around
+
+448
+00:30:12,808 --> 00:30:14,911
+right after the bombing or seen after the bombing.
+
+449
+00:30:15,284 --> 00:30:20,405
+Within hours of the explosion, local police and the FBI had issued the all-points bulletin
+
+450
+00:30:20,445 --> 00:30:23,626
+looking for three men believed to be of Middle Eastern origin.
+
+451
+00:30:23,746 --> 00:30:29,687
+And sources tell CBS News that unofficially, the FBI is treating this as a Middle Eastern-related
+
+452
+00:30:29,727 --> 00:30:34,968
+incident. Oklahoma City, I can tell you, is probably considered one of the largest centers
+
+453
+00:30:35,028 --> 00:30:37,728
+of Islamic radical activity outside the Middle East.
+
+454
+00:30:38,149 --> 00:30:39,889
+And so this got them to think.
+
+455
+00:30:40,945 --> 00:30:44,288
+that they should talk to me, not because I had anything to do with it, but because by virtue
+
+456
+00:30:44,308 --> 00:30:47,691
+of being from the Middle East, I would have an insight into this.
+
+457
+00:30:49,635 --> 00:30:54,259
+you know and of course the proposition is so preposterous and so racist just if you're from
+
+458
+00:30:54,279 --> 00:30:57,781
+the area you would understand who and why this is being done
+
+459
+00:30:58,582 --> 00:31:01,144
+never thinking for a moment that it was a local homegrown
+
+460
+00:31:02,225 --> 00:31:06,688
+boy called mcveigh who was you know totally american in his outlook and was doing it out of
+
+461
+00:31:06,728 --> 00:31:09,130
+the best principles of american extermination
+
+462
+00:31:09,870 --> 00:31:12,112
+and ahab-like anger you know at the world
+
+463
+00:31:24,378 --> 00:31:26,559
+Professor Said is not only a literary theorist.
+
+464
+00:31:27,139 --> 00:31:31,341
+He is also a very prominent and active representative of the Palestinian people.
+
+465
+00:31:32,542 --> 00:31:37,584
+Said grew up in what was then called Palestine and is now called Israel and the Occupied Territories.
+
+466
+00:31:38,884 --> 00:31:44,407
+When the State of Israel was founded in 1948, like millions of other Palestinians, Said and
+
+467
+00:31:44,447 --> 00:31:47,328
+his family were made homeless as well as stateless.
+
+468
+00:31:48,765 --> 00:31:53,786
+These exiled Palestinians now mostly live either in the territories under the control of Israel
+
+469
+00:31:54,446 --> 00:31:56,526
+or in refugee camps in the surrounding countries.
+
+470
+00:31:57,967 --> 00:32:02,747
+One of the things that drives Said is the quest for justice and a homeland for the Palestinian
+
+471
+00:32:02,767 --> 00:32:03,047
+people.
+
+472
+00:32:04,108 --> 00:32:08,408
+And there's a close connection between Said's intellectual work and his political activism.
+
+473
+00:32:09,388 --> 00:32:14,629
+As he himself remarks, he wrote three books that he thinks of as a trilogy and that in his
+
+474
+00:32:14,709 --> 00:32:16,170
+mind are closely connected together.
+
+475
+00:32:17,030 --> 00:32:17,610
+Orientalism,
+
+476
+00:32:18,468 --> 00:32:21,110
+covering Islam and the question of Palestine.
+
+477
+00:32:22,711 --> 00:32:27,334
+He believes that finding a peaceful, humane, and just solution to the conflicts in the Middle
+
+478
+00:32:27,394 --> 00:32:33,238
+East, that is, finding an answer to the question of Palestine, will require overcoming the
+
+479
+00:32:33,298 --> 00:32:38,682
+racist legacy of Orientalism that stresses the separation of people from each other, that regards
+
+480
+00:32:38,742 --> 00:32:41,884
+difference as a threat that must be contained or destroyed.
+
+481
+00:32:43,525 --> 00:32:46,006
+Because of the complex and bloody history of the Middle East,
+
+482
+00:32:46,786 --> 00:32:52,369
+Said regards the situation in Palestine and Israel as the ultimate test case facing the 21st
+
+483
+00:32:52,409 --> 00:32:57,911
+century of whether we live together in peace and reconciliation with our differences or whether
+
+484
+00:32:57,951 --> 00:33:03,013
+we live apart in fear and loathing of each other, constantly under threat, constantly at war.
+
+485
+00:33:04,422 --> 00:33:07,083
+In seeking a way out of this legacy of mistrust and conflict,
+
+486
+00:33:07,803 --> 00:33:13,185
+Said draws upon the work of Italian philosopher Antonio Gramsci, who gives us the tools to
+
+487
+00:33:13,245 --> 00:33:16,707
+think about these difficult issues in more productive and humane ways.
+
+488
+00:33:18,027 --> 00:33:22,849
+Well, Gramsci, in the prison notebooks, says something that has always
+
+489
+00:33:24,230 --> 00:33:26,130
+tremendously appealed to me, that history
+
+490
+00:33:27,311 --> 00:33:28,491
+deposits in us
+
+491
+00:33:29,211 --> 00:33:33,093
+our own history, our family's history, our nation's history, our tradition's history.
+
+492
+00:33:33,852 --> 00:33:37,574
+which has left in us an infinity of traces, all kinds of
+
+493
+00:33:38,314 --> 00:33:43,817
+marks, through heredity, through collective experience, through individual experience, through
+
+494
+00:33:43,877 --> 00:33:45,778
+family experience, through relations between
+
+495
+00:33:46,699 --> 00:33:47,699
+one individual and another.
+
+496
+00:33:47,719 --> 00:33:47,739
+A
+
+497
+00:33:49,100 --> 00:33:49,540
+whole
+
+498
+00:33:51,861 --> 00:33:52,662
+book, if you like,
+
+499
+00:33:53,602 --> 00:33:56,164
+a series of an infinity of traces.
+
+500
+00:33:57,044 --> 00:33:58,305
+But there's no inventory.
+
+501
+00:33:58,365 --> 00:34:00,586
+There's no orderly guide to it.
+
+502
+00:34:02,275 --> 00:34:07,838
+So Gramsci says, therefore the task at the outset is to try to compile an inventory.
+
+503
+00:34:07,978 --> 00:34:09,799
+In other words, to try and make sense of it.
+
+504
+00:34:10,880 --> 00:34:15,662
+And this seems to me, at any rate, to be the most interesting sort of human task.
+
+505
+00:34:16,783 --> 00:34:18,203
+It's the task of interpretation.
+
+506
+00:34:18,964 --> 00:34:21,525
+It's the task of giving history some shape and sense.
+
+507
+00:34:23,167 --> 00:34:27,530
+for a particular reason, not just to show that my history is better than yours, or my history
+
+508
+00:34:27,550 --> 00:34:31,372
+is worse than yours. I'm a victim, and you're somebody who's oppressed people.
+
+509
+00:34:31,873 --> 00:34:35,955
+But rather, to understand my history in terms of other people's history.
+
+510
+00:34:35,975 --> 00:34:39,958
+In other words, to try to understand, to move beyond, to generalize
+
+511
+00:34:40,698 --> 00:34:42,820
+one's own individual experience to the experience of others.
+
+512
+00:34:44,103 --> 00:34:46,584
+And I think the great
+
+513
+00:34:49,165 --> 00:34:49,585
+goal
+
+514
+00:34:50,365 --> 00:34:53,426
+is, in fact, to become someone else, to transform itself
+
+515
+00:34:54,567 --> 00:34:57,368
+from a unitary identity to an identity that
+
+516
+00:34:58,168 --> 00:35:01,369
+includes the other without suppressing the difference.
+
+517
+00:35:01,829 --> 00:35:05,210
+That, he says, is the great goal.
+
+518
+00:35:05,610 --> 00:35:08,491
+And for me, I think that would be the case.
+
+519
+00:35:09,292 --> 00:35:09,872
+And that would be the
+
+520
+00:35:10,752 --> 00:35:11,592
+notion of writing
+
+521
+00:35:12,573 --> 00:35:13,253
+an inventory,
+
+522
+00:35:14,313 --> 00:35:17,896
+historical inventory. We try not only to understand oneself but to understand oneself
+
+523
+00:35:18,636 --> 00:35:22,018
+in relation to others and to understand others as if you would understand yourself.
+
+524
+00:35:22,979 --> 00:35:25,100
+Palestine is so important in this respect
+
+525
+00:35:26,581 --> 00:35:27,101
+because of its
+
+526
+00:35:28,002 --> 00:35:28,422
+local
+
+527
+00:35:29,523 --> 00:35:31,744
+complexities, let's say Arabs and Jews,
+
+528
+00:35:32,985 --> 00:35:38,088
+Arab Muslims and Arab Christians and Israeli Jews of themselves very mixed backgrounds.
+
+529
+00:35:38,148 --> 00:35:41,150
+I mean we're talking about Polish Jews, Russian Jews, American Jews,
+
+530
+00:35:41,967 --> 00:35:44,148
+Yemeni Jews, Iraqi Jews, Indian Jews.
+
+531
+00:35:44,528 --> 00:35:49,449
+It's a fairly complex mosaic, somehow finding a way to live together
+
+532
+00:35:50,910 --> 00:35:51,830
+on a land that is
+
+533
+00:35:52,750 --> 00:35:55,231
+drenched, saturated with
+
+534
+00:35:56,391 --> 00:35:59,792
+significance on a world scale, unlike any other country in the world.
+
+535
+00:35:59,952 --> 00:36:02,813
+I mean, it's holy to three of the major religions,
+
+536
+00:36:03,773 --> 00:36:08,535
+and every inch of it has been combed over and fought over for the last several thousand years.
+
+537
+00:36:09,811 --> 00:36:15,376
+And the pattern so far has been the Zionist pattern, which is to say that it was promised to
+
+538
+00:36:15,516 --> 00:36:16,797
+us. We're the chosen people.
+
+539
+00:36:17,718 --> 00:36:19,179
+Everybody else is sort of second rate.
+
+540
+00:36:19,279 --> 00:36:22,081
+Throw them out or treat them as second class citizens.
+
+541
+00:36:23,302 --> 00:36:23,442
+And
+
+542
+00:36:24,463 --> 00:36:25,644
+in contrast to that,
+
+543
+00:36:26,385 --> 00:36:29,507
+some of us, not everybody, but many Palestinians have said, well,
+
+544
+00:36:30,408 --> 00:36:34,832
+we realize that we are being asked to pay the price for what happened to the Jews in Europe
+
+545
+00:36:35,452 --> 00:36:38,695
+under the Holocaust. It was an entirely Christian and European
+
+546
+00:36:39,943 --> 00:36:42,585
+catastrophe in which the Arabs played no part.
+
+547
+00:36:44,267 --> 00:36:44,447
+And
+
+548
+00:36:45,167 --> 00:36:47,109
+we are being dispossessed, displaced
+
+549
+00:36:48,530 --> 00:36:50,912
+by the victims. We've become the victims of the victims.
+
+550
+00:36:51,312 --> 00:36:55,015
+But as I say, not all of us say, well, they should be thrown out,
+
+551
+00:36:56,016 --> 00:36:57,497
+because we have been thrown out.
+
+552
+00:36:57,557 --> 00:37:00,180
+And so we have another vision, which is a vision of coexistence.
+
+553
+00:37:01,063 --> 00:37:03,524
+in which Jew and Arab, Muslim, Christian,
+
+554
+00:37:04,705 --> 00:37:05,085
+and Jew,
+
+555
+00:37:05,905 --> 00:37:11,308
+can live together in some polity, which I think it requires a kind of creativity and invention
+
+556
+00:37:12,969 --> 00:37:14,169
+that is possible, vision,
+
+557
+00:37:15,310 --> 00:37:16,110
+that would replace
+
+558
+00:37:17,311 --> 00:37:19,472
+the authoritarian hierarchical model.
+
+559
+00:37:20,132 --> 00:37:24,815
+But this idea that somehow we should protect ourselves against the infiltrations, the infections
+
+560
+00:37:24,875 --> 00:37:25,315
+of the other,
+
+561
+00:37:26,585 --> 00:37:28,747
+is, I think, the most dangerous idea
+
+562
+00:37:29,768 --> 00:37:31,550
+at the end of the 20th century.
+
+563
+00:37:31,670 --> 00:37:31,810
+And
+
+564
+00:37:32,831 --> 00:37:36,194
+unless we find ways to do it, and there are no shortcuts to it,
+
+565
+00:37:38,296 --> 00:37:41,379
+unless we find ways to do this, there's going to be wholesale
+
+566
+00:37:42,400 --> 00:37:43,361
+violence of the sort
+
+567
+00:37:44,762 --> 00:37:46,384
+represented by the Gulf War, by the
+
+568
+00:37:47,185 --> 00:37:50,468
+killings in Bosnia, the Rwandan massacres, and so on.
+
+569
+00:37:50,508 --> 00:37:51,388
+I mean, those are the pattern.
+
+570
+00:37:52,607 --> 00:37:56,449
+of emerging conflict that is extremely dangerous and needs to be counteracted.
+
+571
+00:37:56,649 --> 00:37:59,430
+And I think therefore it's correct to say that the challenge now
+
+572
+00:38:00,150 --> 00:38:01,911
+is the challenge, I wouldn't call it
+
+573
+00:38:04,212 --> 00:38:05,572
+anything other than coexistence.
+
+574
+00:38:06,032 --> 00:38:09,794
+How does one coexist with people whose religions are different, whose
+
+575
+00:38:11,034 --> 00:38:15,376
+traditions and languages are different, but who form part of the same community or polity
+
+576
+00:38:16,416 --> 00:38:17,317
+in a national sense?
+
+577
+00:38:18,658 --> 00:38:22,661
+How do we accept difference without violence and hostility?
+
+578
+00:38:24,642 --> 00:38:28,785
+I've been interested in a field called comparative literature most all of my adult life and
+
+579
+00:38:29,265 --> 00:38:31,006
+the ideal of comparative literature is not
+
+580
+00:38:31,887 --> 00:38:36,110
+to show how English literature is really a secondary phenomenon in French literature or Arabic
+
+581
+00:38:36,150 --> 00:38:36,510
+literature
+
+582
+00:38:37,990 --> 00:38:41,571
+you know, a kind of poor cousin to Persian literature or any of those silly things, but to
+
+583
+00:38:41,611 --> 00:38:43,792
+show them existing, you might say, as
+
+584
+00:38:44,553 --> 00:38:45,753
+contrapuntal lines
+
+585
+00:38:46,533 --> 00:38:48,634
+in a great composition by which difference
+
+586
+00:38:49,935 --> 00:38:51,115
+is respected and understood
+
+587
+00:38:53,416 --> 00:38:54,337
+without coercion.
+
+588
+00:38:55,957 --> 00:38:57,558
+And it's that attitude, I think, that we need.

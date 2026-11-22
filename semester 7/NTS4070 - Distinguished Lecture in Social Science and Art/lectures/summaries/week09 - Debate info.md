@@ -4,7 +4,7 @@
 Source: [week09 - Debate info.pptx](../slides/week09%20-%20Debate%20info.pptx) *(eClass 73002)*
 
 The deck is short: four slides, no speaker notes, no images. It comes with a VOD, **"Debate info" (11:43)**, which
-explains it out loud. The VOD isn't mirrored or transcribed yet, so anything the slides don't say isn't here. **Check the
+explains it out loud. The video is summarised separately ([Debate info VOD](vod/week09%20-%20Debate%20info.md)); see the update at the end. **Check the
 video before your debate.** The debate is **30 % of the course grade**, the same weight as the midterm. Notes marked *(my note)*
 are mine and are not on the slides.
 
@@ -72,3 +72,5 @@ few are global (AI). The guiding questions for each topic are in the sheet linke
 
 None. It's an admin deck. The only mismatch is between the deck's **10:00–14:00** and the sheet's slots, which end at about **13:35**.
 Go by the sheet for your own slot.
+
+> **Update:** both videos are now transcribed. The [Debate info VOD summary](vod/week09%20-%20Debate%20info.md) gives the weights (**6 points per criterion**), confirms the roles (3 speakers, member 4 asks, member 5 defends, **every member must have a role**) and adds the coin toss and professional dress. The [Debate schedule info summary](vod/week10%20-%20Debate%20schedule%20info.md) covers the sheet, being on time, and how to swap slots.
