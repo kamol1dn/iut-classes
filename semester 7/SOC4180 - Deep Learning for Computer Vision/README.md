@@ -96,9 +96,15 @@ relying on either reading.
 |---|---|
 | Syllabus (PDF) | [syllabus/soc4180.pdf](syllabus/soc4180.pdf) |
 | Timetable image, posted 09-18 | [resources/timetable - Class0918.png](resources/timetable%20-%20Class0918.png) |
+| Project sheet (Google Sheet, team registry), ~11-08 | [eClass link](https://eclass.inha.ac.kr/mod/url/view.php?id=73209) |
+| 🆕 *My book URL*, ~11-19: the professor's Leanpub book **leanpub.com/untrainedbrain1**, presumably the *ubrain* (untrained brain) material of the repo's Part II, weeks 16–27 | [eClass link](https://eclass.inha.ac.kr/mod/url/view.php?id=73892) |
 
-No lecture files, no assignments, no announcements posted on eClass as of
-2026-09-20.
+No lecture files, assignments or announcements on eClass (checked 2026-11-22); everything else is on GitHub and Telegram.
+
+> **Picking the team-project topic?** The professor's catalogue is in the repo snapshot:
+> [course-repo/weeks/projects/catalogue.md](course-repo/weeks/projects/catalogue.md) (P1–P16 with measured baselines, P14 = your own),
+> rules and calendar in [its README](course-repo/weeks/projects/README.md). 🆕 11-22: **P15 *how fast can the G1 dance*** and
+> **P16 *learn to dance faster***, with an actions lab (`templates/actions_demo.py`) and complete example solutions in `examples/`.
 
 ## Folders
 

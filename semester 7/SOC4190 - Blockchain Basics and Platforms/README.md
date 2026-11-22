@@ -11,6 +11,26 @@ Every week's VODs and slides are summarised in `lectures/`. The `.mp4` files are
 transcripts (`.txt`/`.srt`) and summaries (`.md`) are tracked. The course has **no progress-tracked
 activities**, so VOD windows don't affect attendance. The **weekly quiz** does.
 
+### Week 11: security · Homework 3 (10%) · Term Project II teams
+
+The robbery lecture the Tokens deck promised: **ClassBank** emptied by a **Thief** contract in one transaction
+(reentrancy), then repaired by moving one line. **[Homework 3](homework/hw3/README.md)** (posted 11-22, due
+**Sun 11-29 23:55**) is built on this deck (Part B) and the week-10 Tokens deck (Part A: deploy your own ERC-20 on Sepolia).
+
+| Item | Length | Notes |
+|---|---|---|
+| [SLIDE] Security: How Contracts Get Robbed (ubfile 73944) | 24 pp | Lecture 14. **Downloadable**: [pdf](lectures/slides/week11%20-%20Security%20-%20How%20Contracts%20Get%20Robbed%20(slides).pdf) · [summary](lectures/summaries/week11%20-%20Security%20-%20How%20Contracts%20Get%20Robbed%20(slides).md). ClassBank robbed by the Thief call by call (reentrancy), the DAO hack (2016), the check → write → pay fix; overflow, Panic 0x11 and the BeautyChain hack (2018); five defences; the Bybit hack (2025): send vs approve vs sign/permit, six wallet habits; proxies (USDC's admin can change its code). ⚠️ p. 2 still has the Tokens deck's title; p. 15 calls 250 − 1,000 an "overflow" (strictly an underflow) and BEC's bug was a multiplication |
+| [CODE] Security (ubfile 73974) | 3 files | [`resources/week11 - Security source/`](resources/week11%20-%20Security%20source/): `L14_1_ClassBank.sol`, `L14_2_ClassBankFixed.sol`, `L14_3_Thief.sol` |
+| [VIDEO] Security: How Contracts Get Robbed (VOD 73981) | 1:09:59 | Not mirrored or transcribed yet. The handout points to it for the B.1 screenshot and the B.4 drawing format |
+| [HOMEWORK] Assignment 3 (assign 73929) | 10% | 🆕 Brief: [homework/hw3](homework/hw3/README.md). Part A needs **≥ 0.02 Sepolia ETH**, so check the faucet early. B.4 is handwritten |
+| [Term Project II] Team Formation Poll (choice 73942) | — | 🆕 **Pick a team by Sun 12-06.** Teams of **6–8**; 36 slots. No team by the deadline = random assignment, and teams under 6 get random members added. Changeable until then. Guidelines "soon". Linked from the top of the page as *Team Poll URL* (73982); *Homework 3 URL* (73930) links the assignment |
+| Chat for Team Discussions (ubchat 73975) | — | Top of the page, "For testing" |
+
+The week-10 **[CODE] Tokens** file (ubfile 73973, posted with this week's material) is the lecture's ClassCoin →
+ClassToken series: [`resources/week10 - Tokens source/`](resources/week10%20-%20Tokens%20source/) (`L11_1` … `L11_7`).
+Two old top-of-page links were removed: the *Term Project I* URL (73311) and the week-7 games file (72944,
+still mirrored in `resources/week07 - games`).
+
 ### Week 10: validators and tokens
 
 Two decks, each with its own video. The Tokens deck ends by announcing **the security lecture** next: how token

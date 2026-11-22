@@ -124,7 +124,8 @@ None of these appear in the syllabus PDF or anywhere on eClass:
 | 🆕 Social Science Lecture 1: Technology Philosophy 1:00:46 | 9 | 10-31 → **11-07 23:59** | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=73000) |
 | 🆕 Debate info VOD 11:43, with its deck (eClass 73002) | 9 | window not recorded | [VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=73003) · [deck](lectures/slides/week09%20-%20Debate%20info.pptx) · [summary](lectures/summaries/week09%20-%20Debate%20info.md) |
 | 🆕 Social Science Lecture 2: Orientalism 40:31 · Debate schedule info 3:44 · Debate Schedule (Google Sheet) | 10 | window not recorded | [Lecture 2](https://eclass.inha.ac.kr/mod/vod/view.php?id=73238) · [schedule info](https://eclass.inha.ac.kr/mod/vod/view.php?id=73242) · [sheet](https://eclass.inha.ac.kr/mod/url/view.php?id=73241) |
-| 🆕 Social Science Lecture 3: Propaganda and Art 1:03:00 | 11 | 11-14 00:00 → **11-22 23:59** | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=73615) |
+| Social Science Lecture 3: Propaganda and Art 1:03:00 | 11 | 11-14 00:00 → **11-22 23:59** | [open](https://eclass.inha.ac.kr/mod/vod/view.php?id=73615) |
+| 🆕 Social Science Quiz VOD 1:58 · **Social Science Quiz** (1 attempt) | 12 | VOD 11-19 → **11-28 23:59** · quiz opened 11-19 10:19, closes **11-29 23:59** | [VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=73878) · [quiz](https://eclass.inha.ac.kr/mod/quiz/view.php?id=73879) |
 
 Every VOD here is progress-tracked: watching it inside its window is that week's attendance. (Confirmed on 11-18
 for every week-9, week-10 and week-11 video; only the week-11 window was recorded.)

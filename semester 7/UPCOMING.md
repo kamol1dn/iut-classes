@@ -1,6 +1,6 @@
 # Upcoming: deadlines, quizzes, exams
 
-The same for everyone in ICE23-1 · last checked on eClass **Wed 2026-11-18, 13:00**.
+The same for everyone in ICE23-1 · last checked on eClass **Sun 2026-11-22, 14:15**.
 **eClass is the authority**: check the deadline there before relying on this page. Class times and rooms
 are in [timetable.md](timetable.md).
 
@@ -10,8 +10,10 @@ are in [timetable.md](timetable.md).
 
 | Deadline | Course | Item |
 |---|---|---|
-| **TODAY Wed 2026-11-18 23:55** | Blockchain | **[Term Project I](https://eclass.inha.ac.kr/mod/assign/view.php?id=73309) (25%, replaces the midterm)**. Individual. Posted 11-09. One ZIP `SOC4190_TP1_<StudentID>_<Surname>.zip` holding only `report.pdf`. Five Sepolia transactions from your registered address, then the writing (gas arithmetic by hand, B.3 handwritten). The PDF says 23:59, **eClass closes at 23:55**. Resubmission is allowed until the close, so upload a draft early. Brief and run-sheet: [homework/term-project-1](SOC4190%20-%20Blockchain%20Basics%20and%20Platforms/homework/term-project-1/README.md) |
-| **Sun 2026-11-22 23:59** | Distinguished Lecture | 🆕 **[Social Science Lecture 3: Propaganda and Art](https://eclass.inha.ac.kr/mod/vod/view.php?id=73615)** (1:03:00, week 11). Attendance-tracked, opened 11-14. Watch it to 100% inside the eClass player |
+| **TODAY Sun 2026-11-22 23:59** | Distinguished Lecture | **[Social Science Lecture 3: Propaganda and Art](https://eclass.inha.ac.kr/mod/vod/view.php?id=73615)** (1:03:00, week 11). Attendance-tracked, opened 11-14. Watch it to 100% inside the eClass player. It's an hour long, so start by 22:30 at the latest |
+| **Sat 2026-11-28 23:59** | Distinguished Lecture | 🆕 **[Social Science Quiz VOD](https://eclass.inha.ac.kr/mod/vod/view.php?id=73878)** (1:58, week 12). Attendance-tracked like every video in this course |
+| **Sun 2026-11-29 23:59** | Distinguished Lecture | 🆕 **[Social Science Quiz](https://eclass.inha.ac.kr/mod/quiz/view.php?id=73879)** (week 12, opened 11-19). **One attempt**; press *Submit all and finish* |
+| **Sun 2026-11-29 23:55** | Blockchain | 🆕 **[Homework 3](https://eclass.inha.ac.kr/mod/assign/view.php?id=73929) (10%)**. Individual. Part A: deploy your own ERC-20 token on Sepolia and pay the course in it (needs **≥ 0.02 Sepolia ETH**, so get faucet ETH early). Part B: rob a toy bank with a reentrancy Thief on Remix VM, then repair it; B.4 is **handwritten**. The PDF says 23:59, **eClass closes at 23:55**. Brief and run-sheet: [homework/hw3](SOC4190%20-%20Blockchain%20Basics%20and%20Platforms/homework/hw3/README.md) |
 
 ## 🟡 Open, later
 
@@ -19,6 +21,7 @@ are in [timetable.md](timetable.md).
 |---|---|---|
 | **Sat 2026-11-28 → Sat 12-19** | Distinguished Lecture | 🆕 **Debates, offline, on four Saturdays: 28 Nov, 5 Dec, 12 Dec, 19 Dec.** Two teams per 35-minute slot, from 10:00 to about 13:35. Find your team's date, time and topic in the **[Debate Schedule sheet](https://eclass.inha.ac.kr/mod/url/view.php?id=73241)** (week 10). Rules: [Debate info deck](NTS4070%20-%20Distinguished%20Lecture%20in%20Social%20Science%20and%20Art/lectures/slides/week09%20-%20Debate%20info.pptx) and its two short videos (weeks 9 and 10). 30% of the grade |
 | Dates on Discord | Artificial Intelligence | 🆕 **[Team Project](https://eclass.inha.ac.kr/mod/assign/view.php?id=73304)** (week 10, posted 11-09). Open topic: any real problem solved end to end, data → trained model → an app someone can use. Hand in a brief (Discord), code (a GitHub organisation, announced later), a PDF report (eClass, later) and an in-person demo. 20 of the 100 points are an individual Q&A. The 10.1 deck (slide 70) put the topic in week 9 and the proposal in week 10, both already past. Brief: [homework/team-project](SOC4040%20-%20Artificial%20Intelligence/homework/team-project/README.md) |
+| **Sun 2026-12-06** | Blockchain | 🆕 **[Term Project II team poll](https://eclass.inha.ac.kr/mod/choice/view.php?id=73942)**: join one of 36 teams, **6–8 members**. You can change it until the deadline. Anyone without a team gets placed at random, and teams under 6 get random members added. Project guidelines "soon" |
 | Register now | Embedded Software · Deep Learning for CV | 🆕 **Team projects**: each course has a **Project** sheet linked at the top of its eClass page ([Embedded](https://eclass.inha.ac.kr/mod/url/view.php?id=73208), [Deep Learning](https://eclass.inha.ac.kr/mod/url/view.php?id=73209)). Teams of about four put their group name, members, IDs, section and **topic** there. Graded columns: topic overlap, contents, presentation, coding, cooperation, delay. The professor's sample rows are *Drone war with C/Python* (Embedded) and *Robot Olympic* (Deep Learning). Most teams had no topic in yet on 11-18 |
 | No date shown | Multimedia Computing | [Quiz-1](https://eclass.inha.ac.kr/mod/assign/view.php?id=72971), week-7 section: an assignment with an upload button, but no instructions and no due date. Possibly just a grade slot for the in-class quiz |
 
@@ -53,7 +56,7 @@ so week *n* starts on the Saturday `09-05 + 7(n−1)`.
 
 | Week | Dates | Milestone |
 |---|---|---|
-| 9–10 | 31 Oct–13 Nov | Multimedia Computing **Homeworks** (lossy compression / JPEG, then video compression). **Neither posted as of 11-18**; the course moved on to graphics, geometry and segmentation (L14–L18) |
+| 9–10 | 31 Oct–13 Nov | Multimedia Computing **Homeworks** (lossy compression / JPEG, then video compression). **Neither posted as of 11-22**; the course moved on to graphics, geometry and segmentation (L14–L19) |
 | 12 | 21–27 Nov | Multimedia Computing **Homework** (features / invariance) |
 | 12–15 | 28 Nov–19 Dec | Distinguished Lecture **Debates, offline, on Saturdays** (30% of the grade). Dated now: see above |
 | 14 | 5–11 Dec | Embedded Software **Project presentation** |
