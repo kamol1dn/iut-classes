@@ -27,6 +27,7 @@ Command line, without the app:
 
 | Control | What it does |
 |---|---|
+| Camera list + ↻ | Choose which camera to use, shown as index and resolution, because OpenCV can't read camera names. You can also type a stream URL, for example a phone IP-camera app such as `http://192.168.0.5:8080/video`. ↻ searches again after you plug a camera in. Changing the choice while the camera is running switches to it |
 | Start camera | Live webcam. Turn your head **sideways** so the camera sees one ear |
 | Upload image | Pick a photo; every ear found gets a box and "Male ear 87%" |
 | Guide box (camera) | If the detector misses your ear, tick this and hold your ear in the box in the middle |

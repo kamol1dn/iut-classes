@@ -3,6 +3,10 @@
   python app.py
 
 Buttons:
+  Camera list    - pick which camera to use (found by probing indices 0-5). You can
+                   also type a stream URL, e.g. a phone IP-camera app:
+                   http://192.168.0.5:8080/video
+  Refresh        - search for cameras again (after plugging one in)
   Start camera   - live webcam. Turn your head sideways so the camera sees your ear.
   Upload image   - pick a photo; every ear found is labelled Male/Female ear.
   Guide box      - if the detector misses your ear, switch this on and hold
@@ -10,9 +14,10 @@ Buttons:
   Close-up       - for uploads that are already a cropped ear photo.
   Save result    - save what is on screen.
 """
+import threading
 import tkinter as tk
 from collections import deque
-from tkinter import filedialog, messagebox
+from tkinter import filedialog, messagebox, ttk
 
 import cv2
 import numpy as np
@@ -22,7 +27,30 @@ from ear import LABELS, EarGenderPipeline, crop, draw, read_image
 
 VIEW_W, VIEW_H = 900, 600
 SMOOTH_FRAMES = 10   # average the camera answer over this many frames
+MAX_CAMERAS = 6      # probe camera indices 0..5
 BG = "#1e1e1e"
+
+
+def find_cameras():
+    """Return [(index, "Camera 0  ·  640×480"), ...] for every camera that gives a frame.
+
+    OpenCV cannot read camera names, so the label shows the index and resolution.
+    """
+    found = []
+    for i in range(MAX_CAMERAS):
+        cap = cv2.VideoCapture(i, cv2.CAP_DSHOW)
+        if cap.isOpened() and cap.read()[0]:
+            w, h = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+            found.append((i, f"Camera {i}  ·  {w}×{h}"))
+        cap.release()
+    return found
+
+
+def open_source(source):
+    """source is a camera index (int) or a stream URL / video file path (str)."""
+    if isinstance(source, int):
+        return cv2.VideoCapture(source, cv2.CAP_DSHOW)
+    return cv2.VideoCapture(source)
 
 
 class App:
@@ -44,6 +72,15 @@ class App:
                    fg="white", activebackground="#555", activeforeground="white")
         chk = dict(font=("Segoe UI", 10), bg=BG, fg="white", selectcolor="#333",
                    activebackground=BG, activeforeground="white")
+        # Camera picker: a dropdown you can also type a stream URL into.
+        self.cameras = {}                       # label -> index
+        self.cam_choice = tk.StringVar(value="Searching for cameras…")
+        self.cam_box = ttk.Combobox(bar, textvariable=self.cam_choice, width=28,
+                                    font=("Segoe UI", 10))
+        self.cam_box.pack(side="left", padx=4)
+        self.cam_box.bind("<<ComboboxSelected>>", self.camera_changed)
+        self.cam_box.bind("<Return>", self.camera_changed)
+        tk.Button(bar, text="↻", command=self.refresh_cameras, **btn).pack(side="left")
         self.cam_btn = tk.Button(bar, text="Start camera", command=self.toggle_camera, **btn)
         self.cam_btn.pack(side="left", padx=4)
         tk.Button(bar, text="Upload image", command=self.upload, **btn).pack(side="left", padx=4)
@@ -65,17 +102,63 @@ class App:
         self.current = None
         self.history = deque(maxlen=SMOOTH_FRAMES)   # recent P(female) of the main ear
         root.protocol("WM_DELETE_WINDOW", self.close)
+        self.refresh_cameras()
 
     def history_reset(self):
         self.history.clear()
 
+    # ---------------- camera picker ----------------
+    def refresh_cameras(self):
+        """Probe cameras in a background thread (takes a few seconds) so the window stays responsive."""
+        running = self.cap is not None
+        self.stop_camera()   # a camera in use would not show up in the probe
+        self.cam_choice.set("Searching for cameras…")
+        self.cam_box.config(values=[])
+
+        def work():
+            found = find_cameras()
+            self.root.after(0, lambda: self.cameras_found(found, running))
+        threading.Thread(target=work, daemon=True).start()
+
+    def cameras_found(self, found, restart):
+        self.cameras = {label: i for i, label in found}
+        labels = list(self.cameras)
+        self.cam_box.config(values=labels)
+        if labels:
+            self.cam_choice.set(labels[0])
+            if restart:
+                self.toggle_camera()
+        else:
+            self.cam_choice.set("No camera found - type a URL")
+
+    def selected_source(self):
+        """The chosen camera index, or the typed text as a URL/path. None if nothing usable."""
+        text = self.cam_choice.get().strip()
+        if text in self.cameras:
+            return self.cameras[text]
+        if text.isdigit():
+            return int(text)
+        if text and not text.startswith(("Searching", "No camera")):
+            return text
+        return None
+
+    def camera_changed(self, _event=None):
+        # Switching while live: restart on the new source.
+        if self.cap is not None:
+            self.stop_camera()
+            self.toggle_camera()
+
     # ---------------- camera ----------------
     def toggle_camera(self):
         if self.cap is None:
-            self.cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+            source = self.selected_source()
+            if source is None:
+                messagebox.showinfo("Camera", "Pick a camera from the list first (or type a stream URL).")
+                return
+            self.cap = open_source(source)
             if not self.cap.isOpened():
                 self.cap = None
-                messagebox.showerror("Camera", "Could not open the webcam.")
+                messagebox.showerror("Camera", f"Could not open camera source: {source}")
                 return
             self.history.clear()
             self.cam_btn.config(text="Stop camera")
@@ -95,6 +178,8 @@ class App:
         ok, frame = self.cap.read()
         if ok:
             self.show_camera_frame(cv2.flip(frame, 1))   # mirror view
+        else:
+            self.set_status("No picture from this camera source", "#ff6b6b")
         self.root.after(15, self.camera_loop)
 
     def show_camera_frame(self, frame):
