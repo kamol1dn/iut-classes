@@ -1,0 +1,199 @@
+DEBATE: AI AND JOBS - READY SPEECHES FOR ALL 6 OF US
+Sat 28 Nov, 11:45, room B210
+
+Motion: "Do we need to worry about the impacts of AI on jobs?"
+PROPOSITION = YES, we need to worry
+OPPOSITION  = NO, we don't need to worry
+
+A coin toss decides our side, so everyone learns BOTH versions of their part.
+Each speech takes about 2-2.5 minutes read slowly. Don't rush. Look up at the judge often.
+Say the numbers clearly. They are what gets us the "facts" points.
+
+Roles:
+  Speaker 1 - opening, defines "worry", first point
+  Speaker 2 - second point
+  Speaker 3 - third point (Uzbekistan)
+  Speaker 4 - fourth point + summary
+  Member 5  - asks our ONE question to the other team
+  Member 6  - answers THEIR question (defence)
+
+
+=====================================================================
+  IF WE ARE PROPOSITION (YES, WE NEED TO WORRY)
+=====================================================================
+
+--- SPEAKER 1 (opening) ---
+
+Good morning, dear judge and our opponents.
+Today's question is: do we need to worry about the impacts of AI on jobs? Our team says: yes, we do.
+
+First, what do we mean by "worry"? We do not mean panic. We mean: take it seriously and prepare now.
+Our main idea is simple: AI is changing work faster than any technology before, so we must act now, not later.
+
+My point is about how big this is.
+In January 2024 the International Monetary Fund, the IMF, said that about 40 percent of all jobs in the world are exposed to AI. In rich countries it is 60 percent.
+In 2023 the bank Goldman Sachs estimated that AI could affect the work of around 300 million full-time jobs.
+
+And this time it is different. Tractors and factory machines replaced our muscles. AI replaces thinking work: writing, translating, coding, accounting, customer service. These are exactly the jobs that educated young people like us want.
+
+When something touches 40 percent of all jobs in the world, ignoring it is not optimism. It is irresponsible.
+My teammates will show that it is already happening, that Uzbekistan is exposed, and that even the good news needs preparation. Thank you.
+
+--- SPEAKER 2 (it is already happening, to young people) ---
+
+Some people say losing jobs to AI is a future problem. It is not. It has already started.
+
+In 2025, researchers at Stanford University studied payroll data from millions of American workers. Young workers aged 22 to 25, in the jobs most exposed to AI, like software developers and customer service, saw employment fall about 13 percent compared to other jobs. The updated 2026 version of the study shows an even bigger gap.
+But older workers in the same jobs were fine. Why? Because AI does the simple tasks that juniors used to do.
+
+Companies are already acting on this. In 2023, IBM's CEO said they would pause hiring for about 7,800 back-office jobs that AI could do. In 2024, the company Klarna said its AI assistant was doing the work of 700 customer service workers.
+
+So the first step of the career ladder is breaking. If companies stop hiring juniors today, who becomes the senior engineer in ten years?
+This is a problem for people exactly our age, in exactly our field. That is why we need to worry. Thank you.
+
+--- SPEAKER 3 (Uzbekistan is exposed) ---
+
+Now let's talk about our own country.
+
+Uzbekistan is a young country. Every year hundreds of thousands of young people finish school and university and need jobs.
+Our big plan for them is IT and outsourcing. Uzbekistan's IT service exports reached almost 1 billion dollars in 2025.
+But look at what we export. According to IT Park, 35 percent of its exports are BPO, which means call centers, back-office work and outsourcing.
+
+These are exactly the jobs AI takes first. Remember Klarna: one AI assistant did the work of 700 customer service people.
+If a company in Europe can use an AI chatbot instead of a call center in Tashkent, why would it keep paying us?
+Many of our junior programmers also do simple outsourced coding, and Stanford showed that young software developers are the first to lose jobs.
+
+So for Uzbekistan, AI is not a far-away American problem. It hits the very model we built for our young people.
+If we don't worry and prepare now, our graduates will pay the price. Thank you.
+
+--- SPEAKER 4 (even good news needs action + summary) ---
+
+Our opponents may say: AI will also create new jobs. We agree.
+The World Economic Forum's Future of Jobs Report 2025 says that by 2030, 170 million new jobs will be created. But the same report says 92 million jobs will disappear.
+
+Those 92 million are real people. The new jobs need different skills, and often they are in different cities or countries. A 45-year-old call center worker does not become an AI engineer overnight.
+The same report says 39 percent of workers' key skills will change by 2030.
+Retraining people, changing what schools teach, and building safety nets takes years. That is why the worry must start now.
+
+To summarize our case:
+One, AI affects 40 percent of jobs worldwide, and it targets thinking work.
+Two, it is already hurting young workers.
+Three, Uzbekistan's IT and outsourcing model is exposed.
+Four, even if the total number of jobs grows, millions will be left behind without preparation.
+
+So yes, we need to worry, because worrying today means preparing today. Thank you.
+
+--- MEMBER 5: OUR QUESTION TO THE OPPOSITION (read it exactly) ---
+
+"Stanford found that young workers aged 22 to 25 in AI-exposed jobs lost about 13 percent of their employment since 2022, while older workers in the same jobs did not. If this is not worth worrying about, what would be?"
+
+--- MEMBER 6: DEFENCE (answer their question) ---
+
+How to answer: 1) thank them, 2) answer directly in one sentence, 3) give one fact, 4) go back to our main idea.
+
+If they ask: "History shows technology always creates jobs. Why is AI different?"
+  "Thank you for the question. AI is different in two ways: speed and type of work.
+  Old changes took decades, so workers had time to adjust. AI tools like ChatGPT reached hundreds of millions of people in about two years.
+  And old machines replaced physical work, while AI replaces thinking work, the jobs we thought were safe.
+  This is not just a prediction: Stanford's data shows young workers are already losing jobs.
+  History can be good on average and still terrible for the people in the middle. That is why we must worry and prepare."
+
+If they ask: "The World Economic Forum says 78 million more jobs in total. Why worry?"
+  "Thank you. 78 million is a net number. It hides the 92 million people who lose their jobs.
+  The person who loses a call center job is usually not the person who gets the new AI job.
+  The same report says 39 percent of skills will change. Somebody has to retrain those people, and that is exactly what our worry is about."
+
+If they ask: "Isn't worrying just spreading fear?"
+  "No. We said at the start: worry means taking it seriously and preparing. We are not asking to ban AI. We are asking to get ready for it."
+
+
+=====================================================================
+  IF WE ARE OPPOSITION (NO, WE DON'T NEED TO WORRY)
+=====================================================================
+
+--- SPEAKER 1 (opening: history) ---
+
+Good morning, dear judge and our opponents.
+Today's question is: do we need to worry about the impacts of AI on jobs? Our team says: no, we don't.
+
+Let's define "worry". Worry means fear: the belief that AI will mainly destroy jobs and leave people without work. We say the evidence does not support that fear. AI will change jobs, and the right answer is to prepare and invest, not to worry.
+
+My point is history. Every big technology came with the same fear.
+In the 1800s, workers called Luddites broke factory machines because they thought machines would take their jobs.
+When computers came, people said office jobs would disappear.
+When ATMs came, everyone said bank tellers were finished. But in America the number of bank tellers kept growing for decades after ATMs, because banks became cheaper to run and opened more branches.
+
+The economist David Autor found that about 60 percent of American workers in 2018 had jobs that did not even exist in 1940.
+Technology does not end work. It creates new kinds of work.
+My teammates will show that the data, the workers and our own country prove this again. Thank you.
+
+--- SPEAKER 2 (the data says more jobs, not fewer) ---
+
+Our opponents will show scary numbers about "exposure". But exposed does not mean replaced.
+
+The World Economic Forum's Future of Jobs Report 2025 says that by 2030, 170 million jobs will be created and 92 million removed. That is a net gain of 78 million jobs.
+The IMF said 40 percent of jobs are exposed to AI, but in the same report it said about half of those jobs will benefit from AI, because AI will help those workers do more, not replace them.
+The International Labour Organization studied this in 2025 and found that most jobs will be transformed, not destroyed. AI takes some tasks, and people focus on the rest.
+
+So the world's biggest economic organizations agree: more jobs, not fewer.
+When the total number of jobs is growing, fear is the wrong reaction. Thank you.
+
+--- SPEAKER 3 (AI helps workers) ---
+
+AI is not only a replacement. It is a tool, and it helps weaker workers the most.
+
+In 2023, researchers from Stanford and MIT studied more than 5,000 customer support workers who started using an AI assistant.
+Their productivity went up 14 percent on average. For new and less-skilled workers it went up 34 percent. AI helped beginners work like experienced people.
+
+And look at companies that tried to replace people completely. Klarna said its AI did the work of 700 customer service workers. But in 2025 its CEO admitted the quality went down, and they started hiring humans again.
+Companies learned that they need people plus AI, not AI alone.
+
+A tool that makes beginners 34 percent better is not something to fear. It is something to learn. Thank you.
+
+--- SPEAKER 4 (Uzbekistan's opportunity + summary) ---
+
+Finally, our country.
+The IMF says poorer and developing countries are less exposed to AI than rich ones: about 26 to 40 percent of jobs, compared to 60 percent in rich countries. Much of our economy is agriculture, construction, manufacturing and services that AI cannot simply replace.
+
+And our government sees AI as an opportunity, not a threat. In October 2024 the President approved the AI Development Strategy until 2030. Its goal is a 1.5 billion dollar market of AI products and services. There is a program to train 5 million people in AI skills. IT service exports already reached almost 1 billion dollars in 2025, and they are growing.
+
+If we worry, we make bad decisions: we ban tools, protect old jobs and fall behind. If we prepare, we create new jobs.
+
+To summarize our case:
+One, history shows technology creates more jobs than it destroys.
+Two, the World Economic Forum, IMF and ILO all show a net gain.
+Three, AI makes workers more productive, especially beginners.
+Four, for Uzbekistan AI is a big opportunity.
+
+So no, we do not need to worry. We need to prepare. Thank you.
+
+--- MEMBER 5: OUR QUESTION TO THE PROPOSITION (read it exactly) ---
+
+"The World Economic Forum predicts 78 million more jobs in total by 2030. If the total number of jobs is growing, what exactly should we worry about?"
+
+--- MEMBER 6: DEFENCE (answer their question) ---
+
+How to answer: 1) thank them, 2) answer directly in one sentence, 3) give one fact, 4) go back to our main idea.
+
+If they ask: "Young workers are already losing jobs, Stanford says. Isn't that proof?"
+  "Thank you. The Stanford authors themselves call these early signals, not proof that AI caused it.
+  Since 2022, interest rates went up and tech companies cut hiring for many reasons.
+  And look closer: older workers in the same jobs grew. So the jobs are not disappearing, they are changing.
+  Young people need to learn to work with AI, and that is exactly what Uzbekistan's 5 million AI leaders program is for. That is preparation, not worry."
+
+If they ask: "What about call centers and outsourcing in Uzbekistan?"
+  "Thank you. Klarna tried to replace its call center with AI and had to hire humans back, because quality fell.
+  And the same AI lets Uzbek companies sell higher-value services, which is why the government's goal is a 1.5 billion dollar AI market by 2030.
+  The answer is to retrain those workers, not to be afraid."
+
+If they ask: "So you want to do nothing?"
+  "No. We want to prepare, invest and retrain. We only say fear is the wrong reaction. Fear leads to bans. Preparation leads to new jobs."
+
+
+=====================================================================
+  DON'TS
+=====================================================================
+- Don't say "AI will take ALL jobs" or "AI will NEVER take jobs". Easy to attack.
+- Don't say "experts say" without naming who (IMF, World Economic Forum, Stanford...).
+- Don't interrupt the other team. Respect is part of the grade.
+- Wear a shirt, be at B210 by 11:30.
