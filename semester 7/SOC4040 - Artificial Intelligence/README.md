@@ -76,6 +76,12 @@ This is the first of the two 10% homeworks.
 - Relevant material: [5.2 Data preparation](lectures/summaries/week05%20-%205.2.%20Data%20preparation%20for%20ML%20models.md)
   and [titanic_data_preparation.ipynb](resources/titanic_data_preparation.ipynb).
 
+## 🔴 Homework 2: CNN from scratch on Tiny ImageNet
+
+- [Submission space](https://eclass.inha.ac.kr/mod/assign/view.php?id=74277) (week 12). eClass closes **12-01 00:00**; the PDF says "Nov 30, 12 AM, the whole Sunday is the last day", but Sunday is 11-29.
+- 200 classes, graded **50% accuracy + 50% macro F1** on the 10,000 validation images. **No pretrained weights and no ready-made constructors** (`torchvision.models.*`, `keras.applications`). **Data leakage scores 0.** Wrong file names cost 20%.
+- **Full brief: [homework/hw2](homework/hw2/README.md)**.
+
 ## 🔴 Term project — dates that are not on eClass
 
 - **Teams of 4-6 students**, end-to-end AI project.
@@ -122,6 +128,9 @@ for the diagrams.
 | 9 | 9.1 | **CNN**: conv layer, output-size `(W − F + 2P)/S + 1` and parameter `F²CK + K` formulas, stride/padding, a 7×7 convolution by hand, max/average pooling. **Final** | [md](lectures/summaries/week09%20-%209.1.%20Deep%20Learning%20(CNN).md) | [pdf](lectures/slides/week09%20-%209.1.%20Deep%20Learning%20(CNN).pdf) |
 | 9 | 9.2 | **Lightweight CNN**: standard vs grouped vs depthwise separable conv (animated), parameter savings, BatchNorm. **Final** | [md](lectures/summaries/week09%20-%209.2.%20Lightweight%20CNN.md) | 77 MB pptx, not in the repo: [eClass](https://eclass.inha.ac.kr/mod/ubfile/view.php?id=73164) |
 | 10 | 10.1 | **Object detection (Part 1)**: localisation target `y`, sliding windows, IoU, NMS, anchor boxes + YOLO output, R-CNN family, one- vs two-stage, segmentation types. **Final** | [md](lectures/summaries/week10%20-%2010.1.%20Object%20Detection.md) | [pdf](lectures/slides/week10%20-%2010.1.%20Object%20Detection.pdf) |
+| 11 | 11.1 | **Deep learning (RNN)**. Summary not written yet | — | [pdf](lectures/slides/week11%20-%2011.1.%20Deep%20Learning%20(RNN).pdf) |
+| 11 | 12 | **NLP intro**. Summary not written yet | — | [pdf](lectures/slides/week11%20-%2012.%20NLP%20Intro.pdf) |
+| 12 | 12.2 | **Tokenization and LLMs**. Summary not written yet | — | [pdf](lectures/slides/week12%20-%2012.2.%20Tokenization_LLMs.pdf) |
 
 > ⚠️ **6.1 slide 23 has two wrong distances** in the K-Means++ example: B→E is 98 (not 85) and C→E is 32
 > (not 25). The conclusion (C or D next) still holds.
@@ -145,6 +154,8 @@ Notebooks:
 - [Neural_Network.ipynb](resources/Neural_Network.ipynb) (week 7, for 7.1): the 2-2-1 network by hand, then PyTorch
 - [CNN.ipynb](resources/CNN.ipynb) (week 9, for 9.1 and 9.2): `Conv2d` shapes and parameter counts, LeNet-5 on Fashion-MNIST (86.7%), grouped/separable layers, AlexNet. Needs `torch torchvision`
 - [object_detection.ipynb](resources/object_detection.ipynb) (week 10, for 10.1): pretrained YOLOv8 on an image and a webcam, then fine-tuning on a fruit dataset. Needs `ultralytics`
+- [RNN.ipynb](resources/RNN.ipynb) (week 11, for 11.1)
+- [NLP codes/](resources/NLP%20codes/) (week 12, for 12 and 12.2): `Text_Preprocessing`, `Tokenization_Hands_On`, `Sentiment_Analysis_of_Tweets`
 - [SVM.ipynb](resources/SVM.ipynb), [kernel_svm_from_scratch.ipynb](resources/kernel_svm_from_scratch.ipynb) (week 5, for 4.2)
 - [titanic_data_preparation.ipynb](resources/titanic_data_preparation.ipynb) (week 5, for 5.2)
 - [linear_regression.ipynb](resources/linear_regression.ipynb) (week 2)

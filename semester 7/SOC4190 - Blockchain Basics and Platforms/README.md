@@ -11,6 +11,13 @@ Every week's VODs and slides are summarised in `lectures/`. The `.mp4` files are
 transcripts (`.txt`/`.srt`) and summaries (`.md`) are tracked. The course has **no progress-tracked
 activities**, so VOD windows don't affect attendance. The **weekly quiz** does.
 
+### Week 12: dApps and DeFi
+
+| Item | Length | Notes |
+|---|---|---|
+| [SLIDE] dApps and DeFi (ubfile 74307) | pdf | 🆕 **Downloadable**: [pdf](lectures/slides/week12%20-%20dApps%20and%20DeFi%20(slides).pdf) (eClass filename *Slide 15 defi dapss.pdf*). Summary not written yet |
+| [VIDEO] dApps and DeFi (VOD 74308) | 1:10:13 | 🆕 Not mirrored or transcribed yet |
+
 ### Week 11: security · Homework 3 (10%) · Term Project II teams
 
 The robbery lecture the Tokens deck promised: **ClassBank** emptied by a **Thief** contract in one transaction

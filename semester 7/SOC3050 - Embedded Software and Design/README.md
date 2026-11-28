@@ -85,6 +85,7 @@ No class changes allowed.
 | Introduction to Computing | 1 | 📄 [summary](lectures/summaries/week01%20-%200_IntroductionToComputing.md) · [.pps](lectures/slides/week01%20-%200_IntroductionToComputing.pps) |
 | Project sheet (Google Sheet, team registry) | Course Summary, ~11-08 | [eClass link](https://eclass.inha.ac.kr/mod/url/view.php?id=73208) |
 | 🆕 *My Book URL*: the professor's Leanpub book, **leanpub.com/untrainedbrain1** | Course Summary, ~11-19 | [eClass link](https://eclass.inha.ac.kr/mod/url/view.php?id=73931) · same link on Deep Learning for CV |
+| 🆕 *ubrain*: the professor's GitHub organisation, **github.com/orgs/untrained-brain/repositories** | Course Summary, ~11-27 | [eClass link](https://eclass.inha.ac.kr/mod/url/view.php?id=74192) |
 
 Weeks 2–3 have nothing on eClass — check GitHub and Telegram for those.
 
