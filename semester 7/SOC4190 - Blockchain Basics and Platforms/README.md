@@ -15,7 +15,7 @@ activities**, so VOD windows don't affect attendance. The **weekly quiz** does.
 
 | Item | Length | Notes |
 |---|---|---|
-| [SLIDE] dApps and DeFi (ubfile 74307) | pdf | 🆕 **Downloadable**: [pdf](lectures/slides/week12%20-%20dApps%20and%20DeFi%20(slides).pdf) (eClass filename *Slide 15 defi dapss.pdf*). Summary not written yet |
+| [SLIDE] dApps and DeFi (ubfile 74307) | pdf | 🆕 Lecture 15. **Downloadable**: [pdf](lectures/slides/week12%20-%20dApps%20and%20DeFi%20(slides).pdf) · [summary](lectures/summaries/week12%20-%20dApps%20and%20DeFi%20(slides).md). dApp = website + contract and the five-step, two-signature flow; DeFi by example: Uniswap pool 1 and **x·y = k worked by hand**, Aave loans and liquidations, oracles and flash loans, DAI, Lido; NFTs, DAOs; ClassVote / ClassFund / ClassTicket code and runs; sandwich attacks, off-switches. ⚠️ p. 10's 16,929.35 uses the unrounded price; p. 9's "k must never change" ignores the 0.3% fee (k grows); p. 17 oversells DAOs as unstoppable; p. 21's ClassFund has no deadline and no automatic refund. No code file was posted; the contracts are copied from the slide images into the summary |
 | [VIDEO] dApps and DeFi (VOD 74308) | 1:10:13 | 🆕 Not mirrored or transcribed yet |
 
 ### Week 11: security · Homework 3 (10%) · Term Project II teams

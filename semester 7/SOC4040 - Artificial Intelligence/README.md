@@ -128,9 +128,9 @@ for the diagrams.
 | 9 | 9.1 | **CNN**: conv layer, output-size `(W − F + 2P)/S + 1` and parameter `F²CK + K` formulas, stride/padding, a 7×7 convolution by hand, max/average pooling. **Final** | [md](lectures/summaries/week09%20-%209.1.%20Deep%20Learning%20(CNN).md) | [pdf](lectures/slides/week09%20-%209.1.%20Deep%20Learning%20(CNN).pdf) |
 | 9 | 9.2 | **Lightweight CNN**: standard vs grouped vs depthwise separable conv (animated), parameter savings, BatchNorm. **Final** | [md](lectures/summaries/week09%20-%209.2.%20Lightweight%20CNN.md) | 77 MB pptx, not in the repo: [eClass](https://eclass.inha.ac.kr/mod/ubfile/view.php?id=73164) |
 | 10 | 10.1 | **Object detection (Part 1)**: localisation target `y`, sliding windows, IoU, NMS, anchor boxes + YOLO output, R-CNN family, one- vs two-stage, segmentation types. **Final** | [md](lectures/summaries/week10%20-%2010.1.%20Object%20Detection.md) | [pdf](lectures/slides/week10%20-%2010.1.%20Object%20Detection.pdf) |
-| 11 | 11.1 | **Deep learning (RNN)**. Summary not written yet | — | [pdf](lectures/slides/week11%20-%2011.1.%20Deep%20Learning%20(RNN).pdf) |
-| 11 | 12 | **NLP intro**. Summary not written yet | — | [pdf](lectures/slides/week11%20-%2012.%20NLP%20Intro.pdf) |
-| 12 | 12.2 | **Tokenization and LLMs**. Summary not written yet | — | [pdf](lectures/slides/week12%20-%2012.2.%20Tokenization_LLMs.pdf) |
+| 11 | 11.1 | **Deep learning (RNN)**: the vanilla RNN recurrence, five input/output patterns, exploding/vanishing gradients (powers of W_h), LSTM gates and cell state, GRU update/reset gates, Keras comparison. **Final** | [md](lectures/summaries/week11%20-%2011.1.%20Deep%20Learning%20(RNN).md) | [pdf](lectures/slides/week11%20-%2011.1.%20Deep%20Learning%20(RNN).pdf) |
+| 11 | 12 | **NLP intro**: rules vs statistical vs deep-learning NLP, the pipeline, 5 tokenization types, stop words, stemming vs lemmatization, one-hot, bag of words, **TF-IDF worked by hand**, Word2Vec King − Man + Woman, BERT contextual embeddings. **Final** | [md](lectures/summaries/week11%20-%2012.%20NLP%20Intro.md) | [pdf](lectures/slides/week11%20-%2012.%20NLP%20Intro.pdf) |
+| 12 | 12.2 | **Tokenization for LLMs**: why subwords, then byte-level BPE, WordPiece, Unigram LM and SentencePiece, each **worked by hand** on one 16-word text (merges, scores, Viterbi loss, pruning), comparison table, the p. 39 exercises solved. **Final** | [md](lectures/summaries/week12%20-%2012.2.%20Tokenization_LLMs.md) | [pdf](lectures/slides/week12%20-%2012.2.%20Tokenization_LLMs.pdf) |
 
 > ⚠️ **6.1 slide 23 has two wrong distances** in the K-Means++ example: B→E is 98 (not 85) and C→E is 32
 > (not 25). The conclusion (C or D next) still holds.
@@ -140,6 +140,8 @@ for the diagrams.
 
 > ⚠️ **9.1 page 54's convolution output has seven wrong cells** (e.g. row 2 starts 8, 10, not 6, 12). The
 > corrected grid is in the [9.1 summary](lectures/summaries/week09%20-%209.1.%20Deep%20Learning%20(CNN).md).
+
+> ⚠️ **11.1 pages 12 and 45 write `tanh(W_h h_{t−1}, W_x x_t)`**: the two terms are **added** (plus a bias). Pages 33–42 are off by one in the exponent (50 cells → 2⁴⁹), and it is the **gradient** that explodes or vanishes, not h (tanh keeps it in −1…1). Full list in the [11.1 summary](lectures/summaries/week11%20-%2011.1.%20Deep%20Learning%20(RNN).md).
 
 > ⚠️ **10.1 page 24's NMS rule is backwards**: discard the remaining boxes with **IoU ≥ 0.5** against the box
 > you kept, not IoU ≤ 0.5.
@@ -154,8 +156,8 @@ Notebooks:
 - [Neural_Network.ipynb](resources/Neural_Network.ipynb) (week 7, for 7.1): the 2-2-1 network by hand, then PyTorch
 - [CNN.ipynb](resources/CNN.ipynb) (week 9, for 9.1 and 9.2): `Conv2d` shapes and parameter counts, LeNet-5 on Fashion-MNIST (86.7%), grouped/separable layers, AlexNet. Needs `torch torchvision`
 - [object_detection.ipynb](resources/object_detection.ipynb) (week 10, for 10.1): pretrained YOLOv8 on an image and a webcam, then fine-tuning on a fruit dataset. Needs `ultralytics`
-- [RNN.ipynb](resources/RNN.ipynb) (week 11, for 11.1)
-- [NLP codes/](resources/NLP%20codes/) (week 12, for 12 and 12.2): `Text_Preprocessing`, `Tokenization_Hands_On`, `Sentiment_Analysis_of_Tweets`
+- [RNN.ipynb](resources/RNN.ipynb) (week 11, for 11.1): next humidity reading from the previous three; linear baseline, a NumPy RNN with hand-written backprop through time, then PyTorch `nn.RNN`. The LSTM cell is empty and `data_1.csv` is not shipped. Needs `torch`
+- [NLP codes/](resources/NLP%20codes/) (weeks 11–12, for 12 and 12.2): `Text_Preprocessing` (clean, tokenize, stop words, stem/lemmatize NLTK tweets; add `nltk.download("wordnet")` or the lemmatizer cell fails), `Sentiment_Analysis_of_Tweets` (one-hot 0.997 vs bag of words 0.75 vs TF-IDF 0.76 vs GloVe 0.91; the 99% most likely comes from the `:)`/`:(` emoticons giving away the label; GloVe is an ~800 MB `wget`), `Tokenization_Hands_On` (for 12.2: all four tokenizers from scratch on the slides' text, printing every iteration; needs Jupyter, `pandas`, `regex`; `tokenizers`/`sentencepiece` optional). Need `nltk scikit-learn`
 - [SVM.ipynb](resources/SVM.ipynb), [kernel_svm_from_scratch.ipynb](resources/kernel_svm_from_scratch.ipynb) (week 5, for 4.2)
 - [titanic_data_preparation.ipynb](resources/titanic_data_preparation.ipynb) (week 5, for 5.2)
 - [linear_regression.ipynb](resources/linear_regression.ipynb) (week 2)
