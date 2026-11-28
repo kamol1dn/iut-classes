@@ -78,6 +78,23 @@ takes minutes).
 The deck opens with **where this week sits on the map** of RL methods from week 8, and every
 major function of `lab.py` is printed and then explained line by line (`| code | what it does | why |`).
 
+**RL theory, with runnable templates** (added 2026-11-22), all on a torque-limited inverted
+pendulum ($\ddot\theta = 9.81\sin\theta + u - 0.1\dot\theta$, $|u| \le 3$) where the answer is
+known (linearised capture-point bound on the kick: 0.96 rad/s):
+
+- *Planning and RL*: MPC as the Bellman equation unrolled $H$ steps with a terminal value
+  ($H = 1$ + exact $V$ = week 7's $\pi^*$; long $H$, no $V$ = MPPI; AlphaZero / TD-MPC between).
+- *Algorithm 13*, random shooting / CEM / MPPI, and a 30-line template. Largest kick saved:
+  PD rule 1.00, CEM 0.90, MPPI 0.80, random shooting 0.40 (K 64, H 0.5 s).
+- *Algorithm 14*, model-based RL (Dyna, PETS, MBPO, Dreamer), and a template: a model fitted by
+  least squares from **10** random transitions (linear, or with sin θ) plans as well as the true
+  model (0.80).
+- *Algorithm 15*, behaviour cloning and DAgger in full, and a template (1-NN student, PD
+  expert, noise-free demonstrations, torque noise 1.5 in the test, 50 tests; three seeds): BC on
+  5 demos 43 / 47 / 43, after 4 DAgger rounds 50 / 50 / 50, BC on 25 demos 48 / 50 / 50 — on a forgiving system
+  DAgger's rounds are worth about as many demonstrations.
+- *Learning from an expert, sorted*: BC, DAgger, distillation, inverse RL, GAIL, VLAs.
+
 ## Term project
 
 Weeks 12–15 ([`../projects/README.md`](../projects/README.md),

@@ -1,0 +1,5 @@
+controller,force_N,seed,fell,seconds,pelvis_z_m,drift_y_m
+yours,65.0,0,0,4.02,0.75,0.024
+yours,75.0,0,0,4.02,0.75,0.028
+twin,65.0,0,0,4.02,0.75,0.029
+twin,75.0,0,1,2.92,0.562,-0.019

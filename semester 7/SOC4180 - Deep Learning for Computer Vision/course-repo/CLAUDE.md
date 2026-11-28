@@ -124,6 +124,27 @@ Measured while building the four labs, so do not repeat the mistakes:
 - **Week 11.** Loose threshold (0.6) or `--dim 0.3`: "done" while 39-41 deg off and "sees" a
   hidden ball -- the check uses the same sense that failed. GAIN 2.5 loses the ball 4 of 8.
 
+**RL theory in 09-11 (user, 2026-11-22: "09~11 must be strengthened with RL theory ... Algorithms,
+core template codes ... I mean slides").** Algorithms continue week 8's numbering. 09: PPO derived
+(actor, critic, advantage, TD error, GAE = Alg. 11 with code, ratio, clip drawn, full loss read from
+the checkpoint, Alg. 12 = PPO + DR as trained, asymmetric actor-critic / teacher-student) and a
+from-scratch PyTorch PPO template run in the deck (InvertedPendulum-v5: 1000 first at batch 12/12/17,
+seeds 0-2; 11/19/16 without the 0.01 last-layer init) plus the SB3 call that made the checkpoints
+(recovered from git 7e79ce0 `weeks/12-robustness/robust.py`). 10: planning vs RL (Bellman unrolled),
+Alg. 13 random shooting / CEM / MPPI, Alg. 14 model-based RL, Alg. 15 BC + DAgger, imitation sorted;
+templates on a torque-limited pendulum (|u| <= 3): largest kick PD 1.00, CEM 0.90, MPPI 0.80, random
+shooting 0.40 (linearised bound 0.96); a model fitted from 10 random transitions plans as well as the
+truth (0.80); BC 5 demos 43/47/43 of 50, 4 DAgger rounds 50/50/50, BC 25 demos 48/50/50 (the
+pendulum forgives; an earlier table student showed DAgger adding nothing). 11: POMDP, Alg. 16 RL
+from pixels (`PixelPolicy` template, 89,217 parameters), goal-conditioned RL with the check as
+reward, Alg. 17 HER (tabular toy: 1000 -> 6000 episodes, plain 0.12-0.13 -> 0.54-0.57, HER
+0.45-0.47 -> 0.87-0.88), Alg. 18 VLAs.
+- **Never wrap a `{python}` cell in a `:::` div.** In `lab.ipynb` the cell becomes markdown text
+  (no code, no output) while the deck looks fine. Shrink code with `#| class-source: small-code`
+  instead: Quarto emits it only as `data-class-source` on `div.cell`, so the CSS (a revealjs-only
+  `{=html}` style inside each deck's *Setting up* slide) selects `div.cell[data-class-source=...]`.
+  A raw block placed between `---` and the next `##` makes an empty slide.
+
 Found earlier while merging: week 8's old "valley" claim was false by a hair (amplitude 0.1
 scores 774.12 vs standing's 774.09); the old 13 deck pointed at `robust.py --privileged`,
 which was never shipped.
@@ -203,9 +224,9 @@ training; an LLM planner appears only as a non-executed code block).
 | 07 | From control to learning: MDPs and environment design | `07` | built; `lab_env.py` (ankle strategy, push-measured) + `env_run.py` + `mdp.py` (an explicit MDP solved by value iteration, 2026-11-08); deck shows its computing code and the equation beside it since 2026-11-02 (50 slides, all fit 1280 x 800; equations render offline, MathJax embedded); **not re-tested on Colab since 2026-09-20** |
 | 07b | Learning a table from experience: Q-learning, SARSA, binning, why tables stop | `07b` | built 2026-11-08 (user: students not ready for 08; Atari proposed, tabular RL + inverted pendulum chosen); game `lab_tables.py` + `tables.py` (ref 6/6, wrong answers 0/6, scorer code 119A; reference in `instructor/tables_solution.py`, published; **`tables.py` ships filled with the reference answers, 6/6**, user 2026-11-08), `qlearn.py`; package `tabular.py`; deck ~34 slides (2026-11-08, user: "07b slides need use of P, on-off policy": *On-policy or off-policy: who picks a′?* after SARSA, *Who needs P? Three rules for one table* after acting at random; on/off is taught as "is the a′ in the target chosen by the policy that chose a", not the pasted π(a)=π(a′) shorthand; the Q-learning cell's `win` overwrote π\*'s, now `pi_win`/`ql_win`); **not Pages- or Colab-tested** |
 | 08 | Learning to act: a policy gradient on the G1 | `08-learning-to-act` | opens with the RL map (5 slides of tables); **one `lab.py`** (2026-11-15): learn the ankle-pitch gain theta (ankle pitch = theta g_x) from reward by antithetic parameter-space policy gradient on shared sideways pushes 60-80 N; 0 -> 1.82 / 2.00 / 1.53 (seeds 0-2, 20 updates, ~50 s); CPU |
-| 09 | Scale and robustness | `09-scale-and-robustness` | **one `lab.py`**: test hold / week 8 ankle / PPO nominal / PPO random (shipped `checkpoints/push_*.zip`) across editable WORLDS at exact sideways pushes; ~3.5 min; CPU; GPU training taught as a concept only |
-| 10 | Planning and imitation | `10-planning-and-imitation` | **one `lab.py`**: MPPI with an editable `cost()` survives 150 N (feet move 3.04 m), then a least-squares linear copy of an EXPERT (planner or ankle) from chosen INPUTS; ~4 min; CPU |
-| 11 | Pixels and language | `11-pixels-and-language` | **one `lab.py`**: "look at the <colour> ball": colour_of, find_ball (colour distance + centroid), atan(-u), P control on the waist, a check from the picture; 8/8 within 0.3 deg, refuses hidden ball and "crimson"; CPU |
+| 09 | Scale and robustness | `09-scale-and-robustness` | **one `lab.py`**: test hold / week 8 ankle / PPO nominal / PPO random (shipped `checkpoints/push_*.zip`) across editable WORLDS at exact sideways pushes; ~3.5 min; CPU; GPU training taught as a concept only; PPO derived (Alg. 11 GAE, 12 PPO+DR) with a from-scratch PyTorch template (2026-11-22) |
+| 10 | Planning and imitation | `10-planning-and-imitation` | **one `lab.py`**: MPPI with an editable `cost()` survives 150 N (feet move 3.04 m), then a least-squares linear copy of an EXPERT (planner or ankle) from chosen INPUTS; ~4 min; CPU; theory slides Alg. 13-15 with pendulum templates (2026-11-22) |
+| 11 | Pixels and language | `11-pixels-and-language` | **one `lab.py`**: "look at the <colour> ball": colour_of, find_ball (colour distance + centroid), atan(-u), P control on the waist, a check from the picture; 8/8 within 0.3 deg, refuses hidden ball and "crimson"; CPU; theory slides Alg. 16-18 (pixels, HER, VLAs) (2026-11-22) |
 | 12-15 | **Term project** on the G1 | `weeks/projects/` | written 2026-11-15: README (deliverables, calendar, method, rules, grading), `catalogue.md` (P1-P14 with measured baselines), `templates/` (proposal, report, presentation, checklist, `project_template.py`: ankle strategy vs hold, hold falls from 70 N, ankle from 80 N, CHECK PASS, 20 runs in 5 s), `teams/`; lab class `templates/actions_demo.py` (19 actions + a dance on `soc4180.actions`), P15/P16 default solutions in `examples/` (2026-11-19) |
 
 ### Part II, weeks 16-18: the whole brain in the G1 (one project)

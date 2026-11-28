@@ -41,6 +41,10 @@ numbers. **The week's point is step 4**: a robot that acts on what it believes
 must check, and a check made with the same sense that was wrong passes its own
 mistake.
 
+At the end, the RL theory for learning this policy instead of writing it: the
+POMDP, RL from pixels, goal-conditioned RL with hindsight (HER), and
+vision–language–action models, with runnable templates.
+
 **Layer:** the camera is a Layer 2 sensor; reading it, and the words, are Layer 5.
 
 ---
@@ -101,6 +105,12 @@ print(f"cameras {body.model.ncam}, balls {body.model.nmocap}: {', '.join(COLOURS
 balls that are **mocap** bodies: no joint, no physics, moved by writing
 `data.mocap_pos`. `lab.scene(body, seed)` puts the balls at seeded random
 directions, as the lab's test battery does.
+
+::: {.content-visible when-format="revealjs"}
+```{=html}
+<style>.reveal div.cell[data-class-source="small-code"] pre code { font-size: 0.78em; line-height: 1.2; max-height: 620px; } .reveal div.cell[data-class-source="small-code"] div.sourceCode, .reveal div.cell[data-class-source="small-code"] pre { max-height: 620px; }</style>
+```
+:::
 
 ---
 
@@ -929,6 +939,213 @@ A lookup fails loudly (`None`); a language model fails **fluently**, choosing a
 plausible colour for anything. The more general the planner, the more the
 check has to carry. Note what the tool returns: `msg`, the robot's check, never
 the simulator's `truth`.
+
+---
+
+## Learning this policy: the RL view {.smaller}
+
+`obey` is a policy written by hand. Read it with week 8's words, and each piece has a learned version:
+
+::: {style="font-size: 0.85em"}
+
+| in `lab.py` | in RL | its learned version |
+| --- | --- | --- |
+| the 64 × 64 picture | an **observation** $o_t$, not the state $s_t$ | an encoder (a CNN) inside the policy |
+| "look at the green ball" | a **goal** $w$: the policy is $\pi(a \mid o, w)$ | a goal embedding: a one-hot, or a language model's |
+| `GAIN * azimuth` on the waist | the **action** $a_t$ (on these slides: not the azimuth) | the policy network's output |
+| the check: ball centred, robot standing | a **success detector**: reward $r = 1$ if it passes, else 0 | RL climbs exactly this number |
+| the battery of 10 tests | **evaluation** on held-out scenes | the same, and it must never be the reward |
+
+:::
+
+Three ideas follow, each with its algorithm: the **POMDP** (an observation is not a state), **RL from pixels**, and **goal-conditioned RL with hindsight** (learning from a sparse reward). Then the large version of all three: **vision–language–action** models.
+
+---
+
+## When the observation is not the state: a POMDP {.smaller}
+
+Weeks 7–10 acted on the state. A camera gives a **picture of** the state: a ball behind the robot is in $s$ and not in $o$. A **partially observable** MDP adds what can be seen:
+
+$$(\,S,\ A,\ P,\ R,\ \gamma\,) \;+\; \big(\,\Omega,\ O(o \mid s)\,\big) \qquad\qquad
+b'(s') \;\propto\; O(o' \mid s') \sum_{s} P(s' \mid s, a)\, b(s)$$
+
+- $b(s)$, the **belief**: a probability over states, updated by the action ($P$) and corrected by what is seen ($O$). The best policy acts on $b$, not on $o$.
+- **Week 6 was this**: the complementary filter is a belief about tilt, built from a gyro and an accelerometer neither of which shows tilt.
+- In practice nobody writes $b$ for pixels. The policy is given a **memory**: a stack of the last $k$ frames (DQN used 4), a recurrent network, or an explicit estimator in front.
+- Week 10's lesson in this language: the 2-input copy acts on $o$; the planner acts on the whole $s$, which no input list contains.
+
+---
+
+## Algorithm 16: RL from pixels {.smaller}
+
+The same RL algorithms (DQN for discrete actions, PPO or SAC for continuous ones), with a convolutional **encoder** in front, trained end to end by the RL loss:
+
+```text
+encoder E_ψ: picture (3 × 64 × 64) → z (a few hundred numbers);   policy / Q-head on [z, w]
+repeat:
+    act in the world from o_t = the last k frames;  store (o, a, r, o', w)
+    sample a minibatch; AUGMENT each picture (DrQ: shift it by up to 4 pixels)
+    compute the usual loss (week 8's Algorithm 4 for DQN, Algorithm 7 for PPO) on E_ψ(o), E_ψ(o')
+    one gradient step on ψ AND the head                  # the encoder learns only what the reward needs
+```
+
+$$Q_{\psi,w}(o, a) = \text{head}_w\big(E_\psi(o),\, a\big), \qquad \text{loss as in DQN, with } o \text{ in place of } s$$
+
+- **Costs**: DQN learned Atari from pixels with 50 M frames per game (2015): about 38 days of play, per game. The reward is the only teacher of the encoder, so it learns slowly.
+- **Cheaper routes**: augmentation (DrQ, 2020: random shifts alone made SAC from pixels competitive with SAC from states on DeepMind Control tasks); a **pretrained** encoder (the lab's old CNN was trained by supervision, labels free from the simulator); or a **privileged teacher** on the state, distilled into a pixel student by DAgger (weeks 9–10).
+
+---
+
+## Core template: a policy that reads a picture and a goal {.smaller}
+
+```{python}
+#| echo: true
+#| class-source: small-code
+import torch.nn as nn
+class PixelPolicy(nn.Module):
+    """pi(a | picture, goal): a CNN reads the picture; the goal is a one-hot colour; out: the waist turn."""
+    def __init__(self, n_goals=4, n_act=1):
+        super().__init__()
+        self.eye = nn.Sequential(nn.Conv2d(3, 16, 5, stride=2), nn.ReLU(), nn.Conv2d(16, 32, 3, stride=2), nn.ReLU(),
+                                 nn.Conv2d(32, 32, 3, stride=2), nn.ReLU(), nn.Flatten())
+        with torch.no_grad():
+            n = self.eye(torch.zeros(1, 3, lab.RESOLUTION, lab.RESOLUTION)).shape[1]
+        self.head = nn.Sequential(nn.Linear(n + n_goals, 64), nn.ReLU(), nn.Linear(64, n_act))
+    def forward(self, image, goal):
+        return self.head(torch.cat([self.eye(image), goal], -1))
+
+def shift(image, pad=4):                    # DrQ's augmentation: pad, then crop back at a random offset
+    x = nn.functional.pad(image, (pad,) * 4, mode="replicate")
+    i, j = np.random.randint(0, 2 * pad + 1, 2)
+    return x[..., i:i + image.shape[-2], j:j + image.shape[-1]]
+
+torch.manual_seed(0)
+net = PixelPolicy()
+o = torch.as_tensor(picture).permute(2, 0, 1)[None].float() / 255    # the lab's 64 x 64 picture
+w = torch.eye(4)[[list(COLOURS).index("green")]]                    # the goal: "green"
+t0 = time.perf_counter(); a = net(shift(o), w); ms = 1000 * (time.perf_counter() - t0)
+print(f"picture {tuple(o.shape)} -> features {net.head[0].in_features - 4} + goal 4 -> action {tuple(a.shape)}")
+print(f"{sum(p.numel() for p in net.parameters()):,} parameters; one decision {ms:.1f} ms; untrained output {a.item():+.3f}")
+```
+
+Put `PixelPolicy` in place of week 9's `mu` network and nothing else in PPO changes: the same loss trains the encoder.
+
+---
+
+## Goal-conditioned RL, and a reward from the check {.smaller}
+
+One policy for every instruction: condition the value on the goal (**UVFA**, Schaul et al., 2015), and let the **check** be the reward:
+
+$$Q(s, a, w) = \mathbb E\Big[\sum_t \gamma^t\, r(s_t, w)\Big], \qquad r(s, w) = \begin{cases} 1 & \text{the check says ball } w \text{ is centred} \\ 0 & \text{otherwise} \end{cases}$$
+
+Two problems, both already in this deck:
+
+1. **The reward is sparse.** A random waist turn almost never centres a ball far away, so almost every episode scores 0 and teaches nothing. (Week 8: an episode with no difference in return gives no gradient.)
+2. **The learner climbs the check, not the task.** With `THRESHOLD 0.6` or in the dim room the check said "done" 39° and 41° off. An RL agent rewarded by that check would learn to produce *those* pictures. Week 8's *"the reward is a design decision"*, with a camera: **a check good enough to grade a policy is not automatically good enough to train one**, because training searches for its mistakes.
+
+The fix for 1 is the next algorithm. The fix for 2 is this deck's lesson: a second, independent sense in the reward, and a held-out test that is never trained on.
+
+---
+
+## Algorithm 17: hindsight experience replay {.smaller}
+
+**Every episode succeeds at something.** An episode that was asked for $w$ and ended at $s_T$ is a perfect demonstration of reaching $s_T$. HER (Andrychowicz et al., 2017) stores it **both ways**:
+
+```text
+for each episode:
+    w ← a random goal;  run π(a | s, w) with exploration;  path ← [(s_t, a_t, s_{t+1})]
+    for each step in path:  store (s_t, a_t, r(s_{t+1}, w), s_{t+1}, w)              # what was asked
+    for k random steps j in path:  w' ← the goal achieved at s_{j+1}                 # HINDSIGHT
+        for each step in path:  store (s_t, a_t, r(s_{t+1}, w'), s_{t+1}, w')         # as if w' had been asked
+    update Q (or the actor-critic) off-policy on the stored tuples                    # Q-learning, DQN, SAC
+```
+
+$$\text{relabel: } (s_t, a_t, s_{t+1}, {\color{#c0392b}{w}}) \;\longrightarrow\; (s_t, a_t, s_{t+1}, {\color{#2a9d5c}{w' = \phi(s_{j+1})}}) \qquad \text{reward recomputed: } r(s_{t+1}, w')$$
+
+- Needs an **off-policy** learner (week 8, question 3): the relabelled data was collected while aiming at $w$, not $w'$.
+- Needs a reward you can **recompute** for any goal: "is ball $w'$ centred?" can be asked of any stored picture. A human's thumbs-up cannot be relabelled.
+
+---
+
+## Core template: HER on a toy "look" task {.smaller}
+
+The waist at one of 41 angles (−60° … +60°, 3° steps), a goal angle, actions turn left / stay / turn right; **reward 1 only on reaching the goal**; 40 decisions per episode. Tabular Q-learning (week 7b), with and without hindsight:
+
+```{python}
+#| echo: true
+#| class-source: small-code
+N, T, MOVES = 41, 40, (-1, 0, +1)
+def learn(her, episodes, seed, alpha=0.5, gamma=0.95, eps=0.2, every=1000):
+    rng = np.random.default_rng(seed); Q = np.zeros((N, N, 3)); curve = []       # Q[angle, goal, action]
+    for ep in range(1, episodes + 1):
+        s, g = rng.integers(N, size=2); path = []
+        for t in range(T):
+            a = rng.integers(3) if rng.random() < eps else int(np.argmax(Q[s, g] + 1e-6 * rng.random(3)))
+            s2 = int(np.clip(s + MOVES[a], 0, N - 1)); path.append((s, a, s2)); s = s2
+            if s == g: break
+        goals = [g] + ([path[k][2] for k in rng.integers(len(path), size=4)] if her else [])
+        for goal in goals:                                   # the asked goal, then the achieved ones
+            for s, a, s2 in path:
+                target = 1.0 if s2 == goal else gamma * Q[s2, goal].max()
+                Q[s, goal, a] += alpha * (target - Q[s, goal, a])
+        if ep % every == 0: curve.append(success(Q))
+    return curve
+def success(Q):                                              # greedy, from every start to every goal
+    ok = 0
+    for s0 in range(N):
+        for g in range(N):
+            s = s0
+            for t in range(T):
+                if s == g: break
+                s = int(np.clip(s + MOVES[int(np.argmax(Q[s, g] + [0, 1e-9, 0]))], 0, N - 1))  # ties: stay
+            ok += s == g
+    return ok / N ** 2
+```
+
+---
+
+## HER, measured {.smaller}
+
+```{python}
+#| echo: true
+t0 = time.time()
+for her in (False, True):
+    curve = learn(her, 3000, seed=0)
+    print(f"{'with hindsight' if her else 'plain Q-learning':16s}  success after 1000 / 2000 / 3000 episodes: "
+          + " / ".join(f"{c:.2f}" for c in curve))
+print(f"(an untrained table stays put: success 1/41 = {1 / 41:.2f};  {time.time() - t0:.0f} s)")
+```
+
+**Three seeds, 6000 episodes** (measured while writing this slide): plain 0.12–0.13 after 1000 episodes and 0.54–0.57 after 6000; with hindsight 0.45–0.47 and **0.87–0.88**. The plain learner learns only from episodes that happened to hit their goal; hindsight turns every episode into five that did.
+
+- The extra cost is 4 more updates per episode; no extra steps in the world. In week 9's bill, world steps are what cost.
+- The same five lines carry over to a network Q and to a camera: the achieved goal is "which ball is centred in the last picture", a question `find_ball` can answer for any stored picture.
+
+---
+
+## Algorithm 18: vision–language–action models {.smaller}
+
+Scale behaviour cloning (week 10) to pixels and words, and start from a model that already reads both:
+
+```text
+data: (picture_t, instruction, action_t) from people driving robots: 10^5–10^6 episodes, many robots
+take a vision–language model pretrained on web images and text
+write each action as tokens: its 7 numbers (arm position, rotation, gripper), each binned into 256 bins
+fine-tune to predict those tokens from (picture, instruction)        # cross-entropy = behaviour cloning
+run: every step, picture + words in → 7 tokens out → un-bin → send to the arm
+```
+
+$$\min_\theta\ \mathbb E_{(o, w, a^*) \sim D}\Big[-\sum_{i=1}^{7} \log p_\theta\big(\text{bin}(a^*_i) \mid o, w, \text{bin}(a^*_{<i})\big)\Big] \qquad \text{(next-token prediction on actions)}$$
+
+::: {style="font-size: 0.8em"}
+
+| this week | at scale |
+| --- | --- |
+| `colour_of`: 4 words, `None` for the rest | the language model knows "crimson", "the one on the left", "the fruit" |
+| `find_ball` + P control | one network: picture and words to motor command (RT-2, 2023; OpenVLA, 2024, 7 B parameters, ~970 k episodes) |
+| the check | **still needed**: a VLA is a copy of human drivers, with week 10's covariate shift and this deck's confident errors |
+
+:::
 
 ---
 

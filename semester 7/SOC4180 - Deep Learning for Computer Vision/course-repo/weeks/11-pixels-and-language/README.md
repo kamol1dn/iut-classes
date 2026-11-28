@@ -56,6 +56,19 @@ to 1.0°, but 27.8° on an unseen blue ball and 15.2° in a dim room (guessing t
 attention model: 2.0° on trained phrasings, 2.1° on new ones, ~31° (chance) for
 "crimson", and confident heat-map peaks (up to 0.98) for a ball that is not in the picture.
 
+## RL theory in the deck (added 2026-11-22)
+
+After *Where a language model would fit*, nine slides read `obey` as a policy to be learned:
+the lab in RL words (observation, goal, action, the check as a success-detector reward); the
+**POMDP** and belief update (week 6's filter was one); *Algorithm 16*, RL from pixels (encoder +
+DQN/PPO, DrQ shift augmentation) with a template `PixelPolicy` (CNN on the lab's 64 × 64
+picture + a one-hot goal) that runs on the deck's own picture; **goal-conditioned RL** with the
+check as reward, and why a check good enough to grade is not good enough to train on;
+*Algorithm 17*, **hindsight experience replay**, with a tabular template on a toy look task
+(41 waist angles, reward only at the goal): three seeds, success over all (start, goal) pairs
+0.12–0.13 → 0.54–0.57 plain and 0.45–0.47 → 0.87–0.88 with hindsight, after 1000 → 6000
+episodes; *Algorithm 18*, vision–language–action models as behaviour cloning on action tokens.
+
 ## Term project (weeks 12–15)
 
 Starting points: **P11 — Eyes on the ball**, **P12 — Words to actions**, **P4 — Reach

@@ -30,6 +30,17 @@ major function of `lab.py` is printed and then explained line by line (`| code |
    (domain randomisation, `RANDOM_WORLD`: friction ×0.3–1.2, torso mass −5…+10 kg, servo
    stiffness ×0.7–1.3). "Robust" means robust *to a distribution*; `J_DR` is the average of
    the return over it; a world outside it is the sim-to-real gap.
+   **How PPO learned it** (added 2026-11-22): week 8's policy gradient plus four changes, derived
+   in order — the Gaussian actor (read from the checkpoint: 42 → 128 → 128 → 12 tanh, σ ≈ 0.13,
+   45,721 parameters with the critic), the critic and the advantage, the TD error, **GAE**
+   (Algorithm 11, with code), importance sampling and the **clipped ratio** (drawn), the full
+   loss with the checkpoint's numbers (clip 0.2, λ 0.95, 4096 decisions a batch, 20 gradient
+   steps, 732 batches = 3 M), **Algorithm 12** (PPO with domain randomisation, as the checkpoints
+   were trained), asymmetric actor–critic and teacher–student. **Core templates**: a
+   from-scratch PyTorch PPO (`ActorCritic`, `collect`, `evaluate`, `ppo_update`) that runs in
+   the deck: on `InvertedPendulum-v5` it first reaches 1000 at batch 12 / 12 / 17 (seeds 0–2,
+   2048 decisions a batch; 11 / 19 / 16 without the small last-layer init); one batch on
+   `G1PushEnv`; and the Stable-Baselines3 call that made the checkpoints (not run).
 3. **Measuring honestly.** Exact shove sizes, sideways, deterministic policy, counts out of 10,
    the same seeds for every policy. 10 of 10 only says p ≥ 0.69 (95 %); 9 of 10 beside 10 of 10
    is not a difference.

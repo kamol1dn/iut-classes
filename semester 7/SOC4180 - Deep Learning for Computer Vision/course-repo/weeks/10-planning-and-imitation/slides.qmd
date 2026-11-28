@@ -49,6 +49,9 @@ next if I do this?"* for 64 different *this*, does the best for 40 ms, and asks
 again. It needs a model that runs forward: MuJoCo, since week 1.
 
 One file, `lab.py`: you edit `cost()` for part 1 and `INPUTS` for part 2.
+The theory around it — planning as RL, three sampling planners, model-based
+RL, behaviour cloning and DAgger — each comes with a short template you can
+run, on a pendulum where the right answer is known.
 **Layer 4, Control & Planning**, then **Layer 5**, learning without a reward.
 
 ---
@@ -131,6 +134,12 @@ print(f"planned servos: {len(world.acts)} (both legs)   cores here: {os.cpu_coun
 `lab.World` is the G1 from `planning.planning_model()` — six position sensors
 added by `MjSpec` (feet, hands, head, centre of mass), so every imagined future
 records where they went.
+
+::: {.content-visible when-format="revealjs"}
+```{=html}
+<style>.reveal div.cell[data-class-source="small-code"] pre code { font-size: 0.78em; line-height: 1.2; max-height: 620px; } .reveal div.cell[data-class-source="small-code"] div.sourceCode, .reveal div.cell[data-class-source="small-code"] pre { max-height: 620px; }</style>
+```
+:::
 
 ---
 
@@ -217,6 +226,35 @@ The plan always reaches 0.4 s ahead, and that future keeps moving — it
 
 ---
 
+## Planning and RL: the same problem, solved at a different time {.smaller}
+
+Write week 8's reward as a cost, ${\color{#2a9d5c}{c}} = -r$. RL wants a policy good **from every state**; MPC solves the problem **only from the state it is in**, over $H$ steps, and repeats:
+
+$$\underbrace{V^*({\color{#3b7dd8}{x}}) = \min_{\color{#e8743b}{u}}\big[{\color{#2a9d5c}{c}}({\color{#3b7dd8}{x}}, {\color{#e8743b}{u}}) + V^*(f({\color{#3b7dd8}{x}}, {\color{#e8743b}{u}}))\big]}_{\text{Bellman (week 7): every } x \text{, before acting}}
+\qquad
+\underbrace{\min_{{\color{#e8743b}{U}}}\ \sum_{t=0}^{H-1} {\color{#2a9d5c}{c}}({\color{#3b7dd8}{x_t}}, {\color{#e8743b}{u_t}}) + \hat V({\color{#3b7dd8}{x_H}})}_{\text{MPC: this } x \text{, while acting}}$$
+
+Unroll Bellman $H$ times and the two are the same, with $\hat V = V^*$ at the end. So:
+
+- **$H = 1$ with an exact $\hat V$** is acting greedily on a value function: week 7's $\pi^*$.
+- **Large $H$, $\hat V = 0$** is today's MPPI: no value function at all, only a long look ahead. Past 0.4 s it is blind, which is why the cost must make "good now" mean "good later" (stay upright, CoM over the feet).
+- **In between**: a short horizon ended by a *learned* $\hat V$ (AlphaZero, TD-MPC): learning supplies the far future, search the near one.
+
+---
+
+## Learn before, or plan while? {.smaller}
+
+| | learn a policy (weeks 7–9) | plan (today) |
+| --- | --- | --- |
+| thinking happens | before, for hours | every 40 ms, for 90 ms |
+| needs | a reward and many episodes | a model that can be **restarted from any state** |
+| a new task | retrain | edit `cost()` and run |
+| fails when | the robot meets a state it never trained on | the model is wrong, or the horizon too short |
+
+The two combine: learn a policy or value **from** a planner (part 2 of today, AlphaZero), or plan **with** a learned value at the horizon (TD-MPC).
+
+---
+
 ## MPPI: which future? {.smaller}
 
 **Model-predictive path integral** control (Williams et al., 2017) turns $K$
@@ -298,6 +336,108 @@ ax.grid(alpha=0.3); ax.legend(fontsize=8, loc="upper left"); fig.tight_layout();
 Nothing needed $dJ/du$: the planner only *evaluated* $J$ at twelve points,
 which is all a simulator can do for us. On the robot $u$ is 120 numbers and
 each evaluation is 200 physics steps; the update is exactly this.
+
+---
+
+## Algorithm 13: three sampling planners {.smaller}
+
+All three only **run** the model; they differ in what they do with $K$ scored plans:
+
+```text
+every decision, from the true state x:
+  RANDOM SHOOTING                    CROSS-ENTROPY METHOD (CEM)             MPPI (today)
+  draw K plans U_k uniformly         μ ← the old plan, shifted;  s ← σ      draw ε_k ~ N(0, σ²), ε_1 = 0
+  J_k ← cost of rolling out U_k      repeat I times:                        J_k ← cost of rolling out U + ε_k
+  U ← the U_k with the lowest J          draw U_k ~ N(μ, s²)                w_k ∝ exp(−(J_k − min J) / λ)
+                                         J_k ← cost of rolling out U_k      U ← Σ_k w_k (U + ε_k)
+                                         elite ← the E lowest-cost U_k
+                                         μ, s ← mean, std of elite
+                                     U ← μ
+  apply U[0];  shift U one step left, append 0;  next decision     (random shooting keeps nothing)
+```
+
+::: {style="font-size: 0.8em"}
+
+| | keeps the old plan? | refines? | rollouts per decision | soft or hard choice |
+| --- | --- | --- | --- | --- |
+| random shooting | no | no | $K$ | hard: the single best |
+| CEM | yes ($\mu$) | yes, $I$ rounds | $I \cdot K$ | hard: the elite, equally weighted |
+| MPPI | yes ($U$) | one round per decision; continues next decision | $K$ | soft: $\lambda$ decides |
+
+:::
+
+---
+
+## Core template: a sampling planner {.smaller}
+
+An inverted pendulum (upright = 0) with a **weak motor**: $\ddot\theta = 9.81\sin\theta + u - 0.1\dot\theta$, $|u| \le 3$. It can hold at most $\sin\theta = 3/9.81$: kick it too hard and nothing saves it.
+
+```{python}
+#| echo: true
+#| class-source: small-code
+DT, UMAX = 0.02, 3.0
+def pend(x, u):                       # the model f: works on a batch of K states at once
+    th, om = x[..., 0], x[..., 1]
+    om2 = om + DT * (9.81 * np.sin(th) + np.clip(u, -UMAX, UMAX) - 0.1 * om)
+    return np.stack([th + DT * om2, om2], -1)
+def c(x, u): return x[..., 0] ** 2 + 0.1 * x[..., 1] ** 2 + 0.001 * u ** 2   # upright, still, little effort
+def J(model, x0, Us):                 # K plans (K, H) -> K costs: imagine each future
+    x, total = np.repeat(x0[None], len(Us), 0), np.zeros(len(Us))
+    for t in range(Us.shape[1]):
+        total += c(x, Us[:, t]); x = model(x, Us[:, t])
+    return total + 10 * c(x, 0.0)     # a terminal cost: where the future ends up
+
+class Planner:
+    def __init__(self, kind, model=pend, K=64, H=25, sigma=1.0, lam=0.1, iters=3, elite=8, seed=0):
+        self.kind, self.model, self.K, self.H, self.sigma, self.lam = kind, model, K, H, sigma, lam
+        self.iters, self.elite, self.rng, self.U = iters, elite, np.random.default_rng(seed), np.zeros(H)
+    def __call__(self, x):
+        if self.kind == "random":
+            Us = self.rng.uniform(-UMAX, UMAX, (self.K, self.H)); U = Us[np.argmin(J(self.model, x, Us))]
+        elif self.kind == "cem":
+            mu, s = self.U.copy(), np.full(self.H, self.sigma)
+            for _ in range(self.iters):
+                Us = np.clip(mu + s * self.rng.standard_normal((self.K, self.H)), -UMAX, UMAX)
+                el = Us[np.argsort(J(self.model, x, Us))[:self.elite]]; mu, s = el.mean(0), el.std(0) + 0.05
+            U = mu
+        else:                         # "mppi"
+            E = self.sigma * self.rng.standard_normal((self.K, self.H)); E[0] = 0
+            Us = np.clip(self.U + E, -UMAX, UMAX); Jk = J(self.model, x, Us)
+            w = np.exp(-(Jk - Jk.min()) / self.lam); w /= w.sum(); U = w @ Us
+        self.U = np.append(U[1:], 0.0)  # receding horizon
+        return U[0]
+```
+
+---
+
+## Three planners and a PD rule, measured {.smaller}
+
+Kick the upright pendulum ($\dot\theta_0$, both signs); success = within 0.05 rad of upright after 2 s. The largest kick each controller saves:
+
+```{python}
+#| echo: true
+#| class-source: small-code
+def stands(ctrl, kick, T=100):
+    x = np.array([0.0, kick])
+    for _ in range(T):
+        x = pend(x, ctrl(x))
+        if abs(x[0]) > 1.0: return False
+    return abs(x[0]) < 0.05
+def largest(make):                    # the largest kick saved, with every smaller one saved too
+    best = 0.0
+    for k in np.arange(0.05, 1.21, 0.05):
+        if not (stands(make(), k) and stands(make(), -k)): break
+        best = k
+    return best
+print(f"capture-point bound (week 4, linearised): kick < omega * UMAX / g = {np.sqrt(9.81) * UMAX / 9.81:.2f} rad/s")
+print(f"PD  u = -30 theta - 6 theta'   saves {largest(lambda: lambda x: float(np.clip(-30 * x[0] - 6 * x[1], -UMAX, UMAX))):.2f}")
+for kind in ("random", "cem", "mppi"):
+    t0 = time.time(); best = largest(lambda: Planner(kind))
+    print(f"{kind:6s} K 64, H 25 (0.5 s)       saves {best:.2f}   ({time.time() - t0:.1f} s)")
+```
+
+- **Random shooting** starts from nothing each decision: its best of 64 random plans never settles. **CEM** and **MPPI** keep and refine a plan; CEM pays 3 × 64 rollouts for its extra 0.1.
+- **The PD rule beats every planner** (its 1.00 passes the linearised bound, which ignores damping and $\sin\theta < \theta$). With dynamics this simple, write the controller; the planner earns its cost on the G1.
 
 ---
 
@@ -579,6 +719,61 @@ futures, and width trades against count.**
 
 **Part 2 is the other answer to this slide**: copy the slow planner into a
 fast reflex.
+
+---
+
+## When there is no simulator: learn the model {.smaller}
+
+MPPI needed $f$, restartable from any state; a real robot has none. **Model-based RL** learns $\hat f \approx f$ from the robot's own transitions, then plans (or trains a policy) inside $\hat f$:
+
+```text
+ALGORITHM 14: MODEL-BASED RL (Dyna 1990 with a table; PETS, MBPO, Dreamer below)
+D ← transitions (x, u, x') from a few random actions on the real system
+repeat:
+    f̂ ← argmin_f̂  Σ_D | f̂(x, u) − x' |²             # supervised: a regression, like part 2's fit
+    run the real system with MPC on f̂ (or a policy trained inside f̂) for a while
+    D ← D ∪ the new transitions                      # data where the controller actually goes
+```
+
+::: {style="font-size: 0.8em"}
+
+| method | the model | what it does with it |
+| --- | --- | --- |
+| PETS (2018) | an ensemble of networks | MPC by CEM; the ensemble's disagreement says where $\hat f$ is unsure |
+| MBPO (2019) | an ensemble | short imagined rollouts feed SAC (week 8's Algorithm 8) |
+| Dreamer (2020–) | a network in a learned latent space, from pixels | trains an actor–critic entirely in imagination |
+
+:::
+
+**Pays**: real samples are expensive (week 9's bill), imagined ones cheap. **Fails**: the planner hunts for where $\hat f$ is wrong in its favour.
+
+---
+
+## Core template: learn the model, then plan {.smaller}
+
+Learn the pendulum from **10 random transitions**, by least squares on two feature sets, and plan with *Core template*'s MPPI on the learned model:
+
+```{python}
+#| echo: true
+#| class-source: small-code
+rng = np.random.default_rng(0)
+n = 10
+X = np.c_[rng.uniform(-1, 1, n), rng.uniform(-4, 4, n)]       # random states (angle, speed)
+U = rng.uniform(-UMAX, UMAX, n)                                # random torques
+Xn = pend(X, U)                                                # ...and what the real system did
+def feats(x, u, kind):
+    th, om = x[..., 0], x[..., 1]
+    return np.stack([th, om, np.clip(u, -UMAX, UMAX)] + ([np.sin(th)] if kind == "sin" else []), -1)
+for kind in ("linear", "sin"):
+    W = np.linalg.lstsq(feats(X, U, kind), Xn - X, rcond=None)[0]   # predict the CHANGE of state
+    err = np.sqrt(np.mean((feats(X, U, kind) @ W - (Xn - X)) ** 2))
+    learned = lambda x, u, W=W, kind=kind: x + feats(x, u, kind) @ W
+    print(f"{kind:6s} model: {W.size} numbers, fit error {err:.1e}; "
+          f"MPPI on it saves kicks up to {largest(lambda: Planner('mppi', model=learned)):.2f} (on the true model: 0.80)")
+```
+
+- With the right **model class** (a few numbers, the right features), 10 samples are enough; even the **linear** model, wrong by a little, plans as well as the truth here.
+- The G1 is 35 velocities, contacts switching on and off, 29 servos: no 10-sample fit exists, and this course uses MuJoCo itself. Learning that model is the frontier (Dreamer, world models), and the source of part 2's lesson in another form: **a small fit error is not a good controller**, until the controller has been run.
 
 ---
 
@@ -909,6 +1104,73 @@ rather than a line, 20 episodes each):
 
 ---
 
+## Algorithm 15: behaviour cloning and DAgger, in full {.smaller}
+
+```text
+BEHAVIOUR CLONING                                  DAgger (Ross, Gordon & Bagnell, 2011)
+D ← {(o, a*)} from N runs of the EXPERT            D ← the expert's demonstrations;  π_1 ← fit(D)
+π ← fit(D)                                         for round i = 1, 2, ..., R:
+done                                                   β_i ← 0.5 if i = 1, else 0      # how often the expert drives
+                                                       run π_mix = (expert with prob. β_i, else π_i)
+                                                       for every state s it visits: a* ← expert(s)   # ASK
+                                                       D ← D ∪ {(o(s), a*)}            # keep everything
+                                                       π_{i+1} ← fit(D)
+                                                   return the best π_i on a held-out test
+```
+
+$$\text{BC: } \min_\pi\ \mathbb E_{s \sim d_{\color{#2a9d5c}{\text{expert}}}}\big\lVert \pi(o(s)) - a^*(s)\big\rVert^2
+\qquad\qquad
+\text{DAgger: } \min_\pi\ \mathbb E_{s \sim d_{\color{#e8743b}{\pi}}}\big\lVert \pi(o(s)) - a^*(s)\big\rVert^2$$
+
+The **only** difference is where the states come from: $d_{\text{expert}}$, the states the expert visits, or $d_\pi$, the states the copy itself visits — which is where it will be tested.
+
+---
+
+## Core template: behaviour cloning and DAgger {.smaller}
+
+Expert: the PD rule (deterministic, a function of the state). Demonstrations noise-free; the test adds **torque noise** $\sigma = 1.5$. Student: a **nearest neighbour**.
+
+```{python}
+#| echo: true
+#| class-source: small-code
+expert = lambda x: float(np.clip(-30 * x[0] - 6 * x[1], -UMAX, UMAX))
+class Copy:                                            # 1-nearest neighbour on (angle, speed / 5)
+    def __init__(self): self.X, self.A = [], []
+    def add(self, x, a): self.X.append(x * [1.0, 0.2]); self.A.append(a)
+    def __call__(self, x): return self.A[int(np.argmin(((np.array(self.X) - x * [1.0, 0.2]) ** 2).sum(1)))]
+def episode(ctrl, kick, rng, noise):                   # -> (stood, the states visited)
+    x, xs = np.array([0.0, kick]), []
+    for _ in range(100):
+        xs.append(x); x = pend(x, ctrl(x) + noise * rng.standard_normal())
+        if abs(x[0]) > 1.0: return False, xs
+    return abs(x[0]) < 0.1, xs
+TEST = np.random.default_rng(0).uniform(-0.8, 0.8, 50)
+score = lambda ctrl: sum(episode(ctrl, k, np.random.default_rng(99), 1.5)[0] for k in TEST)
+rng = np.random.default_rng(0); pi = Copy()
+for k in rng.uniform(-0.8, 0.8, 5):                    # BC: 5 noise-free demonstrations
+    for x in episode(expert, k, rng, 0.0)[1]: pi.add(x, expert(x))
+row = [int(score(pi))]
+for i in range(1, 5):                                  # DAgger: 4 rounds of 5 runs of the COPY
+    beta = 0.5 if i == 1 else 0.0
+    mix = lambda x: expert(x) if rng.random() < beta else pi(x)
+    for k in rng.uniform(-0.8, 0.8, 5):
+        for x in episode(mix, k, rng, 1.5)[1]: pi.add(x, expert(x))   # its states, the expert's labels
+    row.append(int(score(pi)))
+bc = Copy()
+for k in rng.uniform(-0.8, 0.8, 25):                   # the same 25 runs' worth of data, all from the expert
+    for x in episode(expert, k, rng, 0.0)[1]: bc.add(x, expert(x))
+print(f"of 50 noisy tests: expert {score(expert)}, hold 0 {score(lambda x: 0.0)}")
+print(f"BC on 5 demos {row[0]};  DAgger rounds 1-4: {row[1:]};  BC on 25 demos {score(bc)}")
+```
+
+---
+
+## BC and DAgger, measured {.smaller}
+
+**Three seeds** (the previous cell with `default_rng(0, 1, 2)`): BC on 5 demonstrations 43 / 47 / 43 of 50; after 4 DAgger rounds 50 / 50 / 50; BC on 25 demonstrations 48 / 50 / 50. On a pendulum that forgives small mistakes, **DAgger's rounds are worth about as much as more demonstrations**. It pays where the copy's mistakes compound and its states are ones no expert run visits: on the G1, 0 → 16 of 20 (previous slide).
+
+---
+
 ## The rule {.smaller}
 
 | expert | a function of what the copy sees? | deterministic? | closed loop? | result |
@@ -923,6 +1185,25 @@ rather than a line, 20 episodes each):
 
 Then copying is ordinary regression: **distillation** — train something
 expensive, copy it into something cheap, with DAgger and the right inputs.
+
+---
+
+## Learning from an expert, sorted {.smaller}
+
+::: {style="font-size: 0.75em"}
+
+| method | learns | from | expert **asked**? | reward? | course |
+| --- | --- | --- | --- | --- | --- |
+| behaviour cloning | $\pi(o) \approx a^*$ | recorded (state, action) pairs | no | no | today, part 2 |
+| DAgger | the same | the copy's own states, labelled | **yes**, at every state | no | today; old week 13 |
+| teacher–student distillation | a student without privileged inputs | a teacher trained by RL | yes (the teacher is code) | the teacher's | week 9's non-result |
+| inverse RL | the **reward** $r$ the expert seems to maximise, then RL on it | recorded trajectories | no | learned | named only |
+| GAIL (adversarial imitation) | $\pi$ whose states a classifier cannot tell from the expert's | recorded trajectories | no | the classifier's | named only |
+| vision–language–action models | $\pi(\text{image}, \text{words}) \to a$ | ~10⁵–10⁶ human-driven robot episodes | no | no | week 11 |
+
+:::
+
+**Copy the action** (BC, DAgger, distillation): supervised, fast, lost off the expert's states unless the expert can be asked. **Copy the goal** (inverse RL, GAIL): learn what the expert wanted, then RL on it; slower, but a copy off the expert's states still knows what to aim for.
 
 ---
 

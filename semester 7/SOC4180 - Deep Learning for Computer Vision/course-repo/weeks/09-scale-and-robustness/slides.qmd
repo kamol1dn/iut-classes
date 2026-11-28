@@ -43,6 +43,10 @@ questions and **one task**.
    the crouch and week 8's one-number ankle rule, in worlds **you** edit, with
    shoves of exact size.
 
+On the way: **the PPO algorithm itself** — actor, critic, GAE, the clipped
+ratio — derived from week 8's policy gradient, with a 60-line template that
+learns, and the exact code that trained the checkpoints.
+
 The task, the code and the measured table are all one file:
 **`weeks/09-scale-and-robustness/lab.py`**. You do not train anything.
 
@@ -113,6 +117,7 @@ import inspect, time, warnings
 from math import comb
 import numpy as np
 import matplotlib.pyplot as plt
+import torch
 from soc4180.envs import G1PushEnv, RANDOM_WORLD
 warnings.filterwarnings("ignore")
 
@@ -135,6 +140,12 @@ def show_part(obj, start, end):
 On Colab the first cell installs the package and downloads `lab.py` and the two
 checkpoints; locally it does nothing but import. **Every code slide below
 prints a piece of `lab.py`**, so the deck and the lab cannot drift apart.
+
+::: {.content-visible when-format="revealjs"}
+```{=html}
+<style>.reveal div.cell[data-class-source="small-code"] pre code { font-size: 0.78em; line-height: 1.2; max-height: 620px; } .reveal div.cell[data-class-source="small-code"] div.sourceCode, .reveal div.cell[data-class-source="small-code"] pre { max-height: 620px; }</style>
+```
+:::
 
 ---
 
@@ -298,6 +309,166 @@ print(f"read from the checkpoint: {agent.n_envs} processes, n_steps {agent.n_ste
 
 ---
 
+## How PPO learned it: four changes to week 8 {.smaller}
+
+Week 8's REINFORCE climbs $\nabla J = \mathbb E\big[\sum_t \nabla \log {\color{#3b7dd8}{\pi_\theta}}(a_t \mid s_t)\,(G - b)\big]$. PPO (Schulman et al., 2017) is that line with four changes, each fixing one measured weakness:
+
+| change | what it replaces | the weakness it fixes |
+| --- | --- | --- |
+| 1. a **network** ${\color{#3b7dd8}{\pi_\theta}}$ (42 → 128 → 128 → 12) | week 8's one gain | one number cannot map 42 observations to 12 servos |
+| 2. a **critic** $V_\phi(s)$, a second network | the batch-mean baseline $b$ | one $b$ for every state: a hard shove and an easy one share it |
+| 3. the **advantage** ${\color{#2a9d5c}{\hat A_t}}$ (GAE) | the whole return $G$ | $G$ adds every later step's luck to step $t$'s credit |
+| 4. the **clipped ratio** ${\color{#b07d12}{\rho_t}}$ | use each batch once | data is expensive (this week's bill): reuse it for $K$ safe steps |
+
+New symbols: ${\color{#2a9d5c}{\hat A_t}}$ the **advantage** (green: better or worse than expected), ${\color{#b07d12}{\rho_t}}$ the **probability ratio** (gold), $V_\phi$ the **critic**, $\delta_t$ the **TD error**.
+
+---
+
+## The actor: a Gaussian network {.smaller}
+
+The policy is a **distribution** over the 12 actions: a network gives the mean, one learned number per servo gives the spread,
+
+$${\color{#3b7dd8}{\pi_\theta}}(a \mid s) = \mathcal N\big(\mu_\theta(s),\ \mathrm{diag}(\sigma^2)\big), \qquad
+\log {\color{#3b7dd8}{\pi_\theta}}(a \mid s) = -\sum_{i=1}^{12}\Big[\frac{(a_i - \mu_{\theta,i}(s))^2}{2\sigma_i^2} + \log \sigma_i\Big] + \text{const}$$
+
+Week 8's score function, $\partial \log\pi/\partial\mu = (a - \mu)/\sigma^2$, now flows back through the network by backpropagation. **Training samples** $a \sim {\color{#3b7dd8}{\pi_\theta}}$ (that is the exploration); **a test uses** $a = \mu_\theta(s)$ (`deterministic=True`).
+
+```{python}
+#| echo: true
+p = agent.policy
+print("mean network: ", " -> ".join(str(m) for m in p.mlp_extractor.policy_net) + " ->", p.action_net)
+print("critic:       ", " -> ".join(str(m) for m in p.mlp_extractor.value_net) + " ->", p.value_net)
+print("sigma after training:", np.round(torch.exp(p.log_std).detach().numpy(), 3))
+print(f"parameters: {sum(q.numel() for q in p.parameters()):,} (actor and critic together)")
+```
+
+Started at $\sigma = e^{-2} = 0.135$ (week 8's lesson: with $\sigma = 1$ the sampled robot falls); 3 M decisions later it is still about that.
+
+---
+
+## The critic: a baseline for every state {.smaller}
+
+The **value** $V(s)$ is the return expected from $s$; the **action value** $Q(s,a)$, from $s$ after doing $a$. Their difference is the **advantage**:
+
+$${\color{#2a9d5c}{A(s,a)}} = Q(s,a) - V(s) \qquad \text{"how much better than usual was this action, in this state?"}$$
+
+Replacing $G - b$ by ${\color{#2a9d5c}{A}}$ keeps the gradient's average (any baseline that depends only on $s$ does) and cuts its noise: a hard shove lowers both $Q$ and $V$, and the difference keeps only what **the action** did.
+
+The critic $V_\phi$ is trained by regression on returns seen, and gives a one-step estimate of ${\color{#2a9d5c}{A}}$, the **TD error** (week 7b's Q-learning target, with $V$ in place of $\max Q$):
+
+$$\delta_t = r_t + \gamma\,V_\phi(s_{t+1}) - V_\phi(s_t) \qquad (\text{and } \delta_t = r_t - V_\phi(s_t) \text{ on the step that falls})$$
+
+- $\delta_t$: **low noise** (one real reward), but **biased** — as wrong as $V_\phi$ is.
+- $G_t - V_\phi(s_t)$: **unbiased**, but **noisy** — every later reward's luck is in it.
+
+---
+
+## GAE: one knob between the two {.smaller}
+
+Look $k$ steps ahead before trusting the critic; the $V$ terms telescope, so each estimate is a sum of TD errors:
+
+$$\hat A^{(1)}_t = \delta_t, \qquad \hat A^{(2)}_t = r_t + \gamma r_{t+1} + \gamma^2 V(s_{t+2}) - V(s_t) = \delta_t + \gamma\,\delta_{t+1}, \qquad \hat A^{(k)}_t = \sum_{l=0}^{k-1} \gamma^l\,\delta_{t+l}$$
+
+**Generalised advantage estimation** (Schulman et al., 2016) averages all $k$ with weights $(1-\lambda)\lambda^{k-1}$, which collapses to one sum:
+
+$${\color{#2a9d5c}{\hat A_t}} = (1-\lambda)\sum_{k \ge 1} \lambda^{k-1}\hat A^{(k)}_t = \sum_{l \ge 0} (\gamma\lambda)^l\,\delta_{t+l}
+\qquad\Longrightarrow\qquad {\color{#2a9d5c}{\hat A_t}} = \delta_t + \gamma\lambda\,{\color{#2a9d5c}{\hat A_{t+1}}}$$
+
+::: {style="font-size: 0.85em"}
+
+| $\lambda$ | ${\color{#2a9d5c}{\hat A_t}}$ is | character |
+| --- | --- | --- |
+| 0 | $\delta_t$ | the critic's one-step guess: low noise, biased |
+| 1 | $G_t - V(s_t)$ | week 8's return minus a baseline: unbiased, noisy |
+| **0.95** | in between | **the checkpoints' setting** (printed on *The whole PPO loss*) |
+
+:::
+
+The right-hand recursion is the algorithm: one backward pass over the batch.
+
+---
+
+## Algorithm 11: GAE, the code {.smaller}
+
+```{python}
+#| echo: true
+def gae(r, v, v_last, done, gamma=0.99, lam=0.95):
+    """Advantages A_t and critic targets R_t for T steps; done[t] = 1 if step t ended the episode."""
+    A, run = np.zeros(len(r)), 0.0
+    for t in reversed(range(len(r))):                       # backwards: A_t needs A_{t+1}
+        v_next = v_last if t == len(r) - 1 else v[t + 1]
+        delta = r[t] + gamma * v_next * (1 - done[t]) - v[t]   # TD error; a fall has no future
+        run = delta + gamma * lam * (1 - done[t]) * run        # A_t = delta_t + gamma lam A_{t+1}
+        A[t] = run
+    return A, A + v                                         # R_t = A_t + V(s_t): the critic's target
+
+r, v, done = np.ones(5), np.full(5, 3.0), np.array([0, 0, 0, 0, 1.0])   # 5 steps, then a fall
+for lam in (0.0, 0.95, 1.0):                                 # a critic that hoped for 3.0 at every step
+    print(f"lambda {lam:4.2f}: A = {np.round(gae(r, v, 0.0, done, lam=lam)[0], 2)}")
+```
+
+The critic hoped for 3.0 from every step; the episode fell after 5. **$\lambda = 0$**: each step gets its own $\delta$ (+0.97 = a reward of 1 plus $0.99 \times 3.0$, minus 3.0), and only the last step hears of the fall (−2.0). **$\lambda = 1$**: the real return minus 3.0 (4.90 − 3.0 = +1.90 at the first step): every step hears of it. **$\lambda = 0.95$**: close to 1 on so short an episode, with a little of the critic's (wrong) hope mixed back in. `(1 - done[t])` stops a fall's future leaking into the next episode of the same batch.
+
+---
+
+## Reusing a batch: the probability ratio {.smaller}
+
+A batch was collected by ${\color{#3b7dd8}{\pi_{\text{old}}}}$. After one gradient step the policy is ${\color{#3b7dd8}{\pi_\theta}}$, and the batch's actions are no longer its own samples. **Importance sampling** reweights them:
+
+$$\mathbb E_{a \sim \pi_\theta}\big[{\color{#2a9d5c}{A}}\big] = \mathbb E_{a \sim \pi_{\text{old}}}\Big[\underbrace{\frac{{\color{#3b7dd8}{\pi_\theta}}(a \mid s)}{{\color{#3b7dd8}{\pi_{\text{old}}}}(a \mid s)}}_{{\color{#b07d12}{\rho_t(\theta)}}}\ {\color{#2a9d5c}{A}}\Big]
+\qquad\Longrightarrow\qquad L(\theta) = \mathbb E_t\big[{\color{#b07d12}{\rho_t(\theta)}}\,{\color{#2a9d5c}{\hat A_t}}\big]$$
+
+- At $\theta = \theta_{\text{old}}$: ${\color{#b07d12}{\rho}} = 1$ and $\nabla{\color{#b07d12}{\rho}} = \nabla\log{\color{#3b7dd8}{\pi_\theta}}$, so $\nabla L$ **is week 8's policy gradient** with ${\color{#2a9d5c}{\hat A}}$ in place of $G - b$.
+- Away from it, $L$ is only an estimate, and a good one only while ${\color{#3b7dd8}{\pi_\theta}}$ stays close to ${\color{#3b7dd8}{\pi_{\text{old}}}}$. Maximise $L$ freely and the optimiser drives ${\color{#b07d12}{\rho}}$ to wherever the noisy ${\color{#2a9d5c}{\hat A}}$ looks best: one bad batch can wreck the policy (week 8: one seed collapsed to 13.0 at update 300).
+- In code, ${\color{#b07d12}{\rho}} = \exp(\log\pi_\theta - \log\pi_{\text{old}})$: the batch stores $\log\pi_{\text{old}}(a_t \mid s_t)$ when it acts.
+
+---
+
+## The clip, drawn {.smaller}
+
+$$L^{\text{CLIP}}(\theta) = \mathbb E_t\Big[\min\big({\color{#b07d12}{\rho_t}}\,{\color{#2a9d5c}{\hat A_t}},\ \operatorname{clip}({\color{#b07d12}{\rho_t}}, 1-\epsilon, 1+\epsilon)\,{\color{#2a9d5c}{\hat A_t}}\big)\Big], \qquad \epsilon = 0.2$$
+
+```{python}
+#| fig-align: center
+rho = np.linspace(0.4, 1.6, 400); eps_c = 0.2
+fig, axes = plt.subplots(1, 2, figsize=(10, 2.6), sharey=False)
+for ax, A_ in zip(axes, (1.0, -1.0)):
+    ax.plot(rho, rho * A_, color="0.6", ls="--", lw=1.5, label=r"$\rho A$ (unclipped)")
+    ax.plot(rho, np.minimum(rho * A_, np.clip(rho, 1 - eps_c, 1 + eps_c) * A_), color="#b07d12", lw=2.5, label="PPO's objective")
+    ax.axvspan(1 - eps_c, 1 + eps_c, color="#b07d12", alpha=0.08)
+    ax.axvline(1, color="0.3", lw=0.8)
+    ax.set_title(("A > 0: a good action, make it more likely" if A_ > 0 else "A < 0: a bad action, make it less likely"), fontsize=9.5)
+    ax.set_xlabel(r"ratio $\rho = \pi_\theta / \pi_{old}$"); ax.grid(alpha=0.3); ax.legend(fontsize=8, loc="upper left" if A_ > 0 else "upper right")
+fig.tight_layout(); plt.show()
+```
+
+- **A good action** ($\hat A > 0$): the objective rises with ${\color{#b07d12}{\rho}}$ until $1.2$, then goes **flat**: no gradient for making it any more likely in this batch.
+- **A bad action** ($\hat A < 0$): pushing ${\color{#b07d12}{\rho}}$ below 0.8 earns nothing more.
+- The `min` keeps the **unclipped** line where it is worse (left of 0.8 for a good action): mistakes are never hidden. The clip is a cheap trust region.
+
+---
+
+## The whole PPO loss, with the checkpoint's numbers {.smaller}
+
+One loss, minimised by Adam over minibatches; three terms:
+
+$$\mathcal L(\theta, \phi) = -L^{\text{CLIP}}(\theta) + c_v\,\mathbb E_t\big[(V_\phi(s_t) - \hat R_t)^2\big] - c_e\,\mathbb E_t\big[\mathcal H({\color{#3b7dd8}{\pi_\theta}}(\cdot \mid s_t))\big], \qquad \hat R_t = {\color{#2a9d5c}{\hat A_t}} + V_\phi(s_t)$$
+
+```{python}
+#| echo: true
+print(f"clip epsilon {agent.clip_range(1.0)}   GAE lambda {agent.gae_lambda}   gamma {agent.gamma}")
+print(f"value weight c_v {agent.vf_coef}   entropy weight c_e {agent.ent_coef}   gradient-norm clip {agent.max_grad_norm}")
+print(f"learning rate {agent.learning_rate}   advantages normalised per minibatch: {agent.normalize_advantage}")
+batch = agent.n_envs * agent.n_steps
+print(f"batch {agent.n_envs} x {agent.n_steps} = {batch} decisions -> {agent.n_epochs} epochs of {batch // agent.batch_size} "
+      f"minibatches of {agent.batch_size} = {agent.n_epochs * batch // agent.batch_size} gradient steps per batch")
+print(f"3 M decisions = {3_000_000 // batch} batches")
+```
+
+Term by term: the **actor**'s clipped policy gradient; the **critic**'s regression onto the GAE targets; a bonus for staying random, **off** here ($c_e = 0$: exploration came from $\sigma$ alone).
+
+---
+
 ## What "robust" means {.smaller}
 
 A policy is trained on a **distribution of worlds** ${\color{#8e44ad}{\xi}}$.
@@ -344,6 +515,217 @@ controller for a **family** of robots.
 
 What it cannot promise: a world outside the box has weight **zero** in
 $J_{\text{DR}}$. Whatever happens there is luck until it is measured.
+
+---
+
+## Algorithm 12: PPO with domain randomisation — how the checkpoints were made {.smaller}
+
+```text
+actor π_θ: 42 → 128 → 128 → 12 (tanh), σ = e^-2;  critic V_φ: 42 → 128 → 128 → 1;  Adam, lr 3e-4
+16 environments, each in its own process                          # this week's bill: SubprocVecEnv
+repeat 732 times (= 3 M decisions):
+    for 256 decisions, in all 16 environments at once:
+        at every reset: ξ ~ uniform(RANDOM_WORLD); a shove up to 200 N at a random time   # DR: one line in reset
+        a ~ π_θ(·|s);  keep s, a, r, done, log π_θ(a|s), V_φ(s)
+    Â, R̂ ← GAE(γ 0.99, λ 0.95) over the 16 × 256 = 4096 decisions
+    for 5 epochs:  for each of 4 minibatches of 1024:
+        Â ← (Â − mean) / std                                       # per minibatch
+        ρ ← exp(log π_θ(a|s) − log π_old(a|s))
+        loss ← −mean min(ρ Â, clip(ρ, 0.8, 1.2) Â) + 0.5 · mean (V_φ(s) − R̂)²
+        one Adam step on θ and φ, gradient norm clipped at 0.5
+```
+
+$$\max_\theta\ J_{\text{DR}}(\pi_\theta) = \mathbb E_{{\color{#8e44ad}{\xi}} \sim p}\,\mathbb E_{\tau \sim \pi_\theta,\,{\color{#8e44ad}{\xi}}}\Big[\sum_t \gamma^t r_t\Big], \qquad \text{estimated by PPO's batch: 4096 decisions from many } {\color{#8e44ad}{\xi}}$$
+
+**PPO nominal** is the same loop with $\xi$ fixed at the nominal world; nothing else differs. Each batch gets 20 gradient steps, then is thrown away (on-policy). Each checkpoint: ~16 min on 36 cores.
+
+---
+
+## Core template (1): the actor–critic {.smaller}
+
+Plain PyTorch, no library: the same shapes as the checkpoint. Templates (1)–(3) are the whole of PPO.
+
+```{python}
+#| echo: true
+import torch, torch.nn as nn
+from torch.distributions import Normal
+
+class ActorCritic(nn.Module):
+    """pi_theta(a|s) = N(mu_theta(s), sigma^2) and the critic V_phi(s)."""
+    def __init__(self, n_obs, n_act, hidden=64, log_std=-0.5):
+        super().__init__()
+        mlp = lambda n_out: nn.Sequential(nn.Linear(n_obs, hidden), nn.Tanh(),
+                                          nn.Linear(hidden, hidden), nn.Tanh(), nn.Linear(hidden, n_out))
+        self.mu, self.v = mlp(n_act), mlp(1)
+        nn.init.orthogonal_(self.mu[-1].weight, 0.01); nn.init.zeros_(self.mu[-1].bias)  # start near a = 0
+        self.log_std = nn.Parameter(torch.full((n_act,), float(log_std)))
+
+    def dist(self, obs):
+        return Normal(self.mu(obs), self.log_std.exp())
+
+    def evaluate(self, obs, act):                       # V(s), log pi(a|s), entropy: the loss's three inputs
+        d = self.dist(obs)
+        return self.v(obs).squeeze(-1), d.log_prob(act).sum(-1), d.entropy().sum(-1)
+```
+
+---
+
+## Core template (2): a batch, and a test {.smaller}
+
+```{python}
+#| echo: true
+#| class-source: small-code
+def collect(env, net, obs, T):
+    """Run the SAMPLED policy for T steps; keep what the update needs."""
+    B = {k: [] for k in ("obs", "act", "logp", "r", "v", "done")}
+    for _ in range(T):
+        o = torch.as_tensor(obs, dtype=torch.float32)
+        with torch.no_grad():
+            d = net.dist(o); a = d.sample()
+            B["logp"].append(d.log_prob(a).sum().item()); B["v"].append(net.v(o).item())
+        obs, r, term, trunc, _ = env.step(a.numpy())
+        B["obs"].append(o); B["act"].append(a); B["r"].append(r); B["done"].append(float(term or trunc))
+        if term or trunc:
+            obs, _ = env.reset()
+    with torch.no_grad():
+        v_last = net.v(torch.as_tensor(obs, dtype=torch.float32)).item()
+    return B, obs, v_last
+
+def evaluate(env, net, episodes=5):
+    """The test: the MEAN action, no noise; average return."""
+    total = []
+    for i in range(episodes):
+        obs, _ = env.reset(seed=100 + i); G, done = 0.0, False
+        while not done:
+            with torch.no_grad():
+                obs, r, term, trunc, _ = env.step(net.mu(torch.as_tensor(obs, dtype=torch.float32)).numpy())
+            G += r; done = term or trunc
+        total.append(G)
+    return float(np.mean(total))
+```
+
+`collect` **samples** (exploration, and the $\log\pi_{\text{old}}$ the ratio needs); `evaluate` deploys the **mean**. A batch may span several episodes: `done` marks where one ended.
+
+---
+
+## Core template (3): the update {.smaller}
+
+```{python}
+#| echo: true
+def ppo_update(net, opt, B, v_last, epochs=10, minibatch=64, clip=0.2, vf_coef=0.5, ent_coef=0.0):
+    A, R = gae(np.array(B["r"]), np.array(B["v"]), v_last, np.array(B["done"]))   # Algorithm 11
+    obs, act = torch.stack(B["obs"]), torch.stack(B["act"])
+    old_logp, A, R = (torch.as_tensor(x, dtype=torch.float32) for x in (B["logp"], A, R))
+    clipped = []
+    for _ in range(epochs):                                         # K passes over ONE batch
+        for idx in torch.randperm(len(obs)).split(minibatch):
+            v, logp, ent = net.evaluate(obs[idx], act[idx])
+            ratio = torch.exp(logp - old_logp[idx])                 # rho = pi_theta / pi_old
+            a = (A[idx] - A[idx].mean()) / (A[idx].std() + 1e-8)    # normalised advantage
+            l_clip = torch.min(ratio * a, torch.clamp(ratio, 1 - clip, 1 + clip) * a).mean()
+            loss = -l_clip + vf_coef * ((v - R[idx]) ** 2).mean() - ent_coef * ent.mean()
+            opt.zero_grad(); loss.backward()
+            nn.utils.clip_grad_norm_(net.parameters(), 0.5); opt.step()
+            clipped.append(((ratio - 1).abs() > clip).float().mean().item())
+    return float(np.mean(clipped))                                  # how often the clip was active
+```
+
+---
+
+## The template, line by line {.smaller}
+
+::: {style="font-size: 0.85em"}
+
+| code | the maths | why |
+| --- | --- | --- |
+| `Normal(self.mu(obs), self.log_std.exp())` | ${\color{#3b7dd8}{\pi_\theta}} = \mathcal N(\mu_\theta(s), \sigma^2)$ | a network for the mean, one learned $\log\sigma$ per action |
+| `orthogonal_(self.mu[-1].weight, 0.01)` | $\mu_\theta(s) \approx 0$ at the start | start at "hold the crouch" (week 8: residual actions start near zero) |
+| `d.sample()`, `d.log_prob(a).sum()` | $a \sim {\color{#3b7dd8}{\pi_{\text{old}}}}$, $\log{\color{#3b7dd8}{\pi_{\text{old}}}}(a \mid s)$ | explore; store the old probability for ${\color{#b07d12}{\rho}}$ |
+| `gae(...)` | ${\color{#2a9d5c}{\hat A_t}} = \delta_t + \gamma\lambda{\color{#2a9d5c}{\hat A_{t+1}}}$, $\hat R_t = {\color{#2a9d5c}{\hat A_t}} + V$ | Algorithm 11 |
+| `torch.exp(logp - old_logp[idx])` | ${\color{#b07d12}{\rho_t}} = {\color{#3b7dd8}{\pi_\theta}}/{\color{#3b7dd8}{\pi_{\text{old}}}}$ | a ratio of probabilities, computed in logs |
+| `torch.min(ratio * a, torch.clamp(...) * a)` | $\min({\color{#b07d12}{\rho}}{\color{#2a9d5c}{\hat A}}, \operatorname{clip}({\color{#b07d12}{\rho}})\,{\color{#2a9d5c}{\hat A}})$ | the clip slide's yellow line |
+| `-l_clip + vf_coef * (...)` | $\mathcal L = -L^{\text{CLIP}} + c_v (V - \hat R)^2 - c_e \mathcal H$ | one loss: the actor climbs, the critic regresses |
+| `clip_grad_norm_(..., 0.5)` | $\lVert\nabla\rVert \le 0.5$ | one huge minibatch cannot throw the network far |
+| `net.mu(...)` in `evaluate` | $a = \mu_\theta(s)$ | tests deploy the mean (as `deterministic=True` does) |
+
+:::
+
+---
+
+## The template learns: an inverted pendulum {.smaller}
+
+MuJoCo's `InvertedPendulum-v5` (gymnasium; 4 observations, 1 action, 1000 = balanced to the end), **from scratch**, 2048 decisions per batch:
+
+```{python}
+#| echo: true
+import gymnasium as gym
+torch.manual_seed(0)
+pend = gym.make("InvertedPendulum-v5"); obs, _ = pend.reset(seed=0); test_env = gym.make("InvertedPendulum-v5")
+net = ActorCritic(4, 1); opt = torch.optim.Adam(net.parameters(), lr=3e-4)
+t0, row = time.time(), [f"{evaluate(test_env, net):.0f}"]
+for it in range(1, 16):
+    B, obs, v_last = collect(pend, net, obs, 2048)
+    clipped = ppo_update(net, opt, B, v_last)
+    row.append(f"{evaluate(test_env, net):.0f}")
+print("test return after 0, 1, ..., 15 batches:", " ".join(row))
+print(f"({15 * 2048:,} decisions, {time.time() - t0:.0f} s; clip active on {100 * clipped:.0f} % of the last batch's samples)")
+```
+
+**Measured while writing this slide** (30 batches, three seeds): the test first reaches 1000 at batch **12, 12 and 17** (seeds 0, 1, 2) and stays there through batch 30. Without the small last-layer initialisation: 11 / 19 / 16. With $\sigma = 1$ (`log_std=0`): 13 / 15 / 15, and it dips below 1000 again afterwards (779, 920). One seed is an anecdote; three are a start.
+
+---
+
+## The template on the G1: one batch {.smaller}
+
+The same two functions, on `G1PushEnv` in randomised worlds, with the checkpoint's sizes (128 hidden, $\sigma = e^{-2}$). One batch of 1024 decisions, one update:
+
+```{python}
+#| echo: true
+torch.manual_seed(0)
+g1 = G1PushEnv(world=RANDOM_WORLD); obs, _ = g1.reset(seed=0)
+net = ActorCritic(42, 12, hidden=128, log_std=-2.0); opt = torch.optim.Adam(net.parameters(), lr=3e-4)
+t0 = time.time(); B, obs, v_last = collect(g1, net, obs, 1024); t1 = time.time()
+A, R = gae(np.array(B["r"]), np.array(B["v"]), v_last, np.array(B["done"]))
+print(f"{sum(p.numel() for p in net.parameters()):,} parameters (the checkpoint: 45,721)")
+print(f"collected 1024 decisions in {t1 - t0:.1f} s; episodes ended (falls or 250 decisions): {int(sum(B['done']))}")
+print(f"advantage mean {A.mean():+.2f}, sd {A.std():.2f}  (an untrained critic: V is near 0, so A is mostly the return)")
+clipped = ppo_update(net, opt, B, v_last, epochs=5, minibatch=256)
+print(f"update: {time.time() - t1:.2f} s; clip active on {100 * clipped:.0f} % of samples")
+print(f"3 M decisions = {3_000_000 // 1024:,} such batches: about {3_000_000 // 1024 * (t1 - t0) / 3600:.1f} h of collecting on one core")
+```
+
+Collecting is nearly all the time; the update is a fraction of a second. That is why the checkpoints used 16 processes (*Buying samples on a CPU*), and why GPU simulation exists.
+
+---
+
+## Training the real thing: the code that made the checkpoints {.smaller}
+
+Not run here (~16 min on 36 cores; hours on a laptop). Stable-Baselines3 implements Algorithm 12; the call that made `checkpoints/push_*.zip`:
+
+```python
+from stable_baselines3 import PPO
+from stable_baselines3.common.vec_env import SubprocVecEnv, VecMonitor
+from soc4180.envs import G1PushEnv, NOMINAL_WORLD, RANDOM_WORLD
+
+world = RANDOM_WORLD                                    # NOMINAL_WORLD for "PPO nominal"
+
+def make(i):
+    def f():
+        e = G1PushEnv(push_max=200.0, world=world)      # DR: reset() draws a fresh world each episode
+        e.reset(seed=i)
+        return e
+    return f
+
+if __name__ == "__main__":                              # SubprocVecEnv starts processes: needed on Windows
+    venv = VecMonitor(SubprocVecEnv([make(i) for i in range(16)]))
+    agent = PPO("MlpPolicy", venv, n_steps=256, batch_size=1024, n_epochs=5, learning_rate=3e-4,
+                gamma=0.99, device="cpu",               # gae_lambda 0.95, clip 0.2: the library's defaults
+                policy_kwargs=dict(log_std_init=-2.0, net_arch=[128, 128]))
+    agent.learn(total_timesteps=3_000_000)
+    agent.save("push_random.zip")
+```
+
+`MlpPolicy` is *Core template (1)*'s `ActorCritic`; `agent.learn` is `collect` + `ppo_update` in a loop, across 16 processes. For your project (P8), change `world` and keep the rest.
 
 ---
 
@@ -754,6 +1136,8 @@ needs more than one run on each side.
 A real G1 differs from ours in more than three numbers. Each is a world
 outside every training box until someone adds it:
 
+::: {style="font-size: 0.85em"}
+
 | gap | what it does | how it is usually handled |
 | --- | --- | --- |
 | **latency** | the action arrives a step or more late | delay the action in simulation |
@@ -762,9 +1146,30 @@ outside every training box until someone adds it:
 | **contact** | feet, soles, floors | randomise friction, restitution, terrain |
 | **the body** | masses, lengths, joint offsets | randomise, or measure (system identification) |
 
+:::
+
 Too narrow a range leaves the gap uncovered; too wide makes the task harder.
 **Choosing the ranges is the engineering**; the lab's table, with the new world
 as a row, is the test.
+
+---
+
+## Two uses of information the robot cannot measure {.smaller}
+
+Only the **actor** runs on the robot; whatever is used **only in training** may see what no sensor can (pelvis velocity, the shove, the world ${\color{#8e44ad}{\xi}}$).
+
+::: {style="font-size: 0.85em"}
+
+| idea | who sees privileged state $s^{\text{priv}}$ | algorithm |
+| --- | --- | --- |
+| **asymmetric actor–critic** | the **critic** $V_\phi(o, s^{\text{priv}})$; the actor still sees $o$ | PPO unchanged; a better $V$, a less noisy ${\color{#2a9d5c}{\hat A}}$. MuJoCo Playground's humanoids: value net on `privileged_state` |
+| **teacher–student** | a **teacher** $\pi^T(a \mid o, s^{\text{priv}})$, trained first by PPO | copied into a student $\pi^S(a \mid o_{t-k..t})$ by **DAgger** (week 10) |
+
+:::
+
+$$\text{teacher: } \max_{\pi^T} J_{\text{DR}}(\pi^T) \qquad\qquad \text{student: } \min_{\pi^S}\ \mathbb E_{s \sim \pi^S}\big\lVert \pi^S(o_{t-k..t}) - \pi^T(o_t, s^{\text{priv}}_t)\big\rVert^2$$
+
+The student must **infer** $\xi$ from its recent history: week 6's estimator, learned. Here, so far, it did not pay (next slide).
 
 ---
 

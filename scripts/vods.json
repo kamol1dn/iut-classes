@@ -241,6 +241,62 @@
       "title": "Social Science Quiz VOD",
       "duration": "1:58",
       "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/19/65733bc6-49a5-40ca-889d-1aacb94fcbe0/a2a92bde-c6d5-4142-96db-1d1ab89d9f98.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73240,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 9,
+      "title": "Ethereum Introduction (Part 1)",
+      "duration": "31:16",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/07/da51e8fc-d7f4-4582-845d-42d2fa413e84/6bf575e8-602f-4407-9db2-06c3594de834.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73265,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 9,
+      "title": "Ethereum - Gas, Wei, Fees (Part 2)",
+      "duration": "1:16:18",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/08/1087067e-bf9e-42a0-a8f4-1538180e4207/2c3dd982-8441-4f7d-808f-d7263252483c.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73303,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 9,
+      "title": "Remix DEMO",
+      "duration": "22:03",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/08/34a650e1-1620-4093-8ac9-1ffcde7d4cc4/1bfe6b42-54c5-4456-a8f8-022e39565864.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73659,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 10,
+      "title": "Ethereum Validators",
+      "duration": "1:11:54",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/15/b31d6197-7da2-406d-80f2-1a777baedba0/ec7b249b-4aa2-45b8-b153-d4c3181e3adb.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73709,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 10,
+      "title": "Tokens - Money Made of Code",
+      "duration": "1:12:44",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/15/59074250-d05f-4352-b169-224d31ee456f/e99a52ef-7c79-4ac5-a7f4-6f6631c122c3.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 73981,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 11,
+      "title": "Security - How Contracts Get Robbed",
+      "duration": "1:09:59",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/22/536efb63-6eb4-4f23-87fd-cda60f320998/1d75512e-d1d0-47d5-a658-c07d71baa7ef.mp4/playlist.m3u8"
+    },
+    {
+      "mod": 74308,
+      "course": "SOC4190 - Blockchain Basics and Platforms",
+      "week": 12,
+      "title": "dApps and DeFi",
+      "duration": "1:10:13",
+      "url": "https://vod.inha.ac.kr:8443/streams/_definst_/mp4:9295c924-a739-4e6c-8db6-ba83fd365eaf/2026/11/27/b17ed970-f85a-4991-804f-01f6d5ff6e3f/f79b7b01-17db-444e-86f8-27a44002ccf0.mp4/playlist.m3u8"
     }
   ]
 }
